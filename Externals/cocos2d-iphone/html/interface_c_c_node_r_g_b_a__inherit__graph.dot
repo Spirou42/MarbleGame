@@ -1,0 +1,42 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CCNodeRGBA",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="CCNode",height=0.2,width=0.4,color="black",URL="$interface_c_c_node.html"];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="\<CCRGBAProtocol\>",height=0.2,width=0.4,color="black",URL="$protocol_c_c_r_g_b_a_protocol-p.html",tooltip="CC RGBA protocol."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="CCAtlasNode",height=0.2,width=0.4,color="black",URL="$interface_c_c_atlas_node.html"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="CCLabelAtlas",height=0.2,width=0.4,color="black",URL="$interface_c_c_label_atlas.html"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="CCTileMapAtlas",height=0.2,width=0.4,color="black",URL="$interface_c_c_tile_map_atlas.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="CCMenuItem",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item.html"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="CCMenuItemLabel",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_label.html"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="CCMenuItemAtlasFont",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_atlas_font.html"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="CCMenuItemFont",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_font.html"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="CCMenuItemSprite",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_sprite.html"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="CCMenuItemImage",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_image.html"];
+  Node7 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="CCMenuItemToggle",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_toggle.html"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="CCMotionStreak",height=0.2,width=0.4,color="black",URL="$interface_c_c_motion_streak.html"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node15 [label="CCProgressTimer",height=0.2,width=0.4,color="black",URL="$interface_c_c_progress_timer.html"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node16 [label="CCSprite",height=0.2,width=0.4,color="black",URL="$interface_c_c_sprite.html"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node17 [label="CCLabelTTF",height=0.2,width=0.4,color="black",URL="$interface_c_c_label_t_t_f.html"];
+  Node16 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node18 [label="CCPhysicsSprite",height=0.2,width=0.4,color="black",URL="$interface_c_c_physics_sprite.html"];
+}

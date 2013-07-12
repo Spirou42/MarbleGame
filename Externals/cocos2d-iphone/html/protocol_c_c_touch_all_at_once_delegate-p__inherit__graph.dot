@@ -1,0 +1,19 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="\<CCTouchAllAtOnceDelegate\>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="CCLayer",height=0.2,width=0.4,color="black",URL="$interface_c_c_layer.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="CCLayerMultiplex",height=0.2,width=0.4,color="black",URL="$interface_c_c_layer_multiplex.html"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="CCLayerRGBA",height=0.2,width=0.4,color="black",URL="$interface_c_c_layer_r_g_b_a.html"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="CCLayerColor",height=0.2,width=0.4,color="black",URL="$interface_c_c_layer_color.html"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="CCLayerGradient",height=0.2,width=0.4,color="black",URL="$interface_c_c_layer_gradient.html"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="CCMenu",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu.html"];
+}

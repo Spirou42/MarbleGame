@@ -1,0 +1,34 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="CCDrawNode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="CCNode",height=0.2,width=0.4,color="black",URL="$interface_c_c_node.html"];
+  Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _parent" ,fontname="FreeSans"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _grid" ,fontname="FreeSans"];
+  Node3 [label="CCGridBase",height=0.2,width=0.4,color="black",URL="$interface_c_c_grid_base.html"];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _grabber" ,fontname="FreeSans"];
+  Node4 [label="CCGrabber",height=0.2,width=0.4,color="black",URL="$interface_c_c_grabber.html"];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _texture" ,fontname="FreeSans"];
+  Node5 [label="CCTexture2D",height=0.2,width=0.4,color="black",URL="$interface_c_c_texture2_d.html"];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _shaderProgram" ,fontname="FreeSans"];
+  Node6 [label="CCGLProgram",height=0.2,width=0.4,color="black",URL="$interface_c_c_g_l_program.html"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _shaderProgram" ,fontname="FreeSans"];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _camera" ,fontname="FreeSans"];
+  Node7 [label="CCCamera",height=0.2,width=0.4,color="black",URL="$interface_c_c_camera.html"];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _shaderProgram" ,fontname="FreeSans"];
+  Node8 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _actionManager" ,fontname="FreeSans"];
+  Node8 [label="CCActionManager",height=0.2,width=0.4,color="black",URL="$interface_c_c_action_manager.html"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _blendFunc" ,fontname="FreeSans"];
+  Node9 [label="ccBlendFunc",height=0.2,width=0.4,color="black",URL="$structcc_blend_func.html",tooltip="Blend Function used for textures."];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _buffer" ,fontname="FreeSans"];
+  Node10 [label="ccV2F_C4B_T2F",height=0.2,width=0.4,color="black",URL="$structcc_v2_f___c4_b___t2_f.html",tooltip="a Point with a vertex point, a tex coord point and a color 4B"];
+  Node11 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" colors" ,fontname="FreeSans"];
+  Node11 [label="ccColor4B",height=0.2,width=0.4,color="black",URL="$structcc_color4_b.html"];
+  Node12 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" vertices" ,fontname="FreeSans"];
+  Node12 [label="ccVertex2F",height=0.2,width=0.4,color="black",URL="$structcc_vertex2_f.html"];
+  Node13 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" texCoords" ,fontname="FreeSans"];
+  Node13 [label="ccTex2F",height=0.2,width=0.4,color="black",URL="$structcc_tex2_f.html"];
+}

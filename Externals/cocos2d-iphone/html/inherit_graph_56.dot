@@ -1,0 +1,8 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ccV3F_C4B_T2F",height=0.2,width=0.4,color="black",URL="$structcc_v3_f___c4_b___t2_f.html",tooltip="a Point with a vertex point, a tex coord point and a color 4B"];
+}

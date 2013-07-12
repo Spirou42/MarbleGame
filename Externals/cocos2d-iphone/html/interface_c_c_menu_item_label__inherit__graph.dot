@@ -1,0 +1,19 @@
+digraph G
+{
+  bgcolor="transparent";
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="CCMenuItemLabel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="CCMenuItem",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item.html"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="CCNodeRGBA",height=0.2,width=0.4,color="black",URL="$interface_c_c_node_r_g_b_a.html"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="CCNode",height=0.2,width=0.4,color="black",URL="$interface_c_c_node.html"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="\<CCRGBAProtocol\>",height=0.2,width=0.4,color="black",URL="$protocol_c_c_r_g_b_a_protocol-p.html",tooltip="CC RGBA protocol."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="CCMenuItemAtlasFont",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_atlas_font.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="CCMenuItemFont",height=0.2,width=0.4,color="black",URL="$interface_c_c_menu_item_font.html"];
+}
