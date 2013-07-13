@@ -51,6 +51,22 @@ NSArray *marbleSets = nil;
 	
 	// Center main window
 	[window_ center];
+  
+  // load shaders
+  GLchar * fragSource = (GLchar*) [[NSString stringWithContentsOfFile:[[CCFileUtils sharedFileUtils] fullPathFromRelativePath:@"GlossMapShader.fsh"] encoding:NSUTF8StringEncoding error:nil] UTF8String];
+  GLchar * vertSource = (GLchar*) [[NSString stringWithContentsOfFile:[[CCFileUtils sharedFileUtils] fullPathFromRelativePath:@"GlossMapShader.vsh"] encoding:NSUTF8StringEncoding error:nil] UTF8String];
+  CCGLProgram *shaderProgram = [[CCGLProgram alloc] initWithVertexShaderByteArray:vertSource fragmentShaderByteArray:fragSource];
+  
+  [shaderProgram addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
+	[shaderProgram addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
+	[shaderProgram addAttribute:kCCAttributeNameTexCoord index:kCCVertexAttrib_TexCoords];
+  [shaderProgram addAttribute:kCCAttributeNameMapCoord index:kCCVertexAttrib_MapCoords];
+  
+	[shaderProgram link];
+	[shaderProgram updateUniforms];
+
+  
+  [[CCShaderCache sharedShaderCache]addProgram:shaderProgram forKey:kCMMarbleGlossMapShader];
 	
 	//CCScene *scene = [CCScene node];
 //	[scene addChild:[MarbleLayer node]];

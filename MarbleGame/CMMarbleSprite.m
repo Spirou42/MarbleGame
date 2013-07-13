@@ -12,6 +12,10 @@
 #define MARBLE_FRICTION   .9
 #define MARBLE_ELASTICITY .2
 
+@interface CMMarbleSprite ()
+- (void) setGlossMapRect:(CGRect) glossRect;
+@end
+
 @implementation CMMarbleSprite
 @synthesize shape,radius,setName,ballIndex;
 
@@ -53,7 +57,13 @@
 
 - (void) createOverlayChild
 {
-	CCSprite *overlay = [CMMarbleOverlaySprite spriteWithSpriteFrameName:self.overlayName];
+  CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
+  [self setGlossMapRect:overlayFrame.rect];
+	
+  
+  
+  return ;
+  CCSprite *overlay = [CMMarbleOverlaySprite spriteWithSpriteFrameName:self.overlayName];
 	overlay.scale = 1.05;
 	overlay.position = ccp(self.contentSize.width/2.0-.5, self.contentSize.height/2.0);
 //	overlay.blendFunc = (ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_COLOR};//{GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA};
@@ -65,6 +75,14 @@
 {
   NSString* frameName = [NSString stringWithFormat:@"%@_%li",sN,bI];
   if ((self=[super initWithSpriteFrameName:frameName])) {
+    
+#if 0
+    CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTextureColor];
+#else
+    CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCMMarbleGlossMapShader];
+#endif
+    self.shaderProgram = k;
+
     self.radius = r;
     self.ballIndex = bI;
     self.setName=sN;
@@ -114,6 +132,33 @@
       self.textureRect=CGRectMake(0, 0, 0, 0);
     }
   }
+}
+
+- (void) setGlossMapRect:(CGRect) glossRect
+{
+  CCTexture2D *tex	= (_batchNode) ? [_textureAtlas texture] : _texture;
+	if(!tex)
+		return;
+  
+	float atlasWidth = (float)tex.pixelsWide;
+	float atlasHeight = (float)tex.pixelsHigh;
+  
+	float left, right ,top , bottom;
+
+  left	= glossRect.origin.x/atlasWidth;
+  right	= (glossRect.origin.x + glossRect.size.width) / atlasWidth;
+  top		= glossRect.origin.y/atlasHeight;
+  bottom	= (glossRect.origin.y + glossRect.size.height) / atlasHeight;
+
+  _quad.bl.mapCoords.u = left;
+  _quad.bl.mapCoords.v = bottom;
+  _quad.br.mapCoords.u = right;
+  _quad.br.mapCoords.v = bottom;
+  _quad.tl.mapCoords.u = left;
+  _quad.tl.mapCoords.v = top;
+  _quad.tr.mapCoords.u = right;
+  _quad.tr.mapCoords.v = top;
+ 
 }
 
 - (void) updateTransform

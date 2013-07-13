@@ -31,7 +31,7 @@ static NSString *borderType = @"borderType";
 
 @implementation CMMarbleSimulationLayer
 
-@synthesize space = _space, batchNode, currentMarbleSet, debugLayer=_debugLayer, simulationRunning=_simulationRunning;
+@synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer, simulationRunning=_simulationRunning;
 
 +(CCScene *) scene
 {
@@ -68,11 +68,14 @@ static NSString *borderType = @"borderType";
 		// init physics
 		[self initPhysics];
 		
+
 		// Use batch node. Faster
 		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
-
+#if 0
 		self.batchNode= [CCSpriteBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
-
+#else
+    self.batchNode = [CCNode node];
+#endif
 		[self addChild:self.batchNode z:0 tag:kTagParentNode];
 		
 		[self addNewSpriteAtPosition:ccp(200,200)];

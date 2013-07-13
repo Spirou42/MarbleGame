@@ -38,10 +38,27 @@
 		93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */; };
 		93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */; };
 		93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */; };
+		FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
+		FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
+		FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
+		FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE847FB5178EFB5B00221DB9 /* Background-New.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB4178EFB5B00221DB9 /* Background-New.png */; };
 		FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB6178F0BE200221DB9 /* GlassButtons.plist */; };
 		FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB7178F0BE200221DB9 /* GlassButtons.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		FE4F6A4A1791BE4C00B54D3A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.apple.build-tasks.copy-tiff-file";
+			filePatterns = "*.[fv]sh";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		93AD6CA017907B19001DADD9 /* PBXContainerItemProxy */ = {
@@ -136,7 +153,7 @@
 		933FEB0F17836A8800786883 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		933FEB181783724800786883 /* Buttons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Buttons.plist; sourceTree = "<group>"; };
 		933FEB191783724800786883 /* Buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Buttons.png; sourceTree = "<group>"; };
-		933FEB1C1783738900786883 /* ChipDonkeyConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChipDonkeyConfig.h; sourceTree = "<group>"; };
+		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		934AF9B217837E22004BAC7E /* SceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneHelper.h; sourceTree = "<group>"; };
 		934AF9B317837E22004BAC7E /* SceneHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneHelper.m; sourceTree = "<group>"; };
 		934AF9B617838B6C004BAC7E /* CCControlPopupButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPopupButton.h; sourceTree = "<group>"; };
@@ -256,6 +273,8 @@
 		93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleHelpScene.m; sourceTree = "<group>"; };
 		93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePlayScene.h; sourceTree = "<group>"; };
 		93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePlayScene.m; sourceTree = "<group>"; };
+		FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.fsh; sourceTree = "<group>"; };
+		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE847FB4178EFB5B00221DB9 /* Background-New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-New.png"; sourceTree = "<group>"; };
 		FE847FB6178F0BE200221DB9 /* GlassButtons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlassButtons.plist; sourceTree = "<group>"; };
 		FE847FB7178F0BE200221DB9 /* GlassButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GlassButtons.png; sourceTree = "<group>"; };
@@ -304,8 +323,8 @@
 		93536449177DFB50009F640B = {
 			isa = PBXGroup;
 			children = (
-				93AD6C7517907AA3001DADD9 /* Externals */,
 				93536461177DFB50009F640B /* MarbleGame */,
+				93AD6C7517907AA3001DADD9 /* Externals */,
 				93536454177DFB50009F640B /* Frameworks */,
 				93536453177DFB50009F640B /* Products */,
 			);
@@ -377,7 +396,7 @@
 		9353663D177DFB52009F640B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				933FEB1C1783738900786883 /* ChipDonkeyConfig.h */,
+				933FEB1C1783738900786883 /* MarbleGameConfig.h */,
 				9353663E177DFB52009F640B /* Prefix.pch */,
 				9353663F177DFB52009F640B /* main.m */,
 			);
@@ -559,6 +578,8 @@
 		FEF14BAB179041D5007A3AEB /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */,
+				FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */,
 			);
 			name = Shaders;
 			path = Resources/Shaders;
@@ -576,6 +597,7 @@
 				93536450177DFB50009F640B /* Resources */,
 			);
 			buildRules = (
+				FE4F6A4A1791BE4C00B54D3A /* PBXBuildRule */,
 			);
 			dependencies = (
 				93AD6CB317907B95001DADD9 /* PBXTargetDependency */,
@@ -705,6 +727,8 @@
 				FE847FB5178EFB5B00221DB9 /* Background-New.png in Resources */,
 				FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */,
 				FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */,
+				FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */,
+				FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +750,8 @@
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
 				934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */,
 				934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */,
+				FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */,
+				FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

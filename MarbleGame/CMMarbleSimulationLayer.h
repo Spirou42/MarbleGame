@@ -26,17 +26,17 @@
 	CCTexture2D *_spriteTexture; // weak ref
 	CCPhysicsDebugNode *_debugLayer; // weak ref
 	
-	ChipmunkSpace *_space;
-	CCSpriteBatchNode * batchNode;
-	NSString *currentMarbleSet;
-	CCLayer *marbleSelectMenu;
-	CCLayer *debugMenu;
+	ChipmunkSpace   *_space;
+	CCNode          *_batchNode;
+	NSString        *_currentMarbleSet;
+	CCLayer         *_marbleSelectMenu;
+	CCLayer         *_debugMenu;
   
   BOOL _simulationRunning;
 
 }
 @property (nonatomic,retain) ChipmunkSpace *space;
-@property (nonatomic,assign) CCSpriteBatchNode* batchNode;
+@property (nonatomic,assign) CCNode* batchNode;
 @property (nonatomic,retain) NSString* currentMarbleSet;
 @property (nonatomic,readonly) CCPhysicsDebugNode *debugLayer;
 @property (nonatomic,assign,getter = isSimulationRunning) BOOL simulationRunning;
