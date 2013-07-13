@@ -15,7 +15,7 @@ void main()
   0.59*gloss_color.g +
   0.11*gloss_color.b;
   vec4 lightColor = vec4(1.0, 1.00, 1.0,1.0);
- gl_FragColor = base_color+(lightColor*reflectivity);
+  gl_FragColor = base_color+(lightColor*reflectivity);
  // gl_FragColor = texture2D(CC_Texture0,v_mapCoord);
   //gl_FragColor = v_fragmentColor * base_color;
 }											

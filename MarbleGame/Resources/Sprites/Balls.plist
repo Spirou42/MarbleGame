@@ -20,7 +20,7 @@
 		<key>Billard_2</key>
 		<dict>
 			<key>frame</key>
-			<string>{{64,0},{64,64}}</string>
+			<string>{{75,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -33,7 +33,7 @@
 		<key>Billard_3</key>
 		<dict>
 			<key>frame</key>
-			<string>{{128,0},{64,64}}</string>
+			<string>{{150,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -46,7 +46,7 @@
 		<key>Billard_4</key>
 		<dict>
 			<key>frame</key>
-			<string>{{192,0},{64,64}}</string>
+			<string>{{225,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -59,7 +59,7 @@
 		<key>Billard_5</key>
 		<dict>
 			<key>frame</key>
-			<string>{{256,0},{64,64}}</string>
+			<string>{{300,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -72,7 +72,7 @@
 		<key>Billard_6</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,0},{64,64}}</string>
+			<string>{{375,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -85,7 +85,7 @@
 		<key>Billard_7</key>
 		<dict>
 			<key>frame</key>
-			<string>{{384,0},{64,64}}</string>
+			<string>{{450,0},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -98,7 +98,7 @@
 		<key>Billard_8</key>
 		<dict>
 			<key>frame</key>
-			<string>{{448,0},{64,64}}</string>
+			<string>{{0,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -111,7 +111,7 @@
 		<key>Billard_9</key>
 		<dict>
 			<key>frame</key>
-			<string>{{0,64},{64,64}}</string>
+			<string>{{75,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -124,7 +124,7 @@
 		<key>Billard_Overlay</key>
 		<dict>
 			<key>frame</key>
-			<string>{{64,64},{64,64}}</string>
+			<string>{{150,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -137,7 +137,7 @@
 		<key>Chat_1</key>
 		<dict>
 			<key>frame</key>
-			<string>{{128,64},{64,64}}</string>
+			<string>{{225,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -150,7 +150,7 @@
 		<key>Chat_2</key>
 		<dict>
 			<key>frame</key>
-			<string>{{192,64},{64,64}}</string>
+			<string>{{300,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -163,7 +163,7 @@
 		<key>Chat_3</key>
 		<dict>
 			<key>frame</key>
-			<string>{{256,64},{64,64}}</string>
+			<string>{{375,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -176,7 +176,7 @@
 		<key>Chat_4</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,64},{64,64}}</string>
+			<string>{{450,75},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -189,7 +189,7 @@
 		<key>Chat_5</key>
 		<dict>
 			<key>frame</key>
-			<string>{{384,64},{64,64}}</string>
+			<string>{{0,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -202,7 +202,7 @@
 		<key>Chat_6</key>
 		<dict>
 			<key>frame</key>
-			<string>{{448,64},{64,64}}</string>
+			<string>{{75,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -215,7 +215,7 @@
 		<key>Chat_7</key>
 		<dict>
 			<key>frame</key>
-			<string>{{0,128},{64,64}}</string>
+			<string>{{150,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -228,7 +228,7 @@
 		<key>Chat_8</key>
 		<dict>
 			<key>frame</key>
-			<string>{{64,128},{64,64}}</string>
+			<string>{{225,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -241,7 +241,7 @@
 		<key>Chat_9</key>
 		<dict>
 			<key>frame</key>
-			<string>{{128,128},{64,64}}</string>
+			<string>{{300,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -254,7 +254,7 @@
 		<key>Chat_Overlay</key>
 		<dict>
 			<key>frame</key>
-			<string>{{192,128},{64,62}}</string>
+			<string>{{375,150},{64,62}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -267,7 +267,7 @@
 		<key>DDR_1</key>
 		<dict>
 			<key>frame</key>
-			<string>{{256,128},{64,64}}</string>
+			<string>{{450,150},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -280,7 +280,7 @@
 		<key>DDR_2</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,128},{64,64}}</string>
+			<string>{{0,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -293,7 +293,7 @@
 		<key>DDR_3</key>
 		<dict>
 			<key>frame</key>
-			<string>{{384,128},{64,64}}</string>
+			<string>{{75,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -306,7 +306,7 @@
 		<key>DDR_4</key>
 		<dict>
 			<key>frame</key>
-			<string>{{448,128},{64,64}}</string>
+			<string>{{150,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -319,7 +319,7 @@
 		<key>DDR_5</key>
 		<dict>
 			<key>frame</key>
-			<string>{{0,192},{64,64}}</string>
+			<string>{{225,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -332,7 +332,7 @@
 		<key>DDR_6</key>
 		<dict>
 			<key>frame</key>
-			<string>{{64,192},{64,64}}</string>
+			<string>{{300,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -345,7 +345,7 @@
 		<key>DDR_7</key>
 		<dict>
 			<key>frame</key>
-			<string>{{128,192},{64,64}}</string>
+			<string>{{375,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -358,7 +358,7 @@
 		<key>DDR_8</key>
 		<dict>
 			<key>frame</key>
-			<string>{{192,192},{64,64}}</string>
+			<string>{{450,225},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -371,7 +371,7 @@
 		<key>DDR_9</key>
 		<dict>
 			<key>frame</key>
-			<string>{{256,192},{64,64}}</string>
+			<string>{{0,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -384,7 +384,7 @@
 		<key>DDR_Overlay</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,192},{64,64}}</string>
+			<string>{{75,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -397,7 +397,7 @@
 		<key>Stars_1</key>
 		<dict>
 			<key>frame</key>
-			<string>{{384,192},{64,64}}</string>
+			<string>{{150,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -410,7 +410,7 @@
 		<key>Stars_2</key>
 		<dict>
 			<key>frame</key>
-			<string>{{448,192},{64,64}}</string>
+			<string>{{225,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -423,7 +423,7 @@
 		<key>Stars_3</key>
 		<dict>
 			<key>frame</key>
-			<string>{{0,256},{64,64}}</string>
+			<string>{{300,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -436,7 +436,7 @@
 		<key>Stars_4</key>
 		<dict>
 			<key>frame</key>
-			<string>{{64,256},{64,64}}</string>
+			<string>{{375,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -449,7 +449,7 @@
 		<key>Stars_5</key>
 		<dict>
 			<key>frame</key>
-			<string>{{128,256},{64,64}}</string>
+			<string>{{450,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -462,7 +462,7 @@
 		<key>Stars_6</key>
 		<dict>
 			<key>frame</key>
-			<string>{{192,256},{64,64}}</string>
+			<string>{{0,375},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -475,7 +475,7 @@
 		<key>Stars_7</key>
 		<dict>
 			<key>frame</key>
-			<string>{{256,256},{64,64}}</string>
+			<string>{{75,375},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -488,7 +488,7 @@
 		<key>Stars_8</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,256},{64,64}}</string>
+			<string>{{150,375},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -501,7 +501,7 @@
 		<key>Stars_9</key>
 		<dict>
 			<key>frame</key>
-			<string>{{384,256},{64,64}}</string>
+			<string>{{225,375},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -514,7 +514,7 @@
 		<key>Stars_Overlay</key>
 		<dict>
 			<key>frame</key>
-			<string>{{320,192},{64,64}}</string>
+			<string>{{75,300},{64,64}}</string>
 			<key>offset</key>
 			<string>{0,0}</string>
 			<key>rotated</key>
@@ -532,9 +532,9 @@
 		<key>realTextureFileName</key>
 		<string>Balls.png</string>
 		<key>size</key>
-		<string>{512,320}</string>
+		<string>{525,525}</string>
 		<key>smartupdate</key>
-		<string>$TexturePacker:SmartUpdate:0b51c8d87eb094e337cf052fadcc21da$</string>
+		<string>$TexturePacker:SmartUpdate:41339297beb233bb78d28c6b769c4825$</string>
 		<key>textureFileName</key>
 		<string>Balls.png</string>
 	</dict>

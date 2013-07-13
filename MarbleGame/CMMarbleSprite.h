@@ -17,6 +17,8 @@
 //	NSString						*frameName;
 	NSString 						*setName;
 	NSInteger						ballIndex;
+  CGPoint             mapTextureCenter;
+  CGFloat               mapLeft,mapBottom,mapRight,mapTop;
 }
 
 
@@ -26,6 +28,7 @@
 @property (nonatomic, readonly) NSString* overlayName;
 @property (nonatomic,retain) NSString* setName;
 @property (nonatomic,assign) NSInteger ballIndex;
+@property (nonatomic, assign) CGFloat mapLeft,mapBottom,mapRight,mapTop;
 - (id) initWithSpriteFrameName:(NSString*)fn mass:(CGFloat)mass andRadius:(CGFloat)r;
 - (id) initWithBallSet:(NSString*)setName ballIndex:(NSInteger)ballIndex mass:(CGFloat)mass andRadius:(CGFloat) r;
 - (void) createOverlayChild;

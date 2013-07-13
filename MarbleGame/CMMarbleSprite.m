@@ -17,7 +17,7 @@
 @end
 
 @implementation CMMarbleSprite
-@synthesize shape,radius,setName,ballIndex;
+@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop;
 
 - (NSString*) frameName
 {
@@ -30,9 +30,9 @@
 - (NSString*) overlayName
 {
   NSString *sn = self.setName;
-  if ([sn isEqualToString:@"Billard"]) {
-    sn=@"DDR";
-  }
+//  if ([sn isEqualToString:@"Billard"]) {
+//    sn=@"DDR";
+//  }
   if (sn) {
     return [NSString stringWithFormat:@"%@_Overlay",sn];
   }
@@ -142,23 +142,62 @@
   
 	float atlasWidth = (float)tex.pixelsWide;
 	float atlasHeight = (float)tex.pixelsHigh;
+
   
-	float left, right ,top , bottom;
+  self.mapLeft    = glossRect.origin.x/atlasWidth;
+  self.mapRight   = (glossRect.origin.x + glossRect.size.width) / atlasWidth;
+  self.mapTop     = glossRect.origin.y/atlasHeight;
+  self.mapBottom	= (glossRect.origin.y + glossRect.size.height) / atlasHeight;
 
-  left	= glossRect.origin.x/atlasWidth;
-  right	= (glossRect.origin.x + glossRect.size.width) / atlasWidth;
-  top		= glossRect.origin.y/atlasHeight;
-  bottom	= (glossRect.origin.y + glossRect.size.height) / atlasHeight;
-
-  _quad.bl.mapCoords.u = left;
-  _quad.bl.mapCoords.v = bottom;
-  _quad.br.mapCoords.u = right;
-  _quad.br.mapCoords.v = bottom;
-  _quad.tl.mapCoords.u = left;
-  _quad.tl.mapCoords.v = top;
-  _quad.tr.mapCoords.u = right;
-  _quad.tr.mapCoords.v = top;
+  _quad.bl.mapCoords.u = self.mapLeft;
+  _quad.bl.mapCoords.v = self.mapBottom;
+  _quad.br.mapCoords.u = self.mapRight;
+  _quad.br.mapCoords.v = self.mapBottom;
+  _quad.tl.mapCoords.u = self.mapLeft;
+  _quad.tl.mapCoords.v = self.mapTop;
+  _quad.tr.mapCoords.u = self.mapRight;
+  _quad.tr.mapCoords.v = self.mapTop;
+  CGFloat tx = self.mapLeft + ((self.mapRight-self.mapLeft)/2.0);
+  CGFloat ty = self.mapBottom + ((self.mapTop-self.mapBottom)/2.0);
+  self->mapTextureCenter=CGPointMake( tx , ty);
  
+}
+
+- (ccTex2F) rotateCoord:(ccTex2F) coord
+{
+  CGPoint k=CGPointZero;
+  k.x = coord.u ;//- self->mapTextureCenter.x;
+  k.y = coord.v ;//- self->mapTextureCenter.y;
+  float rad = CC_DEGREES_TO_RADIANS(self.rotation);
+
+
+  CGPoint tk = ccpRotateByAngle(k,self->mapTextureCenter,rad);
+
+  
+// tk   = ccpRotate(k,rPoint);
+  ccTex2F result;
+  result.u=tk.x;
+  result.v=tk.y;
+  return result;
+}
+
+
+- (void) rotateMapCoords
+{
+  ccTex2F bl = {self.mapLeft,self.mapBottom};
+  ccTex2F tl = {self.mapLeft,self.mapTop};
+  ccTex2F br = {self.mapRight,self.mapBottom};
+  ccTex2F tr = {self.mapRight,self.mapTop};
+  _quad.bl.mapCoords = [self rotateCoord:bl];
+  _quad.br.mapCoords = [self rotateCoord:br];
+  _quad.tl.mapCoords = [self rotateCoord:tl];
+  _quad.tr.mapCoords = [self rotateCoord:tr];
+}
+
+- (void) draw
+{
+  [self rotateMapCoords];
+  [super draw];
 }
 
 - (void) updateTransform
@@ -167,7 +206,9 @@
     child.dirty = YES;
 		child.rotation = -self.rotation;
 	}
+
 	[super updateTransform];
+  [self rotateMapCoords];  
 }
 
 - (void) cleanup
