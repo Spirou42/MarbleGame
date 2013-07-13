@@ -524,6 +524,10 @@
 	diff = offsetof( ccV3F_C4B_T2F, colors);
 	glVertexAttribPointer(kCCVertexAttrib_Color, 4, GL_UNSIGNED_BYTE, GL_TRUE, kQuadSize, (void*)(offset + diff));
 
+  // map coordinates
+//  glEnableVertexAttribArray(kCCVertexAttrib_MapCoords);
+  diff = offsetof( ccV3F_C4B_T2F, mapCoords);
+  glVertexAttribPointer(kCCVertexAttrib_MapCoords, 2, GL_FLOAT, GL_FALSE, kQuadSize, (void*)(offset + diff));
 
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 

@@ -201,6 +201,10 @@
 		// tex coords
 		glEnableVertexAttribArray(kCCVertexAttrib_TexCoords);
 		glVertexAttribPointer(kCCVertexAttrib_TexCoords, 2, GL_FLOAT, GL_FALSE, kQuadSize, (GLvoid*) offsetof( ccV3F_C4B_T2F, texCoords));
+    
+    // map coordinates
+    glEnableVertexAttribArray(kCCVertexAttrib_MapCoords);
+    glVertexAttribPointer(kCCVertexAttrib_MapCoords, 2, GL_FLOAT, GL_FALSE, kQuadSize, (GLvoid*) offsetof(ccV3F_C4B_T2F, mapCoords));
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _buffersVBO[1]);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(_indices[0]) * _capacity * 6, _indices, GL_STATIC_DRAW);

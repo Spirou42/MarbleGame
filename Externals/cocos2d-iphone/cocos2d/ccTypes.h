@@ -257,6 +257,9 @@ typedef struct _ccV3F_C4B_T2F
 
 	// tex coords (2F)
 	ccTex2F			texCoords;			// 8 byts
+
+  // map coords (2F)
+  ccTex2F     mapCoords;
 } ccV3F_C4B_T2F;
 
 	

@@ -36,6 +36,7 @@ static GLuint	_ccCurrentProjectionMatrix = -1;
 static BOOL		_vertexAttribPosition = NO;
 static BOOL		_vertexAttribColor = NO;
 static BOOL		_vertexAttribTexCoords = NO;
+static BOOL   _vertexAttribMapCoords = NO;
 
 #if CC_ENABLE_GL_STATE_CACHE
 #define kCCMaxActiveTexture 16
@@ -247,6 +248,16 @@ void ccGLEnableVertexAttribs( unsigned int flags )
 
 		_vertexAttribTexCoords = enableTexCoords;
 	}
+  /* Map Coords */
+  BOOL enableMapCoords = flags & kCCVertexAttribFlag_MapCoords;
+  if(enableMapCoords!= _vertexAttribMapCoords){
+    if (enableMapCoords) {
+      glEnableVertexAttribArray(kCCVertexAttrib_MapCoords);
+    }else{
+      glDisableVertexAttribArray(kCCVertexAttrib_MapCoords);
+    }
+    _vertexAttribMapCoords = enableMapCoords;
+  }
 }
 
 #pragma mark - GL Uniforms functions

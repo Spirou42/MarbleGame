@@ -35,7 +35,7 @@ enum {
 	kCCVertexAttrib_Position,
 	kCCVertexAttrib_Color,
 	kCCVertexAttrib_TexCoords,
-
+  kCCVertexAttrib_MapCoords,
 	kCCVertexAttrib_MAX,
 };
 
@@ -76,7 +76,7 @@ enum {
 #define	kCCAttributeNameColor       @"a_color"
 #define	kCCAttributeNamePosition		@"a_position"
 #define	kCCAttributeNameTexCoord		@"a_texCoord"
-
+#define kCCAttributeNameMapCoord    @"a_mapCoord"
 
 struct _hashUniformEntry;
 
