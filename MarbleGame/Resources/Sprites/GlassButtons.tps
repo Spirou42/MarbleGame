@@ -20,7 +20,7 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>cocos2d</string>
+        <string>myExporter</string>
         <key>textureFileName</key>
         <filename>GlassButtons.png</filename>
         <key>flipPVR</key>
@@ -155,6 +155,9 @@
             <filename>../Originals/GlassDDBackground.png</filename>
             <filename>../Originals/GlassDDItemBackground.png</filename>
             <filename>../Originals/GlassDDMenuBackground.png</filename>
+            <filename>../Originals/GlassSliderBackground.png</filename>
+            <filename>../Originals/GlassSliderThumb.png</filename>
+            <filename>../Originals/GlassSliderTrack.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
