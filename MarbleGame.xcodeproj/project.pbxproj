@@ -28,12 +28,16 @@
 		93536646177DFB52009F640B /* CMMarbleSimulationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */; };
 		935366F0177E1254009F640B /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		935366F1177E1254009F640B /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
+		9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7601793296B008D584E /* CMMarbleLevel.m */; };
+		9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7621793296B008D584E /* CMMarbleLevelSet.m */; };
+		9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */; };
+		9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F76917932AF1008D584E /* CMSimpleShapeReader.m */; };
+		9356F78317933069008D584E /* DummyLevels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* DummyLevels.levelset */; };
 		9357F3A917907D680063E849 /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA717907B19001DADD9 /* libCocosDenshion.a */; };
 		9357F3AA17907D680063E849 /* libkazmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CB117907B19001DADD9 /* libkazmath.a */; };
 		9357F3D9179080A30063E849 /* libChipmunkPro-Debug-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
 		93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */; };
-		93EB27EE177F54F2001B7FBB /* CMMarbleOverlaySprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27ED177F54F1001B7FBB /* CMMarbleOverlaySprite.m */; };
 		93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */; };
 		93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */; };
 		93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */; };
@@ -218,6 +222,15 @@
 		935366EC177E107A009F640B /* Stars_Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stars_Overlay.png; sourceTree = "<group>"; };
 		935366EE177E1254009F640B /* Balls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Balls.plist; sourceTree = "<group>"; };
 		935366EF177E1254009F640B /* Balls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balls.png; sourceTree = "<group>"; };
+		9356F75F1793296B008D584E /* CMMarbleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevel.h; sourceTree = "<group>"; };
+		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevel.m; sourceTree = "<group>"; };
+		9356F7611793296B008D584E /* CMMarbleLevelSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSet.h; sourceTree = "<group>"; };
+		9356F7621793296B008D584E /* CMMarbleLevelSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSet.m; sourceTree = "<group>"; };
+		9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelStatistics.h; sourceTree = "<group>"; };
+		9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelStatistics.m; sourceTree = "<group>"; };
+		9356F76817932AF0008D584E /* CMSimpleShapeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSimpleShapeReader.h; sourceTree = "<group>"; };
+		9356F76917932AF1008D584E /* CMSimpleShapeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSimpleShapeReader.m; sourceTree = "<group>"; };
+		9356F78217933069008D584E /* DummyLevels.levelset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DummyLevels.levelset; sourceTree = "<group>"; };
 		9357F3AD179080A30063E849 /* chipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk.h; sourceTree = "<group>"; };
 		9357F3AE179080A30063E849 /* chipmunk_ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_ffi.h; sourceTree = "<group>"; };
 		9357F3AF179080A30063E849 /* chipmunk_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_private.h; sourceTree = "<group>"; };
@@ -263,8 +276,6 @@
 		9357F3D8179080A30063E849 /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSprite.h; sourceTree = "<group>"; };
 		93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleSprite.m; sourceTree = "<group>"; };
-		93EB27EC177F54F1001B7FBB /* CMMarbleOverlaySprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleOverlaySprite.h; sourceTree = "<group>"; };
-		93EB27ED177F54F1001B7FBB /* CMMarbleOverlaySprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleOverlaySprite.m; sourceTree = "<group>"; };
 		93EB27F0177F6F41001B7FBB /* CMMarbleMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleMainMenuScene.h; sourceTree = "<group>"; };
 		93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleMainMenuScene.m; sourceTree = "<group>"; };
 		93EB27F3177F70A0001B7FBB /* CMMarbleSettingsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSettingsScene.h; sourceTree = "<group>"; };
@@ -324,9 +335,9 @@
 			isa = PBXGroup;
 			children = (
 				93536461177DFB50009F640B /* MarbleGame */,
-				93AD6C7517907AA3001DADD9 /* Externals */,
 				93536454177DFB50009F640B /* Frameworks */,
 				93536453177DFB50009F640B /* Products */,
+				93AD6C7517907AA3001DADD9 /* Externals */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,12 +365,11 @@
 		93536461177DFB50009F640B /* MarbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				9356F75E1793296B008D584E /* Level */,
 				934AF9B517838AB0004BAC7E /* Controls */,
 				93EB27EF177F6F16001B7FBB /* Scenes */,
 				93536641177DFB52009F640B /* AppDelegate.h */,
 				93536642177DFB52009F640B /* AppDelegate.m */,
-				93EB27EC177F54F1001B7FBB /* CMMarbleOverlaySprite.h */,
-				93EB27ED177F54F1001B7FBB /* CMMarbleOverlaySprite.m */,
 				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
 				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
 				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
@@ -373,6 +383,7 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9356F78217933069008D584E /* DummyLevels.levelset */,
 				FEF14BAB179041D5007A3AEB /* Shaders */,
 				933FEB0E17836A8800786883 /* Images */,
 				935366ED177E10AC009F640B /* Sprites */,
@@ -465,6 +476,21 @@
 			);
 			name = Sprites;
 			path = Resources/Sprites;
+			sourceTree = "<group>";
+		};
+		9356F75E1793296B008D584E /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				9356F76817932AF0008D584E /* CMSimpleShapeReader.h */,
+				9356F76917932AF1008D584E /* CMSimpleShapeReader.m */,
+				9356F75F1793296B008D584E /* CMMarbleLevel.h */,
+				9356F7601793296B008D584E /* CMMarbleLevel.m */,
+				9356F7611793296B008D584E /* CMMarbleLevelSet.h */,
+				9356F7621793296B008D584E /* CMMarbleLevelSet.m */,
+				9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */,
+				9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */,
+			);
+			path = Level;
 			sourceTree = "<group>";
 		};
 		9357F3AB179080A30063E849 /* ChipmunkPro-Mac-Trial */ = {
@@ -729,6 +755,7 @@
 				FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */,
 				FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */,
 				FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */,
+				9356F78317933069008D584E /* DummyLevels.levelset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,7 +770,6 @@
 				93536643177DFB52009F640B /* AppDelegate.m in Sources */,
 				93536646177DFB52009F640B /* CMMarbleSimulationLayer.m in Sources */,
 				93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */,
-				93EB27EE177F54F2001B7FBB /* CMMarbleOverlaySprite.m in Sources */,
 				93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */,
 				93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */,
 				93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */,
@@ -752,6 +778,10 @@
 				934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */,
 				FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */,
 				FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */,
+				9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */,
+				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
+				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,
+				9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

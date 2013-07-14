@@ -70,7 +70,7 @@ static NSString *borderType = @"borderType";
 		
 
 		// Use batch node. Faster
-		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
+
 #if 0
 		self.batchNode= [CCSpriteBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
 #else
@@ -167,7 +167,7 @@ static NSString *borderType = @"borderType";
 	[self.space add:ms];
 	ms.position = pos;
 	[self.batchNode addChild:ms];
-	[ms createOverlayChild];
+	[ms createOverlayTextureRect];
   
 }
 

@@ -9,7 +9,7 @@
 
 #import "cocos2d.h"
 
-@interface CocosTest1AppDelegate : NSObject <NSApplicationDelegate>
+@interface MarbleGameAppDelegate : NSObject <NSApplicationDelegate>
 {
 	NSWindow	*window_;
 	CCGLView	*glView_;

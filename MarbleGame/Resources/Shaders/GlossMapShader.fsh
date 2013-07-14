@@ -9,7 +9,7 @@ uniform sampler2D CC_Texture0;
 void main()									
 {
   vec4 base_color = texture2D(CC_Texture0, v_texCoord).rgba;
-  base_color.rgb/=1.3;
+//  base_color.rgb/=1.3;
   vec3 gloss_color = texture2D(CC_Texture0,v_mapCoord).rgb;
   float reflectivity = 0.30*gloss_color.r +
   0.59*gloss_color.g +

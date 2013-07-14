@@ -1,542 +1,742 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- $TexturePacker:SmartUpdate:9eb9295afb6c523e73107c18d1eb059b$ -->
 <plist version="1.0">
-<dict>
-	<key>frames</key>
 	<dict>
-		<key>Billard_1</key>
+		<key>frames</key>
 		<dict>
-			<key>frame</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
+		 
+			<key>Billard_1</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 13,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_2</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 90,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_3</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 167,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_4</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 244,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_5</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 321,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_6</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 398,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_7</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 475,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_8</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 552,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_9</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 629,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Billard_Overlay</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 706,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_1</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 783,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_2</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 860,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_3</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 937,13 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_4</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 13,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_5</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 90,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_6</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 167,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_7</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 244,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_8</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 321,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_9</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 398,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Chat_Overlay</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 475,90 }, { 64,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 64,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,62 }</string>
+				</dict>
+		 
+			<key>DDR_1</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 552,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_2</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 629,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_3</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 706,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_4</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 783,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_5</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 860,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_6</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 937,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_7</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 13,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_8</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 90,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_9</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 167,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>DDR_Overlay</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 244,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_Overlay</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 244,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_1</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 321,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_2</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 398,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_3</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 475,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_4</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 552,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_5</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 629,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_6</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 706,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_7</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 783,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_8</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 860,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>Stars_9</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 937,167 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		
 		</dict>
-		<key>Billard_2</key>
+		<key>metadata</key>
 		<dict>
-			<key>frame</key>
-			<string>{{75,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_3</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_4</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_5</key>
-		<dict>
-			<key>frame</key>
-			<string>{{300,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_6</key>
-		<dict>
-			<key>frame</key>
-			<string>{{375,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_7</key>
-		<dict>
-			<key>frame</key>
-			<string>{{450,0},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_8</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_9</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Billard_Overlay</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_1</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_2</key>
-		<dict>
-			<key>frame</key>
-			<string>{{300,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_3</key>
-		<dict>
-			<key>frame</key>
-			<string>{{375,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_4</key>
-		<dict>
-			<key>frame</key>
-			<string>{{450,75},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_5</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_6</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_7</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_8</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_9</key>
-		<dict>
-			<key>frame</key>
-			<string>{{300,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Chat_Overlay</key>
-		<dict>
-			<key>frame</key>
-			<string>{{375,150},{64,62}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,1},{64,62}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_1</key>
-		<dict>
-			<key>frame</key>
-			<string>{{450,150},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_2</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_3</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_4</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_5</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_6</key>
-		<dict>
-			<key>frame</key>
-			<string>{{300,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_7</key>
-		<dict>
-			<key>frame</key>
-			<string>{{375,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_8</key>
-		<dict>
-			<key>frame</key>
-			<string>{{450,225},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_9</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>DDR_Overlay</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_1</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_2</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_3</key>
-		<dict>
-			<key>frame</key>
-			<string>{{300,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_4</key>
-		<dict>
-			<key>frame</key>
-			<string>{{375,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_5</key>
-		<dict>
-			<key>frame</key>
-			<string>{{450,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_6</key>
-		<dict>
-			<key>frame</key>
-			<string>{{0,375},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_7</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,375},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_8</key>
-		<dict>
-			<key>frame</key>
-			<string>{{150,375},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_9</key>
-		<dict>
-			<key>frame</key>
-			<string>{{225,375},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
-		</dict>
-		<key>Stars_Overlay</key>
-		<dict>
-			<key>frame</key>
-			<string>{{75,300},{64,64}}</string>
-			<key>offset</key>
-			<string>{0,0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0,0},{64,64}}</string>
-			<key>sourceSize</key>
-			<string>{64,64}</string>
+			<key>format</key>
+			<integer>2</integer>
+			<key>realTextureFileName</key>
+			<string>Balls.png</string>
+			<key>size</key>
+			<string>{ 1014,244 }</string>
+			<key>textureFileName</key>
+			<string>Balls.png</string>
 		</dict>
 	</dict>
-	<key>metadata</key>
-	<dict>
-		<key>format</key>
-		<integer>2</integer>
-		<key>realTextureFileName</key>
-		<string>Balls.png</string>
-		<key>size</key>
-		<string>{525,525}</string>
-		<key>smartupdate</key>
-		<string>$TexturePacker:SmartUpdate:41339297beb233bb78d28c6b769c4825$</string>
-		<key>textureFileName</key>
-		<string>Balls.png</string>
-	</dict>
-</dict>
 </plist>

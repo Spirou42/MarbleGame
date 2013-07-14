@@ -168,22 +168,37 @@
 
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
 		label.color=DEFAULT_MENU_TITLE_COLOR;
-		label.position = ccp(winSize.width/2.0, winSize.height/3.0*2.0);
-		CGPoint position = label.position;
-    position.y -=15;
+		CGPoint menuPosition = ccp(winSize.width/2.0, winSize.height/3.0*2.0);
+		label.position = ccp(winSize.width/2.0, winSize.height-label.contentSize.height );
+		CGPoint position = menuPosition;
+//    position.y -=15;
 		[self addChild:label];
     
-    position.y -= label.contentSize.height;
-    
+//    position.y -= label.contentSize.height;
+
+		// marble set
+		label = [CCLabelTTF labelWithString:@"Marbleset:" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+		label.color=DEFAULT_MENU_TITLE_COLOR;
+		label.anchorPoint=ccp(1.0, 0.5);
+		label.position=ccp(position.x-80, position.y);
+		[self addChild:label];
     //POPUP Button
-    NSArray *t = @[@"Billard",@"Chat",@"DDR",@"Stars"];
+    NSArray *t = [(MarbleGameAppDelegate*)[NSApp delegate] marbleSets];
     NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
     NSInteger i = [t indexOfObject:marbleSet];
 
     CCControlButton* popB = [self popupWithLabels:t selected:i];
     popB.position = position;
-    
     [self addChild:popB];
+		position.y -= popB.contentSize.height;
+
+		
+		
+		// marble size
+		
+		
+		
+		
 
     // BACKBUTTON
     CCControlButton *button = standardButtonWithTitle(@"Back");
@@ -196,6 +211,8 @@
 		
     
 		[self addChild:defaultSceneBackground() z:-1];
+		self.opacity=0.0;
+		self.cascadeOpacityEnabled=NO;
     self.popupButton=popB;
 	}
 	return self;

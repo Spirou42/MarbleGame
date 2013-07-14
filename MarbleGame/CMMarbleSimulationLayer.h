@@ -19,7 +19,7 @@
 #define BORDER_ELASTICITY 0.1f
 #define SPACE_GRAVITY     981.0f
 #define MARBLE_MASS       20.0f
-#define MARBLE_RADIUS 		20
+#define MARBLE_RADIUS 		15
 
 @interface CMMarbleSimulationLayer : CCLayerColor
 {
