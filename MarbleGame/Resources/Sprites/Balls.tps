@@ -20,7 +20,7 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>myExporter</string>
+        <string>MarbleGame Exporter</string>
         <key>textureFileName</key>
         <filename>Balls.png</filename>
         <key>flipPVR</key>
@@ -148,7 +148,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Balls</filename>
+            <filename>../Originals/Balls</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
