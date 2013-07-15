@@ -1,0 +1,49 @@
+<exporter version="1.0">
+  <!-- identifier of the exporter -->
+  <name>MarbleGame Exporter</name>
+ 
+  <!-- display name of the exporter for the combo box -->
+  <displayName>_MarbleGame Exporter</displayName>
+ 
+  <!-- description of the exporter -->
+  <description>Exporter for the MarbleGame project. It is bascally a Cocos2D export without .png extensions on the filename</description>
+ 
+  <!-- exporter version -->
+  <version>1.0</version>
+ 
+  <!-- currently only one file allowed -
+       more to come soon -->
+  <files>
+      <file>
+          <!-- name of this file variable -->
+          <name>maintext</name>
+ 
+          <!-- human readable name (for GUI) -->
+          <displayName>_MarbleGame Exporter Display1</displayName>
+ 
+          <!-- file extension for the file -->
+          <fileExtension>plist</fileExtension>
+ 
+          <!-- name of the template file -->
+          <template>MarbleGameExport.plist</template>
+      </file>
+  </files>
+ 
+  <!-- target framework supports trimming -->
+  <supportsTrimming>yes</supportsTrimming>
+ 
+  <!-- target framework supports rotated sprites -->
+  <supportsRotation>yes</supportsRotation>
+ 
+  <!-- rotated sprites direction (cw/ccw) -->
+  <rotationDirection>cw</rotationDirection>
+ 
+  <!-- supports npot sizes -->
+  <supportsNPOT>yes</supportsNPOT>
+ 
+  <!-- supports file name stripping (remove .png etc.) -->
+  <supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+ 
+  <!-- supports texture subpath -->
+  <supportsTextureSubPath>yes</supportsTextureSubPath>
+</exporter>

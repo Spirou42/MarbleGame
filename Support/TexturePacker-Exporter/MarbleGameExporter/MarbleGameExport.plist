@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- {{smartUpdateKey}} -->
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+		{% for sprite in allSprites %} 
+			<key>{{sprite.trimmedName}}</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { {{sprite.frameRect.x}},{{sprite.frameRect.y}} }, { {{sprite.frameRect.width}},{{sprite.frameRect.height}} } }</string>
+
+					<key>offset</key>
+				  <string>{ {{sprite.absoluteOffset.x}},{{sprite.absoluteOffset.y}} }</string>
+				  
+				  <key>rotated</key>
+					{% if sprite.rotated %} <true/> {% else %} <false/> {% endif %}
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { {{sprite.sourceRect.x}},{{sprite.sourceRect.y}} },{ {{sprite.sourceRect.width}},{{sprite.sourceRect.height}} } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ {{sprite.sourceRect.width}},{{sprite.sourceRect.height}} }</string>
+				</dict>
+		{% endfor %}
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>realTextureFileName</key>
+			<string>{{texture.fullName}}</string>
+			<key>size</key>
+			<string>{ {{texture.size.width}},{{texture.size.height}} }</string>
+			<key>textureFileName</key>
+			<string>{{texture.fullName}}</string>
+		</dict>
+	</dict>
+</plist>
