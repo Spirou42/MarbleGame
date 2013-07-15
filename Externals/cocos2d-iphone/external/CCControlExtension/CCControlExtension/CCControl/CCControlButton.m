@@ -683,6 +683,10 @@ enum
 
 - (BOOL)ccMouseUp:(NSEvent *)event
 {
+    if (![self visible] || ![self hasVisibleParents])
+    {
+      return NO;
+    }
     _state              = CCControlStateNormal;
     _pushed             = NO;
     self.highlighted    = NO;
