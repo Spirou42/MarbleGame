@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0138486D-7BF5-4430-980A-6826A0000D4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MarbleGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>93DDAD6F-189C-46B5-8BF2-EEF8E379690D</key>
+		<string>https://github.com/Spirou42/MarbleGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MarbleGame.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>93DDAD6F-189C-46B5-8BF2-EEF8E379690D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Spirou42/MarbleGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>93DDAD6F-189C-46B5-8BF2-EEF8E379690D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>93DDAD6F-189C-46B5-8BF2-EEF8E379690D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MarbleGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>
