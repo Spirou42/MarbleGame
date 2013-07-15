@@ -13,11 +13,16 @@
 #import "SceneHelper.h"
 #import "CMMarbleSettingsScene.h"
 
+#define BACKGROUND_LAYER (-1)
+#define MARBLE_LAYER (1)
+#define BUTTON_LAYER (5)
+#define MENU_LAYER (BUTTON_LAYER-1)
+
 @implementation CMMarblePlayScene
 - (id) init
 {
 	if( (self = [super init]) ){
-    [self addChild:defaultSceneBackground() z:-1];
+    [self addChild:defaultSceneBackground() z:BACKGROUND_LAYER];
     [self createMenu];
     self.simulationLayer =[CMMarbleSimulationLayer node];
 
@@ -31,7 +36,7 @@
     [self removeChild:self->_simulationLayer cleanup:YES];
     [self->_simulationLayer release];
     self->_simulationLayer = [simLay retain];
-    [self addChild:simLay z:2];
+    [self addChild:simLay z:MARBLE_LAYER];
   }
 }
 
@@ -50,7 +55,7 @@
   self->_menuButton = menuButton;
   menuButton.anchorPoint=ccp(1.0, 1.0);
   menuButton.position=ccp(1022, 765);
-  [self addChild:menuButton z:1];
+  [self addChild:menuButton z:BUTTON_LAYER];
   [menuButton addTarget:self action:@selector(toggleMenu:) forControlEvents:CCControlEventTouchUpInside];
 
   CCScale9Sprite *localMenu = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
@@ -58,7 +63,7 @@
   localMenu.preferredSize= CGSizeMake(1024, menuButton.contentSize.height+4);
   localMenu.anchorPoint = ccp(0.0, 1.0);
   localMenu.position = ccp(1024, 768);
-  [self addChild:localMenu z:0];
+  [self addChild:localMenu z:MENU_LAYER];
 
   
   // BackButton

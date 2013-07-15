@@ -11,7 +11,7 @@
 #import "CMMarbleMainMenuScene.h"
 NSArray *marbleSets = nil;
 
-@implementation CocosTest1AppDelegate
+@implementation MarbleGameAppDelegate
 @synthesize window=window_, glView=glView_;
 
 +(void) initialize
@@ -29,6 +29,19 @@ NSArray *marbleSets = nil;
 {
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   [ud registerDefaults:@{@"MarbleSet":@"DDR"}];
+}
+- (void) getBallSetNamesFormFile:(NSString*)filename
+{
+	NSString *path = [[CCFileUtils sharedFileUtils] fullPathForFilename:filename];
+	NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+	NSArray* allKeys = [(NSDictionary*)[dict objectForKey:@"frames"] allKeys];
+	NSMutableSet *setNames = [NSMutableSet setWithCapacity:20];
+	for (NSString* name in allKeys) {
+    NSString *prefix = [[name componentsSeparatedByString:@"_"]objectAtIndex:0];
+		[setNames addObject:prefix];
+	}
+	
+	marbleSets = [[[setNames allObjects] sortedArrayUsingSelector:@selector(compare:)]   retain];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -71,7 +84,12 @@ NSArray *marbleSets = nil;
 	//CCScene *scene = [CCScene node];
 //	[scene addChild:[MarbleLayer node]];
   [self registerUserDefaults];
+	// adding sprite frames
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
+	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
+
+	// reading ball set names
+	[self getBallSetNamesFormFile:@"Balls.plist"];
 	
 	[CCMenuItemFont setFontName:DEFAULT_MENU_FONT];
 	[CCMenuItemFont setFontSize:DEFAULT_MENU_FONT_SIZE];

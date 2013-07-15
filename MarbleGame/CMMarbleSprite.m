@@ -7,7 +7,7 @@
 //
 #import "cocos2d.h"
 #import "CMMarbleSprite.h"
-#import "CMMarbleOverlaySprite.h"
+
 
 #define MARBLE_FRICTION   .9
 #define MARBLE_ELASTICITY .2
@@ -55,20 +55,10 @@
 	return [ChipmunkBody bodyWithMass:mass andMoment:moment];
 }
 
-- (void) createOverlayChild
+- (void) createOverlayTextureRect
 {
   CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
   [self setGlossMapRect:overlayFrame.rect];
-	
-  
-  
-  return ;
-  CCSprite *overlay = [CMMarbleOverlaySprite spriteWithSpriteFrameName:self.overlayName];
-	overlay.scale = 1.05;
-	overlay.position = ccp(self.contentSize.width/2.0-.5, self.contentSize.height/2.0);
-//	overlay.blendFunc = (ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_COLOR};//{GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA};
-	//overlay.blendFunc = (ccBlendFunc) {GL_ZERO, GL_ONE_MINUS_SRC_ALPHA};
-	[self addChild:overlay];
 }
 
 -(id) initWithBallSet:(id)sN ballIndex:(NSInteger)bI mass:(CGFloat)mass andRadius:(CGFloat)r
@@ -127,7 +117,7 @@
       CGRect textureRect=frame.rect;
       self.textureRect= textureRect;
       [self removeAllChildren];
-      [self createOverlayChild];
+      [self createOverlayTextureRect];
     }else{
       self.textureRect=CGRectMake(0, 0, 0, 0);
     }
@@ -144,50 +134,53 @@
 	float atlasHeight = (float)tex.pixelsHigh;
 
   
-  self.mapLeft    = glossRect.origin.x/atlasWidth;
-  self.mapRight   = (glossRect.origin.x + glossRect.size.width) / atlasWidth;
-  self.mapTop     = glossRect.origin.y/atlasHeight;
-  self.mapBottom	= (glossRect.origin.y + glossRect.size.height) / atlasHeight;
+  self.mapLeft    = glossRect.origin.x;
+  self.mapRight   = (glossRect.origin.x + glossRect.size.width);
+  self.mapTop     = glossRect.origin.y;
+  self.mapBottom	= (glossRect.origin.y + glossRect.size.height);
 
-  _quad.bl.mapCoords.u = self.mapLeft;
-  _quad.bl.mapCoords.v = self.mapBottom;
-  _quad.br.mapCoords.u = self.mapRight;
-  _quad.br.mapCoords.v = self.mapBottom;
-  _quad.tl.mapCoords.u = self.mapLeft;
-  _quad.tl.mapCoords.v = self.mapTop;
-  _quad.tr.mapCoords.u = self.mapRight;
-  _quad.tr.mapCoords.v = self.mapTop;
+  _quad.bl.mapCoords.u = self.mapLeft 	/ atlasWidth;
+  _quad.bl.mapCoords.v = self.mapBottom / atlasHeight;
+  _quad.br.mapCoords.u = self.mapRight 	/ atlasWidth;
+  _quad.br.mapCoords.v = self.mapBottom / atlasHeight;
+  _quad.tl.mapCoords.u = self.mapLeft		/ atlasWidth;;
+  _quad.tl.mapCoords.v = self.mapTop		/ atlasHeight;
+  _quad.tr.mapCoords.u = self.mapRight 	/ atlasWidth;
+  _quad.tr.mapCoords.v = self.mapTop		/ atlasHeight;
+
   CGFloat tx = self.mapLeft + ((self.mapRight-self.mapLeft)/2.0);
   CGFloat ty = self.mapBottom + ((self.mapTop-self.mapBottom)/2.0);
   self->mapTextureCenter=CGPointMake( tx , ty);
  
 }
 
-- (ccTex2F) rotateCoord:(ccTex2F) coord
+- (ccTex2F) rotateCoord:(CGPoint) coord
 {
-  CGPoint k=CGPointZero;
-  k.x = coord.u ;//- self->mapTextureCenter.x;
-  k.y = coord.v ;//- self->mapTextureCenter.y;
+	CCTexture2D *tex	= (_batchNode) ? [_textureAtlas texture] : _texture;
+	float atlasWidth = (float)tex.pixelsWide;
+	float atlasHeight = (float)tex.pixelsHigh;
+
+
   float rad = CC_DEGREES_TO_RADIANS(self.rotation);
 
 
-  CGPoint tk = ccpRotateByAngle(k,self->mapTextureCenter,rad);
+  CGPoint tk = ccpRotateByAngle(coord,self->mapTextureCenter,rad);
 
   
 // tk   = ccpRotate(k,rPoint);
   ccTex2F result;
-  result.u=tk.x;
-  result.v=tk.y;
+  result.u=tk.x/atlasWidth;
+  result.v=tk.y/atlasHeight;
   return result;
 }
 
 
 - (void) rotateMapCoords
 {
-  ccTex2F bl = {self.mapLeft,self.mapBottom};
-  ccTex2F tl = {self.mapLeft,self.mapTop};
-  ccTex2F br = {self.mapRight,self.mapBottom};
-  ccTex2F tr = {self.mapRight,self.mapTop};
+  CGPoint bl = CGPointMake(self.mapLeft, self.mapBottom);
+  CGPoint tl = CGPointMake(self.mapLeft,self.mapTop);
+  CGPoint br = CGPointMake(self.mapRight,self.mapBottom);
+  CGPoint tr = CGPointMake(self.mapRight,self.mapTop);
   _quad.bl.mapCoords = [self rotateCoord:bl];
   _quad.br.mapCoords = [self rotateCoord:br];
   _quad.tl.mapCoords = [self rotateCoord:tl];

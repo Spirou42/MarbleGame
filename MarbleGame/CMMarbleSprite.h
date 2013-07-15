@@ -8,6 +8,8 @@
 
 #import "CCPhysicsSprite.h"
 #import "ObjectiveChipmunk.h"
+#import "ChipmunkAutoGeometry.h"
+
 
 @interface CMMarbleSprite : CCPhysicsSprite <ChipmunkObject,NSCopying>
 {
@@ -31,5 +33,5 @@
 @property (nonatomic, assign) CGFloat mapLeft,mapBottom,mapRight,mapTop;
 - (id) initWithSpriteFrameName:(NSString*)fn mass:(CGFloat)mass andRadius:(CGFloat)r;
 - (id) initWithBallSet:(NSString*)setName ballIndex:(NSInteger)ballIndex mass:(CGFloat)mass andRadius:(CGFloat) r;
-- (void) createOverlayChild;
+- (void) createOverlayTextureRect;
 @end
