@@ -70,19 +70,19 @@
   result.zoomOnTouchDown=NO;
   result.labelAnchorPoint = ccp(0.5 ,0.5);
   result.marginLR=20;
-  result.anchorPoint=ccp(0, 0);
+  result.anchorPoint=ccp(0.0, 0.0);
   result.selected = selected;
   
   // CCLabelTTF      *ttfLabel = [CCLabelTTF labelWithString:label fontName:DEFAULT_BUTTON_FONT fontSize:DEFAULT_BUTTON_FONT_SIZE];
   CCLabelTTF *ttfLabel = [CCLabelTTF labelWithString:label
                                             fontName:DEFAULT_BUTTON_FONT
                                             fontSize:DEFAULT_BUTTON_FONT_SIZE
-                                          dimensions:DEFAULT_MENU_TITLESIZE
+                                          dimensions:CGSizeMake(120,40)
                                           hAlignment:kCCTextAlignmentLeft
                                           vAlignment:kCCVerticalTextAlignmentCenter];
 	
   [result setTitleLabel:ttfLabel forState:CCControlStateNormal];
-	
+//	result.preferredSize=CGSizeMake(200, 40);
   if (result.selected) {
     [result setTitleColor:SELECTED_BUTTON_TITLE_COLOR forState:CCControlStateNormal];
   }else{
@@ -101,7 +101,7 @@
   CCLabelTTF *ttfLabel = [CCLabelTTF labelWithString:[lbs objectAtIndex:sIndex]
                                             fontName:DEFAULT_BUTTON_FONT
                                             fontSize:DEFAULT_BUTTON_FONT_SIZE
-                                          dimensions:DEFAULT_MENU_TITLESIZE
+                                          dimensions:CGSizeMake(120,40)
                                           hAlignment:kCCTextAlignmentCenter
                                           vAlignment:kCCVerticalTextAlignmentCenter];
    CCScale9Sprite *popupBackground = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDBUTTON_BACKGROUND capInsets:DDBUTTON_BACKGROUND_CAPS];
@@ -111,7 +111,7 @@
     CCScale9Sprite * backgroundSprite = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
     CGPoint currentPosition = ccp(0, 0);
     CCNode<CCLabelProtocol,CCRGBAProtocol> *buttonLabel = nil;
-    CGSize maxButtonSize = CGSizeMake(0, 0);
+    CGSize maxButtonSize = CGSizeMake(150, 00);
     for (NSInteger index =[lbs count]-1; index>=0; index--) {
       BOOL isSelected = index == sIndex;
       
@@ -123,7 +123,7 @@
           buttonLabel = [CCLabelTTF labelWithString:k.string fontName:k.fontName fontSize:k.fontSize];
         }
       }
-      
+      currentButton.preferredSize=popupBackground.contentSize;
       [backgroundSprite addChild:currentButton];
       currentButton.position = currentPosition;
       
@@ -134,9 +134,9 @@
       if (maxButtonSize.height<currentButton.contentSize.height) {
         maxButtonSize.height=currentButton.contentSize.height;
       }
-      currentPosition.y +=currentButton.contentSize.height;
+      currentPosition.y +=currentButton.boundingBox.size.height;
     }
-    CGSize menuSize=CGSizeMake(maxButtonSize.width+2, currentPosition.y+2);
+    CGSize menuSize= CGSizeMake(maxButtonSize.width+2, currentPosition.y+2);
     for (CCControlButton* button in backgroundSprite.children) {
       
       if ([button isKindOfClass:[CCControlButton class]]) {
