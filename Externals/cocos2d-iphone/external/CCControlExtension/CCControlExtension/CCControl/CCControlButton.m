@@ -527,7 +527,7 @@ enum
     // Set the content size
     CGRect maxRect              = CGRectUnion([_titleLabel boundingBox], [_backgroundSprite boundingBox]);
     self.contentSize            = CGSizeMake(maxRect.size.width, maxRect.size.height);
-    
+  _backgroundSprite.contentSize = self.contentSize;
     _titleLabel.position        = ccp (self.contentSize.width / 2, self.contentSize.height / 2);
     _backgroundSprite.position  = ccp (self.contentSize.width / 2, self.contentSize.height / 2);
     
