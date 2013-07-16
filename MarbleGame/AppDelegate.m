@@ -9,10 +9,12 @@
 #import "AppDelegate.h"
 #import "CMMarbleSimulationLayer.h"
 #import "CMMarbleMainMenuScene.h"
+#import "CMMarbleLevelSet.h"
+
 NSArray *marbleSets = nil;
 
 @implementation MarbleGameAppDelegate
-@synthesize window=window_, glView=glView_;
+@synthesize window=window_, glView=glView_,levelSet=_levelSet;
 
 +(void) initialize
 {
@@ -78,21 +80,27 @@ NSArray *marbleSets = nil;
 	[shaderProgram link];
 	[shaderProgram updateUniforms];
 
-  
   [[CCShaderCache sharedShaderCache]addProgram:shaderProgram forKey:kCMMarbleGlossMapShader];
 	
-	//CCScene *scene = [CCScene node];
-//	[scene addChild:[MarbleLayer node]];
   [self registerUserDefaults];
-	// adding sprite frames
+
+	
+  // adding sprite frames
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
 	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
 
 	// reading ball set names
 	[self getBallSetNamesFormFile:@"Balls.plist"];
 	
+  // setting defaults for the Menu
 	[CCMenuItemFont setFontName:DEFAULT_MENU_FONT];
 	[CCMenuItemFont setFontSize:DEFAULT_MENU_FONT_SIZE];
+  
+  // loading default LevelSet
+  NSURL * bla = [NSBundle URLForResource:@"DummyLevels" withExtension:@"levelset" subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
+
+  self.levelSet = [CMMarbleLevelSet levelSetWithURL:bla];
+  
 	[director runWithScene:[CMMarbleMainMenuScene node]];
 }
 

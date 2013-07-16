@@ -25,6 +25,7 @@
     [self addChild:defaultSceneBackground() z:BACKGROUND_LAYER];
     [self createMenu];
     self.simulationLayer =[CMMarbleSimulationLayer node];
+    self.simulationLayer.mousePriority=1;
 
 	}
 	return self;
@@ -68,15 +69,18 @@
   
   // BackButton
   CCControlButton *backButton = standardButtonWithTitle(@"Back");
+  backButton.preferredSize=CGSizeMake(100, 40);
+  [backButton needsLayout];
   [backButton addTarget:self action:@selector(backAction:) forControlEvents:CCControlEventTouchUpInside];
-  
+  [localMenu addChild:backButton];
   CGPoint buttonPos = ccp(backButton.contentSize.width/2.0 + 10, localMenu.contentSize.height/2.0+1);
   backButton.position = buttonPos;
-  [localMenu addChild:backButton];
-  buttonPos.x += backButton.contentSize.width+5;
+  buttonPos.x += backButton.contentSize.width;
   
   // DebugButton
   CCControlButton *debugButton = standardButtonWithTitle(@"Debug");
+  debugButton.preferredSize=CGSizeMake(100, 40);
+  [debugButton needsLayout];
   [debugButton addTarget:self action:@selector(debugAction:) forControlEvents:CCControlEventTouchUpInside];
   debugButton.position = buttonPos;
   [localMenu addChild:debugButton];
@@ -84,6 +88,8 @@
   
   // toggleSimulation
   CCControlButton *toggleButton = standardButtonWithTitle(@"Stop");
+  toggleButton.preferredSize=CGSizeMake(100, 40);
+  [toggleButton needsLayout];
   [toggleButton addTarget:self action:@selector(toggleSimulationAction:) forControlEvents:CCControlEventTouchUpInside];
   toggleButton.position = buttonPos;
   [localMenu addChild:toggleButton];
@@ -92,6 +98,8 @@
   
   // resetSimulation
   CCControlButton *resetButton = standardButtonWithTitle(@"Reset");
+  resetButton.preferredSize=CGSizeMake(100, 40);
+  [resetButton needsLayout];
   [resetButton addTarget:self action:@selector(resetSimulationAction:) forControlEvents:CCControlEventTouchUpInside];
   resetButton.position = buttonPos;
   [localMenu addChild:resetButton];
@@ -99,6 +107,8 @@
   
   // settings
   CCControlButton *settingsButton = standardButtonWithTitle(@"Settings");
+  settingsButton.preferredSize=CGSizeMake(100, 40);
+  [settingsButton needsLayout];
   [settingsButton addTarget:self action:@selector(settingsAction:) forControlEvents:CCControlEventTouchUpInside];
   settingsButton.position = buttonPos;
   [localMenu addChild:settingsButton];

@@ -18,21 +18,21 @@ baseURL,numberOfMarbles;
 
 - (void) initDefaults
 {
-	self.baseURL = nil;
-	self.backgroundImage = nil;
-	self.overlayImage = nil;
-	self.name = nil;
-	self.backgroundFilename = nil;
-	self.overlayFilename = nil;
+	self.baseURL              = nil;
+	self.backgroundImage      = nil;
+	self.overlayImage         = nil;
+	self.name                 = nil;
+	self.backgroundFilename   = nil;
+	self.overlayFilename      = nil;
 	self.staticBodiesFilename = nil;
-	self.shapeReader = nil;
+	self.shapeReader          = nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
 {
-	self.backgroundFilename = [dict objectForKey:@"backgroundFilename"];
-	self.overlayFilename = [dict objectForKey:@"overlayFilename"];
-	self.staticBodiesFilename = [dict objectForKey:@"staticBodiesFilename"];
+	self.backgroundFilename     = [dict objectForKey:@"backgroundFilename"];
+	self.overlayFilename        = [dict objectForKey:@"overlayFilename"];
+	self.staticBodiesFilename   = [dict objectForKey:@"staticBodiesFilename"];
 }
 
 - (void) initPhysicsFromDict:(NSDictionary*) dict
@@ -57,12 +57,14 @@ baseURL,numberOfMarbles;
 {
 	if((self = [super init])){
 		[self initDefaults];
-		self.name = [dict objectForKey:@"levelName"];
-		self.numberOfMarbles = [[dict objectForKey:@"numOfMarbles"] unsignedIntValue];
-		NSDictionary *graphics = [dict objectForKey:@"graphics"];
-		NSDictionary *audio = [dict objectForKey:@"audio"];
-		NSDictionary *physics = [dict objectForKey:@"physics"];
-		[self initGraphicsFromDict:graphics];
+
+		self.name               = [dict objectForKey:@"levelName"];
+		self.numberOfMarbles    = [[dict objectForKey:@"numOfMarbles"] unsignedIntValue];
+		NSDictionary *graphics  = [dict objectForKey:@"graphics"];
+		NSDictionary *audio     = [dict objectForKey:@"audio"];
+		NSDictionary *physics   = [dict objectForKey:@"physics"];
+
+    [self initGraphicsFromDict:graphics];
 		[self initPhysicsFromDict:physics];
 		[self initAudioFromDict:audio];
 	}
@@ -71,11 +73,11 @@ baseURL,numberOfMarbles;
 
 - (void) dealloc
 {
-	self.backgroundFilename = nil;
-	self.overlayFilename = nil;
-	self.staticBodiesFilename = nil;
-	self.backgroundImage = nil;
-	self.overlayImage = nil;
+	self.backgroundFilename     = nil;
+	self.overlayFilename        = nil;
+	self.staticBodiesFilename   = nil;
+	self.backgroundImage        = nil;
+	self.overlayImage           = nil;
 	[super dealloc];
 }
 
@@ -86,9 +88,7 @@ baseURL,numberOfMarbles;
 	if (!imageName || [imageName isEqualToString:@""]) {
 		return nil;
 	}
-	NSBundle *myBundle = [NSBundle bundleWithURL:self.baseURL];
-	NSURL *resourceURL = [myBundle URLForResource:imageName withExtension:@"png"];
-	return [CCSprite imageWithData:[NSData dataWithContentsOfURL:resourceURL]];
+	return [CCSprite spriteWithFile:imageName];
 }
 
 - (CCSprite*) backgroundImage
@@ -119,8 +119,8 @@ baseURL,numberOfMarbles;
 
 - (void) releaseLevelData
 {
-	self.backgroundImage = nil;
-	self.overlayImage = nil;
-	self.shapeReader = nil;
+	self.backgroundImage  = nil;
+	self.overlayImage     = nil;
+	self.shapeReader      = nil;
 }
 @end

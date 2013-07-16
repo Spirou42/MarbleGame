@@ -17,6 +17,7 @@
 @property (retain, nonatomic) NSURL* baseURL;
 @property (retain, nonatomic) NSArray* levelList;
 
++ (id) levelSetWithURL:(NSURL*) levelSetURL;
 - (id) initWithURL:(NSURL*) levelSetURL;
 - (void) releaseLevelData;
 @end

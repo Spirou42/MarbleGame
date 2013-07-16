@@ -8,16 +8,18 @@
 
 
 #import "cocos2d.h"
+@class CMMarbleLevelSet;
 
 @interface MarbleGameAppDelegate : NSObject <NSApplicationDelegate>
 {
 	NSWindow	*window_;
 	CCGLView	*glView_;
+  CMMarbleLevelSet *_levelSet;
 }
 
-@property (assign) IBOutlet NSWindow	*window;
-@property (assign) IBOutlet CCGLView	*glView;
-
+@property (nonatomic, assign) IBOutlet NSWindow	*window;
+@property (nonatomic, assign) IBOutlet CCGLView	*glView;
+@property (nonatomic, retain) CMMarbleLevelSet* levelSet;
 - (IBAction)toggleFullScreen:(id)sender;
 - (NSArray*) marbleSets;
 

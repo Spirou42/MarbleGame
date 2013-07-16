@@ -16,6 +16,12 @@
 @implementation CMMarbleLevelSet
 @synthesize  baseURL,levelList;
 
++ (id) levelSetWithURL:(NSURL *)levelSetURL
+{
+  CMMarbleLevelSet* levelSet = [[[[self class]alloc]initWithURL:levelSetURL]autorelease];
+  return levelSet;
+}
+
 - (NSArray*) loadLevelsFromDictionary:(NSDictionary*) dict
 {
 	NSMutableArray * mylevelList = [NSMutableArray array];
@@ -27,7 +33,6 @@
 	}
 	return mylevelList;
 }
-
 
 - (id) initWithURL:(NSURL*) levelSetURL
 {
@@ -41,8 +46,6 @@
 																																											options:kCFPropertyListImmutable 
 																																											 format:nil error:&error];
 
-//		NSLog(@"Got : %@",propList);
-		// now create my onw list of Levels and 
 		self.levelList = [self loadLevelsFromDictionary:propList];
 	}
 	return self;
@@ -50,10 +53,11 @@
 
 - (void) dealloc
 {
-	self.baseURL = nil;
-	self.levelList = nil;
+	self.baseURL    = nil;
+	self.levelList  = nil;
 	[super dealloc];
 }
+
 - (void) releaseLevelData
 {
 	for (CMMarbleLevel *level in self.levelList) {
