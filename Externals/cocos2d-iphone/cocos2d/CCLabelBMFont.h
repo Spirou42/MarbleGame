@@ -163,19 +163,19 @@ typedef struct _KerningHashElement
 {
 	// string to render
 	NSString		*_string;
-    
-    // name of fntFile
-    NSString        *_fntFile;
-    
-    // initial string without line breaks
-    NSString *_initialString;
-    // max width until a line break is added
-    float _width;
-    // alignment of all lines
-    CCTextAlignment _alignment;
-    
+  
+  // name of fntFile
+  NSString        *_fntFile;
+  
+  // initial string without line breaks
+  NSString *_initialString;
+  // max width until a line break is added
+  float _width;
+  // alignment of all lines
+  CCTextAlignment _alignment;
+  
 	CCBMFontConfiguration	*_configuration;
-    
+  
 	// texture RGBA
 	GLubyte		_displayedOpacity, _realOpacity;
 	ccColor3B	_displayedColor, _realColor;

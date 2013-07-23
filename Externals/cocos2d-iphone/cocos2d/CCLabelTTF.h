@@ -42,7 +42,7 @@
 {
 	CGSize                       _dimensions;
 	CCTextAlignment              _hAlignment;
-    CCVerticalTextAlignment      _vAlignment;
+  CCVerticalTextAlignment      _vAlignment;
 	NSString                    *_fontName;
 	CGFloat                      _fontSize;
 	CCLineBreakMode              _lineBreakMode;
