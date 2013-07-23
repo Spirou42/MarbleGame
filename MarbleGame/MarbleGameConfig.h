@@ -10,7 +10,7 @@
 #define MarbleGame_MarbleGameConfig_h
 
 
-#define DEFAULT_FONT @"Helvetica Neue"
+#define DEFAULT_FONT @"Helvetica Neue Light"
 #define DEFAULT_BUTTON_FONT DEFAULT_FONT
 #define DEFAULT_BUTTON_FONT_SIZE 18
 #define DEFAULT_BUTTON_TITLE_COLOR ccc3(250, 250, 250)
