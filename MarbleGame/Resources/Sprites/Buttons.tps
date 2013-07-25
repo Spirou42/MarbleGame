@@ -146,15 +146,15 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Originals/ButtonActive.png</filename>
-            <filename>../Originals/ButtonDefault.png</filename>
-            <filename>../Originals/ButtonHover.png</filename>
-            <filename>../Originals/Glyph-Checkmark.png</filename>
-            <filename>../Originals/Glyph-Cross.png</filename>
-            <filename>../Originals/Glyph-Minus.png</filename>
-            <filename>../Originals/Glyph-Plus.png</filename>
-            <filename>../Originals/PopUpBackground.png</filename>
-            <filename>../Originals/PopupButton.png</filename>
+            <filename>../Originals/UI/ButtonActive.png</filename>
+            <filename>../Originals/UI/ButtonDefault.png</filename>
+            <filename>../Originals/UI/ButtonHover.png</filename>
+            <filename>../Originals/UI/Glyph-Checkmark.png</filename>
+            <filename>../Originals/UI/Glyph-Cross.png</filename>
+            <filename>../Originals/UI/Glyph-Minus.png</filename>
+            <filename>../Originals/UI/Glyph-Plus.png</filename>
+            <filename>../Originals/UI/PopUpBackground.png</filename>
+            <filename>../Originals/UI/PopupButton.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

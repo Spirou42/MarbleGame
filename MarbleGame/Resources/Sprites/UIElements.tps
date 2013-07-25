@@ -20,7 +20,7 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>cocos2d</string>
+        <string>MarbleGame Exporter</string>
         <key>textureFileName</key>
         <filename>UIElements.png</filename>
         <key>flipPVR</key>
@@ -112,6 +112,8 @@
         </struct>
         <key>dataFileName</key>
         <filename>UIElements.plist</filename>
+        <key>multiPack</key>
+        <false/>
         <key>mainExtension</key>
         <string></string>
         <key>forceIdenticalLayout</key>
@@ -146,14 +148,14 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Originals/ButtonBlueOff.png</filename>
-            <filename>../Originals/ButtonBlueOn.png</filename>
-            <filename>../Originals/ButtonGrayOff.png</filename>
-            <filename>../Originals/ButtonGrayOn.png</filename>
-            <filename>../Originals/ButtonYellowOff.png</filename>
-            <filename>../Originals/ButtonYellowOn.png</filename>
-            <filename>../Originals/PickerBackground.png</filename>
-            <filename>../Originals/PickerSelection.png</filename>
+            <filename>../Originals/UI/ButtonBlueOff.png</filename>
+            <filename>../Originals/UI/ButtonBlueOn.png</filename>
+            <filename>../Originals/UI/ButtonGrayOff.png</filename>
+            <filename>../Originals/UI/ButtonGrayOn.png</filename>
+            <filename>../Originals/UI/ButtonYellowOff.png</filename>
+            <filename>../Originals/UI/ButtonYellowOn.png</filename>
+            <filename>../Originals/UI/PickerBackground.png</filename>
+            <filename>../Originals/UI/PickerSelection.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

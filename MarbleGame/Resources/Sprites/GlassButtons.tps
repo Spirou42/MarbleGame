@@ -20,7 +20,7 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>myExporter</string>
+        <string>2dtoolkit</string>
         <key>textureFileName</key>
         <filename>GlassButtons.png</filename>
         <key>flipPVR</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>GlassButtons.plist</filename>
+        <filename>GlassButtons.bytes</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -148,16 +148,16 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Originals/GlassButtonActive.png</filename>
-            <filename>../Originals/GlassButtonHover.png</filename>
-            <filename>../Originals/GlassButtonNormal.png</filename>
-            <filename>../Originals/GlassDDArrow.png</filename>
-            <filename>../Originals/GlassDDBackground.png</filename>
-            <filename>../Originals/GlassDDItemBackground.png</filename>
-            <filename>../Originals/GlassDDMenuBackground.png</filename>
-            <filename>../Originals/GlassSliderBackground.png</filename>
-            <filename>../Originals/GlassSliderThumb.png</filename>
-            <filename>../Originals/GlassSliderTrack.png</filename>
+            <filename>../Originals/UI/GlassButtonActive.png</filename>
+            <filename>../Originals/UI/GlassButtonHover.png</filename>
+            <filename>../Originals/UI/GlassButtonNormal.png</filename>
+            <filename>../Originals/UI/GlassDDArrow.png</filename>
+            <filename>../Originals/UI/GlassDDBackground.png</filename>
+            <filename>../Originals/UI/GlassDDItemBackground.png</filename>
+            <filename>../Originals/UI/GlassDDMenuBackground.png</filename>
+            <filename>../Originals/UI/GlassSliderBackground.png</filename>
+            <filename>../Originals/UI/GlassSliderThumb.png</filename>
+            <filename>../Originals/UI/GlassSliderTrack.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
