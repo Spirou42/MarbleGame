@@ -52,10 +52,8 @@
   //	[CCMenuItemFont setFontSize:22];
   //	[CCMenuItemFont setFontName:@"Arial"];
 
-  CCControlButton *menuButton = standardButtonWithTitle(@"Menu");
+  CCControlButton *menuButton = defaultMenuButton();
   self->_menuButton = menuButton;
-  menuButton.anchorPoint=ccp(1.0, 1.0);
-  menuButton.position=ccp(1022, 765);
   [self addChild:menuButton z:BUTTON_LAYER];
   [menuButton addTarget:self action:@selector(toggleMenu:) forControlEvents:CCControlEventTouchUpInside];
 
@@ -63,7 +61,7 @@
   self->_menu = localMenu;
   localMenu.preferredSize= CGSizeMake(1024, menuButton.contentSize.height+4);
   localMenu.anchorPoint = ccp(0.0, 1.0);
-  localMenu.position = ccp(1024, 768);
+  localMenu.position = ccp(1024, menuButton.position.y+2);
   [self addChild:localMenu z:MENU_LAYER];
 
   

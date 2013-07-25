@@ -112,21 +112,19 @@ typedef enum {
  */
 @interface CCTexture2D : NSObject
 {
-	GLuint						_name;
-	CGSize						_size;
-	NSUInteger					_width,
-								_height;
-	CCTexture2DPixelFormat		_format;
-	GLfloat						_maxS,
-								_maxT;
-	BOOL						_hasPremultipliedAlpha;
-	BOOL						_hasMipmaps;
-
-	ccResolutionType			_resolutionType;
-
+	GLuint                      _name;
+	CGSize                      _size;
+	NSUInteger                  _width,_height;
+	CCTexture2DPixelFormat      _format;
+	GLfloat                     _maxS,_maxT;
+	BOOL                        _hasPremultipliedAlpha;
+	BOOL                        _hasMipmaps;
+  
+	ccResolutionType            _resolutionType;
+  
 	// needed for drawAtRect, drawInPoint
-	CCGLProgram					*_shaderProgram;
-
+	CCGLProgram               *_shaderProgram;
+  
 }
 /** Initializes with a texture2d with data */
 - (id) initWithData:(const void*)data pixelFormat:(CCTexture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;

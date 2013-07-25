@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cocos2d.h"
 @class CCSprite, CCControlButton;
+
 
 CCSprite* defaultSceneBackground();
 CCControlButton* standardButtonWithTitle(NSString* title);
+CCControlButton* defaultMenuButton();
+id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText);
+CGPoint menuStartPosition();

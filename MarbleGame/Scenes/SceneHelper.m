@@ -45,3 +45,28 @@ CCControlButton* standardButtonWithTitle(NSString* title)
 	
 	return button;
 }
+
+CCControlButton* defaultMenuButton()
+{
+  CCControlButton* result = standardButtonWithTitle(@"Menu");
+  result.anchorPoint=ccp(1.0, 1.0);
+  result.position=ccp(1022, 765);
+  return result;
+}
+
+id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText)
+{
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
+  
+  CCLabelTTF *label = [CCLabelTTF labelWithString:labelText fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+  label.color=DEFAULT_MENU_TITLE_COLOR;
+  label.position = ccp(winSize.width/2.0, winSize.height-label.contentSize.height );
+  return label;
+}
+
+CGPoint menuStartPosition()
+{
+  CGSize winSize = [[CCDirector sharedDirector] winSize];
+  CGPoint menuPosition = ccp(winSize.width/2.0, winSize.height/3.0*2.0);
+  return menuPosition;
+}

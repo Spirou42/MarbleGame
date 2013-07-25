@@ -21,17 +21,17 @@
 	self = [super init];
 //	CCLayerColor *parent = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 200) width:winSize.width height:winSize.height];
 
-  CGSize winSize = [[CCDirector sharedDirector] winSize];
-  CGPoint pos = CGPointMake(winSize.width/2.0,winSize.height/3.0*2.0);
+
+  CGPoint pos = menuStartPosition();
 
 	if (self != nil) {
     CGSize buttonSize = DEFAULT_BUTTON_SIZE;
     buttonSize.width += buttonSize.width/3.0*2.0;
     buttonSize.height += buttonSize.height/3.0*2.0;
 
-    CCLabelTTF *headlineLabel = [CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
-    headlineLabel.color=DEFAULT_MENU_TITLE_COLOR;
-    headlineLabel.position=pos;
+    CCLabelTTF *headlineLabel = defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+//    headlineLabel.color=DEFAULT_MENU_TITLE_COLOR;
+//    headlineLabel.position=pos;
     [self addChild:headlineLabel];
     
     pos.y -= headlineLabel.contentSize.height+15;

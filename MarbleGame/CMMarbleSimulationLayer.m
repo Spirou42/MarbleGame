@@ -56,20 +56,17 @@ static NSString *borderType = @"borderType";
 		// enable events
 #ifdef __CC_PLATFORM_IOS
 		self.touchEnabled = YES;
-		self.accelerometerEnabled = YES;
+		self.accelerometerEnabled = NO;
 #elif defined(__CC_PLATFORM_MAC)
 		self.mouseEnabled = YES;
 #endif
-		
-
-
 		
 		
 		// init physics
 		[self initPhysics];
 		
 
-		// Use batch node. Faster
+		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
 
 #if 0
 		self.batchNode= [CCSpriteBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
@@ -80,7 +77,7 @@ static NSString *borderType = @"borderType";
 		
 		[self addNewSpriteAtPosition:ccp(200,200)];
 
-		// this starts the update automatically
+		// this starts the update process automatically
     self.simulationRunning = YES;
 	}
 	
