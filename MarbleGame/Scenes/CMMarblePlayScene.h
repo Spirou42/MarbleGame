@@ -7,16 +7,28 @@
 //
 
 #import "CCScene.h"
-@class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton;
+#import "Cocos2d.h"
+@class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton, CMMarbleLevelStatistics,CCNode;
 
 @interface CMMarblePlayScene : CCScene
 {
   @protected
-  CMMarbleSimulationLayer* _simulationLayer;
-  CCScale9Sprite    *_menu;
-  CCControlButton   *_menuButton;
-  CCControlButton   *_toggleSimulationButton;
-  
+  CMMarbleSimulationLayer*								_simulationLayer;
+  CCScale9Sprite*													_menu;
+  CCControlButton*												_menuButton;
+  CCControlButton*												_toggleSimulationButton;
+	NSInteger																_normalHits,_comboHits,_multiHits;
+	CMMarbleLevelStatistics*								_currentStatistics;
+  CCNode*																	_statisticsOverlay;
+	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_comboMarkerLabel;
+	NSTimeInterval													_lastDisplayTime;
 }
 @property (nonatomic,retain) CMMarbleSimulationLayer* simulationLayer;
+@property (nonatomic,assign) NSInteger normalHits, comboHits, multiHits;
+@property (nonatomic,retain) CMMarbleLevelStatistics *currentStatistics;
+@property (nonatomic,retain) CCNode* statisticsOverlay;
+@property (nonatomic,retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;
+@property (nonatomic,assign) NSTimeInterval lastDisplayTime;
+
+- (void) simulationStepDone:(NSTimeInterval)dt;
 @end

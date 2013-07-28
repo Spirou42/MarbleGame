@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "CMMarbleSprite.h"
 
-@interface CMMarbleLevelStatistics : NSObject
+@interface CMMarbleLevelStatistics : NSObject <NSCoding>
 {
 	@protected
 	NSUInteger 					marblesInLevel;								///< number of marbles in level
 	NSUInteger 					removedMarbles;								///< total number of marbles removed
-	NSMutableArray 			*clearedMarbles;							///< UIImages of the cleared marble colors
-	NSMutableDictionary	*removedMarblesForImages; 		///< key:= UIImage Value: removed marbles of this color
+	NSMutableArray 			*clearedMarbles;							///< NSNumbers of the cleared images
+	NSMutableDictionary	*removedMarblesForImages; 		///< key:= NSNumber Value: removed marbles of this color
 	NSUInteger					score;												///< Score reached in this level
 	NSTimeInterval			time;													///< time used to clear this level
 }

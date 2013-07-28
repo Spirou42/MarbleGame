@@ -49,7 +49,7 @@ NSArray *marbleSets = nil;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
-	
+	ccDrawInit();
 	// enable FPS and SPF
 	[director setDisplayStats:YES];
 	
@@ -62,7 +62,7 @@ NSArray *marbleSets = nil;
 	[director setResizeMode:kCCDirectorResize_AutoScale];
 	
 	// Enable "moving" mouse event. Default no.
-	[window_ setAcceptsMouseMovedEvents:NO];
+	[window_ setAcceptsMouseMovedEvents:YES];
 	
 	// Center main window
 	[window_ center];

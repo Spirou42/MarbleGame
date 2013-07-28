@@ -49,4 +49,17 @@
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"
 
 
+
+/// Definition of default physics parameters
+
+#define MARBLE_FRICTION   .9
+#define MARBLE_ELASTICITY .2
+#define BORDER_FRICTION   1.0f
+#define BORDER_ELASTICITY 0.1f
+#define SPACE_GRAVITY     981.0f
+#define MARBLE_MASS       20.0f
+#define MARBLE_RADIUS 		20
+#define MARBLE_DESTROY_TIME .1
+
+
 #endif

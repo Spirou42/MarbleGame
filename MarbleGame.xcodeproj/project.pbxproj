@@ -37,6 +37,8 @@
 		9357F3AA17907D680063E849 /* libkazmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CB117907B19001DADD9 /* libkazmath.a */; };
 		9357F3D9179080A30063E849 /* libChipmunkPro-Debug-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
+		93EAB2E817A19CBB009894C5 /* CMMarbleCollisionCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */; };
+		93EAB2EB17A1A7BD009894C5 /* CMMarblePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */; };
 		93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */; };
 		93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */; };
 		93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */; };
@@ -235,6 +237,10 @@
 		9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Debug-Mac.a"; sourceTree = "<group>"; };
 		9357F3D7179080A30063E849 /* libChipmunkPro-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Mac.a"; sourceTree = "<group>"; };
 		9357F3D8179080A30063E849 /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
+		93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleCollisionCollector.h; sourceTree = "<group>"; };
+		93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleCollisionCollector.m; sourceTree = "<group>"; };
+		93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePlayer.h; sourceTree = "<group>"; };
+		93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePlayer.m; sourceTree = "<group>"; };
 		93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSprite.h; sourceTree = "<group>"; };
 		93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleSprite.m; sourceTree = "<group>"; };
 		93EB27F0177F6F41001B7FBB /* CMMarbleMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleMainMenuScene.h; sourceTree = "<group>"; };
@@ -328,15 +334,10 @@
 		93536461177DFB50009F640B /* MarbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				93EAB2DE17A19C6A009894C5 /* Game */,
 				9356F75E1793296B008D584E /* Level */,
 				934AF9B517838AB0004BAC7E /* Controls */,
 				93EB27EF177F6F16001B7FBB /* Scenes */,
-				93536641177DFB52009F640B /* AppDelegate.h */,
-				93536642177DFB52009F640B /* AppDelegate.m */,
-				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
-				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
-				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
-				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
 				93536462177DFB50009F640B /* Resources */,
 				9353663D177DFB52009F640B /* Supporting Files */,
 			);
@@ -496,6 +497,23 @@
 				93AD6CB117907B19001DADD9 /* libkazmath.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		93EAB2DE17A19C6A009894C5 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */,
+				93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */,
+				93536641177DFB52009F640B /* AppDelegate.h */,
+				93536642177DFB52009F640B /* AppDelegate.m */,
+				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
+				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
+				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
+				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
+				93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */,
+				93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 		93EB27EF177F6F16001B7FBB /* Scenes */ = {
@@ -688,6 +706,7 @@
 				93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */,
 				93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */,
 				93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */,
+				93EAB2EB17A1A7BD009894C5 /* CMMarblePlayer.m in Sources */,
 				93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
 				934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */,
@@ -695,6 +714,7 @@
 				FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */,
 				FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */,
 				FE00BAFD17A17296002D8B06 /* CMMarbleLevelSetScene.m in Sources */,
+				93EAB2E817A19CBB009894C5 /* CMMarbleCollisionCollector.m in Sources */,
 				9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */,
 				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
 				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,

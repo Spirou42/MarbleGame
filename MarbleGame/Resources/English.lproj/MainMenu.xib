@@ -100,7 +100,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <openGLView colorSize="5bit_RGB_8bit_Alpha" samplingRate="" useAuxiliaryDepthBufferStencil="NO" useDoubleBufferingEnabled="YES" allowOffline="YES" id="533" customClass="CCGLView">
+                    <openGLView colorSize="5bit_RGB_8bit_Alpha" antiAliasingType="supersample" samplingRate="8" useAuxiliaryDepthBufferStencil="NO" useDoubleBufferingEnabled="YES" allowOffline="YES" id="533" customClass="CCGLView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </openGLView>

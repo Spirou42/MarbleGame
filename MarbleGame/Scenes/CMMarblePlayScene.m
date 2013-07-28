@@ -12,6 +12,8 @@
 #import "CCControlExtension.h"
 #import "SceneHelper.h"
 #import "CMMarbleSettingsScene.h"
+#import "CMMarbleCollisionCollector.h"
+#import "CMMarbleLevelStatistics.h"
 
 #define BACKGROUND_LAYER (-1)
 #define MARBLE_LAYER (1)
@@ -19,13 +21,20 @@
 #define MENU_LAYER (BUTTON_LAYER-1)
 
 @implementation CMMarblePlayScene
+
+@synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits,
+currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
+comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
+
 - (id) init
 {
 	if( (self = [super init]) ){
     [self addChild:defaultSceneBackground() z:BACKGROUND_LAYER];
     [self createMenu];
+		[self scheduleUpdate];
     self.simulationLayer =[CMMarbleSimulationLayer node];
     self.simulationLayer.mousePriority=1;
+
 
 	}
 	return self;
@@ -111,9 +120,15 @@
   settingsButton.position = buttonPos;
   [localMenu addChild:settingsButton];
   buttonPos.x += settingsButton.contentSize.width;
-  
+}
 
-  
+-(void) scheduleUpdate
+{
+	[super scheduleUpdate];
+}
+- (void) update:(ccTime)delta
+{
+	[super update:delta];
 }
 
 - (void) toggleMenu:(id) sender
@@ -181,4 +196,152 @@
   [super onExit];
 }
 
+#pragma mark -
+#pragma mark G A M E
+
+- (void) simulationStepDone:(NSTimeInterval)dt
+{
+	[self checkMarbleCollisionsAt:dt];
+}
+- (NSArray*) getCollisionSets:(NSUInteger)minCollisions
+{
+	NSArray *collisionSets = [self.simulationLayer.collisionCollector collisionSetsWithMinMembers:minCollisions];
+	
+	for (NSSet *colSet in [collisionSets sortedArrayUsingComparator:
+												 ^NSComparisonResult(NSArray* obj1, NSArray* obj2){
+													 NSUInteger a = [obj1 count];
+													 NSUInteger b = [obj2 count];
+													 if(a<b){return NSOrderedAscending;}
+													 if(a>b){return NSOrderedDescending;}
+													 return NSOrderedSame;
+												 }])
+	{
+	}
+	
+	return collisionSets;
+}
+- (CGPoint) centerOfMarbles:(id<NSFastEnumeration>) marbleSet
+{
+  CGPoint result = CGPointZero;
+  NSUInteger t = 0;
+  for (CALayer* mLayer in marbleSet) {
+    result.x += mLayer.position.x;
+    result.y += mLayer.position.y;
+    t++;
+  }
+  result.x /=t;
+  result.y /=t;
+  return result;
+}
+
+- (void) checkMarbleCollisionsAt:(NSTimeInterval) time
+{
+	NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+	__block NSUInteger normalHits = 0;
+	__block NSUInteger multiHits = 0;
+	__block NSMutableArray *oldestHit = [NSMutableArray array];
+	NSArray *removedMarbles = [self getCollisionSets:3];
+	if (![removedMarbles count]) {
+		return;
+	}
+  
+  // collect info
+	[removedMarbles enumerateObjectsUsingBlock:
+	 ^(NSSet* obj, NSUInteger idx, BOOL* stop){
+		 NSTimeInterval k = [self.simulationLayer.collisionCollector oldestCollisionTime:obj];
+		 if (k) {
+			 k= now - k;
+		 }
+		 [oldestHit addObject:[NSNumber numberWithDouble:k]];
+		 if ([obj count] == 3) {
+			 normalHits ++;
+		 }else if ([obj count] > 3) { // multi Hit
+			 //       CGPoint p= [self centerOfMarbles:obj];
+			 //       UIImage *c = [self multiDecorationImage];
+			 //       CGSize contentSize = [c size];
+			 //       CMDecorationLayer *decLayer = [[[CMDecorationLayer alloc]initWithContent:(id)[c CGImage] andSize:contentSize]autorelease];
+			 //       decLayer.backgroundColor = nil;
+			 //       [decLayer addToSuperlayer:self.playgroundView.layer withPosition:p];
+			 multiHits ++;
+		 }
+	 }];
+	
+  
+  
+	//	if (multiHits) {
+	//		self.fourMarkerView.hidden=NO;
+	//		[NSTimer scheduledTimerWithTimeInterval:5
+	//																		 target:self
+	//																	 selector:@selector(markerTimerCallback:)
+	//																	 userInfo:self.fourMarkerView
+	//																		repeats:NO];
+	//	}
+	
+	
+  
+  // Combo Hits
+  self.comboHits += [removedMarbles count];
+	
+	if (self.comboHits>1) {
+    NSMutableSet *allMarbles =[NSMutableSet set];
+    for (NSSet*t in removedMarbles) {
+      [allMarbles addObjectsFromArray:[t allObjects]];
+    }
+//    CGSize contentSize = CGSizeZero;
+		//    CGPoint l = [self centerOfMarbles:allMarbles];
+		//    UIImage *p = [self comboDecorationImage];
+		//    contentSize = [p size];
+		//    CMDecorationLayer *decLayer = [[[CMDecorationLayer alloc] initWithContent:(id)[p CGImage] andSize:contentSize]autorelease];
+		//    decLayer.backgroundColor = nil;
+		//    [decLayer addToSuperlayer:self.playgroundView.layer withPosition:l];
+		//		if (self.comboMarkerView.hidden) {
+		//			self.comboMarkerView.hidden = NO;
+		//			[NSTimer scheduledTimerWithTimeInterval:5
+		//																			 target:self
+		//																		 selector:@selector(markerTimerCallback:)
+		//																		 userInfo:self.comboMarkerView
+		//																			repeats:NO];
+		//
+		//		}
+		self.currentStatistics.score += self.comboHits*10;
+		self.comboHits -= [removedMarbles count];
+	}
+  
+  // specialMoves
+	
+  for (NSNumber * delay in oldestHit) {
+    CGFloat t = [delay floatValue];
+    if (t>0.001) {
+      self.comboMarkerLabel.string = @"Nice";
+      if(t>0.05)
+        self.comboMarkerLabel.string = @"Respect";
+      if (t>0.10)
+        self.comboMarkerLabel.string = @"Perfect";
+      if (t>0.15)
+        self.comboMarkerLabel.string = @"Trickshot";
+      if (t>0.17) {
+        self.comboMarkerLabel.string = @"Lucky One";
+      }
+      self.comboMarkerLabel.visible = YES;
+      [NSTimer scheduledTimerWithTimeInterval:5
+                                       target:self
+                                     selector:@selector(markerTimerCallback:)
+                                     userInfo:self.comboMarkerLabel
+                                      repeats:NO];
+      
+    }
+  }
+	
+	
+	self.currentStatistics.score += (normalHits*3) + (multiHits*6);
+	
+	self.lastDisplayTime = time;
+	[self.simulationLayer removeCollisionSets:removedMarbles];
+	
+}
+
+- (void) markerTimerCallback:(NSTimer*) timer
+{
+	
+}
 @end

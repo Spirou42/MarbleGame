@@ -12,7 +12,10 @@
 #import "CMMarbleSimulationLayer.h"
 #import "CMMarbleSprite.h"
 #import "CMMarbleMainMenuScene.h"
+#import "CMMarbleCollisionCollector.h"
+#import "CMMarblePlayScene.h"
 #import "SceneHelper.h"
+#import "CMMarbleSprite.h"
 enum {
 	kTagParentNode = 1,
 };
@@ -31,7 +34,8 @@ static NSString *borderType = @"borderType";
 
 @implementation CMMarbleSimulationLayer
 
-@synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer, simulationRunning=_simulationRunning;
+@synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer,
+simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles;
 
 +(CCScene *) scene
 {
@@ -61,7 +65,7 @@ static NSString *borderType = @"borderType";
 		self.mouseEnabled = YES;
 #endif
 		
-		
+		self.simulatedMarbles = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
 		
@@ -86,6 +90,7 @@ static NSString *borderType = @"borderType";
 
 -(void) initPhysics
 {
+	
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	self.space = [[[ChipmunkSpace alloc] init] autorelease];
 	
@@ -101,19 +106,68 @@ static NSString *borderType = @"borderType";
 									group:CP_NO_GROUP
 					collisionType:borderType];
 	
-	
+	[self.space addCollisionHandler:self typeA:[CMMarbleSprite class] typeB:[CMMarbleSprite class]
+														begin:@selector(beginMarbleCollision:space:)
+												 preSolve:nil
+												postSolve:@selector(postMarbleCollision:space:)
+												 separate:@selector(separateMarbleCollision:space:)];
+
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	_debugLayer.visible = NO;
 	[self addChild:_debugLayer z:100];
+	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
+	self.collisionCollector.collisionDelay = 0.2;
 }
+
 
 - (void)dealloc
 {
   
 	self.space = nil;
-  
+  self.collisionCollector = nil;
+	self.currentMarbleSet = nil;
+	self.simulatedMarbles = nil;
 	
 	[super dealloc];
+	
+}
+
+#pragma mark -
+#pragma mark Physics
+
+- (BOOL) beginMarbleCollision:(cpArbiter*) arbiter space:(ChipmunkSpace*) space
+{
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
+	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	
+	
+	if (firstMarbleLayer.ballIndex == secondMarbleLayer.ballIndex) {
+		[self.collisionCollector object:firstMarbleLayer touching:secondMarbleLayer];
+		firstMarbleLayer.touchesNeighbour = YES;
+		secondMarbleLayer.touchesNeighbour = YES;
+	}
+  return YES;
+}
+
+- (void) postMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)sp
+{
+	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+//	[self processSound:arbiter first:firstMarble second:secondMarble];
+}
+
+- (void) separateMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)space
+{
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
+	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	
+	if (firstMarbleLayer.ballIndex == secondMarbleLayer.ballIndex) {
+		[self.collisionCollector object:firstMarbleLayer releasing:secondMarbleLayer];
+		firstMarbleLayer.touchesNeighbour=NO;
+		secondMarbleLayer.touchesNeighbour=NO;
+	}
 	
 }
 
@@ -127,7 +181,41 @@ static NSString *borderType = @"borderType";
 		[self.space step:dt];
     //		cpSpaceStep(_space, dt);
 	}
+	if (self.parent) {
+		CMMarblePlayScene * scene = (CMMarblePlayScene*) self.parent;
+		[scene simulationStepDone:delta];
+	}
+	[self.collisionCollector cleanupFormerCollisions];
 }
+
+- (void) removeCollisionSets:(NSArray*) layers
+{
+	NSMutableSet *alreadyRemoved = [NSMutableSet set];
+	
+	for (NSSet *colSet in layers) {
+    for (CMMarbleSprite *layer in colSet) {
+			if (![alreadyRemoved containsObject:layer]) {
+				[alreadyRemoved addObject:layer];
+				
+//				[self.space remove:layer];
+				
+				[self.simulatedMarbles removeObject:layer];
+//				[self.batchNode removeChild:layer];
+				layer.shouldDestroy = YES;
+				[self.collisionCollector removeObject:layer];
+			}
+		}
+	}
+	if ([alreadyRemoved count]) {
+		NSMutableSet *imageSet = [NSMutableSet set];
+		for (CMMarbleSprite *aLayer in self.simulatedMarbles) {
+			[imageSet addObject:[NSNumber numberWithInteger:aLayer.ballIndex]];
+		}
+//		[self.delegate imagesOnField:imageSet];
+	}
+	
+}
+
 #pragma mark -
 #pragma mark Properties
 
@@ -157,7 +245,7 @@ static NSString *borderType = @"borderType";
 	NSLog(@"MarbleSet: %@",marbleSet);
   
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-	marbleIndex= ((marbleIndex+1)%9);
+//	marbleIndex= ((marbleIndex+1)%9);
   if (!marbleIndex) {
     marbleIndex=1;
   }
@@ -174,6 +262,11 @@ static NSString *borderType = @"borderType";
 	[self addNewSpriteAtPosition:location];
 	
 	return YES;
+}
+
+- (void) ccMouseMoved:(NSEvent*) movedEvent
+{
+//	NSLog(@"MouseMoved: %@",movedEvent);
 }
 
 #pragma mark -

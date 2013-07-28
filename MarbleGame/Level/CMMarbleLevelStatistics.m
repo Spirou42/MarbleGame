@@ -86,4 +86,30 @@
 	[self.removedMarblesForImages setObject:p forKey:removedImage];
 }
 
+#pragma mark -
+#pragma mark NSCoding
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super init];
+	if (self) {
+		self.marblesInLevel = [aDecoder decodeIntegerForKey:@"marblesInLevel"];
+		self.removedMarbles = [aDecoder decodeIntegerForKey:@"removedMarbles"];
+		self.clearedMarbles = [aDecoder decodeObjectForKey:@"clearedMarbles"];
+		self.removedMarblesForImages = [aDecoder decodeObjectForKey:@"removedMarblesForImages"];
+		self.score = [aDecoder decodeIntegerForKey:@"score"];
+		self.time = [aDecoder decodeFloatForKey:@"time"];
+	}
+	return self;
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+	[aCoder encodeInteger:self.marblesInLevel forKey:@"marblesInLevel"];
+	[aCoder encodeInteger:self.removedMarbles forKey:@"removedMarbles"];
+	[aCoder encodeObject:self.clearedMarbles forKey:@"clearedMarbles"];
+	[aCoder encodeObject:self.removedMarblesForImages forKey:@"removedMarblesForImages"];
+	[aCoder encodeInteger:self.score forKey:@"score"];
+	[aCoder encodeFloat:self.time forKey:@"time"];
+}
+
 @end

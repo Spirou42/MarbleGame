@@ -15,12 +15,8 @@
 
 
 
-#define BORDER_FRICTION   1.0f
-#define BORDER_ELASTICITY 0.1f
-#define SPACE_GRAVITY     981.0f
-#define MARBLE_MASS       20.0f
-#define MARBLE_RADIUS 		15
-
+#define USE_NEW_COLLISION_DETECTOR 1
+@class  CMMarbleCollisionCollector;
 @interface CMMarbleSimulationLayer : CCLayerColor
 {
 	CCTexture2D *_spriteTexture; // weak ref
@@ -31,8 +27,10 @@
 	NSString        *_currentMarbleSet;
 	CCLayer         *_marbleSelectMenu;
 	CCLayer         *_debugMenu;
-  
-  BOOL _simulationRunning;
+ 	CMMarbleCollisionCollector *_collisionCollector;
+  BOOL 						_simulationRunning;
+	NSMutableArray	*_simulatedMarbles;
+
 
 }
 @property (nonatomic,retain) ChipmunkSpace *space;
@@ -40,6 +38,8 @@
 @property (nonatomic,retain) NSString* currentMarbleSet;
 @property (nonatomic,readonly) CCPhysicsDebugNode *debugLayer;
 @property (nonatomic,assign,getter = isSimulationRunning) BOOL simulationRunning;
+@property (nonatomic,retain) CMMarbleCollisionCollector *collisionCollector;
+@property (nonatomic,retain) NSMutableArray* simulatedMarbles;
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 
@@ -49,4 +49,5 @@
 -(void) resetSimulation;
 
 -(void) retextureMarbles;
+- (void) removeCollisionSets:(NSArray*) layers;
 @end

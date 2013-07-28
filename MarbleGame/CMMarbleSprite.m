@@ -9,57 +9,21 @@
 #import "CMMarbleSprite.h"
 
 
-#define MARBLE_FRICTION   .9
-#define MARBLE_ELASTICITY .2
 
 @interface CMMarbleSprite ()
 - (void) setGlossMapRect:(CGRect) glossRect;
+- (ChipmunkBody*) circleBodyWithMass:(CGFloat)mass andRadius:(CGFloat) r;
+- (ChipmunkShape *) circleShapeWithBody:(ChipmunkBody*) b andRadius:(CGFloat) r;
+- (void) createOverlayTextureRect;
+- (void) removeFromPhysics;
+- (void) removeMarble;
 @end
 
 @implementation CMMarbleSprite
-@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop;
 
-- (NSString*) frameName
-{
-  if (self.setName) {
-    return [NSString stringWithFormat:@"%@_%li",self.setName,self.ballIndex];
-  }
-  return nil;
-}
+@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour;
 
-- (NSString*) overlayName
-{
-  NSString *sn = self.setName;
-//  if ([sn isEqualToString:@"Billard"]) {
-//    sn=@"DDR";
-//  }
-  if (sn) {
-    return [NSString stringWithFormat:@"%@_Overlay",sn];
-  }
-  return nil;
-}
 
-- (ChipmunkShape *) circleShapeWithBody:(ChipmunkBody*) b andRadius:(CGFloat) r
-{
-	ChipmunkShape *shp = [ChipmunkCircleShape circleWithBody:b radius:r offset:cpv(0, 0)];
-	shp.collisionType = [self class];
-	shp.data = self;
-	shp.friction=MARBLE_FRICTION;
-	shp.elasticity=MARBLE_ELASTICITY;
-	return shp;
-}
-
-- (ChipmunkBody*) circleBodyWithMass:(CGFloat)mass andRadius:(CGFloat) r
-{
-	cpFloat moment = cpMomentForCircle(mass, 0, r, cpv(0, 0));
-	return [ChipmunkBody bodyWithMass:mass andMoment:moment];
-}
-
-- (void) createOverlayTextureRect
-{
-  CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
-  [self setGlossMapRect:overlayFrame.rect];
-}
 
 -(id) initWithBallSet:(id)sN ballIndex:(NSInteger)bI mass:(CGFloat)mass andRadius:(CGFloat)r
 {
@@ -105,6 +69,45 @@
 	return self;
 }
 
+- (void) dealloc
+{
+	//	[self removeAllChildren];
+	self.shape.body = nil;
+	self.shape = nil;
+	self.setName = nil;
+	[super dealloc];
+}
+
+- (void) cleanup
+{
+  ChipmunkSpace *space = self.shape.body.space;
+  [space remove:self];
+  [super cleanup];
+}
+
+
+#pragma mark -
+#pragma mark Properties
+
+- (NSString*) frameName
+{
+  if (self.setName) {
+    return [NSString stringWithFormat:@"%@_%li",self.setName,self.ballIndex];
+  }
+  return nil;
+}
+
+- (NSString*) overlayName
+{
+  NSString *sn = self.setName;
+	//  if ([sn isEqualToString:@"Billard"]) {
+	//    sn=@"DDR";
+	//  }
+  if (sn) {
+    return [NSString stringWithFormat:@"%@_Overlay",sn];
+  }
+  return nil;
+}
 
 -(void) setSetName:(NSString *)setN
 {
@@ -154,6 +157,35 @@
  
 }
 
+- (void) setShouldDestroy:(BOOL)sD
+{
+	self->shouldDestroy = sD;
+	if (self->shouldDestroy) {
+		// create an scale action and trigger the calling of selfDestruct.
+		[self removeFromPhysics];
+		id actionScale = [CCScaleTo actionWithDuration:MARBLE_DESTROY_TIME scale:.01f];
+		id actionCallBack = [CCCallFunc actionWithTarget:self selector:@selector(removeMarble)];
+		id actionSequence = [CCSequence actions:actionScale, actionCallBack, nil];
+		[self runAction:actionSequence];
+	}
+}
+
+
+#pragma mark -
+#pragma mark Rendering
+
+- (void) removeMarble
+{
+	[self removeFromParent];
+}
+
+- (void) createOverlayTextureRect
+{
+  CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
+  [self setGlossMapRect:overlayFrame.rect];
+}
+
+
 - (ccTex2F) rotateCoord:(CGPoint) coord
 {
 	CCTexture2D *tex	= (_batchNode) ? [_textureAtlas texture] : _texture;
@@ -191,6 +223,13 @@
 {
   [self rotateMapCoords];
   [super draw];
+	if (self.touchesNeighbour) {
+		ccDrawColor4F(0.2, 0.9, 0.1, 0.8);
+		glLineWidth(2);
+		CGFloat r = self.contentSize.width / 2.0;
+		ccDrawCircle(ccp(r,r), r, 0, 36, NO);
+
+	}
 }
 
 - (void) updateTransform
@@ -204,24 +243,36 @@
   [self rotateMapCoords];  
 }
 
-- (void) cleanup
+
+#pragma mark -
+#pragma mark Physics
+
+- (ChipmunkShape *) circleShapeWithBody:(ChipmunkBody*) b andRadius:(CGFloat) r
 {
-  ChipmunkSpace *space = self.shape.body.space;
-  [space remove:self];
-  [super cleanup];
+	ChipmunkShape *shp = [ChipmunkCircleShape circleWithBody:b radius:r offset:cpv(0, 0)];
+	shp.collisionType = [self class];
+	shp.data = self;
+	shp.friction=MARBLE_FRICTION;
+	shp.elasticity=MARBLE_ELASTICITY;
+	return shp;
 }
 
-- (void) dealloc
+- (ChipmunkBody*) circleBodyWithMass:(CGFloat)mass andRadius:(CGFloat) r
 {
-//	[self removeAllChildren];
-	self.shape = nil;
-	self.setName = nil;
-  
-	[super dealloc];
+	cpFloat moment = cpMomentForCircle(mass, 0, r, cpv(0, 0));
+	return [ChipmunkBody bodyWithMass:mass andMoment:moment];
+}
+
+- (void) removeFromPhysics
+{
+	ChipmunkBody 	*body = self.shape.body;
+	ChipmunkSpace *space = body.space;
+	[space remove:self];
 }
 
 #pragma mark - 
 #pragma mark ChipmunkObject
+
 - (id <NSFastEnumeration>) chipmunkObjects
 {
 	return [NSArray arrayWithObjects:self.chipmunkBody, self.shape, nil];
@@ -232,7 +283,8 @@
 
 - (id) copyWithZone:(NSZone *)zone
 {
-	id result = [[[self class]alloc]initWithSpriteFrameName:self.frameName mass:self.chipmunkBody.mass andRadius:self.radius];
-	return result;
+	return [self retain];
+//	id result = [[[self class]alloc]initWithSpriteFrameName:self.frameName mass:self.chipmunkBody.mass andRadius:self.radius];
+//	return result;
 }
 @end
