@@ -46,8 +46,9 @@
 		CGFloat t = r*2.0;
 		scale.x = t/self.contentSize.width;
 		scale.y = t/self.contentSize.height;
-		self.scaleX = scale.x;
-		self.scaleY = scale.y;
+		self.scaleX = 0.01;
+		self.scaleY = 0.01;
+		[self runAction:[CCScaleTo actionWithDuration:MARBLE_CREATE_TIME scaleX:scale.x scaleY:scale.y]];
   }
   return self;
 }

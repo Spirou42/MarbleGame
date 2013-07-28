@@ -60,6 +60,8 @@
 #define MARBLE_MASS       20.0f
 #define MARBLE_RADIUS 		20
 #define MARBLE_DESTROY_TIME .1
-
+#define MARBLE_CREATE_DELAY .5
+#define MARBLE_CREATE_TIME .1
+#define MARBLE_GROOVE_Y 560
 
 #endif

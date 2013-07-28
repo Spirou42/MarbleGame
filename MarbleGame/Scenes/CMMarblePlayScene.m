@@ -33,7 +33,9 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
     [self createMenu];
 		[self scheduleUpdate];
     self.simulationLayer =[CMMarbleSimulationLayer node];
+		self.simulationLayer.gameDelegate = self;
     self.simulationLayer.mousePriority=1;
+		[self.simulationLayer prepareMarble];
 
 
 	}
@@ -343,5 +345,21 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
 - (void) markerTimerCallback:(NSTimer*) timer
 {
 	
+}
+
+#pragma mark -
+#pragma mark Game Delegate
+
+- (NSUInteger) marbleIndex
+{
+	return arc4random_uniform(8)+1;
+}
+- (NSString*) marbleSetName
+{
+	return [[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
+}
+- (void) marbleInGame
+{
+	[NSTimer scheduledTimerWithTimeInterval:MARBLE_CREATE_DELAY target:self.simulationLayer selector:@selector(prepareMarble) userInfo:nil repeats:NO];
 }
 @end

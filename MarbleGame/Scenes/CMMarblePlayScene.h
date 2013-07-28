@@ -8,9 +8,11 @@
 
 #import "CCScene.h"
 #import "Cocos2d.h"
+#import "CMMarbleGameDelegate.h"
+
 @class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton, CMMarbleLevelStatistics,CCNode;
 
-@interface CMMarblePlayScene : CCScene
+@interface CMMarblePlayScene : CCScene <CMMarbleGameDelegate>
 {
   @protected
   CMMarbleSimulationLayer*								_simulationLayer;

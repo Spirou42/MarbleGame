@@ -237,6 +237,7 @@
 		9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Debug-Mac.a"; sourceTree = "<group>"; };
 		9357F3D7179080A30063E849 /* libChipmunkPro-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Mac.a"; sourceTree = "<group>"; };
 		9357F3D8179080A30063E849 /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
+		93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameDelegate.h; sourceTree = "<group>"; };
 		93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleCollisionCollector.h; sourceTree = "<group>"; };
 		93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleCollisionCollector.m; sourceTree = "<group>"; };
 		93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePlayer.h; sourceTree = "<group>"; };
@@ -531,6 +532,7 @@
 				934AF9B317837E22004BAC7E /* SceneHelper.m */,
 				FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */,
 				FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */,
+				93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

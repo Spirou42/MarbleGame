@@ -29,13 +29,17 @@ static NSString *borderType = @"borderType";
 @interface CMMarbleSimulationLayer ()
 -(void) addNewSpriteAtPosition:(CGPoint)pos;
 -(void) initPhysics;
+
+@property (nonatomic,assign) CGPoint lastMousePosition;
 @end
 
 
 @implementation CMMarbleSimulationLayer
 
 @synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer,
-simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles;
+simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles,
+dollyGroove = _dollyGroove, dollyShape = _dollyShape, dollyServo = _dollyServo, dollyBody = _dollyBody,
+gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 
 +(CCScene *) scene
 {
@@ -79,7 +83,8 @@ simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,sim
 #endif
 		[self addChild:self.batchNode z:0 tag:kTagParentNode];
 		
-		[self addNewSpriteAtPosition:ccp(200,200)];
+//		[self addNewSpriteAtPosition:ccp(200,200)];
+//		[self prepareMarble];
 
 		// this starts the update process automatically
     self.simulationRunning = YES;
@@ -87,6 +92,27 @@ simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,sim
 	
 	return self;
 }
+
+
+
+- (void)dealloc
+{
+  
+	self.space = nil;
+  self.collisionCollector = nil;
+	self.currentMarbleSet = nil;
+	self.simulatedMarbles = nil;
+	self.dollyGroove = nil;
+	self.dollyShape.body = nil;
+	self.dollyShape = nil;
+	self.dollyServo = nil;
+	
+	[super dealloc];
+	
+}
+
+#pragma mark -
+#pragma mark Physics
 
 -(void) initPhysics
 {
@@ -111,29 +137,33 @@ simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,sim
 												 preSolve:nil
 												postSolve:@selector(postMarbleCollision:space:)
 												 separate:@selector(separateMarbleCollision:space:)];
-
+	
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
-	_debugLayer.visible = NO;
+	_debugLayer.visible = YES;
 	[self addChild:_debugLayer z:100];
+
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
 	self.collisionCollector.collisionDelay = 0.2;
+	
+	
+//	self.dollyBody = [ChipmunkBody bodyWithMass:1.0 andMoment:cpMomentForBox(1.0, 20.0, 20.0)];
+//	self.dollyBody.pos=cpv(512, 748);
+//	self.dollyShape = [[[ChipmunkPolyShape alloc]initBoxWithBody:self.dollyBody width:20.0 height:20.0]autorelease];
+//	self.dollyServo = [self.space add:[ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos]];
+//	self.dollyServo.maxForce=1e4;
+//	self.dollyServo.maxBias = 1e6;
+//	
+//	
+//	cpVect start = cpv(10, 748);
+//	cpVect end = cpv(1004,748);
+//	cpVect anchor = cpv(0,0);
+//	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:self.dollyBody groove_a:start groove_b:end anchr2:anchor];
+//	[self.space addConstraint:self.dollyGroove];
+//	[self.space addShape:self.dollyShape];
+//	[self.space addBody:self.dollyBody];
+	
 }
 
-
-- (void)dealloc
-{
-  
-	self.space = nil;
-  self.collisionCollector = nil;
-	self.currentMarbleSet = nil;
-	self.simulatedMarbles = nil;
-	
-	[super dealloc];
-	
-}
-
-#pragma mark -
-#pragma mark Physics
 
 - (BOOL) beginMarbleCollision:(cpArbiter*) arbiter space:(ChipmunkSpace*) space
 {
@@ -232,9 +262,67 @@ simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,sim
   }
 }
 
+- (void) setDollyGroove:(ChipmunkGrooveJoint *)dG
+{
+	if (dG != self.dollyGroove) {
+		if (self.dollyGroove) {
+			[self.space removeConstraint:self.dollyGroove];
+		}
+		if (dG) {
+			[self.space addConstraint:dG];
+		}
+		[self.dollyGroove release];
+		self->_dollyGroove = [dG retain];
+	}
+}
+
+- (void) setDollyServo:(ChipmunkPinJoint *)dS
+{
+	if (dS != self.dollyServo) {
+		if (self.dollyServo) {
+			[self.space removeConstraint:self.dollyServo];
+		}
+		if (dS) {
+			[self.space addConstraint:dS];
+		}
+		[self.dollyServo release];
+		self->_dollyServo = [dS retain];
+	}
+}
+
+
 
 #pragma mark -
 #pragma mark actions
+
+- (void) prepareMarble
+{
+	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
+  NSString *marbleSet = [self.gameDelegate marbleSetName];
+	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
+	[self.batchNode addChild:ms];
+	[ms createOverlayTextureRect];
+	[self.space add:ms];
+
+	ChipmunkBody *dollyBody = ms.shape.body;
+	dollyBody.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
+	// create the Groove
+	cpVect start = cpv(0, MARBLE_GROOVE_Y);
+	cpVect end = cpv(1024,MARBLE_GROOVE_Y);
+	cpVect anchor = cpv(0,0);
+
+	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:dollyBody groove_a:start groove_b:end anchr2:anchor];
+	// create the Servo
+//	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:dollyBody pivot:dollyBody.pos];
+	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dollyBody anchr1:dollyBody.pos anchr2:cpv(0.0,0.0)];
+
+	
+//	self.dollyServo.maxForce=1e6;
+	self.dollyServo.maxBias = INFINITY;
+	self.dollyServo.dist = 0.0;
+	self.dollyServo.anchr1 = self.lastMousePosition;
+	
+}
 
 
 -(void) addNewSpriteAtPosition:(CGPoint)pos
@@ -258,15 +346,23 @@ simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,sim
 
 -(BOOL) ccMouseDown:(NSEvent *)event
 {
-	CGPoint location = [(CCDirectorMac*)[CCDirector sharedDirector] convertEventToGL:event];
-	[self addNewSpriteAtPosition:location];
-	
+//	CGPoint location = [(CCDirectorMac*)[CCDirector sharedDirector] convertEventToGL:event];
+//	[self addNewSpriteAtPosition:location];
+	self.dollyGroove = nil;
+	self.dollyServo = nil;
+//	[self prepareMarble];
+	[self.gameDelegate marbleInGame];
 	return YES;
 }
 
-- (void) ccMouseMoved:(NSEvent*) movedEvent
+- (BOOL) ccMouseMoved:(NSEvent*) movedEvent
 {
-//	NSLog(@"MouseMoved: %@",movedEvent);
+	NSLog(@"MouseMoved: %@",movedEvent);
+//	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
+//	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
+	self.lastMousePosition = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
+	self.dollyServo.anchr1 = self.lastMousePosition;
+	return YES;
 }
 
 #pragma mark -
