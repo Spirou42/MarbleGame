@@ -304,23 +304,27 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
 
-	ChipmunkBody *dollyBody = ms.shape.body;
-	dollyBody.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
+	ChipmunkBody *dB = ms.shape.body;
+  self.dollyBody = dB;
+	dB.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
 	// create the Groove
 	cpVect start = cpv(0, MARBLE_GROOVE_Y);
 	cpVect end = cpv(1024,MARBLE_GROOVE_Y);
 	cpVect anchor = cpv(0,0);
 
-	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:dollyBody groove_a:start groove_b:end anchr2:anchor];
+	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:dB groove_a:start groove_b:end anchr2:anchor];
+//  self.dollyGroove.errorBias = pow(1.0-0.1, 60);
+
 	// create the Servo
 //	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:dollyBody pivot:dollyBody.pos];
-	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dollyBody anchr1:dollyBody.pos anchr2:cpv(0.0,0.0)];
-
+	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dB anchr1:dB.pos anchr2:cpv(0.0, 0.0)];
+//  dB.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
 	
 //	self.dollyServo.maxForce=1e6;
-	self.dollyServo.maxBias = INFINITY;
+//	self.dollyServo.maxBias = INFINITY;
+  self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.dollyServo.dist = 0.0;
-	self.dollyServo.anchr1 = self.lastMousePosition;
+//	self.dollyServo.anchr1 = self.lastMousePosition;
 	
 }
 
@@ -357,11 +361,12 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 
 - (BOOL) ccMouseMoved:(NSEvent*) movedEvent
 {
-	NSLog(@"MouseMoved: %@",movedEvent);
+//	NSLog(@"MouseMoved: %@",movedEvent);
 //	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
 //	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
 	self.lastMousePosition = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
 	self.dollyServo.anchr1 = self.lastMousePosition;
+//  self.dollyBody.pos = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
 	return YES;
 }
 
