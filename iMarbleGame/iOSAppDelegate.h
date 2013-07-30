@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
+#import "CMMarbleLevelSet.h"
 
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
@@ -19,10 +20,17 @@
 	MyNavigationController *navController_;
 	
 	CCDirectorIOS	*director_;							// weak ref
+  
+  CMMarbleLevelSet* _levelSet;
+  NSArray           *_marbleSets;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (readonly) MyNavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
+
+@property (nonatomic, retain) CMMarbleLevelSet* levelSet;
+@property (nonatomic, retain) NSArray *marbleSets;
+
 
 @end

@@ -10,6 +10,9 @@
 
 #import "iOSAppDelegate.h"
 #import "IntroLayer.h"
+#import "CMMarbleMainMenuScene.h"
+
+#import "MarbleGameAppDelegate+GameDelegate.h"
 
 @implementation MyNavigationController
 
@@ -47,12 +50,14 @@
 	if(director.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-		[director runWithScene: [IntroLayer scene]];
+		[director runWithScene: [CMMarbleMainMenuScene node]];
 	}
 }
 @end
 
 @implementation MarbleGameAppDelegate
+
+@synthesize levelSet = _levelSet, marbleSets=_marbleSets;
 
 @synthesize window=window_, navController=navController_, director=director_;
 
@@ -84,6 +89,7 @@
 							   numberOfSamples:0];
 
 	// Multiple Touches enabled
+  
 	[glView setMultipleTouchEnabled:YES];
 
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
@@ -104,9 +110,11 @@
 	//	[director setProjection:kCCDirectorProjection3D];
 	
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
-	if( ! [director_ enableRetinaDisplay:YES] )
-		CCLOG(@"Retina Display Not supported");
-	
+
+//	if( ! [director_ enableRetinaDisplay:YES] )
+//		CCLOG(@"Retina Display Not supported");
+//
+  [director_ enableRetinaDisplay:NO];
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
@@ -131,10 +139,11 @@
 	
 	// for rotation and other messages
 	[director_ setDelegate:navController_];
+  
 	
 	// set the Navigation Controller as the root view controller
 	[window_ setRootViewController:navController_];
-	
+	[self initializeMarbleGame];
 	// make main window visible
 	[window_ makeKeyAndVisible];
 	

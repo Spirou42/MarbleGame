@@ -139,7 +139,7 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 												 separate:@selector(separateMarbleCollision:space:)];
 	
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
-	_debugLayer.visible = YES;
+	_debugLayer.visible = NO;
 	[self addChild:_debugLayer z:100];
 
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
@@ -323,7 +323,7 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 //	self.dollyServo.maxForce=1e6;
 //	self.dollyServo.maxBias = INFINITY;
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
-	self.dollyServo.dist = 0.0;
+	self.dollyServo.dist = 0.001;
 //	self.dollyServo.anchr1 = self.lastMousePosition;
 	
 }
@@ -347,23 +347,21 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	[ms createOverlayTextureRect];
   
 }
-
--(BOOL) ccMouseDown:(CMEvent *)event
+- (void) startMarble
 {
-//	CGPoint location = [(CCDirectorMac*)[CCDirector sharedDirector] convertEventToGL:event];
-//	[self addNewSpriteAtPosition:location];
 	self.dollyGroove = nil;
 	self.dollyServo = nil;
-//	[self prepareMarble];
+  cpVect velocity =  self.dollyBody.vel;
+  cpVect velocityNew =cpvmult(velocity, .5);
+  self.dollyBody.vel = velocityNew;
 	[self.gameDelegate marbleInGame];
-	return YES;
 }
 
-- (BOOL) ccMouseMoved:(CMEvent*) movedEvent
+- (void) moveMarble:(CMEvent*)movedEvent
 {
-//	NSLog(@"MouseMoved: %@",movedEvent);
-//	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
-//	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
+  //	NSLog(@"MouseMoved: %@",movedEvent);
+  //	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
+  //	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
 #ifdef __CC_PLATFORM_MAC
 	self.lastMousePosition = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
 #else
@@ -371,10 +369,42 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	self.lastMousePosition = cpv( [firstTouch locationInView:firstTouch.view].x , MARBLE_GROOVE_Y);
 #endif
 	self.dollyServo.anchr1 = self.lastMousePosition;
-//  self.dollyBody.pos = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
+  //  self.dollyBody.pos = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
+  
+}
+
+#ifdef __CC_PLATFORM_MAC
+-(BOOL) ccMouseDown:(CMEvent *)event
+{
+  [self startMarble];
 	return YES;
 }
 
+- (BOOL) ccMouseMoved:(CMEvent*) movedEvent
+{
+  [self moveMarble:movedEvent];
+	return YES;
+}
+#else
+
+- (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  [self moveMarble:event];
+//  NSLog(@"tMoved %@ %@",touches,event);
+}
+
+- (void) ccTouchesEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  [self startMarble];
+//  NSLog(@"tEnded %@ %@",touch,event);
+}
+
+- (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  [self moveMarble:event];
+}
+
+#endif
 #pragma mark -
 #pragma mark Simulation
 

@@ -10,7 +10,7 @@
 #define MarbleGame_MarbleGameConfig_h
 
 
-#define DEFAULT_FONT @"Helvetica Neue Light"
+#define DEFAULT_FONT @"Helvetica Neue"
 #define DEFAULT_BUTTON_FONT DEFAULT_FONT
 #define DEFAULT_BUTTON_FONT_SIZE 18
 #define DEFAULT_BUTTON_TITLE_COLOR ccc3(250, 250, 250)
@@ -56,13 +56,19 @@
 #define MARBLE_ELASTICITY .2
 #define BORDER_FRICTION   1.0f
 #define BORDER_ELASTICITY 0.1f
-#define SPACE_GRAVITY     981.0f
+
+#ifdef __CC_PLATFORM_MAC
+  #define SPACE_GRAVITY     981.00f
+#else
+  #define SPACE_GRAVITY     (981.00f * 2.5f)
+#endif
+
 #define MARBLE_MASS       20.0f
 #define MARBLE_RADIUS 		20
 #define MARBLE_DESTROY_TIME .1
 #define MARBLE_CREATE_DELAY .5
 #define MARBLE_CREATE_TIME .1
-#define MARBLE_GROOVE_Y 560
+#define MARBLE_GROOVE_Y 600
 
 #pragma mark -
 #pragma mark SYSTEM replacement Types

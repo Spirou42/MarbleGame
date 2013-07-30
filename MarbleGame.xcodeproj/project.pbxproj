@@ -52,14 +52,12 @@
 		FE847FB5178EFB5B00221DB9 /* Background-New.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB4178EFB5B00221DB9 /* Background-New.png */; };
 		FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB6178F0BE200221DB9 /* GlassButtons.plist */; };
 		FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB7178F0BE200221DB9 /* GlassButtons.png */; };
+		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
+		FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
 		FED2E5F317A7E488005A16B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645F177DFB50009F640B /* Foundation.framework */; };
-		FED2E5FA17A7E488005A16B3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E5F917A7E488005A16B3 /* Default.png */; };
-		FED2E5FC17A7E488005A16B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E5FB17A7E488005A16B3 /* Default@2x.png */; };
-		FED2E5FE17A7E488005A16B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E5FD17A7E488005A16B3 /* Default-568h@2x.png */; };
-		FED2E60017A7E488005A16B3 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E5FF17A7E488005A16B3 /* Default-Landscape~ipad.png */; };
 		FED2E60217A7E489005A16B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60117A7E489005A16B3 /* Icon-72.png */; };
 		FED2E60417A7E489005A16B3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60317A7E489005A16B3 /* Icon-Small-50.png */; };
 		FED2E60617A7E489005A16B3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60517A7E489005A16B3 /* Icon-Small.png */; };
@@ -68,8 +66,6 @@
 		FED2E60C17A7E489005A16B3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60B17A7E489005A16B3 /* Icon@2x.png */; };
 		FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60E17A7E489005A16B3 /* iTunesArtwork */; };
 		FED2E7E317A7E48B005A16B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2E7E217A7E48B005A16B3 /* main.m */; };
-		FED2E7E917A7E48B005A16B3 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2E7E817A7E48B005A16B3 /* HelloWorldLayer.m */; };
-		FED2E7EC17A7E48B005A16B3 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2E7EB17A7E48B005A16B3 /* IntroLayer.m */; };
 		FED2E7EE17A7E48B005A16B3 /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E7ED17A7E48B005A16B3 /* grossini_dance_atlas.png */; };
 		FED2E81C17A7E839005A16B3 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED2E80B17A7E4F2005A16B3 /* libcocos2d_chipmunk.a */; };
 		FED2E81D17A7E839005A16B3 /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED2E80F17A7E4F2005A16B3 /* libCocosDenshion.a */; };
@@ -102,6 +98,19 @@
 		FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */; };
 		FED2E87917A7FD92005A16B3 /* CMMarblePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */; };
 		FED2E8E317A8071E005A16B3 /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
+		FED9FD2917A8154000ACC97F /* DummyLevels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* DummyLevels.levelset */; };
+		FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
+		FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
+		FED9FD2C17A8155C00ACC97F /* Background-New.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB4178EFB5B00221DB9 /* Background-New.png */; };
+		FED9FD2D17A8155F00ACC97F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB0F17836A8800786883 /* Background.png */; };
+		FED9FD2E17A8156A00ACC97F /* GlassButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB6178F0BE200221DB9 /* GlassButtons.plist */; };
+		FED9FD2F17A8156A00ACC97F /* GlassButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB7178F0BE200221DB9 /* GlassButtons.png */; };
+		FED9FD3017A8156A00ACC97F /* Buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB181783724800786883 /* Buttons.plist */; };
+		FED9FD3117A8156A00ACC97F /* Buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB191783724800786883 /* Buttons.png */; };
+		FED9FD3217A8156A00ACC97F /* UIElements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9304F482178068460075C4F2 /* UIElements.plist */; };
+		FED9FD3317A8156A00ACC97F /* UIElements.png in Resources */ = {isa = PBXBuildFile; fileRef = 9304F483178068460075C4F2 /* UIElements.png */; };
+		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
+		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -114,6 +123,16 @@
 			outputFiles = (
 			);
 			script = "# builtin-copyPlist\n";
+		};
+		FE5EC6DA17A83CA400FDE6B0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.apple.build-tasks.copy-tiff-file";
+			filePatterns = "*.[fv]sh";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyTiff\n";
 		};
 /* End PBXBuildRule section */
 
@@ -407,6 +426,8 @@
 		FE847FB4178EFB5B00221DB9 /* Background-New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-New.png"; sourceTree = "<group>"; };
 		FE847FB6178F0BE200221DB9 /* GlassButtons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlassButtons.plist; sourceTree = "<group>"; };
 		FE847FB7178F0BE200221DB9 /* GlassButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GlassButtons.png; sourceTree = "<group>"; };
+		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
+		FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MarbleGameAppDelegate+GameDelegate.m"; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DB17A7E448005A16B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DD17A7E448005A16B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -792,6 +813,8 @@
 				93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */,
 				93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */,
 				FED2E8E417A8087B005A16B3 /* AppDelegate.h */,
+				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
+				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -986,6 +1009,7 @@
 				FED2E5EA17A7E488005A16B3 /* Resources */,
 			);
 			buildRules = (
+				FE5EC6DA17A83CA400FDE6B0 /* PBXBuildRule */,
 			);
 			dependencies = (
 				FED2E81717A7E4FB005A16B3 /* PBXTargetDependency */,
@@ -1208,16 +1232,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED2E60A17A7E489005A16B3 /* Icon.png in Resources */,
-				FED2E5FC17A7E488005A16B3 /* Default@2x.png in Resources */,
 				FED2E60617A7E489005A16B3 /* Icon-Small.png in Resources */,
 				FED2E60217A7E489005A16B3 /* Icon-72.png in Resources */,
-				FED2E5FA17A7E488005A16B3 /* Default.png in Resources */,
+				FED9FD3217A8156A00ACC97F /* UIElements.plist in Resources */,
+				FED9FD3317A8156A00ACC97F /* UIElements.png in Resources */,
+				FED9FD2E17A8156A00ACC97F /* GlassButtons.plist in Resources */,
 				FED2E60417A7E489005A16B3 /* Icon-Small-50.png in Resources */,
+				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				FED2E60817A7E489005A16B3 /* Icon-Small@2x.png in Resources */,
-				FED2E60017A7E488005A16B3 /* Default-Landscape~ipad.png in Resources */,
+				FED9FD2C17A8155C00ACC97F /* Background-New.png in Resources */,
+				FED9FD3117A8156A00ACC97F /* Buttons.png in Resources */,
+				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				FED2E7EE17A7E48B005A16B3 /* grossini_dance_atlas.png in Resources */,
-				FED2E5FE17A7E488005A16B3 /* Default-568h@2x.png in Resources */,
+				FED9FD3017A8156A00ACC97F /* Buttons.plist in Resources */,
+				FED9FD2917A8154000ACC97F /* DummyLevels.levelset in Resources */,
+				FED9FD2D17A8155F00ACC97F /* Background.png in Resources */,
+				FED9FD2F17A8156A00ACC97F /* GlassButtons.png in Resources */,
 				FED2E60C17A7E489005A16B3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1237,6 +1268,7 @@
 				93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */,
 				93EAB2EB17A1A7BD009894C5 /* CMMarblePlayer.m in Sources */,
 				93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */,
+				FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
 				934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */,
 				934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */,
@@ -1261,18 +1293,19 @@
 				FED2E87117A7FD83005A16B3 /* CMMarbleLevelSetScene.m in Sources */,
 				FED2E8E317A8071E005A16B3 /* CCControlPopupButton.m in Sources */,
 				FED2E87617A7FD92005A16B3 /* CMMarbleCollisionCollector.m in Sources */,
+				FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */,
 				FED2E87717A7FD92005A16B3 /* CMMarbleSprite.m in Sources */,
 				FED2E87517A7FD8B005A16B3 /* CMMarbleLevelStatistics.m in Sources */,
 				FED2E87017A7FD83005A16B3 /* SceneHelper.m in Sources */,
 				FED2E87317A7FD8B005A16B3 /* CMMarbleLevel.m in Sources */,
 				FED2E86C17A7FD83005A16B3 /* CMMarbleMainMenuScene.m in Sources */,
-				FED2E7E917A7E48B005A16B3 /* HelloWorldLayer.m in Sources */,
 				FED2E86F17A7FD83005A16B3 /* CMMarblePlayScene.m in Sources */,
 				FED2E86E17A7FD83005A16B3 /* CMMarbleHelpScene.m in Sources */,
 				FED2E87917A7FD92005A16B3 /* CMMarblePlayer.m in Sources */,
-				FED2E7EC17A7E48B005A16B3 /* IntroLayer.m in Sources */,
 				FED2E87417A7FD8B005A16B3 /* CMMarbleLevelSet.m in Sources */,
+				FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */,
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,
+				FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1501,7 +1534,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos6.0;
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
 				WRAPPER_EXTENSION = app;
@@ -1538,7 +1571,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos6.0;
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
 				VALIDATE_PRODUCT = YES;
