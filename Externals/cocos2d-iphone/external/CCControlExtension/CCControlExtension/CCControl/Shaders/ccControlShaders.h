@@ -24,6 +24,8 @@
  *
  */
 
+#import "cocos2d.h"
+
 #ifdef __CC_PLATFORM_MAC
 #import <OpenGL/gl.h>
 #else
