@@ -21,7 +21,11 @@
 	for (NSUInteger i=0; i<[shapeCoordinates count]; i++) {
 		NSString *line = [shapeCoordinates objectAtIndex:i];
 		line = [NSString stringWithFormat:@"{%@}",line];
+#ifdef __CC_PLATFORM_MAC
     CGPoint p = NSPointToCGPoint(NSPointFromString(line));
+#else
+    CGPoint p = CGPointFromString(line);
+#endif
 		
 		vertices[ll-i] = p;
 		vertices[ll-i].y = size.height - p.y; 

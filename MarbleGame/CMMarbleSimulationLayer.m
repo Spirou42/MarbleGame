@@ -348,7 +348,7 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
   
 }
 
--(BOOL) ccMouseDown:(NSEvent *)event
+-(BOOL) ccMouseDown:(CMEvent *)event
 {
 //	CGPoint location = [(CCDirectorMac*)[CCDirector sharedDirector] convertEventToGL:event];
 //	[self addNewSpriteAtPosition:location];
@@ -359,12 +359,17 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	return YES;
 }
 
-- (BOOL) ccMouseMoved:(NSEvent*) movedEvent
+- (BOOL) ccMouseMoved:(CMEvent*) movedEvent
 {
 //	NSLog(@"MouseMoved: %@",movedEvent);
 //	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
 //	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
+#ifdef __CC_PLATFORM_MAC
 	self.lastMousePosition = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
+#else
+  UITouch *firstTouch =[[movedEvent.allTouches allObjects]objectAtIndex:0];
+	self.lastMousePosition = cpv( [firstTouch locationInView:firstTouch.view].x , MARBLE_GROOVE_Y);
+#endif
 	self.dollyServo.anchr1 = self.lastMousePosition;
 //  self.dollyBody.pos = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
 	return YES;

@@ -45,7 +45,11 @@
 		label.position=ccp(position.x-90, position.y);
 		[self addChild:label];
     //POPUP Button
+#ifdef __CC_PLATFORM_MAC
     NSArray *t = [(MarbleGameAppDelegate*)[NSApp delegate] marbleSets];
+#else
+    NSArray *t = [(MarbleGameAppDelegate*)[[UIApplication sharedApplication] delegate] marbleSets];
+#endif
     NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
     NSInteger i = [t indexOfObject:marbleSet];
 

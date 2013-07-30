@@ -34,7 +34,12 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
 		[self scheduleUpdate];
     self.simulationLayer =[CMMarbleSimulationLayer node];
 		self.simulationLayer.gameDelegate = self;
+
+#ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
+#else
+    self.simulationLayer.touchPriority=1;
+#endif
 		[self.simulationLayer prepareMarble];
 
 

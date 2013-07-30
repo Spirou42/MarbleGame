@@ -64,4 +64,13 @@
 #define MARBLE_CREATE_TIME .1
 #define MARBLE_GROOVE_Y 560
 
+#pragma mark -
+#pragma mark SYSTEM replacement Types
+
+#ifdef __CC_PLATFORM_MAC
+#define CMEvent NSEvent
+#else
+#define CMEvent UIEvent
+#endif
+
 #endif
