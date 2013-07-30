@@ -125,7 +125,7 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	p.size = s;
 	CGRect newBounds = CGRectInset(p,0,0);
 	[self.space addBounds:newBounds
-							thickness:20.0
+							thickness:60.0
 						 elasticity:BORDER_ELASTICITY
 							 friction:BORDER_FRICTION
 								 layers:CP_ALL_LAYERS
