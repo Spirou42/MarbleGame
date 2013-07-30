@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-
+#import <CoreGraphics/CGGeometry.h>
 /**
  @file
  cocos2d helper macros
@@ -220,7 +220,7 @@ do {															\
  On Mac it returns 1;
  On iPhone it returns 2 if RetinaDisplay is On. Otherwise it returns 1
  */
-extern float __ccContentScaleFactor;
+extern CGFloat __ccContentScaleFactor;
 #define CC_CONTENT_SCALE_FACTOR() __ccContentScaleFactor
 
 
