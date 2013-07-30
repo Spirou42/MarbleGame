@@ -118,7 +118,7 @@ typedef void (^CCControlBlock) (id sender, CCControlEvent event);
  priority. */
 @property (nonatomic, assign) NSInteger defaultTouchPriority;
 /** The current control state constant. */
-@property (assign, readonly) CCControlState state;
+@property (nonatomic, assign, readonly) CCControlState state;
 /** Tells whether the control is enabled. */
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 /** A Boolean value that determines the control’s selected state. */

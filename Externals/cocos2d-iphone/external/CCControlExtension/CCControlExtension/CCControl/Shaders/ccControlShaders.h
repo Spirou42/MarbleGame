@@ -23,7 +23,13 @@
  * THE SOFTWARE.
  *
  */
+
+#ifdef __CC_PLATFORM_MAC
 #import <OpenGL/gl.h>
+#else
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/ES3/gl.h>
+#endif
 #ifdef __cplusplus__
 extern "C" {
 #endif // __cplusplus__
