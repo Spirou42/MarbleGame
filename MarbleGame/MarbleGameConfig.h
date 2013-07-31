@@ -75,8 +75,10 @@
 
 #ifdef __CC_PLATFORM_MAC
 #define CMEvent NSEvent
+#define CMAppDelegate (MarbleGameAppDelegate*)[NSApp delegate]
 #else
 #define CMEvent UIEvent
+#define CMAppDelegate (MarbleGameAppDelegate*)[[UIApplication sharedApplication] delegate]
 #endif
 
 #endif
