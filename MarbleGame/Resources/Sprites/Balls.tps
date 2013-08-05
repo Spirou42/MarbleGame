@@ -148,7 +148,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Originals/Balls</filename>
+            <filename>../../../Asset Production/Originals/Balls</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
