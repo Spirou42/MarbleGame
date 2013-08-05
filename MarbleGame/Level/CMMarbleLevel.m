@@ -88,7 +88,13 @@ baseURL,numberOfMarbles;
 	if (!imageName || [imageName isEqualToString:@""]) {
 		return nil;
 	}
-	return [CCSprite spriteWithFile:imageName];
+	NSString *levelSetDirectory = [[NSBundle mainBundle ]pathForResource:DEFAULT_LEVELSET_NAME ofType:DEFAULT_LEVELSET_EXTENSION inDirectory:@"."];
+																 //pathForResource:DEFAULT_LEVELSET_NAME withExtension:DEFAULT_LEVELSET_EXTENSION subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
+	
+	NSString *realImageName = [NSBundle pathForResource:imageName ofType:@"png" inDirectory:levelSetDirectory];
+	NSString *fileName =realImageName;
+	
+	return [CCSprite spriteWithFile:fileName];
 }
 
 - (CCSprite*) backgroundImage

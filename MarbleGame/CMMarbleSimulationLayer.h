@@ -43,6 +43,7 @@
 	NSUInteger					_marblesToFire;
 	NSTimer*						_marbleFireTimer;
 	NSArray*						_bounds;
+	NSArray*						_staticShapes;
 }
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
 @property (nonatomic, retain) ChipmunkSpace *space;
@@ -52,7 +53,7 @@
 @property (nonatomic, assign,getter = isSimulationRunning) BOOL simulationRunning;
 @property (nonatomic, retain) CMMarbleCollisionCollector *collisionCollector;
 @property (nonatomic, retain) NSMutableArray* simulatedMarbles;
-
+@property (nonatomic, retain) NSArray* staticShapes;
 @property (nonatomic, retain) ChipmunkGrooveJoint *dollyGroove;
 @property (nonatomic, retain) ChipmunkShape *dollyShape;
 @property (nonatomic, retain) ChipmunkPinJoint* dollyServo;

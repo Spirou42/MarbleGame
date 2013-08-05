@@ -10,14 +10,41 @@
 #import "cocos2d.h"
 #import "CCControlExtension.h"
 
-CCSprite* defaultSceneBackground()
+CCSprite* spriteWithName(NSString* filename)
 {
-	CCSprite *background = [CCSprite spriteWithFile:DEFAULT_BACKGROUND_IMAGE];
+	CCSprite *background = [CCSprite spriteWithFile:filename];
 	background.anchorPoint=ccp(0, 0);
 	return background;
 }
 
-CCControlButton* standardButtonWithTitle(NSString* title)
+
+inline CCSprite* defaultSceneBackground()
+{
+	return spriteWithName(DEFAULT_BACKGROUND_IMAGE);
+}
+
+inline CCSprite* mainMenuOverlay()
+{
+	return spriteWithName(MAIN_MENU_OVERLAY);
+}
+inline CCSprite* mainMenuMenuPlate()
+{
+	CCSprite *s =spriteWithName(@"MainMenu-Menu.png");
+	s.anchorPoint = cpv(0.5, 0.5);
+	return s;
+}
+
+inline CCSprite* defaultLevelBackground()
+{
+	return spriteWithName(@"LevelBackground-Default.png");
+}
+
+inline CCSprite *defaultLevelOverlay()
+{
+	return spriteWithName(@"Level-Overlay.png");
+}
+
+inline CCControlButton* standardButtonWithTitle(NSString* title)
 {
 	NSString* buttonOffName = NORMAL_BUTTON_BACKGROUND;
 	NSString* buttonOnName = ACTIVE_BUTTON_BACKGROUND;
@@ -46,7 +73,7 @@ CCControlButton* standardButtonWithTitle(NSString* title)
 	return button;
 }
 
-CCControlButton* defaultMenuButton()
+inline CCControlButton* defaultMenuButton()
 {
   CCControlButton* result = standardButtonWithTitle(@"Menu");
   result.anchorPoint=ccp(1.0, 1.0);
@@ -54,7 +81,7 @@ CCControlButton* defaultMenuButton()
   return result;
 }
 
-id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText)
+inline id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText)
 {
   CGSize winSize = [[CCDirector sharedDirector] winSize];
   
@@ -64,9 +91,21 @@ id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText)
   return label;
 }
 
-CGPoint menuStartPosition()
+inline CGPoint menuStartPosition()
 {
   CGSize winSize = [[CCDirector sharedDirector] winSize];
   CGPoint menuPosition = ccp(winSize.width/2.0, winSize.height/3.0*2.0);
   return menuPosition;
+}
+
+inline CGPoint centerOfScreen()
+{
+	CGSize winSize = [[CCDirector sharedDirector] winSize];
+	CGPoint menuPosition = ccp(winSize.width/2.0, winSize.height/2.0);
+  return menuPosition;
+}
+
+CGSize screenSize()
+{
+	return [[CCDirector sharedDirector] winSize];
 }

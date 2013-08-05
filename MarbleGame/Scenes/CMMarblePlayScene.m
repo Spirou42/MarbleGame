@@ -19,22 +19,26 @@
 #import "CMMarblePlayer.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 
-#define BACKGROUND_LAYER (-1)
-#define MARBLE_LAYER (1)
-#define BUTTON_LAYER (5)
-#define MENU_LAYER (BUTTON_LAYER-1)
+#define BACKGROUND_LAYER 	(-1)
+#define MARBLE_LAYER 			(1)
+#define FOREGROUND_LAYER 	(2)
+#define OVERLAY_LAYER 		(3)
+#define BUTTON_LAYER 			(5)
+#define MENU_LAYER 				(6)
 
 @implementation CMMarblePlayScene
 
 @synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits,
 currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
 comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer,
-marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
+marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
+foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 
 - (id) init
 {
 	if( (self = [super init]) ){
-    [self addChild:defaultSceneBackground() z:BACKGROUND_LAYER];
+		self.backgroundSprite = defaultSceneBackground();
+
     [self createMenu];
 //		[self scheduleUpdate];
     self.simulationLayer =[CMMarbleSimulationLayer node];
@@ -62,8 +66,14 @@ marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 	self.currentStatistics = nil;
 	self.simulationLayer = nil;
 	self.marblesInGame = nil;
+	self.backgroundSprite = nil;
+	self.foregroundSprite = nil;
+	self.overlaySprite = nil;
 	[super dealloc];
 }
+
+#pragma mark -
+#pragma mark Properties
 
 - (void) setSimulationLayer:(CMMarbleSimulationLayer *)simLay
 {
@@ -82,6 +92,53 @@ marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 {
   return self->_simulationLayer;
 }
+
+- (void) setBackgroundSprite:(CCSprite *)bS
+{
+	if (self->_backgroundSprite != bS) {
+		[self removeChild:self->_backgroundSprite cleanup:YES];
+		[self->_backgroundSprite release];
+		self->_backgroundSprite = [bS retain];
+		self->_backgroundSprite.anchorPoint = cpv(0.5, 0.5);
+		self->_backgroundSprite.position = centerOfScreen()
+		;		if (bS) {
+			[self addChild:bS z:BACKGROUND_LAYER];
+		}
+	}
+}
+
+- (void) setForegroundSprite:(CCSprite *)fS
+{
+	if (self->_foregroundSprite != fS) {
+		[self removeChild:self->_foregroundSprite cleanup:YES];
+		[self->_foregroundSprite release];
+		self->_foregroundSprite = [fS retain];
+		self->_foregroundSprite.anchorPoint = cpv(0.5, 0.5);
+		self->_foregroundSprite.position = centerOfScreen();
+		if (fS) {
+			[self addChild:fS z:FOREGROUND_LAYER];
+		}
+	}
+}
+
+- (void) setOverlaySprite:(CCSprite *)oS
+{
+	if (self->_overlaySprite != oS) {
+		[self removeChild:self->_overlaySprite cleanup:YES];
+		[self->_overlaySprite release];
+		self->_overlaySprite = [oS retain];
+		self->_overlaySprite.anchorPoint=cpv(0.0, 1.0);
+		self->_overlaySprite.position=cpv(0.0, 768);
+		if (oS) {
+			[self addChild:oS z:OVERLAY_LAYER];
+		}
+	}
+}
+
+
+
+#pragma mark -
+#pragma mark other
 
 -(void) createMenu
 {
@@ -389,6 +446,15 @@ marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 	self.marbleDelayTimer = nil;
 	[self.simulationLayer prepareMarble];
 }
+ - (void) updatePlayerLevel
+{
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
+	MarbleGameAppDelegate * appDel = CMAppDelegate;
+	currentLevelIndex = (currentLevelIndex+1)%[appDel levelSet].levelList.count;
+	currentPlayer.currentLevel = currentLevelIndex;
+	appDel.currentPlayer =  currentPlayer;
+}
 
 - (void) imagesOnField:(NSSet*) fieldImages
 {
@@ -415,6 +481,7 @@ marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 		NSLog(@"LevelStatistics: %@",self.currentStatistics);
 		[self.simulationLayer stopSimulation];
 		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
+		[self updatePlayerLevel];
 		
 	}
 }
@@ -422,6 +489,21 @@ marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 - (void) addChild:(CCNode *)node z:(NSInteger)z
 {
 	[super addChild:node z:z];
+}
+
+- (void) initializeLevel:(CMMarbleLevel *)level
+{
+	CCSprite *bkg = level.backgroundImage;
+	if (bkg) {
+		self.backgroundSprite=bkg;
+	}else{
+		self.backgroundSprite = defaultLevelBackground();
+	}
+	
+	CCSprite *fgs = level.overlayImage;
+	self.foregroundSprite = fgs;
+
+	self.overlaySprite = defaultLevelOverlay();
 }
 
 #pragma mark -

@@ -88,4 +88,15 @@
 	CMMarblePlayer *currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
 	return currentPlayer;
 }
+
+- (void) setCurrentPlayer:(CMMarblePlayer*) player
+{
+	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+	NSData *playerData = [NSKeyedArchiver archivedDataWithRootObject:player];
+	NSString *currentPlayerName = player.name;
+	
+	NSMutableDictionary* playerDict = [[ud dictionaryForKey:@"Players"]mutableCopy];
+	[playerDict setObject:playerData forKey:currentPlayerName];
+	[ud setObject:playerDict forKey:@"Players"];
+}
 @end

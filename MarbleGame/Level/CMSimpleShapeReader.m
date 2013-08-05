@@ -28,7 +28,7 @@
 #endif
 		
 		vertices[ll-i] = p;
-		vertices[ll-i].y = size.height - p.y; 
+//		vertices[ll-i].y = size.height - p.y;
 	}
 	for (NSUInteger i=0; i<ll; i++) {
 		ChipmunkSegmentShape *cs= [ChipmunkSegmentShape segmentWithBody:nil from:vertices[i] to:vertices[i+1] radius:3];

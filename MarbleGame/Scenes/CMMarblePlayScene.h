@@ -27,17 +27,23 @@
 	NSTimer*																_marbleDelayTimer;
 	NSMutableSet*														_marblesInGame;
 	NSDate*																	_levelStartTime;
-}
-@property (nonatomic,retain) CMMarbleSimulationLayer* simulationLayer;
-@property (nonatomic,assign) NSInteger normalHits, comboHits, multiHits;
-@property (nonatomic,retain) CMMarbleLevelStatistics *currentStatistics;
-@property (nonatomic,retain) CCNode* statisticsOverlay;
-@property (nonatomic,retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;
-@property (nonatomic,assign) NSTimeInterval lastDisplayTime;
-@property (nonatomic,retain) NSTimer* marbleDelayTimer;
-@property (nonatomic,retain) NSMutableSet* marblesInGame;
-@property (nonatomic,retain) NSDate* levelStartTime;
+	CCSprite*																_backgroundSprite;
+	CCSprite*																_foregroundSprite;
+	CCSprite*																_overlaySprite;
 
+}
+@property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
+@property (nonatomic, assign) NSInteger normalHits, comboHits, multiHits;
+@property (nonatomic, retain) CMMarbleLevelStatistics *currentStatistics;
+@property (nonatomic, retain) CCNode* statisticsOverlay;
+@property (nonatomic, retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;
+@property (nonatomic, assign) NSTimeInterval lastDisplayTime;
+@property (nonatomic, retain) NSTimer* marbleDelayTimer;
+@property (nonatomic, retain) NSMutableSet* marblesInGame;
+@property (nonatomic, retain) NSDate* levelStartTime;
+@property (nonatomic, retain) CCSprite* backgroundSprite;
+@property (nonatomic, retain) CCSprite* foregroundSprite;
+@property (nonatomic, retain) CCSprite* overlaySprite;
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

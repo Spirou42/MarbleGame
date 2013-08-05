@@ -69,7 +69,11 @@
 
 	}
 //	[self addChild:parent];
-	[self addChild:defaultSceneBackground() z:-1];
+	[self addChild:defaultSceneBackground() z:-2];
+	[self addChild:mainMenuOverlay() z:10];
+	CCSprite *plate =mainMenuMenuPlate();
+	plate.position = centerOfScreen();
+	[self addChild:plate z:-1];
 	return self;
 }
 

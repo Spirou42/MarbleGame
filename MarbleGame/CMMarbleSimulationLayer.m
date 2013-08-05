@@ -17,6 +17,7 @@
 #import "SceneHelper.h"
 #import "CMMarbleSprite.h"
 #import "CMMarbleLevel.h"
+#import "CMSimpleShapeReader.h"
 enum {
 	kTagParentNode = 1,
 };
@@ -43,7 +44,7 @@ static NSString *borderType = @"borderType";
 simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles,
 dollyGroove = _dollyGroove, dollyShape = _dollyShape, dollyServo = _dollyServo, dollyBody = _dollyBody,
 gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition,currentLevel=_currentLevel,
-marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex;
+marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex,staticShapes=_staticShapes;
 
 +(CCScene *) scene
 {
@@ -308,6 +309,19 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	}
 	
 }
+- (void) setStaticShapes:(NSArray *)staticBodies
+{
+	ChipmunkBody * staticBody = self.space.staticBody;
+	for (ChipmunkShape *shape in staticBodies) {
+		shape.body = staticBody;
+		[self.space add:shape];
+	}
+}
+
+- (NSArray*) staticShapes
+{
+	return self.space.staticBody.shapes;
+}
 
 
 
@@ -453,6 +467,9 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 }
 - (void) initializeLevel
 {
+	
+	self.staticShapes = self.currentLevel.shapeReader.shapes;
+	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	[self fireMarbles:p inTime:10];
 	

@@ -8,7 +8,8 @@
 
 #ifndef MarbleGame_MarbleGameConfig_h
 #define MarbleGame_MarbleGameConfig_h
-#define DEFAULT_LEVELSET_NAME @"DummyLevels" 
+
+#define DEFAULT_LEVELSET_NAME @"DummyLevels"
 #define DEFAULT_LEVELSET_EXTENSION @"levelset"
 
 
@@ -30,7 +31,8 @@
 // default UI element definitions
 
 
-#define DEFAULT_BACKGROUND_IMAGE @"Background-New.png"
+#define DEFAULT_BACKGROUND_IMAGE @"MainMenu-Background.png"
+#define MAIN_MENU_OVERLAY @"MainMenu-Overlay.png"
 
 #define DEFAULT_UI_PLIST @"GlassButtons.plist"
 #define NORMAL_BUTTON_BACKGROUND @"GlassButtonNormal"

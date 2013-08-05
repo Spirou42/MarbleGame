@@ -21,4 +21,5 @@
 - (void) marbleFiredWithID:(NSUInteger) ballIndex;
 
 - (void) marbleDroppedWithID:(NSUInteger) ballIndex;
+- (void) initializeLevel:(CMMarbleLevel*)level;
 @end

@@ -14,5 +14,7 @@
 - (void) initializeMarbleGame;
 
 - (CMMarblePlayer*) currentPlayer;
+- (void) setCurrentPlayer:(CMMarblePlayer*)player;
 
+@property (nonatomic, retain) CMMarblePlayer *currentPlayer;
 @end

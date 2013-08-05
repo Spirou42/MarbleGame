@@ -16,3 +16,8 @@ CCControlButton* standardButtonWithTitle(NSString* title);
 CCControlButton* defaultMenuButton();
 id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText);
 CGPoint menuStartPosition();
+CGPoint centerOfScreen();
+CCSprite* mainMenuOverlay();
+CCSprite* mainMenuMenuPlate();
+CCSprite* defaultLevelBackground();
+CCSprite* defaultLevelOverlay();
