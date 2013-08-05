@@ -10,10 +10,9 @@
 @class CMMarbleLevelSet;
 @interface MarbleGameAppDelegate (GameDelegate)
 
-//@property (nonatomic, retain) CMMarbleLevelSet* levelSet;
-//@property (nonatomic, retain) NSArray *marbleSets;
-
-
 - (void) registerUserDefaults;
 - (void) initializeMarbleGame;
+
+- (CMMarblePlayer*) currentPlayer;
+
 @end

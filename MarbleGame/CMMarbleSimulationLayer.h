@@ -10,13 +10,14 @@
 #import "cocos2d.h"
 
 
+
 // Importing Chipmunk headers
 #import "ObjectiveChipmunk.h"
 #import "CMMarbleGameDelegate.h"
 
 
 #define USE_NEW_COLLISION_DETECTOR 1
-@class  CMMarbleCollisionCollector;
+@class  CMMarbleCollisionCollector, CMMarbleLevel;
 @interface CMMarbleSimulationLayer : CCLayerColor
 {
 	id <CMMarbleGameDelegate> _gameDelegate;
@@ -38,6 +39,10 @@
 	ChipmunkShape				*_dollyShape;
 	ChipmunkBody				*_dollyBody;
 	CGPoint							_lastMousePosition;
+	CMMarbleLevel				*_currentLevel;
+	NSUInteger					_marblesToFire;
+	NSTimer*						_marbleFireTimer;
+	NSArray*						_bounds;
 }
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
 @property (nonatomic, retain) ChipmunkSpace *space;
@@ -52,7 +57,11 @@
 @property (nonatomic, retain) ChipmunkShape *dollyShape;
 @property (nonatomic, retain) ChipmunkPinJoint* dollyServo;
 @property (nonatomic, retain) ChipmunkBody *dollyBody;
-
+@property (nonatomic, assign) CMMarbleLevel *currentLevel;
+@property (nonatomic, assign) NSUInteger marblesToFire;
+@property (nonatomic, retain) NSTimer* marbleFireTimer;
+@property (nonatomic, assign) NSUInteger currentMarbleIndex;
+@property (nonatomic, retain) NSArray* bounds;
 // returns a CCScene that contains the HelloWorldLayer as the only child
 
 
@@ -65,4 +74,5 @@
 
 -(void) retextureMarbles;
 - (void) removeCollisionSets:(NSArray*) layers;
+- (void) removedMarbles:(NSSet*) removedOnes;
 @end

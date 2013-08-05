@@ -30,7 +30,7 @@
     buttonSize.width += buttonSize.width/3.0*2.0;
     buttonSize.height += buttonSize.height/3.0*2.0;
 
-    CCLabelTTF *headlineLabel = defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+    CCLabelTTF *headlineLabel = (CCLabelTTF*)defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
 //    headlineLabel.color=DEFAULT_MENU_TITLE_COLOR;
 //    headlineLabel.position=pos;
     [self addChild:headlineLabel];

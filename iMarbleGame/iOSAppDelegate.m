@@ -85,8 +85,8 @@
 								   depthFormat:0
 							preserveBackbuffer:NO
 									sharegroup:nil
-								 multiSampling:YES
-							   numberOfSamples:16];
+								 multiSampling:NO
+							   numberOfSamples:0];
 
 	// Multiple Touches enabled
   

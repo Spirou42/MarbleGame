@@ -13,3 +13,6 @@
 #else
 #import "iOSAppDelegate.h"
 #endif
+
+@class CMMarblePlayer;
+

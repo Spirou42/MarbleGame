@@ -14,6 +14,10 @@
 #import "CMMarbleSettingsScene.h"
 #import "CMMarbleCollisionCollector.h"
 #import "CMMarbleLevelStatistics.h"
+#import "CMMarbleLevel.h"
+#import "CMMarbleLevelSet.h"
+#import "CMMarblePlayer.h"
+#import "MarbleGameAppDelegate+GameDelegate.h"
 
 #define BACKGROUND_LAYER (-1)
 #define MARBLE_LAYER (1)
@@ -24,27 +28,41 @@
 
 @synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits,
 currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
-comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
+comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer,
+marblesInGame=_marblesInGame,levelStartTime = _levelStartTime;
 
 - (id) init
 {
 	if( (self = [super init]) ){
     [self addChild:defaultSceneBackground() z:BACKGROUND_LAYER];
     [self createMenu];
-		[self scheduleUpdate];
+//		[self scheduleUpdate];
     self.simulationLayer =[CMMarbleSimulationLayer node];
 		self.simulationLayer.gameDelegate = self;
+		self.simulationLayer.currentLevel = [self currentLevel];
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
 #else
     self.simulationLayer.touchPriority=1;
 #endif
-		[self.simulationLayer prepareMarble];
+		
+		[self resetSimulationAction:nil];
+		self.levelStartTime = [NSDate date];
 
 
 	}
 	return self;
+}
+- (void) dealloc
+{
+	self.levelStartTime = nil;
+	[self.marbleDelayTimer invalidate];
+	self.marbleDelayTimer = nil;
+	self.currentStatistics = nil;
+	self.simulationLayer = nil;
+	self.marblesInGame = nil;
+	[super dealloc];
 }
 
 - (void) setSimulationLayer:(CMMarbleSimulationLayer *)simLay
@@ -53,7 +71,10 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
     [self removeChild:self->_simulationLayer cleanup:YES];
     [self->_simulationLayer release];
     self->_simulationLayer = [simLay retain];
-    [self addChild:simLay z:MARBLE_LAYER];
+		if (simLay) {
+			[self addChild:simLay z:MARBLE_LAYER];
+		}
+
   }
 }
 
@@ -171,7 +192,16 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
 
 - (void) resetSimulationAction:(id) sender
 {
+
   [self.simulationLayer resetSimulation];
+	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
+	
+	self.marblesInGame = [NSMutableSet set];
+	for (NSUInteger i = 1; i<10; i++) {
+		[self.marblesInGame addObject:[NSNumber numberWithInteger:i]];
+	}
+	[self.simulationLayer prepareMarble];
+	
 }
 
 - (void) toggleSimulationAction:(id) sender
@@ -263,12 +293,14 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
 		 if ([obj count] == 3) {
 			 normalHits ++;
 		 }else if ([obj count] > 3) { // multi Hit
+
 			 //       CGPoint p= [self centerOfMarbles:obj];
 			 //       UIImage *c = [self multiDecorationImage];
 			 //       CGSize contentSize = [c size];
 			 //       CMDecorationLayer *decLayer = [[[CMDecorationLayer alloc]initWithContent:(id)[c CGImage] andSize:contentSize]autorelease];
 			 //       decLayer.backgroundColor = nil;
 			 //       [decLayer addToSuperlayer:self.playgroundView.layer withPosition:p];
+
 			 multiHits ++;
 		 }
 	 }];
@@ -352,19 +384,94 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime;
 	
 }
 
+- (void) marbleDelayCallback:(NSTimer*)timer
+{
+	self.marbleDelayTimer = nil;
+	[self.simulationLayer prepareMarble];
+}
+
+- (void) imagesOnField:(NSSet*) fieldImages
+{
+	NSMutableSet *toBeRemoved = [NSMutableSet set];
+	for (NSNumber *imageID in self.marblesInGame) {
+    if (![fieldImages member:imageID]) {
+			[toBeRemoved addObject:imageID];
+		}
+	}
+	
+	
+	if (toBeRemoved.count ) {
+		NSLog(@"Removing: %@",toBeRemoved);
+		[self.marblesInGame minusSet:toBeRemoved];
+		[self.simulationLayer removedMarbles:toBeRemoved];
+	}
+
+	for (NSNumber *t in toBeRemoved) {
+		[self.currentStatistics marbleCleared:t];
+	}
+
+	if (!self.marblesInGame.count) {
+		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
+		NSLog(@"LevelStatistics: %@",self.currentStatistics);
+		[self.simulationLayer stopSimulation];
+		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
+		
+	}
+}
+
+- (void) addChild:(CCNode *)node z:(NSInteger)z
+{
+	[super addChild:node z:z];
+}
+
 #pragma mark -
 #pragma mark Game Delegate
 
+/// returns index of the next Marble to be added to the game
 - (NSUInteger) marbleIndex
 {
-	return arc4random_uniform(8)+1;
+	if (self.marblesInGame.count) {
+		NSUInteger i = arc4random_uniform((unsigned int)[self.marblesInGame count]);
+		NSNumber *q = [[self.marblesInGame allObjects]objectAtIndex:i];
+		return [q integerValue];
+	}else{
+		return -1;
+	}
 }
+
+/// returns the name of the current selected MarbleSet (User option)
 - (NSString*) marbleSetName
 {
 	return [[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
 }
-- (void) marbleInGame
+
+
+
+- (void) marbleFiredWithID:(NSUInteger) ballIndex
 {
-	[NSTimer scheduledTimerWithTimeInterval:MARBLE_CREATE_DELAY target:self.simulationLayer selector:@selector(prepareMarble) userInfo:nil repeats:NO];
+	self.currentStatistics.marblesInLevel++;
+	[self.marblesInGame addObject:[NSNumber numberWithInteger:ballIndex]];
+}
+
+- (void) marbleDroppedWithID:(NSUInteger) ballIndex
+{
+	if (self.marbleDelayTimer) {
+		return;
+	}else{
+		self.marbleDelayTimer = [NSTimer scheduledTimerWithTimeInterval:MARBLE_CREATE_DELAY target:self selector:@selector(marbleDelayCallback:) userInfo:nil repeats:NO];
+	}
+	[self marbleFiredWithID:ballIndex];
+}
+
+- (CMMarbleLevel*) currentLevel
+{
+	CMMarbleLevel *result = nil;
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
+	CMMarbleLevelSet *set=[CMAppDelegate levelSet];
+	
+	result = [[set levelList]objectAtIndex:currentLevelIndex];
+	
+	return result;
 }
 @end

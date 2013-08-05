@@ -29,7 +29,7 @@
 	self = [super init];
 	if (self != nil) {
 
-		CCLabelTTF *label = defaultSceneLabel(@"Settings");// [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+		CCLabelTTF *label = (CCLabelTTF*)defaultSceneLabel(@"Settings");// [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
 		[self addChild:label];
 		CGPoint menuPosition = menuStartPosition();
 		CGPoint position = menuPosition;

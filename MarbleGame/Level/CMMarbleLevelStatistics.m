@@ -27,6 +27,12 @@
 	self.time =0.0;
 }
 
+- (NSString*) description
+{
+	NSString *result = [NSString stringWithFormat:@"%@,InLevel: %lu\nRemoved: %lu\ncleared: %@\nimage:%@\n score:%lu\ntime:%f",[super description],(unsigned long)self.marblesInLevel,(unsigned long)self.removedMarbles,clearedMarbles,removedMarblesForImages,(unsigned long)score,time];
+	return result;
+}
+
 - (id) init
 {
 	if((self = [super init])){
@@ -67,12 +73,12 @@
 	[self initDefaults];
 }
 
-- (void) marbleCleared:(CMMarbleSprite *)marbleImage
+- (void) marbleCleared:(NSNumber *)marbleImage
 {
 	[self.clearedMarbles addObject:marbleImage];
 }
 
-- (void) marbleRemoved:(CMMarbleSprite *)removedImage
+- (void) marbleRemoved:(NSNumber *)removedImage
 {
 	self.removedMarbles ++;
 	

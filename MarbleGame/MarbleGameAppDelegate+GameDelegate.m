@@ -7,17 +7,27 @@
 //
 
 #import "MarbleGameAppDelegate+GameDelegate.h"
-
+#import "CMMarblePlayer.h"
+#import "CMMarbleLevelSet.h"
 @implementation MarbleGameAppDelegate (GameDelegate)
+
 //@dynamic levelSet,marbleSets;
 
 -(void) registerUserDefaults
 {
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  [ud registerDefaults:@{@"MarbleSet":@"DDR"}];
+
+	CMMarblePlayer *defaultUser = [CMMarblePlayer playerWithName:NSUserName()];
+
+	NSData *defaultPlayerData = [NSKeyedArchiver archivedDataWithRootObject:defaultUser];
+
+  [ud registerDefaults:@{@"MarbleSet":@"DDR",
+												 @"Players"  :@{NSUserName():defaultPlayerData},
+												 @"currentPlayer":NSUserName()
+												 }];
 }
 
-- (void) getBallSetNamesFormFile:(NSString*)filename
+- (void) getBallSetNamesFromFile:(NSString*)filename
 {
 	NSString *path = [[CCFileUtils sharedFileUtils] fullPathForFilename:filename];
 	NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -56,17 +66,26 @@
 	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
   
 	// reading ball set names
-	[self getBallSetNamesFormFile:@"Balls.plist"];
+	[self getBallSetNamesFromFile:@"Balls.plist"];
 	
   // setting defaults for the Menu
 	[CCMenuItemFont setFontName:DEFAULT_MENU_FONT];
 	[CCMenuItemFont setFontSize:DEFAULT_MENU_FONT_SIZE];
   
   // loading default LevelSet
-  NSURL * bla = [NSBundle URLForResource:@"DummyLevels" withExtension:@"levelset" subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
+  NSURL * bla = [NSBundle URLForResource:DEFAULT_LEVELSET_NAME withExtension:DEFAULT_LEVELSET_EXTENSION subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
   
   self.levelSet = [CMMarbleLevelSet levelSetWithURL:bla];
   
   NSLog(@"Readl end");
+}
+
+- (CMMarblePlayer*) currentPlayer
+{
+	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+	NSString* currentPlayerName = [ud stringForKey:@"currentPlayer"];
+	NSData *playerData = [[ud dictionaryForKey:@"Players"]objectForKey:currentPlayerName];
+	CMMarblePlayer *currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
+	return currentPlayer;
 }
 @end

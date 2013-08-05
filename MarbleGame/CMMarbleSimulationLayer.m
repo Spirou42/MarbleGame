@@ -16,6 +16,7 @@
 #import "CMMarblePlayScene.h"
 #import "SceneHelper.h"
 #import "CMMarbleSprite.h"
+#import "CMMarbleLevel.h"
 enum {
 	kTagParentNode = 1,
 };
@@ -31,6 +32,8 @@ static NSString *borderType = @"borderType";
 -(void) initPhysics;
 
 @property (nonatomic,assign) CGPoint lastMousePosition;
+
+- (void) initializeLevel;
 @end
 
 
@@ -39,7 +42,8 @@ static NSString *borderType = @"borderType";
 @synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer,
 simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles,
 dollyGroove = _dollyGroove, dollyShape = _dollyShape, dollyServo = _dollyServo, dollyBody = _dollyBody,
-gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
+gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition,currentLevel=_currentLevel,
+marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex;
 
 +(CCScene *) scene
 {
@@ -93,11 +97,10 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	return self;
 }
 
-
-
 - (void)dealloc
 {
-  
+// 	[self.space removeBody:self.space.staticBody];
+	[self.space remove:self.bounds];
 	self.space = nil;
   self.collisionCollector = nil;
 	self.currentMarbleSet = nil;
@@ -124,53 +127,57 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	CGRect p = CGRectZero;
 	p.size = s;
 	CGRect newBounds = CGRectInset(p,0,0);
-	[self.space addBounds:newBounds
-							thickness:60.0
-						 elasticity:BORDER_ELASTICITY
-							 friction:BORDER_FRICTION
-								 layers:CP_ALL_LAYERS
-									group:CP_NO_GROUP
-					collisionType:borderType];
+	self.bounds = [self.space addBounds:newBounds
+														thickness:60.0
+													 elasticity:BORDER_ELASTICITY
+														 friction:BORDER_FRICTION
+															 layers:CP_ALL_LAYERS
+																group:CP_NO_GROUP
+												collisionType:borderType];
 	
 	[self.space addCollisionHandler:self typeA:[CMMarbleSprite class] typeB:[CMMarbleSprite class]
 														begin:@selector(beginMarbleCollision:space:)
 												 preSolve:nil
 												postSolve:@selector(postMarbleCollision:space:)
 												 separate:@selector(separateMarbleCollision:space:)];
-	
+	self.space.collisionBias = pow(1.0-0.1, 400);
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	_debugLayer.visible = NO;
 	[self addChild:_debugLayer z:100];
-
+	
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
 	self.collisionCollector.collisionDelay = 0.2;
 	
 	
-//	self.dollyBody = [ChipmunkBody bodyWithMass:1.0 andMoment:cpMomentForBox(1.0, 20.0, 20.0)];
-//	self.dollyBody.pos=cpv(512, 748);
-//	self.dollyShape = [[[ChipmunkPolyShape alloc]initBoxWithBody:self.dollyBody width:20.0 height:20.0]autorelease];
-//	self.dollyServo = [self.space add:[ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos]];
-//	self.dollyServo.maxForce=1e4;
-//	self.dollyServo.maxBias = 1e6;
-//	
-//	
-//	cpVect start = cpv(10, 748);
-//	cpVect end = cpv(1004,748);
-//	cpVect anchor = cpv(0,0);
-//	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:self.dollyBody groove_a:start groove_b:end anchr2:anchor];
-//	[self.space addConstraint:self.dollyGroove];
-//	[self.space addShape:self.dollyShape];
-//	[self.space addBody:self.dollyBody];
+	//	self.dollyBody = [ChipmunkBody bodyWithMass:1.0 andMoment:cpMomentForBox(1.0, 20.0, 20.0)];
+	//	self.dollyBody.pos=cpv(512, 748);
+	//	self.dollyShape = [[[ChipmunkPolyShape alloc]initBoxWithBody:self.dollyBody width:20.0 height:20.0]autorelease];
+	//	self.dollyServo = [self.space add:[ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos]];
+	//	self.dollyServo.maxForce=1e4;
+	//	self.dollyServo.maxBias = 1e6;
+	//
+	//
+	//	cpVect start = cpv(10, 748);
+	//	cpVect end = cpv(1004,748);
+	//	cpVect anchor = cpv(0,0);
+	//	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:self.dollyBody groove_a:start groove_b:end anchr2:anchor];
+	//	[self.space addConstraint:self.dollyGroove];
+	//	[self.space addShape:self.dollyShape];
+	//	[self.space addBody:self.dollyBody];
 	
 }
 
 
 - (BOOL) beginMarbleCollision:(cpArbiter*) arbiter space:(ChipmunkSpace*) space
 {
+	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
 	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
 	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
-	
+	CMMarbleSprite *db = self.dollyBody.data;
+	if ((firstMarbleLayer == db) || (secondMarbleLayer == db)) {
+		return YES;
+	}
 	
 	if (firstMarbleLayer.ballIndex == secondMarbleLayer.ballIndex) {
 		[self.collisionCollector object:firstMarbleLayer touching:secondMarbleLayer];
@@ -192,7 +199,10 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
 	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
 	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
-	
+	CMMarbleSprite *db = self.dollyBody.data;
+	if ((firstMarbleLayer == db) || (secondMarbleLayer == db)) {
+		return;
+	}
 	if (firstMarbleLayer.ballIndex == secondMarbleLayer.ballIndex) {
 		[self.collisionCollector object:firstMarbleLayer releasing:secondMarbleLayer];
 		firstMarbleLayer.touchesNeighbour=NO;
@@ -238,10 +248,10 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	}
 	if ([alreadyRemoved count]) {
 		NSMutableSet *imageSet = [NSMutableSet set];
-		for (CMMarbleSprite *aLayer in self.simulatedMarbles) {
-			[imageSet addObject:[NSNumber numberWithInteger:aLayer.ballIndex]];
+		for (CMMarbleSprite *marbleSprite in self.simulatedMarbles) {
+			[imageSet addObject:[NSNumber numberWithInteger:marbleSprite.ballIndex]];
 		}
-//		[self.delegate imagesOnField:imageSet];
+	[self.gameDelegate imagesOnField:imageSet];
 	}
 	
 }
@@ -290,6 +300,15 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
 	}
 }
 
+- (void) setCurrentLevel:(CMMarbleLevel *)cL
+{
+	if (cL != self->_currentLevel) {
+		self->_currentLevel = cL;
+		[self initializeLevel];
+	}
+	
+}
+
 
 
 #pragma mark -
@@ -325,7 +344,7 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.dollyServo.dist = 0.001;
 //	self.dollyServo.anchr1 = self.lastMousePosition;
-	
+	self.currentMarbleIndex = marbleIndex;
 }
 
 
@@ -354,7 +373,8 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
   cpVect velocity =  self.dollyBody.vel;
   cpVect velocityNew =cpvmult(velocity, .5);
   self.dollyBody.vel = velocityNew;
-	[self.gameDelegate marbleInGame];
+	[self.gameDelegate marbleDroppedWithID:self.currentMarbleIndex];
+	[self.simulatedMarbles addObject:self.dollyBody.data];
 }
 
 - (void) moveMarble:(CMEvent*)movedEvent
@@ -431,7 +451,61 @@ gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition;
     marble.setName=marbleSet;
   }
 }
+- (void) initializeLevel
+{
+	NSUInteger p = self.currentLevel.numberOfMarbles;
+	[self fireMarbles:p inTime:10];
+	
+}
 
+- (void) fireSingleMarble:(NSTimer*) timer
+{
+	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
+  NSString *marbleSet = [self.gameDelegate marbleSetName];
+	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
+	[self.batchNode addChild:ms];
+	[ms createOverlayTextureRect];
+	[self.space add:ms];
+	ChipmunkBody *dB = ms.shape.body;
+
+	CGFloat velX = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0;
+	CGFloat velY = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0 ;
+	NSLog(@"VelX: %f, VelY: %f",velX,velY);
+	dB.vel = cpv(velX,velY);
+	CGSize s = [[CCDirector sharedDirector] winSize];
+	dB.pos = CGPointMake(s.width/2.0, s.height - 200);
+	self.marblesToFire--;
+	if (self.marblesToFire == 0) {
+		[self.marbleFireTimer invalidate];
+		self.marbleFireTimer = nil;
+	}
+	[self.gameDelegate marbleFiredWithID:marbleIndex];
+	[self.simulatedMarbles addObject:ms];
+}
+
+- (void) fireMarbles:(NSUInteger)numOfMarbles inTime:(CGFloat)seconds
+{
+	if(!self.marbleFireTimer){
+		CGFloat marbleCadenz = seconds/numOfMarbles;
+		self.marblesToFire = numOfMarbles;
+		NSTimer *marbleTimer = [NSTimer scheduledTimerWithTimeInterval:marbleCadenz target:self selector:@selector(fireSingleMarble:) userInfo:nil repeats:YES];
+		self.marbleFireTimer = marbleTimer;
+	}
+}
+
+- (void) removedMarbles:(NSSet *)removedOnes
+{
+	CMMarbleSprite *ms = self.dollyBody.data;
+	if (ms) {
+		for (NSNumber *p in [removedOnes allObjects]) {
+			if (p.integerValue == ms.ballIndex) {
+				ms.ballIndex = [self.gameDelegate marbleIndex];
+				self.currentMarbleIndex = ms.ballIndex;
+				break;
+			}
+		}
+	}
+}
 
 @end
 

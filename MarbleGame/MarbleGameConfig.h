@@ -8,6 +8,8 @@
 
 #ifndef MarbleGame_MarbleGameConfig_h
 #define MarbleGame_MarbleGameConfig_h
+#define DEFAULT_LEVELSET_NAME @"DummyLevels" 
+#define DEFAULT_LEVELSET_EXTENSION @"levelset"
 
 
 #define DEFAULT_FONT @"Helvetica Neue"
@@ -60,7 +62,7 @@
 #ifdef __CC_PLATFORM_MAC
   #define SPACE_GRAVITY     981.00f
 #else
-  #define SPACE_GRAVITY     (981.00f * 2.5f)
+  #define SPACE_GRAVITY     (981.00f * 1.0f)
 #endif
 
 #define MARBLE_MASS       20.0f

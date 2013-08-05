@@ -28,6 +28,6 @@
 @property (readonly, nonatomic) NSDictionary *removedMarblesPerImage;
 
 - (void) reset;
-- (void) marbleCleared:(CMMarbleSprite*) marbleImage;  ///< called if a marble color was cleared from the level - does not effect any parameter other than clearedMarbleImages
-- (void) marbleRemoved:(CMMarbleSprite*) removedImage; ///< call if a single marble was removed from the level - does not effect marblesInLevel!
+- (void) marbleCleared:(NSNumber*) marbleImage;  ///< called if a marble color was cleared from the level - does not effect any parameter other than clearedMarbleImages
+- (void) marbleRemoved:(NSNumber*) removedImage; ///< call if a single marble was removed from the level - does not effect marblesInLevel!
 @end

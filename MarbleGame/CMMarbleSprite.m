@@ -27,7 +27,7 @@
 
 -(id) initWithBallSet:(id)sN ballIndex:(NSInteger)bI mass:(CGFloat)mass andRadius:(CGFloat)r
 {
-  NSString* frameName = [NSString stringWithFormat:@"%@_%li",sN,bI];
+  NSString* frameName = [NSString stringWithFormat:@"%@_%li",sN,(long)bI];
   if ((self=[super initWithSpriteFrameName:frameName])) {
     
 #if 0
@@ -38,9 +38,10 @@
     self.shaderProgram = k;
 
     self.radius = r;
-    self.ballIndex = bI;
     self.setName=sN;
+    self.ballIndex = bI;
     self.chipmunkBody = [self circleBodyWithMass:mass andRadius:r];
+		self.chipmunkBody.data = self;
 		self.shape = [self circleShapeWithBody:self.chipmunkBody andRadius:self.radius];
 		CGPoint scale = ccp(1,1);
 		CGFloat t = r*2.0;
@@ -93,7 +94,7 @@
 - (NSString*) frameName
 {
   if (self.setName) {
-    return [NSString stringWithFormat:@"%@_%li",self.setName,self.ballIndex];
+    return [NSString stringWithFormat:@"%@_%li",self.setName,(long)self.ballIndex];
   }
   return nil;
 }
@@ -171,6 +172,16 @@
 	}
 }
 
+- (void) setBallIndex:(NSInteger)bI
+{
+	if (self->ballIndex != bI) {
+		self->ballIndex = bI;
+		CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.frameName];
+		[self setTextureRect:frame.rect rotated:frame.rotated untrimmedSize:frame.rect.size];
+	}
+
+}
+
 
 #pragma mark -
 #pragma mark Rendering
@@ -225,8 +236,8 @@
   [self rotateMapCoords];
   [super draw];
 	if (self.touchesNeighbour) {
-		ccDrawColor4F(0.2, 0.9, 0.1, 0.8);
-		glLineWidth(2);
+		ccDrawColor4F(0.2, 0.9, 0.1, 0.5);
+		glLineWidth(1.8);
 		CGFloat r = self.contentSize.width / 2.0;
 		ccDrawCircle(ccp(r,r), r, 0, 36, NO);
 

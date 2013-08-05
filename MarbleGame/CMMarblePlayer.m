@@ -10,15 +10,26 @@
 #import "CMMarblePlayer.h"
 
 @implementation CMMarblePlayer
+@synthesize currentLevel;
 
++ (id) playerWithName:(NSString *)userName
+{
+	id result = [[[[self class] alloc]initWithName:userName]autorelease];
+	return result;
+}
 
 - (id) init
 {
+	self = [self initWithName:NSUserName()];
+	return self;
+}
+
+- (id) initWithName:(NSString*)userName
+{
 	self = [super init];
-	if(self)
-	{
-		self.name = NSUserName();
-		self.levelSetStatistics = [NSMutableDictionary dictionary];
+	if (self) {
+		self.name = userName;
+		self.currentLevel = 1;
 	}
 	return self;
 }
@@ -26,7 +37,7 @@
 - (void) dealloc
 {
 	self.name = nil;
-	self.levelSetStatistics = nil;
+//	self.levelSetStatistics = nil;
 	[super dealloc];
 }
 
@@ -35,15 +46,15 @@
 #pragma mark -
 #pragma mark helper
 
-- (NSSet*) playedLevelsInSet:(NSString*) setName
-{
-	
-}
-
-- (CMMarbleLevelStatistics*) statisticsForLevel:(NSString *)levelName inSet:(NSString *)setName
-{
-	
-}
+//- (NSSet*) playedLevelsInSet:(NSString*) setName
+//{
+//	
+//}
+//
+//- (CMMarbleLevelStatistics*) statisticsForLevel:(NSString *)levelName inSet:(NSString *)setName
+//{
+//	
+//}
 
 #pragma mark -
 #pragma mark NSCoding
@@ -53,7 +64,8 @@
 	self = [super init];
 	if (self) {
 		self.name = [aDecoder decodeObjectForKey:@"PlayerName"];
-		self.levelSetStatistics = [aDecoder decodeObjectForKey:@"levelStatistics"];
+		self.currentLevel = [aDecoder decodeIntegerForKey:@"currentLevel"];
+//		self.levelSetStatistics = [aDecoder decodeObjectForKey:@"levelStatistics"];
 
 	}
 	return self;
@@ -62,7 +74,7 @@
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
 	[aCoder encodeObject:self.name forKey:@"PlayerName"];
-	[aCoder encodeObject:self.levelSetStatistics forKey:@"levelStatistice"];
+	[aCoder encodeInteger:self.currentLevel forKey:@"currentLevel"];
 }
 
 @end

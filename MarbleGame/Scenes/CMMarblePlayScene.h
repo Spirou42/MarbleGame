@@ -24,6 +24,9 @@
   CCNode*																	_statisticsOverlay;
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_comboMarkerLabel;
 	NSTimeInterval													_lastDisplayTime;
+	NSTimer*																_marbleDelayTimer;
+	NSMutableSet*														_marblesInGame;
+	NSDate*																	_levelStartTime;
 }
 @property (nonatomic,retain) CMMarbleSimulationLayer* simulationLayer;
 @property (nonatomic,assign) NSInteger normalHits, comboHits, multiHits;
@@ -31,6 +34,9 @@
 @property (nonatomic,retain) CCNode* statisticsOverlay;
 @property (nonatomic,retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;
 @property (nonatomic,assign) NSTimeInterval lastDisplayTime;
+@property (nonatomic,retain) NSTimer* marbleDelayTimer;
+@property (nonatomic,retain) NSMutableSet* marblesInGame;
+@property (nonatomic,retain) NSDate* levelStartTime;
 
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end

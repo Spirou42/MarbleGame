@@ -11,12 +11,16 @@
 @class CMMarbleLevelStatistics;
 @interface CMMarblePlayer : NSObject <NSCoding>
 
++(id) playerWithName:(NSString*)userName;
+-(id) initWithName:(NSString*)userName;
 @property (nonatomic,retain) NSString* name;
-@property (nonatomic,retain) NSDictionary* levelSetStatistics;
+@property (nonatomic,assign) NSUInteger currentLevel;
 
-@property (nonatomic,readonly) NSSet* playedLevelSets;
+//@property (nonatomic,retain) NSDictionary* levelSetStatistics;
 
-- (NSSet*) playedLevelsInSet:(NSString*) setName;
-- (CMMarbleLevelStatistics*) statisticsForLevel:(NSString*)levelName inSet:(NSString*)setName;
+//@property (nonatomic,readonly) NSSet* playedLevelSets;
+
+//- (NSSet*) playedLevelsInSet:(NSString*) setName;
+//- (CMMarbleLevelStatistics*) statisticsForLevel:(NSString*)levelName inSet:(NSString*)setName;
 
 @end

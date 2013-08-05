@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class CMMarbleLevel;
 @protocol CMMarbleGameDelegate <NSObject>
 
 @required
-	- (NSUInteger) marbleIndex;
-	- (NSString*) marbleSetName;
+- (CMMarbleLevel*) currentLevel;
+- (NSUInteger) marbleIndex;
+- (NSString*) marbleSetName;
+- (void) imagesOnField:(NSSet*) fieldImages;
+
 	// called by the game simluation view in case a marble is new in the game
-	- (void) marbleInGame;
+
+- (void) marbleFiredWithID:(NSUInteger) ballIndex;
+
+- (void) marbleDroppedWithID:(NSUInteger) ballIndex;
 @end
