@@ -30,7 +30,7 @@
 #import <OpenGL/gl.h>
 #else
 #import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES3/gl.h>
+#import <OpenGLES/ES2/gl.h>
 #endif
 #ifdef __cplusplus__
 extern "C" {
