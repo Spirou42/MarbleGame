@@ -22,7 +22,6 @@
 	NSInteger																_normalHits,_comboHits,_multiHits;
 	CMMarbleLevelStatistics*								_currentStatistics;
   CCNode*																	_statisticsOverlay;
-	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_comboMarkerLabel;
 	NSTimeInterval													_lastDisplayTime;
 	NSTimer*																_marbleDelayTimer;
 	NSMutableSet*														_marblesInGame;
@@ -30,6 +29,10 @@
 	CCSprite*																_backgroundSprite;
 	CCSprite*																_foregroundSprite;
 	CCSprite*																_overlaySprite;
+
+	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_scoreLabel;
+	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_timeLabel;
+	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_remarkLabel;
 
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
@@ -44,6 +47,7 @@
 @property (nonatomic, retain) CCSprite* backgroundSprite;
 @property (nonatomic, retain) CCSprite* foregroundSprite;
 @property (nonatomic, retain) CCSprite* overlaySprite;
+@property( nonatomic, retain)CCNode<CCLabelProtocol,CCRGBAProtocol> *scoreLabel,*timeLabel,*remarkLabel;
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

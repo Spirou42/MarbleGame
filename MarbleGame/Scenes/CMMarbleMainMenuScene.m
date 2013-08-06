@@ -14,8 +14,12 @@
 #import "cocos2d.h"
 #import "SceneHelper.h"
 #import "CCControlExtension.h"
-
+#import "CMMarblePlayer.h"
+#import "AppDelegate.h"
+#import "MarbleGameAppDelegate+GameDelegate.h"
+#import "CCLabelBMFont+CMMarbleRealBounds.h"
 @implementation CMMarbleMainMenuScene
+@synthesize  playerName;
 
 - (id) init
 {
@@ -74,6 +78,13 @@
 	CCSprite *plate =mainMenuMenuPlate();
 	plate.position = centerOfScreen();
 	[self addChild:plate z:-1];
+	
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	NSString *pN = [currentPlayer.name uppercaseString];
+	
+	self.playerName = defaultGameLabel(pN);
+
+
 	return self;
 }
 
@@ -97,6 +108,32 @@
 - (void)onHelp:(id)sender
 {
 	[[CCDirector sharedDirector] replaceScene:[CMMarbleHelpScene node]];
+}
+
+#pragma mark -
+#pragma mark Properties
+
+- (void) setPlayerName:(CCNode<CCRGBAProtocol,CCLabelProtocol>* )pN
+{
+	if (self->_playerName != pN) {
+		CGRect realBounds = CGRectZero;
+		if ([pN isKindOfClass:[CCLabelBMFont class]]) {
+			CCLabelBMFont*p = (CCLabelBMFont*)pN;
+			realBounds = [p outerBounds];
+		}else
+			realBounds = pN.boundingBox;
+		if (self->_playerName) {
+			[self removeChild:self->_playerName];
+			[self->_playerName release];
+		}
+		self->_playerName = [pN retain];
+		if (self->_playerName) {
+			[self addChild:self->_playerName z:11];
+		}
+
+		self->_playerName.opacity=0.75 * 255;
+		self->_playerName.position=cpv(258, 747-realBounds.size.height/2.0);
+	}
 }
 
 @end

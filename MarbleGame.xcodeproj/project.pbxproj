@@ -37,6 +37,17 @@
 		9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45417B0552400D0FD25 /* LevelBackground-Default.png */; };
 		9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45717B0567400D0FD25 /* Level-Overlay.png */; };
 		9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45717B0567400D0FD25 /* Level-Overlay.png */; };
+		9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45B17B0691100D0FD25 /* Simpleton17Glow.fnt */; };
+		9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45B17B0691100D0FD25 /* Simpleton17Glow.fnt */; };
+		9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45C17B0691100D0FD25 /* Simpleton17Glow.png */; };
+		9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45C17B0691100D0FD25 /* Simpleton17Glow.png */; };
+		9353D46417B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */; };
+		9353D46517B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */; };
+		9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9353D46617B0835600D0FD25 /* RockWell24-OutlineButton.fnt */; };
+		9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9353D46617B0835600D0FD25 /* RockWell24-OutlineButton.fnt */; };
+		9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D46717B0835600D0FD25 /* RockWell24-OutlineButton.png */; };
+		9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D46717B0835600D0FD25 /* RockWell24-OutlineButton.png */; };
+		9353D46D17B0983E00D0FD25 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D46C17B0983E00D0FD25 /* Icon.png */; };
 		9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7601793296B008D584E /* CMMarbleLevel.m */; };
 		9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7621793296B008D584E /* CMMarbleLevelSet.m */; };
 		9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */; };
@@ -66,12 +77,6 @@
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
 		FED2E5F317A7E488005A16B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645F177DFB50009F640B /* Foundation.framework */; };
-		FED2E60217A7E489005A16B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60117A7E489005A16B3 /* Icon-72.png */; };
-		FED2E60417A7E489005A16B3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60317A7E489005A16B3 /* Icon-Small-50.png */; };
-		FED2E60617A7E489005A16B3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60517A7E489005A16B3 /* Icon-Small.png */; };
-		FED2E60817A7E489005A16B3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60717A7E489005A16B3 /* Icon-Small@2x.png */; };
-		FED2E60A17A7E489005A16B3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60917A7E489005A16B3 /* Icon.png */; };
-		FED2E60C17A7E489005A16B3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60B17A7E489005A16B3 /* Icon@2x.png */; };
 		FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FED2E60E17A7E489005A16B3 /* iTunesArtwork */; };
 		FED2E7E317A7E48B005A16B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FED2E7E217A7E48B005A16B3 /* main.m */; };
 		FED2E7EE17A7E48B005A16B3 /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = FED2E7ED17A7E48B005A16B3 /* grossini_dance_atlas.png */; };
@@ -362,6 +367,13 @@
 		9353D43E17B0492D00D0FD25 /* MainMenu-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenu-Overlay.png"; sourceTree = "<group>"; };
 		9353D45417B0552400D0FD25 /* LevelBackground-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelBackground-Default.png"; sourceTree = "<group>"; };
 		9353D45717B0567400D0FD25 /* Level-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Overlay.png"; sourceTree = "<group>"; };
+		9353D45B17B0691100D0FD25 /* Simpleton17Glow.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Simpleton17Glow.fnt; sourceTree = "<group>"; };
+		9353D45C17B0691100D0FD25 /* Simpleton17Glow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Simpleton17Glow.png; sourceTree = "<group>"; };
+		9353D46217B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLabelBMFont+CMMarbleRealBounds.h"; sourceTree = "<group>"; };
+		9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLabelBMFont+CMMarbleRealBounds.m"; sourceTree = "<group>"; };
+		9353D46617B0835600D0FD25 /* RockWell24-OutlineButton.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell24-OutlineButton.fnt"; sourceTree = "<group>"; };
+		9353D46717B0835600D0FD25 /* RockWell24-OutlineButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell24-OutlineButton.png"; sourceTree = "<group>"; };
+		9353D46C17B0983E00D0FD25 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9356F75F1793296B008D584E /* CMMarbleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevel.h; sourceTree = "<group>"; };
 		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevel.m; sourceTree = "<group>"; };
 		9356F7611793296B008D584E /* CMMarbleLevelSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSet.h; sourceTree = "<group>"; };
@@ -448,12 +460,6 @@
 		FED2E5FB17A7E488005A16B3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		FED2E5FD17A7E488005A16B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		FED2E5FF17A7E488005A16B3 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		FED2E60117A7E489005A16B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		FED2E60317A7E489005A16B3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
-		FED2E60517A7E489005A16B3 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
-		FED2E60717A7E489005A16B3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		FED2E60917A7E489005A16B3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		FED2E60B17A7E489005A16B3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		FED2E60D17A7E489005A16B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		FED2E60E17A7E489005A16B3 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		FED2E7E117A7E48B005A16B3 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -644,6 +650,7 @@
 		93536461177DFB50009F640B /* MarbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				9353D46117B079CC00D0FD25 /* Extensions */,
 				93EAB2DE17A19C6A009894C5 /* Game */,
 				9356F75E1793296B008D584E /* Level */,
 				934AF9B517838AB0004BAC7E /* Controls */,
@@ -657,6 +664,7 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9353D45A17B068F100D0FD25 /* Fonts */,
 				9356F78217933069008D584E /* DummyLevels.levelset */,
 				FEF14BAB179041D5007A3AEB /* Shaders */,
 				933FEB0E17836A8800786883 /* Images */,
@@ -701,6 +709,27 @@
 			);
 			name = Sprites;
 			path = Resources/Sprites;
+			sourceTree = "<group>";
+		};
+		9353D45A17B068F100D0FD25 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9353D46617B0835600D0FD25 /* RockWell24-OutlineButton.fnt */,
+				9353D46717B0835600D0FD25 /* RockWell24-OutlineButton.png */,
+				9353D45B17B0691100D0FD25 /* Simpleton17Glow.fnt */,
+				9353D45C17B0691100D0FD25 /* Simpleton17Glow.png */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		9353D46117B079CC00D0FD25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9353D46217B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.h */,
+				9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		9356F75E1793296B008D584E /* Level */ = {
@@ -869,16 +898,11 @@
 		FED2E5F817A7E488005A16B3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9353D46C17B0983E00D0FD25 /* Icon.png */,
 				FED2E5F917A7E488005A16B3 /* Default.png */,
 				FED2E5FB17A7E488005A16B3 /* Default@2x.png */,
 				FED2E5FD17A7E488005A16B3 /* Default-568h@2x.png */,
 				FED2E5FF17A7E488005A16B3 /* Default-Landscape~ipad.png */,
-				FED2E60117A7E489005A16B3 /* Icon-72.png */,
-				FED2E60317A7E489005A16B3 /* Icon-Small-50.png */,
-				FED2E60517A7E489005A16B3 /* Icon-Small.png */,
-				FED2E60717A7E489005A16B3 /* Icon-Small@2x.png */,
-				FED2E60917A7E489005A16B3 /* Icon.png */,
-				FED2E60B17A7E489005A16B3 /* Icon@2x.png */,
 				FED2E60D17A7E489005A16B3 /* Info.plist */,
 				FED2E60E17A7E489005A16B3 /* iTunesArtwork */,
 				FED2E7ED17A7E48B005A16B3 /* grossini_dance_atlas.png */,
@@ -1225,6 +1249,8 @@
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
 				9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
+				9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
+				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
@@ -1235,6 +1261,8 @@
 				933FEB1B1783724800786883 /* Buttons.png in Resources */,
 				FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */,
 				FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */,
+				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
+				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
 				FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */,
@@ -1246,20 +1274,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED2E60A17A7E489005A16B3 /* Icon.png in Resources */,
-				FED2E60617A7E489005A16B3 /* Icon-Small.png in Resources */,
-				FED2E60217A7E489005A16B3 /* Icon-72.png in Resources */,
+				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
+				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				FED9FD3217A8156A00ACC97F /* UIElements.plist in Resources */,
 				FED9FD3317A8156A00ACC97F /* UIElements.png in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				FED9FD2E17A8156A00ACC97F /* GlassButtons.plist in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
-				FED2E60417A7E489005A16B3 /* Icon-Small-50.png in Resources */,
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
+				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
+				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
-				FED2E60817A7E489005A16B3 /* Icon-Small@2x.png in Resources */,
 				FED9FD3117A8156A00ACC97F /* Buttons.png in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
+				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				FED2E7EE17A7E48B005A16B3 /* grossini_dance_atlas.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
@@ -1267,7 +1295,6 @@
 				FED9FD2917A8154000ACC97F /* DummyLevels.levelset in Resources */,
 				9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				FED9FD2F17A8156A00ACC97F /* GlassButtons.png in Resources */,
-				FED2E60C17A7E489005A16B3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1298,6 +1325,7 @@
 				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
 				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,
 				9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */,
+				9353D46417B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,6 +1353,7 @@
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,
 				FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
+				9353D46517B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

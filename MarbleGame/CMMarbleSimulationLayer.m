@@ -18,6 +18,7 @@
 #import "CMMarbleSprite.h"
 #import "CMMarbleLevel.h"
 #import "CMSimpleShapeReader.h"
+#import "CCLabelBMFont+CMMarbleRealBounds.h"
 enum {
 	kTagParentNode = 1,
 };
@@ -102,6 +103,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 {
 // 	[self.space removeBody:self.space.staticBody];
 	[self.space remove:self.bounds];
+	[self.space remove:self.staticShapes];
 	self.space = nil;
   self.collisionCollector = nil;
 	self.currentMarbleSet = nil;
@@ -311,18 +313,26 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 }
 - (void) setStaticShapes:(NSArray *)staticBodies
 {
-	ChipmunkBody * staticBody = self.space.staticBody;
-	for (ChipmunkShape *shape in staticBodies) {
-		shape.body = staticBody;
-		[self.space add:shape];
+	if (staticBodies != self->_staticShapes) {
+		if (self->_staticShapes) {
+			[self.space remove:self->_staticShapes];
+		}
+
+		ChipmunkBody * staticBody = self.space.staticBody;
+		for (ChipmunkShape *shape in staticBodies) {
+			shape.body = staticBody;
+			[self.space add:shape];
+		}
+		[self->_staticShapes release];
+		self->_staticShapes = [staticBodies retain];
 	}
+
 }
 
 - (NSArray*) staticShapes
 {
 	return self.space.staticBody.shapes;
 }
-
 
 
 #pragma mark -
@@ -455,7 +465,10 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 - (void) resetSimulation
 {
   self.simulationRunning=NO;
+	[self.marbleFireTimer invalidate];
+	self.marbleFireTimer = nil;
   [self.batchNode removeAllChildren];
+	[self initializeLevel];
   self.simulationRunning = YES;
 }
 - (void) retextureMarbles
@@ -467,7 +480,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 }
 - (void) initializeLevel
 {
-	
+//	[self.space remove:self.bounds];
 	self.staticShapes = self.currentLevel.shapeReader.shapes;
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;

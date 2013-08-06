@@ -21,3 +21,4 @@ CCSprite* mainMenuOverlay();
 CCSprite* mainMenuMenuPlate();
 CCSprite* defaultLevelBackground();
 CCSprite* defaultLevelOverlay();
+CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultGameLabel(NSString* labelText);

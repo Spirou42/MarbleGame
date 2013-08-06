@@ -16,13 +16,13 @@
 	NSUInteger 					removedMarbles;								///< total number of marbles removed
 	NSMutableArray 			*clearedMarbles;							///< NSNumbers of the cleared images
 	NSMutableDictionary	*removedMarblesForImages; 		///< key:= NSNumber Value: removed marbles of this color
-	NSUInteger					score;												///< Score reached in this level
+	NSInteger					score;												///< Score reached in this level
 	NSTimeInterval			time;													///< time used to clear this level
 }
 
 @property (assign, nonatomic) NSUInteger marblesInLevel;
 @property (assign, nonatomic) NSUInteger removedMarbles;
-@property (assign, nonatomic) NSUInteger score;
+@property (assign, nonatomic) NSInteger score;
 @property (assign, nonatomic) NSTimeInterval time;
 @property (readonly, nonatomic) NSArray* clearedMarbleImages;
 @property (readonly, nonatomic) NSDictionary *removedMarblesPerImage;

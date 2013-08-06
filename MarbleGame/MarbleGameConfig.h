@@ -13,7 +13,7 @@
 #define DEFAULT_LEVELSET_EXTENSION @"levelset"
 
 
-#define DEFAULT_FONT @"Helvetica Neue"
+#define DEFAULT_FONT @"RockWell24-OutlineButton.fnt"
 #define DEFAULT_BUTTON_FONT DEFAULT_FONT
 #define DEFAULT_BUTTON_FONT_SIZE 18
 #define DEFAULT_BUTTON_TITLE_COLOR ccc3(250, 250, 250)
@@ -84,5 +84,13 @@
 #define CMEvent UIEvent
 #define CMAppDelegate (MarbleGameAppDelegate*)[[UIApplication sharedApplication] delegate]
 #endif
+
+
+/// SCORE SETTINGS
+
+#define MARBLE_THROW_SCORE 				(-1.0)
+#define MARBLE_HIT_SCORE					(3)
+#define MARBLE_COMBO_MULTIPLYER 	(2.5)
+#define MARBLE_MULTY_MUTLIPLYER		(5)
 
 #endif

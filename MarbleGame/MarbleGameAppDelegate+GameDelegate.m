@@ -98,5 +98,6 @@
 	NSMutableDictionary* playerDict = [[ud dictionaryForKey:@"Players"]mutableCopy];
 	[playerDict setObject:playerData forKey:currentPlayerName];
 	[ud setObject:playerDict forKey:@"Players"];
+	[ud synchronize];
 }
 @end

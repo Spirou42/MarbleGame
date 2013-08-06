@@ -18,6 +18,7 @@
 #import "CMMarbleLevelSet.h"
 #import "CMMarblePlayer.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
+#import "CCLabelBMFont+CMMarbleRealBounds.h"
 
 #define BACKGROUND_LAYER 	(-1)
 #define MARBLE_LAYER 			(1)
@@ -32,7 +33,20 @@
 currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
 comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer,
 marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
-foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
+foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite,
+scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
+
+- (NSString*) currentTimeString
+{
+	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
+	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)dt/60,(NSInteger)dt%60];
+	return result;
+}
+- (NSString*) currentScoreString
+{
+	NSString *result = [NSString stringWithFormat:@"%010ld",(long)self.currentStatistics.score];
+	return result;
+}
 
 - (id) init
 {
@@ -44,6 +58,8 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
     self.simulationLayer =[CMMarbleSimulationLayer node];
 		self.simulationLayer.gameDelegate = self;
 		self.simulationLayer.currentLevel = [self currentLevel];
+		self.scoreLabel = defaultGameLabel(@"0");
+		self.timeLabel = defaultGameLabel(@"00:00");
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
@@ -53,8 +69,6 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 		
 		[self resetSimulationAction:nil];
 		self.levelStartTime = [NSDate date];
-
-
 	}
 	return self;
 }
@@ -135,6 +149,80 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 	}
 }
 
+- (void) setScoreLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)sL
+{
+	if (self->_scoreLabel != sL) {
+		CGRect realBounds = CGRectZero;
+		if ([sL isKindOfClass:[CCLabelBMFont class]]) {
+			CCLabelBMFont*p = (CCLabelBMFont*)sL;
+			realBounds = [p outerBounds];
+		}else
+			realBounds = sL.boundingBox;
+		
+		if (self->_scoreLabel) {
+			[self removeChild:self->_scoreLabel];
+			[self->_scoreLabel release];
+		}
+		self->_scoreLabel = [sL retain];
+		self->_scoreLabel.anchorPoint = cpv(1.0, 0.5);
+		if (self->_scoreLabel) {
+			[self addChild:self->_scoreLabel z:11];
+		}
+
+		self->_scoreLabel.opacity=0.75 * 255;
+		self->_scoreLabel.position=cpv(238, 747-realBounds.size.height/2.0);
+	}
+}
+- (void) setTimeLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)tL
+{
+	if (self->_timeLabel != tL) {
+		CGRect realBounds = CGRectZero;
+		if ([tL isKindOfClass:[CCLabelBMFont class]]) {
+			CCLabelBMFont*p = (CCLabelBMFont*)tL;
+			realBounds = [p outerBounds];
+		}else
+			realBounds = tL.boundingBox;
+		
+		if (self->_timeLabel) {
+			[self removeChild:self->_timeLabel];
+			[self->_timeLabel release];
+		}
+		self->_timeLabel = [tL retain];
+		if (self->_timeLabel) {
+			[self addChild:self->_timeLabel z:11];
+		}
+
+		self->_timeLabel.opacity=0.75 * 255;
+		self->_timeLabel.position=cpv(896, 747-realBounds.size.height/2.0);
+	}
+}
+
+- (void) setRemarkLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)rL
+{
+	if (self->_remarkLabel != rL) {
+		CGRect realBounds = CGRectZero;
+		if ([rL isKindOfClass:[CCLabelBMFont class]]) {
+			CCLabelBMFont*p = (CCLabelBMFont*)rL;
+			realBounds = [p outerBounds];
+		}else
+			realBounds = rL.boundingBox;
+		if (self->_remarkLabel) {
+			[self removeChild:self->_remarkLabel];
+			[self->_remarkLabel release];
+		}
+		
+		self->_remarkLabel = [rL retain];
+		self->_remarkLabel.anchorPoint=cpv(0.5, 0.5);
+		if (self->_remarkLabel) {
+			[self addChild:self->_remarkLabel z:11];
+		}
+
+		self->_remarkLabel.opacity=0.75 * 255;
+		self->_remarkLabel.position=cpv(384, 749-realBounds.size.height/2.0);
+	}
+}
+
+
 
 
 #pragma mark -
@@ -207,14 +295,7 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
   buttonPos.x += settingsButton.contentSize.width;
 }
 
--(void) scheduleUpdate
-{
-	[super scheduleUpdate];
-}
-- (void) update:(ccTime)delta
-{
-	[super update:delta];
-}
+
 
 - (void) toggleMenu:(id) sender
 {
@@ -249,10 +330,12 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 
 - (void) resetSimulationAction:(id) sender
 {
+	CMMarblePlayer *cP = [CMAppDelegate currentPlayer];
 
+	[CMAppDelegate setCurrentPlayer:cP];
   [self.simulationLayer resetSimulation];
 	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
-	
+	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
 	for (NSUInteger i = 1; i<10; i++) {
 		[self.marblesInGame addObject:[NSNumber numberWithInteger:i]];
@@ -293,8 +376,17 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 #pragma mark -
 #pragma mark G A M E
 
+
 - (void) simulationStepDone:(NSTimeInterval)dt
 {
+	static NSTimeInterval lastLabelUpdate;
+	lastLabelUpdate+= dt;
+	if (lastLabelUpdate>.25) {
+		lastLabelUpdate=0.0;
+		self.scoreLabel = defaultGameLabel([self currentScoreString]);
+		self.timeLabel = defaultGameLabel([self currentTimeString]);
+	}
+	
 	[self checkMarbleCollisionsAt:dt];
 }
 - (NSArray*) getCollisionSets:(NSUInteger)minCollisions
@@ -399,7 +491,7 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 		//																			repeats:NO];
 		//
 		//		}
-		self.currentStatistics.score += self.comboHits*10;
+		self.currentStatistics.score += self.comboHits*MARBLE_HIT_SCORE * MARBLE_COMBO_MULTIPLYER;
 		self.comboHits -= [removedMarbles count];
 	}
   
@@ -408,28 +500,28 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
   for (NSNumber * delay in oldestHit) {
     CGFloat t = [delay floatValue];
     if (t>0.001) {
-      self.comboMarkerLabel.string = @"Nice";
+      self.remarkLabel = defaultGameLabel(@"Nice");
       if(t>0.05)
-        self.comboMarkerLabel.string = @"Respect";
+        self.remarkLabel = defaultGameLabel(@"Respect");
       if (t>0.10)
-        self.comboMarkerLabel.string = @"Perfect";
+        self.remarkLabel = defaultGameLabel(@"Perfect");
       if (t>0.15)
-        self.comboMarkerLabel.string = @"Trickshot";
+        self.remarkLabel = defaultGameLabel(@"Trickshot");
       if (t>0.17) {
-        self.comboMarkerLabel.string = @"Lucky One";
+        self.remarkLabel = defaultGameLabel(@"Lucky One");
       }
-      self.comboMarkerLabel.visible = YES;
+      self.remarkLabel.visible = YES;
       [NSTimer scheduledTimerWithTimeInterval:5
                                        target:self
                                      selector:@selector(markerTimerCallback:)
-                                     userInfo:self.comboMarkerLabel
+                                     userInfo:self.remarkLabel
                                       repeats:NO];
       
     }
   }
 	
 	
-	self.currentStatistics.score += (normalHits*3) + (multiHits*6);
+	self.currentStatistics.score += (normalHits*MARBLE_HIT_SCORE) + (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
 	
 	self.lastDisplayTime = time;
 	[self.simulationLayer removeCollisionSets:removedMarbles];
@@ -438,7 +530,7 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 
 - (void) markerTimerCallback:(NSTimer*) timer
 {
-	
+	self.remarkLabel = nil;
 }
 
 - (void) marbleDelayCallback:(NSTimer*)timer
@@ -451,8 +543,13 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
-	currentLevelIndex = (currentLevelIndex+1)%[appDel levelSet].levelList.count;
+	CMMarbleLevelSet * lS = [appDel levelSet];
+	NSArray *list = [lS levelList];
+	NSInteger levelsInList = list.count;
+	currentLevelIndex ++;
+	currentLevelIndex = currentLevelIndex%levelsInList;
 	currentPlayer.currentLevel = currentLevelIndex;
+
 	appDel.currentPlayer =  currentPlayer;
 }
 
@@ -480,9 +577,8 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
 		NSLog(@"LevelStatistics: %@",self.currentStatistics);
 		[self.simulationLayer stopSimulation];
-		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
 		[self updatePlayerLevel];
-		
+		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
 	}
 }
 
@@ -543,6 +639,8 @@ foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 		self.marbleDelayTimer = [NSTimer scheduledTimerWithTimeInterval:MARBLE_CREATE_DELAY target:self selector:@selector(marbleDelayCallback:) userInfo:nil repeats:NO];
 	}
 	[self marbleFiredWithID:ballIndex];
+	self.currentStatistics.score += MARBLE_THROW_SCORE;
+	self.comboHits = 0;
 }
 
 - (CMMarbleLevel*) currentLevel
