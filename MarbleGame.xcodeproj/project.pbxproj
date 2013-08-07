@@ -579,6 +579,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		933A14B217B2F4B700F3420C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
 		933FEB0E17836A8800786883 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +663,7 @@
 		93536461177DFB50009F640B /* MarbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				933A14B217B2F4B700F3420C /* Effects */,
 				9353D46117B079CC00D0FD25 /* Extensions */,
 				93EAB2DE17A19C6A009894C5 /* Game */,
 				9356F75E1793296B008D584E /* Level */,
@@ -735,7 +743,7 @@
 				9353D46217B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.h */,
 				9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9356F75E1793296B008D584E /* Level */ = {
@@ -863,7 +871,7 @@
 				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
 				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
 			);
-			name = Game;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		93EB27EF177F6F16001B7FBB /* Scenes */ = {

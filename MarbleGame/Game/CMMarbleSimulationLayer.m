@@ -424,6 +424,12 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	return YES;
 }
 
+- (BOOL) ccRightMouseDown:(NSEvent *)event
+{
+	[self startMarble];
+	return YES;
+}
+
 - (BOOL) ccMouseMoved:(CMEvent*) movedEvent
 {
   [self moveMarble:movedEvent];
