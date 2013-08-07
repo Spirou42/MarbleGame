@@ -93,7 +93,7 @@
 
 - (NSString*) frameName
 {
-  if (self.setName) {
+  if (self.setName && self.ballIndex) {
     return [NSString stringWithFormat:@"%@_%li",self.setName,(long)self.ballIndex];
   }
   return nil;

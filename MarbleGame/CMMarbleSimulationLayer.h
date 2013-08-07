@@ -34,7 +34,7 @@
 	NSMutableArray	*_simulatedMarbles;
 	
 	ChipmunkGrooveJoint *_dollyGroove;
-	ChipmunkPinJoint		*_dollyServo;
+	ChipmunkPivotJoint		*_dollyServo;
 
 	ChipmunkShape				*_dollyShape;
 	ChipmunkBody				*_dollyBody;
@@ -57,7 +57,7 @@
 @property (nonatomic, retain) NSArray* staticShapes;
 @property (nonatomic, retain) ChipmunkGrooveJoint *dollyGroove;
 @property (nonatomic, retain) ChipmunkShape *dollyShape;
-@property (nonatomic, retain) ChipmunkPinJoint* dollyServo;
+@property (nonatomic, retain) ChipmunkPivotJoint* dollyServo;
 @property (nonatomic, retain) ChipmunkBody *dollyBody;
 @property (nonatomic, assign) CMMarbleLevel *currentLevel;
 @property (nonatomic, assign) NSUInteger marblesToFire;

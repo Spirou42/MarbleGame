@@ -33,6 +33,7 @@
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_scoreLabel;
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_timeLabel;
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_remarkLabel;
+	
 
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;

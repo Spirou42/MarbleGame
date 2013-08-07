@@ -39,7 +39,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 - (NSString*) currentTimeString
 {
 	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
-	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)dt/60,(NSInteger)dt%60];
+	NSString* result = [NSString stringWithFormat:@"%02d:%02d",(NSInteger)dt/60,(NSInteger)dt%60];
 	return result;
 }
 - (NSString*) currentScoreString
@@ -469,7 +469,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
   
   // Combo Hits
   self.comboHits += [removedMarbles count];
-	
+	CGFloat comboMultiplier = 0.0f;
 	if (self.comboHits>1) {
     NSMutableSet *allMarbles =[NSMutableSet set];
     for (NSSet*t in removedMarbles) {
@@ -491,24 +491,43 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 		//																			repeats:NO];
 		//
 		//		}
-		self.currentStatistics.score += self.comboHits*MARBLE_HIT_SCORE * MARBLE_COMBO_MULTIPLYER;
+		//		CGFloat comboScore = self.comboHits*MARBLE_HIT_SCORE * MARBLE_COMBO_MULTIPLYER;
+		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
+//		self.currentStatistics.score += comboScore;
+//		NSLog(@"Combo: %d (%f)",self.comboHits,comboScore);
 		self.comboHits -= [removedMarbles count];
 	}
-  
+  if (comboMultiplier <MARBLE_COMBO_MULTIPLYER) {
+		comboMultiplier = 1.0f;
+	}
   // specialMoves
-	
+	CGFloat specialMultiplier=1.0;
+	NSString * specialString = nil;
   for (NSNumber * delay in oldestHit) {
     CGFloat t = [delay floatValue];
     if (t>0.001) {
-      self.remarkLabel = defaultGameLabel(@"Nice");
-      if(t>0.05)
-        self.remarkLabel = defaultGameLabel(@"Respect");
-      if (t>0.10)
-        self.remarkLabel = defaultGameLabel(@"Perfect");
-      if (t>0.15)
-        self.remarkLabel = defaultGameLabel(@"Trickshot");
+			specialMultiplier = MARBLE_SPEZIAL_NICE;
+			specialString = @"Nice";
+      self.remarkLabel = defaultGameLabel(specialString);
+      if(t>0.05){
+					specialMultiplier = MARBLE_SPEZIAL_RESPECT;
+				specialString =@"Respect";
+    	  self.remarkLabel = defaultGameLabel(specialString);
+			}
+      if (t>0.10){
+				specialMultiplier = MARBLE_SPEZIAL_PERFECT;
+				specialString =@"Perfect";
+  	    self.remarkLabel = defaultGameLabel(specialString);
+			}
+      if (t>0.15){
+				specialMultiplier = MARBLE_SPEZIAL_TRICK;
+				specialString =@"Trickshot";
+	      self.remarkLabel = defaultGameLabel(specialString);
+			}
       if (t>0.17) {
-        self.remarkLabel = defaultGameLabel(@"Lucky One");
+				specialMultiplier = MARBLE_SPEZIAL_LUCKY;
+				specialString =@"Lucky One";
+	      self.remarkLabel = defaultGameLabel(specialString);
       }
       self.remarkLabel.visible = YES;
       [NSTimer scheduledTimerWithTimeInterval:5
@@ -519,9 +538,12 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
       
     }
   }
-	
-	
-	self.currentStatistics.score += (normalHits*MARBLE_HIT_SCORE) + (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
+	CGFloat normalScore = (normalHits*MARBLE_HIT_SCORE);
+	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
+	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
+	NSLog(@"normal: %d (%f), multi: %d (%f) combo: %f special: %@ (%f) Total: %f",normalHits, normalScore, multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
+
+	self.currentStatistics.score += totalScore;
 	
 	self.lastDisplayTime = time;
 	[self.simulationLayer removeCollisionSets:removedMarbles];

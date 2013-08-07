@@ -29,7 +29,7 @@
 
 - (NSString*) description
 {
-	NSString *result = [NSString stringWithFormat:@"%@,InLevel: %lu\nRemoved: %lu\ncleared: %@\nimage:%@\n score:%lu\ntime:%f",[super description],(unsigned long)self.marblesInLevel,(unsigned long)self.removedMarbles,clearedMarbles,removedMarblesForImages,(unsigned long)score,time];
+	NSString *result = [NSString stringWithFormat:@"%@,InLevel: %lu\nRemoved: %lu\ncleared: %@\nimage:%@\n score:%ld\ntime:%f",[super description],(unsigned long)self.marblesInLevel,(unsigned long)self.removedMarbles,clearedMarbles,removedMarblesForImages,(long)score,time];
 	return result;
 }
 

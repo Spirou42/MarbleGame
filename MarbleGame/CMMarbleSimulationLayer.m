@@ -289,7 +289,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	}
 }
 
-- (void) setDollyServo:(ChipmunkPinJoint *)dS
+- (void) setDollyServo:(ChipmunkPivotJoint *)dS
 {
 	if (dS != self.dollyServo) {
 		if (self.dollyServo) {
@@ -359,14 +359,14 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 //  self.dollyGroove.errorBias = pow(1.0-0.1, 60);
 
 	// create the Servo
-//	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:dollyBody pivot:dollyBody.pos];
-	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dB anchr1:dB.pos anchr2:cpv(0.0, 0.0)];
+	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos];
+//	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dB anchr1:dB.pos anchr2:cpv(0.0, 0.0)];
 //  dB.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
 	
 //	self.dollyServo.maxForce=1e6;
 //	self.dollyServo.maxBias = INFINITY;
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
-	self.dollyServo.dist = 0.001;
+//	self.dollyServo.dist = 0.001;
 //	self.dollyServo.anchr1 = self.lastMousePosition;
 	self.currentMarbleIndex = marbleIndex;
 }
@@ -500,7 +500,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 
 	CGFloat velX = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0;
 	CGFloat velY = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0 ;
-	NSLog(@"VelX: %f, VelY: %f",velX,velY);
+//	NSLog(@"VelX: %f, VelY: %f",velX,velY);
 	dB.vel = cpv(velX,velY);
 	CGSize s = [[CCDirector sharedDirector] winSize];
 	dB.pos = CGPointMake(s.width/2.0, s.height - 200);
