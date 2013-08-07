@@ -19,6 +19,7 @@
 #import "CMMarbleLevel.h"
 #import "CMSimpleShapeReader.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
+#import "CMMarbleMultiComboSprite.h"
 enum {
 	kTagParentNode = 1,
 };
@@ -78,8 +79,6 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		self.simulatedMarbles = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
-		
-
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
 
 #if 0

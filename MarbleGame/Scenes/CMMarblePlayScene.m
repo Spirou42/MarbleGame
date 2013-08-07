@@ -19,6 +19,7 @@
 #import "CMMarblePlayer.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
+#import "CMMarbleMultiComboSprite.h"
 
 #define BACKGROUND_LAYER 	(-1)
 #define MARBLE_LAYER 			(1)
@@ -34,7 +35,8 @@ currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
 comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer,
 marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
 foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite,
-scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
+scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel,
+effectQueue = _effectQueue;
 
 - (NSString*) currentTimeString
 {
@@ -60,6 +62,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 		self.simulationLayer.currentLevel = [self currentLevel];
 		self.scoreLabel = defaultGameLabel(@"0");
 		self.timeLabel = defaultGameLabel(@"00:00");
+		self.effectQueue = [NSMutableArray array];
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
@@ -83,6 +86,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 	self.backgroundSprite = nil;
 	self.foregroundSprite = nil;
 	self.overlaySprite = nil;
+	self.effectQueue = nil;
 	[super dealloc];
 }
 
@@ -337,7 +341,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
-	for (NSUInteger i = 1; i<10; i++) {
+	for (NSUInteger i = 1; i<3; i++) {
 		[self.marblesInGame addObject:[NSNumber numberWithInteger:i]];
 	}
 	[self.simulationLayer prepareMarble];
@@ -385,6 +389,12 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 		lastLabelUpdate=0.0;
 		self.scoreLabel = defaultGameLabel([self currentScoreString]);
 		self.timeLabel = defaultGameLabel([self currentTimeString]);
+		if (self.effectQueue.count) {
+			CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+			[self addChild:k];
+			[k animate];
+			[self.effectQueue removeObject:k];
+		}
 	}
 	
 	[self checkMarbleCollisionsAt:dt];
@@ -442,30 +452,13 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 		 if ([obj count] == 3) {
 			 normalHits ++;
 		 }else if ([obj count] > 3) { // multi Hit
-
-			 //       CGPoint p= [self centerOfMarbles:obj];
-			 //       UIImage *c = [self multiDecorationImage];
-			 //       CGSize contentSize = [c size];
-			 //       CMDecorationLayer *decLayer = [[[CMDecorationLayer alloc]initWithContent:(id)[c CGImage] andSize:contentSize]autorelease];
-			 //       decLayer.backgroundColor = nil;
-			 //       [decLayer addToSuperlayer:self.playgroundView.layer withPosition:p];
-
+			 CGPoint p= [self centerOfMarbles:obj];
+			 CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
+			 sprite.position = p;
+			 [self.effectQueue addObject:sprite];
 			 multiHits ++;
 		 }
 	 }];
-	
-  
-  
-	//	if (multiHits) {
-	//		self.fourMarkerView.hidden=NO;
-	//		[NSTimer scheduledTimerWithTimeInterval:5
-	//																		 target:self
-	//																	 selector:@selector(markerTimerCallback:)
-	//																	 userInfo:self.fourMarkerView
-	//																		repeats:NO];
-	//	}
-	
-	
   
   // Combo Hits
   self.comboHits += [removedMarbles count];
@@ -475,32 +468,20 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
     for (NSSet*t in removedMarbles) {
       [allMarbles addObjectsFromArray:[t allObjects]];
     }
-//    CGSize contentSize = CGSizeZero;
-		//    CGPoint l = [self centerOfMarbles:allMarbles];
-		//    UIImage *p = [self comboDecorationImage];
-		//    contentSize = [p size];
-		//    CMDecorationLayer *decLayer = [[[CMDecorationLayer alloc] initWithContent:(id)[p CGImage] andSize:contentSize]autorelease];
-		//    decLayer.backgroundColor = nil;
-		//    [decLayer addToSuperlayer:self.playgroundView.layer withPosition:l];
-		//		if (self.comboMarkerView.hidden) {
-		//			self.comboMarkerView.hidden = NO;
-		//			[NSTimer scheduledTimerWithTimeInterval:5
-		//																			 target:self
-		//																		 selector:@selector(markerTimerCallback:)
-		//																		 userInfo:self.comboMarkerView
-		//																			repeats:NO];
-		//
-		//		}
-		//		CGFloat comboScore = self.comboHits*MARBLE_HIT_SCORE * MARBLE_COMBO_MULTIPLYER;
+		CGPoint p= [self centerOfMarbles:allMarbles];
+		CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
+		sprite.position = p;
+		[self.effectQueue addObject:sprite];
+		
 		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
-//		self.currentStatistics.score += comboScore;
-//		NSLog(@"Combo: %d (%f)",self.comboHits,comboScore);
 		self.comboHits -= [removedMarbles count];
 	}
+
   if (comboMultiplier <MARBLE_COMBO_MULTIPLYER) {
 		comboMultiplier = 1.0f;
 	}
-  // specialMoves
+  
+	// specialMoves
 	CGFloat specialMultiplier=1.0;
 	NSString * specialString = nil;
   for (NSNumber * delay in oldestHit) {
@@ -541,7 +522,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 	CGFloat normalScore = (normalHits*MARBLE_HIT_SCORE);
 	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
 	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
-	NSLog(@"normal: %d (%f), multi: %d (%f) combo: %f special: %@ (%f) Total: %f",normalHits, normalScore, multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
+	NSLog(@"normal: %lu (%f), multi: %lu (%f) combo: %f special: %@ (%f) Total: %f",(unsigned long)normalHits, normalScore, (unsigned long)multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
 
 	self.currentStatistics.score += totalScore;
 	

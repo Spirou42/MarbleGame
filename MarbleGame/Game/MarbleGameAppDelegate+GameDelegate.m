@@ -64,7 +64,10 @@
   // adding sprite frames
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
 	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Balls.plist"];
-  
+
+	
+//	[CCSpriteFrame frameWithTextureFilename:DEFAULT_COMBO_EFFECT_FILE rect:ccp(0, 0)];
+//  [[CCSpriteFrameCache sharedSpriteFrameCache] add]
 	// reading ball set names
 	[self getBallSetNamesFromFile:@"Balls.plist"];
 	

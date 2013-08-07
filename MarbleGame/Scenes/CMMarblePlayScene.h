@@ -34,6 +34,8 @@
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_timeLabel;
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_remarkLabel;
 	
+	NSMutableArray			*_effectQueue;
+	
 
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
@@ -49,6 +51,7 @@
 @property (nonatomic, retain) CCSprite* foregroundSprite;
 @property (nonatomic, retain) CCSprite* overlaySprite;
 @property( nonatomic, retain)CCNode<CCLabelProtocol,CCRGBAProtocol> *scoreLabel,*timeLabel,*remarkLabel;
+@property (nonatomic, retain) NSMutableArray* effectQueue;
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

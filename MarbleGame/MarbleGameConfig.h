@@ -27,6 +27,16 @@
 #define SELECTED_MENU_TITLE_COLOR ccc3(255,200, 0)
 #define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
 
+#define DEFAULT_COMBO_EFFECT_FILE @"combo.png"
+#define DEFAULT_MULTI_EFFECT_FILE @"multi.png"
+
+/// transition / Action parameters
+
+#define DEFAULT_COMBO_MOVE_DURATION (1.5f)
+#define DEFAULT_COMBO_SCALE_DURATION (1.5f)
+#define DEFAULT_COMBO_SCALE_TARGET (.1f)
+
+
 
 // default UI element definitions
 
