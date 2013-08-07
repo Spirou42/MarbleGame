@@ -39,7 +39,7 @@ scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 - (NSString*) currentTimeString
 {
 	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
-	NSString* result = [NSString stringWithFormat:@"%02d:%02d",(NSInteger)dt/60,(NSInteger)dt%60];
+	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)dt/60,(NSInteger)dt%60];
 	return result;
 }
 - (NSString*) currentScoreString

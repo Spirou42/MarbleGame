@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-#import <CoreGraphics/CGGeometry.h>
+//#import <CoreGraphics/CGGeometry.h>
 /**
  @file
  cocos2d helper macros

@@ -1450,9 +1450,9 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -1485,8 +1485,8 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
@@ -1514,6 +1514,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals/ChipmunkPro-Mac-Trial\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1548,6 +1549,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals/ChipmunkPro-Mac-Trial\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
