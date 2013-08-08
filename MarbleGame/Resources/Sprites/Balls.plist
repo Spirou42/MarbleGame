@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:e677abbc5ad36e89643757f45d262187:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:953d9ad501e18596fc55bd525d8c3421:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -153,7 +153,7 @@
 			<key>Billard_9</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 13,90 }, { 64,64 } }</string>
+					<string>{ { 629,13 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -171,7 +171,7 @@
 			<key>Billard_Overlay</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,90 }, { 64,64 } }</string>
+					<string>{ { 13,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -189,7 +189,7 @@
 			<key>Chat_Overlay</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,90 }, { 64,64 } }</string>
+					<string>{ { 13,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -207,7 +207,7 @@
 			<key>DDR_Overlay</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,90 }, { 64,64 } }</string>
+					<string>{ { 13,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -225,7 +225,7 @@
 			<key>Glass_Overlay</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,90 }, { 64,64 } }</string>
+					<string>{ { 13,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -243,7 +243,25 @@
 			<key>Stars_Overlay</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,90 }, { 64,64 } }</string>
+					<string>{ { 13,90 }, { 64,64 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>attraktor_Overlay</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 13,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -261,7 +279,7 @@
 			<key>Chat_1</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 167,90 }, { 64,64 } }</string>
+					<string>{ { 90,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -279,7 +297,7 @@
 			<key>Chat_2</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 244,90 }, { 64,64 } }</string>
+					<string>{ { 167,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -297,7 +315,7 @@
 			<key>Chat_3</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 321,90 }, { 64,64 } }</string>
+					<string>{ { 244,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -315,7 +333,7 @@
 			<key>Chat_4</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 398,90 }, { 64,64 } }</string>
+					<string>{ { 321,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -333,7 +351,7 @@
 			<key>Chat_5</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 475,90 }, { 64,64 } }</string>
+					<string>{ { 398,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -351,7 +369,7 @@
 			<key>Chat_6</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 552,90 }, { 64,64 } }</string>
+					<string>{ { 475,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -369,7 +387,7 @@
 			<key>Chat_7</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 13,167 }, { 64,64 } }</string>
+					<string>{ { 552,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -387,7 +405,7 @@
 			<key>Chat_8</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,167 }, { 64,64 } }</string>
+					<string>{ { 629,90 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -405,7 +423,7 @@
 			<key>Chat_9</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 167,167 }, { 64,64 } }</string>
+					<string>{ { 13,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -423,7 +441,7 @@
 			<key>DDR_1</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 244,167 }, { 64,64 } }</string>
+					<string>{ { 90,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -441,7 +459,7 @@
 			<key>DDR_2</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 321,167 }, { 64,64 } }</string>
+					<string>{ { 167,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -459,7 +477,7 @@
 			<key>DDR_3</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 398,167 }, { 64,64 } }</string>
+					<string>{ { 244,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -477,7 +495,7 @@
 			<key>DDR_4</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 475,167 }, { 64,64 } }</string>
+					<string>{ { 321,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -495,7 +513,7 @@
 			<key>DDR_5</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 552,167 }, { 64,64 } }</string>
+					<string>{ { 398,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -513,7 +531,7 @@
 			<key>DDR_6</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 13,244 }, { 64,64 } }</string>
+					<string>{ { 475,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -531,7 +549,7 @@
 			<key>DDR_7</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,244 }, { 64,64 } }</string>
+					<string>{ { 552,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -549,7 +567,7 @@
 			<key>DDR_8</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 167,244 }, { 64,64 } }</string>
+					<string>{ { 629,167 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -567,7 +585,7 @@
 			<key>DDR_9</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 244,244 }, { 64,64 } }</string>
+					<string>{ { 13,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -585,7 +603,7 @@
 			<key>Glass_1</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 321,244 }, { 64,64 } }</string>
+					<string>{ { 90,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -603,7 +621,7 @@
 			<key>Glass_2</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 398,244 }, { 64,64 } }</string>
+					<string>{ { 167,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -621,7 +639,7 @@
 			<key>Glass_3</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 475,244 }, { 64,64 } }</string>
+					<string>{ { 244,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -639,7 +657,7 @@
 			<key>Glass_4</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 552,244 }, { 64,64 } }</string>
+					<string>{ { 321,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -657,7 +675,7 @@
 			<key>Glass_5</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 13,321 }, { 64,64 } }</string>
+					<string>{ { 398,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -675,7 +693,7 @@
 			<key>Glass_6</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,321 }, { 64,64 } }</string>
+					<string>{ { 475,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -693,7 +711,7 @@
 			<key>Glass_7</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 167,321 }, { 64,64 } }</string>
+					<string>{ { 552,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -711,7 +729,7 @@
 			<key>Glass_8</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 244,321 }, { 64,64 } }</string>
+					<string>{ { 629,244 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -729,7 +747,7 @@
 			<key>Glass_9</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 321,321 }, { 64,64 } }</string>
+					<string>{ { 13,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -747,7 +765,7 @@
 			<key>Stars_1</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 398,321 }, { 64,64 } }</string>
+					<string>{ { 90,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -765,7 +783,7 @@
 			<key>Stars_2</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 475,321 }, { 64,64 } }</string>
+					<string>{ { 167,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -783,7 +801,7 @@
 			<key>Stars_3</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 552,321 }, { 64,64 } }</string>
+					<string>{ { 244,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -801,7 +819,7 @@
 			<key>Stars_4</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 13,398 }, { 64,64 } }</string>
+					<string>{ { 321,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -819,7 +837,7 @@
 			<key>Stars_5</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 90,398 }, { 64,64 } }</string>
+					<string>{ { 398,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -837,7 +855,7 @@
 			<key>Stars_6</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 167,398 }, { 64,64 } }</string>
+					<string>{ { 475,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -855,7 +873,7 @@
 			<key>Stars_7</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 244,398 }, { 64,64 } }</string>
+					<string>{ { 552,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -873,7 +891,7 @@
 			<key>Stars_8</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 321,398 }, { 64,64 } }</string>
+					<string>{ { 629,321 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -891,7 +909,7 @@
 			<key>Stars_9</key>
 				<dict>
 					<key>frame</key>
-					<string>{ { 398,398 }, { 64,64 } }</string>
+					<string>{ { 13,398 }, { 64,64 } }</string>
 
 					<key>offset</key>
 				  <string>{ , }</string>
@@ -905,6 +923,168 @@
 				  <key>sourceSize</key>
 				  <string>{ 64,64 }</string>
 				</dict>
+		 
+			<key>attraktor_1</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 90,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_2</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 165,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_3</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 240,398 }, { 60,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 2,1 },{ 60,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 60,62 }</string>
+				</dict>
+		 
+			<key>attraktor_4</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 313,398 }, { 60,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 2,1 },{ 60,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 60,62 }</string>
+				</dict>
+		 
+			<key>attraktor_5</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 386,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_6</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 461,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_7</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 536,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 1,0 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_8</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 611,398 }, { 62,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,1 },{ 62,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 62,62 }</string>
+				</dict>
+		 
+			<key>attraktor_9</key>
+				<dict>
+					<key>frame</key>
+					<string>{ { 686,398 }, { 60,62 } }</string>
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 2,1 },{ 60,62 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 60,62 }</string>
+				</dict>
 		
 		</dict>
 		<key>metadata</key>
@@ -914,7 +1094,7 @@
 			<key>realTextureFileName</key>
 			<string>Balls.png</string>
 			<key>size</key>
-			<string>{ 629,475 }</string>
+			<string>{ 759,475 }</string>
 			<key>textureFileName</key>
 			<string>Balls.png</string>
 		</dict>
