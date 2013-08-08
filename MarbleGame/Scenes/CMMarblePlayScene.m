@@ -341,7 +341,7 @@ effectQueue = _effectQueue;
 	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
-	for (NSUInteger i = 1; i<3; i++) {
+	for (NSUInteger i = 1; i<10; i++) {
 		[self.marblesInGame addObject:[NSNumber numberWithInteger:i]];
 	}
 	[self.simulationLayer prepareMarble];

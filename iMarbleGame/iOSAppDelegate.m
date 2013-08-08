@@ -82,14 +82,15 @@
 	//  - Possible values: 0 to glGetIntegerv(GL_MAX_SAMPLES_APPLE)
 	CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
 								   pixelFormat:kEAGLColorFormatRGB565
-								   depthFormat:0
+								   depthFormat:GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
 									sharegroup:nil
 								 multiSampling:NO
 							   numberOfSamples:0];
 
 	// Multiple Touches enabled
-  
+//  [[CCDirector sharedDirector] setDepthBufferFormat:GL_DEPTH_COMPONENT24_OES];
+	[[CCDirector sharedDirector] setDepthTest:YES];
 	[glView setMultipleTouchEnabled:YES];
 
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
@@ -107,7 +108,7 @@
 	
 	// 2D projection
 	[director_ setProjection:kCCDirectorProjection2D];
-	[director_ setDepthBufferFormat:kDepthBuffer16];
+
 	//	[director setProjection:kCCDirectorProjection3D];
 	
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices

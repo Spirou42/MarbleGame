@@ -29,7 +29,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-//#import <CoreGraphics/CGGeometry.h>
+#if __CC_PLATFORM_IOS__
+#import <CoreGraphics/CGGeometry.h>
+#endif
 /**
  @file
  cocos2d helper macros
