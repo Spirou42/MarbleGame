@@ -81,7 +81,7 @@
 	// numberOfSamples: Only valid if multisampling is enabled
 	//  - Possible values: 0 to glGetIntegerv(GL_MAX_SAMPLES_APPLE)
 	CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
-								   pixelFormat:kEAGLColorFormatRGB565
+								   pixelFormat:kEAGLColorFormatRGBA8
 								   depthFormat:GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
 									sharegroup:nil
