@@ -29,9 +29,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-#if __CC_PLATFORM_IOS__
-#import <CoreGraphics/CGGeometry.h>
-#endif
 /**
  @file
  cocos2d helper macros
@@ -41,6 +38,10 @@
 #define __CC_PLATFORM_IOS 1
 #elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
 #define __CC_PLATFORM_MAC 1
+#endif
+
+#if __CC_PLATFORM_IOS
+#import <CoreGraphics/CGGeometry.h>
 #endif
 
 /*
