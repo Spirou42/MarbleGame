@@ -51,25 +51,13 @@ inline CCControlButton* standardButtonWithTitle(NSString* title)
 	CGRect buttonCaps = BUTTON_BACKGROUND_CAPS;
 	CCScale9Sprite *backgroundButton =  [CCScale9Sprite spriteWithSpriteFrameName:buttonOffName capInsets:buttonCaps]; // [CCScale9Sprite spriteWithFile:@"button.png"];
 	CCScale9Sprite *backgroundHighlightedButton = [CCScale9Sprite spriteWithSpriteFrameName:buttonOnName capInsets:buttonCaps]; //[CCScale9Sprite spriteWithFile:@"buttonHighlighted.png"];
-  //	CCLabelTTF *titleButton = [CCLabelTTF labelWithString:title fontName:DEFAULT_BUTTON_FONT fontSize:DEFAULT_BUTTON_FONT_SIZE];
 	CCLabelBMFont *titleLabel = [CCLabelBMFont labelWithString:title fntFile:DEFAULT_BUTTON_FONT];
-//  CCLabelTTF *titleButton = [CCLabelTTF labelWithString:title
-//                                               fontName:DEFAULT_BUTTON_FONT
-//                                               fontSize:DEFAULT_BUTTON_FONT_SIZE
-//                                             dimensions:DEFAULT_BUTTON_TITLESIZE
-//                                             hAlignment:kCCTextAlignmentCenter
-//                                             vAlignment:kCCVerticalTextAlignmentCenter
-//                             ];
-  
-//	[titleButton setColor:ccc3(10, 10, 10)];
 	
 	CCControlButton *button = [CCControlButton buttonWithLabel:titleLabel backgroundSprite:backgroundButton];
 	button.zoomOnTouchDown = NO;
 	button.preferredSize=CGSizeMake(150, 40);
-//	button.labelAnchorPoint=ccp(0.5, 0.5);
+
 	[button setBackgroundSprite:backgroundHighlightedButton forState:CCControlStateHighlighted];
-//	[button setTitleColor:DEFAULT_BUTTON_TITLE_COLOR forState:CCControlStateNormal];
-//	[button setTitleColor:SELECTED_BUTTON_TITLE_COLOR forState:CCControlStateHighlighted];
 	
 	return button;
 }
@@ -79,7 +67,7 @@ inline CCControlButton* defaultMenuButton()
   CCControlButton* result = standardButtonWithTitle(@"||");
 	result.preferredSize=CGSizeMake(40, 40);
   result.anchorPoint=ccp(1.0, 1.0);
-  result.position=ccp(1022, 765);
+  result.position=ccp(990, 762);
   return result;
 }
 
@@ -87,7 +75,8 @@ inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultSceneLabel(NSString* label
 {
   CGSize winSize = [[CCDirector sharedDirector] winSize];
   
-  CCLabelTTF *label = [CCLabelTTF labelWithString:labelText fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+  CCNode<CCLabelProtocol,CCRGBAProtocol> *label = [CCLabelBMFont labelWithString:labelText fntFile:DEFAULT_MENU_FONT];
+																									 
   label.color=DEFAULT_MENU_TITLE_COLOR;
   label.position = ccp(winSize.width/2.0, winSize.height-label.contentSize.height );
   return label;

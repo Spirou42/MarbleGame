@@ -26,6 +26,10 @@
 												 @"currentPlayer":NSUserName()
 												 }];
 }
+- (void) resetPlayer
+{
+	[[NSUserDefaults standardUserDefaults] setObject:@{} forKey:@"Players"];
+}
 
 - (void) getBallSetNamesFromFile:(NSString*)filename
 {
@@ -59,7 +63,7 @@
   [[CCShaderCache sharedShaderCache]addProgram:shaderProgram forKey:kCMMarbleGlossMapShader];
 	
   [self registerUserDefaults];
-  
+//  [self resetPlayer];
 	
   // adding sprite frames
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
@@ -88,7 +92,13 @@
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	NSString* currentPlayerName = [ud stringForKey:@"currentPlayer"];
 	NSData *playerData = [[ud dictionaryForKey:@"Players"]objectForKey:currentPlayerName];
-	CMMarblePlayer *currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
+	CMMarblePlayer *currentPlayer = nil;
+	if (!playerData) {
+		currentPlayer = [CMMarblePlayer playerWithName:NSUserName()];
+		self.currentPlayer = currentPlayer;
+	}else{
+		currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
+	}
 	return currentPlayer;
 }
 

@@ -120,6 +120,7 @@
       
       CCControlButton *currentButton = [self popupItemButtonWithTitle:[lbs objectAtIndex:index] selected:isSelected];
       
+			// TODO: refactor for all label types. currently we use CCLabelBF 
       if (isSelected) {
         if ([currentButton.titleLabel isKindOfClass:[CCLabelTTF class]]) {
           CCLabelTTF* k = (CCLabelTTF*)currentButton.titleLabel;

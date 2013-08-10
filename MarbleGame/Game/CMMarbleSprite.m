@@ -23,12 +23,16 @@
 
 @synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour;
 
-
++ (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
+{
+	NSString* frameName = [NSString stringWithFormat:@"%@_%li",setName,(long)ballIndex];
+	CCSpriteFrame* result = [[CCSpriteFrameCache sharedSpriteFrameCache]  spriteFrameByName:frameName];
+	return result;
+}
 
 -(id) initWithBallSet:(id)sN ballIndex:(NSInteger)bI mass:(CGFloat)mass andRadius:(CGFloat)r
 {
-  NSString* frameName = [NSString stringWithFormat:@"%@_%li",sN,(long)bI];
-  if ((self=[super initWithSpriteFrameName:frameName])) {
+    if ((self=[super initWithSpriteFrame:[[self class]spriteFrameForBallSet:sN ballIndex:bI]])) {
     
 #if 0
     CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTextureColor];

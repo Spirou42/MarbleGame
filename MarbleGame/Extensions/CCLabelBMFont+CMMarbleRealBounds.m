@@ -26,6 +26,9 @@
 		if (p.x > maxPoint.x) {maxPoint.x = p.x;}
 		if (p.y > maxPoint.y) {maxPoint.y = p.y;}
 		realBounds = CGRectMake(minPoint.x, minPoint.y, maxPoint.x-minPoint.x, maxPoint.y - minPoint.y);
+		if (realBounds.size.height < self->_configuration->_commonHeight) {
+			realBounds.size.height = self->_configuration->_commonHeight;
+		}
 	}
 	return realBounds;
 }

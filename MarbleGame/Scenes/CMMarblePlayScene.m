@@ -20,13 +20,18 @@
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMarbleMultiComboSprite.h"
+#import "CMMarbleSprite.h"
+#import "CMMarbleSlot.h"
 
-#define BACKGROUND_LAYER 	(-1)
-#define MARBLE_LAYER 			(1)
-#define FOREGROUND_LAYER 	(2)
-#define OVERLAY_LAYER 		(3)
-#define BUTTON_LAYER 			(5)
-#define MENU_LAYER 				(6)
+#define BACKGROUND_LAYER 			(-1)
+#define MARBLE_LAYER 					(1)
+#define FOREGROUND_LAYER 			(2)
+#define OVERLAY_LAYER 				(5)
+#define OVERLAY_LABEL_LAYER		(6)
+
+// legacy, will die
+#define BUTTON_LAYER 			(9)
+#define MENU_LAYER 				(10)
 
 @implementation CMMarblePlayScene
 
@@ -36,7 +41,7 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marble
 marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
 foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite,
 scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel,
-effectQueue = _effectQueue;
+effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
 
 - (NSString*) currentTimeString
 {
@@ -63,6 +68,8 @@ effectQueue = _effectQueue;
 		self.scoreLabel = defaultGameLabel(@"0");
 		self.timeLabel = defaultGameLabel(@"00:00");
 		self.effectQueue = [NSMutableArray array];
+		self.marbleSlot = [[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28)];
+		self.removedMarbleQueue = [NSMutableArray array];
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
@@ -87,6 +94,8 @@ effectQueue = _effectQueue;
 	self.foregroundSprite = nil;
 	self.overlaySprite = nil;
 	self.effectQueue = nil;
+	self.marbleSlot = nil;
+	self.removedMarbleQueue = nil;
 	[super dealloc];
 }
 
@@ -170,7 +179,7 @@ effectQueue = _effectQueue;
 		self->_scoreLabel = [sL retain];
 		self->_scoreLabel.anchorPoint = cpv(1.0, 0.5);
 		if (self->_scoreLabel) {
-			[self addChild:self->_scoreLabel z:11];
+			[self addChild:self->_scoreLabel z:OVERLAY_LABEL_LAYER];
 		}
 
 		self->_scoreLabel.opacity=0.75 * 255;
@@ -193,11 +202,11 @@ effectQueue = _effectQueue;
 		}
 		self->_timeLabel = [tL retain];
 		if (self->_timeLabel) {
-			[self addChild:self->_timeLabel z:11];
+			[self addChild:self->_timeLabel z:OVERLAY_LABEL_LAYER];
 		}
 
 		self->_timeLabel.opacity=0.75 * 255;
-		self->_timeLabel.position=cpv(896, 747-realBounds.size.height/2.0);
+		self->_timeLabel.position=cpv(815, 747-realBounds.size.height/2.0);
 	}
 }
 
@@ -218,11 +227,26 @@ effectQueue = _effectQueue;
 		self->_remarkLabel = [rL retain];
 		self->_remarkLabel.anchorPoint=cpv(0.5, 0.5);
 		if (self->_remarkLabel) {
-			[self addChild:self->_remarkLabel z:11];
+			[self addChild:self->_remarkLabel z:OVERLAY_LABEL_LAYER];
 		}
 
 		self->_remarkLabel.opacity=0.75 * 255;
-		self->_remarkLabel.position=cpv(384, 749-realBounds.size.height/2.0);
+		self->_remarkLabel.position=cpv(375, 749-realBounds.size.height/2.0);
+	}
+}
+
+- (void) setMarbleSlot:(CMMarbleSlot *)mSlot
+{
+	if (self->_marbleSlot != mSlot) {
+		[self->_marbleSlot removeFromParent];
+		[self->_marbleSlot release];
+		mSlot.anchorPoint=ccp(0, 0);
+		mSlot.position = ccp(482, 729);
+		if (mSlot) {
+			[self addChild:mSlot z:OVERLAY_LABEL_LAYER];
+		}
+
+		self->_marbleSlot = [mSlot retain];
 	}
 }
 
@@ -341,7 +365,7 @@ effectQueue = _effectQueue;
 	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
-	for (NSUInteger i = 1; i<10; i++) {
+	for (NSUInteger i = 1; i<(MAX_DIFFERENT_MARBLES+1); i++) {
 		[self.marblesInGame addObject:[NSNumber numberWithInteger:i]];
 	}
 	[self.simulationLayer prepareMarble];
@@ -394,6 +418,12 @@ effectQueue = _effectQueue;
 			[self addChild:k];
 			[k animate];
 			[self.effectQueue removeObject:k];
+		}
+		if (self.removedMarbleQueue.count) {
+			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
+			[self.marbleSlot addMarbleWithID:ballIndex];
+			NSLog(@"Place %ld",ballIndex);
+			[self.removedMarbleQueue removeObjectAtIndex:0];
 		}
 	}
 	
@@ -583,6 +613,7 @@ effectQueue = _effectQueue;
 		[self updatePlayerLevel];
 		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
 	}
+	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
 }
 
 - (void) addChild:(CCNode *)node z:(NSInteger)z
@@ -632,6 +663,7 @@ effectQueue = _effectQueue;
 {
 	self.currentStatistics.marblesInLevel++;
 	[self.marblesInGame addObject:[NSNumber numberWithInteger:ballIndex]];
+	self.comboHits = 0;
 }
 
 - (void) marbleDroppedWithID:(NSUInteger) ballIndex

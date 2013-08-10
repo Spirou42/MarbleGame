@@ -9,6 +9,8 @@
 #ifndef MarbleGame_MarbleGameConfig_h
 #define MarbleGame_MarbleGameConfig_h
 
+#define MAX_DIFFERENT_MARBLES 9
+
 #define DEFAULT_LEVELSET_NAME @"DummyLevels"
 #define DEFAULT_LEVELSET_EXTENSION @"levelset"
 
@@ -36,6 +38,7 @@
 #define DEFAULT_COMBO_SCALE_DURATION (1.5f)
 #define DEFAULT_COMBO_SCALE_TARGET (.1f)
 
+#define DEFAULT_MARBLE_SLOT_MOVE_TIME (1.0f)
 
 
 // default UI element definitions
@@ -99,7 +102,7 @@
 /// SCORE SETTINGS
 
 #define MARBLE_THROW_SCORE 				(-1.0f)
-#define MARBLE_HIT_SCORE					(2.0f)
+#define MARBLE_HIT_SCORE					(3.0f)
 #define MARBLE_COMBO_MULTIPLYER 	(10.0f)
 #define MARBLE_MULTY_MUTLIPLYER		(8.0f)
 #define MARBLE_SPEZIAL_NICE				(2.0f)

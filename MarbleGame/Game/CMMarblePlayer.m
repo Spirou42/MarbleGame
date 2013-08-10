@@ -29,7 +29,7 @@
 	self = [super init];
 	if (self) {
 		self.name = userName;
-		self.currentLevel = 1;
+		self.currentLevel = 0;
 	}
 	return self;
 }
