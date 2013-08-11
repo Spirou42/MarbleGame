@@ -9,7 +9,11 @@
 			<key>{{sprite.trimmedName}}</key>
 				<dict>
 					<key>frame</key>
+					{% if sprite.rotated %}
+					<string>{ { {{sprite.frameRect.x}},{{sprite.frameRect.y}} }, { {{sprite.frameRect.height}},{{sprite.frameRect.width}} } }</string>
+ 					{% else %}
 					<string>{ { {{sprite.frameRect.x}},{{sprite.frameRect.y}} }, { {{sprite.frameRect.width}},{{sprite.frameRect.height}} } }</string>
+					{% endif %}
 
 					<key>offset</key>
 				  <string>{ {{sprite.absoluteOffset.x}},{{sprite.absoluteOffset.y}} }</string>

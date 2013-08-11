@@ -20,9 +20,9 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>2dtoolkit</string>
+        <string>MarbleGame Exporter</string>
         <key>textureFileName</key>
-        <filename>GlassButtons.png</filename>
+        <filename>../../MarbleGame/Resources/Sprites/Balls.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -40,7 +40,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>2</uint>
+        <uint>13</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -50,13 +50,13 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>2</uint>
+        <uint>13</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>1024</int>
             <key>height</key>
-            <int>2048</int>
+            <int>1024</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -66,11 +66,11 @@
             <int>-1</int>
         </QSize>
         <key>reduceBorderArtifacts</key>
-        <false/>
+        <true/>
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>GlassButtons.java</filename>
+            <filename>Balls.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>GlassButtons.bytes</filename>
+        <filename>../../MarbleGame/Resources/Sprites/Balls.plist</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -148,16 +148,8 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Originals/UI/GlassButtonActive.png</filename>
-            <filename>../Originals/UI/GlassButtonHover.png</filename>
-            <filename>../Originals/UI/GlassButtonNormal.png</filename>
-            <filename>../Originals/UI/GlassDDArrow.png</filename>
-            <filename>../Originals/UI/GlassDDBackground.png</filename>
-            <filename>../Originals/UI/GlassDDItemBackground.png</filename>
-            <filename>../Originals/UI/GlassDDMenuBackground.png</filename>
-            <filename>../Originals/UI/GlassSliderBackground.png</filename>
-            <filename>../Originals/UI/GlassSliderThumb.png</filename>
-            <filename>../Originals/UI/GlassSliderTrack.png</filename>
+            <filename>../../../Asset Production/Originals/Balls</filename>
+            <filename>Balls</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

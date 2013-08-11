@@ -6,7 +6,7 @@
   <displayName>_MarbleGame Exporter</displayName>
  
   <!-- description of the exporter -->
-  <description>Exporter for the MarbleGame project. It is bascally a Cocos2D export without .png extensions on the filename</description>
+  <description>Exporter for the MarbleGame project. It is basically a Cocos2D export without .png extensions on the filename</description>
  
   <!-- exporter version -->
   <version>1.0</version>
