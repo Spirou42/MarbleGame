@@ -13,6 +13,7 @@
 
 CCSprite* defaultSceneBackground();
 CCControlButton* standardButtonWithTitle(NSString* title);
+CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size);
 CCControlButton* defaultMenuButton();
 id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText);
 CGPoint menuStartPosition();

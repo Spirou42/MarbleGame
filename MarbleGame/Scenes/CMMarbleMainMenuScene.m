@@ -32,7 +32,7 @@
 	if (self != nil) {
     CGSize buttonSize = DEFAULT_BUTTON_SIZE;
     buttonSize.width += buttonSize.width/3.0*2.0;
-    buttonSize.height += buttonSize.height/3.0*2.0;
+//    buttonSize.height += buttonSize.height/3.0*2.0;
 
     CCNode<CCLabelProtocol,CCRGBAProtocol>*headlineLabel = defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
 //    headlineLabel.color=DEFAULT_MENU_TITLE_COLOR;

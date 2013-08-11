@@ -75,9 +75,6 @@
 	// reading ball set names
 	[self getBallSetNamesFromFile:@"Balls.plist"];
 	
-  // setting defaults for the Menu
-	[CCMenuItemFont setFontName:DEFAULT_MENU_FONT];
-	[CCMenuItemFont setFontSize:DEFAULT_MENU_FONT_SIZE];
   
   // loading default LevelSet
   NSURL * bla = [NSBundle URLForResource:DEFAULT_LEVELSET_NAME withExtension:DEFAULT_LEVELSET_EXTENSION subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];

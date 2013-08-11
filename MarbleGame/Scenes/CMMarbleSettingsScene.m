@@ -29,7 +29,7 @@
 	self = [super init];
 	if (self != nil) {
 
-		CCLabelTTF *label = (CCLabelTTF*)defaultSceneLabel(@"Settings");// [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
+		CCNode<CCLabelProtocol,CCRGBAProtocol> *label = defaultSceneLabel(@"Settings");// [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
 		[self addChild:label];
 		CGPoint menuPosition = menuStartPosition();
 		CGPoint position = menuPosition;
@@ -39,8 +39,9 @@
 //    position.y -= label.contentSize.height;
 
 		// marble set
-		label = [CCLabelTTF labelWithString:@"Marbleset:" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
-		label.color=DEFAULT_MENU_TITLE_COLOR;
+	
+		label = defaultSceneLabel(@"Marbleset:");
+//		label.color=DEFAULT_MENU_TITLE_COLOR;
 		label.anchorPoint=ccp(1.0, 0.5);
 		label.position=ccp(position.x-90, position.y);
 		[self addChild:label];

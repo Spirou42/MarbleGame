@@ -46,6 +46,11 @@ inline CCSprite *defaultLevelOverlay()
 
 inline CCControlButton* standardButtonWithTitle(NSString* title)
 {
+	return standardButtonWithTitleSize(title,CGSizeMake(150,40));
+}
+
+inline CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size)
+{
 	NSString* buttonOffName = NORMAL_BUTTON_BACKGROUND;
 	NSString* buttonOnName = ACTIVE_BUTTON_BACKGROUND;
 	CGRect buttonCaps = BUTTON_BACKGROUND_CAPS;
@@ -55,7 +60,7 @@ inline CCControlButton* standardButtonWithTitle(NSString* title)
 	
 	CCControlButton *button = [CCControlButton buttonWithLabel:titleLabel backgroundSprite:backgroundButton];
 	button.zoomOnTouchDown = NO;
-	button.preferredSize=CGSizeMake(150, 40);
+	button.preferredSize= size;
 
 	[button setBackgroundSprite:backgroundHighlightedButton forState:CCControlStateHighlighted];
 	
