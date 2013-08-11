@@ -9,7 +9,7 @@
 #import "CCControlPopupButton.h"
 #import "cocos2d.h"
 #import "CCControlExtension.h"
-#define USE_DEFAULT_BUTTON_FOR_MENU 1
+#define USE_DEFAULT_BUTTON_FOR_MENU 0
 @implementation CCControlPopupButton
 @synthesize labels, popupBackgroundSprite, selectedIndex,selectedLabel;
 
@@ -22,6 +22,9 @@
 - (void) menuItemSelected:(CCControlButton*)sender
 {
   CCNode* p = [self getChildByTag:10];
+	if (!p.visible) {
+		return;
+	}
 	CCNode *k = [p getChildByTag:11];
   NSUInteger idx=0;
   for (CCControlButton *c in k.children) {
@@ -42,14 +45,17 @@
     }
   }
   p.visible=NO;
+
 }
 
 - (void) popupPressed:(CCNode*) sender
 {
   CCNode* c = [self getChildByTag:10];
+	[c performSelector:@selector(setVisible:) withObject:[NSNumber numberWithBool:!c.visible] afterDelay:0.1];
 //  if ([c isKindOfClass:[CCScale9Sprite class]]) {
-    c.visible=!c.visible;
+//    c.visible=!c.visible;
 //  }
+
 }
 
 /// returns a button with a skin for the popupButtonLabel optionaly it is selected (image is set to checkmark)
@@ -60,7 +66,7 @@
   menuItemBackgroundNormal = [[CCScale9Sprite new]autorelease];
 	//  menuItemBackgroundHighlighted = [[CCScale9Sprite new]autorelease];
 #else
-  menuItemBackgroundNormal = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENUITM_BACKGROUND capInsets:DDMENUITM_BACKGROUND_CAPS];
+//  menuItemBackgroundNormal = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENUITM_BACKGROUND capInsets:DDMENUITM_BACKGROUND_CAPS];
 	//  menuItemBackgroundHighlighted =[CCScale9Sprite spriteWithSpriteFrameName:backgroundHighlightedName capInsets:backgroundCaps];
 #endif
   
