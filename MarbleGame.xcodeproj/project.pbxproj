@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9304F484178068460075C4F2 /* UIElements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9304F482178068460075C4F2 /* UIElements.plist */; };
-		9304F485178068460075C4F2 /* UIElements.png in Resources */ = {isa = PBXBuildFile; fileRef = 9304F483178068460075C4F2 /* UIElements.png */; };
-		933FEB1A1783724800786883 /* Buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB181783724800786883 /* Buttons.plist */; };
-		933FEB1B1783724800786883 /* Buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB191783724800786883 /* Buttons.png */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
 		934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
 		93536456177DFB50009F640B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
@@ -58,6 +54,18 @@
 		9357F3A917907D680063E849 /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA717907B19001DADD9 /* libCocosDenshion.a */; };
 		9357F3AA17907D680063E849 /* libkazmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CB117907B19001DADD9 /* libkazmath.a */; };
 		9357F3D9179080A30063E849 /* libChipmunkPro-Debug-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */; };
+		935F00F017B6D089006E8E10 /* CMMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935F00EF17B6D089006E8E10 /* CMMenuLayer.m */; };
+		935F00F117B6D089006E8E10 /* CMMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935F00EF17B6D089006E8E10 /* CMMenuLayer.m */; };
+		935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */; };
+		935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */; };
+		935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
+		935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
+		93750A7A17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
+		93750A7B17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
+		93750A7C17B81D590063D613 /* GameUI.png in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7917B81CD60063D613 /* GameUI.png */; };
+		93750A7D17B81D5A0063D613 /* GameUI.png in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7917B81CD60063D613 /* GameUI.png */; };
+		93750A7F17B827610063D613 /* Menu-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7E17B827610063D613 /* Menu-Background.png */; };
+		93750A8017B827610063D613 /* Menu-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7E17B827610063D613 /* Menu-Background.png */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
 		93EAB2E817A19CBB009894C5 /* CMMarbleCollisionCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */; };
 		93EAB2EB17A1A7BD009894C5 /* CMMarblePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */; };
@@ -77,8 +85,6 @@
 		FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
-		FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB6178F0BE200221DB9 /* GlassButtons.plist */; };
-		FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB7178F0BE200221DB9 /* GlassButtons.png */; };
 		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
@@ -121,12 +127,6 @@
 		FED9FD2917A8154000ACC97F /* DummyLevels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* DummyLevels.levelset */; };
 		FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
-		FED9FD2E17A8156A00ACC97F /* GlassButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB6178F0BE200221DB9 /* GlassButtons.plist */; };
-		FED9FD2F17A8156A00ACC97F /* GlassButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = FE847FB7178F0BE200221DB9 /* GlassButtons.png */; };
-		FED9FD3017A8156A00ACC97F /* Buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB181783724800786883 /* Buttons.plist */; };
-		FED9FD3117A8156A00ACC97F /* Buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 933FEB191783724800786883 /* Buttons.png */; };
-		FED9FD3217A8156A00ACC97F /* UIElements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9304F482178068460075C4F2 /* UIElements.plist */; };
-		FED9FD3317A8156A00ACC97F /* UIElements.png in Resources */ = {isa = PBXBuildFile; fileRef = 9304F483178068460075C4F2 /* UIElements.png */; };
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
 /* End PBXBuildFile section */
@@ -340,10 +340,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9304F482178068460075C4F2 /* UIElements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UIElements.plist; sourceTree = "<group>"; };
-		9304F483178068460075C4F2 /* UIElements.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIElements.png; sourceTree = "<group>"; };
-		933FEB181783724800786883 /* Buttons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Buttons.plist; sourceTree = "<group>"; };
-		933FEB191783724800786883 /* Buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Buttons.png; sourceTree = "<group>"; };
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		934AF9B217837E22004BAC7E /* SceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneHelper.h; sourceTree = "<group>"; };
 		934AF9B317837E22004BAC7E /* SceneHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneHelper.m; sourceTree = "<group>"; };
@@ -435,6 +431,13 @@
 		9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Debug-Mac.a"; sourceTree = "<group>"; };
 		9357F3D7179080A30063E849 /* libChipmunkPro-Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libChipmunkPro-Mac.a"; sourceTree = "<group>"; };
 		9357F3D8179080A30063E849 /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
+		935F00EE17B6D089006E8E10 /* CMMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMenuLayer.h; sourceTree = "<group>"; };
+		935F00EF17B6D089006E8E10 /* CMMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMenuLayer.m; sourceTree = "<group>"; };
+		935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell30-OutlineMenuTitle.fnt"; sourceTree = "<group>"; };
+		935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell30-OutlineMenuTitle.png"; sourceTree = "<group>"; };
+		93750A7817B81CD60063D613 /* GameUI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameUI.plist; sourceTree = "<group>"; };
+		93750A7917B81CD60063D613 /* GameUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameUI.png; sourceTree = "<group>"; };
+		93750A7E17B827610063D613 /* Menu-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Background.png"; sourceTree = "<group>"; };
 		93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameDelegate.h; sourceTree = "<group>"; };
 		93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleCollisionCollector.h; sourceTree = "<group>"; };
 		93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleCollisionCollector.m; sourceTree = "<group>"; };
@@ -458,8 +461,6 @@
 		FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSetScene.m; sourceTree = "<group>"; };
 		FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.fsh; sourceTree = "<group>"; };
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
-		FE847FB6178F0BE200221DB9 /* GlassButtons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlassButtons.plist; sourceTree = "<group>"; };
-		FE847FB7178F0BE200221DB9 /* GlassButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GlassButtons.png; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
 		FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MarbleGameAppDelegate+GameDelegate.m"; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
@@ -599,6 +600,7 @@
 		933FEB0E17836A8800786883 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93750A7E17B827610063D613 /* Menu-Background.png */,
 				93FD6D3617B14C87001CC41E /* combo.png */,
 				93FD6D3717B14C87001CC41E /* multi.png */,
 				9353D45717B0567400D0FD25 /* Level-Overlay.png */,
@@ -614,6 +616,7 @@
 		934AF9B517838AB0004BAC7E /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				935F00DE17B6D06E006E8E10 /* MenuNodes */,
 				934AF9B617838B6C004BAC7E /* CCControlPopupButton.h */,
 				934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */,
 			);
@@ -722,12 +725,8 @@
 		935366ED177E10AC009F640B /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				FE847FB6178F0BE200221DB9 /* GlassButtons.plist */,
-				FE847FB7178F0BE200221DB9 /* GlassButtons.png */,
-				933FEB181783724800786883 /* Buttons.plist */,
-				933FEB191783724800786883 /* Buttons.png */,
-				9304F482178068460075C4F2 /* UIElements.plist */,
-				9304F483178068460075C4F2 /* UIElements.png */,
+				93750A7817B81CD60063D613 /* GameUI.plist */,
+				93750A7917B81CD60063D613 /* GameUI.png */,
 				935366EE177E1254009F640B /* Balls.plist */,
 				935366EF177E1254009F640B /* Balls.png */,
 			);
@@ -738,6 +737,8 @@
 		9353D45A17B068F100D0FD25 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */,
+				935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */,
 				9353D46617B0835600D0FD25 /* RockWell24-OutlineButton.fnt */,
 				9353D46717B0835600D0FD25 /* RockWell24-OutlineButton.png */,
 				9353D45B17B0691100D0FD25 /* Simpleton17Glow.fnt */,
@@ -835,6 +836,15 @@
 				9357F3BE179080A30063E849 /* util.h */,
 			);
 			path = constraints;
+			sourceTree = "<group>";
+		};
+		935F00DE17B6D06E006E8E10 /* MenuNodes */ = {
+			isa = PBXGroup;
+			children = (
+				935F00EE17B6D089006E8E10 /* CMMenuLayer.h */,
+				935F00EF17B6D089006E8E10 /* CMMenuLayer.m */,
+			);
+			name = MenuNodes;
 			sourceTree = "<group>";
 		};
 		93AD6C7517907AA3001DADD9 /* Externals */ = {
@@ -1270,6 +1280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
+				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
@@ -1280,15 +1291,13 @@
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
-				9304F484178068460075C4F2 /* UIElements.plist in Resources */,
-				9304F485178068460075C4F2 /* UIElements.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
-				933FEB1A1783724800786883 /* Buttons.plist in Resources */,
+				93750A7F17B827610063D613 /* Menu-Background.png in Resources */,
 				9353D45517B0552700D0FD25 /* LevelBackground-Default.png in Resources */,
-				933FEB1B1783724800786883 /* Buttons.png in Resources */,
-				FE847FB8178F0BE200221DB9 /* GlassButtons.plist in Resources */,
-				FE847FB9178F0BE200221DB9 /* GlassButtons.png in Resources */,
+				93750A7C17B81D590063D613 /* GameUI.png in Resources */,
+				935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
+				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
 				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
@@ -1302,27 +1311,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
+				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
-				FED9FD3217A8156A00ACC97F /* UIElements.plist in Resources */,
-				FED9FD3317A8156A00ACC97F /* UIElements.png in Resources */,
+				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
-				FED9FD2E17A8156A00ACC97F /* GlassButtons.plist in Resources */,
+				935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
+				93750A7B17B81D560063D613 /* GameUI.plist in Resources */,
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
 				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
+				93750A8017B827610063D613 /* Menu-Background.png in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
-				FED9FD3117A8156A00ACC97F /* Buttons.png in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
-				FED9FD3017A8156A00ACC97F /* Buttons.plist in Resources */,
 				FED9FD2917A8154000ACC97F /* DummyLevels.levelset in Resources */,
 				9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
-				FED9FD2F17A8156A00ACC97F /* GlassButtons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1343,6 +1351,7 @@
 				93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */,
 				FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
+				935F00F017B6D089006E8E10 /* CMMenuLayer.m in Sources */,
 				934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */,
 				934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */,
 				93F782FE17B2F89800893DDC /* CMMarbleMultiComboSprite.m in Sources */,
@@ -1373,6 +1382,7 @@
 				FED2E87717A7FD92005A16B3 /* CMMarbleSprite.m in Sources */,
 				FED2E87517A7FD8B005A16B3 /* CMMarbleLevelStatistics.m in Sources */,
 				FED2E87017A7FD83005A16B3 /* SceneHelper.m in Sources */,
+				935F00F117B6D089006E8E10 /* CMMenuLayer.m in Sources */,
 				FED2E87317A7FD8B005A16B3 /* CMMarbleLevel.m in Sources */,
 				FED2E86C17A7FD83005A16B3 /* CMMarbleMainMenuScene.m in Sources */,
 				93F782FF17B2F89800893DDC /* CMMarbleMultiComboSprite.m in Sources */,
