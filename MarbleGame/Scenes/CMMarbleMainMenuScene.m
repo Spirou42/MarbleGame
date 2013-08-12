@@ -18,8 +18,10 @@
 #import "AppDelegate.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
+#import "CMMenuLayer.h"
+
 @implementation CMMarbleMainMenuScene
-@synthesize  playerName;
+
 
 - (id) init
 {
@@ -30,13 +32,21 @@
   CGPoint pos = menuStartPosition();
 
 	if (self != nil) {
-    CGSize buttonSize = DEFAULT_BUTTON_SIZE;
+		CGSize buttonSize = DEFAULT_BUTTON_SIZE;
     buttonSize.width += buttonSize.width/3.0*2.0;
-//    buttonSize.height += buttonSize.height/3.0*2.0;
 
+		
+		CMMenuLayer * menuLayer = [[[CMMenuLayer alloc] initWithLabel:@"Main Menu"] autorelease];
+		menuLayer.defaultButtonSize = buttonSize;
+		[menuLayer addButtonWithTitle:@"Play" target:self action:@selector(onPlay:)];
+		[menuLayer addButtonWithTitle:@"Level Select" target:self action:@selector(onLevelSelect:)];
+		[menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(onSettings:)];
+		[menuLayer addButtonWithTitle:@"Help" target:self action:@selector(onHelp:)];
+		
+			[self addChild:menuLayer z:2];		
+
+#if 0
     CCNode<CCLabelProtocol,CCRGBAProtocol>*headlineLabel = defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
-//    headlineLabel.color=DEFAULT_MENU_TITLE_COLOR;
-//    headlineLabel.position=pos;
     [self addChild:headlineLabel];
     
     // Play
@@ -70,20 +80,14 @@
     [button addTarget:self action:@selector(onHelp:) forControlEvents:CCControlEventTouchUpInside];
     button.position=pos;
     [self addChild:button];
+#endif
 
 	}
-//	[self addChild:parent];
-	[self addChild:defaultSceneBackground() z:-2];
-	[self addChild:mainMenuOverlay() z:10];
-	CCSprite *plate =mainMenuMenuPlate();
-	plate.position = centerOfScreen();
-	[self addChild:plate z:-1];
-	
-	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
-	NSString *pN = [currentPlayer.name uppercaseString];
-	
-	self.playerName = defaultGameLabel(pN);
 
+//	CCSprite *plate =mainMenuMenuPlate();
+//	plate.position = centerOfScreen();
+//	[self addChild:plate z:-1];
+	
 
 	return self;
 }
@@ -110,30 +114,5 @@
 	[[CCDirector sharedDirector] replaceScene:[CMMarbleHelpScene node]];
 }
 
-#pragma mark -
-#pragma mark Properties
-
-- (void) setPlayerName:(CCNode<CCRGBAProtocol,CCLabelProtocol>* )pN
-{
-	if (self->_playerName != pN) {
-		CGRect realBounds = CGRectZero;
-		if ([pN isKindOfClass:[CCLabelBMFont class]]) {
-			CCLabelBMFont*p = (CCLabelBMFont*)pN;
-			realBounds = [p outerBounds];
-		}else
-			realBounds = pN.boundingBox;
-		if (self->_playerName) {
-			[self removeChild:self->_playerName];
-			[self->_playerName release];
-		}
-		self->_playerName = [pN retain];
-		if (self->_playerName) {
-			[self addChild:self->_playerName z:11];
-		}
-
-		self->_playerName.opacity=0.75 * 255;
-		self->_playerName.position=cpv(258, 747-realBounds.size.height/2.0);
-	}
-}
 
 @end

@@ -15,7 +15,7 @@ CCSprite* defaultSceneBackground();
 CCControlButton* standardButtonWithTitle(NSString* title);
 CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size);
 CCControlButton* defaultMenuButton();
-id<CCLabelProtocol,CCRGBAProtocol> defaultSceneLabel(NSString* labelText);
+
 CGPoint menuStartPosition();
 CGPoint centerOfScreen();
 CCSprite* mainMenuOverlay();
@@ -23,3 +23,5 @@ CCSprite* mainMenuMenuPlate();
 CCSprite* defaultLevelBackground();
 CCSprite* defaultLevelOverlay();
 CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultGameLabel(NSString* labelText);
+CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultButtonTitle(NSString* title);
+CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultMenuTitle(NSString* labelText);

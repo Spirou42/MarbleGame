@@ -33,12 +33,12 @@
 #define SPACE_GRAVITY     (981.00f * 1.0f)
 #endif
 
-#define MARBLE_MASS       20.0f
-#define MARBLE_RADIUS 		20
-#define MARBLE_DESTROY_TIME .1
-#define MARBLE_CREATE_DELAY .5
-#define MARBLE_CREATE_TIME .1
-#define MARBLE_GROOVE_Y 600
+#define MARBLE_MASS       		20.0f
+#define MARBLE_RADIUS 				20.0f
+#define MARBLE_DESTROY_TIME 		.1
+#define MARBLE_CREATE_DELAY 		.5
+#define MARBLE_CREATE_TIME 			.1
+#define MARBLE_GROOVE_Y 			600
 
 //////////////////////////////////////////////////
 #pragma mark  SCORE SETTINGS
@@ -107,13 +107,26 @@
 #define DEFAULT_BUTTON_SIZE CGSizeMake(150,50)
 #define DEFAULT_BUTTON_TITLESIZE CGSizeMake(0,0)
 
-#define DEFAULT_MENU_FONT DEFAULT_FONT
+#define DEFAULT_MENU_FONT @"RockWell30-OutlineMenuTitle.fnt"
 
 #define DEFAULT_MENU_TITLE_COLOR ccc3(250, 250, 250)
 #define SELECTED_MENU_TITLE_COLOR ccc3(255,200, 0)
 #define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
 
+//////////////////////////////////////////////////
+#pragma mark Layers
 
+#define BACKGROUND_LAYER 			(-1)
+
+#define MARBLE_LAYER 					(1)
+#define FOREGROUND_LAYER 			(2)
+
+#define OVERLAY_LAYER 				(5)
+#define OVERLAY_LABEL_LAYER		(6)
+
+// legacy, will die
+#define BUTTON_LAYER 					(9)
+#define MENU_LAYER 						(10)
 
 #pragma mark -
 #pragma mark SYSTEM replacement Types

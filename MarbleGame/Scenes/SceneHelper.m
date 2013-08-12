@@ -56,7 +56,7 @@ inline CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size
 	CGRect buttonCaps = BUTTON_BACKGROUND_CAPS;
 	CCScale9Sprite *backgroundButton =  [CCScale9Sprite spriteWithSpriteFrameName:buttonOffName capInsets:buttonCaps]; // [CCScale9Sprite spriteWithFile:@"button.png"];
 	CCScale9Sprite *backgroundHighlightedButton = [CCScale9Sprite spriteWithSpriteFrameName:buttonOnName capInsets:buttonCaps]; //[CCScale9Sprite spriteWithFile:@"buttonHighlighted.png"];
-	CCLabelBMFont *titleLabel = [CCLabelBMFont labelWithString:title fntFile:DEFAULT_BUTTON_FONT];
+	CCNode<CCLabelProtocol,CCRGBAProtocol> *titleLabel = defaultButtonTitle(title);
 	
 	CCControlButton *button = [CCControlButton buttonWithLabel:titleLabel backgroundSprite:backgroundButton];
 	button.zoomOnTouchDown = NO;
@@ -76,7 +76,7 @@ inline CCControlButton* defaultMenuButton()
   return result;
 }
 
-inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultSceneLabel(NSString* labelText)
+inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultMenuTitle(NSString* labelText)
 {
   CGSize winSize = [[CCDirector sharedDirector] winSize];
   
@@ -85,6 +85,11 @@ inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultSceneLabel(NSString* label
   label.color=DEFAULT_MENU_TITLE_COLOR;
   label.position = ccp(winSize.width/2.0, winSize.height-label.contentSize.height );
   return label;
+}
+
+inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultButtonTitle(NSString* title)
+{
+	return [CCLabelBMFont labelWithString:title fntFile:DEFAULT_BUTTON_FONT];
 }
 
 inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultGameLabel(NSString* labelText)

@@ -8,8 +8,9 @@
 
 #import "CCScene.h"
 #import "CCControlExtension.h"
+#import "CMMarbleMenuScene.h"
 
 
-@interface CMMarbleSettingsScene : CCNodeRGBA
+@interface CMMarbleSettingsScene : CMMarbleMenuScene
 @property (nonatomic,assign) CCControlButton *popupButton;
 @end

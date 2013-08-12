@@ -8,11 +8,8 @@
 
 #import "CCScene.h"
 
-@interface CMMarbleMainMenuScene : CCScene
-{
-	@protected
-	CCNode <CCLabelProtocol,CCRGBAProtocol>*		_playerName;
-}
-@property (nonatomic, retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *playerName;
+#import "CMMarbleMenuScene.h"
+
+@interface CMMarbleMainMenuScene : CMMarbleMenuScene
 
 @end

@@ -12,7 +12,7 @@
 #import "SceneHelper.h"
 #import "AppDelegate.h"
 #import "CCControlPopupButton.h"
-
+#import "CMMenuLayer.h"
 @implementation CMMarbleSettingsScene
 @synthesize popupButton;
 
@@ -24,57 +24,49 @@
   [[NSUserDefaults standardUserDefaults] setObject:label forKey:@"MarbleSet"];
 }
 
+- (CCControlPopupButton*) createMarbleSetPopUp
+{
+	NSArray *t = [CMAppDelegate marbleSets];
+	NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
+	NSInteger i = [t indexOfObject:marbleSet];
+	
+	CCControlPopupButton* popB =  [CCControlPopupButton popupButtonWithLabels:t selected:i];  // [self popupWithLabels:t selected:i];
+	[popB addTarget:self action:@selector(marbleSetChanged:) forControlEvents:CCControlEventValueChanged];
+	return popB;
+}
+
 - (id) init
 {
 	self = [super init];
 	if (self != nil) {
-
-		CCNode<CCLabelProtocol,CCRGBAProtocol> *label = defaultSceneLabel(@"Settings");// [CCLabelTTF labelWithString:@"Settings" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
-		[self addChild:label];
-		CGPoint menuPosition = menuStartPosition();
-		CGPoint position = menuPosition;
-//    position.y -=15;
-
-    
-//    position.y -= label.contentSize.height;
-
-		// marble set
-	
-		label = defaultSceneLabel(@"Marbleset:");
-//		label.color=DEFAULT_MENU_TITLE_COLOR;
-		label.anchorPoint=ccp(1.0, 0.5);
-		label.position=ccp(position.x-90, position.y);
-		[self addChild:label];
-    //POPUP Button
-    
-    NSArray *t = [CMAppDelegate marbleSets];
-    NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
-    NSInteger i = [t indexOfObject:marbleSet];
-
-    CCControlPopupButton* popB =  [CCControlPopupButton popupButtonWithLabels:t selected:i];  // [self popupWithLabels:t selected:i];
-    popB.position = position;
-    [self addChild:popB];
-    [popB addTarget:self action:@selector(marbleSetChanged:) forControlEvents:CCControlEventValueChanged];
-		position.y -= popB.contentSize.height;
-
+		CMMenuLayer *menuLayer = [[[CMMenuLayer alloc] initWithLabel:@"Settings"]autorelease];
+		// create a Popup Button with label
+		CGSize menuSize = menuLayer.backgroundSprite.contentSize;
+		CCNodeRGBA *popupButtonLayer = [[[CCNodeRGBA alloc] init]autorelease];
+		popupButtonLayer.color = ccc3(255,200,10);
+//		popupButtonLayer.opacity = 128;
+		popupButtonLayer.anchorPoint=ccp(0.5, 0.5);
+		popupButtonLayer.contentSize = CGSizeMake(menuSize.width, 50);
+		CGPoint buttonPosition = ccp(menuSize.width/2.0, popupButtonLayer.contentSize.height/2.0);
+		CGSize buttonSize = menuLayer.defaultButtonSize;
+		CCControlPopupButton *popUp = [self createMarbleSetPopUp];
+		popUp.position = buttonPosition;
+		popUp.contentSize=buttonSize;
 		
+		CGPoint labelPosition = ccp(buttonPosition.x - popUp.contentSize.width/2.0 - menuLayer.interElementSpacing, popupButtonLayer.contentSize.height/2.0);
+		CCNode<CCLabelProtocol,CCRGBAProtocol>* label = defaultButtonTitle(@"MarbleSet");
+		label.anchorPoint = ccp(1.0, 0.5);
+		label.position = labelPosition;
+		[popupButtonLayer addChild:popUp];
+		[popupButtonLayer addChild:label];
+		popupButtonLayer.contentSize = CGSizeMake(menuSize.width, 50);
+		popupButtonLayer.cascadeColorEnabled = NO;
+		[popupButtonLayer updateDisplayedColor:ccc3(255, 200, 10)];
+		[popupButtonLayer updateDisplayedOpacity:128];
+		[menuLayer addNode:popupButtonLayer z:10];
+		[self addChild:menuLayer];
+		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(exitScene:)];
 		
-		// marble size
-
-    // BACKBUTTON
-    CCControlButton *button = standardButtonWithTitle(@"Back");
-		[button addTarget:self action:@selector(exitScene:) forControlEvents:CCControlEventTouchUpInside];
-		position.y -=38;
-		button.position = ccp(900, 50);
-		[self addChild:button];
-
-		position.y -=38;
-		
-    
-		[self addChild:defaultSceneBackground() z:-1];
-		self.opacity=0.0;
-		self.cascadeOpacityEnabled=NO;
-    self.popupButton=popB;
 	}
 	return self;
 }

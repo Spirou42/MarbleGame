@@ -7,9 +7,9 @@
 //
 // simple Level Selector using the current levelSet
 
-#import "CCScene.h"
 
+#import "CMMarbleMenuScene.h"
 
-@interface CMMarbleLevelSetScene : CCScene
+@interface CMMarbleLevelSetScene : CMMarbleMenuScene
 
 @end

@@ -23,15 +23,6 @@
 #import "CMMarbleSprite.h"
 #import "CMMarbleSlot.h"
 
-#define BACKGROUND_LAYER 			(-1)
-#define MARBLE_LAYER 					(1)
-#define FOREGROUND_LAYER 			(2)
-#define OVERLAY_LAYER 				(5)
-#define OVERLAY_LABEL_LAYER		(6)
-
-// legacy, will die
-#define BUTTON_LAYER 			(9)
-#define MENU_LAYER 				(10)
 
 @implementation CMMarblePlayScene
 

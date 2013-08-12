@@ -76,7 +76,7 @@
 	//  [result setBackgroundSprite:menuItemBackgroundHighlighted forState:CCControlStateHighlighted];
   result.zoomOnTouchDown=NO;
   result.labelAnchorPoint = ccp(0.5 ,0.5);
-  result.marginLR=20;
+//  result.marginLR=20;
   result.anchorPoint=ccp(0.0, 0.0);
   result.selected = selected;
   
@@ -120,13 +120,13 @@
     CCScale9Sprite * backgroundSprite = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
     CGPoint currentPosition = ccp(0, 0);
     CCNode<CCLabelProtocol,CCRGBAProtocol> *buttonLabel = nil;
-    CGSize maxButtonSize = CGSizeMake(170, 00);
+    CGSize maxButtonSize = CGSizeMake(00, 00);
     for (NSInteger index =[lbs count]-1; index>=0; index--) {
       BOOL isSelected = index == sIndex;
       
       CCControlButton *currentButton = [self popupItemButtonWithTitle:[lbs objectAtIndex:index] selected:isSelected];
       
-			// TODO: refactor for all label types. currently we use CCLabelBF 
+			// TODO: refactor for all label types. currently we use CCLabelTTF
       if (isSelected) {
         if ([currentButton.titleLabel isKindOfClass:[CCLabelTTF class]]) {
           CCLabelTTF* k = (CCLabelTTF*)currentButton.titleLabel;
@@ -139,12 +139,15 @@
       
       if (maxButtonSize.width<currentButton.contentSize.width) {
         maxButtonSize.width=currentButton.contentSize.width;
+				NSLog(@"Max %@ with %@",currentButton.titleLabel.string,NSStringFromSize(maxButtonSize) );
       }
       if (maxButtonSize.height<currentButton.contentSize.height) {
         maxButtonSize.height=currentButton.contentSize.height;
+				NSLog(@"Max %@ with %@",currentButton.titleLabel.string,NSStringFromSize(maxButtonSize) );
       }
       currentPosition.y +=currentButton.boundingBox.size.height;
     }
+		maxButtonSize.width+=40;
     CGSize menuSize= CGSizeMake(maxButtonSize.width+2, currentPosition.y+2);
     for (CCControlButton* button in backgroundSprite.children) {
       

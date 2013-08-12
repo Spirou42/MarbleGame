@@ -11,13 +11,14 @@
 #import "cocos2d.h"
 #import "CCControlExtension.h"
 
-@interface CMMenuLayer : CCLayer
+@interface CMMenuLayer : CCLayerRGBA
 {
 	CCSprite 					*_backgroundSprite;								///< our background
 	NSMutableArray 		*_menuButtons;										///< CCControl*
 	CGSize 						_defaultButtonSize;								///< used while adding element with convinience methonds
 	CGPoint						_nextFreeMenuPosition;						///< next free position on which an element will be added
 	CGFloat						_interElementSpacing;							///< vertical spacing between elements
+	NSString					*_menuLabel;											///< name of the Menu
 }
 
 @property (nonatomic, retain) CCSprite* backgroundSprite;
@@ -25,7 +26,13 @@
 @property (nonatomic, assign) CGSize defaultButtonSize;
 @property (nonatomic, assign) CGPoint nextFreeMenuPosition;
 @property (nonatomic, assign) CGFloat interElementSpacing;
-- (void) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;
+@property (nonatomic, retain) NSString* menuLabel;
 
+- (id) initWithLabel:(NSString*) menuLabel;
+
+- (void) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;
+- (void) addNode:(CCNode*) aNode;
+
+- (void) addNode:(CCNode*) aNode z:(NSInteger) zLayer;
 
 @end

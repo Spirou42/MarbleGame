@@ -12,7 +12,24 @@
 @implementation CMMenuLayer
 
 @synthesize  backgroundSprite=_backgroundSprite, menuButtons=_menuButtons, defaultButtonSize=_defaultButtonSize,
-nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing;
+nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing, menuLabel = _menuLabel;
+
+- (CGPoint) nextMenuPositionFor:(CCNode*)currentNode
+{
+	CGPoint position = self.nextFreeMenuPosition;
+	CGPoint p = position;
+	p.y -= currentNode.contentSize.height+self.interElementSpacing;
+	self.nextFreeMenuPosition = p;
+	return position;
+}
+
+- (CCNode<CCLabelProtocol,CCRGBAProtocol>*) createMenuLabel
+{
+	CCNode <CCLabelProtocol, CCRGBAProtocol> *mLabel =  defaultMenuTitle(self.menuLabel);
+	mLabel.anchorPoint = ccp(0.5, 0.5);
+	mLabel.position = [self nextMenuPositionFor:mLabel];
+	return mLabel;
+}
 
 - (void) defaults
 {
@@ -23,13 +40,24 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 	self.backgroundSprite = [CCSprite spriteWithFile:MENU_BACKGROUND_PLATE];
 	self.backgroundSprite.anchorPoint=ccp(0.5, 0.5);
 	self.backgroundSprite.position = ccp(self.contentSize.width/2.0, self.contentSize.height/2.0);
-	[self addChild:self.backgroundSprite];
+	self.nextFreeMenuPosition = ccp(self.backgroundSprite.contentSize.width/2.0, self.backgroundSprite.contentSize.height - 40.0 );
+	[self addChild:self.backgroundSprite z:0];
+	[self.backgroundSprite addChild:[self createMenuLabel] z:1];
+	CGPoint p = self.nextFreeMenuPosition;
+	p.y-=40;
+	self.nextFreeMenuPosition = p;
 }
 
 - (id) init
 {
+	return [self initWithLabel:@"Menu"];
+}
+
+- (id) initWithLabel:(NSString *)mLabel
+{
 	self = [super init];
-	if(self){
+	if (self) {
+		self.menuLabel = mLabel;
 		[self defaults];
 	}
 	return self;
@@ -49,6 +77,17 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 {
 	CCControlButton *button = standardButtonWithTitleSize(buttonTitle, self.defaultButtonSize);
 	[button addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
+	[self addNode:button z:1];
 	
+}
+- (void) addNode:(CCNode *)aNode
+{
+	[self addNode:aNode z:1];
+}
+- (void) addNode:(CCNode *)aNode z:(NSInteger) zLayer
+{
+	aNode.position = [self nextMenuPositionFor:aNode];
+	[self.backgroundSprite addChild:aNode z:zLayer];
+	[self.menuButtons addObject:aNode];
 }
 @end
