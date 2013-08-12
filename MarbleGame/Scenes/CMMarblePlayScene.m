@@ -37,7 +37,11 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 - (NSString*) currentTimeString
 {
 	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
+#if __CC_PLATFORM_MAC
 	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)dt/60,(NSInteger)dt%60];
+#else
+	NSString* result = [NSString stringWithFormat:@"%02d:%02d",(NSInteger)dt/60,(NSInteger)dt%60];
+#endif
 	return result;
 }
 - (NSString*) currentScoreString
@@ -414,7 +418,7 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 		if (self.removedMarbleQueue.count) {
 			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
 			[self.marbleSlot addMarbleWithID:ballIndex];
-			NSLog(@"Place %ld",ballIndex);
+
 			[self.removedMarbleQueue removeObjectAtIndex:0];
 		}
 	}
