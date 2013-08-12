@@ -101,6 +101,8 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 - (void)dealloc
 {
 // 	[self.space removeBody:self.space.staticBody];
+	[self.marbleFireTimer invalidate];
+	self.marbleFireTimer = nil;
 	[self.space remove:self.bounds];
 	[self.space remove:self.staticShapes];
 	self.space = nil;
@@ -454,6 +456,14 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 }
 
 #endif
+- (void) onExit
+{
+	[self.marbleFireTimer invalidate];
+	self.marbleFireTimer = nil;
+}
+
+
+
 #pragma mark -
 #pragma mark Simulation
 

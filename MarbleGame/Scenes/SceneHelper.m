@@ -63,7 +63,7 @@ inline CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size
 	button.preferredSize= size;
 
 	[button setBackgroundSprite:backgroundHighlightedButton forState:CCControlStateHighlighted];
-	
+	button.marginLR = 20.0;
 	return button;
 }
 

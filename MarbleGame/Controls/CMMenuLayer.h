@@ -19,6 +19,7 @@
 	CGPoint						_nextFreeMenuPosition;						///< next free position on which an element will be added
 	CGFloat						_interElementSpacing;							///< vertical spacing between elements
 	NSString					*_menuLabel;											///< name of the Menu
+	CGSize						_currentMaxSize;
 }
 
 @property (nonatomic, retain) CCSprite* backgroundSprite;
@@ -27,10 +28,11 @@
 @property (nonatomic, assign) CGPoint nextFreeMenuPosition;
 @property (nonatomic, assign) CGFloat interElementSpacing;
 @property (nonatomic, retain) NSString* menuLabel;
+@property (nonatomic, assign) CGSize currentMaxSize;
 
 - (id) initWithLabel:(NSString*) menuLabel;
 
-- (void) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;
+- (CCControlButton*) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;
 - (void) addNode:(CCNode*) aNode;
 
 - (void) addNode:(CCNode*) aNode z:(NSInteger) zLayer;

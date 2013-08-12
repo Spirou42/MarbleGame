@@ -74,11 +74,14 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 #pragma mark - 
 #pragma mark Button handling
 
-- (void) addButtonWithTitle:(NSString *)buttonTitle target:(id)target action:(SEL)selector
+- (CCControlButton*) addButtonWithTitle:(NSString *)buttonTitle target:(id)target action:(SEL)selector
 {
 	CCControlButton *button = standardButtonWithTitleSize(buttonTitle, self.defaultButtonSize);
 	[button addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
+	button.marginLR = 20.0f;
+	button.preferredSize=CGSizeMake(400, 50);
 	[self addNode:button z:1];
+	return button;
 	
 }
 - (void) addNode:(CCNode *)aNode

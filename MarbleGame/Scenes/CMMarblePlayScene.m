@@ -389,6 +389,7 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 
 - (void) onExit
 {
+	[self.simulationLayer onExit];
   [super onExit];
 }
 

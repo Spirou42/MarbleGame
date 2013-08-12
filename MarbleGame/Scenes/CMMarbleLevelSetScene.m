@@ -13,6 +13,11 @@
 #import "CMMenuLayer.h"
 #import "CMMarbleMainMenuScene.h"
 #import "CMMenuLayer.h"
+#import "CMMarbleLevelSet.h"
+#import "CMMarbleLevel.h"
+#import "AppDelegate.h"
+#import "CMMarblePlayer.h"
+#import "MarbleGameAppDelegate+GameDelegate.h"
 @implementation CMMarbleLevelSetScene
 
 
@@ -20,14 +25,29 @@
 {
   self = [super init];
 	if (self) {
-
+		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
+		NSInteger levelNumber = 0;
+		for (CMMarbleLevel *level in set.levelList) {
+			CCControlButton* aButton = [menuLayer addButtonWithTitle:level.name target:self action:@selector(onLevelSelect:)];
+			aButton.tag = levelNumber++;
+		}
+		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(onEnd:)];
 		[self addChild:menuLayer z:1];
-		[self schedule:@selector(onEnd:) interval:5];
+//		[self schedule:@selector(onEnd:) interval:5];
 	}
   return self;
 }
 
+- (void) onLevelSelect:(CCControlButton*) sender
+{
+	NSInteger level = sender.tag;
+	MarbleGameAppDelegate * appDel = CMAppDelegate;
+	CMMarblePlayer *player = appDel.currentPlayer;
+	player.currentLevel = level;
+	appDel.currentPlayer = player;
+	[self onEnd:0];
+}
 
 - (void)onEnd:(ccTime)dt
 {

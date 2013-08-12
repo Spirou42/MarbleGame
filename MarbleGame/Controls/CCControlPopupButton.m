@@ -139,11 +139,11 @@
       
       if (maxButtonSize.width<currentButton.contentSize.width) {
         maxButtonSize.width=currentButton.contentSize.width;
-				NSLog(@"Max %@ with %@",currentButton.titleLabel.string,NSStringFromSize(maxButtonSize) );
+
       }
       if (maxButtonSize.height<currentButton.contentSize.height) {
         maxButtonSize.height=currentButton.contentSize.height;
-				NSLog(@"Max %@ with %@",currentButton.titleLabel.string,NSStringFromSize(maxButtonSize) );
+
       }
       currentPosition.y +=currentButton.boundingBox.size.height;
     }
