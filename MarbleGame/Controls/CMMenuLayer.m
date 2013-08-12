@@ -40,6 +40,7 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 	self.backgroundSprite = [CCSprite spriteWithFile:MENU_BACKGROUND_PLATE];
 	self.backgroundSprite.anchorPoint=ccp(0.5, 0.5);
 	self.backgroundSprite.position = ccp(self.contentSize.width/2.0, self.contentSize.height/2.0);
+
 	self.nextFreeMenuPosition = ccp(self.backgroundSprite.contentSize.width/2.0, self.backgroundSprite.contentSize.height - 40.0 );
 	[self addChild:self.backgroundSprite z:0];
 	[self.backgroundSprite addChild:[self createMenuLabel] z:1];
