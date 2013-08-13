@@ -45,6 +45,7 @@
 	NSArray*						_bounds;
 	NSArray*						_staticShapes;
 
+  BOOL                entered;
 	
 }
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;

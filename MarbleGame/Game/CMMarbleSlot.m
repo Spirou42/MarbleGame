@@ -25,8 +25,8 @@
 {
 	NSString* setName = [[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
 	CGFloat radius = self.contentSize.height/2.0;
-	CCSpriteFrame *spriteFrame = [CMMarbleSprite spriteFrameForBallSet:setName ballIndex:marbleID];
-	CMMarbleSprite *marbleSprite = [[CMMarbleSprite alloc] initWithBallSet:setName ballIndex:marbleID mass:5.0 andRadius:radius];
+//	CCSpriteFrame *spriteFrame = [CMMarbleSprite spriteFrameForBallSet:setName ballIndex:marbleID];
+	CMMarbleSprite *marbleSprite = [[[CMMarbleSprite alloc] initWithBallSet:setName ballIndex:marbleID mass:5.0 andRadius:radius]autorelease];
 	[marbleSprite createOverlayTextureRect];
 	CGFloat myHeight = self.contentSize.height;
 	CGFloat scaleFactor;

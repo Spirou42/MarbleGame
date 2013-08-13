@@ -22,6 +22,7 @@
 #import "CMMarbleMultiComboSprite.h"
 #import "CMMarbleSprite.h"
 #import "CMMarbleSlot.h"
+#import "CMMenuLayer.h"
 
 
 @implementation CMMarblePlayScene
@@ -32,7 +33,8 @@ comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marble
 marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
 foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite,
 scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel,
-effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
+effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue,
+menuLayer = _menuLayer;
 
 - (NSString*) currentTimeString
 {
@@ -57,13 +59,14 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 
     [self createMenu];
 //		[self scheduleUpdate];
-    self.simulationLayer =[CMMarbleSimulationLayer node];
+    CMMarbleSimulationLayer *l =[CMMarbleSimulationLayer node];
+    self.simulationLayer =l;
 		self.simulationLayer.gameDelegate = self;
 		self.simulationLayer.currentLevel = [self currentLevel];
 		self.scoreLabel = defaultGameLabel(@"0");
 		self.timeLabel = defaultGameLabel(@"00:00");
 		self.effectQueue = [NSMutableArray array];
-		self.marbleSlot = [[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28)];
+		self.marbleSlot = [[[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28)]autorelease];
 		self.removedMarbleQueue = [NSMutableArray array];
 
 #ifdef __CC_PLATFORM_MAC
@@ -91,6 +94,7 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 	self.effectQueue = nil;
 	self.marbleSlot = nil;
 	self.removedMarbleQueue = nil;
+  self.menuLayer = nil;
 	[super dealloc];
 }
 
@@ -100,7 +104,9 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 - (void) setSimulationLayer:(CMMarbleSimulationLayer *)simLay
 {
   if( self->_simulationLayer != simLay){
+    self->_simulationLayer.simulationRunning=NO;
     [self removeChild:self->_simulationLayer cleanup:YES];
+
     [self->_simulationLayer release];
     self->_simulationLayer = [simLay retain];
 		if (simLay) {
@@ -108,6 +114,10 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 		}
 
   }
+}
+- (void) addChild:(CCNode *)node z:(NSInteger)z
+{
+  [super addChild:node z:z];
 }
 
 - (CMMarbleSimulationLayer*) simulationLayer
@@ -261,7 +271,15 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
   self->_menuButton = menuButton;
   [self addChild:menuButton z:BUTTON_LAYER];
   [menuButton addTarget:self action:@selector(toggleMenu:) forControlEvents:CCControlEventTouchUpInside];
-
+  self.menuLayer = [CMMenuLayer menuLayerWithLabel:@"Game Menu"];
+  [self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(backAction:)];
+  [self.menuLayer addButtonWithTitle:@"Debug" target:self action:@selector(debugAction:)];
+  [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
+  [self.menuLayer addButtonWithTitle:@"Reset" target:self action:@selector(resetSimulationAction:)];
+  [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
+  [self addChild:self.menuLayer z:MENU_LAYER];
+  self.menuLayer.visible = NO;
+#if 0
   CCScale9Sprite *localMenu = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
   self->_menu = localMenu;
   localMenu.preferredSize= CGSizeMake(1024, menuButton.contentSize.height+4);
@@ -316,23 +334,28 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
   settingsButton.position = buttonPos;
   [localMenu addChild:settingsButton];
   buttonPos.x += settingsButton.contentSize.width;
+#endif
 }
 
 
 
 - (void) toggleMenu:(id) sender
 {
-  CGPoint actPosition = self->_menu.position;
-  if (actPosition.x == 0.0) {
-    actPosition.x = 1024;
-  }else{
-    actPosition.x = 0;
-  }
-  [self->_menu runAction:[CCMoveTo actionWithDuration:0.20 position:actPosition]];
+  
+  self.menuLayer.visible = ~self.menuLayer.visible;
+  
+//  CGPoint actPosition = self->_menu.position;
+//  if (actPosition.x == 0.0) {
+//    actPosition.x = 1024;
+//  }else{
+//    actPosition.x = 0;
+//  }
+//  [self->_menu runAction:[CCMoveTo actionWithDuration:0.20 position:actPosition]];
 }
 
 - (void) backAction:(id) sender
 {
+  [self.simulationLayer stopSimulation];
   [[CCDirector sharedDirector] replaceScene: [CMMarbleMainMenuScene node]];
 }
 
@@ -612,10 +635,6 @@ effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removed
 	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
 }
 
-- (void) addChild:(CCNode *)node z:(NSInteger)z
-{
-	[super addChild:node z:z];
-}
 
 - (void) initializeLevel:(CMMarbleLevel *)level
 {

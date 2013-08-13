@@ -50,7 +50,7 @@
   // load shaders
   GLchar * fragSource = (GLchar*) [[NSString stringWithContentsOfFile:[[CCFileUtils sharedFileUtils] fullPathFromRelativePath:@"GlossMapShader.fsh"] encoding:NSUTF8StringEncoding error:nil] UTF8String];
   GLchar * vertSource = (GLchar*) [[NSString stringWithContentsOfFile:[[CCFileUtils sharedFileUtils] fullPathFromRelativePath:@"GlossMapShader.vsh"] encoding:NSUTF8StringEncoding error:nil] UTF8String];
-  CCGLProgram *shaderProgram = [[CCGLProgram alloc] initWithVertexShaderByteArray:vertSource fragmentShaderByteArray:fragSource];
+  CCGLProgram *shaderProgram = [[[CCGLProgram alloc] initWithVertexShaderByteArray:vertSource fragmentShaderByteArray:fragSource] autorelease];
   
   [shaderProgram addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
 	[shaderProgram addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
@@ -109,5 +109,6 @@
 	[playerDict setObject:playerData forKey:currentPlayerName];
 	[ud setObject:playerDict forKey:@"Players"];
 	[ud synchronize];
+  [playerDict release];
 }
 @end

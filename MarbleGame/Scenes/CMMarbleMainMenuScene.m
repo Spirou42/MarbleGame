@@ -29,7 +29,7 @@
 //	CCLayerColor *parent = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 200) width:winSize.width height:winSize.height];
 
 
-  CGPoint pos = menuStartPosition();
+//  CGPoint pos = menuStartPosition();
 
 	if (self != nil) {
 		CGSize buttonSize = DEFAULT_BUTTON_SIZE;

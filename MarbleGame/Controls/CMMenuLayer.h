@@ -30,6 +30,8 @@
 @property (nonatomic, retain) NSString* menuLabel;
 @property (nonatomic, assign) CGSize currentMaxSize;
 
++ (id) menuLayerWithLabel:(NSString*)menuLabel;
+
 - (id) initWithLabel:(NSString*) menuLabel;
 
 - (CCControlButton*) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;

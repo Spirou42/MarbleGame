@@ -17,7 +17,7 @@
 {
 	self = [super init];
   CGSize winSize = [[CCDirector sharedDirector] winSize];
-  CGPoint pos = CGPointMake(winSize.width/2.0,winSize.height/3.0*2.0);
+//  CGPoint pos = CGPointMake(winSize.width/2.0,winSize.height/3.0*2.0);
 
 	if (self != nil) {
 //		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Help" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];

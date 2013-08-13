@@ -14,6 +14,11 @@
 @synthesize  backgroundSprite=_backgroundSprite, menuButtons=_menuButtons, defaultButtonSize=_defaultButtonSize,
 nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing, menuLabel = _menuLabel;
 
++ (id) menuLayerWithLabel:(NSString *)menuLabel
+{
+  return [[[[self class] alloc]initWithLabel:menuLabel]autorelease];
+}
+
 - (CGPoint) nextMenuPositionFor:(CCNode*)currentNode
 {
 	CGPoint position = self.nextFreeMenuPosition;

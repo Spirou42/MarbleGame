@@ -903,23 +903,63 @@
 		93EB27EF177F6F16001B7FBB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FE57668517BA822600D46089 /* 1. Main Menu */,
+				FE57668617BA824400D46089 /* 2. Select Level */,
+				FE57668717BA826200D46089 /* 3. Play */,
+				FE57668817BA827900D46089 /* 4. Settings */,
+				FE57668917BA828B00D46089 /* 5. Help */,
 				93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */,
-				93EB27F6177F70B9001B7FBB /* CMMarbleHelpScene.h */,
-				93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */,
-				FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */,
-				FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */,
 				938D1A3417B970D400295B4F /* CMMarbleMenuScene.h */,
 				938D1A3517B970D400295B4F /* CMMarbleMenuScene.m */,
-				93EB27F0177F6F41001B7FBB /* CMMarbleMainMenuScene.h */,
-				93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */,
-				93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */,
-				93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */,
-				93EB27F3177F70A0001B7FBB /* CMMarbleSettingsScene.h */,
-				93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */,
 				934AF9B217837E22004BAC7E /* SceneHelper.h */,
 				934AF9B317837E22004BAC7E /* SceneHelper.m */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FE57668517BA822600D46089 /* 1. Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				93EB27F0177F6F41001B7FBB /* CMMarbleMainMenuScene.h */,
+				93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */,
+			);
+			name = "1. Main Menu";
+			sourceTree = "<group>";
+		};
+		FE57668617BA824400D46089 /* 2. Select Level */ = {
+			isa = PBXGroup;
+			children = (
+				FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */,
+				FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */,
+			);
+			name = "2. Select Level";
+			sourceTree = "<group>";
+		};
+		FE57668717BA826200D46089 /* 3. Play */ = {
+			isa = PBXGroup;
+			children = (
+				93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */,
+				93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */,
+			);
+			name = "3. Play";
+			sourceTree = "<group>";
+		};
+		FE57668817BA827900D46089 /* 4. Settings */ = {
+			isa = PBXGroup;
+			children = (
+				93EB27F3177F70A0001B7FBB /* CMMarbleSettingsScene.h */,
+				93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */,
+			);
+			name = "4. Settings";
+			sourceTree = "<group>";
+		};
+		FE57668917BA828B00D46089 /* 5. Help */ = {
+			isa = PBXGroup;
+			children = (
+				93EB27F6177F70B9001B7FBB /* CMMarbleHelpScene.h */,
+				93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */,
+			);
+			name = "5. Help";
 			sourceTree = "<group>";
 		};
 		FED2E5F717A7E488005A16B3 /* iMarbleGame */ = {

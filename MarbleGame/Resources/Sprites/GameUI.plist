@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:c44c1c7142ba403b9e16780192b20545:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:8eac76d7ae4eef4c3794f0f2d4805f70:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -10,47 +10,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 181,2 }, { 103,50 } }</string>
- 					
-
-					<key>offset</key>
-				  <string>{ , }</string>
-				  
-				  <key>rotated</key>
-					 <true/> 
-				  
-				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 103,50 } }</string>
-				
-				  <key>sourceSize</key>
-				  <string>{ 103,50 }</string>
-				</dict>
-		 
-			<key>Button-Normal</key>
-				<dict>
-					<key>frame</key>
-					
-					<string>{ { 181,107 }, { 103,49 } }</string>
- 					
-
-					<key>offset</key>
-				  <string>{ , }</string>
-				  
-				  <key>rotated</key>
-					 <true/> 
-				  
-				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 103,49 } }</string>
-				
-				  <key>sourceSize</key>
-				  <string>{ 103,49 }</string>
-				</dict>
-		 
-			<key>DDButton-Glyph</key>
-				<dict>
-					<key>frame</key>
-					
-					<string>{ { 25,175 }, { 20,21 } }</string>
+					<string>{ { 48,163 }, { 99,46 } }</string>
 					
 
 					<key>offset</key>
@@ -58,6 +18,46 @@
 				  
 				  <key>rotated</key>
 					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 99,46 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 99,46 }</string>
+				</dict>
+		 
+			<key>Button-Normal</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,141 }, { 97,44 } }</string>
+ 					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <true/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 97,44 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 97,44 }</string>
+				</dict>
+		 
+			<key>DDButton-Glyph</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 149,198 }, { 20,21 } }</string>
+ 					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <true/> 
 				  
 				  <key>sourceColorRect</key>
 				  <string>{ { 0,0 },{ 20,21 } }</string>
@@ -70,7 +70,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 141,2 }, { 161,38 } }</string>
+					<string>{ { 2,141 }, { 97,44 } }</string>
  					
 
 					<key>offset</key>
@@ -80,10 +80,10 @@
 					 <true/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 161,38 } }</string>
+				  <string>{ { 0,0 },{ 97,44 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 161,38 }</string>
+				  <string>{ 97,44 }</string>
 				</dict>
 		 
 			<key>DDMenu-Background</key>
@@ -91,13 +91,13 @@
 					<key>frame</key>
 					
 					<string>{ { 2,2 }, { 171,137 } }</string>
- 					
+					
 
 					<key>offset</key>
 				  <string>{ , }</string>
 				  
 				  <key>rotated</key>
-					 <true/> 
+					 <false/> 
 				  
 				  <key>sourceColorRect</key>
 				  <string>{ { 0,0 },{ 171,137 } }</string>
@@ -106,11 +106,31 @@
 				  <string>{ 171,137 }</string>
 				</dict>
 		 
+			<key>DDMenu-Button</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 157,141 }, { 3,3 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 3,3 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 3,3 }</string>
+				</dict>
+		 
 			<key>Slider-Thumb</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 2,175 }, { 21,33 } }</string>
+					<string>{ { 149,163 }, { 21,33 } }</string>
 					
 
 					<key>offset</key>
@@ -130,7 +150,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 25,198 }, { 99,11 } }</string>
+					<string>{ { 48,211 }, { 99,11 } }</string>
 					
 
 					<key>offset</key>
@@ -150,7 +170,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 47,175 }, { 107,20 } }</string>
+					<string>{ { 48,141 }, { 107,20 } }</string>
 					
 
 					<key>offset</key>
@@ -174,7 +194,7 @@
 			<key>realTextureFileName</key>
 			<string>GameUI.png</string>
 			<key>size</key>
-			<string>{ 233,212 }</string>
+			<string>{ 175,240 }</string>
 			<key>textureFileName</key>
 			<string>GameUI.png</string>
 		</dict>

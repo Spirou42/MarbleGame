@@ -4,7 +4,9 @@
 //
 //  Created by Carsten Müller on 8/12/13.
 //
-//
+//	Baseclass for all menu like scenes
+//	creates Background and overlay. Knows about the current player.
+
 
 #import "cocos2d.h"
 

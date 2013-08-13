@@ -75,7 +75,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 #elif defined(__CC_PLATFORM_MAC)
 		self.mouseEnabled = YES;
 #endif
-		
+//		self->_simulationRunning=YES;
 		self.simulatedMarbles = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
@@ -263,17 +263,43 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 #pragma mark -
 #pragma mark Properties
 
+- (void) scheduleUpdate
+{
+  [super scheduleUpdate];
+}
+
+- (void) unscheduleUpdate
+{
+  [super unscheduleUpdate];
+}
+
+- (id) retain
+{
+  return [super retain];
+}
+-(oneway void) release
+{
+  [super release];
+}
+
+-( id) autorelease
+{
+  return[super autorelease];
+}
 - (void) setSimulationRunning:(BOOL)run
 {
+  NSLog(@"isRunning In %d (%d)",self.isRunning,run);
   if (self->_simulationRunning != run) {
-    CCScheduler *s =self.scheduler;
+//    CCScheduler *s =self.scheduler;
     self->_simulationRunning = run;
     if (run) {
       [self scheduleUpdate];
     }else{
-      [s unscheduleUpdateForTarget:self];
+      [self unscheduleUpdate];
+      //[s unscheduleUpdateForTarget:self];
     }
   }
+    NSLog(@"isRunning Out %d (%d)",self.isRunning,run);
 }
 
 - (void) setDollyGroove:(ChipmunkGrooveJoint *)dG
@@ -285,7 +311,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		if (dG) {
 			[self.space addConstraint:dG];
 		}
-		[self.dollyGroove release];
+		[self->_dollyGroove release];
 		self->_dollyGroove = [dG retain];
 	}
 }
@@ -299,7 +325,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		if (dS) {
 			[self.space addConstraint:dS];
 		}
-		[self.dollyServo release];
+		[self->_dollyServo release];
 		self->_dollyServo = [dS retain];
 	}
 }
@@ -310,7 +336,6 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		self->_currentLevel = cL;
 		[self initializeLevel];
 	}
-	
 }
 - (void) setStaticShapes:(NSArray *)staticBodies
 {
@@ -458,10 +483,18 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 #endif
 - (void) onExit
 {
+  self.simulationRunning = NO;
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
+//  self->entered=NO;
+  [super onExit];
 }
 
+- (void) onEnter
+{
+//  self->entered=YES;
+  [super onEnter];
+}
 
 
 #pragma mark -
