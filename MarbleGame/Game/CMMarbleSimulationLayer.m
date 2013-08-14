@@ -20,6 +20,8 @@
 #import "CMSimpleShapeReader.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMarbleMultiComboSprite.h"
+#import "CMMarbleBatchNode.h"
+
 enum {
 	kTagParentNode = 1,
 };
@@ -81,8 +83,8 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		[self initPhysics];
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
 
-#if 0
-		self.batchNode= [CCSpriteBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
+#if 1
+		self.batchNode= [CMMarbleBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
 #else
     self.batchNode = [CCNode node];
 #endif

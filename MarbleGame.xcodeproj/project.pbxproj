@@ -89,6 +89,8 @@
 		FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
+		FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
+		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
@@ -467,6 +469,8 @@
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
 		FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MarbleGameAppDelegate+GameDelegate.m"; sourceTree = "<group>"; };
+		FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleBatchNode.h; sourceTree = "<group>"; };
+		FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleBatchNode.m; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DB17A7E448005A16B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DD17A7E448005A16B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -881,21 +885,8 @@
 		93EAB2DE17A19C6A009894C5 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				FED2E8E417A8087B005A16B3 /* AppDelegate.h */,
-				93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */,
-				93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */,
-				93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */,
-				93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */,
-				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
-				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
-				93566EEF17B592ED0017176A /* CMMarbleSlot.h */,
-				93566EF017B592ED0017176A /* CMMarbleSlot.m */,
-				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
-				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
-				93536641177DFB52009F640B /* MacAppDelegate.h */,
-				93536642177DFB52009F640B /* MacAppDelegate.m */,
-				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
-				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
+				FEB4EF5B17BBC1580023D063 /* Management */,
+				FEB4EF4B17BBC13F0023D063 /* Visuals */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -960,6 +951,37 @@
 				93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */,
 			);
 			name = "5. Help";
+			sourceTree = "<group>";
+		};
+		FEB4EF4B17BBC13F0023D063 /* Visuals */ = {
+			isa = PBXGroup;
+			children = (
+				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
+				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
+				93566EEF17B592ED0017176A /* CMMarbleSlot.h */,
+				93566EF017B592ED0017176A /* CMMarbleSlot.m */,
+				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
+				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
+				FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */,
+				FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */,
+			);
+			name = Visuals;
+			sourceTree = "<group>";
+		};
+		FEB4EF5B17BBC1580023D063 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				FED2E8E417A8087B005A16B3 /* AppDelegate.h */,
+				93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */,
+				93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */,
+				93EAB2E917A1A7BD009894C5 /* CMMarblePlayer.h */,
+				93EAB2EA17A1A7BD009894C5 /* CMMarblePlayer.m */,
+				93536641177DFB52009F640B /* MacAppDelegate.h */,
+				93536642177DFB52009F640B /* MacAppDelegate.m */,
+				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
+				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
+			);
+			name = Management;
 			sourceTree = "<group>";
 		};
 		FED2E5F717A7E488005A16B3 /* iMarbleGame */ = {
@@ -1410,6 +1432,7 @@
 				938D1A3617B970D400295B4F /* CMMarbleMenuScene.m in Sources */,
 				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
 				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,
+				FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */,
 				9353D46417B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
@@ -1442,6 +1465,7 @@
 				938D1A3717B970D400295B4F /* CMMarbleMenuScene.m in Sources */,
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,
 				FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */,
+				FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
 				9353D46517B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);

@@ -34,11 +34,8 @@
 {
     if ((self=[super initWithSpriteFrame:[[self class]spriteFrameForBallSet:sN ballIndex:bI]])) {
     
-#if 0
-    CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTextureColor];
-#else
     CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCMMarbleGlossMapShader];
-#endif
+
     self.shaderProgram = k;
 
     self.radius = r;
@@ -80,7 +77,8 @@
 	//	[self removeAllChildren];
 	self.shape.body = nil;
 	self.shape = nil;
-	self.setName = nil;
+  [self->setName release];
+  self->setName = nil;
 	[super dealloc];
 }
 
@@ -250,10 +248,10 @@
 
 - (void) updateTransform
 {
-	for (CCSprite *child in self.children) {
-    child.dirty = YES;
-		child.rotation = -self.rotation;
-	}
+//	for (CCSprite *child in self.children) {
+//    child.dirty = YES;
+//		child.rotation = -self.rotation;
+//	}
 
 	[super updateTransform];
   [self rotateMapCoords];  
