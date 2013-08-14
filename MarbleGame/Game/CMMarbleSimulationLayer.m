@@ -115,7 +115,8 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	self.dollyShape.body = nil;
 	self.dollyShape = nil;
 	self.dollyServo = nil;
-	
+
+	self.bounds = nil;
 	[super dealloc];
 	
 }
@@ -133,13 +134,13 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	CGRect p = CGRectZero;
 	p.size = s;
 	CGRect newBounds = CGRectInset(p,0,0);
-	self.bounds = [self.space addBounds:newBounds
+	self.bounds = [[self.space addBounds:newBounds
 														thickness:60.0
 													 elasticity:BORDER_ELASTICITY
 														 friction:BORDER_FRICTION
 															 layers:CP_ALL_LAYERS
 																group:CP_NO_GROUP
-												collisionType:borderType];
+												collisionType:borderType]autorelease];
 	
 	[self.space addCollisionHandler:self typeA:[CMMarbleSprite class] typeB:[CMMarbleSprite class]
 														begin:@selector(beginMarbleCollision:space:)
