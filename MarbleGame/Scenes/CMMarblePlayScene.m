@@ -23,6 +23,7 @@
 #import "CMMarbleSprite.h"
 #import "CMMarbleSlot.h"
 #import "CMMenuLayer.h"
+#import "CMMarbleGameScoreModeProtocol.h"
 
 
 @implementation CMMarblePlayScene
@@ -34,7 +35,7 @@
 @synthesize  foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 @synthesize  scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 @synthesize  effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
-@synthesize  menuLayer = _menuLayer;
+@synthesize  menuLayer = _menuLayer,scoreDelegate = _scoreDelegate, effectTimer = _effectTimer;
 
 - (NSString*) currentTimeString
 {
@@ -76,6 +77,7 @@
 #endif
 		
 		[self resetSimulationAction:nil];
+		self.scoreDelegate = [CMAppDelegate currentScoreDelegate];
 		self.levelStartTime = [NSDate date];
 	}
 	return self;
@@ -85,6 +87,8 @@
 	self.levelStartTime = nil;
 	[self.marbleDelayTimer invalidate];
 	self.marbleDelayTimer = nil;
+	[self.effectTimer invalidate];
+	self.effectTimer = nil;
 	self.currentStatistics = nil;
 	self.simulationLayer = nil;
 	self.marblesInGame = nil;
@@ -98,6 +102,7 @@
 	self.scoreLabel = nil;
 	self.timeLabel = nil;
 	self.remarkLabel = nil;
+	self.scoreDelegate = nil;
 	
 	[super dealloc];
 }
@@ -256,6 +261,16 @@
 		}
 
 		self->_marbleSlot = [mSlot retain];
+	}
+}
+
+- (void) setScoreDelegate:(NSObject<CMMarbleGameScoreModeProtocol> *)scoreDelegate
+{
+	if (self->_scoreDelegate != scoreDelegate) {
+		self->_scoreDelegate.gameDelegate = nil;
+		[self->_scoreDelegate release];
+		self->_scoreDelegate = [scoreDelegate retain];
+		self->_scoreDelegate.gameDelegate = self;
 	}
 }
 
@@ -446,117 +461,18 @@
 	return collisionSets;
 }
 
-- (CGPoint) centerOfMarbles:(id<NSFastEnumeration>) marbleSet
-{
-  CGPoint result = CGPointZero;
-  NSUInteger t = 0;
-  for (CALayer* mLayer in marbleSet) {
-    result.x += mLayer.position.x;
-    result.y += mLayer.position.y;
-    t++;
-  }
-  result.x /=t;
-  result.y /=t;
-  return result;
-}
 
 - (void) checkMarbleCollisionsAt:(NSTimeInterval) time
 {
-	NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
-	__block NSUInteger normalHits = 0;
-	__block NSUInteger multiHits = 0;
-	__block NSMutableArray *oldestHit = [NSMutableArray array];
+
 	NSArray *removedMarbles = [self getCollisionSets:3];
+	
 	if (![removedMarbles count]) {
 		return;
 	}
-  
-  // collect info
-	[removedMarbles enumerateObjectsUsingBlock:
-	 ^(NSSet* obj, NSUInteger idx, BOOL* stop){
-		 NSTimeInterval k = [self.simulationLayer.collisionCollector oldestCollisionTime:obj];
-		 if (k) {
-			 k= now - k;
-		 }
-		 [oldestHit addObject:[NSNumber numberWithDouble:k]];
-		 if ([obj count] == 3) {
-			 normalHits ++;
-		 }else if ([obj count] > 3) { // multi Hit
-			 CGPoint p= [self centerOfMarbles:obj];
-			 CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
-			 sprite.position = p;
-			 [self.effectQueue addObject:sprite];
-			 multiHits ++;
-		 }
-	 }];
-  
-  // Combo Hits
-  self.comboHits += [removedMarbles count];
-	CGFloat comboMultiplier = 0.0f;
-	if (self.comboHits>1) {
-    NSMutableSet *allMarbles =[NSMutableSet set];
-    for (NSSet*t in removedMarbles) {
-      [allMarbles addObjectsFromArray:[t allObjects]];
-    }
-		CGPoint p= [self centerOfMarbles:allMarbles];
-		CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
-		sprite.position = p;
-		[self.effectQueue addObject:sprite];
-		
-		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
-		self.comboHits -= [removedMarbles count];
-	}
+	[self.scoreDelegate scoreWithMarbles:removedMarbles inLevel:self.currentStatistics];
 	
-  if (comboMultiplier <MARBLE_COMBO_MULTIPLYER) {
-		comboMultiplier = 1.0f;
-	}
-  
-	// specialMoves
-	CGFloat specialMultiplier=1.0;
-	NSString * specialString = nil;
-  for (NSNumber * delay in oldestHit) {
-    CGFloat t = [delay floatValue];
-    if (t>0.001) {
-			specialMultiplier = MARBLE_SPEZIAL_NICE;
-			specialString = @"Nice";
-      self.remarkLabel = defaultGameLabel(specialString);
-      if(t>0.05){
-				specialMultiplier = MARBLE_SPEZIAL_RESPECT;
-				specialString =@"Respect";
-    	  self.remarkLabel = defaultGameLabel(specialString);
-			}
-      if (t>0.10){
-				specialMultiplier = MARBLE_SPEZIAL_PERFECT;
-				specialString =@"Perfect";
-  	    self.remarkLabel = defaultGameLabel(specialString);
-			}
-      if (t>0.15){
-				specialMultiplier = MARBLE_SPEZIAL_TRICK;
-				specialString =@"Trickshot";
-	      self.remarkLabel = defaultGameLabel(specialString);
-			}
-      if (t>0.17) {
-				specialMultiplier = MARBLE_SPEZIAL_LUCKY;
-				specialString =@"Lucky One";
-	      self.remarkLabel = defaultGameLabel(specialString);
-      }
-      self.remarkLabel.visible = YES;
-      [NSTimer scheduledTimerWithTimeInterval:5
-                                       target:self
-                                     selector:@selector(markerTimerCallback:)
-                                     userInfo:self.remarkLabel
-                                      repeats:NO];
-      
-    }
-  }
-	CGFloat normalScore = (normalHits*MARBLE_HIT_SCORE);
-	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
-	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
-	NSLog(@"normal: %lu (%f), multi: %lu (%f) combo: %f special: %@ (%f) Total: %f",(unsigned long)normalHits, normalScore, (unsigned long)multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
 	
-	self.currentStatistics.score += totalScore;
-	
-	self.lastDisplayTime = time;
 	[self.simulationLayer removeCollisionSets:removedMarbles];
 	
 }
@@ -564,6 +480,7 @@
 - (void) markerTimerCallback:(NSTimer*) timer
 {
 	self.remarkLabel = nil;
+	self.effectTimer = nil;
 }
 
 - (void) marbleDelayCallback:(NSTimer*)timer
@@ -614,7 +531,8 @@
 {
 	self.currentStatistics.marblesInLevel++;
 	[self.marblesInGame addObject:[NSNumber numberWithInteger:ballIndex]];
-	self.comboHits = 0;
+	[self.scoreDelegate marbleFired];
+
 }
 
 - (void) marbleDroppedWithID:(NSUInteger) ballIndex
@@ -625,8 +543,8 @@
 		self.marbleDelayTimer = [NSTimer scheduledTimerWithTimeInterval:MARBLE_CREATE_DELAY target:self selector:@selector(marbleDelayCallback:) userInfo:nil repeats:NO];
 	}
 	[self marbleFiredWithID:ballIndex];
-	self.currentStatistics.score += MARBLE_THROW_SCORE;
-	self.comboHits = 0;
+	[self.scoreDelegate marbleDropped:self.currentStatistics];
+
 }
 
 - (CMMarbleLevel*) currentLevel
@@ -708,6 +626,78 @@
 	self.foregroundSprite = fgs;
 	
 	self.overlaySprite = defaultLevelOverlay();
+}
+
+- (CMMarbleCollisionCollector*) collisionCollector
+{
+	return self.simulationLayer.collisionCollector;
+}
+- (void) effectRemoveTimer
+{
+	if (self.effectTimer) {
+		return;
+	}
+	self.effectTimer = [NSTimer scheduledTimerWithTimeInterval:5
+																											target:self
+																										selector:@selector(markerTimerCallback:)
+																										userInfo:self.remarkLabel
+																										 repeats:NO];
+}
+- (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position
+{
+	switch (effect) {
+		case kCMMarbleEffect_ComboHit:
+		{
+			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
+			sprite.position = position;
+			[self.effectQueue addObject:sprite];
+		}
+			break;
+
+		case kCMMarbleEffect_MultiHit:
+		{
+			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
+			sprite.position = position;
+			[self.effectQueue addObject:sprite];
+		}
+			break;
+
+		case kCMMarbleEffect_NICE:
+		{
+      self.remarkLabel = defaultGameLabel(@"Nice");
+			[self effectRemoveTimer];
+		}
+			break;
+
+		case kCMMarbleEffect_RESPECT:
+		{
+			self.remarkLabel = defaultGameLabel(@"Respect");
+			[self effectRemoveTimer];
+		}
+			break;
+
+		case kCMMarbleEffect_PERFECT:
+		{
+			self.remarkLabel = defaultGameLabel(@"Perfect");
+			[self effectRemoveTimer];
+		}
+			break;
+
+		case kCMMarbleEffect_TRICK:
+		{
+			self.remarkLabel = defaultGameLabel(@"Trickshot");
+			[self effectRemoveTimer];
+		}
+			break;
+
+		case kCMMarbleEffect_LUCKY:
+		{
+			self.remarkLabel = defaultGameLabel(@"Lucky One");
+			[self effectRemoveTimer];
+		}
+		default:
+			break;
+	}
 }
 
 @end

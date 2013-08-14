@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CMMarbleLevel;
+typedef enum{
+	kCMMarbleEffect_MultiHit,
+	kCMMarbleEffect_ComboHit,
+	kCMMarbleEffect_NICE,
+	kCMMarbleEffect_RESPECT,
+	kCMMarbleEffect_PERFECT,
+	kCMMarbleEffect_TRICK,
+	kCMMarbleEffect_LUCKY
+} CMMarbleEffectType;
+
+@class CMMarbleLevel,CMMarbleCollisionCollector;
 @protocol CMMarbleGameDelegate <NSObject>
 
 @required
@@ -55,4 +65,14 @@
  called by the simulationLayer after a physics simulation step is done.
  */
 - (void) simulationStepDone:(NSTimeInterval)dt;
+
+/**
+ returns the currently active collisionCollector
+ */
+- (CMMarbleCollisionCollector*) collisionCollector;
+
+/**
+ triggers an effect
+ */
+- (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position;
 @end

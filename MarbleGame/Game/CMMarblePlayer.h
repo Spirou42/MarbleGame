@@ -15,6 +15,7 @@
 -(id) initWithName:(NSString*)userName;
 @property (nonatomic,retain) NSString* name;
 @property (nonatomic,assign) NSUInteger currentLevel;
+@property (nonatomic,retain) NSString *scoreMode;
 
 //@property (nonatomic,retain) NSDictionary* levelSetStatistics;
 

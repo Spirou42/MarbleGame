@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 @class CMMarbleLevelSet;
+@protocol CMMarbleGameScoreModeProtocol;
+
 @interface MarbleGameAppDelegate (GameDelegate)
 
 - (void) registerUserDefaults;
@@ -15,6 +17,8 @@
 
 - (CMMarblePlayer*) currentPlayer;
 - (void) setCurrentPlayer:(CMMarblePlayer*)player;
+- (NSObject<CMMarbleGameScoreModeProtocol>*)currentScoreDelegate;
 
 @property (nonatomic, retain) CMMarblePlayer *currentPlayer;
+
 @end

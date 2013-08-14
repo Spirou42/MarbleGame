@@ -10,6 +10,7 @@
 #import "Cocos2d.h"
 #import "CMMarbleGameDelegate.h"
 
+@protocol CMMarbleGameScoreModeProtocol;
 @class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton, CMMarbleLevelStatistics,CCNode,CMMarbleSlot, CMMenuLayer;
 
 @interface CMMarblePlayScene : CCScene <CMMarbleGameDelegate>
@@ -37,7 +38,8 @@
 	
 	NSMutableArray			*_effectQueue;
 	NSMutableArray			*_removedMarbleQueue;
-	
+	NSObject<CMMarbleGameScoreModeProtocol>* _scoreDelegate;
+	NSTimer																*_effectTimer;
 
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
@@ -57,6 +59,8 @@
 @property (nonatomic, retain) CMMarbleSlot* marbleSlot;
 @property (nonatomic, retain) NSMutableArray *removedMarbleQueue;
 @property (nonatomic, retain) CMMenuLayer *menuLayer;
+@property (nonatomic, retain) NSObject<CMMarbleGameScoreModeProtocol>* scoreDelegate;
+@property (nonatomic, retain) NSTimer* effectTimer;
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

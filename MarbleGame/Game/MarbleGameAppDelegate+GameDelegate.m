@@ -9,6 +9,14 @@
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CMMarblePlayer.h"
 #import "CMMarbleLevelSet.h"
+#import "CMMarbleGameScoreModeProtocol.h"
+#import "CMMarbleScoreModeScore.h"
+
+// to be implemented
+//#import "CMMarbleScoreModeTime.h"
+//#import "CMMarbleScoreModeRelaxed.h"
+NSMutableDictionary *_scoreModeDelegates;
+
 @implementation MarbleGameAppDelegate (GameDelegate)
 
 //@dynamic levelSet,marbleSets;
@@ -23,12 +31,19 @@
 
   [ud registerDefaults:@{@"MarbleSet":@"DDR",
 												 @"Players"  :@{NSUserName():defaultPlayerData},
-												 @"currentPlayer":NSUserName()
+												 @"currentPlayer":NSUserName(),
 												 }];
 }
 - (void) resetPlayer
 {
 	[[NSUserDefaults standardUserDefaults] setObject:@{} forKey:@"Players"];
+}
+
+- (NSObject<CMMarbleGameScoreModeProtocol>*) currentScoreDelegate
+{
+	CMMarblePlayer *player = [self currentPlayer];
+	NSString *scoreModeName = player.scoreMode;
+	return (NSObject <CMMarbleGameScoreModeProtocol>*)[_scoreModeDelegates objectForKey:scoreModeName];
 }
 
 - (void) getBallSetNamesFromFile:(NSString*)filename
@@ -43,6 +58,12 @@
 	}
 	
 	self.marbleSets = [[setNames allObjects] sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (void) initializeScoreModes
+{
+	_scoreModeDelegates = [[NSMutableDictionary dictionary]retain];
+	[_scoreModeDelegates setObject:[[CMMarbleScoreModeScore new]autorelease] forKey:@"score"];
 }
 
 - (void) initializeMarbleGame
@@ -81,7 +102,8 @@
   
   self.levelSet = [CMMarbleLevelSet levelSetWithURL:bla];
   
-  NSLog(@"Readl end");
+	// initialize known score Modes
+	[self initializeScoreModes];
 }
 
 - (CMMarblePlayer*) currentPlayer

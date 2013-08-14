@@ -10,7 +10,7 @@
 #import "CMMarblePlayer.h"
 
 @implementation CMMarblePlayer
-@synthesize currentLevel;
+@synthesize currentLevel,scoreMode;
 
 + (id) playerWithName:(NSString *)userName
 {
@@ -30,6 +30,7 @@
 	if (self) {
 		self.name = userName;
 		self.currentLevel = 0;
+		self.scoreMode = @"score";
 	}
 	return self;
 }
@@ -37,6 +38,7 @@
 - (void) dealloc
 {
 	self.name = nil;
+	self.scoreMode = nil;
 //	self.levelSetStatistics = nil;
 	[super dealloc];
 }
@@ -65,6 +67,10 @@
 	if (self) {
 		self.name = [aDecoder decodeObjectForKey:@"PlayerName"];
 		self.currentLevel = [aDecoder decodeIntegerForKey:@"currentLevel"];
+		self.scoreMode = [aDecoder decodeObjectForKey:@"scoreMode"];
+		if (!self.scoreMode) {
+			self.scoreMode = @"score";
+		}
 //		self.levelSetStatistics = [aDecoder decodeObjectForKey:@"levelStatistics"];
 
 	}
@@ -75,6 +81,7 @@
 {
 	[aCoder encodeObject:self.name forKey:@"PlayerName"];
 	[aCoder encodeInteger:self.currentLevel forKey:@"currentLevel"];
+	[aCoder encodeObject:self.scoreMode forKey:@"scoreMode"];
 }
 
 @end
