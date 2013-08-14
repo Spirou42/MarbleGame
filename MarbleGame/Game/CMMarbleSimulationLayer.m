@@ -228,10 +228,11 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 		[self.space step:dt];
     //		cpSpaceStep(_space, dt);
 	}
-	if (self.parent) {
-		CMMarblePlayScene * scene = (CMMarblePlayScene*) self.parent;
-		[scene simulationStepDone:delta];
-	}
+	[self.gameDelegate simulationStepDone:delta];
+//	if (self.parent) {
+//		CMMarblePlayScene * scene = (CMMarblePlayScene*) self.parent;
+//		[scene simulationStepDone:delta];
+//	}
 	[self.collisionCollector cleanupFormerCollisions];
 }
 

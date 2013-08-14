@@ -27,14 +27,14 @@
 
 @implementation CMMarblePlayScene
 
-@synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits,
-currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay,
-comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer,
-marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite,
-foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite,
-scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel,
-effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue,
-menuLayer = _menuLayer;
+@synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits;
+@synthesize  currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay;
+@synthesize  comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer;
+@synthesize  marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite;
+@synthesize  foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
+@synthesize  scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
+@synthesize  effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
+@synthesize  menuLayer = _menuLayer;
 
 - (NSString*) currentTimeString
 {
@@ -95,6 +95,10 @@ menuLayer = _menuLayer;
 	self.marbleSlot = nil;
 	self.removedMarbleQueue = nil;
   self.menuLayer = nil;
+	self.scoreLabel = nil;
+	self.timeLabel = nil;
+	self.remarkLabel = nil;
+	
 	[super dealloc];
 }
 
@@ -259,7 +263,7 @@ menuLayer = _menuLayer;
 
 
 #pragma mark -
-#pragma mark other
+#pragma mark Actions and Helpers
 
 -(void) createMenu
 {
@@ -421,33 +425,9 @@ menuLayer = _menuLayer;
 }
 
 #pragma mark -
-#pragma mark G A M E
+#pragma mark G A M E - Helper
 
 
-- (void) simulationStepDone:(NSTimeInterval)dt
-{
-	static NSTimeInterval lastLabelUpdate;
-	lastLabelUpdate+= dt;
-	if (lastLabelUpdate>.25) {
-		lastLabelUpdate=0.0;
-		self.scoreLabel = defaultGameLabel([self currentScoreString]);
-		self.timeLabel = defaultGameLabel([self currentTimeString]);
-		if (self.effectQueue.count) {
-			CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-			[self addChild:k];
-			[k animate];
-			[self.effectQueue removeObject:k];
-		}
-		if (self.removedMarbleQueue.count) {
-			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
-			[self.marbleSlot addMarbleWithID:ballIndex];
-
-			[self.removedMarbleQueue removeObjectAtIndex:0];
-		}
-	}
-	
-	[self checkMarbleCollisionsAt:dt];
-}
 - (NSArray*) getCollisionSets:(NSUInteger)minCollisions
 {
 	NSArray *collisionSets = [self.simulationLayer.collisionCollector collisionSetsWithMinMembers:minCollisions];
@@ -465,6 +445,7 @@ menuLayer = _menuLayer;
 	
 	return collisionSets;
 }
+
 - (CGPoint) centerOfMarbles:(id<NSFastEnumeration>) marbleSet
 {
   CGPoint result = CGPointZero;
@@ -525,7 +506,7 @@ menuLayer = _menuLayer;
 		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
 		self.comboHits -= [removedMarbles count];
 	}
-
+	
   if (comboMultiplier <MARBLE_COMBO_MULTIPLYER) {
 		comboMultiplier = 1.0f;
 	}
@@ -540,7 +521,7 @@ menuLayer = _menuLayer;
 			specialString = @"Nice";
       self.remarkLabel = defaultGameLabel(specialString);
       if(t>0.05){
-					specialMultiplier = MARBLE_SPEZIAL_RESPECT;
+				specialMultiplier = MARBLE_SPEZIAL_RESPECT;
 				specialString =@"Respect";
     	  self.remarkLabel = defaultGameLabel(specialString);
 			}
@@ -572,7 +553,7 @@ menuLayer = _menuLayer;
 	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
 	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
 	NSLog(@"normal: %lu (%f), multi: %lu (%f) combo: %f special: %@ (%f) Total: %f",(unsigned long)normalHits, normalScore, (unsigned long)multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
-
+	
 	self.currentStatistics.score += totalScore;
 	
 	self.lastDisplayTime = time;
@@ -590,7 +571,7 @@ menuLayer = _menuLayer;
 	self.marbleDelayTimer = nil;
 	[self.simulationLayer prepareMarble];
 }
- - (void) updatePlayerLevel
+- (void) updatePlayerLevel
 {
 	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
@@ -601,58 +582,13 @@ menuLayer = _menuLayer;
 	currentLevelIndex ++;
 	currentLevelIndex = currentLevelIndex%levelsInList;
 	currentPlayer.currentLevel = currentLevelIndex;
-
+	
 	appDel.currentPlayer =  currentPlayer;
 }
 
-- (void) imagesOnField:(NSSet*) fieldImages
-{
-	NSMutableSet *toBeRemoved = [NSMutableSet set];
-	for (NSNumber *imageID in self.marblesInGame) {
-    if (![fieldImages member:imageID]) {
-			[toBeRemoved addObject:imageID];
-		}
-	}
-	
-	
-	if (toBeRemoved.count ) {
-		NSLog(@"Removing: %@",toBeRemoved);
-		[self.marblesInGame minusSet:toBeRemoved];
-		[self.simulationLayer removedMarbles:toBeRemoved];
-	}
-
-	for (NSNumber *t in toBeRemoved) {
-		[self.currentStatistics marbleCleared:t];
-	}
-
-	if (!self.marblesInGame.count) {
-		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
-		NSLog(@"LevelStatistics: %@",self.currentStatistics);
-		[self.simulationLayer stopSimulation];
-		[self updatePlayerLevel];
-		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
-	}
-	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
-}
-
-
-- (void) initializeLevel:(CMMarbleLevel *)level
-{
-	CCSprite *bkg = level.backgroundImage;
-	if (bkg) {
-		self.backgroundSprite=bkg;
-	}else{
-		self.backgroundSprite = defaultLevelBackground();
-	}
-	
-	CCSprite *fgs = level.overlayImage;
-	self.foregroundSprite = fgs;
-
-	self.overlaySprite = defaultLevelOverlay();
-}
 
 #pragma mark -
-#pragma mark Game Delegate
+#pragma mark G A M E - Delegate
 
 /// returns index of the next Marble to be added to the game
 - (NSUInteger) marbleIndex
@@ -704,4 +640,74 @@ menuLayer = _menuLayer;
 	
 	return result;
 }
+
+- (void) simulationStepDone:(NSTimeInterval)dt
+{
+	static NSTimeInterval lastLabelUpdate;
+	lastLabelUpdate+= dt;
+	if (lastLabelUpdate>.25) {
+		lastLabelUpdate=0.0;
+		self.scoreLabel = defaultGameLabel([self currentScoreString]);
+		self.timeLabel = defaultGameLabel([self currentTimeString]);
+		if (self.effectQueue.count) {
+			CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+			[self addChild:k];
+			[k animate];
+			[self.effectQueue removeObject:k];
+		}
+		if (self.removedMarbleQueue.count) {
+			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
+			[self.marbleSlot addMarbleWithID:ballIndex];
+			
+			[self.removedMarbleQueue removeObjectAtIndex:0];
+		}
+	}
+	
+	[self checkMarbleCollisionsAt:dt];
+}
+
+- (void) imagesOnField:(NSSet*) fieldImages
+{
+	NSMutableSet *toBeRemoved = [NSMutableSet set];
+	for (NSNumber *imageID in self.marblesInGame) {
+    if (![fieldImages member:imageID]) {
+			[toBeRemoved addObject:imageID];
+		}
+	}
+	
+	if (toBeRemoved.count ) {
+		NSLog(@"Removing: %@",toBeRemoved);
+		[self.marblesInGame minusSet:toBeRemoved];
+		[self.simulationLayer removedMarbles:toBeRemoved];
+	}
+	
+	for (NSNumber *t in toBeRemoved) {
+		[self.currentStatistics marbleCleared:t];
+	}
+	
+	if (!self.marblesInGame.count) {
+		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
+		NSLog(@"LevelStatistics: %@",self.currentStatistics);
+		[self.simulationLayer stopSimulation];
+		[self updatePlayerLevel];
+		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
+	}
+	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
+}
+
+- (void) initializeLevel:(CMMarbleLevel *)level
+{
+	CCSprite *bkg = level.backgroundImage;
+	if (bkg) {
+		self.backgroundSprite=bkg;
+	}else{
+		self.backgroundSprite = defaultLevelBackground();
+	}
+	
+	CCSprite *fgs = level.overlayImage;
+	self.foregroundSprite = fgs;
+	
+	self.overlaySprite = defaultLevelOverlay();
+}
+
 @end

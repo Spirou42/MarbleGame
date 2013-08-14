@@ -899,7 +899,6 @@
 				FE57668717BA826200D46089 /* 3. Play */,
 				FE57668817BA827900D46089 /* 4. Settings */,
 				FE57668917BA828B00D46089 /* 5. Help */,
-				93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */,
 				938D1A3417B970D400295B4F /* CMMarbleMenuScene.h */,
 				938D1A3517B970D400295B4F /* CMMarbleMenuScene.m */,
 				934AF9B217837E22004BAC7E /* SceneHelper.h */,
@@ -929,6 +928,7 @@
 		FE57668717BA826200D46089 /* 3. Play */ = {
 			isa = PBXGroup;
 			children = (
+				93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */,
 				93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */,
 				93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */,
 			);
