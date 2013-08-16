@@ -16,7 +16,7 @@
 #import "CMMarbleLevelStatistics.h"
 #import "CMMarbleLevel.h"
 #import "CMMarbleLevelSet.h"
-#import "CMMarblePlayer.h"
+#import "CMMarblePlayerOld.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMarbleMultiComboSprite.h"
@@ -395,7 +395,7 @@
 
 - (void) resetSimulationAction:(id) sender
 {
-	CMMarblePlayer *cP = [CMAppDelegate currentPlayer];
+	CMMarblePlayerOld *cP = [CMAppDelegate currentPlayer];
 
 	[CMAppDelegate setCurrentPlayer:cP];
   [self.simulationLayer resetSimulation];
@@ -490,7 +490,7 @@
 }
 - (void) updatePlayerLevel
 {
-	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	CMMarblePlayerOld* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
 	CMMarbleLevelSet * lS = [appDel levelSet];
@@ -550,7 +550,7 @@
 - (CMMarbleLevel*) currentLevel
 {
 	CMMarbleLevel *result = nil;
-	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	CMMarblePlayerOld* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
 	CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 	

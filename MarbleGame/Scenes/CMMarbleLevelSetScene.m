@@ -16,7 +16,7 @@
 #import "CMMarbleLevelSet.h"
 #import "CMMarbleLevel.h"
 #import "AppDelegate.h"
-#import "CMMarblePlayer.h"
+#import "CMMarblePlayerOld.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 @implementation CMMarbleLevelSetScene
 
@@ -43,7 +43,7 @@
 {
 	NSInteger level = sender.tag;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
-	CMMarblePlayer *player = appDel.currentPlayer;
+	CMMarblePlayerOld *player = appDel.currentPlayer;
 	player.currentLevel = level;
 	appDel.currentPlayer = player;
 	[self onEnd:0];

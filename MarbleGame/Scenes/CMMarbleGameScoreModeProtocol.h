@@ -13,13 +13,14 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-	kCMLevelStatus_Failed,
-	kCMLevelStatus_Amateure,
-	kCMLevelStatus_Professional,
-	kCMLevelStatus_Master
+	kCMLevelStatus_Unfinished 	= -1,
+	kCMLevelStatus_Failed				=  0,
+	kCMLevelStatus_Amateure			=  1,
+	kCMLevelStatus_Professional =  2,
+	kCMLevelStatus_Master				=	 3,
 }CMMarbleGameLevelStatus;
 
-@class CMMarbleLevel,CMMarbleLevelStatistics,CMMarblePlayer;
+@class CMMarbleLevel,CMMarbleLevelStatistics,CMMarblePlayerOld;
 @protocol CMMarbleGameDelegate;
 
 @protocol CMMarbleGameScoreModeProtocol <NSObject>

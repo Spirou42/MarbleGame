@@ -7,7 +7,7 @@
 //
 
 #import "MarbleGameAppDelegate+GameDelegate.h"
-#import "CMMarblePlayer.h"
+#import "CMMarblePlayerOld.h"
 #import "CMMarbleLevelSet.h"
 #import "CMMarbleGameScoreModeProtocol.h"
 #import "CMMarbleScoreModeScore.h"
@@ -25,7 +25,7 @@ NSMutableDictionary *_scoreModeDelegates;
 {
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 
-	CMMarblePlayer *defaultUser = [CMMarblePlayer playerWithName:NSUserName()];
+	CMMarblePlayerOld *defaultUser = [CMMarblePlayerOld playerWithName:NSUserName()];
 
 	NSData *defaultPlayerData = [NSKeyedArchiver archivedDataWithRootObject:defaultUser];
 
@@ -41,7 +41,7 @@ NSMutableDictionary *_scoreModeDelegates;
 
 - (NSObject<CMMarbleGameScoreModeProtocol>*) currentScoreDelegate
 {
-	CMMarblePlayer *player = [self currentPlayer];
+	CMMarblePlayerOld *player = [self currentPlayer];
 	NSString *scoreModeName = player.scoreMode;
 	return (NSObject <CMMarbleGameScoreModeProtocol>*)[_scoreModeDelegates objectForKey:scoreModeName];
 }
@@ -106,14 +106,14 @@ NSMutableDictionary *_scoreModeDelegates;
 	[self initializeScoreModes];
 }
 
-- (CMMarblePlayer*) currentPlayer
+- (CMMarblePlayerOld*) currentPlayer
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	NSString* currentPlayerName = [ud stringForKey:@"currentPlayer"];
 	NSData *playerData = [[ud dictionaryForKey:@"Players"]objectForKey:currentPlayerName];
-	CMMarblePlayer *currentPlayer = nil;
+	CMMarblePlayerOld *currentPlayer = nil;
 	if (!playerData) {
-		currentPlayer = [CMMarblePlayer playerWithName:NSUserName()];
+		currentPlayer = [CMMarblePlayerOld playerWithName:NSUserName()];
 		self.currentPlayer = currentPlayer;
 	}else{
 		currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
@@ -121,7 +121,7 @@ NSMutableDictionary *_scoreModeDelegates;
 	return currentPlayer;
 }
 
-- (void) setCurrentPlayer:(CMMarblePlayer*) player
+- (void) setCurrentPlayer:(CMMarblePlayerOld*) player
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	NSData *playerData = [NSKeyedArchiver archivedDataWithRootObject:player];

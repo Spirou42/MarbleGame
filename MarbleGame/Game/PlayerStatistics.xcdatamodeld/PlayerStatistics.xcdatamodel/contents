@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CMMarblePlayer" representedClassName="CMMarblePlayer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="levelSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CMMPLevelSet" inverseName="player" inverseEntity="CMMPLevelSet" syncable="YES"/>
+        <relationship name="settings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMPSettings" inverseName="player" inverseEntity="CMMPSettings" syncable="YES"/>
+    </entity>
+    <entity name="CMMPLevelSet" representedClassName="CMMPLevelSet" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="levels" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CMMPLevelStat" inverseName="levelset" inverseEntity="CMMPLevelStat" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMarblePlayer" inverseName="levelSets" inverseEntity="CMMarblePlayer" syncable="YES"/>
+    </entity>
+    <entity name="CMMPLevelStat" representedClassName="CMMPLevelStat" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" minValueString="-1" maxValueString="3" defaultValueString="-1" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="levelset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMPLevelSet" inverseName="levels" inverseEntity="CMMPLevelSet" syncable="YES"/>
+    </entity>
+    <entity name="CMMPSettings" representedClassName="CMMPSettings" syncable="YES">
+        <attribute name="marbleTheme" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="musicVolume" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.5" syncable="YES"/>
+        <attribute name="scoreMode" optional="YES" attributeType="String" defaultValueString="score" syncable="YES"/>
+        <attribute name="soundVolume" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.5" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMarblePlayer" inverseName="settings" inverseEntity="CMMarblePlayer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CMMarblePlayer" positionX="187" positionY="63" width="128" height="88"/>
+        <element name="CMMPLevelSet" positionX="-36" positionY="63" width="128" height="88"/>
+        <element name="CMMPLevelStat" positionX="-234" positionY="33" width="128" height="133"/>
+        <element name="CMMPSettings" positionX="430" positionY="33" width="128" height="118"/>
+    </elements>
+</model>

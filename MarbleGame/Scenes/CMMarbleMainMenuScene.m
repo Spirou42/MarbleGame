@@ -14,7 +14,7 @@
 #import "cocos2d.h"
 #import "SceneHelper.h"
 #import "CCControlExtension.h"
-#import "CMMarblePlayer.h"
+#import "CMMarblePlayerOld.h"
 #import "AppDelegate.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"

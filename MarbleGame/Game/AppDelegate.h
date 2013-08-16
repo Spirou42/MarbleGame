@@ -14,5 +14,5 @@
 #import "iOSAppDelegate.h"
 #endif
 
-@class CMMarblePlayer;
+@class CMMarblePlayerOld;
 

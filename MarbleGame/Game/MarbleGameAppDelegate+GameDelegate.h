@@ -15,10 +15,10 @@
 - (void) registerUserDefaults;
 - (void) initializeMarbleGame;
 
-- (CMMarblePlayer*) currentPlayer;
-- (void) setCurrentPlayer:(CMMarblePlayer*)player;
+- (CMMarblePlayerOld*) currentPlayer;
+- (void) setCurrentPlayer:(CMMarblePlayerOld*)player;
 - (NSObject<CMMarbleGameScoreModeProtocol>*)currentScoreDelegate;
 
-@property (nonatomic, retain) CMMarblePlayer *currentPlayer;
+@property (nonatomic, retain) CMMarblePlayerOld *currentPlayer;
 
 @end

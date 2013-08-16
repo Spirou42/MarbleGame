@@ -9,7 +9,7 @@
 #import "CMMarbleMenuScene.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
-#import "CMMarblePlayer.h"
+#import "CMMarblePlayerOld.h"
 #import "SceneHelper.h"
 @implementation CMMarbleMenuScene
 @synthesize  playerName;
@@ -18,7 +18,7 @@
 - (id) init
 {
 	if ((self = [super init])) {
-		CMMarblePlayer *currentPlayer = [CMAppDelegate currentPlayer];
+		CMMarblePlayerOld *currentPlayer = [CMAppDelegate currentPlayer];
 		NSString *pn = [currentPlayer.name uppercaseString];
 		self.playerName = defaultGameLabel(pn);
 		
