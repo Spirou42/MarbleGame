@@ -16,7 +16,7 @@
 				<key>staticBodiesFilename</key>
 				<string>Level0-StaticBodies</string>
 				<key>overlayFilename</key>
-				<string></string>
+				<string>Level0-Overlay</string>
 				<key>backgroundFilename</key>
 				<string></string>
 			</dict>

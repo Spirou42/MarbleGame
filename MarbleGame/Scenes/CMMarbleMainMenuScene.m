@@ -42,7 +42,7 @@
 		[menuLayer addButtonWithTitle:@"Level Select" target:self action:@selector(onLevelSelect:)];
 		[menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(onSettings:)];
 		[menuLayer addButtonWithTitle:@"Help" target:self action:@selector(onHelp:)];
-		
+		menuLayer.opacity=0;
 			[self addChild:menuLayer z:2];		
 
 #if 0

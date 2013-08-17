@@ -292,69 +292,15 @@
   [self addChild:menuButton z:BUTTON_LAYER];
   [menuButton addTarget:self action:@selector(toggleMenu:) forControlEvents:CCControlEventTouchUpInside];
   self.menuLayer = [CMMenuLayer menuLayerWithLabel:@"Game Menu"];
-  [self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(backAction:)];
+  [self.menuLayer addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
   [self.menuLayer addButtonWithTitle:@"Debug" target:self action:@selector(debugAction:)];
   [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Reset" target:self action:@selector(resetSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
+	[self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(toggleMenu:)];
   [self addChild:self.menuLayer z:MENU_LAYER];
+	self.menuLayer.mousePriority = -1;
   self.menuLayer.visible = NO;
-#if 0
-  CCScale9Sprite *localMenu = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
-  self->_menu = localMenu;
-  localMenu.preferredSize= CGSizeMake(1024, menuButton.contentSize.height+4);
-  localMenu.anchorPoint = ccp(0.0, 1.0);
-  localMenu.position = ccp(1024, menuButton.position.y+2);
-  [self addChild:localMenu z:MENU_LAYER];
-
-  
-  // BackButton
-  CCControlButton *backButton = standardButtonWithTitle(@"Back");
-  backButton.preferredSize=CGSizeMake(100, 40);
-  [backButton needsLayout];
-  [backButton addTarget:self action:@selector(backAction:) forControlEvents:CCControlEventTouchUpInside];
-  [localMenu addChild:backButton];
-  CGPoint buttonPos = ccp(backButton.contentSize.width/2.0 + 10, localMenu.contentSize.height/2.0+1);
-  backButton.position = buttonPos;
-  buttonPos.x += backButton.contentSize.width;
-  
-  // DebugButton
-  CCControlButton *debugButton = standardButtonWithTitle(@"Debug");
-  debugButton.preferredSize=CGSizeMake(100, 40);
-  [debugButton needsLayout];
-  [debugButton addTarget:self action:@selector(debugAction:) forControlEvents:CCControlEventTouchUpInside];
-  debugButton.position = buttonPos;
-  [localMenu addChild:debugButton];
-  buttonPos.x += debugButton.contentSize.width;
-  
-  // toggleSimulation
-  CCControlButton *toggleButton = standardButtonWithTitle(@"Stop");
-  toggleButton.preferredSize=CGSizeMake(100, 40);
-  [toggleButton needsLayout];
-  [toggleButton addTarget:self action:@selector(toggleSimulationAction:) forControlEvents:CCControlEventTouchUpInside];
-  toggleButton.position = buttonPos;
-  [localMenu addChild:toggleButton];
-  buttonPos.x += toggleButton.contentSize.width;
-  self->_toggleSimulationButton = toggleButton;
-  
-  // resetSimulation
-  CCControlButton *resetButton = standardButtonWithTitle(@"Reset");
-  resetButton.preferredSize=CGSizeMake(100, 40);
-  [resetButton needsLayout];
-  [resetButton addTarget:self action:@selector(resetSimulationAction:) forControlEvents:CCControlEventTouchUpInside];
-  resetButton.position = buttonPos;
-  [localMenu addChild:resetButton];
-  buttonPos.x += resetButton.contentSize.width;
-  
-  // settings
-  CCControlButton *settingsButton = standardButtonWithTitle(@"Settings");
-  settingsButton.preferredSize=CGSizeMake(100, 40);
-  [settingsButton needsLayout];
-  [settingsButton addTarget:self action:@selector(settingsAction:) forControlEvents:CCControlEventTouchUpInside];
-  settingsButton.position = buttonPos;
-  [localMenu addChild:settingsButton];
-  buttonPos.x += settingsButton.contentSize.width;
-#endif
 }
 
 
@@ -439,6 +385,8 @@
 	[self.simulationLayer onExit];
   [super onExit];
 }
+
+
 
 #pragma mark -
 #pragma mark G A M E - Helper

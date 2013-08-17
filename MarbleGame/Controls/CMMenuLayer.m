@@ -12,7 +12,8 @@
 @implementation CMMenuLayer
 
 @synthesize  backgroundSprite=_backgroundSprite, menuButtons=_menuButtons, defaultButtonSize=_defaultButtonSize,
-nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing, menuLabel = _menuLabel;
+nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing, menuLabel = _menuLabel,
+interColumnSpacing = _interColumnSpacing;
 
 + (id) menuLayerWithLabel:(NSString *)menuLabel
 {
@@ -41,11 +42,15 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 	self.menuButtons = [NSMutableArray array];
 	self.defaultButtonSize = CGSizeMake(150, 40);
 	self.interElementSpacing = 10;
+	self.interColumnSpacing = 20;
+	self.color = ccc3(0, 0, 0);
+	self.opacity = 50;
 	self.contentSize = [[CCDirector sharedDirector] winSize];
 	self.backgroundSprite = [CCSprite spriteWithFile:MENU_BACKGROUND_PLATE];
 	self.backgroundSprite.anchorPoint=ccp(0.5, 0.5);
 	self.backgroundSprite.position = ccp(self.contentSize.width/2.0, self.contentSize.height/2.0);
-
+	self.mouseEnabled = YES;
+	self.touchEnabled = YES;
 	self.nextFreeMenuPosition = ccp(self.backgroundSprite.contentSize.width/2.0, self.backgroundSprite.contentSize.height - 40.0 );
 	[self addChild:self.backgroundSprite z:0];
 	[self.backgroundSprite addChild:[self createMenuLabel] z:1];
@@ -99,4 +104,61 @@ nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElemen
 	[self.backgroundSprite addChild:aNode z:zLayer];
 	[self.menuButtons addObject:aNode];
 }
+
+- (void) addLeftNode:(CCNode *)lNode right:(CCNode *)rNode
+{
+	CCNode *refNode = nil;
+	if (lNode.contentSize.height < rNode.contentSize.height) {
+		refNode = rNode;
+	}else{
+		refNode = lNode;
+	}
+	
+	CGPoint lPos = [self nextMenuPositionFor:refNode];
+	CGPoint rPos = lPos;
+	
+	lPos.x -= self.interColumnSpacing/2.0;
+	rPos.x += self.interColumnSpacing/2.0;
+	lNode.anchorPoint=CGPointMake(1.0, 0.5);
+	lNode.position = lPos;
+	rNode.anchorPoint = CGPointMake(0.0, 0.5);
+	rNode.position = rPos;
+	[self addChild:lNode z:1];
+	[self addChild:rNode z:1];
+}
+- (void) draw
+{
+	[super draw];
+}
+
+#pragma mark -
+#pragma mark Event handling
+
+#if __CC_PLATFORM_MAC
+-(BOOL) ccMouseDown:(NSEvent *)event
+{
+	if (self.visible) {
+		return YES;
+	}
+	return NO;
+}
+
+- (BOOL) ccMouseMoved:(NSEvent *)event
+{
+	if (self.visible) {
+		return YES;
+	}
+	return NO;
+}
+#else
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	if (self.visible) {
+		return YES;
+	}
+	return NO;
+}
+
+#endif
+
 @end

@@ -14,9 +14,10 @@
 @interface CMMPSettings : NSManagedObject
 
 @property (nonatomic, retain) NSString * marbleTheme;
-@property (nonatomic) float soundVolume;
 @property (nonatomic) float musicVolume;
 @property (nonatomic, retain) NSString * scoreMode;
+@property (nonatomic) float soundVolume;
+@property (nonatomic) BOOL wasFullScreen;
 @property (nonatomic, retain) CMMarblePlayer *player;
 
 @end

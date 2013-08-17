@@ -11,7 +11,7 @@
 #import "cocos2d.h"
 #import "CCControlExtension.h"
 
-@interface CMMenuLayer : CCLayerRGBA
+@interface CMMenuLayer : CCLayerColor
 {
 	CCSprite 					*_backgroundSprite;								///< our background
 	NSMutableArray 		*_menuButtons;										///< CCControl*
@@ -20,6 +20,7 @@
 	CGFloat						_interElementSpacing;							///< vertical spacing between elements
 	NSString					*_menuLabel;											///< name of the Menu
 	CGSize						_currentMaxSize;
+	CGFloat						_interColumnSpacing;							///< spacing between columns if nodes are added with two column
 }
 
 @property (nonatomic, retain) CCSprite* backgroundSprite;
@@ -29,6 +30,7 @@
 @property (nonatomic, assign) CGFloat interElementSpacing;
 @property (nonatomic, retain) NSString* menuLabel;
 @property (nonatomic, assign) CGSize currentMaxSize;
+@property (nonatomic, assign) CGFloat interColumnSpacing;
 
 + (id) menuLayerWithLabel:(NSString*)menuLabel;
 
@@ -36,7 +38,8 @@
 
 - (CCControlButton*) addButtonWithTitle:(NSString*) buttonTitle target:(id)target action:(SEL)selector;
 - (void) addNode:(CCNode*) aNode;
-
 - (void) addNode:(CCNode*) aNode z:(NSInteger) zLayer;
+
+- (void) addLeftNode:(CCNode*) lNode right:(CCNode*)rNode;
 
 @end

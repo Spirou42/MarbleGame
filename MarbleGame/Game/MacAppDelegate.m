@@ -11,6 +11,8 @@
 #import "CMMarbleMainMenuScene.h"
 #import "CMMarbleLevelSet.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
+#import "CMMarblePlayer.h"
+#import "CMMPSettings.h"
 
 @implementation MarbleGameAppDelegate
 @synthesize window=window_, glView=glView_,levelSet=_levelSet, marbleSets=_marbleSets;
@@ -46,6 +48,14 @@
   [self initializeMarbleGame];
   
 	[director runWithScene:[CMMarbleMainMenuScene node]];
+	
+#if __CC_PLATFORM_MAC
+	if (self.currentPlayer.settings.wasFullScreen) {
+		CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
+		[director setFullScreen: YES ];
+
+	}
+#endif
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication
@@ -66,6 +76,9 @@
 {
 	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
 	[director setFullScreen: ! [director isFullScreen] ];
+	self.currentPlayer.settings.wasFullScreen = [director isFullScreen];
+	NSError *error;
+	[self.managedObjectContext save:&error];
 }
 
 #pragma mark -

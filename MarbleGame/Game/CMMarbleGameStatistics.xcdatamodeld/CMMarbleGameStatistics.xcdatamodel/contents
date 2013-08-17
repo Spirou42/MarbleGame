@@ -28,12 +28,13 @@
         <attribute name="musicVolume" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.5" syncable="YES"/>
         <attribute name="scoreMode" optional="YES" attributeType="String" defaultValueString="score" syncable="YES"/>
         <attribute name="soundVolume" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.5" syncable="YES"/>
+        <attribute name="wasFullScreen" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMarblePlayer" inverseName="settings" inverseEntity="CMMarblePlayer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CMMarblePlayer" positionX="187" positionY="63" width="128" height="88"/>
-        <element name="CMMPLevelSet" positionX="-36" positionY="63" width="128" height="88"/>
-        <element name="CMMPLevelStat" positionX="-234" positionY="33" width="128" height="133"/>
-        <element name="CMMPSettings" positionX="430" positionY="33" width="128" height="118"/>
+        <element name="CMMarblePlayer" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CMMPLevelSet" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CMMPLevelStat" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CMMPSettings" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

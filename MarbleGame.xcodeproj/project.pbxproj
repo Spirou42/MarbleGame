@@ -917,15 +917,15 @@
 		93D5707817BEB99000167030 /* PlayerStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				93D5708817BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld */,
 				93D5714917BEE2E700167030 /* CMMarblePlayer.h */,
-				93D5715517BEE2E700167030 /* CMMPSettings.h */,
-				93D5715617BEE2E700167030 /* CMMPSettings.m */,
+				93D5714A17BEE2E700167030 /* CMMarblePlayer.m */,
 				93D5715117BEE2E700167030 /* CMMPLevelSet.h */,
 				93D5715217BEE2E700167030 /* CMMPLevelSet.m */,
 				93D5714D17BEE2E700167030 /* CMMPLevelStat.h */,
 				93D5714E17BEE2E700167030 /* CMMPLevelStat.m */,
-				93D5714A17BEE2E700167030 /* CMMarblePlayer.m */,
-				93D5708817BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld */,
+				93D5715517BEE2E700167030 /* CMMPSettings.h */,
+				93D5715617BEE2E700167030 /* CMMPSettings.m */,
 			);
 			name = PlayerStatistics;
 			sourceTree = "<group>";

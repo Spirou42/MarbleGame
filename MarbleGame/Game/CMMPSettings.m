@@ -13,9 +13,10 @@
 @implementation CMMPSettings
 
 @dynamic marbleTheme;
-@dynamic soundVolume;
 @dynamic musicVolume;
 @dynamic scoreMode;
+@dynamic soundVolume;
+@dynamic wasFullScreen;
 @dynamic player;
 
 @end
