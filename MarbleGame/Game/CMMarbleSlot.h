@@ -14,5 +14,5 @@
 - (id) initWithSize:(CGSize) size;
 
 - (void) addMarbleWithID:(NSUInteger) marbleID;
-
+- (void) clearMarbles;
 @end

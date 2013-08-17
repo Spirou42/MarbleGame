@@ -125,7 +125,7 @@
 	if (!newStat) {
 		return oldStat;
 	}
-	if (oldStat.scoreMode != newStat.scoreMode) {
+	if (![oldStat.scoreMode  isEqualToString:newStat.scoreMode]) {
 		return nil;
 	}
 	

@@ -35,11 +35,12 @@
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_timeLabel;
 	CCNode<CCLabelProtocol,CCRGBAProtocol>*	_remarkLabel;
   CMMenuLayer                             *_menuLayer;
+	CMMenuLayer															*_resultMenu;
 	
 	NSMutableArray			*_effectQueue;
 	NSMutableArray			*_removedMarbleQueue;
-	NSObject<CMMarbleGameScoreModeProtocol>* _scoreDelegate;
-	NSTimer																*_effectTimer;
+	NSObject<CMMarbleGameScoreModeProtocol>	* _scoreDelegate;
+	NSTimer																	*_effectTimer;
 	NSInteger																_lastUpdateSecond;
 	NSInteger																_lastUpdateScore;
 }
@@ -62,6 +63,7 @@
 @property (nonatomic, retain) CMMenuLayer *menuLayer;
 @property (nonatomic, retain) NSObject<CMMarbleGameScoreModeProtocol>* scoreDelegate;
 @property (nonatomic, retain) NSTimer* effectTimer;
+@property (nonatomic, retain) CMMenuLayer *resultMenu;
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

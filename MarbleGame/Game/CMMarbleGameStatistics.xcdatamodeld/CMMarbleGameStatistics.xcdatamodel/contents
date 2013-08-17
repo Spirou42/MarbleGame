@@ -14,6 +14,8 @@
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CMMarblePlayer" inverseName="levelSets" inverseEntity="CMMarblePlayer" syncable="YES"/>
     </entity>
     <entity name="CMMPLevelStat" representedClassName="CMMPLevelStat" syncable="YES">
+        <attribute name="comboHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="multiHits" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>

@@ -25,6 +25,7 @@
 #import "CMMarbleSlot.h"
 #import "CMMenuLayer.h"
 #import "CMMarbleGameScoreModeProtocol.h"
+#import "CMMPLevelStat+DisplayHelper.h"
 
 
 @implementation CMMarblePlayScene
@@ -36,17 +37,23 @@
 @synthesize  foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
 @synthesize  scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
 @synthesize  effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
-@synthesize  menuLayer = _menuLayer,scoreDelegate = _scoreDelegate, effectTimer = _effectTimer;
+@synthesize  menuLayer = _menuLayer,scoreDelegate = _scoreDelegate, effectTimer = _effectTimer, resultMenu = _resultMenu;
+
+- (NSString*) stringForSeconds:(NSTimeInterval) seconds
+{
+#if __CC_PLATFORM_MAC
+	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)seconds/60,(NSInteger)seconds%60];
+#else
+	NSString* result = [NSString stringWithFormat:@"%02d:%02d",(NSInteger)seconds/60,(NSInteger)seconds%60];
+#endif
+	return result;
+}
 
 - (NSString*) currentTimeString
 {
 	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
-#if __CC_PLATFORM_MAC
-	NSString* result = [NSString stringWithFormat:@"%02ld:%02ld",(NSInteger)dt/60,(NSInteger)dt%60];
-#else
-	NSString* result = [NSString stringWithFormat:@"%02d:%02d",(NSInteger)dt/60,(NSInteger)dt%60];
-#endif
-	return result;
+
+	return [self stringForSeconds:dt];
 }
 - (NSString*) currentScoreString
 {
@@ -294,7 +301,7 @@
   self.menuLayer = [CMMenuLayer menuLayerWithLabel:@"Game Menu"];
   [self.menuLayer addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
   [self.menuLayer addButtonWithTitle:@"Debug" target:self action:@selector(debugAction:)];
-  [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
+  self->_toggleSimulationButton =  [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Reset" target:self action:@selector(resetSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
 	[self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(toggleMenu:)];
@@ -302,7 +309,6 @@
 	self.menuLayer.mousePriority = -1;
   self.menuLayer.visible = NO;
 }
-
 
 
 - (void) toggleMenu:(id) sender
@@ -340,13 +346,28 @@
   
 }
 
+- (void) replayAction:(id) sender
+{
+	self.resultMenu.visible = NO;
+	self.simulationLayer.currentLevel = self.currentLevel;
+	[self resetSimulationAction:nil];
+}
+
+- ( void) playNextAction:(id) sender
+{
+	self.resultMenu.visible=NO;
+	[self incrementCurrentPlayerLevel];
+	self.simulationLayer.currentLevel = self.currentLevel;
+	[self resetSimulationAction:nil];
+}
+
 - (void) resetSimulationAction:(id) sender
 {
 	CMMarblePlayer *cP = [CMAppDelegate currentPlayer];
 
 //	[CMAppDelegate setCurrentPlayer:cP];
   [self.simulationLayer resetSimulation];
-
+	[self.marbleSlot clearMarbles];
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
 	for (NSUInteger i = 1; i<(MAX_DIFFERENT_MARBLES+1); i++) {
@@ -437,38 +458,96 @@
 	self.marbleDelayTimer = nil;
 	[self.simulationLayer prepareMarble];
 }
-- (void) updatePlayerLevel
+- (void) incrementCurrentPlayerLevel
 {
 	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel] ;
-	MarbleGameAppDelegate * appDel = CMAppDelegate;
-	
-	CMMPLevelStat*oldStat = [appDel statisticsForPlayer:currentPlayer andLevel:self.currentLevel];
-	CMMarbleGameLevelStatus currentStatus = [self.scoreDelegate statusOfLevel:self.currentLevel forStats:self.currentStatistics];
-	if ((currentStatus != kCMLevelStatus_Failed) && (currentStatus != kCMLevelStatus_Unfinished) ) {
-		self.currentStatistics.status = currentStatus;
-		CMMPLevelStat *bestStat = [self.scoreDelegate betterStatOfOld:oldStat new:self.currentStatistics];
-		if (bestStat == self.currentStatistics) {
-			[appDel addStatistics:self.currentStatistics toPlayer:currentPlayer];
-		}
-		currentPlayer.currentLevelStat = nil;
-		
-		CMMarbleLevelSet * lS = [appDel levelSet];
+		CMMarbleLevelSet * lS = [CMAppDelegate levelSet];
 		NSArray *list = [lS levelList];
 		NSInteger levelsInList = list.count;
 		currentLevelIndex ++;
 		currentLevelIndex = currentLevelIndex%levelsInList;
 		currentPlayer.currentLevel = currentLevelIndex;
-		NSError *error;
-		[appDel.managedObjectContext save:&error];
-	}
-	
-//	appDel.currentPlayer =  currentPlayer;
 }
 
 
 #pragma mark -
 #pragma mark G A M E - Delegate
+
+- (CMMenuLayer*) createStatisticsFor:(CMMPLevelStat*) stats
+{
+	CMMenuLayer* result = [CMMenuLayer menuLayerWithLabel:@"Results"];
+	CCNode<CCLabelProtocol,CCRGBAProtocol>* leftLabel, *rightLabel;
+
+	leftLabel = defaultButtonTitle(@"Label:");
+	rightLabel = defaultButtonTitle(stats.name);
+	[result addLeftNode:leftLabel right:rightLabel];
+	
+	leftLabel = defaultButtonTitle(@"Status:");
+	rightLabel = defaultButtonTitle([stats statusString]);
+	[result addLeftNode:leftLabel right:rightLabel];
+	
+	
+	leftLabel = defaultButtonTitle(@"Score:");
+	rightLabel = defaultButtonTitle([NSString stringWithFormat:@"%lld",stats.score]);
+	[result addLeftNode:leftLabel right:rightLabel];
+	
+	leftLabel = defaultButtonTitle(@"Time:");
+	rightLabel = defaultButtonTitle([self stringForSeconds:stats.time]);
+	[result addLeftNode:leftLabel right:rightLabel];
+	
+	return result;
+}
+
+- (void) finishLevel
+{
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	NSUInteger currentLevelIndex = [currentPlayer currentLevel] ;
+	MarbleGameAppDelegate * appDel = CMAppDelegate;
+
+	self.scoreLabel = defaultGameLabel([self currentScoreString]);
+	self.timeLabel = defaultGameLabel([self stringForSeconds:self.currentStatistics.time]);
+
+	CMMPLevelStat*oldStat = [appDel statisticsForPlayer:currentPlayer andLevel:self.currentLevel];
+	CMMarbleGameLevelStatus currentStatus = [self.scoreDelegate statusOfLevel:self.currentLevel forStats:self.currentStatistics];
+	self.currentStatistics.status = currentStatus;
+	CMMenuLayer *statsMenu = [self createStatisticsFor:self.currentStatistics];
+	if (self.resultMenu) {
+		[self.resultMenu removeFromParent];
+	}
+	self.resultMenu = statsMenu;
+	if ((currentStatus != kCMLevelStatus_Failed) && (currentStatus != kCMLevelStatus_Unfinished) ) {
+
+		CMMPLevelStat *bestStat = [self.scoreDelegate betterStatOfOld:oldStat new:self.currentStatistics];
+		if (bestStat == self.currentStatistics) {
+			[appDel addStatistics:self.currentStatistics toPlayer:currentPlayer];
+			NSString *label = nil;
+			if (oldStat) {
+				label = [NSString stringWithFormat:@"Personal Best (was %lld)",oldStat.score];
+			}else{
+				label = @"Personal Best";
+			}
+			[statsMenu addNode:defaultButtonTitle(label)];
+			CCControlButton *leftButton, *rightButton;
+			leftButton = standardButtonWithTitle(@"Replay");
+			rightButton = standardButtonWithTitle(@"Play Next");
+			[leftButton addTarget:self action:@selector(replayAction:) forControlEvents:CCControlEventTouchUpInside];
+			[rightButton addTarget:self action:@selector(playNextAction:) forControlEvents:CCControlEventTouchUpInside];
+			[statsMenu addLeftNode:leftButton right:rightButton];
+			[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
+		}else{
+			[statsMenu addButtonWithTitle:@"Replay" target:self action:@selector(replayAction:)];
+			[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
+			[[CMAppDelegate managedObjectContext] deleteObject:self.currentStatistics];
+			currentPlayer.currentLevelStat = nil;
+			self.currentStatistics = nil;
+		}
+	}	// display a end Menu
+	[self addChild:statsMenu z:MENU_LAYER];
+	statsMenu.visible = YES;
+	NSError *error;
+	[[CMAppDelegate managedObjectContext] save:&error];
+}
 
 /// returns index of the next Marble to be added to the game
 - (NSUInteger) marbleIndex
@@ -583,8 +662,7 @@
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
 		NSLog(@"LevelStatistics: %@",self.currentStatistics);
 		[self.simulationLayer stopSimulation];
-		[self updatePlayerLevel];
-		[[CCDirector sharedDirector]replaceScene:[CMMarbleMainMenuScene node]];
+		[self finishLevel];
 	}
 	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
 }

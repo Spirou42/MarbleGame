@@ -69,7 +69,7 @@ inline CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size
 
 inline CCControlButton* defaultMenuButton()
 {
-  CCControlButton* result = standardButtonWithTitle(@"||");
+  CCControlButton* result = standardButtonWithTitle(@"M");
 	result.preferredSize=CGSizeMake(40, 40);
   result.anchorPoint=ccp(1.0, 1.0);
   result.position=ccp(990, 762);

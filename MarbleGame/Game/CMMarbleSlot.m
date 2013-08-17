@@ -46,7 +46,11 @@
 	}
 	id moveAction = [CCMoveTo actionWithDuration:DEFAULT_MARBLE_SLOT_MOVE_TIME-(difTime) position:endPos];
 	[marbleSprite runAction:moveAction];
-	
+}
+
+- (void) clearMarbles
+{
+	[self removeAllChildren];
 }
 //- (void) draw
 //{

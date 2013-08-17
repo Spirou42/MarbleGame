@@ -186,8 +186,8 @@ NSMutableDictionary *_scoreModeDelegates;
 	CMMPLevelSet * currentLevelSet = [self fetchLevelSetWithName:player.currentLevelSet forPlayer:player];
 	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CMMPLevelStat"];
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:
-														@"(levelset = %@) AND (player == %@) AND (scoreMode == %@) AND (name == %@)",
-														currentLevelSet,player,player.settings.scoreMode,levelName];
+														@"(levelset == %@) AND (scoreMode == %@) AND (name == %@)",
+														currentLevelSet,player.settings.scoreMode,levelName];
 	request.predicate = predicate;
 	
 	NSError *error;
@@ -234,7 +234,7 @@ NSMutableDictionary *_scoreModeDelegates;
 {
 	CMMPLevelStat* result = [NSEntityDescription insertNewObjectForEntityForName:@"CMMPLevelStat" inManagedObjectContext:[self managedObjectContext]];
 	result.name = level.name;
-	if (player.currentLevelStat){
+	if (player.currentLevelStat && (player.currentLevelStat.levelset == nil)){
 		[self.managedObjectContext deleteObject:player.currentLevelStat] ;
 	}
 	player.currentLevelStat = result;
@@ -259,9 +259,17 @@ NSMutableDictionary *_scoreModeDelegates;
 	CMMPLevelSet * currentSet = [self fetchLevelSetWithName:player.currentLevelSet forPlayer:player];
 	if (currentStat) {
 		[currentSet removeLevelsObject:currentStat];
+		[self.managedObjectContext deleteObject:currentStat];
 	}
+	stat.player = nil;
 	[currentSet addLevelsObject:stat];
+	
 }
 
+- (BOOL) player:(CMMarblePlayer *)player hasPlayedLevel:(NSString *)name
+{
+	CMMPLevelStat *stat = [self fetchLevelStatWithName:name forPlayer:player];
+	return  stat != nil;
+}
 
 @end

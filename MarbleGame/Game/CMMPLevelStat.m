@@ -16,9 +16,11 @@
 @dynamic name;
 @dynamic order;
 @dynamic score;
-@dynamic time;
-@dynamic status;
 @dynamic scoreMode;
+@dynamic status;
+@dynamic time;
+@dynamic comboHits;
+@dynamic multiHits;
 @dynamic levelset;
 @dynamic player;
 

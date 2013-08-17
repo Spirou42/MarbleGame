@@ -28,7 +28,15 @@
 		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
 		NSInteger levelNumber = 0;
+		BOOL levelSelectable = YES;
 		for (CMMarbleLevel *level in set.levelList) {
+			if (levelNumber > 0) {
+				CMMarbleLevel *lastLevel = [set.levelList objectAtIndex:levelNumber-1];
+				levelSelectable = [CMAppDelegate player:[CMAppDelegate currentPlayer] hasPlayedLevel:lastLevel.name];
+			}
+			if (!levelSelectable) {
+				break;
+			}
 			CCControlButton* aButton = [menuLayer addButtonWithTitle:level.name target:self action:@selector(onLevelSelect:)];
 			aButton.tag = levelNumber++;
 		}

@@ -123,8 +123,8 @@ interColumnSpacing = _interColumnSpacing;
 	lNode.position = lPos;
 	rNode.anchorPoint = CGPointMake(0.0, 0.5);
 	rNode.position = rPos;
-	[self addChild:lNode z:1];
-	[self addChild:rNode z:1];
+	[self.backgroundSprite addChild:lNode z:1];
+	[self.backgroundSprite addChild:rNode z:1];
 }
 - (void) draw
 {

@@ -16,9 +16,11 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) int16_t order;
 @property (nonatomic) int64_t score;
-@property (nonatomic) float time;
-@property (nonatomic) int16_t status;
 @property (nonatomic, retain) NSString * scoreMode;
+@property (nonatomic) int16_t status;
+@property (nonatomic) float time;
+@property (nonatomic) int32_t comboHits;
+@property (nonatomic) int32_t multiHits;
 @property (nonatomic, retain) CMMPLevelSet *levelset;
 @property (nonatomic, retain) CMMarblePlayer *player;
 
