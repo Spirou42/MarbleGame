@@ -9,7 +9,8 @@
 #import "CMMarbleScoreModeScore.h"
 #import "CMMarbleGameDelegate.h"
 #import "CMMarbleCollisionCollector.h"
-#import "CMMarbleLevelStatistics.h"
+#import "CMMPLevelStat.h"
+#import "CMMarbleLevel.h"
 
 @implementation CMMarbleScoreModeScore
 @synthesize gameDelegate, comboHits;
@@ -29,7 +30,7 @@
 }
 
 
-- (void) scoreWithMarbles:(NSArray *)removedMarbles inLevel:(CMMarbleLevelStatistics *)statistics
+- (void) scoreWithMarbles:(NSArray *)removedMarbles inLevel:(CMMPLevelStat *)statistics
 {
 	NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
 	__block NSUInteger normalHits = 0;
@@ -106,7 +107,7 @@
 	statistics.score += totalScore;
 }
 
-- (void) marbleDropped:(CMMarbleLevelStatistics *)statistics
+- (void) marbleDropped:(CMMPLevelStat *)statistics
 {
 	self.comboHits = 0;
 	statistics.score += MARBLE_THROW_SCORE;
@@ -114,5 +115,43 @@
 - (void) marbleFired
 {
 	self.comboHits = 0;
+}
+
+- (CMMPLevelStat*) betterStatOfOld:(CMMPLevelStat *)oldStat new:(CMMPLevelStat *)newStat
+{
+	if (!oldStat) {
+		return newStat;
+	}
+	if (!newStat) {
+		return oldStat;
+	}
+	if (oldStat.scoreMode != newStat.scoreMode) {
+		return nil;
+	}
+	
+	if (oldStat.score > newStat.score) {
+		return oldStat;
+	}else if (oldStat.score < newStat.score){
+		return newStat;
+	}
+	// and now for equal scores the better time wins
+	if (oldStat.time < newStat.time) {
+		return oldStat;
+	}else{
+		return newStat;
+	}
+	
+}
+
+- (CMMarbleGameLevelStatus) statusOfLevel:(CMMarbleLevel *)level forStats:(CMMPLevelStat *)statistics
+{
+	if (statistics.score >= level.masterScore) {
+		return kCMLevelStatus_Master;
+	}else if (statistics.score >= level.professionalScore){
+		return kCMLevelStatus_Professional;
+	}else if (statistics.score >= level.amateurScore){
+		return kCMLevelStatus_Amateure;
+	}
+	return kCMLevelStatus_Failed;
 }
 @end

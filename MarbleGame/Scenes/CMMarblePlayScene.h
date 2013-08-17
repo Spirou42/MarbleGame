@@ -11,7 +11,7 @@
 #import "CMMarbleGameDelegate.h"
 
 @protocol CMMarbleGameScoreModeProtocol;
-@class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton, CMMarbleLevelStatistics,CCNode,CMMarbleSlot, CMMenuLayer;
+@class CMMarbleSimulationLayer, CCScale9Sprite, CCControlButton, CMMarbleLevelStatistics,CCNode,CMMarbleSlot, CMMenuLayer, CMMPLevelStat;
 
 @interface CMMarblePlayScene : CCScene <CMMarbleGameDelegate>
 {
@@ -21,7 +21,7 @@
   CCControlButton*												_menuButton;
   CCControlButton*												_toggleSimulationButton;
 	NSInteger																_normalHits,_comboHits,_multiHits;
-	CMMarbleLevelStatistics*								_currentStatistics;
+	CMMPLevelStat*													_currentStatistics;
   CCNode*																	_statisticsOverlay;
 	NSTimeInterval													_lastDisplayTime;
 	NSTimer*																_marbleDelayTimer;
@@ -40,11 +40,12 @@
 	NSMutableArray			*_removedMarbleQueue;
 	NSObject<CMMarbleGameScoreModeProtocol>* _scoreDelegate;
 	NSTimer																*_effectTimer;
-
+	NSInteger																_lastUpdateSecond;
+	NSInteger																_lastUpdateScore;
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
 @property (nonatomic, assign) NSInteger normalHits, comboHits, multiHits;
-@property (nonatomic, retain) CMMarbleLevelStatistics *currentStatistics;
+@property (nonatomic, retain) CMMPLevelStat *currentStatistics;
 @property (nonatomic, retain) CCNode* statisticsOverlay;
 @property (nonatomic, retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;
 @property (nonatomic, assign) NSTimeInterval lastDisplayTime;

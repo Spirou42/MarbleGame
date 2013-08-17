@@ -13,10 +13,11 @@
 #import "SceneHelper.h"
 #import "CMMarbleSettingsScene.h"
 #import "CMMarbleCollisionCollector.h"
-#import "CMMarbleLevelStatistics.h"
+#import "CMMPLevelStat.h"
 #import "CMMarbleLevel.h"
 #import "CMMarbleLevelSet.h"
-#import "CMMarblePlayerOld.h"
+//#import "CMMarblePlayerOld.h"
+#import "CMMarblePlayer.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMarbleMultiComboSprite.h"
@@ -395,11 +396,11 @@
 
 - (void) resetSimulationAction:(id) sender
 {
-	CMMarblePlayerOld *cP = [CMAppDelegate currentPlayer];
+	CMMarblePlayer *cP = [CMAppDelegate currentPlayer];
 
-	[CMAppDelegate setCurrentPlayer:cP];
+//	[CMAppDelegate setCurrentPlayer:cP];
   [self.simulationLayer resetSimulation];
-	self.currentStatistics = [[[CMMarbleLevelStatistics alloc] init] autorelease];
+
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
 	for (NSUInteger i = 1; i<(MAX_DIFFERENT_MARBLES+1); i++) {
@@ -490,17 +491,31 @@
 }
 - (void) updatePlayerLevel
 {
-	CMMarblePlayerOld* currentPlayer = [CMAppDelegate currentPlayer];
-	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
+	NSUInteger currentLevelIndex = [currentPlayer currentLevel] ;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
-	CMMarbleLevelSet * lS = [appDel levelSet];
-	NSArray *list = [lS levelList];
-	NSInteger levelsInList = list.count;
-	currentLevelIndex ++;
-	currentLevelIndex = currentLevelIndex%levelsInList;
-	currentPlayer.currentLevel = currentLevelIndex;
 	
-	appDel.currentPlayer =  currentPlayer;
+	CMMPLevelStat*oldStat = [appDel statisticsForPlayer:currentPlayer andLevel:self.currentLevel];
+	CMMarbleGameLevelStatus currentStatus = [self.scoreDelegate statusOfLevel:self.currentLevel forStats:self.currentStatistics];
+	if ((currentStatus != kCMLevelStatus_Failed) && (currentStatus != kCMLevelStatus_Unfinished) ) {
+		self.currentStatistics.status = currentStatus;
+		CMMPLevelStat *bestStat = [self.scoreDelegate betterStatOfOld:oldStat new:self.currentStatistics];
+		if (bestStat == self.currentStatistics) {
+			[appDel addStatistics:self.currentStatistics toPlayer:currentPlayer];
+		}
+		currentPlayer.currentLevelStat = nil;
+		
+		CMMarbleLevelSet * lS = [appDel levelSet];
+		NSArray *list = [lS levelList];
+		NSInteger levelsInList = list.count;
+		currentLevelIndex ++;
+		currentLevelIndex = currentLevelIndex%levelsInList;
+		currentPlayer.currentLevel = currentLevelIndex;
+		NSError *error;
+		[appDel.managedObjectContext save:&error];
+	}
+	
+//	appDel.currentPlayer =  currentPlayer;
 }
 
 
@@ -529,7 +544,6 @@
 
 - (void) marbleFiredWithID:(NSUInteger) ballIndex
 {
-	self.currentStatistics.marblesInLevel++;
 	[self.marblesInGame addObject:[NSNumber numberWithInteger:ballIndex]];
 	[self.scoreDelegate marbleFired];
 
@@ -550,7 +564,7 @@
 - (CMMarbleLevel*) currentLevel
 {
 	CMMarbleLevel *result = nil;
-	CMMarblePlayerOld* currentPlayer = [CMAppDelegate currentPlayer];
+	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel];
 	CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 	
@@ -559,14 +573,31 @@
 	return result;
 }
 
+- (void) updateTimeLabel
+{
+	NSInteger updateSecond = (NSInteger) -[self.levelStartTime timeIntervalSinceNow];
+	if (self->_lastUpdateSecond != updateSecond) {
+		self.timeLabel = defaultGameLabel([self currentTimeString]);
+		self->_lastUpdateSecond = updateSecond;
+	}
+}
+
+- (void) updateScoreLabel
+{
+	if (self->_lastUpdateScore != self.currentStatistics.score) {
+		self.scoreLabel = defaultGameLabel([self currentScoreString]);
+		self->_lastUpdateScore = (NSInteger)self.currentStatistics.score;
+	}
+}
+
 - (void) simulationStepDone:(NSTimeInterval)dt
 {
 	static NSTimeInterval lastLabelUpdate;
 	lastLabelUpdate+= dt;
 	if (lastLabelUpdate>.25) {
 		lastLabelUpdate=0.0;
-		self.scoreLabel = defaultGameLabel([self currentScoreString]);
-		self.timeLabel = defaultGameLabel([self currentTimeString]);
+		[self updateScoreLabel];
+		[self updateTimeLabel];
 		if (self.effectQueue.count) {
 			CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
 			[self addChild:k];
@@ -599,9 +630,6 @@
 		[self.simulationLayer removedMarbles:toBeRemoved];
 	}
 	
-	for (NSNumber *t in toBeRemoved) {
-		[self.currentStatistics marbleCleared:t];
-	}
 	
 	if (!self.marblesInGame.count) {
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
@@ -624,8 +652,10 @@
 	
 	CCSprite *fgs = level.overlayImage;
 	self.foregroundSprite = fgs;
-	
+
+	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
 	self.overlaySprite = defaultLevelOverlay();
+
 }
 
 - (CMMarbleCollisionCollector*) collisionCollector

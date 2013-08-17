@@ -12,6 +12,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 typedef enum {
 	kCMLevelStatus_Unfinished 	= -1,
 	kCMLevelStatus_Failed				=  0,
@@ -20,7 +21,7 @@ typedef enum {
 	kCMLevelStatus_Master				=	 3,
 }CMMarbleGameLevelStatus;
 
-@class CMMarbleLevel,CMMarbleLevelStatistics,CMMarblePlayerOld;
+@class CMMarbleLevel,CMMPLevelStat,CMMarblePlayerOld;
 @protocol CMMarbleGameDelegate;
 
 @protocol CMMarbleGameScoreModeProtocol <NSObject>
@@ -28,8 +29,10 @@ typedef enum {
 @required
 @property (nonatomic, assign) NSObject<CMMarbleGameDelegate>* gameDelegate;
 
-- (void) scoreWithMarbles:(NSArray*)removedMarbles inLevel:(CMMarbleLevelStatistics*)statistics;
-- (void) marbleDropped:(CMMarbleLevelStatistics*)statistics;
+- (void) scoreWithMarbles:(NSArray*)removedMarbles inLevel:(CMMPLevelStat*)statistics;
+- (void) marbleDropped:(CMMPLevelStat*)statistics;
 - (void) marbleFired;
+- (CMMPLevelStat*) betterStatOfOld:(CMMPLevelStat*) oldStat new:(CMMPLevelStat*)newStat;
+- (CMMarbleGameLevelStatus) statusOfLevel:(CMMarbleLevel*)level forStats:(CMMPLevelStat*) statistics;
 
 @end

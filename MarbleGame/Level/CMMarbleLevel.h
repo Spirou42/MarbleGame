@@ -22,6 +22,8 @@
 	NSString *backgroundFilename;
 	NSString *overlayFilename;
 	NSString *staticBodiesFilename;
+	NSDictionary *scoreLimits;
+	NSDictionary *timeLimits;
 	
 	NSURL		*baseURL;
 }
@@ -40,6 +42,13 @@
 @property(retain, nonatomic) CMSimpleShapeReader *shapeReader;						///< shapeReader
 
 @property (assign, nonatomic) NSUInteger numberOfMarbles;									///< initial number of marbles
+@property (retain, nonatomic) NSDictionary *scoreLimits, *timeLimits;
+@property (readonly, nonatomic) NSInteger amateurScore,professionalScore,masterScore;
+@property (readonly, nonatomic) NSTimeInterval amateurTime,professionalTime,masterTime;
+
+
+
+
 
 ///< baseURL for all file operation
 @property (retain, nonatomic) NSURL*baseURL;

@@ -6,11 +6,19 @@
 //  Copyright (c) 2013 Carsten Müller. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "MarbleGameAppDelegate+GameDelegate.h"
-#import "CMMarblePlayerOld.h"
+//#import "CMMarblePlayerOld.h"
+#import "CMMarblePlayer.h"
+#import "CMMPSettings.h"
+#import "CMMPLevelSet.h"
+#import "CMMPLevelStat.h"
+#import "CMMarbleLevel.h"
+#import "CMMPSettings.h"
 #import "CMMarbleLevelSet.h"
 #import "CMMarbleGameScoreModeProtocol.h"
 #import "CMMarbleScoreModeScore.h"
+#import "AppDelegate.h"
 
 // to be implemented
 //#import "CMMarbleScoreModeTime.h"
@@ -23,26 +31,16 @@ NSMutableDictionary *_scoreModeDelegates;
 
 -(void) registerUserDefaults
 {
-  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-
-	CMMarblePlayerOld *defaultUser = [CMMarblePlayerOld playerWithName:NSUserName()];
-
-	NSData *defaultPlayerData = [NSKeyedArchiver archivedDataWithRootObject:defaultUser];
-
-  [ud registerDefaults:@{@"MarbleSet":@"DDR",
-												 @"Players"  :@{NSUserName():defaultPlayerData},
+	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+	[ud registerDefaults:@{@"MarbleSet":@"DDR",
 												 @"currentPlayer":NSUserName(),
 												 }];
-}
-- (void) resetPlayer
-{
-	[[NSUserDefaults standardUserDefaults] setObject:@{} forKey:@"Players"];
 }
 
 - (NSObject<CMMarbleGameScoreModeProtocol>*) currentScoreDelegate
 {
-	CMMarblePlayerOld *player = [self currentPlayer];
-	NSString *scoreModeName = player.scoreMode;
+	CMMarblePlayer *player = [self currentPlayer];
+	NSString *scoreModeName = player.settings.scoreMode;
 	return (NSObject <CMMarbleGameScoreModeProtocol>*)[_scoreModeDelegates objectForKey:scoreModeName];
 }
 
@@ -84,7 +82,6 @@ NSMutableDictionary *_scoreModeDelegates;
   [[CCShaderCache sharedShaderCache]addProgram:shaderProgram forKey:kCMMarbleGlossMapShader];
 	
   [self registerUserDefaults];
-//  [self resetPlayer];
 	
   // adding sprite frames
   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
@@ -106,31 +103,165 @@ NSMutableDictionary *_scoreModeDelegates;
 	[self initializeScoreModes];
 }
 
-- (CMMarblePlayerOld*) currentPlayer
+#pragma mark - 
+#pragma mark Core Data
+
+- (NSURL*) defaultStoreURL
+{
+	NSURL *result = nil;
+#if __CC_PLATFORM_MAC
+	result = [[self applicationStoreDirectory] URLByAppendingPathComponent:@"CMMarbleGameStatistics.storedata"];
+#else
+	result = [[NSBundle mainBundle] URLForResource:@"CMMarbleGameStatistics" withExtension:@"momd"];
+#endif
+	return result;
+}
+- (id) defaultStore
+{
+	return [[self persistentStoreCoordinator] persistentStoreForURL:[self defaultStoreURL]];
+}
+
+
+- (CMMPSettings*) createDefaultSettings
+{
+	CMMPSettings* settings = [NSEntityDescription insertNewObjectForEntityForName:@"CMMPSettings" inManagedObjectContext:[self managedObjectContext]];
+	settings.marbleTheme = DEFAULT_MARBLE_THEME;
+
+	[self.managedObjectContext assignObject:settings toPersistentStore:[self defaultStore]];
+	return settings;
+}
+
+- (CMMPLevelSet*) createLevelSetWithName:(NSString*) levelSetName
+{
+	CMMPLevelSet *newLevelSet = [NSEntityDescription insertNewObjectForEntityForName:@"CMMPLevelSet" inManagedObjectContext:[self managedObjectContext]];
+	newLevelSet.name = levelSetName;
+	
+	[[self managedObjectContext] assignObject:newLevelSet toPersistentStore:[self defaultStore]];
+	
+	NSError* error;
+	[[self managedObjectContext] save:&error];
+	return newLevelSet;
+}
+
+- (CMMarblePlayer*) fetchPlayerWithName:(NSString*) playerName
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription
+																						entityForName:@"CMMarblePlayer" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+	
+	// Set example predicate and sort orderings...
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name == %@",playerName];
+	
+	[request setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *array = [[self managedObjectContext] executeFetchRequest:request error:&error];
+	[request release];
+	if (array.count > 0) {
+		return [array objectAtIndex:0];
+	}
+	return nil;
+}
+
+- (CMMPLevelSet*) fetchLevelSetWithName:(NSString*)levelSetName forPlayer:(CMMarblePlayer*) player
+{
+	NSEntityDescription  *levelSetDescription = [NSEntityDescription entityForName:@"CMMPLevelSet" inManagedObjectContext:[self managedObjectContext]];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CMMPLevelSet"];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(player == %@) && (name == %@)",player,levelSetName];
+	[request setPredicate:predicate];
+	
+	NSError *error;
+	NSArray *result= [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (result.count) {
+		return [result objectAtIndex:0];
+	}
+	return nil;
+}
+
+- (CMMPLevelStat*) fetchLevelStatWithName:(NSString*) levelName forPlayer:(CMMarblePlayer*) player
+{
+	CMMPLevelSet * currentLevelSet = [self fetchLevelSetWithName:player.currentLevelSet forPlayer:player];
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CMMPLevelStat"];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:
+														@"(levelset = %@) AND (player == %@) AND (scoreMode == %@) AND (name == %@)",
+														currentLevelSet,player,player.settings.scoreMode,levelName];
+	request.predicate = predicate;
+	
+	NSError *error;
+	NSArray* array = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (array.count) {
+		return [array objectAtIndex:0];
+	}
+	return nil;
+}
+
+- (CMMarblePlayer*) createPlayerWithName:(NSString*) playerName
+{
+	CMMarblePlayer* newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"CMMarblePlayer" inManagedObjectContext:[self managedObjectContext]];
+	NSLog(@"Bla: %@", newPlayer);
+	newPlayer.name = playerName;
+	newPlayer.currentLevelSet = DEFAULT_LEVELSET_NAME;
+	
+
+	[[self managedObjectContext] assignObject:newPlayer toPersistentStore:[self defaultStore]];
+	CMMPLevelSet *defaultSet = [self createLevelSetWithName:DEFAULT_LEVELSET_NAME];
+	[newPlayer addLevelSetsObject:defaultSet];
+	
+	CMMPSettings *defaultSettings = [self createDefaultSettings];
+	newPlayer.settings = defaultSettings;
+	NSError* error;
+	[[self managedObjectContext] save:&error];
+
+	return newPlayer;
+}
+
+- (CMMarblePlayer*) currentPlayer
 {
 	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
 	NSString* currentPlayerName = [ud stringForKey:@"currentPlayer"];
-	NSData *playerData = [[ud dictionaryForKey:@"Players"]objectForKey:currentPlayerName];
-	CMMarblePlayerOld *currentPlayer = nil;
-	if (!playerData) {
-		currentPlayer = [CMMarblePlayerOld playerWithName:NSUserName()];
-		self.currentPlayer = currentPlayer;
-	}else{
-		currentPlayer= [NSKeyedUnarchiver unarchiveObjectWithData:playerData];
+	CMMarblePlayer * currentPlayer = [self fetchPlayerWithName:currentPlayerName];
+	if (!currentPlayer) {
+		currentPlayer = 	[self createPlayerWithName:currentPlayerName];
 	}
 	return currentPlayer;
 }
 
-- (void) setCurrentPlayer:(CMMarblePlayerOld*) player
+
+- (CMMPLevelStat*) temporaryStatisticFor:(CMMarblePlayer *)player andLevel:(CMMarbleLevel *)level
 {
-	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-	NSData *playerData = [NSKeyedArchiver archivedDataWithRootObject:player];
-	NSString *currentPlayerName = player.name;
+	CMMPLevelStat* result = [NSEntityDescription insertNewObjectForEntityForName:@"CMMPLevelStat" inManagedObjectContext:[self managedObjectContext]];
+	result.name = level.name;
+	if (player.currentLevelStat){
+		[self.managedObjectContext deleteObject:player.currentLevelStat] ;
+	}
+	player.currentLevelStat = result;
+	result.scoreMode = player.settings.scoreMode;
+	[[self managedObjectContext] assignObject:result toPersistentStore:[self defaultStore]];
+	NSError *error;
+	[[self managedObjectContext] save:&error];
 	
-	NSMutableDictionary* playerDict = [[ud dictionaryForKey:@"Players"]mutableCopy];
-	[playerDict setObject:playerData forKey:currentPlayerName];
-	[ud setObject:playerDict forKey:@"Players"];
-	[ud synchronize];
-  [playerDict release];
+	return result;
 }
+
+- (CMMPLevelStat*) statisticsForPlayer:(CMMarblePlayer *)player andLevel:(CMMarbleLevel *)level
+{
+	CMMPLevelStat * result = [self fetchLevelStatWithName:level.name forPlayer:player];
+	
+	return result;
+}
+
+- (void) addStatistics:(CMMPLevelStat *)stat toPlayer:(CMMarblePlayer *)player
+{
+	CMMPLevelStat * currentStat = [self fetchLevelStatWithName:stat.name forPlayer:player];
+	CMMPLevelSet * currentSet = [self fetchLevelSetWithName:player.currentLevelSet forPlayer:player];
+	if (currentStat) {
+		[currentSet removeLevelsObject:currentStat];
+	}
+	[currentSet addLevelsObject:stat];
+}
+
+
 @end

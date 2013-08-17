@@ -23,14 +23,23 @@
   
   CMMarbleLevelSet* _levelSet;
   NSArray           *_marbleSets;
+	NSPersistentStoreCoordinator 	*_persistentStoreCoordinator;
+	NSManagedObjectModel					*_managedObjectModel;
+	NSManagedObjectContext				*_managedObjectContext;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (readonly) MyNavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
 @property (nonatomic, retain) CMMarbleLevelSet* levelSet;
 @property (nonatomic, retain) NSArray *marbleSets;
 
-
+- (NSURL *)applicationStoreDirectory;
 @end

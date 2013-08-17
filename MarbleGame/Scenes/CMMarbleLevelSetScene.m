@@ -43,9 +43,9 @@
 {
 	NSInteger level = sender.tag;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
-	CMMarblePlayerOld *player = appDel.currentPlayer;
-	player.currentLevel = level;
-	appDel.currentPlayer = player;
+	CMMarblePlayer *player = appDel.currentPlayer;
+//	player.currentLevel = level;
+//	appDel.currentPlayer = player;
 	[self onEnd:0];
 }
 

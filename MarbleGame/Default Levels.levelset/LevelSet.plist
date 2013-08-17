@@ -22,8 +22,50 @@
 			</dict>
 			<key>audio</key>
 			<dict/>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>30</integer>
+					<key>Professional</key>
+					<integer>100</integer>
+					<key>Master</key>
+					<integer>200</integer>
+				</dict>
+			</dict>
 		</dict>
 		<dict>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
 			<key>levelName</key>
 			<string>Bouncy Bounce</string>
 			<key>numOfMarbles</key>
@@ -43,6 +85,27 @@
 			<dict/>
 		</dict>
 		<dict>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
 			<key>levelName</key>
 			<string>Hurpzel Purpzel</string>
 			<key>numOfMarbles</key>
@@ -62,6 +125,27 @@
 			<dict/>
 		</dict>
 		<dict>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
 			<key>numOfMarbles</key>
 			<integer>50</integer>
 			<key>levelName</key>

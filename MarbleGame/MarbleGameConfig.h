@@ -16,8 +16,9 @@
 
 #define MAX_DIFFERENT_MARBLES 9
 
-#define DEFAULT_LEVELSET_NAME @"DummyLevels"
+#define DEFAULT_LEVELSET_NAME @"Default Levels"
 #define DEFAULT_LEVELSET_EXTENSION @"levelset"
+#define DEFAULT_MARBLE_THEME @"attraktor"
 
 //////////////////////////////////////////////////
 #pragma mark Physics
@@ -134,9 +135,11 @@
 #ifdef __CC_PLATFORM_MAC
 #define CMEvent NSEvent
 #define CMAppDelegate (MarbleGameAppDelegate*)[NSApp delegate]
+#define CMSharedApplication ([NSApplication sharedApplication])
 #else
 #define CMEvent UIEvent
 #define CMAppDelegate (MarbleGameAppDelegate*)[[UIApplication sharedApplication] delegate]
+#define CMSharedApplication ([UIApplication sharedAplication])
 #endif
 
 

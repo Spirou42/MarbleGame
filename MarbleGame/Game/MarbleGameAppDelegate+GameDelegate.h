@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-@class CMMarbleLevelSet;
+@class CMMarbleLevelSet,CMMarblePlayer,CMMPLevelStat,CMMarbleLevel;
 @protocol CMMarbleGameScoreModeProtocol;
 
 @interface MarbleGameAppDelegate (GameDelegate)
@@ -15,10 +15,12 @@
 - (void) registerUserDefaults;
 - (void) initializeMarbleGame;
 
-- (CMMarblePlayerOld*) currentPlayer;
-- (void) setCurrentPlayer:(CMMarblePlayerOld*)player;
+- (CMMarblePlayer*) currentPlayer;
 - (NSObject<CMMarbleGameScoreModeProtocol>*)currentScoreDelegate;
-
-@property (nonatomic, retain) CMMarblePlayerOld *currentPlayer;
+- (CMMPLevelStat*) temporaryStatisticFor:(CMMarblePlayer*)player andLevel:(CMMarbleLevel*)level;
+- (CMMPLevelStat*) statisticsForPlayer:(CMMarblePlayer*)player andLevel:(CMMarbleLevel*)level;
+- (void) addStatistics:(CMMPLevelStat*) stat toPlayer:(CMMarblePlayer*)player;
+@property (nonatomic, readonly) CMMarblePlayer *currentPlayer;
+@property (readonly, strong, nonatomic) NSURL *defaultStoreURL;
 
 @end
