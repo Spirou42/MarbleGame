@@ -306,7 +306,9 @@
   [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
 	[self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(toggleMenu:)];
   [self addChild:self.menuLayer z:MENU_LAYER];
+#if __CC_PLATFORM_MAC
 	self.menuLayer.mousePriority = -1;
+#endif
   self.menuLayer.visible = NO;
 }
 
@@ -517,7 +519,7 @@
 	}
 	self.resultMenu = statsMenu;
 	if ((currentStatus != kCMLevelStatus_Failed) && (currentStatus != kCMLevelStatus_Unfinished) ) {
-
+		
 		CMMPLevelStat *bestStat = [self.scoreDelegate betterStatOfOld:oldStat new:self.currentStatistics];
 		if (bestStat == self.currentStatistics) {
 			[appDel addStatistics:self.currentStatistics toPlayer:currentPlayer];
@@ -528,21 +530,24 @@
 				label = @"Personal Best";
 			}
 			[statsMenu addNode:defaultButtonTitle(label)];
-			CCControlButton *leftButton, *rightButton;
-			leftButton = standardButtonWithTitle(@"Replay");
-			rightButton = standardButtonWithTitle(@"Play Next");
-			[leftButton addTarget:self action:@selector(replayAction:) forControlEvents:CCControlEventTouchUpInside];
-			[rightButton addTarget:self action:@selector(playNextAction:) forControlEvents:CCControlEventTouchUpInside];
-			[statsMenu addLeftNode:leftButton right:rightButton];
-			[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
-		}else{
-			[statsMenu addButtonWithTitle:@"Replay" target:self action:@selector(replayAction:)];
-			[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
-			[[CMAppDelegate managedObjectContext] deleteObject:self.currentStatistics];
-			currentPlayer.currentLevelStat = nil;
-			self.currentStatistics = nil;
 		}
-	}	// display a end Menu
+		CCControlButton *leftButton, *rightButton;
+		leftButton = standardButtonWithTitle(@"Replay");
+		rightButton = standardButtonWithTitle(@"Play Next");
+		[leftButton addTarget:self action:@selector(replayAction:) forControlEvents:CCControlEventTouchUpInside];
+		[rightButton addTarget:self action:@selector(playNextAction:) forControlEvents:CCControlEventTouchUpInside];
+		[statsMenu addLeftNode:leftButton right:rightButton];
+		[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
+		
+		
+	}else{
+		[statsMenu addButtonWithTitle:@"Replay" target:self action:@selector(replayAction:)];
+		[statsMenu addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
+		[[CMAppDelegate managedObjectContext] deleteObject:self.currentStatistics];
+		currentPlayer.currentLevelStat = nil;
+		self.currentStatistics = nil;
+	}
+	// display a end Menu
 	[self addChild:statsMenu z:MENU_LAYER];
 	statsMenu.visible = YES;
 	NSError *error;
