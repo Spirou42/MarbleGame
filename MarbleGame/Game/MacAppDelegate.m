@@ -149,7 +149,14 @@
 	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 	if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
 		[[NSApplication sharedApplication] presentError:error];
-		return nil;
+		
+		// try to remove the old store
+		[fileManager removeItemAtURL:url error:&error];
+		
+		if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]){
+				[[NSApplication sharedApplication] presentError:error];
+				return nil;
+		}
 	}
 	_persistentStoreCoordinator = coordinator;
 	
