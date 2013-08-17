@@ -503,6 +503,7 @@
 
 - (void) finishLevel
 {
+	[self.removedMarbleQueue removeAllObjects];
 	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel] ;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
@@ -622,6 +623,16 @@
 	}
 }
 
+- (void) processEffectQueue
+{
+	if (self.effectQueue.count) {
+		CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+		[self addChild:k];
+		[k animate];
+		[self.effectQueue removeObject:k];
+	}
+}
+
 - (void) simulationStepDone:(NSTimeInterval)dt
 {
 	static NSTimeInterval lastLabelUpdate;
@@ -630,12 +641,7 @@
 		lastLabelUpdate=0.0;
 		[self updateScoreLabel];
 		[self updateTimeLabel];
-		if (self.effectQueue.count) {
-			CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-			[self addChild:k];
-			[k animate];
-			[self.effectQueue removeObject:k];
-		}
+		[self processEffectQueue];
 		if (self.removedMarbleQueue.count) {
 			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
 			[self.marbleSlot addMarbleWithID:ballIndex];
@@ -661,15 +667,16 @@
 		[self.marblesInGame minusSet:toBeRemoved];
 		[self.simulationLayer removedMarbles:toBeRemoved];
 	}
-	
-	
+
+		[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
+
 	if (!self.marblesInGame.count) {
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
 		NSLog(@"LevelStatistics: %@",self.currentStatistics);
 		[self.simulationLayer stopSimulation];
 		[self finishLevel];
 	}
-	[self.removedMarbleQueue addObjectsFromArray:[toBeRemoved allObjects]];
+
 }
 
 - (void) initializeLevel:(CMMarbleLevel *)level
