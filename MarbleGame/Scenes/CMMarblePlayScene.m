@@ -673,7 +673,6 @@
 	}
 	
 	if (toBeRemoved.count ) {
-		NSLog(@"Removing: %@",toBeRemoved);
 		[self.marblesInGame minusSet:toBeRemoved];
 		[self.simulationLayer removedMarbles:toBeRemoved];
 	}
@@ -682,7 +681,6 @@
 
 	if (!self.marblesInGame.count) {
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
-		NSLog(@"LevelStatistics: %@",self.currentStatistics);
 		[self.simulationLayer stopSimulation];
 		[self finishLevel];
 	}

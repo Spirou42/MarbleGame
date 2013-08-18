@@ -212,7 +212,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	
 	volume *= self.gameDelegate.soundVolume;
 	if(volume > 0.1f){
-		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
+//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
 		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:1.0 pan:1.0 gain:volume];
 //		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
 		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];

@@ -73,7 +73,7 @@
 
 - (void) exitScene:(id) sender
 {
-	NSLog(@"Sender: %@",sender);
+//	NSLog(@"Sender: %@",sender);
   [[CCDirector sharedDirector]popScene];
 //		[[CCDirector sharedDirector] replaceScene:[CMMarbleMainMenuScene node]];
 }

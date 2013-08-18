@@ -206,7 +206,7 @@ NSMutableDictionary *_scoreModeDelegates;
 - (CMMarblePlayer*) createPlayerWithName:(NSString*) playerName
 {
 	CMMarblePlayer* newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"CMMarblePlayer" inManagedObjectContext:[self managedObjectContext]];
-	NSLog(@"Bla: %@", newPlayer);
+
 	newPlayer.name = playerName;
 	newPlayer.currentLevelSet = DEFAULT_LEVELSET_NAME;
 	
