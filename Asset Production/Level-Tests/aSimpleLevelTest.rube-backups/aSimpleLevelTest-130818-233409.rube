@@ -45,13 +45,16 @@
     "continuousPhysics" : true,
     "exportOptions" : 
     {
+      "compactCommonFloats" : true,
       "saveFullPathForImages" : false,
-      "useHumanReadableFloats" : true
+      "saveImagePathsRelativeToRUBEFile" : false,
+      "useHumanReadableFloats" : true,
+      "usePrettyPrint" : true
     },
     "gravity" : 
     {
       "x" : 0,
-      "y" : -9.810000419616699
+      "y" : -9.81
     },
     "metabody" : 
     [
@@ -67,12 +70,12 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 3,
-            "name" : "fixture0",
+            "name" : "BorderTop",
             "shapes" : 
             [
               
               {
-                "radius" : 0.009999999776482582,
+                "radius" : 0.01,
                 "type" : "line"
               }
             ],
@@ -87,12 +90,12 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 4,
-            "name" : "fixture1",
+            "name" : "BorderBottom",
             "shapes" : 
             [
               
               {
-                "radius" : 0.009999999776482582,
+                "radius" : 0.01,
                 "type" : "line"
               }
             ],
@@ -107,12 +110,12 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 5,
-            "name" : "fixture2",
+            "name" : "BorderLeft",
             "shapes" : 
             [
               
               {
-                "radius" : 0.009999999776482582,
+                "radius" : 0.01,
                 "type" : "line"
               }
             ],
@@ -127,12 +130,12 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 6,
-            "name" : "fixture2",
+            "name" : "BorderRight",
             "shapes" : 
             [
               
               {
-                "radius" : 0.009999999776482582,
+                "radius" : 0.01,
                 "type" : "line"
               }
             ],
@@ -147,7 +150,7 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 7,
-            "name" : "fixture3",
+            "name" : "Ground",
             "shapes" : 
             [
               
@@ -196,7 +199,7 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 9,
-            "name" : "fixture5",
+            "name" : "RightPentagon",
             "shapes" : 
             [
               
@@ -229,7 +232,7 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 10,
-            "name" : "fixture5",
+            "name" : "CenterPentagon",
             "shapes" : 
             [
               
@@ -262,7 +265,7 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 11,
-            "name" : "fixture5",
+            "name" : "LeftPentagon",
             "shapes" : 
             [
               
@@ -293,10 +296,10 @@
         ],
         "id" : 1,
         "linearVelocity" : 0,
-        "name" : "StaticWorld",
+        "name" : "World",
         "position" : 
         {
-          "x" : 5.960464477539062e-08,
+          "x" : 0,
           "y" : 0.238367497920990
         },
         "type" : "static"
@@ -313,31 +316,31 @@
             "density" : 1,
             "friction" : 0.2,
             "id" : 8,
-            "name" : "fixture4",
+            "name" : "Ball",
             "shapes" : 
             [
               
               {
-                "radius" : 0.01999999955296516,
+                "radius" : 0.02,
                 "type" : "circle"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           }
         ],
         "id" : 2,
         "linearVelocity" : 0,
-        "massData-I" : 2.513274068860483e-07,
+        "massData-I" : 0,
         "massData-mass" : 0.001256637042388320,
-        "name" : "body0",
+        "name" : "Ball",
         "position" : 
         {
-          "x" : 0.3871406316757202,
-          "y" : 0.2544257640838623
+          "x" : 0.005799651145935059,
+          "y" : 0.2625682950019836
         },
         "type" : "dynamic"
       }
@@ -346,25 +349,27 @@
     [
       
       {
+        "aspectScale" : 1,
         "center" : 0,
-        "file" : "../../../Chipmonkey/Chipmonkey/Resources/DummyLevels.levelset/Level1-Background.png",
+        "file" : "../../MarbleGame/Default Levels.levelset/Level1-Background.png",
         "filter" : 1,
         "flip" : false,
         "id" : 1,
         "name" : "image0",
-        "opacity" : 0.50,
-        "scale" : 1
+        "opacity" : 0.5,
+        "scale" : 768.0
       },
       
       {
+        "aspectScale" : 1,
         "center" : 0,
-        "file" : "../../../Chipmonkey/Chipmonkey/Resources/DummyLevels.levelset/Level1-Overlay.png",
+        "file" : "../../MarbleGame/Default Levels.levelset/Level1-Overlay.png",
         "filter" : 1,
         "flip" : false,
         "id" : 2,
         "name" : "image1",
-        "opacity" : 0.50,
-        "scale" : 1
+        "opacity" : 0.5,
+        "scale" : 768.0
       }
     ],
     "positionIterations" : 3,

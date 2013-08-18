@@ -51,7 +51,7 @@
     "gravity" : 
     {
       "x" : 0,
-      "y" : -753.0
+      "y" : -75.30000305175781
     },
     "metabody" : 
     [
@@ -359,7 +359,7 @@
       
       {
         "angle" : 0,
-        "angularVelocity" : 0,
+        "angularVelocity" : -87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -386,7 +386,11 @@
           }
         ],
         "id" : 3,
-        "linearVelocity" : 0,
+        "linearVelocity" : 
+        {
+          "x" : 35.85680007934570,
+          "y" : -10.27514171600342
+        },
         "massData-I" : 6781.915527343750,
         "massData-center" : 
         {
@@ -397,15 +401,15 @@
         "name" : "Rotating",
         "position" : 
         {
-          "x" : 41.347656250,
-          "y" : -304.1042175292969
+          "x" : 43.54260253906250,
+          "y" : -323.1271667480469
         },
         "type" : "dynamic"
       },
       
       {
         "angle" : 0,
-        "angularVelocity" : 3.490658521652222,
+        "angularVelocity" : 87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -429,46 +433,19 @@
               "x" : [ 0.05887222290039062 ],
               "y" : [ 0.20544433593750 ]
             }
-          },
-          
-          {
-            "density" : 1,
-            "friction" : 0.2,
-            "id" : 55,
-            "name" : "fixture0",
-            "shapes" : 
-            [
-              
-              {
-                "type" : "polygon"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : 
-              [
-                7.188079833984375,
-                -6.582427978515625,
-                -6.582427978515625,
-                7.188079833984375
-              ],
-              "y" : 
-              [
-                -0.3004455566406250,
-                -0.3004455566406250,
-                90.45193481445312,
-                90.45193481445312
-              ]
-            }
           }
         ],
         "id" : 4,
-        "linearVelocity" : 0,
-        "name" : "Rot1",
+        "linearVelocity" : 
+        {
+          "x" : -17.92840003967285,
+          "y" : 5.137570858001709
+        },
+        "name" : "Rotating",
         "position" : 
         {
           "x" : -56.6936035156250,
-          "y" : -320.9322204589844
+          "y" : -323.1271667480469
         },
         "type" : "kinematic"
       },
@@ -502,19 +479,23 @@
           }
         ],
         "id" : 5,
-        "linearVelocity" : 0,
+        "linearVelocity" : 
+        {
+          "x" : -17.92840003967285,
+          "y" : 5.137238025665283
+        },
         "name" : "Rotating",
         "position" : 
         {
-          "x" : 232.308593750,
-          "y" : -320.9322204589844
+          "x" : 231.5769042968750,
+          "y" : -323.8588256835938
         },
         "type" : "kinematic"
       },
       
       {
         "angle" : 0,
-        "angularVelocity" : -3.490658521652222,
+        "angularVelocity" : -87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -538,46 +519,19 @@
               "x" : [ 0.05887222290039062 ],
               "y" : [ 0.20544433593750 ]
             }
-          },
-          
-          {
-            "density" : 1,
-            "friction" : 0.2,
-            "id" : 54,
-            "name" : "fixture0",
-            "shapes" : 
-            [
-              
-              {
-                "type" : "polygon"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : 
-              [
-                7.188079833984375,
-                -6.582427978515625,
-                -6.582427978515625,
-                7.188079833984375
-              ],
-              "y" : 
-              [
-                -0.3004455566406250,
-                -0.3004455566406250,
-                90.45193481445312,
-                90.45193481445312
-              ]
-            }
           }
         ],
         "id" : 6,
-        "linearVelocity" : 0,
+        "linearVelocity" : 
+        {
+          "x" : 17.92840003967285,
+          "y" : -5.137238025665283
+        },
         "name" : "Rotating",
         "position" : 
         {
-          "x" : -253.5072631835938,
-          "y" : -319.4687805175781
+          "x" : -249.8489990234375,
+          "y" : -325.3219909667969
         },
         "type" : "kinematic"
       },
@@ -2497,15 +2451,15 @@
           "y" : -0.7318158149719238
         },
         "anchorB" : 0,
-        "bodyA" : 4,
+        "bodyA" : 1,
         "bodyB" : 3,
-        "collideConnected" : true,
-        "correctionFactor" : 0.50,
+        "collideConnected" : false,
+        "correctionFactor" : 0,
         "id" : 1,
-        "maxForce" : 1000.0,
-        "maxTorque" : 1000.0,
+        "maxForce" : 0,
+        "maxTorque" : 0,
         "name" : "joint0",
-        "referenceAngle" : 0.8726646304130554,
+        "referenceAngle" : 0,
         "type" : "motor"
       }
     ],

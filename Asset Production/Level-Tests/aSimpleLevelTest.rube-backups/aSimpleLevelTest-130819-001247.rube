@@ -51,7 +51,7 @@
     "gravity" : 
     {
       "x" : 0,
-      "y" : -753.0
+      "y" : -75.30000305175781
     },
     "metabody" : 
     [
@@ -319,7 +319,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 8,
             "name" : "Ball",
@@ -341,13 +341,13 @@
         ],
         "id" : 2,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
@@ -359,7 +359,7 @@
       
       {
         "angle" : 0,
-        "angularVelocity" : 0,
+        "angularVelocity" : -87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -374,7 +374,7 @@
             [
               
               {
-                "radius" : 20.0,
+                "radius" : 15.36149120330811,
                 "type" : "circle"
               }
             ],
@@ -387,25 +387,18 @@
         ],
         "id" : 3,
         "linearVelocity" : 0,
-        "massData-I" : 6781.915527343750,
-        "massData-center" : 
-        {
-          "x" : 0.05887221917510033,
-          "y" : 0.2054443210363388
-        },
-        "massData-mass" : 33.90183639526367,
         "name" : "Rotating",
         "position" : 
         {
-          "x" : 41.347656250,
-          "y" : -304.1042175292969
+          "x" : 43.54260253906250,
+          "y" : -323.1271667480469
         },
-        "type" : "dynamic"
+        "type" : "kinematic"
       },
       
       {
         "angle" : 0,
-        "angularVelocity" : 3.490658521652222,
+        "angularVelocity" : 87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -420,7 +413,7 @@
             [
               
               {
-                "radius" : 20.0,
+                "radius" : 15.36149120330811,
                 "type" : "circle"
               }
             ],
@@ -429,46 +422,15 @@
               "x" : [ 0.05887222290039062 ],
               "y" : [ 0.20544433593750 ]
             }
-          },
-          
-          {
-            "density" : 1,
-            "friction" : 0.2,
-            "id" : 55,
-            "name" : "fixture0",
-            "shapes" : 
-            [
-              
-              {
-                "type" : "polygon"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : 
-              [
-                7.188079833984375,
-                -6.582427978515625,
-                -6.582427978515625,
-                7.188079833984375
-              ],
-              "y" : 
-              [
-                -0.3004455566406250,
-                -0.3004455566406250,
-                90.45193481445312,
-                90.45193481445312
-              ]
-            }
           }
         ],
         "id" : 4,
         "linearVelocity" : 0,
-        "name" : "Rot1",
+        "name" : "Rotating",
         "position" : 
         {
           "x" : -56.6936035156250,
-          "y" : -320.9322204589844
+          "y" : -323.1271667480469
         },
         "type" : "kinematic"
       },
@@ -490,7 +452,7 @@
             [
               
               {
-                "radius" : 25.0,
+                "radius" : 15.36149120330811,
                 "type" : "circle"
               }
             ],
@@ -506,15 +468,15 @@
         "name" : "Rotating",
         "position" : 
         {
-          "x" : 232.308593750,
-          "y" : -320.9322204589844
+          "x" : 231.5769042968750,
+          "y" : -323.8588256835938
         },
         "type" : "kinematic"
       },
       
       {
         "angle" : 0,
-        "angularVelocity" : -3.490658521652222,
+        "angularVelocity" : -87.26646423339844,
         "awake" : true,
         "bullet" : true,
         "fixture" : 
@@ -529,7 +491,7 @@
             [
               
               {
-                "radius" : 25.0,
+                "radius" : 15.36149120330811,
                 "type" : "circle"
               }
             ],
@@ -538,37 +500,6 @@
               "x" : [ 0.05887222290039062 ],
               "y" : [ 0.20544433593750 ]
             }
-          },
-          
-          {
-            "density" : 1,
-            "friction" : 0.2,
-            "id" : 54,
-            "name" : "fixture0",
-            "shapes" : 
-            [
-              
-              {
-                "type" : "polygon"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : 
-              [
-                7.188079833984375,
-                -6.582427978515625,
-                -6.582427978515625,
-                7.188079833984375
-              ],
-              "y" : 
-              [
-                -0.3004455566406250,
-                -0.3004455566406250,
-                90.45193481445312,
-                90.45193481445312
-              ]
-            }
           }
         ],
         "id" : 6,
@@ -576,8 +507,8 @@
         "name" : "Rotating",
         "position" : 
         {
-          "x" : -253.5072631835938,
-          "y" : -319.4687805175781
+          "x" : -249.8493957519531,
+          "y" : -325.3221130371094
         },
         "type" : "kinematic"
       },
@@ -591,7 +522,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 14,
             "name" : "Ball",
@@ -613,13 +544,13 @@
         ],
         "id" : 7,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
@@ -638,7 +569,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 15,
             "name" : "Ball",
@@ -660,18 +591,18 @@
         ],
         "id" : 8,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 242.8093261718750,
-          "y" : 356.1770629882812
+          "x" : 185.7406005859375,
+          "y" : 301.303222656250
         },
         "type" : "dynamic"
       },
@@ -685,7 +616,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 16,
             "name" : "Ball",
@@ -707,18 +638,18 @@
         ],
         "id" : 9,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 384.0179443359375,
-          "y" : 350.3239135742188
+          "x" : 326.949218750,
+          "y" : 295.4500732421875
         },
         "type" : "dynamic"
       },
@@ -732,7 +663,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 17,
             "name" : "Ball",
@@ -754,18 +685,18 @@
         ],
         "id" : 10,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -63.02062988281250,
-          "y" : 305.6931762695312
+          "x" : -29.36468505859375,
+          "y" : 270.5739135742188
         },
         "type" : "dynamic"
       },
@@ -779,7 +710,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 18,
             "name" : "Ball",
@@ -801,18 +732,18 @@
         ],
         "id" : 11,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -71.068847656250,
-          "y" : 350.3237915039062
+          "x" : -48.38769531250,
+          "y" : 311.5463256835938
         },
         "type" : "dynamic"
       },
@@ -826,7 +757,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 19,
             "name" : "Ball",
@@ -848,18 +779,18 @@
         ],
         "id" : 12,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -308.8553161621094,
-          "y" : 351.7871704101562
+          "x" : -263.4929809570312,
+          "y" : 280.8170166015625
         },
         "type" : "dynamic"
       },
@@ -873,7 +804,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 20,
             "name" : "Ball",
@@ -895,13 +826,13 @@
         ],
         "id" : 13,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
@@ -920,7 +851,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 21,
             "name" : "Ball",
@@ -942,13 +873,13 @@
         ],
         "id" : 14,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
@@ -967,7 +898,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 22,
             "name" : "Ball",
@@ -989,13 +920,13 @@
         ],
         "id" : 15,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
@@ -1014,7 +945,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 23,
             "name" : "Ball",
@@ -1036,18 +967,18 @@
         ],
         "id" : 16,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -44.72937011718750,
-          "y" : 261.0624389648438
+          "x" : -11.07342529296875,
+          "y" : 225.9431762695312
         },
         "type" : "dynamic"
       },
@@ -1061,7 +992,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 24,
             "name" : "Ball",
@@ -1083,18 +1014,18 @@
         ],
         "id" : 17,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -271.5410461425781,
-          "y" : 266.1840209960938
+          "x" : -226.17871093750,
+          "y" : 195.21386718750
         },
         "type" : "dynamic"
       },
@@ -1108,7 +1039,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 25,
             "name" : "Ball",
@@ -1130,18 +1061,18 @@
         ],
         "id" : 18,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 40.14215087890625,
-          "y" : 302.0349121093750
+          "x" : 73.7980957031250,
+          "y" : 266.9156494140625
         },
         "type" : "dynamic"
       },
@@ -1155,7 +1086,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 26,
             "name" : "Ball",
@@ -1177,18 +1108,18 @@
         ],
         "id" : 19,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -14.0,
-          "y" : 305.6931762695312
+          "x" : 19.65594482421875,
+          "y" : 270.5739135742188
         },
         "type" : "dynamic"
       },
@@ -1202,7 +1133,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 27,
             "name" : "Ball",
@@ -1224,18 +1155,18 @@
         ],
         "id" : 20,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 96.4792480468750,
-          "y" : 255.2092895507812
+          "x" : 130.1351928710938,
+          "y" : 220.0900268554688
         },
         "type" : "dynamic"
       },
@@ -1249,7 +1180,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 28,
             "name" : "Ball",
@@ -1271,18 +1202,18 @@
         ],
         "id" : 21,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -264.9562683105469,
-          "y" : 337.8858032226562
+          "x" : -219.5939331054688,
+          "y" : 266.9156494140625
         },
         "type" : "dynamic"
       },
@@ -1296,7 +1227,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 29,
             "name" : "Ball",
@@ -1318,18 +1249,18 @@
         ],
         "id" : 22,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -480.0615539550781,
-          "y" : 307.1564941406250
+          "x" : -434.699218750,
+          "y" : 236.1863403320312
         },
         "type" : "dynamic"
       },
@@ -1343,7 +1274,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 30,
             "name" : "Ball",
@@ -1365,18 +1296,18 @@
         ],
         "id" : 23,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -157.4035644531250,
-          "y" : 346.6655883789062
+          "x" : -134.7224121093750,
+          "y" : 307.8881225585938
         },
         "type" : "dynamic"
       },
@@ -1390,7 +1321,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 31,
             "name" : "Ball",
@@ -1412,18 +1343,18 @@
         ],
         "id" : 24,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -211.5457153320312,
-          "y" : 350.3238525390625
+          "x" : -188.8645629882812,
+          "y" : 311.546386718750
         },
         "type" : "dynamic"
       },
@@ -1437,7 +1368,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 32,
             "name" : "Ball",
@@ -1459,18 +1390,18 @@
         ],
         "id" : 25,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -101.0664672851562,
-          "y" : 299.8399658203125
+          "x" : -78.38531494140625,
+          "y" : 261.06250
         },
         "type" : "dynamic"
       },
@@ -1484,7 +1415,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 33,
             "name" : "Ball",
@@ -1506,18 +1437,18 @@
         ],
         "id" : 26,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 468.8894042968750,
-          "y" : 299.8399047851562
+          "x" : 411.8206787109375,
+          "y" : 244.9660644531250
         },
         "type" : "dynamic"
       },
@@ -1531,7 +1462,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 34,
             "name" : "Ball",
@@ -1553,18 +1484,18 @@
         ],
         "id" : 27,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 291.0983886718750,
-          "y" : 183.5074462890625
+          "x" : 234.0296630859375,
+          "y" : 128.6336059570312
         },
         "type" : "dynamic"
       },
@@ -1578,7 +1509,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 35,
             "name" : "Ball",
@@ -1600,18 +1531,18 @@
         ],
         "id" : 28,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 297.6831665039062,
-          "y" : 255.2092285156250
+          "x" : 240.6144409179688,
+          "y" : 200.3353881835938
         },
         "type" : "dynamic"
       },
@@ -1625,7 +1556,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 36,
             "name" : "Ball",
@@ -1647,18 +1578,18 @@
         ],
         "id" : 29,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 438.8917846679688,
-          "y" : 249.3560791015625
+          "x" : 381.8230590820312,
+          "y" : 194.4822387695312
         },
         "type" : "dynamic"
       },
@@ -1672,7 +1603,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 37,
             "name" : "Ball",
@@ -1694,18 +1625,18 @@
         ],
         "id" : 30,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 382.55468750,
-          "y" : 296.1817016601562
+          "x" : 325.4859619140625,
+          "y" : 241.3078613281250
         },
         "type" : "dynamic"
       },
@@ -1719,7 +1650,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 38,
             "name" : "Ball",
@@ -1741,18 +1672,18 @@
         ],
         "id" : 31,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 328.4125366210938,
-          "y" : 299.8399658203125
+          "x" : 271.3438110351562,
+          "y" : 244.9661254882812
         },
         "type" : "dynamic"
       },
@@ -1766,7 +1697,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 39,
             "name" : "Ball",
@@ -1788,18 +1719,18 @@
         ],
         "id" : 32,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : 253.7841186523438,
-          "y" : 269.1105957031250
+          "x" : 196.7153930664062,
+          "y" : 214.2367553710938
         },
         "type" : "dynamic"
       },
@@ -1813,7 +1744,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 40,
             "name" : "Ball",
@@ -1835,18 +1766,18 @@
         ],
         "id" : 33,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -204.9609985351562,
-          "y" : 252.2825927734375
+          "x" : -182.2798461914062,
+          "y" : 213.5051269531250
         },
         "type" : "dynamic"
       },
@@ -1860,7 +1791,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 41,
             "name" : "Ball",
@@ -1882,18 +1813,18 @@
         ],
         "id" : 34,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -405.4331970214844,
-          "y" : 168.1428222656250
+          "x" : -360.0708618164062,
+          "y" : 97.17266845703125
         },
         "type" : "dynamic"
       },
@@ -1907,7 +1838,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 42,
             "name" : "Ball",
@@ -1929,18 +1860,18 @@
         ],
         "id" : 35,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -398.8484191894531,
-          "y" : 239.8446044921875
+          "x" : -353.4860839843750,
+          "y" : 168.8744506835938
         },
         "type" : "dynamic"
       },
@@ -1954,7 +1885,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 43,
             "name" : "Ball",
@@ -1976,18 +1907,18 @@
         ],
         "id" : 36,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -257.6398010253906,
-          "y" : 233.9914550781250
+          "x" : -212.2774658203125,
+          "y" : 163.0213012695312
         },
         "type" : "dynamic"
       },
@@ -2001,7 +1932,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 44,
             "name" : "Ball",
@@ -2023,18 +1954,18 @@
         ],
         "id" : 37,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -313.9768981933594,
-          "y" : 280.8170776367188
+          "x" : -268.6145629882812,
+          "y" : 209.8469238281250
         },
         "type" : "dynamic"
       },
@@ -2048,7 +1979,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 45,
             "name" : "Ball",
@@ -2070,18 +2001,18 @@
         ],
         "id" : 38,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
+        "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
           "x" : -1.404384613037109,
           "y" : 2.400421142578125
         },
-        "massData-mass" : 2.0,
+        "massData-mass" : 20.0,
         "name" : "Ball",
         "position" : 
         {
-          "x" : -368.1190490722656,
-          "y" : 284.4753417968750
+          "x" : -322.7567138671875,
+          "y" : 213.5051879882812
         },
         "type" : "dynamic"
       },
@@ -2095,7 +2026,7 @@
         [
           
           {
-            "density" : 0.002697822405025363,
+            "density" : 0.02697822451591492,
             "friction" : 1,
             "id" : 46,
             "name" : "Ball",
@@ -2117,53 +2048,6 @@
         ],
         "id" : 39,
         "linearVelocity" : 0,
-        "massData-I" : 251.4440612792969,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 2.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -442.7474670410156,
-          "y" : 253.7459716796875
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 47,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 40,
-        "linearVelocity" : 0,
         "massData-I" : 2514.440673828125,
         "massData-center" : 
         {
@@ -2174,290 +2058,8 @@
         "name" : "Ball",
         "position" : 
         {
-          "x" : 55.50668334960938,
-          "y" : 206.1885986328125
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 48,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 41,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -122.2843322753906,
-          "y" : 89.85614013671875
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 49,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 42,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -115.6995544433594,
-          "y" : 161.5579223632812
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 50,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 43,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : 25.50906372070312,
-          "y" : 155.7047729492188
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 51,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 44,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -30.82803344726562,
-          "y" : 202.5303955078125
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 52,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 45,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -84.97018432617188,
-          "y" : 206.1886596679688
-        },
-        "type" : "dynamic"
-      },
-      
-      {
-        "angle" : 0,
-        "angularVelocity" : 0,
-        "awake" : true,
-        "bullet" : true,
-        "fixture" : 
-        [
-          
-          {
-            "density" : 0.02697822451591492,
-            "friction" : 1,
-            "id" : 53,
-            "name" : "Ball",
-            "restitution" : 0.2,
-            "shapes" : 
-            [
-              
-              {
-                "radius" : 15.36149120330811,
-                "type" : "circle"
-              }
-            ],
-            "vertices" : 
-            {
-              "x" : [ -1.404384613037109 ],
-              "y" : [ 2.400421142578125 ]
-            }
-          }
-        ],
-        "id" : 46,
-        "linearVelocity" : 0,
-        "massData-I" : 2514.440673828125,
-        "massData-center" : 
-        {
-          "x" : -1.404384613037109,
-          "y" : 2.400421142578125
-        },
-        "massData-mass" : 20.0,
-        "name" : "Ball",
-        "position" : 
-        {
-          "x" : -159.5986022949219,
-          "y" : 175.4592895507812
+          "x" : -397.3851318359375,
+          "y" : 182.7758178710938
         },
         "type" : "dynamic"
       }
@@ -2485,28 +2087,6 @@
         "name" : "image1",
         "opacity" : 0.50,
         "scale" : 768.0
-      }
-    ],
-    "metajoint" : 
-    [
-      
-      {
-        "anchorA" : 
-        {
-          "x" : 0.7308654785156250,
-          "y" : -0.7318158149719238
-        },
-        "anchorB" : 0,
-        "bodyA" : 4,
-        "bodyB" : 3,
-        "collideConnected" : true,
-        "correctionFactor" : 0.50,
-        "id" : 1,
-        "maxForce" : 1000.0,
-        "maxTorque" : 1000.0,
-        "name" : "joint0",
-        "referenceAngle" : 0.8726646304130554,
-        "type" : "motor"
       }
     ],
     "positionIterations" : 3,
