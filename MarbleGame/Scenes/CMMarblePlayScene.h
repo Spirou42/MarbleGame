@@ -64,6 +64,7 @@
 @property (nonatomic, retain) NSObject<CMMarbleGameScoreModeProtocol>* scoreDelegate;
 @property (nonatomic, retain) NSTimer* effectTimer;
 @property (nonatomic, retain) CMMenuLayer *resultMenu;
+
 - (void) simulationStepDone:(NSTimeInterval)dt;
 @end
  

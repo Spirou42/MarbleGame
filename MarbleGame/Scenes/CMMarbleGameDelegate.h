@@ -75,4 +75,11 @@ typedef enum{
  triggers an effect
  */
 - (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position;
+
+- (BOOL) playEffect;
+- (CGFloat) soundVolume;
+
+@property (nonatomic, readonly) CGFloat soundVolume;
+@property (nonatomic, readonly) BOOL playEffect;
+
 @end

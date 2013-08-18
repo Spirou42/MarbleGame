@@ -21,6 +21,8 @@
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMarbleMultiComboSprite.h"
 #import "CMMarbleBatchNode.h"
+#import "CocosDenshion.h"
+#import "SimpleAudioEngine.h"
 
 enum {
 	kTagParentNode = 1,
@@ -48,7 +50,8 @@ static NSString *borderType = @"borderType";
 simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles,
 dollyGroove = _dollyGroove, dollyShape = _dollyShape, dollyServo = _dollyServo, dollyBody = _dollyBody,
 gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition,currentLevel=_currentLevel,
-marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex,staticShapes=_staticShapes;
+marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex,staticShapes=_staticShapes,
+lastMarbleSoundTime = _lastMarbleSoundTime;
 
 +(CCScene *) scene
 {
@@ -154,24 +157,6 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
 	self.collisionCollector.collisionDelay = 0.2;
-	
-	
-	//	self.dollyBody = [ChipmunkBody bodyWithMass:1.0 andMoment:cpMomentForBox(1.0, 20.0, 20.0)];
-	//	self.dollyBody.pos=cpv(512, 748);
-	//	self.dollyShape = [[[ChipmunkPolyShape alloc]initBoxWithBody:self.dollyBody width:20.0 height:20.0]autorelease];
-	//	self.dollyServo = [self.space add:[ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos]];
-	//	self.dollyServo.maxForce=1e4;
-	//	self.dollyServo.maxBias = 1e6;
-	//
-	//
-	//	cpVect start = cpv(10, 748);
-	//	cpVect end = cpv(1004,748);
-	//	cpVect anchor = cpv(0,0);
-	//	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:self.dollyBody groove_a:start groove_b:end anchr2:anchor];
-	//	[self.space addConstraint:self.dollyGroove];
-	//	[self.space addShape:self.dollyShape];
-	//	[self.space addBody:self.dollyBody];
-	
 }
 
 
@@ -193,12 +178,55 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
 	}
   return YES;
 }
+- (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
+{
+	if (!self.gameDelegate.playEffect) {
+		return;
+	}
+	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
+	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	
+	
+	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
+		return;
+	}
+	CGFloat fSpeed = cpvlength(firstMarble.body.vel);
+	CGFloat sSpeed = cpvlength(secondMarble.body.vel);
+	if ((fSpeed < 1.0) || (sSpeed < 1.0) ) {
+		return;
+	}
+	
+	NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/10.0f)) {
+		return;
+	}
+	cpFloat impulse = cpvlength(cpArbiterTotalImpulseWithFriction(arbiter));
+	if (impulse<1000.00) {
+		return;
+	}
+	
+	//	CGFloat sVal = fSpeed + sSpeed;
+	//	NSLog(@"%f,%f,(%f)",self.lastMarbleSoundTime,currentTime,currentTime-self.lastMarbleSoundTime);
+	float volume = MIN(impulse/6000.0f , 1.0f);
+	
+	volume *= self.gameDelegate.soundVolume;
+	if(volume > 0.1f){
+		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
+		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:1.0 pan:1.0 gain:volume];
+//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
+		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
+		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
+		secondMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
+	}
+	
+}
 
 - (void) postMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)sp
 {
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
-//	[self processSound:arbiter first:firstMarble second:secondMarble];
+	[self processSound:arbiter first:firstMarble second:secondMarble];
 }
 
 - (void) separateMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)space
@@ -229,10 +257,6 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
     //		cpSpaceStep(_space, dt);
 	}
 	[self.gameDelegate simulationStepDone:delta];
-//	if (self.parent) {
-//		CMMarblePlayScene * scene = (CMMarblePlayScene*) self.parent;
-//		[scene simulationStepDone:delta];
-//	}
 	[self.collisionCollector cleanupFormerCollisions];
 }
 
@@ -244,11 +268,7 @@ marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleInde
     for (CMMarbleSprite *layer in colSet) {
 			if (![alreadyRemoved containsObject:layer]) {
 				[alreadyRemoved addObject:layer];
-				
-//				[self.space remove:layer];
-				
 				[self.simulatedMarbles removeObject:layer];
-//				[self.batchNode removeChild:layer];
 				layer.shouldDestroy = YES;
 				[self.collisionCollector removeObject:layer];
 			}

@@ -21,7 +21,7 @@
 
 @implementation CMMarbleSprite
 
-@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour;
+@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour, lastSoundTime;
 
 + (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
 {

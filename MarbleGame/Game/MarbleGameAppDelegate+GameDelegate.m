@@ -19,6 +19,7 @@
 #import "CMMarbleGameScoreModeProtocol.h"
 #import "CMMarbleScoreModeScore.h"
 #import "AppDelegate.h"
+#import "SimpleAudioEngine.h"
 
 // to be implemented
 //#import "CMMarbleScoreModeTime.h"
@@ -101,6 +102,10 @@ NSMutableDictionary *_scoreModeDelegates;
   
 	// initialize known score Modes
 	[self initializeScoreModes];
+	
+	// preload music and effects
+	[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:DEFAULT_BACKGROUND_MUSIC];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_KLICK];
 }
 
 #pragma mark - 

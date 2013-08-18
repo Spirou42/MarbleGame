@@ -45,7 +45,8 @@
 	NSArray*						_bounds;
 	NSArray*						_staticShapes;
 
-  BOOL                entered;
+  BOOL                _entered;
+	NSTimeInterval			_lastMarbleSoundTime;
 	
 }
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) NSTimer* marbleFireTimer;
 @property (nonatomic, assign) NSUInteger currentMarbleIndex;
 @property (nonatomic, retain) NSArray* bounds;
+@property (nonatomic, assign) NSTimeInterval lastMarbleSoundTime;
 
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

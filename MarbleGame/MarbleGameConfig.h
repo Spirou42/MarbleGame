@@ -97,7 +97,10 @@
 #define MENU_BACKGROUND_PLATE						@"Menu-Background.png"
 
 
+// definition for Sounds
 
+#define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
+#define DEFAULT_MARBLE_KLICK								@"marbleKlick.mp3"
 //////////////////////////////////////////////////
 #pragma mark Fonts
 

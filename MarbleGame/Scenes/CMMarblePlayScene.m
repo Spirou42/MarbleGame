@@ -39,6 +39,8 @@
 @synthesize  effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
 @synthesize  menuLayer = _menuLayer,scoreDelegate = _scoreDelegate, effectTimer = _effectTimer, resultMenu = _resultMenu;
 
+@dynamic playEffect, soundVolume;
+
 - (NSString*) stringForSeconds:(NSTimeInterval) seconds
 {
 #if __CC_PLATFORM_MAC
@@ -283,7 +285,15 @@
 }
 
 
+- (BOOL) playEffect
+{
+	return YES;
+}
 
+- (CGFloat) soundVolume
+{
+	return 1.0;
+}
 
 #pragma mark -
 #pragma mark Actions and Helpers
