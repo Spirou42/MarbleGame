@@ -154,6 +154,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	_debugLayer.visible = NO;
 	[self addChild:_debugLayer z:100];
+	self.space.damping = 0.8;
 	
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
 	self.collisionCollector.collisionDelay = 0.2;
