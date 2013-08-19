@@ -1,2 +1,2 @@
-//Restarted script log at Mon Aug 19 18:43:43 2013
-getImage(1).deselect();
+//Started script log at Mon Aug 19 23:22:50 2013
+
