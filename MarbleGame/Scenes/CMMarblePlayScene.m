@@ -646,7 +646,9 @@
 - (void) simulationStepDone:(NSTimeInterval)dt
 {
 	static NSTimeInterval lastLabelUpdate;
+	static NSTimeInterval lastRougeMarbleCheck;
 	lastLabelUpdate+= dt;
+	lastRougeMarbleCheck += dt;
 	if (lastLabelUpdate>.25) {
 		lastLabelUpdate=0.0;
 		[self updateScoreLabel];
@@ -658,6 +660,16 @@
 			
 			[self.removedMarbleQueue removeObjectAtIndex:0];
 		}
+	}
+	if (lastRougeMarbleCheck>1.0) {
+		for (CMMarbleSprite *marble in self.simulationLayer.simulatedMarbles) {
+			if (!CGRectContainsPoint(CGRectMake(0, 0, 1024, 768), marble.position)) {
+				NSLog(@"Marble Outside");
+				marble.position = CGPointMake(512, 512);
+				marble.chipmunkBody.vel = CGPointMake(0, 0);
+			}
+		}
+		lastRougeMarbleCheck = 0.0;
 	}
 	
 	[self checkMarbleCollisionsAt:dt];
