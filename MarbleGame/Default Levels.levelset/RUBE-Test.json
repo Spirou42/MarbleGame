@@ -13,60 +13,38 @@
          [
             
             {
+               "circle" : 
+               {
+                  "center" : 0,
+                  "radius" : 28.90551185607910
+               },
                "density" : 1,
                "friction" : 0.2,
-               "name" : "fixture0",
-               "polygon" : 
-               {
-                  "vertices" : 
-                  {
-                     "x" : 
-                     [
-                        385.2778625488281,
-                        359.0079345703125,
-                        295.58691406250,
-                        232.1658935546875,
-                        295.58691406250,
-                        359.0081176757812
-                     ],
-                     "y" : 
-                     [
-                        197.3073425292969,
-                        260.7283630371094,
-                        211.6382904052734,
-                        133.8863372802734,
-                        107.6163940429688,
-                        133.8863372802734
-                     ]
-                  }
-               }
-            },
-            
-            {
-               "density" : 1,
-               "friction" : 0.2,
-               "name" : "fixture0",
-               "polygon" : 
-               {
-                  "vertices" : 
-                  {
-                     "x" : 
-                     [
-                        295.58691406250,
-                        232.1658935546875,
-                        205.8959655761719,
-                        232.1658935546875
-                     ],
-                     "y" : 
-                     [
-                        211.6382904052734,
-                        260.7283630371094,
-                        197.3073425292969,
-                        133.8863372802734
-                     ]
-                  }
-               }
-            },
+               "name" : "fixture1"
+            }
+         ],
+         "linearVelocity" : 
+         {
+            "x" : 10.0,
+            "y" : 0
+         },
+         "massData-I" : 1096585.6250,
+         "massData-mass" : 2624.8906250,
+         "name" : "body0",
+         "position" : 
+         {
+            "x" : 239.9813842773438,
+            "y" : 341.6810302734375
+         },
+         "type" : 2
+      },
+      
+      {
+         "angle" : 0,
+         "angularVelocity" : 0,
+         "awake" : true,
+         "fixture" : 
+         [
             
             {
                "density" : 1,
@@ -144,6 +122,124 @@
             
             {
                "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderRight",
+               "polygon" : 
+               {
+                  "vertices" : 
+                  {
+                     "x" : 
+                     [
+                        527.7222290039062,
+                        527.6893310546875,
+                        512.3160400390625,
+                        512.3489379882812
+                     ],
+                     "y" : 
+                     [
+                        -392.1550292968750,
+                        391.7413940429688,
+                        391.740722656250,
+                        -392.1557006835938
+                     ]
+                  }
+               },
+               "restitution" : 0.2
+            },
+            
+            {
+               "circle" : 
+               {
+                  "center" : 
+                  {
+                     "x" : 520.0355834960938,
+                     "y" : -392.1553649902344
+                  },
+                  "radius" : 7.686654090881348
+               },
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderRight",
+               "restitution" : 0.2
+            },
+            
+            {
+               "circle" : 
+               {
+                  "center" : 
+                  {
+                     "x" : 520.0026855468750,
+                     "y" : 391.7410583496094
+                  },
+                  "radius" : 7.686654090881348
+               },
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderRight",
+               "restitution" : 0.2
+            },
+            
+            {
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderLeft",
+               "polygon" : 
+               {
+                  "vertices" : 
+                  {
+                     "x" : 
+                     [
+                        -512.5084838867188,
+                        -512.5413208007812,
+                        -527.9146118164062,
+                        -527.8817749023438
+                     ],
+                     "y" : 
+                     [
+                        -392.5613708496094,
+                        391.4810485839844,
+                        391.4803771972656,
+                        -392.5620422363281
+                     ]
+                  }
+               },
+               "restitution" : 0.2
+            },
+            
+            {
+               "circle" : 
+               {
+                  "center" : 
+                  {
+                     "x" : -520.1951293945312,
+                     "y" : -392.5617065429688
+                  },
+                  "radius" : 7.686654090881348
+               },
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderLeft",
+               "restitution" : 0.2
+            },
+            
+            {
+               "circle" : 
+               {
+                  "center" : 
+                  {
+                     "x" : -520.2279663085938,
+                     "y" : 391.4807128906250
+                  },
+                  "radius" : 7.686654090881348
+               },
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "BorderLeft",
+               "restitution" : 0.2
+            },
+            
+            {
+               "density" : 1,
                "friction" : 1,
                "name" : "LeftPentagon",
                "polygon" : 
@@ -174,65 +270,6 @@
             {
                "density" : 1,
                "friction" : 0.2,
-               "name" : "BorderRight",
-               "polygon" : 
-               {
-                  "vertices" : 
-                  {
-                     "x" : 
-                     [
-                        527.7222290039062,
-                        527.6893310546875,
-                        512.3160400390625,
-                        512.3489379882812
-                     ],
-                     "y" : 
-                     [
-                        -392.1550292968750,
-                        391.7413940429688,
-                        391.740722656250,
-                        -392.1557006835938
-                     ]
-                  }
-               },
-               "restitution" : 1
-            },
-            
-            {
-               "circle" : 
-               {
-                  "center" : 
-                  {
-                     "x" : 520.0355834960938,
-                     "y" : -392.1553649902344
-                  },
-                  "radius" : 7.686654090881348
-               },
-               "density" : 1,
-               "friction" : 0.2,
-               "name" : "BorderRight",
-               "restitution" : 1
-            },
-            
-            {
-               "circle" : 
-               {
-                  "center" : 
-                  {
-                     "x" : 520.0026855468750,
-                     "y" : 391.7410583496094
-                  },
-                  "radius" : 7.686654090881348
-               },
-               "density" : 1,
-               "friction" : 0.2,
-               "name" : "BorderRight",
-               "restitution" : 1
-            },
-            
-            {
-               "density" : 1,
-               "friction" : 0.2,
                "name" : "BorderBottom",
                "polygon" : 
                {
@@ -254,7 +291,7 @@
                      ]
                   }
                },
-               "restitution" : 1
+               "restitution" : 0.2
             },
             
             {
@@ -270,7 +307,7 @@
                "density" : 1,
                "friction" : 0.2,
                "name" : "BorderBottom",
-               "restitution" : 1
+               "restitution" : 0.2
             },
             
             {
@@ -286,7 +323,63 @@
                "density" : 1,
                "friction" : 0.2,
                "name" : "BorderBottom",
-               "restitution" : 1
+               "restitution" : 0.2
+            },
+            
+            {
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "fixture0",
+               "polygon" : 
+               {
+                  "vertices" : 
+                  {
+                     "x" : 
+                     [
+                        385.2778625488281,
+                        359.0079345703125,
+                        295.58691406250,
+                        232.1658935546875,
+                        295.58691406250,
+                        359.0081176757812
+                     ],
+                     "y" : 
+                     [
+                        197.3073425292969,
+                        260.7283630371094,
+                        211.6382904052734,
+                        133.8863372802734,
+                        107.6163940429688,
+                        133.8863372802734
+                     ]
+                  }
+               }
+            },
+            
+            {
+               "density" : 1,
+               "friction" : 0.2,
+               "name" : "fixture0",
+               "polygon" : 
+               {
+                  "vertices" : 
+                  {
+                     "x" : 
+                     [
+                        295.58691406250,
+                        232.1658935546875,
+                        205.8959655761719,
+                        232.1658935546875
+                     ],
+                     "y" : 
+                     [
+                        211.6382904052734,
+                        260.7283630371094,
+                        197.3073425292969,
+                        133.8863372802734
+                     ]
+                  }
+               }
             },
             
             {
@@ -321,65 +414,6 @@
             {
                "density" : 1,
                "friction" : 0.2,
-               "name" : "BorderLeft",
-               "polygon" : 
-               {
-                  "vertices" : 
-                  {
-                     "x" : 
-                     [
-                        -512.5084838867188,
-                        -512.5413208007812,
-                        -527.9146118164062,
-                        -527.8817749023438
-                     ],
-                     "y" : 
-                     [
-                        -392.5613708496094,
-                        391.4810485839844,
-                        391.4803771972656,
-                        -392.5620422363281
-                     ]
-                  }
-               },
-               "restitution" : 1
-            },
-            
-            {
-               "circle" : 
-               {
-                  "center" : 
-                  {
-                     "x" : -520.1951293945312,
-                     "y" : -392.5617065429688
-                  },
-                  "radius" : 7.686654090881348
-               },
-               "density" : 1,
-               "friction" : 0.2,
-               "name" : "BorderLeft",
-               "restitution" : 1
-            },
-            
-            {
-               "circle" : 
-               {
-                  "center" : 
-                  {
-                     "x" : -520.2279663085938,
-                     "y" : 391.4807128906250
-                  },
-                  "radius" : 7.686654090881348
-               },
-               "density" : 1,
-               "friction" : 0.2,
-               "name" : "BorderLeft",
-               "restitution" : 1
-            },
-            
-            {
-               "density" : 1,
-               "friction" : 0.2,
                "name" : "BorderTop",
                "polygon" : 
                {
@@ -401,7 +435,7 @@
                      ]
                   }
                },
-               "restitution" : 1
+               "restitution" : 0.2
             },
             
             {
@@ -417,7 +451,7 @@
                "density" : 1,
                "friction" : 0.2,
                "name" : "BorderTop",
-               "restitution" : 1
+               "restitution" : 0.2
             },
             
             {
@@ -433,16 +467,12 @@
                "density" : 1,
                "friction" : 0.2,
                "name" : "BorderTop",
-               "restitution" : 1
+               "restitution" : 0.2
             }
          ],
          "linearVelocity" : 0,
          "name" : "World",
-         "position" : 
-         {
-            "x" : 0,
-            "y" : 0.2383670061826706
-         },
+         "position" : 0,
          "type" : 0
       }
    ],
@@ -494,25 +524,7 @@
    [
       
       {
-         "body" : -1,
-         "center" : 0,
-         "corners" : 
-         {
-            "x" : [ -512.0, 512.0, 512.0, -512.0 ],
-            "y" : [ -384.0, -384.0, 384.0, 384.0 ]
-         },
-         "file" : "Level1-Overlay.png",
-         "filter" : 1,
-         "glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-         "glTexCoordPointer" : [ 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 ],
-         "glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-         "name" : "image1",
-         "opacity" : 0.50,
-         "scale" : 768.0
-      },
-      
-      {
-         "body" : 0,
+         "body" : 1,
          "center" : 
          {
             "x" : 0,
@@ -547,10 +559,28 @@
          "name" : "image0",
          "opacity" : 0.50,
          "scale" : 768.0
+      },
+      
+      {
+         "body" : -1,
+         "center" : 0,
+         "corners" : 
+         {
+            "x" : [ -512.0, 512.0, 512.0, -512.0 ],
+            "y" : [ -384.0, -384.0, 384.0, 384.0 ]
+         },
+         "file" : "Level1-Overlay.png",
+         "filter" : 1,
+         "glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+         "glTexCoordPointer" : [ 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 ],
+         "glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+         "name" : "image1",
+         "opacity" : 0.50,
+         "scale" : 768.0
       }
    ],
    "positionIterations" : 3,
-   "stepsPerSecond" : 30.0,
+   "stepsPerSecond" : 120.0,
    "subStepping" : false,
    "velocityIterations" : 8,
    "warmStarting" : true

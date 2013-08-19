@@ -496,7 +496,13 @@
 	[result addLeftNode:leftLabel right:rightLabel];
 	
 	leftLabel = defaultButtonTitle(@"Status:");
-	rightLabel = defaultButtonTitle([stats statusString]);
+	NSString *statusLabel = nil;
+	if (stats.status< kCMLevelStatus_Amateure) {
+		statusLabel = [NSString stringWithFormat:@"%@ - %ld Points needed",[stats statusString],self.currentLevel.amateurScore];
+	}else{
+		statusLabel = [stats statusString];
+	}
+	rightLabel = defaultButtonTitle(statusLabel);
 	[result addLeftNode:leftLabel right:rightLabel];
 	
 	

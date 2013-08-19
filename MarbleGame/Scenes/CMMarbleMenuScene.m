@@ -9,7 +9,7 @@
 #import "CMMarbleMenuScene.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "MarbleGameAppDelegate+GameDelegate.h"
-#import "CMMarblePlayerOld.h"
+
 #import "CMMarblePlayer.h"
 #import "SceneHelper.h"
 @implementation CMMarbleMenuScene

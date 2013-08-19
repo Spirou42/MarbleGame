@@ -26,6 +26,8 @@
 	NSDictionary *timeLimits;
 	
 	NSURL		*baseURL;
+	
+	NSString * rubeFileName;
 }
 
 @property (retain, nonatomic) NSString *name;															///< levelname
@@ -47,7 +49,7 @@
 @property (readonly, nonatomic) NSTimeInterval amateurTime,professionalTime,masterTime;
 
 
-
+@property (nonatomic, retain) NSString *rubeFileName;
 
 
 ///< baseURL for all file operation

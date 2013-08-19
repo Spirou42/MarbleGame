@@ -9,12 +9,14 @@
 #import "CMMarbleLevel.h"
 #import "CMSimpleShapeReader.h"
 #import "cocos2d.h"
+#import "CMMarbleRubeReader.h"
 
 @implementation CMMarbleLevel
 
 @synthesize backgroundFilename, overlayFilename, staticBodiesFilename, 
 backgroundImage, overlayImage, shapeReader, name, 
-baseURL,numberOfMarbles,scoreLimits,timeLimits;
+baseURL,numberOfMarbles,scoreLimits,timeLimits,
+rubeFileName;
 
 - (void) initDefaults
 {
@@ -26,6 +28,7 @@ baseURL,numberOfMarbles,scoreLimits,timeLimits;
 	self.overlayFilename      = nil;
 	self.staticBodiesFilename = nil;
 	self.shapeReader          = nil;
+	self.rubeFileName					= nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
@@ -33,6 +36,7 @@ baseURL,numberOfMarbles,scoreLimits,timeLimits;
 	self.backgroundFilename     = [dict objectForKey:@"backgroundFilename"];
 	self.overlayFilename        = [dict objectForKey:@"overlayFilename"];
 	self.staticBodiesFilename   = [dict objectForKey:@"staticBodiesFilename"];
+	self.rubeFileName						= [dict objectForKey:@"RUBELevel"];
 }
 
 - (void) initPhysicsFromDict:(NSDictionary*) dict
@@ -68,6 +72,10 @@ baseURL,numberOfMarbles,scoreLimits,timeLimits;
     [self initGraphicsFromDict:graphics];
 		[self initPhysicsFromDict:physics];
 		[self initAudioFromDict:audio];
+		if (self.rubeFileName) {
+			// get a rube reader and try to read the file
+			CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
+		}
 	}
 	return self;
 }
@@ -81,6 +89,7 @@ baseURL,numberOfMarbles,scoreLimits,timeLimits;
 	self.overlayImage           = nil;
 	self.scoreLimits 						= nil;
 	self.timeLimits							= nil;
+	self.rubeFileName 					= nil;
 	[super dealloc];
 }
 

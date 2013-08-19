@@ -446,7 +446,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	self.dollyGroove = nil;
 	self.dollyServo = nil;
   cpVect velocity =  self.dollyBody.vel;
-  cpVect velocityNew =cpvmult(velocity, .5);
+  cpVect velocityNew =cpvmult(velocity, .66);
   self.dollyBody.vel = velocityNew;
 	[self.gameDelegate marbleDroppedWithID:self.currentMarbleIndex];
 	[self.simulatedMarbles addObject:self.dollyBody.data];
