@@ -314,12 +314,7 @@
     [
       
       {
-        "body" : 1,
-        "center" : 
-        {
-          "x" : 0,
-          "y" : -0.2383670061826706
-        },
+        "center" : 0,
         "file" : "../../MarbleGame/Default Levels.levelset/Level1-Background.png",
         "filter" : 1,
         "flip" : false,

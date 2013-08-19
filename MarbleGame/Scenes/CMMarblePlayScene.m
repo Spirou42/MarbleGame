@@ -698,7 +698,7 @@
 	
 	CCSprite *fgs = level.overlayImage;
 	self.foregroundSprite = fgs;
-
+  self.foregroundSprite.opacity = 128;
 	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
 	self.overlaySprite = defaultLevelOverlay();
 

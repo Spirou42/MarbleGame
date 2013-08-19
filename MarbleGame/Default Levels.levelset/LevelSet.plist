@@ -6,6 +6,48 @@
 	<array>
 		<dict>
 			<key>levelName</key>
+			<string>RUBE-Test</string>
+			<key>numOfMarbles</key>
+			<integer>30</integer>
+			<key>physics</key>
+			<dict/>
+			<key>graphics</key>
+			<dict>
+				<key>RUBELevel</key>
+				<string>RUBE-Test.json</string>
+				<key>staticBodiesFilename</key>
+				<string>Level1-StaticBodies</string>
+				<key>overlayFilename</key>
+				<string>Level1-Overlay</string>
+				<key>backgroundFilename</key>
+				<string>Level1-Background</string>
+			</dict>
+			<key>audio</key>
+			<dict/>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>30</integer>
+					<key>Professional</key>
+					<integer>100</integer>
+					<key>Master</key>
+					<integer>200</integer>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>levelName</key>
 			<string>Empty Space</string>
 			<key>numOfMarbles</key>
 			<integer>30</integer>
