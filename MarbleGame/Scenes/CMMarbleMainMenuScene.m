@@ -18,6 +18,7 @@
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CCLabelBMFont+CMMarbleRealBounds.h"
 #import "CMMenuLayer.h"
+#import "CMHackScene.h"
 
 @implementation CMMarbleMainMenuScene
 
@@ -41,6 +42,11 @@
 		[menuLayer addButtonWithTitle:@"Level Select" target:self action:@selector(onLevelSelect:)];
 		[menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(onSettings:)];
 		[menuLayer addButtonWithTitle:@"Help" target:self action:@selector(onHelp:)];
+    CGPoint newPosition = menuLayer.nextFreeMenuPosition;
+    newPosition.y -= 20;
+    menuLayer.nextFreeMenuPosition = newPosition;
+    [menuLayer addButtonWithTitle:@"Hacktick" target:self action:@selector(hacktickAction:)];
+
 		menuLayer.opacity=0;
 			[self addChild:menuLayer z:2];		
 
@@ -111,6 +117,11 @@
 - (void)onHelp:(id)sender
 {
 	[[CCDirector sharedDirector] replaceScene:[CMMarbleHelpScene node]];
+}
+
+- (void) hacktickAction:(id) sender
+{
+  [[CCDirector sharedDirector] replaceScene:[CMHackScene node]];
 }
 
 

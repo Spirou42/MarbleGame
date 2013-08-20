@@ -156,6 +156,8 @@
 		FED2E87717A7FD92005A16B3 /* CMMarbleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */; };
 		FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */; };
 		FED2E8E317A8071E005A16B3 /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
+		FED9366F17C3BEF9007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
+		FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
 		FED9FD2917A8154000ACC97F /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* Default Levels.levelset */; };
 		FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
@@ -601,6 +603,8 @@
 		FED2E85F17A7E99D005A16B3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E86117A7E9B2005A16B3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E8E417A8087B005A16B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FED9366D17C3BEF9007DFA0A /* CMHackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHackScene.h; sourceTree = "<group>"; };
+		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -995,6 +999,7 @@
 				FE57668717BA826200D46089 /* 3. Play */,
 				FE57668817BA827900D46089 /* 4. Settings */,
 				FE57668917BA828B00D46089 /* 5. Help */,
+				FED9365D17C3BE9F007DFA0A /* 6. Hacktick */,
 				938D1A3417B970D400295B4F /* CMMarbleMenuScene.h */,
 				938D1A3517B970D400295B4F /* CMMarbleMenuScene.m */,
 				934AF9B217837E22004BAC7E /* SceneHelper.h */,
@@ -1218,6 +1223,15 @@
 				FED2E83217A7E85A005A16B3 /* util.h */,
 			);
 			path = constraints;
+			sourceTree = "<group>";
+		};
+		FED9365D17C3BE9F007DFA0A /* 6. Hacktick */ = {
+			isa = PBXGroup;
+			children = (
+				FED9366D17C3BEF9007DFA0A /* CMHackScene.h */,
+				FED9366E17C3BEF9007DFA0A /* CMHackScene.m */,
+			);
+			name = "6. Hacktick";
 			sourceTree = "<group>";
 		};
 		FEF14BAB179041D5007A3AEB /* Shaders */ = {
@@ -1549,6 +1563,7 @@
 				FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */,
 				FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */,
 				FE00BAFD17A17296002D8B06 /* CMMarbleLevelSetScene.m in Sources */,
+				FED9366F17C3BEF9007DFA0A /* CMHackScene.m in Sources */,
 				93566EF117B592ED0017176A /* CMMarbleSlot.m in Sources */,
 				93EAB2E817A19CBB009894C5 /* CMMarbleCollisionCollector.m in Sources */,
 				9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */,
@@ -1593,6 +1608,7 @@
 				93F782FF17B2F89800893DDC /* CMMarbleMultiComboSprite.m in Sources */,
 				FED2E86F17A7FD83005A16B3 /* CMMarblePlayScene.m in Sources */,
 				FED2E86E17A7FD83005A16B3 /* CMMarbleHelpScene.m in Sources */,
+				FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */,
 				93566EF217B592ED0017176A /* CMMarbleSlot.m in Sources */,
 				FED2E87417A7FD8B005A16B3 /* CMMarbleLevelSet.m in Sources */,
 				FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */,
@@ -1697,6 +1713,7 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 					"./Externals/cocos2d-iphone/CocosDenshion",
+					"./Externals/cocos2d-iphone/external/CCBReader/CCScrollView",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1733,6 +1750,7 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 					"./Externals/cocos2d-iphone/CocosDenshion",
+					"./Externals/cocos2d-iphone/external/CCBReader/CCScrollView",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
@@ -1757,7 +1775,8 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 					"./Externals/cocos2d-iphone/CocosDenshion",
-					"./Externals/ChipmunkPro-Mac-Trial\"",
+					"./Externals/cocos2d-iphone/external/CCBReader/CCScrollView",
+					"./Externals/ChipmunkPro-Mac-Trial",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MarbleGame/Resources/MarbleGame.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1793,7 +1812,8 @@
 					"./Externals/cocos2d-iphone/external/CCControlExtension/CCControlExtension/**",
 					"./Externals/cocos2d-iphone/cocos2d/**",
 					"./Externals/cocos2d-iphone/CocosDenshion",
-					"./Externals/ChipmunkPro-Mac-Trial\"",
+					"./Externals/cocos2d-iphone/external/CCBReader/CCScrollView",
+					"./Externals/ChipmunkPro-Mac-Trial",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MarbleGame/Resources/MarbleGame.plist";
 				LIBRARY_SEARCH_PATHS = (

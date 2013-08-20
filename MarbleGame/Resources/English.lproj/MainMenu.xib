@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
-		<string key="IBDocument.InterfaceBuilderVersion">4471.1</string>
+		<string key="IBDocument.SystemVersion">12F35</string>
+		<string key="IBDocument.InterfaceBuilderVersion">4488.2</string>
 		<string key="IBDocument.AppKitVersion">1187.39</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">4471.1</string>
+			<string key="NS.object.0">4488.2</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSCustomObject</string>
@@ -277,43 +277,6 @@
 				</array>
 				<string key="NSName">_NSMainMenu</string>
 			</object>
-			<object class="NSWindowTemplate" id="683296386">
-				<int key="NSWindowStyleMask">15</int>
-				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{304, 144}, {1024, 768}}</string>
-				<int key="NSWTFlags">1685585920</int>
-				<string key="NSWindowTitle">MarbleGame</string>
-				<string key="NSWindowClass">NSWindow</string>
-				<nil key="NSViewClass"/>
-				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{1024, 768}</string>
-				<string key="NSWindowContentMinSize">{1024, 768}</string>
-				<object class="NSView" key="NSWindowView" id="337707317">
-					<nil key="NSNextResponder"/>
-					<int key="NSvFlags">1792</int>
-					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSOpenGLView" id="186082446">
-							<reference key="NSNextResponder" ref="337707317"/>
-							<int key="NSvFlags">1810</int>
-							<object class="NSPSMatrix" key="NSFrameMatrix"/>
-							<string key="NSFrameSize">{1024, 768}</string>
-							<reference key="NSSuperview" ref="337707317"/>
-							<object class="NSOpenGLPixelFormat" key="NSPixelFormat">
-								<object class="NSMutableData" key="NSPixelAttributes">
-									<bytes key="NS.bytes">AAAABQAAADwAAABgAAAACAAAAA8AAAALAAAACAAAAAwAAAAQAAAAOAAAAAQAAAA3AAAAAQAAAAA</bytes>
-								</object>
-							</object>
-						</object>
-					</array>
-					<object class="NSPSMatrix" key="NSFrameMatrix"/>
-					<string key="NSFrameSize">{1024, 768}</string>
-				</object>
-				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
-				<string key="NSMinSize">{1024, 790}</string>
-				<string key="NSMaxSize">{1024, 790}</string>
-				<int key="NSWindowCollectionBehavior">128</int>
-				<bool key="NSWindowIsRestorable">YES</bool>
-			</object>
 			<object class="NSCustomObject" id="985451473">
 				<string key="NSClassName">MarbleGameAppDelegate</string>
 			</object>
@@ -326,6 +289,47 @@
 				<int key="NSMnemonicLoc">2147483647</int>
 				<reference key="NSOnImage" ref="708932476"/>
 				<reference key="NSMixedImage" ref="787043424"/>
+			</object>
+			<object class="NSWindowTemplate" id="683296386">
+				<int key="NSWindowStyleMask">15</int>
+				<int key="NSWindowBacking">2</int>
+				<string key="NSWindowRect">{{304, 144}, {1024, 768}}</string>
+				<int key="NSWTFlags">1685585920</int>
+				<string key="NSWindowTitle">MarbleGame</string>
+				<string key="NSWindowClass">NSWindow</string>
+				<nil key="NSViewClass"/>
+				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMaxSize">{1024, 768}</string>
+				<string key="NSWindowContentMinSize">{1024, 768}</string>
+				<object class="NSView" key="NSWindowView" id="337707317">
+					<reference key="NSNextResponder"/>
+					<int key="NSvFlags">1792</int>
+					<array class="NSMutableArray" key="NSSubviews">
+						<object class="NSOpenGLView" id="186082446">
+							<reference key="NSNextResponder" ref="337707317"/>
+							<int key="NSvFlags">1810</int>
+							<object class="NSPSMatrix" key="NSFrameMatrix"/>
+							<string key="NSFrameSize">{1024, 768}</string>
+							<reference key="NSSuperview" ref="337707317"/>
+							<reference key="NSWindow"/>
+							<object class="NSOpenGLPixelFormat" key="NSPixelFormat">
+								<object class="NSMutableData" key="NSPixelAttributes">
+									<bytes key="NS.bytes">AAAABQAAADwAAABgAAAACAAAAA8AAAALAAAACAAAAAwAAAAQAAAAOAAAAAQAAAA3AAAAAQAAAAA</bytes>
+								</object>
+							</object>
+						</object>
+					</array>
+					<object class="NSPSMatrix" key="NSFrameMatrix"/>
+					<string key="NSFrameSize">{1024, 768}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView" ref="186082446"/>
+				</object>
+				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSMinSize">{1024, 790}</string>
+				<string key="NSMaxSize">{1024, 790}</string>
+				<int key="NSWindowCollectionBehavior">128</int>
+				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -412,12 +416,20 @@
 					<string key="id">370</string>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="683296386"/>
+						<reference key="destination" ref="985451473"/>
+					</object>
+					<string key="id">B6S-BK-dbp</string>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">toggleFullScreen:</string>
-						<reference key="source" ref="985451473"/>
+						<reference key="source" ref="683296386"/>
 						<reference key="destination" ref="986430822"/>
 					</object>
-					<string key="id">541</string>
+					<string key="id">WvT-59-SJw</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -769,6 +781,7 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">YES</bool>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<real value="1070" key="NS.object.0"/>

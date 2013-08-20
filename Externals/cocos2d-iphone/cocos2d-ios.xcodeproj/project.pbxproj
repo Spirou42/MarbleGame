@@ -1134,6 +1134,8 @@
 		FED2E8E017A805DF005A16B3 /* CCControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E89617A805DF005A16B3 /* CCControlExtension.h */; };
 		FED2E8E117A805DF005A16B3 /* CCControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E89617A805DF005A16B3 /* CCControlExtension.h */; };
 		FED2E8E217A805DF005A16B3 /* CCControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E89617A805DF005A16B3 /* CCControlExtension.h */; };
+		FED9367517C3C2BF007DFA0A /* CCScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = FED9367317C3C2BF007DFA0A /* CCScrollView.h */; };
+		FED9367617C3C2BF007DFA0A /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9367417C3C2BF007DFA0A /* CCScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1919,6 +1921,8 @@
 		FED2E89517A805DF005A16B3 /* CCScale9Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9Sprite.m; sourceTree = "<group>"; };
 		FED2E89617A805DF005A16B3 /* CCControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlExtension.h; sourceTree = "<group>"; };
 		FED2E89717A805DF005A16B3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FED9367317C3C2BF007DFA0A /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
+		FED9367417C3C2BF007DFA0A /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2084,6 +2088,7 @@
 		501756090F335CE900624901 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				FED9367217C3C2BF007DFA0A /* CCScrollView */,
 				FED2E87A17A805DF005A16B3 /* CCControlExtension */,
 				A01919BB167FCB750099349A /* JavaScript */,
 				A0191727167FC1030099349A /* CCBReader */,
@@ -3305,6 +3310,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FED9367217C3C2BF007DFA0A /* CCScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				FED9367417C3C2BF007DFA0A /* CCScrollView.m */,
+				FED9367317C3C2BF007DFA0A /* CCScrollView.h */,
+			);
+			name = CCScrollView;
+			path = external/CCBReader/CCScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3923,6 +3938,7 @@
 				A0EFA7F5169CDFA4006D1B22 /* CCESRenderer.h in Headers */,
 				A0EFA7F6169CDFA4006D1B22 /* CCGL.h in Headers */,
 				A0EFA7F7169CDFA4006D1B22 /* CCConfiguration.h in Headers */,
+				FED9367517C3C2BF007DFA0A /* CCScrollView.h in Headers */,
 				A0EFA7F8169CDFA4006D1B22 /* CCTexturePVR.h in Headers */,
 				A0EFA7F9169CDFA4006D1B22 /* CCNS.h in Headers */,
 				A0EFA7FA169CDFA4006D1B22 /* CCAnimationCache.h in Headers */,
@@ -4774,6 +4790,7 @@
 				A0EFA849169CDFA4006D1B22 /* CCTMXXMLParser.m in Sources */,
 				A0EFA84A169CDFA4006D1B22 /* CCRenderTexture.m in Sources */,
 				A0EFA84B169CDFA4006D1B22 /* CCMotionStreak.m in Sources */,
+				FED9367617C3C2BF007DFA0A /* CCScrollView.m in Sources */,
 				A0EFA84C169CDFA4006D1B22 /* CCActionPageTurn3D.m in Sources */,
 				A0EFA84D169CDFA4006D1B22 /* CCTileMapAtlas.m in Sources */,
 				A0EFA84E169CDFA4006D1B22 /* CCSpriteFrame.m in Sources */,

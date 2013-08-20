@@ -13,7 +13,7 @@
 
 @class CMMarbleLevelSet;
 
-@interface MarbleGameAppDelegate : NSObject <NSApplicationDelegate>
+@interface MarbleGameAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 {
 	NSWindow	*window_;
 	CCGLView	*glView_;
@@ -38,7 +38,7 @@
 @property (nonatomic, retain) CMMarbleLevelSet* levelSet;
 @property (nonatomic, retain) NSArray *marbleSets;
 
-- (IBAction)toggleFullScreen:(id)sender;
+//- (IBAction)toggleFullScreen:(id)sender;
 
 - (NSURL *)applicationStoreDirectory;
 @end

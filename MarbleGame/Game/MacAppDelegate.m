@@ -51,8 +51,9 @@
 	
 #if __CC_PLATFORM_MAC
 	if (self.currentPlayer.settings.wasFullScreen) {
-		CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
-		[director setFullScreen: YES ];
+    [self.window toggleFullScreen:nil];
+//		CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
+//		[director setFullScreen: YES ];
 
 	}
 #endif
@@ -72,13 +73,29 @@
 
 #pragma mark AppDelegate - IBActions
 
-- (IBAction)toggleFullScreen: (id)sender
+//- (IBAction)toggleFullScreen: (id)sender
+//{
+//	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
+//	[director setFullScreen: ! [director isFullScreen] ];
+//	self.currentPlayer.settings.wasFullScreen = [director isFullScreen];
+//	NSError *error;
+//	[self.managedObjectContext save:&error];
+//}
+
+- (void) windowDidEnterFullScreen:(NSNotification *)notification
 {
 	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
-	[director setFullScreen: ! [director isFullScreen] ];
-	self.currentPlayer.settings.wasFullScreen = [director isFullScreen];
-	NSError *error;
-	[self.managedObjectContext save:&error];
+  self.currentPlayer.settings.wasFullScreen = YES;
+  NSError *error;
+  [self.managedObjectContext save:&error];
+}
+
+- (void) windowDidExitFullScreen:(NSNotification *)notification
+{
+	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
+  self.currentPlayer.settings.wasFullScreen = NO;
+  NSError *error;
+  [self.managedObjectContext save:&error];
 }
 
 #pragma mark -
