@@ -97,6 +97,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 //		[self prepareMarble];
 
 		// this starts the update process automatically
+    [self scheduleUpdate];
     self.simulationRunning = YES;
 	}
 	
@@ -250,12 +251,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 -(void) update:(ccTime) delta
 {
 	// Should use a fixed size step based on the animation interval.
-	int steps = 2;
+  if (!self->_simulationRunning) {
+    return;
+  }
+	int steps = 1;
 	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
 		[self.space step:dt];
-    //		cpSpaceStep(_space, dt);
 	}
 	[self.gameDelegate simulationStepDone:delta];
 	[self.collisionCollector cleanupFormerCollisions];
@@ -317,12 +320,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
   if (self->_simulationRunning != run) {
 //    CCScheduler *s =self.scheduler;
     self->_simulationRunning = run;
+#if 0
     if (run) {
       [self scheduleUpdate];
     }else{
       [self unscheduleUpdate];
       //[s unscheduleUpdateForTarget:self];
     }
+#endif
   }
     NSLog(@"isRunning Out %d (%d)",self.isRunning,run);
 }
@@ -509,15 +514,15 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 - (void) onExit
 {
   self.simulationRunning = NO;
+  /// todo:  the marble timer has to be restarted in onEnter
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
-//  self->entered=NO;
   [super onExit];
 }
 
 - (void) onEnter
 {
-//  self->entered=YES;
+  self.simulationRunning = YES;
   [super onEnter];
 }
 

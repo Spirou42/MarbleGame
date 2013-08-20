@@ -45,9 +45,9 @@
 	NSArray*						_bounds;
 	NSArray*						_staticShapes;
 
-  BOOL                _entered;
+
 	NSTimeInterval			_lastMarbleSoundTime;
-	
+
 }
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
 @property (nonatomic, retain) ChipmunkSpace *space;
