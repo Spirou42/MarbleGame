@@ -30,9 +30,10 @@
 //		[self addChild:button];
     
     CCLayerColor *scrollContainer = [CCLayerGradient layerWithColor:ccc4(255, 200, 10, 200) fadingTo:ccc4(255, 200, 200, 200)];
+        scrollContainer.contentSize = CGSizeMake(300,800);
 //                                     layerWithColor:ccc4(255, 200, 10, 200) width:300 height:750];
     CCScrollView *scrollView = [CCScrollView viewWithViewSize:CGSizeMake(300, 300) container:scrollContainer];
-
+    scrollView.bounces = YES;
 //    scrollView.contentSize = CGSizeMake(100,150);
     scrollView.ignoreAnchorPointForPosition = NO;
     scrollView.anchorPoint = ccp(.50, .50);
@@ -42,8 +43,8 @@
 
     scrollContainer.ignoreAnchorPointForPosition = YES;
     scrollContainer.anchorPoint = ccp(.00, 1.0);
-    scrollContainer.contentSize = CGSizeMake(300,800);
-    scrollContainer.position = ccp(0, 300);    //[scrollContainer addChild:scrollView z:1];
+//    scrollContainer.contentSize = CGSizeMake(300,800);
+//    scrollContainer.position = ccp(0, 300);    //[scrollContainer addChild:scrollView z:1];
     [self addChild:scrollView z:1];
     button.position=ccp(0, 0);
     [scrollView addChild:button];
