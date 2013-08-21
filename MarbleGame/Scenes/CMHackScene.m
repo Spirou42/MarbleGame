@@ -21,7 +21,7 @@
   //  CGPoint pos = CGPointMake(winSize.width/2.0,winSize.height/3.0*2.0);
   CCSprite *background = defaultSceneBackground();
 	if (self != nil) {
-		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Buttons.plist"];
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
 		
     // BACKBUTTON
     CCControlButton *button = standardButtonWithTitle(@"Back");
@@ -30,9 +30,10 @@
 //		[self addChild:button];
     
     CCLayerColor *scrollContainer = [CCLayerGradient layerWithColor:ccc4(255, 200, 10, 200) fadingTo:ccc4(255, 200, 200, 200)];
+        scrollContainer.contentSize = CGSizeMake(300,800);
 //                                     layerWithColor:ccc4(255, 200, 10, 200) width:300 height:750];
     CCScrollView *scrollView = [CCScrollView viewWithViewSize:CGSizeMake(300, 300) container:scrollContainer];
-
+    scrollView.bounces = YES;
 //    scrollView.contentSize = CGSizeMake(100,150);
     scrollView.ignoreAnchorPointForPosition = NO;
     scrollView.anchorPoint = ccp(.50, .50);

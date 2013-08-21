@@ -36,7 +36,6 @@
 #import "CCGrid.h"
 #import "CCDirector.h"
 #import "CCDirectorIOS.h"
-#import "CCNode.h"
 #import "matrix.h"
 
 #define SCROLL_DEACCEL_RATE  0.95f
@@ -137,28 +136,32 @@
 -(id)initWithViewSize:(CGSize)size {
     return [self initWithViewSize:size container:nil];
 }
--(id)initWithViewSize:(CGSize)size container:(CCNode *)container {
-    if ((self = [super init])) {
-        self.container_ = container;
-        self.viewSize   = size;
-        
-        if (!self.container_) {
-            self.container_ = [CCLayer node];
-        }
-        self.isTouchEnabled    = YES;
-        touches_               = [NSMutableArray new];
-        delegate_              = nil;
-        bounces_               = YES;
-        clipsToBounds_          = YES;
-        //container_.contentSize = CGSizeZero;
-        direction_             = CCScrollViewDirectionBoth;
-        container_.position    = ccp(0.0f, 0.0f);
-        touchLength_           = 0.0f;
-        
-        [self addChild:container_];
-        minScale_ = maxScale_ = 1.0f;
+-(id)initWithViewSize:(CGSize)size container:(CCNode *)container
+{
+  if ((self = [super init])) {
+    self.container_ = container;
+    self.viewSize   = size;
+    
+    if (!self.container_) {
+      self.container_ = [CCLayer node];
     }
-    return self;
+    self.isTouchEnabled    = YES;
+    touches_               = [NSMutableArray new];
+#if __CC_PLATFORM_MAC
+    self.mouseEnabled = YES;
+#endif
+    delegate_              = nil;
+    bounces_               = YES;
+    clipsToBounds_          = YES;
+    //container_.contentSize = CGSizeZero;
+    direction_             = CCScrollViewDirectionBoth;
+    container_.position    = ccp(0.0f, 0.0f);
+    touchLength_           = 0.0f;
+    
+    [self addChild:container_];
+    minScale_ = maxScale_ = 1.0f;
+  }
+  return self;
 }
 -(id)init {
     return [self initWithViewSize:CGSizeMake(200, 200) container:nil];
@@ -520,19 +523,19 @@
     return NO;
   }
   CGRect frame;
-  frame = CGRectMake(0, 0, viewSize_.width, viewSize_.height);
-	CGPoint containerTouch =[self convertTouchToNodeSpace:touch];
-  NSLog(@"ContainerTouch %@",NSStringFromCGPoint(containerTouch));
-  NSLog(@"WorldTouch %@",NSStringFromCGPoint([container_ convertToWorldSpace:containerTouch]));
-	NSLog(@"Rect: %@",NSStringFromCGRect(frame));
+  frame = CGRectMake(0,0, viewSize_.width, viewSize_.height);
+  CGPoint newOrigin = [self convertToNodeSpace:frame.origin];
+  NSLog(@"Origin: %@ (%@)",NSStringFromCGPoint(frame.origin),NSStringFromCGPoint(newOrigin));
+  
+  
+  
   //dispatcher does not know about clipping. reject touches outside visible bounds.
   if ([touches_ count] > 2 ||
       touchMoved_          ||
-      !CGRectContainsPoint(frame, containerTouch)) {
-		NSLog(@"No I'm out");
+      !CGRectContainsPoint(frame, [self convertTouchToNodeSpace:touch])) {
     return NO;
   }
-  NSLog(@"YES i'm in");
+  
   if (![touches_ containsObject:touch]) {
     [touches_ addObject:touch];
   }
@@ -625,5 +628,52 @@
         touchMoved_ = NO;
     }
 }
+#else
+//- (BOOL) ccMouseDown:(NSEvent *)event
+//{
+//  NSLog(@"%@ %@ %@",[self className],NSStringFromSelector(_cmd),event);
+//  return YES;
+//}
+//- (BOOL) ccMouseDragged:(NSEvent *)event
+//{
+//  NSLog(@"%@ %@ %@",[self className],NSStringFromSelector(_cmd),event);
+//  return YES;
+//}
+//- (BOOL) ccMouseUp:(NSEvent *)event
+//{
+//  NSLog(@"%@ %@ %@",[self className],NSStringFromSelector(_cmd),event);
+//  return YES;
+//}
+- (BOOL) ccScrollWheel:(NSEvent *)event
+{
+  NSLog(@"%@ %@",[self className],NSStringFromSelector(_cmd)/*,event*/);
+  CGPoint locInView = [self convertToNodeSpace:event.locationInWindow];
+  CGPoint moveDistance = ccp(event.scrollingDeltaX, - event.scrollingDeltaY);
+  NSLog(@"LocInWindow: %@",NSStringFromPoint(locInView));
+  NSLog(@"Scrolling: %@",NSStringFromPoint(moveDistance));
+  NSLog(@"Phase: %ld",(unsigned long)event.phase);
+//  self->isDragging_ = YES;
+//  CGRect frame = CGRectMake(0, 0,viewSize_.width, viewSize_.height);
+//  if (!CGRectContainsPoint(frame, locInView)) {
+//    return NO;
+//  }
+  container_.position = ccpAdd(container_.position, moveDistance);
+  
+  CGPoint maxInset = maxInset_;
+  CGPoint minInset = minInset_;
+  CGFloat newX, newY;
+  
+  //check to see if offset lies within the inset bounds
+  newX     = MIN(container_.position.x, maxInset.x);
+  newX     = MAX(newX, minInset.x);
+  newY     = MIN(container_.position.y, maxInset.y);
+  newY     = MAX(newY, minInset.y);
+  NSLog(@"%f %f",newX,newY);
+//  scrollDistance_     = ccpSub(moveDistance, ccp(newX - container_.position.x, newY - container_.position.y));
+  [self setContentOffset:ccp(newX, newY) animated:NO];
+  
+  return YES;
+}
 #endif
 @end
+

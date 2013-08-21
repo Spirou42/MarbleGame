@@ -20,7 +20,7 @@
 //  CGPoint pos = CGPointMake(winSize.width/2.0,winSize.height/3.0*2.0);
 
 	if (self != nil) {
-		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Buttons.plist"];
+		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:DEFAULT_UI_PLIST];
 		
     // BACKBUTTON
     CCControlButton *button = standardButtonWithTitle(@"Back");
