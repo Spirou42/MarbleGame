@@ -3313,8 +3313,8 @@
 		FED9367217C3C2BF007DFA0A /* CCScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				FED9367417C3C2BF007DFA0A /* CCScrollView.m */,
 				FED9367317C3C2BF007DFA0A /* CCScrollView.h */,
+				FED9367417C3C2BF007DFA0A /* CCScrollView.m */,
 			);
 			name = CCScrollView;
 			path = external/CCBReader/CCScrollView;

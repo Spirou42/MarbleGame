@@ -41,9 +41,9 @@
     scrollView.color= ccc3(100, 100, 250);
 
     scrollContainer.ignoreAnchorPointForPosition = YES;
-    scrollContainer.anchorPoint = ccp(.00, 1.0);
+//    scrollContainer.anchorPoint = ccp(.00, 1.0);
     scrollContainer.contentSize = CGSizeMake(300,800);
-    scrollContainer.position = ccp(0, 300);    //[scrollContainer addChild:scrollView z:1];
+//    scrollContainer.position = ccp(0, 300);    //[scrollContainer addChild:scrollView z:1];
     [self addChild:scrollView z:1];
     button.position=ccp(0, 0);
     [scrollView addChild:button];
