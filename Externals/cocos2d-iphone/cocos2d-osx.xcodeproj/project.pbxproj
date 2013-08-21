@@ -1849,6 +1849,8 @@
 		E08AA19912C262B3000341BD /* CCWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWindow.h; sourceTree = "<group>"; };
 		E08AA19A12C262B3000341BD /* CCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWindow.m; sourceTree = "<group>"; };
 		E0F9256D1224207200EF2362 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FE2753AC17C4F000007806CB /* CCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTextField.h; sourceTree = "<group>"; };
+		FE2753AD17C4F000007806CB /* CCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTextField.m; sourceTree = "<group>"; };
 		FEE0DBE31781FDAB00051E3B /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
 		FEE0DBE41781FDAB00051E3B /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
 		FEE0DEFE1782045900051E3B /* CCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControl.h; sourceTree = "<group>"; };
@@ -3360,6 +3362,7 @@
 		E076EF801225FF3E00DE0DA2 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				FE2753AE17C4F000007806CB /* CCTextField */,
 				FEE0DEFC1782045900051E3B /* CCControlExtension */,
 				FEE0DBE21781FDAB00051E3B /* CCScrollView */,
 				A0191CB3167FD6C50099349A /* JavaScript */,
@@ -3388,6 +3391,16 @@
 				A046E2B114C1E5000005BBF2 /* CCTouchHandler.m */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		FE2753AE17C4F000007806CB /* CCTextField */ = {
+			isa = PBXGroup;
+			children = (
+				FE2753AC17C4F000007806CB /* CCTextField.h */,
+				FE2753AD17C4F000007806CB /* CCTextField.m */,
+			);
+			name = CCTextField;
+			path = external/CCTextField;
 			sourceTree = "<group>";
 		};
 		FEE0DBE21781FDAB00051E3B /* CCScrollView */ = {
