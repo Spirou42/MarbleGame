@@ -1059,8 +1059,6 @@
 		E0F924711224140400EF2362 /* CCTexturePVR.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F9246F1224140400EF2362 /* CCTexturePVR.h */; };
 		E0F924721224140400EF2362 /* CCTexturePVR.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F924701224140400EF2362 /* CCTexturePVR.m */; };
 		E0F92AC41224559800EF2362 /* CCNS.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F92AC31224559800EF2362 /* CCNS.h */; };
-		FE2753C217C50290007806CB /* CCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2753A917C4EFEC007806CB /* CCTextField.m */; };
-		FE2753C317C50293007806CB /* CCTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2753A817C4EFEC007806CB /* CCTextField.h */; };
 		FED2E89817A805DF005A16B3 /* CCControl.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E87C17A805DF005A16B3 /* CCControl.h */; };
 		FED2E89917A805DF005A16B3 /* CCControl.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E87C17A805DF005A16B3 /* CCControl.h */; };
 		FED2E89A17A805DF005A16B3 /* CCControl.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2E87C17A805DF005A16B3 /* CCControl.h */; };
@@ -3930,7 +3928,6 @@
 				A0EFA7E1169CDFA4006D1B22 /* CCTexture2D.h in Headers */,
 				A0EFA7E2169CDFA4006D1B22 /* CCTMXLayer.h in Headers */,
 				A0EFA7E3169CDFA4006D1B22 /* CCTMXObjectGroup.h in Headers */,
-				FE2753C317C50293007806CB /* CCTextField.h in Headers */,
 				FED2E8CA17A805DF005A16B3 /* ccControlShaders.h in Headers */,
 				A0EFA7E4169CDFA4006D1B22 /* CCProfiling.h in Headers */,
 				A0EFA7E5169CDFA4006D1B22 /* CCProgressTimer.h in Headers */,
@@ -4808,7 +4805,6 @@
 				A0EFA84B169CDFA4006D1B22 /* CCMotionStreak.m in Sources */,
 				FED9367617C3C2BF007DFA0A /* CCScrollView.m in Sources */,
 				A0EFA84C169CDFA4006D1B22 /* CCActionPageTurn3D.m in Sources */,
-				FE2753C217C50290007806CB /* CCTextField.m in Sources */,
 				A0EFA84D169CDFA4006D1B22 /* CCTileMapAtlas.m in Sources */,
 				A0EFA84E169CDFA4006D1B22 /* CCSpriteFrame.m in Sources */,
 				A0EFA84F169CDFA4006D1B22 /* CCSpriteFrameCache.m in Sources */,
