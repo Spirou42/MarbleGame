@@ -1895,6 +1895,8 @@
 		E0F9246F1224140400EF2362 /* CCTexturePVR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTexturePVR.h; sourceTree = "<group>"; };
 		E0F924701224140400EF2362 /* CCTexturePVR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTexturePVR.m; sourceTree = "<group>"; };
 		E0F92AC31224559800EF2362 /* CCNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNS.h; sourceTree = "<group>"; };
+		FE2753A817C4EFEC007806CB /* CCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTextField.h; sourceTree = "<group>"; };
+		FE2753A917C4EFEC007806CB /* CCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTextField.m; sourceTree = "<group>"; };
 		FED2E87C17A805DF005A16B3 /* CCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControl.h; sourceTree = "<group>"; };
 		FED2E87D17A805DF005A16B3 /* CCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControl.m; sourceTree = "<group>"; };
 		FED2E87E17A805DF005A16B3 /* CCControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlButton.h; sourceTree = "<group>"; };
@@ -2088,6 +2090,7 @@
 		501756090F335CE900624901 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				FE2753A717C4EFB8007806CB /* CCTextField */,
 				FED9367217C3C2BF007DFA0A /* CCScrollView */,
 				FED2E87A17A805DF005A16B3 /* CCControlExtension */,
 				A01919BB167FCB750099349A /* JavaScript */,
@@ -3252,6 +3255,16 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		FE2753A717C4EFB8007806CB /* CCTextField */ = {
+			isa = PBXGroup;
+			children = (
+				FE2753A817C4EFEC007806CB /* CCTextField.h */,
+				FE2753A917C4EFEC007806CB /* CCTextField.m */,
+			);
+			name = CCTextField;
+			path = external/CCTextField;
+			sourceTree = "<group>";
+		};
 		FED2E87A17A805DF005A16B3 /* CCControlExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -3313,8 +3326,8 @@
 		FED9367217C3C2BF007DFA0A /* CCScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				FED9367417C3C2BF007DFA0A /* CCScrollView.m */,
 				FED9367317C3C2BF007DFA0A /* CCScrollView.h */,
+				FED9367417C3C2BF007DFA0A /* CCScrollView.m */,
 			);
 			name = CCScrollView;
 			path = external/CCBReader/CCScrollView;
