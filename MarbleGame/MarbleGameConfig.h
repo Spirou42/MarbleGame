@@ -39,7 +39,7 @@
 #define MARBLE_DESTROY_TIME 		.1
 #define MARBLE_CREATE_DELAY 		.5
 #define MARBLE_CREATE_TIME 			.1
-#define MARBLE_GROOVE_Y 			600
+#define MARBLE_GROOVE_Y 			700
 
 //////////////////////////////////////////////////
 #pragma mark  SCORE SETTINGS

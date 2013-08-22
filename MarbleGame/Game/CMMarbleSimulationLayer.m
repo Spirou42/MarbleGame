@@ -137,6 +137,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	self.space.gravity = cpv(0.0, -SPACE_GRAVITY);
 	CGRect p = CGRectZero;
 	p.size = s;
+  p.size.height = 768 - 54;
+  p.origin.y = 54;
 	CGRect newBounds = CGRectInset(p,0,0);
 	self.bounds = [[self.space addBounds:newBounds
 														thickness:60.0

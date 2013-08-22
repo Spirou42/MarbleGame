@@ -267,7 +267,7 @@
 		[self->_marbleSlot removeFromParent];
 		[self->_marbleSlot release];
 		mSlot.anchorPoint=ccp(0, 0);
-		mSlot.position = ccp(482, 14);
+		mSlot.position = ccp(482, 11);
 		if (mSlot) {
 			[self addChild:mSlot z:OVERLAY_LABEL_LAYER];
 		}
