@@ -533,7 +533,7 @@
 		FED2E3E017A7E448005A16B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3E217A7E448005A16B3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3E417A7E448005A16B3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
-		FED2E5EC17A7E488005A16B3 /* iMarbleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMarbleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED2E5EC17A7E488005A16B3 /* MarbleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarbleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2E5F917A7E488005A16B3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		FED2E5FB17A7E488005A16B3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		FED2E5FD17A7E488005A16B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -707,7 +707,7 @@
 			isa = PBXGroup;
 			children = (
 				93536452177DFB50009F640B /* MarbleGame.app */,
-				FED2E5EC17A7E488005A16B3 /* iMarbleGame.app */,
+				FED2E5EC17A7E488005A16B3 /* MarbleGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1286,7 +1286,7 @@
 			);
 			name = iMarbleGame;
 			productName = iMarbleGame;
-			productReference = FED2E5EC17A7E488005A16B3 /* iMarbleGame.app */;
+			productReference = FED2E5EC17A7E488005A16B3 /* MarbleGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1866,7 +1866,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1905,7 +1905,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
 				SDKROOT = iphoneos5.1;
 				TARGETED_DEVICE_FAMILY = 2;

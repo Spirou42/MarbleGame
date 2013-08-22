@@ -255,6 +255,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 {
 	// Should use a fixed size step based on the animation interval.
   if (!self->_simulationRunning) {
+		[self.gameDelegate simulationStepDone:delta];
     return;
   }
 	int steps = 1;

@@ -500,7 +500,12 @@
 	leftLabel = defaultButtonTitle(@"Status:");
 	NSString *statusLabel = nil;
 	if (stats.status< kCMLevelStatus_Amateure) {
-		statusLabel = [NSString stringWithFormat:@"%@ - %ld Points needed",[stats statusString],self.currentLevel.amateurScore];
+#if __CC_PLATFORM_MAC
+		NSString *formatString = @"%@ - %ld Points needed";
+#else
+		NSString *formatString = @"%@ - %d Points needed";
+#endif
+		statusLabel = [NSString stringWithFormat:formatString,[stats statusString],self.currentLevel.amateurScore];
 	}else{
 		statusLabel = [stats statusString];
 	}
@@ -521,7 +526,7 @@
 
 - (void) finishLevel
 {
-	[self.removedMarbleQueue removeAllObjects];
+
 	CMMarblePlayer* currentPlayer = [CMAppDelegate currentPlayer];
 	NSUInteger currentLevelIndex = [currentPlayer currentLevel] ;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
@@ -626,18 +631,22 @@
 
 - (void) updateTimeLabel
 {
-	NSInteger updateSecond = (NSInteger) -[self.levelStartTime timeIntervalSinceNow];
-	if (self->_lastUpdateSecond != updateSecond) {
-		self.timeLabel = defaultGameLabel([self currentTimeString]);
-		self->_lastUpdateSecond = updateSecond;
+	if (self.simulationLayer.simulationRunning) {
+		NSInteger updateSecond = (NSInteger) -[self.levelStartTime timeIntervalSinceNow];
+		if (self->_lastUpdateSecond != updateSecond) {
+			self.timeLabel = defaultGameLabel([self currentTimeString]);
+			self->_lastUpdateSecond = updateSecond;
+		}
 	}
 }
 
 - (void) updateScoreLabel
 {
-	if (self->_lastUpdateScore != self.currentStatistics.score) {
-		self.scoreLabel = defaultGameLabel([self currentScoreString]);
-		self->_lastUpdateScore = (NSInteger)self.currentStatistics.score;
+	if (self.simulationLayer.simulationRunning) {
+		if (self->_lastUpdateScore != self.currentStatistics.score) {
+			self.scoreLabel = defaultGameLabel([self currentScoreString]);
+			self->_lastUpdateScore = (NSInteger)self.currentStatistics.score;
+		}
 	}
 }
 
@@ -709,6 +718,7 @@
 
 - (void) initializeLevel:(CMMarbleLevel *)level
 {
+		[self.removedMarbleQueue removeAllObjects];
 	CCSprite *bkg = level.backgroundImage;
 	if (bkg) {
 		self.backgroundSprite=bkg;
