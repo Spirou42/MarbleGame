@@ -41,7 +41,11 @@
 #define SCROLL_DEACCEL_RATE  0.95f
 #define SCROLL_DEACCEL_DIST  1.0f
 #define BOUNCE_DURATION      0.15f
+#if __CC_PLATFORM_IOS
 #define INSET_RATIO          0.2f
+#else
+#define INSET_RATIO          0.0f
+#endif
 
 @interface CCScrollView()
 /**
@@ -149,9 +153,12 @@
     touches_               = [NSMutableArray new];
 #if __CC_PLATFORM_MAC
     self.mouseEnabled = YES;
+    bounces_ = NO;
+#else
+    bounces_               = YES;
 #endif
     delegate_              = nil;
-    bounces_               = YES;
+
     clipsToBounds_          = YES;
     //container_.contentSize = CGSizeZero;
     direction_             = CCScrollViewDirectionBoth;
@@ -349,7 +356,8 @@
     return ccp(0.0f, 0.0f);
 }
 -(CGPoint)minContainerOffset {
-    return ccp(viewSize_.width - container_.contentSize.width*container_.scaleX, 
+
+    return ccp(viewSize_.width - container_.contentSize.width*container_.scaleX,
                viewSize_.height - container_.contentSize.height*container_.scaleY);
 }
 -(void)deaccelerateScrolling:(ccTime)dt {
@@ -629,6 +637,9 @@
     }
 }
 #else
+#pragma mark -
+#pragma mark scrollWheel
+
 //- (BOOL) ccMouseDown:(NSEvent *)event
 //{
 //  NSLog(@"%@ %@ %@",[self className],NSStringFromSelector(_cmd),event);
