@@ -41,7 +41,8 @@ inline CCSprite* defaultLevelBackground()
 
 inline CCSprite *defaultLevelOverlay()
 {
-	return spriteWithName(@"Level-Overlay.png");
+  CCSprite *result =spriteWithName(@"Level-Overlay.png");
+	return result;
 }
 
 inline CCControlButton* standardButtonWithTitle(NSString* title)

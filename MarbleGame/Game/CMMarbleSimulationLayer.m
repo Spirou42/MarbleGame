@@ -151,6 +151,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 												 preSolve:nil
 												postSolve:@selector(postMarbleCollision:space:)
 												 separate:@selector(separateMarbleCollision:space:)];
+
 	self.space.collisionBias = pow(1.0-0.1, 400);
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	_debugLayer.visible = NO;

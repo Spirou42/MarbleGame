@@ -31,7 +31,7 @@
 //		vertices[ll-i].y = size.height - p.y;
 	}
 	for (NSUInteger i=0; i<ll; i++) {
-		ChipmunkSegmentShape *cs= [ChipmunkSegmentShape segmentWithBody:nil from:vertices[i] to:vertices[i+1] radius:3];
+		ChipmunkSegmentShape *cs= [ChipmunkSegmentShape segmentWithBody:nil from:vertices[i] to:vertices[i+1] radius:5];
 		cs.friction = 1.0;
 		cs.elasticity = 0.51;
 		[result addObject:cs];

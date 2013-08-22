@@ -79,6 +79,9 @@
 		self.effectQueue = [NSMutableArray array];
 		self.marbleSlot = [[[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28)]autorelease];
 		self.removedMarbleQueue = [NSMutableArray array];
+    self.overlaySprite = defaultLevelOverlay();
+    self.overlaySprite.anchorPoint=ccp(0.0, 0.0);
+    self.overlaySprite.position=ccp(0, -4);
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
@@ -131,7 +134,6 @@
 		if (simLay) {
 			[self addChild:simLay z:MARBLE_LAYER];
 		}
-
   }
 }
 - (void) addChild:(CCNode *)node z:(NSInteger)z
@@ -207,7 +209,7 @@
 		}
 
 		self->_scoreLabel.opacity=0.75 * 255;
-		self->_scoreLabel.position=cpv(238, 747-realBounds.size.height/2.0);
+		self->_scoreLabel.position=cpv(238, realBounds.size.height/4.0);
 	}
 }
 - (void) setTimeLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)tL
@@ -230,7 +232,7 @@
 		}
 
 		self->_timeLabel.opacity=0.75 * 255;
-		self->_timeLabel.position=cpv(815, 747-realBounds.size.height/2.0);
+		self->_timeLabel.position=cpv(815, realBounds.size.height/4.0);
 	}
 }
 
@@ -255,7 +257,7 @@
 		}
 
 		self->_remarkLabel.opacity=0.75 * 255;
-		self->_remarkLabel.position=cpv(375, 749-realBounds.size.height/2.0);
+		self->_remarkLabel.position=cpv(375, realBounds.size.height/4.0 +1);
 	}
 }
 
@@ -265,7 +267,7 @@
 		[self->_marbleSlot removeFromParent];
 		[self->_marbleSlot release];
 		mSlot.anchorPoint=ccp(0, 0);
-		mSlot.position = ccp(482, 729);
+		mSlot.position = ccp(482, 14);
 		if (mSlot) {
 			[self addChild:mSlot z:OVERLAY_LABEL_LAYER];
 		}
@@ -718,8 +720,6 @@
 	self.foregroundSprite = fgs;
   self.foregroundSprite.opacity = 128;
 	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
-	self.overlaySprite = defaultLevelOverlay();
-
 }
 
 - (CMMarbleCollisionCollector*) collisionCollector
