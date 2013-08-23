@@ -52,7 +52,6 @@
 		9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7621793296B008D584E /* CMMarbleLevelSet.m */; };
 		9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */; };
 		9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F76917932AF1008D584E /* CMSimpleShapeReader.m */; };
-		9356F78317933069008D584E /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* Default Levels.levelset */; };
 		9357F3A917907D680063E849 /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA717907B19001DADD9 /* libCocosDenshion.a */; };
 		9357F3AA17907D680063E849 /* libkazmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CB117907B19001DADD9 /* libkazmath.a */; };
 		9357F3D9179080A30063E849 /* libChipmunkPro-Debug-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357F3D6179080A30063E849 /* libChipmunkPro-Debug-Mac.a */; };
@@ -158,11 +157,12 @@
 		FED2E8E317A8071E005A16B3 /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
 		FED9366F17C3BEF9007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
 		FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
-		FED9FD2917A8154000ACC97F /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = 9356F78217933069008D584E /* Default Levels.levelset */; };
 		FED9FD2A17A8155500ACC97F /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FED9FD2B17A8155700ACC97F /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
+		FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
+		FEFBE1B117C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -424,7 +424,6 @@
 		9356F7641793296B008D584E /* CMMarbleLevelStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelStatistics.m; sourceTree = "<group>"; };
 		9356F76817932AF0008D584E /* CMSimpleShapeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSimpleShapeReader.h; sourceTree = "<group>"; };
 		9356F76917932AF1008D584E /* CMSimpleShapeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSimpleShapeReader.m; sourceTree = "<group>"; };
-		9356F78217933069008D584E /* Default Levels.levelset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Default Levels.levelset"; sourceTree = "<group>"; };
 		9357F3AD179080A30063E849 /* chipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk.h; sourceTree = "<group>"; };
 		9357F3AE179080A30063E849 /* chipmunk_ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_ffi.h; sourceTree = "<group>"; };
 		9357F3AF179080A30063E849 /* chipmunk_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_private.h; sourceTree = "<group>"; };
@@ -605,6 +604,7 @@
 		FED2E8E417A8087B005A16B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FED9366D17C3BEF9007DFA0A /* CMHackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHackScene.h; sourceTree = "<group>"; };
 		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
+		FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Default Levels.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -762,9 +762,10 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */,
+				FEFBE18217C7686000D86D8D /* Levelsets */,
 				93CC6CB517C15C0D00F62743 /* Sounds */,
 				9353D45A17B068F100D0FD25 /* Fonts */,
-				9356F78217933069008D584E /* Default Levels.levelset */,
 				FEF14BAB179041D5007A3AEB /* Shaders */,
 				933FEB0E17836A8800786883 /* Images */,
 				935366ED177E10AC009F640B /* Sprites */,
@@ -1244,6 +1245,13 @@
 			path = Resources/Shaders;
 			sourceTree = "<group>";
 		};
+		FEFBE18217C7686000D86D8D /* Levelsets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Levelsets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1487,6 +1495,7 @@
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
+				FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */,
 				93CC6CB717C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
@@ -1501,7 +1510,6 @@
 				FE4F6A481791BDFE00B54D3A /* GlossMapShader.fsh in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
 				FE4F6A491791BE0000B54D3A /* GlossMapShader.vsh in Resources */,
-				9356F78317933069008D584E /* Default Levels.levelset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1526,11 +1534,11 @@
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
+				FEFBE1B117C769BA00D86D8D /* Default Levels.bundle in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
-				FED9FD2917A8154000ACC97F /* Default Levels.levelset in Resources */,
 				9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
