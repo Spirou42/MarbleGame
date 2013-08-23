@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:8eac76d7ae4eef4c3794f0f2d4805f70:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:c6faa4a9d17d576bdc19de53a7f896f8:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -10,7 +10,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 48,163 }, { 99,46 } }</string>
+					<string>{ { 163,74 }, { 93,39 } }</string>
 					
 
 					<key>offset</key>
@@ -20,44 +20,44 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 99,46 } }</string>
+				  <string>{ { 0,0 },{ 93,39 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 99,46 }</string>
+				  <string>{ 93,39 }</string>
 				</dict>
 		 
 			<key>Button-Normal</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 2,141 }, { 97,44 } }</string>
- 					
+					<string>{ { 163,33 }, { 93,39 } }</string>
+					
 
 					<key>offset</key>
 				  <string>{ , }</string>
 				  
 				  <key>rotated</key>
-					 <true/> 
+					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 97,44 } }</string>
+				  <string>{ { 0,0 },{ 93,39 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 97,44 }</string>
+				  <string>{ 93,39 }</string>
 				</dict>
 		 
 			<key>DDButton-Glyph</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 149,198 }, { 20,21 } }</string>
- 					
+					<string>{ { 180,115 }, { 20,21 } }</string>
+					
 
 					<key>offset</key>
 				  <string>{ , }</string>
 				  
 				  <key>rotated</key>
-					 <true/> 
+					 <false/> 
 				  
 				  <key>sourceColorRect</key>
 				  <string>{ { 0,0 },{ 20,21 } }</string>
@@ -70,27 +70,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 2,141 }, { 97,44 } }</string>
- 					
-
-					<key>offset</key>
-				  <string>{ , }</string>
-				  
-				  <key>rotated</key>
-					 <true/> 
-				  
-				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 97,44 } }</string>
-				
-				  <key>sourceSize</key>
-				  <string>{ 97,44 }</string>
-				</dict>
-		 
-			<key>DDMenu-Background</key>
-				<dict>
-					<key>frame</key>
-					
-					<string>{ { 2,2 }, { 171,137 } }</string>
+					<string>{ { 163,33 }, { 93,39 } }</string>
 					
 
 					<key>offset</key>
@@ -100,17 +80,37 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 171,137 } }</string>
+				  <string>{ { 0,0 },{ 93,39 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 171,137 }</string>
+				  <string>{ 93,39 }</string>
+				</dict>
+		 
+			<key>DDMenu-Background</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,33 }, { 159,125 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 159,125 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 159,125 }</string>
 				</dict>
 		 
 			<key>DDMenu-Button</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 157,141 }, { 3,3 } }</string>
+					<string>{ { 163,150 }, { 3,3 } }</string>
 					
 
 					<key>offset</key>
@@ -130,7 +130,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 149,163 }, { 21,33 } }</string>
+					<string>{ { 163,115 }, { 15,33 } }</string>
 					
 
 					<key>offset</key>
@@ -140,17 +140,17 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 21,33 } }</string>
+				  <string>{ { 0,0 },{ 15,33 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 21,33 }</string>
+				  <string>{ 15,33 }</string>
 				</dict>
 		 
 			<key>Slider-Track-Normal</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 48,211 }, { 99,11 } }</string>
+					<string>{ { 2,160 }, { 241,11 } }</string>
 					
 
 					<key>offset</key>
@@ -160,17 +160,17 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 99,11 } }</string>
+				  <string>{ { 0,0 },{ 241,11 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 99,11 }</string>
+				  <string>{ 241,11 }</string>
 				</dict>
 		 
 			<key>Slider-Track-Selected</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 48,141 }, { 107,20 } }</string>
+					<string>{ { 2,2 }, { 257,29 } }</string>
 					
 
 					<key>offset</key>
@@ -180,10 +180,10 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 107,20 } }</string>
+				  <string>{ { 0,0 },{ 257,29 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 107,20 }</string>
+				  <string>{ 257,29 }</string>
 				</dict>
 		
 		</dict>
@@ -194,7 +194,7 @@
 			<key>realTextureFileName</key>
 			<string>GameUI.png</string>
 			<key>size</key>
-			<string>{ 175,240 }</string>
+			<string>{ 261,173 }</string>
 			<key>textureFileName</key>
 			<string>GameUI.png</string>
 		</dict>

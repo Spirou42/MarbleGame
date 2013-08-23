@@ -83,11 +83,11 @@
 #define DEFAULT_UI_PLIST 								@"GameUI.plist"
 #define NORMAL_BUTTON_BACKGROUND 				@"Button-Normal"
 #define ACTIVE_BUTTON_BACKGROUND 				@"Button-Active"
-#define BUTTON_BACKGROUND_CAPS 					CGRectMake(9,9,80,27)
+#define BUTTON_BACKGROUND_CAPS 					CGRectMake(8,8,77,23)
 
 // DropDown Buttons
 #define DEFAULT_DDBUTTON_BACKGROUND 		@"DDButton-Normal"
-#define DDBUTTON_BACKGROUND_CAPS 				CGRectMake(9,9,143,21)
+#define DDBUTTON_BACKGROUND_CAPS 				CGRectMake(8,8,77,23)
 #define DEFAULT_DDMENU_BACKGROUND 			@"DDMenu-Background"
 #define DDMENU_BACKGROUND_CAPS 					CGRectMake(9,9,142,103)
 #define DEFAULT_DDBUTTON_GLYPH 					@"DDButton-Glyph"
