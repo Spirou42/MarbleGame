@@ -17,7 +17,7 @@
 #define MAX_DIFFERENT_MARBLES 9
 
 #define DEFAULT_LEVELSET_NAME @"Default Levels"
-#define DEFAULT_LEVELSET_EXTENSION @"levelset"
+#define DEFAULT_LEVELSET_EXTENSION @"bundle"
 #define DEFAULT_MARBLE_THEME @"attraktor"
 
 //////////////////////////////////////////////////
