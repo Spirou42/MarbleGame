@@ -162,7 +162,7 @@
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
 		FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
-		FEFBE1B117C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
+		FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -372,6 +372,19 @@
 			remoteInfo = kazmath;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEFBE1B817C76BFB00D86D8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Documents;
+			dstSubfolderSpec = 16;
+			files = (
+				FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
@@ -1283,6 +1296,7 @@
 				FED2E5E817A7E488005A16B3 /* Sources */,
 				FED2E5E917A7E488005A16B3 /* Frameworks */,
 				FED2E5EA17A7E488005A16B3 /* Resources */,
+				FEFBE1B817C76BFB00D86D8D /* CopyFiles */,
 			);
 			buildRules = (
 				FE5EC6DA17A83CA400FDE6B0 /* PBXBuildRule */,
@@ -1534,7 +1548,6 @@
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
-				FEFBE1B117C769BA00D86D8D /* Default Levels.bundle in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
