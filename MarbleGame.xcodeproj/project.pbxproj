@@ -762,7 +762,6 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */,
 				FEFBE18217C7686000D86D8D /* Levelsets */,
 				93CC6CB517C15C0D00F62743 /* Sounds */,
 				9353D45A17B068F100D0FD25 /* Fonts */,
@@ -1248,6 +1247,7 @@
 		FEFBE18217C7686000D86D8D /* Levelsets */ = {
 			isa = PBXGroup;
 			children = (
+				FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */,
 			);
 			name = Levelsets;
 			sourceTree = "<group>";

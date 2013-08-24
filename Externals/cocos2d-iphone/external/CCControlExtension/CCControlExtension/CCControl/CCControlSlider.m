@@ -55,6 +55,7 @@
 @synthesize minimumValue        = _minimumValue;
 @synthesize maximumValue        = _maximumValue;
 @synthesize onThumbTintColor    = _onThumbTintColor;
+@synthesize thumbInset					= _thumbInset;
 
 - (void)dealloc
 {
@@ -91,43 +92,45 @@
 // Designated init
 - (id)initWithBackgroundSprite:(CCSprite *)backgroundSprite progressSprite:(CCSprite *)progressSprite thumbSprite:(CCSprite *)thumbSprite
 {
-    if ((self = [super init]))
-    {
-        NSAssert(backgroundSprite,  @"Background sprite must be not nil");
-        NSAssert(progressSprite,    @"Progress sprite must be not nil");
-        NSAssert(thumbSprite,       @"Thumb sprite must be not nil");
-        
-        self.ignoreAnchorPointForPosition   = NO;
-        
-        self.backgroundSprite           = backgroundSprite;
-        self.progressSprite             = progressSprite;
-        self.thumbSprite                = thumbSprite;
-        
-        // Defines the content size
-        CGRect maxRect                  = CGRectUnion([_backgroundSprite boundingBox], [_thumbSprite boundingBox]);
-        self.contentSize                = CGSizeMake(maxRect.size.width, maxRect.size.height);
-        
+	if ((self = [super init]))
+	{
+		NSAssert(backgroundSprite,  @"Background sprite must be not nil");
+		NSAssert(progressSprite,    @"Progress sprite must be not nil");
+		NSAssert(thumbSprite,       @"Thumb sprite must be not nil");
+		
+		self.ignoreAnchorPointForPosition   = NO;
+		
+		self.backgroundSprite           = backgroundSprite;
+		self.progressSprite             = progressSprite;
+		self.thumbSprite                = thumbSprite;
+		
+		// Defines the content size
+		CGRect maxRect                  = CGRectUnion([_backgroundSprite boundingBox], [_thumbSprite boundingBox]);
+		maxRect = CGRectUnion(maxRect, [_progressSprite boundingBox]);
+		self.contentSize                = CGSizeMake(maxRect.size.width, maxRect.size.height);
+		
 		// Add the slider background
-        _backgroundSprite.anchorPoint   = ccp (0.5f, 0.5f);
+		_backgroundSprite.anchorPoint   = ccp (0.5f, 0.5f);
 		_backgroundSprite.position      = ccp(self.contentSize.width / 2, self.contentSize.height / 2);
 		[self addChild:_backgroundSprite];
-        
-        // Add the progress bar
-        _progressSprite.anchorPoint     = ccp (0.0f, 0.5f);
-        _progressSprite.position        = ccp (0.0f, self.contentSize.height / 2);
-        [self addChild:_progressSprite];
+		
+		// Add the progress bar
+		_progressSprite.anchorPoint     = ccp (0.0f, 0.5f);
+		_progressSprite.position        = ccp (0.0f, self.contentSize.height / 2);
+		[self addChild:_progressSprite];
 		
 		// Add the slider thumb
-		_thumbSprite.position           = ccp(0, self.contentSize.height / 2);
-		[self addChild:_thumbSprite];
-        
-        // Init default values
-        _onThumbTintColor               = ccGRAY;
-        _minimumValue                   = 0.0f;
-        _maximumValue                   = 1.0f;
-        self.value                      = _minimumValue;
-    }
-    return self;
+		_thumbSprite.anchorPoint = ccp(0.5, 0.5);
+		_thumbSprite.position           = ccp(0, _backgroundSprite.contentSize.height / 2);
+		[_backgroundSprite addChild:_thumbSprite];
+		
+		// Init default values
+		_onThumbTintColor               = ccGRAY;
+		_minimumValue                   = 0.0f;
+		_maximumValue                   = 1.0f;
+		self.value                      = _minimumValue;
+	}
+	return self;
 }
 
 #pragma mark Properties
@@ -135,7 +138,7 @@
 - (void)setEnabled:(BOOL)enabled
 {
     super.enabled           = enabled;
-    
+  
     _thumbSprite.opacity    = (enabled) ? 255.0f : 128.0f;
 }
 
@@ -372,17 +375,24 @@
 
 - (void)layoutWithValue:(float)value
 {
-    // Update thumb position for new value
-    float percent               = (value - _minimumValue) / (_maximumValue - _minimumValue);
-    
-    CGPoint pos                 = _thumbSprite.position;
-    pos.x                       = percent * _backgroundSprite.contentSize.width;
-    _thumbSprite.position       = pos;
-    
-    // Stretches content proportional to newLevel
-    CGRect textureRect          = _progressSprite.textureRect;
-    textureRect                 = CGRectMake(textureRect.origin.x, textureRect.origin.y, pos.x, textureRect.size.height);
-    [_progressSprite setTextureRect:textureRect rotated:_progressSprite.textureRectRotated untrimmedSize:textureRect.size];
+	// Update thumb position for new value
+	float percent               = (value - _minimumValue) / (_maximumValue - _minimumValue);
+	
+	CGPoint pos                 = _thumbSprite.position;
+	pos.x                       = percent * (_backgroundSprite.contentSize.width - _thumbInset*2.0);
+	_thumbSprite.position       = CGPointMake(pos.x + self.thumbInset, pos.y);
+	
+	// Stretches content proportional to newLevel
+	CGRect textureRect          = _progressSprite.textureRect;
+	textureRect                 = CGRectMake(textureRect.origin.x, textureRect.origin.y, pos.x, textureRect.size.height);
+	[_progressSprite setTextureRect:textureRect rotated:_progressSprite.textureRectRotated untrimmedSize:textureRect.size];
+}
+
+- (void) draw
+{
+	ccDrawRect(CGPointMake(0, 0),  CGPointMake(self.contentSize.width,self.contentSize.height));
+	[super draw];
+	
 }
 
 @end

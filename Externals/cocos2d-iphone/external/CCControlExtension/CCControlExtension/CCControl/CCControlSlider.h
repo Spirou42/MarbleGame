@@ -42,7 +42,7 @@
 	float       _value;
     float       _minimumValue;
     float       _maximumValue;
-    
+	CGFloat			_thumbInset;
 @protected
 	// Weak links to children
 	CCSprite    *_thumbSprite;
@@ -81,6 +81,8 @@
 
 #pragma mark - Properties
 #pragma mark Accessing the Slider’s Value
+
+@property (nonatomic, assign) CGFloat thumbInset;
 /** @name Accessing the Slider’s Value */
 /**
  * @abstract Contains the receiver’s current value.

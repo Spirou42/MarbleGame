@@ -34,6 +34,13 @@ inline CCSprite* mainMenuMenuPlate()
 	return s;
 }
 
+inline CCSprite* defaultMenuPlate()
+{
+	CCSprite *s =spriteWithName(@"Menu-Background.png");
+	s.anchorPoint = cpv(0.5, 0.5);
+	return s;
+}
+
 inline CCSprite* defaultLevelBackground()
 {
 	return spriteWithName(@"LevelBackground-Default.png");

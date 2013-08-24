@@ -41,7 +41,7 @@
 		NSData *JSONData = [NSData dataWithContentsOfURL:fileURL];
 		NSError *error;
 		id rubeJson = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error];
-		NSLog(@"Json: %@",rubeJson);
+//		NSLog(@"Json: %@",rubeJson);
 		[self initializeWithDictionary:rubeJson];
 	}
 	return self;

@@ -20,6 +20,7 @@ CGPoint menuStartPosition();
 CGPoint centerOfScreen();
 CCSprite* mainMenuOverlay();
 CCSprite* mainMenuMenuPlate();
+CCSprite* defaultMenuPlate();
 CCSprite* defaultLevelBackground();
 CCSprite* defaultLevelOverlay();
 CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultGameLabel(NSString* labelText);
