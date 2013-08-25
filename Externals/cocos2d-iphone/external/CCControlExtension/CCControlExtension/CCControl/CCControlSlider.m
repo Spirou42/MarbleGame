@@ -120,7 +120,7 @@
 		[self addChild:_progressSprite];
 		
 		// Add the slider thumb
-		_thumbSprite.anchorPoint = ccp(0.5, 0.5);
+		_thumbSprite.anchorPoint 				= ccp(0.5, 0.5);
 		_thumbSprite.position           = ccp(0, _backgroundSprite.contentSize.height / 2);
 		[_backgroundSprite addChild:_thumbSprite];
 		
@@ -379,8 +379,8 @@
 	float percent               = (value - _minimumValue) / (_maximumValue - _minimumValue);
 	
 	CGPoint pos                 = _thumbSprite.position;
-	pos.x                       = percent * (_backgroundSprite.contentSize.width - _thumbInset*2.0);
-	_thumbSprite.position       = CGPointMake(pos.x + self.thumbInset, pos.y);
+	pos.x                       = (percent * (_backgroundSprite.contentSize.width - self.thumbInset*2.0)) + self.thumbInset;
+	_thumbSprite.position       = CGPointMake(pos.x , pos.y);
 	
 	// Stretches content proportional to newLevel
 	CGRect textureRect          = _progressSprite.textureRect;
