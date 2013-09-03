@@ -120,7 +120,7 @@
 		[self addChild:_progressSprite];
 		
 		// Add the slider thumb
-		_thumbSprite.anchorPoint 				= ccp(0.5, 0.5);
+		_thumbSprite.anchorPoint 				= ccp(0.50, 0.5);
 		_thumbSprite.position           = ccp(0, _backgroundSprite.contentSize.height / 2);
 		[_backgroundSprite addChild:_thumbSprite];
 		

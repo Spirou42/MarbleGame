@@ -47,45 +47,9 @@
     menuLayer.nextFreeMenuPosition = newPosition;
     [menuLayer addButtonWithTitle:@"Hacktick" target:self action:@selector(hacktickAction:)];
 
-		menuLayer.opacity=0;
+//		menuLayer.opacity=0;
 			[self addChild:menuLayer z:2];		
 
-#if 0
-    CCNode<CCLabelProtocol,CCRGBAProtocol>*headlineLabel = defaultSceneLabel(@"Main Menu");//[CCLabelTTF labelWithString:@"Main Menu" fontName:DEFAULT_MENU_FONT fontSize:DEFAULT_MENU_FONT_SIZE];
-    [self addChild:headlineLabel];
-    
-    // Play
-    pos.y -= headlineLabel.contentSize.height+15;
-    CCControlButton *button = standardButtonWithTitle(@"Play");
-    button.preferredSize = buttonSize;
-    [button addTarget:self action:@selector(onPlay:) forControlEvents:CCControlEventTouchUpInside];
-    button.position = pos;
-    [self addChild:button];
-    
-    // Level Select
-    pos.y-=button.contentSize.height+5;
-    button = standardButtonWithTitle(@"Level Select");
-    button.preferredSize = buttonSize;
-    [button addTarget:self action:@selector(onLevelSelect:) forControlEvents:CCControlEventTouchUpInside];
-    button.position=pos;
-    [self addChild:button];
-
-    // Settings
-    pos.y-=button.contentSize.height+5;
-    button = standardButtonWithTitle(@"Settings");
-    button.preferredSize = buttonSize;
-    [button addTarget:self action:@selector(onSettings:) forControlEvents:CCControlEventTouchUpInside];
-    button.position=pos;
-    [self addChild:button];
-
-    // Help
-    pos.y -= button.contentSize.height+5;
-    button = standardButtonWithTitle(@"Help");
-    button.preferredSize = buttonSize;
-    [button addTarget:self action:@selector(onHelp:) forControlEvents:CCControlEventTouchUpInside];
-    button.position=pos;
-    [self addChild:button];
-#endif
 
 	}
 
