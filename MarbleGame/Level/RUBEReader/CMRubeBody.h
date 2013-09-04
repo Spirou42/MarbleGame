@@ -33,4 +33,7 @@ typedef enum {
 @property (nonatomic, assign) CGFloat linearVelocity;
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, retain) NSMutableArray *fixtures;
+
+- (id) initWithDictionary:(NSDictionary*)dict;
+
 @end

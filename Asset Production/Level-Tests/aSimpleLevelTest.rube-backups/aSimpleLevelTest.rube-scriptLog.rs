@@ -1,2 +1,1 @@
-//Started script log at Mon Aug 19 23:22:50 2013
-
+//Restarted script log at Tue Sep  3 20:10:11 2013

@@ -7,6 +7,8 @@
 //
 
 #import "CMMarbleRubeReader.h"
+#import "CMRubeBody.h"
+#import "CMRubeFixture.h"
 #import "cocos2d.h"
 @implementation CMMarbleRubeReader
 @synthesize  bodies = _bodies, images = _images, joints = _joints, gravity = _gravity;
@@ -30,6 +32,11 @@
 	// initialize myself
 	self.gravity = pointFromRUBEPoint([dict objectForKey:@"gravity"]);
 	
+	// iterate through all bodies creating them
+	for (NSDictionary* bodyDict in [dict objectForKey:@"body"]) {
+    CMRubeBody *aBody = [[CMRubeBody alloc]initWithDictionary:bodyDict];
+		[self.bodies addObject:aBody];
+	}
 }
 
 - (id) initWithContentsOfURL:(NSURL *)fileURL
@@ -60,7 +67,7 @@
 
 CGPoint pointFromRUBEPoint(id input)
 {
-	if ([input isKindOfClass:[NSString class]]) {
+	if ([input isKindOfClass:[NSString class]] || [input isKindOfClass:[NSNumber class]]) {
 		return CGPointMake(0, 0);
 	}
 	NSDictionary* dict = (NSDictionary*) input;
