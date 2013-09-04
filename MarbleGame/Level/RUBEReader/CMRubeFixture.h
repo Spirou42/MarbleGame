@@ -8,6 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+  kFixtureCircle,
+  kFixturePolygon,
+  kFixtureChain
+}CMRubeFixtureType;
+
 @interface CMRubeFixture : NSObject
 
+
+@property (nonatomic, retain) NSString* name;
+@property (nonatomic, assign) CGFloat friction;
+@property (nonatomic, assign) CGFloat restitution;
+@property (nonatomic, assign) NSInteger filterBits, filterMask,filterGroup;
+@property (nonatomic, assign, getter = isSensor) BOOL sensor;
+@property (nonatomic, assign) CGFloat density;
+@property (nonatomic, assign) CMRubeFixtureType type;
+@property (nonatomic, assign) CGPoint circleCenter;
+@property (nonatomic, assign) CGFloat circleRadius;
+@property (nonatomic, retain) NSArray *vertices;
+
+
+
+- (id) initWithDictionary:(NSDictionary*) dict;
 @end

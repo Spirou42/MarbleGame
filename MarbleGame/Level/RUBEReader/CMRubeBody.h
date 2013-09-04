@@ -16,21 +16,27 @@ typedef enum {
 
 @interface CMRubeBody : NSObject
 {
-	@protected
-	NSString* 				_name;
-	CMRubeBodyType		_type;
-	CGFloat						_angle;
-	CGFloat						_angularVelocity;
-	CGFloat						_linearVelocity;
-	CGPoint						_position;
-	NSMutableArray		*_fixtures;
+//	@protected
+//	NSString* 				_name;
+//	CMRubeBodyType		_type;
+//	CGFloat						_angle;
+//	CGFloat						_angularVelocity;
+//	CGFloat						_linearVelocity;
+//  CGFloat           _linearDamping;
+//  CGFloat           _angularDamping;
+//  CGFloat           _mass;
+//	CGPoint						_position;
+//	NSMutableArray		*_fixtures;
 }
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, assign) CMRubeBodyType type;
 @property (nonatomic, assign) CGFloat angle;
 @property (nonatomic, assign) CGFloat angularVelocity;
-@property (nonatomic, assign) CGFloat linearVelocity;
+@property (nonatomic, assign) CGPoint linearVelocity;
+@property (nonatomic, assign) CGFloat angularDamping;
+@property (nonatomic, assign) CGFloat linearDamping;
+@property (nonatomic, assign) CGFloat mass;
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, retain) NSMutableArray *fixtures;
 

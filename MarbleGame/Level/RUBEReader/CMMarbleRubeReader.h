@@ -31,4 +31,4 @@
 @end
 
 CGPoint pointFromRUBEPoint(NSDictionary* dict);
-NSArray* pointsFRomRUBEPointArray(NSDictionary* dict);
+NSArray* pointsFromRUBEPointArray(NSDictionary* dict);
