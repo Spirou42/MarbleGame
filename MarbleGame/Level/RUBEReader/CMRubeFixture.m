@@ -99,7 +99,7 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   self.name = nil;
   self.vertices = nil;
   self.cachedChipmunkObjects = nil;
-  self.vBuffer =NULL;
+  self.vBuffer = NULL;
   [super dealloc];
 }
 #pragma mark - Properties
@@ -173,9 +173,50 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
 }
 
 #pragma mark - ChipmunkObject
+
+- (NSMutableArray*) createChipmunkObjects
+{
+  NSMutableArray* result = [NSMutableArray array];
+  switch (self.type) {
+    case kFixtureCircle:
+    {
+      ChipmunkCircleShape* circleShape =[ChipmunkCircleShape circleWithBody:nil radius:self.circleRadius offset:self.circleCenter];
+      [result addObject:circleShape];
+    }
+      break;
+    case kFixturePolygon:
+    {
+      ChipmunkPolyShape* polyShape = [ChipmunkPolyShape polyWithBody:nil count:(int)self.vertices.count verts:self.vBuffer offset:CGPointZero];
+      [result addObject:polyShape];
+    }
+      break;
+    case kFixtureChain:
+    {
+      for (NSUInteger i=0; i<(self.vertices.count-1); i++) {
+#if __CC_PLATFORM_MAC
+        CGPoint a = [[self.vertices objectAtIndex:i] pointValue];
+        CGPoint b = [[self.vertices objectAtIndex:i+1] pointValue];
+#else
+        CGPoint a = [[self.vertices objectAtIndex:i] CGPointValue];
+        CGPoint b = [[self.vertices objectAtIndex:i+1] CGPointValue];
+#endif
+        ChipmunkSegmentShape *shape = [ChipmunkSegmentShape segmentWithBody:nil from:a to:b radius:1.0];
+        [self.cachedChipmunkObjects addObject:shape];
+      }
+    }
+      break;
+    default:
+      break;
+  }
+  return result;
+}
+
 - (id <NSFastEnumeration>) chipmunkObjects
 {
-  return [NSArray array];
+  if (!self.chipmunkObjects) {
+    self.cachedChipmunkObjects = [self createChipmunkObjects];
+  }
+  return self.cachedChipmunkObjects;
 }
 
 @end

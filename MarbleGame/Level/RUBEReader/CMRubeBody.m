@@ -10,6 +10,8 @@
 #import "CMMarbleRubeReader.h"
 #import "CMRubeFixture.h"
 #import "ChipmunkObject.h"
+#import "ObjectiveChipmunk.h"
+
 
 @implementation CMRubeBody
 
