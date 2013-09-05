@@ -39,6 +39,7 @@
 	for (NSDictionary* bodyDict in [dict objectForKey:@"body"]) {
     CMRubeBody *aBody = [[CMRubeBody alloc]initWithDictionary:bodyDict];
 		[self.bodies addObject:aBody];
+    [aBody release];
 	}
 }
 

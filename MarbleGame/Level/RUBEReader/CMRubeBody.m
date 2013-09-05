@@ -45,6 +45,8 @@ angularDamping=_angularDamping, linearDamping = _linearDamping;
     // now iterate over all our fixtures and create them
     for (NSDictionary *fixtureDict in [dict objectForKey:@"fixture"]) {
       CMRubeFixture *fixture = [[CMRubeFixture alloc] initWithDictionary:fixtureDict];
+      [self.fixtures addObject:fixture];
+      [fixture release];
     }
 	}
 	return self;

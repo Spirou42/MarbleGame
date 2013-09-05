@@ -99,6 +99,7 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   self.name = nil;
   self.vertices = nil;
   self.cachedChipmunkObjects = nil;
+  self.vBuffer =NULL;
   [super dealloc];
 }
 #pragma mark - Properties
