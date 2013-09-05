@@ -1,3 +1,2 @@
-//Started script log at Thu Sep  5 17:22:21 2013
+//Started script log at Thu Sep  5 22:10:12 2013
 
-getFixture(2).select();
