@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CMMarbleRubeReader : NSObject
+@protocol ChipmunkObject;
+
+@interface CMMarbleRubeReader : NSObject <ChipmunkObject>
 {
 	@protected
 	NSMutableArray *_bodies;				///< store for RUBE bodies

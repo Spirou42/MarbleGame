@@ -8,12 +8,20 @@
 
 #import "CMRubeFixture.h"
 #import "CMMarbleRubeReader.h"
+#import "ObjectiveChipmunk.h"
+//#import "ChipmunkObject.h"
+
+@interface CMRubeFixture ()
+@property NSMutableArray *cachedChipmunkObjects;
+@property (nonatomic, assign) cpVect *vBuffer;
+@end
 
 @implementation CMRubeFixture
 @synthesize name = name_, friction = friction_, restitution = restitution_,
 filterBits = filterBits_, filterMask = filterMask_, filterGroup = filterGroup_, type = type_,
 circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_;
 
+@synthesize cachedChipmunkObjects = cachedChipmunkObjects_, vBuffer = vBuffer_;
 
 - (void) initDefaults
 {
@@ -24,6 +32,8 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   self.filterGroup = 0;
   self.sensor = NO;
   self.density = 1.0;
+  self.vBuffer = NULL;
+  self.cachedChipmunkObjects = nil;
 }
 
 - (void) initializeCircle:(NSDictionary*) dict
@@ -40,6 +50,7 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   self.vertices = pointsFromRUBEPointArray([dict objectForKey:@"vertices"]);
   self.circleRadius = 0.0;
   self.circleCenter = CGPointZero;
+  self.vBuffer = [self createVBufferFor:self.vertices];
 }
 
 - (void) initializeChain:(NSDictionary*) dict
@@ -78,8 +89,6 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
     } else if ([allKeys containsObject:@"chain"]){
       [self initializeChain:[dict objectForKey:@"chain"]];
     }
-    
-    
   }
   return self;
 }
@@ -88,6 +97,74 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
 - (void) dealloc
 {
   self.name = nil;
+  self.vertices = nil;
+  self.cachedChipmunkObjects = nil;
   [super dealloc];
 }
+#pragma mark - Properties
+
+- (cpVect*) vBuffer
+{
+  return self->vBuffer_;
+}
+
+- (void) setVBuffer:(CGPoint *)vBuffer
+{
+
+  if (self->vBuffer_ != vBuffer) {
+    if (self->vBuffer_) { // clear vBuffer
+      free(self->vBuffer_);
+    }
+
+    self->vBuffer_ = vBuffer;
+  }
+}
+
+#pragma mark - Helper
+
+- (cpVect*) createVBufferFor:(NSArray*) vertices
+{
+  size_t bufferSize = vertices.count * sizeof(cpVect);
+  cpVect* buffer = (cpVect*) malloc(bufferSize);
+  for (NSUInteger i=0; i<vertices.count; i++) {
+    buffer[i] = (cpVect) [[vertices objectAtIndex:i]pointValue];
+  }
+  return buffer;
+}
+
+- (CGFloat) momentForMass:(CGFloat)mass
+{
+  CGFloat result = 0.0f;
+  switch (self.type) {
+    case kFixtureCircle:
+    {
+      result = cpMomentForCircle(mass, 0.0f, self.circleRadius, self.circleCenter);
+    }
+      break;
+    case kFixturePolygon:
+    {
+      result = cpMomentForPoly(mass, (int)self.vertices.count, self.vBuffer, cpv(0, 0));
+    }
+      break;
+    case kFixtureChain:
+    {
+      for ( NSUInteger i=1; i<self.vertices.count; i++) {
+        cpVect a = [[self.vertices objectAtIndex:i-1] pointValue];
+        cpVect b = [[self.vertices objectAtIndex:i]pointValue];
+        result += cpMomentForSegment(mass, a, b);
+      }
+    }
+      break;
+    default:
+      break;
+  }
+  return result;
+}
+
+#pragma mark - ChipmunkObject
+- (id <NSFastEnumeration>) chipmunkObjects
+{
+  return [NSArray array];
+}
+
 @end

@@ -14,7 +14,9 @@ typedef enum {
 	kRubeBody_dynamic,
 }CMRubeBodyType;
 
-@interface CMRubeBody : NSObject
+@protocol ChipmunkObject;
+
+@interface CMRubeBody : NSObject <ChipmunkObject>
 {
 //	@protected
 //	NSString* 				_name;

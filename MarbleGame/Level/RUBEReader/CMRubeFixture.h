@@ -14,7 +14,11 @@ typedef enum {
   kFixtureChain
 }CMRubeFixtureType;
 
-@interface CMRubeFixture : NSObject
+
+@protocol ChipmunkObject;
+
+
+@interface CMRubeFixture : NSObject <ChipmunkObject>
 
 
 @property (nonatomic, retain) NSString* name;
@@ -31,4 +35,6 @@ typedef enum {
 
 
 - (id) initWithDictionary:(NSDictionary*) dict;
+
+- (CGFloat) momentForMass:(CGFloat) mass;
 @end

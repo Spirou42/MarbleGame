@@ -10,8 +10,11 @@
 #import "CMRubeBody.h"
 #import "CMRubeFixture.h"
 #import "cocos2d.h"
+#import "ChipmunkObject.h"
+
 @implementation CMMarbleRubeReader
 @synthesize  bodies = _bodies, images = _images, joints = _joints, gravity = _gravity;
+
 - (void) initDefaults
 {
 	self.bodies = [NSMutableArray array];
@@ -62,6 +65,13 @@
 	self.joints = nil;
 	[super dealloc];
 }
+
+#pragma mark - ChipmunkObject
+- (id <NSFastEnumeration>) chipmunkObjects
+{
+  return [NSArray array];
+}
+
 @end
 
 
