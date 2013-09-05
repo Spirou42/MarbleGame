@@ -1866,7 +1866,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode-5.app/Contents/Developer/Library/Frameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1906,7 +1906,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode-5.app/Contents/Developer/Library/Frameworks",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iMarbleGame/Prefix.pch;
