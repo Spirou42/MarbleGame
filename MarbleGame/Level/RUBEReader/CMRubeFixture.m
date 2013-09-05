@@ -127,7 +127,11 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   size_t bufferSize = vertices.count * sizeof(cpVect);
   cpVect* buffer = (cpVect*) malloc(bufferSize);
   for (NSUInteger i=0; i<vertices.count; i++) {
-    buffer[i] = (cpVect) [[vertices objectAtIndex:i]pointValue];
+#if __CC_PLATFORM_MAC
+    buffer[i] =  [[vertices objectAtIndex:i]pointValue];
+#else
+    buffer[i] =  [[vertices objectAtIndex:i]CGPointValue];
+#endif
   }
   return buffer;
 }
@@ -149,8 +153,14 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
     case kFixtureChain:
     {
       for ( NSUInteger i=1; i<self.vertices.count; i++) {
+#if __CC_PLATFORM_MAC
         cpVect a = [[self.vertices objectAtIndex:i-1] pointValue];
         cpVect b = [[self.vertices objectAtIndex:i]pointValue];
+#else
+        cpVect a = [[self.vertices objectAtIndex:i-1] CGPointValue];
+        cpVect b = [[self.vertices objectAtIndex:i]CGPointValue];
+
+#endif
         result += cpMomentForSegment(mass, a, b);
       }
     }
