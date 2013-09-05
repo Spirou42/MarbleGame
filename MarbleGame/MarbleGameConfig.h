@@ -42,7 +42,11 @@
 #define MARBLE_GROOVE_Y 			700
 
 //////////////////////////////////////////////////
-#pragma mark  SCORE SETTINGS
+#pragma mark  - COLLISION TYPES
+#define COLLISION_TYPE_BORDER @"borderType"
+#define COLLISION_TYPE_MARBLE @"marbleType"
+//////////////////////////////////////////////////
+#pragma mark  - SCORE SETTINGS
 
 #define MARBLE_THROW_SCORE 				(-1.0f)
 #define MARBLE_HIT_SCORE					(3.0f)
@@ -102,7 +106,7 @@
 #define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
 #define DEFAULT_MARBLE_KLICK								@"marbleKlick.mp3"
 //////////////////////////////////////////////////
-#pragma mark Fonts
+#pragma mark - Fonts
 
 #define DEFAULT_FONT @"RockWell24-OutlineButton.fnt"
 #define DEFAULT_BUTTON_FONT DEFAULT_FONT
@@ -118,7 +122,7 @@
 #define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
 
 //////////////////////////////////////////////////
-#pragma mark Layers
+#pragma mark - Layers
 
 #define BACKGROUND_LAYER 			(-1)
 
@@ -132,8 +136,8 @@
 #define BUTTON_LAYER 					(9)
 #define MENU_LAYER 						(10)
 
-#pragma mark -
-#pragma mark SYSTEM replacement Types
+#pragma mark - SYSTEM replacement Types
+
 
 #ifdef __CC_PLATFORM_MAC
 #define CMEvent NSEvent

@@ -148,9 +148,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 														 friction:BORDER_FRICTION
 															 layers:CP_ALL_LAYERS
 																group:CP_NO_GROUP
-												collisionType:borderType]autorelease];
+												collisionType:COLLISION_TYPE_BORDER]autorelease];
 	
-	[self.space addCollisionHandler:self typeA:[CMMarbleSprite class] typeB:[CMMarbleSprite class]
+	[self.space addCollisionHandler:self typeA:COLLISION_TYPE_MARBLE typeB:COLLISION_TYPE_MARBLE
 														begin:@selector(beginMarbleCollision:space:)
 												 preSolve:nil
 												postSolve:@selector(postMarbleCollision:space:)

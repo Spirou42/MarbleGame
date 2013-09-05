@@ -264,7 +264,7 @@
 - (ChipmunkShape *) circleShapeWithBody:(ChipmunkBody*) b andRadius:(CGFloat) r
 {
 	ChipmunkShape *shp = [ChipmunkCircleShape circleWithBody:b radius:r offset:cpv(0, 0)];
-	shp.collisionType = [self class];
+	shp.collisionType = COLLISION_TYPE_MARBLE;
 	shp.data = self;
 	shp.friction=MARBLE_FRICTION;
 	shp.elasticity=MARBLE_ELASTICITY;
