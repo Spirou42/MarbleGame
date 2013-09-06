@@ -12,12 +12,15 @@
 #import "ChipmunkObject.h"
 #import "ObjectiveChipmunk.h"
 
+@interface CMRubeBody ()
+@property (nonatomic, retain) ChipmunkBody* cpBody;
+@end
 
 @implementation CMRubeBody
 
-@synthesize name = _name, type = _type, angle = _angle, angularVelocity = _angularVelocity,
-linearVelocity = _linearVelocity, position = _position, fixtures = _fixtures,
-angularDamping=_angularDamping, linearDamping = _linearDamping;
+@synthesize name = name_, type = type_, angle = angle_, angularVelocity = angularVelocity_,
+linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_,
+angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_;
 
 - (void) initDefaults
 {
@@ -50,6 +53,8 @@ angularDamping=_angularDamping, linearDamping = _linearDamping;
       [self.fixtures addObject:fixture];
       [fixture release];
     }
+    [self createChipmunkBody];
+
 	}
 	return self;
 }
@@ -65,14 +70,59 @@ angularDamping=_angularDamping, linearDamping = _linearDamping;
 //***********************************************************
 #pragma mark - ChipmunkObject
 //***********************************************************
-- (id <NSFastEnumeration>) chipmunkObjects
+- (NSArray*) chipmunkObjects
 {
-  return [NSArray array];
+  NSMutableArray *result = [NSMutableArray array];
+  if (self.cpBody && (self.type != kRubeBody_static)) {
+    [result addObject:self.cpBody];
+  }
+  [result addObjectsFromArray:[self allShapes]];
+
+  return result;
 }
 
 //***********************************************************
 #pragma mark - Helper
 //***********************************************************
 
+- (CGFloat) moment
+{
+  CGFloat moment = 0.0f;
+  for (CMRubeFixture *f in self.fixtures) {
+    moment += [f momentForMass:self.mass];
+  }
+  return moment;
+}
+- (NSArray*) allShapes
+{
+  NSMutableArray *shapes = [NSMutableArray array];
+  for (CMRubeFixture *fixture in self.fixtures) {
+    id<NSFastEnumeration> fixtureShapes = [fixture chipmunkObjects];
+    for (id s in fixtureShapes) {
+      [shapes addObject:s];
+    }
+  }
+  return shapes;
+}
 
+- (void) createChipmunkBody
+{
+  if (!self.fixtures.count) {
+    return;
+  }
+  ChipmunkBody *body = nil;
+  if (self.type ==kRubeBody_static) {
+    body = [ChipmunkBody staticBody];
+    body.pos = self.position;
+  }else{
+    CGFloat moment = [self moment];
+    body = [ChipmunkBody bodyWithMass:self.mass andMoment:moment];
+    body.pos = self.position;
+  }
+  id<NSFastEnumeration> myShapes = [self allShapes];
+  for (ChipmunkShape* cs in myShapes) {
+    cs.body = body;
+  }
+  self.cpBody = body;
+}
 @end

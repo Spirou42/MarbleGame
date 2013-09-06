@@ -13,10 +13,10 @@
 
 @implementation CMMarbleLevel
 
-@synthesize backgroundFilename, overlayFilename, staticBodiesFilename, 
-backgroundImage, overlayImage, shapeReader, name, 
-baseURL,numberOfMarbles,scoreLimits,timeLimits,
-rubeFileName;
+@synthesize backgroundFilename = backgroundFilename_, overlayFilename = overlayFilename_, staticBodiesFilename = staticBodiesFilename_ ,
+backgroundImage = backgroundImage_, overlayImage = overlayImage_, shapeReader = shapeReader_, name = name_,
+baseURL = baseURL_,numberOfMarbles = numberOfMarbles_,scoreLimits = scoreLimits_,timeLimits = timeLimits_,
+rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 
 - (void) initDefaults
 {
@@ -29,6 +29,7 @@ rubeFileName;
 	self.staticBodiesFilename = nil;
 	self.shapeReader          = nil;
 	self.rubeFileName					= nil;
+  self.rubeReader           = nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
@@ -72,10 +73,10 @@ rubeFileName;
     [self initGraphicsFromDict:graphics];
 		[self initPhysicsFromDict:physics];
 		[self initAudioFromDict:audio];
-		if (self.rubeFileName) {
-			// get a rube reader and try to read the file
-			CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
-		}
+//		if (self.rubeFileName) {
+//			// get a rube reader and try to read the file
+//			CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
+//		}
 	}
 	return self;
 }
@@ -90,6 +91,8 @@ rubeFileName;
 	self.scoreLimits 						= nil;
 	self.timeLimits							= nil;
 	self.rubeFileName 					= nil;
+  self.rubeReader             = nil;
+  self.shapeReader            = nil;
 	[super dealloc];
 }
 
@@ -140,7 +143,47 @@ rubeFileName;
 	return [self timeIntervalFromString:[self.timeLimits objectForKey:@"Master"]];
 }
 
-#pragma mark - worker
+- (CMMarbleRubeReader*) rubeReader
+{
+  if (self->rubeFileName_ && !self->rubeReader_) {
+    CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
+    self.rubeReader = reader;
+  }
+  return self->rubeReader_;
+}
+
+- (CMSimpleShapeReader*) shapeReader
+{
+	if(!self->shapeReader_){
+		NSBundle *myBundle = [NSBundle bundleWithURL:self.baseURL];
+		NSURL *resourceURL = [myBundle URLForResource:self.staticBodiesFilename withExtension:@"stb"];
+		self.shapeReader =[[[CMSimpleShapeReader alloc] initWithContentsOfURL:resourceURL]autorelease];
+	}
+	return self->shapeReader_;
+}
+
+- (CCSprite*) backgroundImage
+{
+	if (!self->backgroundImage_) {
+		self.backgroundImage = [self loadImageFrom:self.backgroundFilename];
+	}
+	return self->backgroundImage_;
+}
+
+- (CCSprite*) overlayImage
+{
+	if(!self->overlayImage_){
+		self.overlayImage = [self loadImageFrom:self.overlayFilename];
+	}
+	return self->overlayImage_;
+}
+
+- (BOOL) isRubeLevel
+{
+  return (self->rubeFileName_ != nil);
+}
+
+#pragma mark - Helpers
 
 - (CCSprite*) loadImageFrom:(NSString*) imageName
 {
@@ -152,36 +195,15 @@ rubeFileName;
 	return [CCSprite spriteWithFile:fileName];
 }
 
-- (CCSprite*) backgroundImage
-{
-	if (!self->backgroundImage) {
-		self.backgroundImage = [self loadImageFrom:self.backgroundFilename];
-	}
-	return self->backgroundImage;
-}
 
-- (CCSprite*) overlayImage
-{
-	if(!self->overlayImage){
-		self.overlayImage = [self loadImageFrom:self.overlayFilename];
-	}
-	return self->overlayImage;
-}
 
-- (CMSimpleShapeReader*) shapeReader
-{
-	if(!self->shapeReader){
-		NSBundle *myBundle = [NSBundle bundleWithURL:self.baseURL];
-		NSURL *resourceURL = [myBundle URLForResource:self.staticBodiesFilename withExtension:@"stb"];
-		self.shapeReader =[[[CMSimpleShapeReader alloc] initWithContentsOfURL:resourceURL]autorelease];
-	}
-	return self->shapeReader;
-}
+
 
 - (void) releaseLevelData
 {
 	self.backgroundImage  = nil;
 	self.overlayImage     = nil;
 	self.shapeReader      = nil;
+  self.rubeReader       = nil;
 }
 @end

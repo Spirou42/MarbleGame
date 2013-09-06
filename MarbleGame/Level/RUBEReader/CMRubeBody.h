@@ -44,4 +44,5 @@ typedef enum {
 
 - (id) initWithDictionary:(NSDictionary*)dict;
 
+- (NSArray*) chipmunkObjects;
 @end

@@ -26,7 +26,9 @@
 @property (retain, nonatomic) NSMutableArray *images;
 @property (retain, nonatomic) NSMutableArray *joints;
 @property (assign, nonatomic) CGPoint gravity;
-
+@property (readonly, nonatomic) NSArray* staticBodies;        ///< returns an iteratable of all static bodies in the rube file.
+@property (readonly, nonatomic) NSArray* staticShapes;        ///< returns an iteratable of all static shapes in the rube file. Static shapes are shapes attached to any static body. The shapes are NOT detached from the current body!
+@property (readonly, nonatomic) NSArray* staticChipmunkObjects;
 - (id) initWithContentsOfURL:(NSURL*) fileURL;
 - (id) initWithContentsOfFile:(NSString*) filePath;
 

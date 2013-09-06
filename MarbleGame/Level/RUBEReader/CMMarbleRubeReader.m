@@ -66,9 +66,47 @@
 	self.joints = nil;
 	[super dealloc];
 }
+#pragma mark - Properties
+
+- (NSArray*) staticBodies
+{
+  NSMutableArray *results = [NSMutableArray array];
+  for (CMRubeBody* body in self.bodies) {
+    if (body.type == kRubeBody_static) {
+      [results addObject:body];
+    }
+  }
+  return results;
+}
+
+- (NSArray*) staticShapes
+{
+  NSMutableArray *results = [NSMutableArray array];
+  for (CMRubeBody * body in self.bodies) {
+    if (body.type == kRubeBody_static) {
+      // collect fixtures of the body;
+      for (CMRubeFixture *fix in body.fixtures) {
+        for (id k in fix.chipmunkObjects) {
+          [results addObject:k];
+        }
+      }
+    }
+  }
+  return results;
+}
+
+- (NSArray*) staticChipmunkObjects
+{
+  NSMutableArray *result = [NSMutableArray array];
+  for (CMRubeBody *b in [self staticBodies]) {
+    [result addObjectsFromArray:[b chipmunkObjects]];
+  }
+  return result;
+}
+
 
 #pragma mark - ChipmunkObject
-- (id <NSFastEnumeration>) chipmunkObjects
+- (NSArray*) chipmunkObjects
 {
   return [NSArray array];
 }

@@ -23,6 +23,8 @@
 #import "CMMarbleBatchNode.h"
 #import "CocosDenshion.h"
 #import "SimpleAudioEngine.h"
+#import "CMMarbleRubeReader.h"
+#import "ObjectiveChipmunk.h"
 
 enum {
 	kTagParentNode = 1,
@@ -163,7 +165,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 
 	self.space.collisionBias = pow(1.0-0.1, 400);
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
-	_debugLayer.visible = NO;
+	_debugLayer.visible = YES;
 	[self addChild:_debugLayer z:100];
 	self.space.damping = 0.8;
 	
@@ -395,21 +397,25 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 		[self initializeLevel];
 	}
 }
-- (void) setStaticShapes:(NSArray *)staticBodies
+- (void) setStaticShapes:(NSArray *)staticShapes
 {
-	if (staticBodies != self->_staticShapes) {
+	if (staticShapes != self->_staticShapes) {
 		if (self->_staticShapes) {
 			[self.space remove:self->_staticShapes];
 		}
-
-		ChipmunkBody * staticBody = self.space.staticBody;
-		for (ChipmunkShape *shape in staticBodies) {
-			shape.body = staticBody;
-			[self.space add:shape];
-
-		}
+    if (!self.currentLevel.isRubeLevel) {
+      ChipmunkBody * staticBody = self.space.staticBody;
+      for (ChipmunkShape *shape in staticShapes) {
+        shape.body = staticBody;
+        [self.space add:shape];
+      }
+    }else{
+      [self.space add:staticShapes];
+      cpSpace *aSpace = self.space.space;
+      cpSpaceReindexStatic(self.space.space);
+    }
 		[self->_staticShapes release];
-		self->_staticShapes = [staticBodies retain];
+		self->_staticShapes = [staticShapes retain];
 	}
 
 }
@@ -588,7 +594,15 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 - (void) initializeLevel
 {
 //	[self.space remove:self.bounds];
-	self.staticShapes = self.currentLevel.shapeReader.shapes;
+  if (self.currentLevel.isRubeLevel) {
+    CMMarbleRubeReader *levelReader = self.currentLevel.rubeReader;
+    NSArray *statThings = levelReader.staticChipmunkObjects;
+    self.staticShapes = statThings;
+  }else{
+    self.staticShapes = self.currentLevel.shapeReader.shapes;
+  }
+
+
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	[self fireMarbles:p inTime:10];

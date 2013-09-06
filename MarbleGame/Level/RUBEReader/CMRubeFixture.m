@@ -127,11 +127,12 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
 {
   size_t bufferSize = vertices.count * sizeof(cpVect);
   cpVect* buffer = (cpVect*) malloc(bufferSize);
+  NSInteger end = vertices.count -1;
   for (NSUInteger i=0; i<vertices.count; i++) {
 #if __CC_PLATFORM_MAC
-    buffer[i] =  [[vertices objectAtIndex:i]pointValue];
+    buffer[i] =  [[vertices objectAtIndex:end-i]pointValue];
 #else
-    buffer[i] =  [[vertices objectAtIndex:i]CGPointValue];
+    buffer[i] =  [[vertices objectAtIndex:end-i]CGPointValue];
 #endif
   }
   return buffer;
@@ -208,12 +209,16 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
     default:
       break;
   }
+  for (ChipmunkShape* shape in result) {
+    shape.friction = self.friction;
+    shape.elasticity = self.restitution;
+  }
   return result;
 }
 
-- (id <NSFastEnumeration>) chipmunkObjects
+- (NSArray*) chipmunkObjects
 {
-  if (!self.chipmunkObjects) {
+  if (!self->cachedChipmunkObjects_) {
     self.cachedChipmunkObjects = [self createChipmunkObjects];
   }
   return self.cachedChipmunkObjects;

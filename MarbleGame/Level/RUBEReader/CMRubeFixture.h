@@ -35,6 +35,7 @@ typedef enum {
 
 
 - (id) initWithDictionary:(NSDictionary*) dict;
-
 - (CGFloat) momentForMass:(CGFloat) mass;
+
+- (NSArray*) chipmunkObjects;
 @end

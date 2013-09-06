@@ -8,26 +8,27 @@
 
 #import <Foundation/Foundation.h>
 @class CCSprite;
-@class CMSimpleShapeReader, CMMarbleLevelSet;
+@class CMSimpleShapeReader, CMMarbleLevelSet, CMMarbleRubeReader;
 
 @interface CMMarbleLevel : NSObject
 {
-	@protected
-	CCSprite 	*backgroundImage;
-	CCSprite 	*overlayImage;
-	NSString	*name;
-	CMSimpleShapeReader * shapeReader;
-	NSUInteger numberOfMarbles;
+//	@protected
+//	CCSprite 	*backgroundImage;
+//	CCSprite 	*overlayImage;
+//	NSString	*name;
+//	CMSimpleShapeReader * shapeReader;
+//	NSUInteger numberOfMarbles;
+//
+//	NSString *backgroundFilename;
+//	NSString *overlayFilename;
+//	NSString *staticBodiesFilename;
+//	NSDictionary *scoreLimits;
+//	NSDictionary *timeLimits;
+//	
+//	NSURL		*baseURL;
+//	
+//	NSString * rubeFileName;
 
-	NSString *backgroundFilename;
-	NSString *overlayFilename;
-	NSString *staticBodiesFilename;
-	NSDictionary *scoreLimits;
-	NSDictionary *timeLimits;
-	
-	NSURL		*baseURL;
-	
-	NSString * rubeFileName;
 }
 
 @property (retain, nonatomic) NSString *name;															///< levelname
@@ -41,7 +42,7 @@
 
 @property (retain, nonatomic) CCSprite* overlayImage;											///< overlayimage
 
-@property(retain, nonatomic) CMSimpleShapeReader *shapeReader;						///< shapeReader
+@property(retain, nonatomic) CMSimpleShapeReader *shapeReader __attribute__((deprecated));						///< shapeReader is depricated now. will be replaced by the RubeReader
 
 @property (assign, nonatomic) NSUInteger numberOfMarbles;									///< initial number of marbles
 @property (retain, nonatomic) NSDictionary *scoreLimits, *timeLimits;
@@ -50,7 +51,8 @@
 
 
 @property (nonatomic, retain) NSString *rubeFileName;
-
+@property (nonatomic, retain) CMMarbleRubeReader* rubeReader;
+@property (nonatomic, readonly) BOOL isRubeLevel;
 
 ///< baseURL for all file operation
 @property (retain, nonatomic) NSURL*baseURL;
