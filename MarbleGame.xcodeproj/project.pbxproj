@@ -160,7 +160,7 @@
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
 		FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
-		FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
+		FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -378,7 +378,6 @@
 			dstPath = Documents;
 			dstSubfolderSpec = 16;
 			files = (
-				FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1527,6 +1526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
