@@ -9,5 +9,12 @@
 #import "CMRubeImage.h"
 
 @implementation CMRubeImage
+@synthesize type = type_, name = name_;
 
+
+-(void) dealloc
+{
+	self.name = nil;
+	[super dealloc];
+}
 @end

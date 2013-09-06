@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+	kRubeImageType_Background = 0,
+	kRubeImageType_Overlay = 1
+} CMRubeImageType;
+
 @interface CMRubeImage : NSObject
+
+@property (nonatomic,assign) CMRubeImageType type;
+@property (nonatomic,retain) NSString* name;
+
+
 
 @end

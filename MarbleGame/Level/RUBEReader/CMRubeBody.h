@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CMRubeImage.h"
 typedef enum {
 	kRubeBody_static,
 	kRubeBody_kinematic,
@@ -41,8 +41,11 @@ typedef enum {
 @property (nonatomic, assign) CGFloat mass;
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, retain) NSMutableArray *fixtures;
+@property (nonatomic, retain) NSMutableArray *attachedImages;
 
 - (id) initWithDictionary:(NSDictionary*)dict;
+
+- (id) imageForType:(CMRubeImageType)type;
 
 - (NSArray*) chipmunkObjects;
 @end

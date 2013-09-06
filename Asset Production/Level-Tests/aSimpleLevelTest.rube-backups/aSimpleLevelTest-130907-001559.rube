@@ -57,13 +57,6 @@
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -71,14 +64,6 @@
     "allowSleep" : true,
     "autoClearForces" : true,
     "continuousPhysics" : true,
-    "customProperties" : 
-    [
-      
-      {
-        "int" : 30,
-        "name" : "marbleCount"
-      }
-    ],
     "exportOptions" : 
     {
       "saveFullPathForImages" : false,

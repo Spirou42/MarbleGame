@@ -11,6 +11,7 @@
 #import "CMRubeFixture.h"
 #import "ChipmunkObject.h"
 #import "ObjectiveChipmunk.h"
+#import "CMRubeImage.h"
 
 @interface CMRubeBody ()
 @property (nonatomic, retain) ChipmunkBody* cpBody;
@@ -20,11 +21,12 @@
 
 @synthesize name = name_, type = type_, angle = angle_, angularVelocity = angularVelocity_,
 linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_,
-angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_;
+angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_;
 
 - (void) initDefaults
 {
   self.fixtures = [NSMutableArray array];
+	self.attachedImages = [NSMutableArray array];
   self.name = nil;
   self.position = CGPointZero;
   self.type = kFixtureCircle;
@@ -64,6 +66,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
 {
 	self.name = nil;
 	self.fixtures = nil;
+	self.attachedImages = nil;
 	[super dealloc];
 }
 
@@ -79,6 +82,22 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   [result addObjectsFromArray:[self allShapes]];
 
   return result;
+}
+
+//***********************************************************
+#pragma mark - Image Accessors
+//***********************************************************
+
+- (id) imageForType:(CMRubeImageType)type
+{
+	id result = nil;
+	for (CMRubeImage* rImage in self.attachedImages) {
+    if (rImage.type == type) {
+			result = rImage;
+			break;
+		}
+	}
+	return result;
 }
 
 //***********************************************************
