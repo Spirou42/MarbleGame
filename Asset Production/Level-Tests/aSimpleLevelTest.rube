@@ -38,6 +38,27 @@
       "bitplane32"
     ]
   },
+  "customPropertyDefs" : 
+  [
+    
+    {
+      "class" : "image",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Background"
+        },
+        
+        {
+          "entry" : "Overlay"
+        }
+      ],
+      "displayName" : "imageType",
+      "name" : "imageType",
+      "type" : "string"
+    }
+  ],
   "metaworld" : 
   {
     "allowSleep" : true,
@@ -317,11 +338,19 @@
       {
         "body" : 1,
         "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
         "file" : "../../MarbleGame/Default Levels.bundle/Level1-Background.png",
         "filter" : 1,
         "flip" : false,
         "id" : 1,
-        "name" : "image0",
+        "name" : "Background",
         "opacity" : 0.50,
         "scale" : 768.0
       },
@@ -329,12 +358,21 @@
       {
         "body" : 1,
         "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Overlay"
+          }
+        ],
         "file" : "../../MarbleGame/Default Levels.bundle/Level1-Overlay.png",
         "filter" : 1,
         "flip" : false,
         "id" : 2,
-        "name" : "image1",
+        "name" : "Overlay",
         "opacity" : 0.50,
+        "renderOrder" : 1,
         "scale" : 768.0
       }
     ],

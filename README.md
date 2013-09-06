@@ -44,7 +44,7 @@ There will be different ways to play MarbleGame.
 			Level not finished
 
 * Relaxed 
- 	- Removing all marbles no matter how long it takes or how many points you create. All  level limit (win/loos conditions) are turned off. The score and level time are recorded for statistical reasosn only :)
+ 	- Removing all marbles no matter how long it takes or how many points you create. All  level limit (win/loos conditions) are turned off. The score and level time are recorded for statistical reason only :)
 
 
 ### How to score.

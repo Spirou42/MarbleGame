@@ -122,6 +122,9 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   id<NSFastEnumeration> myShapes = [self allShapes];
   for (ChipmunkShape* cs in myShapes) {
     cs.body = body;
+    if (self.type == kRubeBody_static) {
+      cs.collisionType = @"borderType";
+    }
   }
   self.cpBody = body;
 }
