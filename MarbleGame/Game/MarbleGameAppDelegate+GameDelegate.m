@@ -105,7 +105,7 @@ NSMutableDictionary *_scoreModeDelegates;
 	
   self.levelSet = [CMMarbleLevelSet levelSetWithURL:bla];
 
-	
+	[newSearchPath release];
 	
   
 	// initialize known score Modes

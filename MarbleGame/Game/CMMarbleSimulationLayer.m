@@ -111,8 +111,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 // 	[self.space removeBody:self.space.staticBody];
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
+	self.staticShapes = nil;
 	[self.space remove:self.bounds];
-	[self.space remove:self.staticShapes];
+
 	self.space = nil;
   self.collisionCollector = nil;
 	self.currentMarbleSet = nil;
@@ -410,9 +411,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
         [self.space add:shape];
       }
     }else{
-      [self.space add:staticShapes];
+			if (staticShapes) {
+				[self.space add:staticShapes];
+			}
+
       cpSpace *aSpace = self.space.space;
-      cpSpaceReindexStatic(self.space.space);
+      cpSpaceReindexStatic(aSpace);
     }
 		[self->_staticShapes release];
 		self->_staticShapes = [staticShapes retain];

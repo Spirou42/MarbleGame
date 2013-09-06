@@ -12,7 +12,7 @@
 //#import "ChipmunkObject.h"
 
 @interface CMRubeFixture ()
-@property NSMutableArray *cachedChipmunkObjects;
+@property (nonatomic, retain) NSMutableArray *cachedChipmunkObjects;
 @property (nonatomic, assign) cpVect *vBuffer;
 @end
 

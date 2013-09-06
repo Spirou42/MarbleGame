@@ -172,6 +172,7 @@
 		
 		if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]){
 				[[NSApplication sharedApplication] presentError:error];
+			[coordinator release];
 				return nil;
 		}
 	}
@@ -259,7 +260,7 @@
 		[alert addButtonWithTitle:cancelButton];
 		
 		NSInteger answer = [alert runModal];
-		
+		[alert release];
 		if (answer == NSAlertAlternateReturn) {
 			return NSTerminateCancel;
 		}

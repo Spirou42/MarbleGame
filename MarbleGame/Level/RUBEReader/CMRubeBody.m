@@ -123,7 +123,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   for (ChipmunkShape* cs in myShapes) {
     cs.body = body;
     if (self.type == kRubeBody_static) {
-      cs.collisionType = @"borderType";
+      cs.collisionType = COLLISION_TYPE_BORDER;
     }
   }
   self.cpBody = body;
