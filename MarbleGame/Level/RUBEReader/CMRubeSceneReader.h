@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol ChipmunkObject;
-
+@class CMRubeBody, CMRubeImage;
 @interface CMRubeSceneReader : NSObject <ChipmunkObject>
 {
 	@protected
@@ -19,7 +19,6 @@
 
 	// World parameters
 	CGPoint							_gravity;				///< gravity vector for this world
-	
 }
 
 @property (retain, nonatomic) NSMutableArray *bodies;
@@ -31,6 +30,9 @@
 @property (readonly, nonatomic) NSArray* staticChipmunkObjects;
 - (id) initWithContentsOfURL:(NSURL*) fileURL;
 - (id) initWithContentsOfFile:(NSString*) filePath;
+
+- (CMRubeBody*) bodyWithName:(NSString*) name;
+- (CMRubeImage*) imageWithName:(NSString*) name;
 
 @end
 

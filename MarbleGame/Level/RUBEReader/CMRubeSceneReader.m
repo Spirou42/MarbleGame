@@ -120,6 +120,33 @@
   return result;
 }
 
+#pragma mark - content accessors
+
+- (CMRubeBody*) bodyWithName:(NSString *)name
+{
+	CMRubeBody* result = nil;
+	for (CMRubeBody *cb in self.bodies) {
+    if ([cb.name isEqualToString:name]) {
+			result = cb;
+			break;
+		}
+	}
+	
+	return result;
+}
+
+- (CMRubeImage*) imageWithName:(NSString *)name
+{
+	CMRubeImage *result = nil;
+	for (CMRubeImage *ri in self.images) {
+    if ([ri.name isEqualToString:name]) {
+			result = ri;
+			break;
+		}
+	}
+	return result;
+}
+
 
 #pragma mark - ChipmunkObject
 - (NSArray*) chipmunkObjects

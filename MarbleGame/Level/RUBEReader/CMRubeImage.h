@@ -15,6 +15,9 @@ typedef enum {
 	kRubeImageType_Sprite = 2,
 } CMRubeImageType;
 
+
+@class CCSprite;
+
 @interface CMRubeImage : NSObject
 
 @property (nonatomic,assign) CMRubeImageType type;
@@ -28,6 +31,8 @@ typedef enum {
 @property (nonatomic, assign) NSInteger rubeBodyIndex;
 @property (nonatomic, retain) NSString* filename;
 @property (nonatomic, assign) NSInteger rubeRenderOrder;
+
+@property (nonatomic, readonly) CCSprite* sprite;
 
 - (id) initWithDictionary:(NSDictionary*) dict;
 

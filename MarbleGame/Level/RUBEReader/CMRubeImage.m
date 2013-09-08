@@ -8,9 +8,15 @@
 
 #import "CMRubeImage.h"
 #import "CMRubeSceneReader.h"
+#import "cocos2d.h"
+
+
+@interface CMRubeImage()
+@property (nonatomic,retain) CCSprite* cachedSprite;
+@end
 
 @implementation CMRubeImage
-@synthesize type = type_, name = name_;
+@synthesize type = type_, name = name_,cachedSprite = cachedSprite_;
 
 
 - (void) initDefaults
@@ -94,5 +100,22 @@
 	self.name = nil;
 	self.filename = nil;
 	[super dealloc];
+}
+
+#pragma mark - Sprite Access
+
+- (void) createSprite
+{
+	CCSprite *theSprite = [CCSprite spriteWithFile:self.filename];
+	NSLog(@"created a sprite %@ (%@)",theSprite,NSStringFromSize(theSprite.contentSize));
+	self.cachedSprite = theSprite;
+}
+
+- (CCSprite*) sprite
+{
+	if (!self->cachedSprite_) {
+		[self createSprite];
+	}
+	return self.cachedSprite;
 }
 @end
