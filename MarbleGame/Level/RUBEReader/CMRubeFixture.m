@@ -25,7 +25,7 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
 
 - (void) initDefaults
 {
-  self.friction = 1.0;
+  self.friction = 0.0;
   self.restitution = 1.0;
   self.filterBits = 1;
   self.filterMask = 0xffff;

@@ -112,7 +112,7 @@
             "friction" : 0.2,
             "id" : 2,
             "name" : "fixture0",
-            "restitution" : 6.0,
+            "restitution" : 1,
             "shapes" : 
             [
               
@@ -214,10 +214,9 @@
           
           {
             "density" : 1,
-            "friction" : 0.6000000238418579,
             "id" : 7,
             "name" : "Ground",
-            "restitution" : 0.8999999761581421,
+            "restitution" : 0.1000000014901161,
             "shapes" : 
             [
               
@@ -382,7 +381,7 @@
         [
           
           {
-            "density" : 0.01209113001823425,
+            "density" : 1,
             "friction" : 0.2,
             "id" : 36,
             "name" : "Circle",
@@ -402,11 +401,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 37,
             "name" : "Tooth 6",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -438,11 +436,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 38,
             "name" : "Tooth",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -474,11 +471,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 39,
             "name" : "Tooth 7",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -510,11 +506,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 40,
             "name" : "Tooth 4",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -546,11 +541,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 41,
             "name" : "Tooth 3",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -582,11 +576,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 42,
             "name" : "Tooth 8",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -618,11 +611,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 43,
             "name" : "Tooth 5",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -654,11 +646,10 @@
           },
           
           {
-            "density" : 0.01209113001823425,
-            "friction" : 1,
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 44,
             "name" : "Tooth 2",
-            "restitution" : 0.8999999761581421,
             "shapes" : 
             [
               
@@ -691,18 +682,18 @@
         ],
         "id" : 5,
         "linearVelocity" : 0,
-        "massData-I" : 22420.1933593750,
+        "massData-I" : 1854267.8750,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
-          "y" : 0.007920361123979092
+          "x" : 0.01231739763170481,
+          "y" : 0.007920193485915661
         },
-        "massData-mass" : 39.99999618530273,
+        "massData-mass" : 3308.209716796875,
         "name" : "Wheel",
         "position" : 
         {
-          "x" : 233.4721984863281,
-          "y" : 730.4796752929688
+          "x" : 227.4112548828125,
+          "y" : 675.9313354492188
         },
         "type" : "dynamic"
       }

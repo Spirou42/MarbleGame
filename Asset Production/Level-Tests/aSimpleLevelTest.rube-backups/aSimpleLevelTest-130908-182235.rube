@@ -42,16 +42,13 @@
   [
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "image",
       "comboboxEntries" : 
       [
+        
+        {
+          "entry" : "Undefined"
+        },
         
         {
           "entry" : "Background"
@@ -59,11 +56,22 @@
         
         {
           "entry" : "Overlay"
+        },
+        
+        {
+          "entry" : "Sprite"
         }
       ],
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -98,6 +106,26 @@
         "awake" : true,
         "fixture" : 
         [
+          
+          {
+            "density" : 1,
+            "friction" : 0.2,
+            "id" : 2,
+            "name" : "fixture0",
+            "restitution" : 1,
+            "shapes" : 
+            [
+              
+              {
+                "type" : "line"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ -304.0423278808594, -254.7492828369141, -205.2008666992188 ],
+              "y" : [ 19.57739639282227, 55.38318252563477, 18.90112686157227 ]
+            }
+          },
           
           {
             "density" : 1,
@@ -185,7 +213,6 @@
           
           {
             "density" : 1,
-            "friction" : 0.6000000238418579,
             "id" : 7,
             "name" : "Ground",
             "restitution" : 0.1000000014901161,
@@ -320,7 +347,6 @@
               "x" : 
               [
                 -204.5572662353516,
-                -254.4987182617188,
                 -304.99121093750,
                 -286.2559204101562,
                 -224.1842803955078
@@ -328,7 +354,6 @@
               "y" : 
               [
                 18.72964668273926,
-                55.59358978271484,
                 19.48813247680664,
                 -39.69036102294922,
                 -40.15908050537109
@@ -357,7 +382,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 1,
+            "id" : 36,
             "name" : "Circle",
             "shapes" : 
             [
@@ -377,7 +402,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 2,
+            "id" : 37,
             "name" : "Tooth 6",
             "shapes" : 
             [
@@ -412,7 +437,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 8,
+            "id" : 38,
             "name" : "Tooth",
             "shapes" : 
             [
@@ -447,7 +472,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 12,
+            "id" : 39,
             "name" : "Tooth 7",
             "shapes" : 
             [
@@ -482,7 +507,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 13,
+            "id" : 40,
             "name" : "Tooth 4",
             "shapes" : 
             [
@@ -517,7 +542,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 14,
+            "id" : 41,
             "name" : "Tooth 3",
             "shapes" : 
             [
@@ -552,7 +577,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 15,
+            "id" : 42,
             "name" : "Tooth 8",
             "shapes" : 
             [
@@ -587,7 +612,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 16,
+            "id" : 43,
             "name" : "Tooth 5",
             "shapes" : 
             [
@@ -622,7 +647,7 @@
           {
             "density" : 1,
             "friction" : 0.2,
-            "id" : 17,
+            "id" : 44,
             "name" : "Tooth 2",
             "shapes" : 
             [
@@ -654,20 +679,20 @@
             }
           }
         ],
-        "id" : 2,
+        "id" : 5,
         "linearVelocity" : 0,
         "massData-I" : 1854267.8750,
         "massData-center" : 
         {
           "x" : 0.01231739763170481,
-          "y" : 0.007920046336948872
+          "y" : 0.007920193485915661
         },
-        "massData-mass" : 3308.209472656250,
+        "massData-mass" : 3308.209716796875,
         "name" : "Wheel",
         "position" : 
         {
-          "x" : 289.1266479492188,
-          "y" : 692.9188842773438
+          "x" : 227.4112548828125,
+          "y" : 675.9313354492188
         },
         "type" : "dynamic"
       }
@@ -717,17 +742,26 @@
       },
       
       {
-        "body" : 2,
+        "angle" : -0.7845504283905029,
+        "body" : 5,
         "center" : 
         {
           "x" : 0.015930175781250,
           "y" : -0.0021972656250
         },
-        "file" : "WoodGear-T1.png",
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Sprite"
+          }
+        ],
+        "file" : "../../MarbleGame/Default Levels.bundle/WoodGear-T1.png",
         "filter" : 1,
         "flip" : false,
-        "id" : 3,
-        "name" : "image0",
+        "id" : 6,
+        "name" : "WheelImage",
         "opacity" : 1,
         "renderOrder" : 3.0,
         "scale" : 73.18642425537109
