@@ -9,7 +9,12 @@
 #import "CMMarbleLevel.h"
 #import "CMSimpleShapeReader.h"
 #import "cocos2d.h"
-#import "CMMarbleRubeReader.h"
+#import "CMRubeSceneReader.h"
+#import "ChipmunkObject.h"
+
+@interface CMMarbleLevel ()
+@property(retain, nonatomic) CMSimpleShapeReader *shapeReader ;						///< shapeReader is depricated now. will be replaced by the RubeReader
+@end
 
 @implementation CMMarbleLevel
 
@@ -143,10 +148,10 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	return [self timeIntervalFromString:[self.timeLimits objectForKey:@"Master"]];
 }
 
-- (CMMarbleRubeReader*) rubeReader
+- (CMRubeSceneReader*) rubeReader
 {
   if (self->rubeFileName_ && !self->rubeReader_) {
-    CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
+    CMRubeSceneReader *reader = [[[CMRubeSceneReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];
     self.rubeReader = reader;
   }
   return self->rubeReader_;
@@ -182,6 +187,17 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 {
   return (self->rubeFileName_ != nil);
 }
+#pragma mark - Level Object Accessors
+
+- (NSArray*) staticObjects
+{
+	if (self.isRubeLevel) {
+		return self.rubeReader.staticChipmunkObjects;
+	}else{
+		return self.shapeReader.shapes;
+	}
+}
+
 
 #pragma mark - Helpers
 

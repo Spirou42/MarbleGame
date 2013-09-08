@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class CCSprite;
-@class CMSimpleShapeReader, CMMarbleLevelSet, CMMarbleRubeReader;
+@class CMSimpleShapeReader, CMMarbleLevelSet, CMRubeSceneReader,ChipmunkObject;
 
 @interface CMMarbleLevel : NSObject
 {
@@ -42,7 +42,7 @@
 
 @property (retain, nonatomic) CCSprite* overlayImage;											///< overlayimage
 
-@property(retain, nonatomic) CMSimpleShapeReader *shapeReader __attribute__((deprecated));						///< shapeReader is depricated now. will be replaced by the RubeReader
+
 
 @property (assign, nonatomic) NSUInteger numberOfMarbles;									///< initial number of marbles
 @property (retain, nonatomic) NSDictionary *scoreLimits, *timeLimits;
@@ -51,13 +51,19 @@
 
 
 @property (nonatomic, retain) NSString *rubeFileName;
-@property (nonatomic, retain) CMMarbleRubeReader* rubeReader;
+@property (nonatomic, retain) CMRubeSceneReader* rubeReader;
 @property (nonatomic, readonly) BOOL isRubeLevel;
+
 
 ///< baseURL for all file operation
 @property (retain, nonatomic) NSURL*baseURL;
+
+
 - (id) initWithDictionary:(NSDictionary*)dict;
 
 - (void) releaseLevelData;
+
+// accessors for level data
+- (NSArray*) staticObjects;
 
 @end

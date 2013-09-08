@@ -7,7 +7,7 @@
 //
 
 #import "CMRubeBody.h"
-#import "CMMarbleRubeReader.h"
+#import "CMRubeSceneReader.h"
 #import "CMRubeFixture.h"
 #import "ChipmunkObject.h"
 #import "ObjectiveChipmunk.h"
@@ -99,6 +99,12 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
 	}
 	return result;
 }
+
+- (void) attachImage:(CMRubeImage*) rubeImage
+{
+	[self.attachedImages addObject:rubeImage];
+}
+
 
 //***********************************************************
 #pragma mark - Helper

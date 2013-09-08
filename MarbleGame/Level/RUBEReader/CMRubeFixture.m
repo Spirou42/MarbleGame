@@ -7,7 +7,7 @@
 //
 
 #import "CMRubeFixture.h"
-#import "CMMarbleRubeReader.h"
+#import "CMRubeSceneReader.h"
 #import "ObjectiveChipmunk.h"
 //#import "ChipmunkObject.h"
 

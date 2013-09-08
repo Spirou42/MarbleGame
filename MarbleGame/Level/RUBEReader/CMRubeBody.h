@@ -46,6 +46,6 @@ typedef enum {
 - (id) initWithDictionary:(NSDictionary*)dict;
 
 - (id) imageForType:(CMRubeImageType)type;
-
+- (void) attachImage:(CMRubeImage*) rubeImage;
 - (NSArray*) chipmunkObjects;
 @end

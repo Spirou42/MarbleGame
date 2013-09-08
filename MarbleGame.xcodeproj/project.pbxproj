@@ -94,8 +94,8 @@
 		93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */; };
 		93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */; };
 		93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */; };
-		93F35A3B17C29F5A00B9B4E9 /* CMMarbleRubeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMMarbleRubeReader.m */; };
-		93F35A3C17C29F5A00B9B4E9 /* CMMarbleRubeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMMarbleRubeReader.m */; };
+		93F35A3B17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */; };
+		93F35A3C17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */; };
 		93F35A3F17C2A1A900B9B4E9 /* CMRubeBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */; };
 		93F35A4017C2A1A900B9B4E9 /* CMRubeBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */; };
 		93F35A4317C2A1C500B9B4E9 /* CMRubeFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A4217C2A1C500B9B4E9 /* CMRubeFixture.m */; };
@@ -514,8 +514,8 @@
 		93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleHelpScene.m; sourceTree = "<group>"; };
 		93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePlayScene.h; sourceTree = "<group>"; };
 		93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePlayScene.m; sourceTree = "<group>"; };
-		93F35A3917C29F5A00B9B4E9 /* CMMarbleRubeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleRubeReader.h; sourceTree = "<group>"; };
-		93F35A3A17C29F5A00B9B4E9 /* CMMarbleRubeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleRubeReader.m; sourceTree = "<group>"; };
+		93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubeSceneReader.h; sourceTree = "<group>"; };
+		93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRubeSceneReader.m; sourceTree = "<group>"; };
 		93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubeBody.h; sourceTree = "<group>"; };
 		93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRubeBody.m; sourceTree = "<group>"; };
 		93F35A4117C2A1C500B9B4E9 /* CMRubeFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubeFixture.h; sourceTree = "<group>"; };
@@ -1021,8 +1021,8 @@
 		93F35A2917C29F1E00B9B4E9 /* RUBEReader */ = {
 			isa = PBXGroup;
 			children = (
-				93F35A3917C29F5A00B9B4E9 /* CMMarbleRubeReader.h */,
-				93F35A3A17C29F5A00B9B4E9 /* CMMarbleRubeReader.m */,
+				93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */,
+				93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */,
 				93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */,
 				93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */,
 				93F35A4117C2A1C500B9B4E9 /* CMRubeFixture.h */,
@@ -1586,7 +1586,7 @@
 				9356F7651793296B008D584E /* CMMarbleLevel.m in Sources */,
 				93F35A4717C2A1D400B9B4E9 /* CMRubeImage.m in Sources */,
 				938D1A3617B970D400295B4F /* CMMarbleMenuScene.m in Sources */,
-				93F35A3B17C29F5A00B9B4E9 /* CMMarbleRubeReader.m in Sources */,
+				93F35A3B17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */,
 				93D5708A17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */,
 				938CE0B917BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */,
 				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
@@ -1631,7 +1631,7 @@
 				FED2E87417A7FD8B005A16B3 /* CMMarbleLevelSet.m in Sources */,
 				93F35A4817C2A1D400B9B4E9 /* CMRubeImage.m in Sources */,
 				938D1A3717B970D400295B4F /* CMMarbleMenuScene.m in Sources */,
-				93F35A3C17C29F5A00B9B4E9 /* CMMarbleRubeReader.m in Sources */,
+				93F35A3C17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */,
 				93D5708B17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */,
 				938CE0BA17BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */,
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,

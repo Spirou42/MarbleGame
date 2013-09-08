@@ -23,7 +23,7 @@
 #import "CMMarbleBatchNode.h"
 #import "CocosDenshion.h"
 #import "SimpleAudioEngine.h"
-#import "CMMarbleRubeReader.h"
+#import "CMRubeSceneReader.h"
 #import "ObjectiveChipmunk.h"
 
 enum {
@@ -598,15 +598,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 - (void) initializeLevel
 {
 //	[self.space remove:self.bounds];
-  if (self.currentLevel.isRubeLevel) {
-    CMMarbleRubeReader *levelReader = self.currentLevel.rubeReader;
-    NSArray *statThings = levelReader.staticChipmunkObjects;
-    self.staticShapes = statThings;
-  }else{
-    self.staticShapes = self.currentLevel.shapeReader.shapes;
-  }
-
-
+//  if (self.currentLevel.isRubeLevel) {
+//    CMRubeSceneReader *levelReader = self.currentLevel.rubeReader;
+//    NSArray *statThings = levelReader.staticChipmunkObjects;
+//    self.staticShapes = statThings;
+//  }else{
+//    self.staticShapes = self.currentLevel.shapeReader.shapes;
+//  }
+	self.staticShapes = [self.currentLevel staticObjects];
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	[self fireMarbles:p inTime:10];
