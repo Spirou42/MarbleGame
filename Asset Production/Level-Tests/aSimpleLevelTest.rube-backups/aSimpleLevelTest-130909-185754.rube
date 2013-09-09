@@ -45,9 +45,11 @@
       "class" : "image",
       "comboboxEntries" : 
       [
+        
         {
-					"entry" : "Undefined"
-				},
+          "entry" : "Undefined"
+        },
+        
         {
           "entry" : "Background"
         },
@@ -55,10 +57,10 @@
         {
           "entry" : "Overlay"
         },
-
-				{
-					"entry" : "Sprite"
-				}
+        
+        {
+          "entry" : "Sprite"
+        }
       ],
       "displayName" : "imageType",
       "name" : "imageType",
@@ -104,6 +106,27 @@
         "awake" : true,
         "fixture" : 
         [
+          
+          {
+            "density" : 1,
+            "friction" : 0.2,
+            "id" : 2,
+            "name" : "fixture0",
+            "restitution" : 6.0,
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 1,
+                "type" : "line"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ -304.0423278808594, -254.7492828369141, -205.2008666992188 ],
+              "y" : [ 19.57739639282227, 55.38318252563477, 18.90112686157227 ]
+            }
+          },
           
           {
             "density" : 1,
@@ -191,7 +214,7 @@
           
           {
             "density" : 1,
-            "friction" : 0.6000000238418579,
+            "friction" : 0.1000000014901161,
             "id" : 7,
             "name" : "Ground",
             "restitution" : 0.1000000014901161,
@@ -326,7 +349,6 @@
               "x" : 
               [
                 -204.5572662353516,
-                -254.4987182617188,
                 -304.99121093750,
                 -286.2559204101562,
                 -224.1842803955078
@@ -334,7 +356,6 @@
               "y" : 
               [
                 18.72964668273926,
-                55.59358978271484,
                 19.48813247680664,
                 -39.69036102294922,
                 -40.15908050537109
@@ -361,7 +382,7 @@
         [
           
           {
-            "density" : 1,
+            "density" : 0.01209113001823425,
             "friction" : 0.2,
             "id" : 36,
             "name" : "Circle",
@@ -381,10 +402,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 37,
             "name" : "Tooth 6",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -416,10 +438,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 38,
             "name" : "Tooth",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -451,10 +474,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 39,
             "name" : "Tooth 7",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -486,10 +510,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 40,
             "name" : "Tooth 4",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -521,10 +546,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 41,
             "name" : "Tooth 3",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -556,10 +582,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 42,
             "name" : "Tooth 8",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -591,10 +618,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 43,
             "name" : "Tooth 5",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -626,10 +654,11 @@
           },
           
           {
-            "density" : 1,
-            "friction" : 0.2,
+            "density" : 0.01209113001823425,
+            "friction" : 1,
             "id" : 44,
             "name" : "Tooth 2",
+            "restitution" : 0.2,
             "shapes" : 
             [
               
@@ -662,18 +691,18 @@
         ],
         "id" : 5,
         "linearVelocity" : 0,
-        "massData-I" : 1854267.8750,
+        "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231717597693205,
-          "y" : 0.007920267060399055
+          "x" : 0.01231722533702850,
+          "y" : 0.007920457050204277
         },
-        "massData-mass" : 3308.209716796875,
+        "massData-mass" : 39.99999618530273,
         "name" : "Wheel",
         "position" : 
         {
-          "x" : 227.4112548828125,
-          "y" : 675.9313354492188
+          "x" : 233.4721984863281,
+          "y" : 730.4796752929688
         },
         "type" : "dynamic"
       }
@@ -692,7 +721,7 @@
             "string" : "Background"
           }
         ],
-        "file" : "../../MarbleGame/Default Levels.bundle/Level1-Background.png",
+        "file" : "../../MarbleGame/Default Levels.levelset/Level1-Background.png",
         "filter" : 1,
         "flip" : false,
         "id" : 1,
@@ -712,7 +741,7 @@
             "string" : "Overlay"
           }
         ],
-        "file" : "../../MarbleGame/Default Levels.bundle/Level1-Overlay.png",
+        "file" : "../../MarbleGame/Default Levels.levelset/Level1-Overlay.png",
         "filter" : 1,
         "flip" : false,
         "id" : 2,
@@ -735,14 +764,14 @@
           
           {
             "name" : "imageType",
-            "string" : "(clear)"
+            "string" : "Sprite"
           }
         ],
-        "file" : "WoodGear-T1.png",
+        "file" : "../../MarbleGame/Default Levels.levelset/WoodGear-T1.png",
         "filter" : 1,
         "flip" : false,
         "id" : 6,
-        "name" : "image0",
+        "name" : "WheelImage",
         "opacity" : 1,
         "renderOrder" : 3.0,
         "scale" : 73.18642425537109
