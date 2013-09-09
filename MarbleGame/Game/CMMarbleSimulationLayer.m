@@ -25,6 +25,7 @@
 #import "SimpleAudioEngine.h"
 #import "CMRubeSceneReader.h"
 #import "ObjectiveChipmunk.h"
+#import "CMRubeBody.h"
 
 enum {
 	kTagParentNode = 1,
@@ -41,6 +42,7 @@ static NSString *borderType = @"borderType";
 -(void) initPhysics;
 
 @property (nonatomic,assign) CGPoint lastMousePosition;
+@property (nonatomic,retain) NSMutableArray *dynamicObjects;
 
 - (void) initializeLevel;
 @end
@@ -48,12 +50,12 @@ static NSString *borderType = @"borderType";
 
 @implementation CMMarbleSimulationLayer
 
-@synthesize space = _space, batchNode=_bathNode, currentMarbleSet=_currentMarbleSet, debugLayer=_debugLayer,
-simulationRunning=_simulationRunning, collisionCollector=_collisionCollector,simulatedMarbles=_simulatedMarbles,
-dollyGroove = _dollyGroove, dollyShape = _dollyShape, dollyServo = _dollyServo, dollyBody = _dollyBody,
-gameDelegate = _gameDelegate, lastMousePosition = _lastMousePosition,currentLevel=_currentLevel,
-marbleFireTimer=_marbleFireTimer,marblesToFire=_marblesToFire, currentMarbleIndex,staticShapes=_staticShapes,
-lastMarbleSoundTime = _lastMarbleSoundTime;
+@synthesize space = space_, marbleBatchNode=marbleBatchNode_,otherSpritesNode = otherSpritesNode_, currentMarbleSet=currentMarbleSet_, debugLayer=debugLayer_,
+simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,simulatedMarbles=simulatedMarbles_,
+dollyGroove = dollyGroove_, dollyShape = dollyShape_, dollyServo = dollyServo_, dollyBody = dollyBody_,
+gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
+marbleFireTimer=marbleFireTimer_,marblesToFire=marblesToFire_, currentMarbleIndex = currentMarbleIndex_,staticShapes=staticShapes_,
+lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 
 +(CCScene *) scene
 {
@@ -84,16 +86,21 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 #endif
 //		self->_simulationRunning=YES;
 		self.simulatedMarbles = [NSMutableArray array];
+		self.dynamicObjects = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
 
 #if 1
-		self.batchNode= [CMMarbleBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
+		self.marbleBatchNode= [CMMarbleBatchNode batchNodeWithFile:@"Balls.png" capacity:100];
 #else
-    self.batchNode = [CCNode node];
+    self.marbleBatchNode = [CCNode node];
 #endif
-		[self addChild:self.batchNode z:0 tag:kTagParentNode];
+		[self addChild:self.marbleBatchNode z:0 tag:kTagParentNode];
+
+		
+		self.otherSpritesNode = [CCNode node];
+		[self addChild:self.otherSpritesNode];
 		
 //		[self addNewSpriteAtPosition:ccp(200,200)];
 //		[self prepareMarble];
@@ -109,10 +116,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 - (void)dealloc
 {
 // 	[self.space removeBody:self.space.staticBody];
+	[self.space remove:self.dynamicObjects];
+	self.dynamicObjects = nil;
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
 	self.staticShapes = nil;
-	[self.space remove:self.bounds];
+//	[self.space remove:self.bounds];
 
 	self.space = nil;
   self.collisionCollector = nil;
@@ -124,6 +133,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	self.dollyServo = nil;
 
 	self.bounds = nil;
+
 	[super dealloc];
 	
 }
@@ -165,9 +175,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
                          separate:nil];
 
 	self.space.collisionBias = pow(1.0-0.1, 400);
-	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
-	_debugLayer.visible = YES;
-	[self addChild:_debugLayer z:100];
+	debugLayer_ = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
+	debugLayer_.visible = NO;
+	[self addChild:debugLayer_ z:100];
 	self.space.damping = 0.8;
 	
 	self.collisionCollector = [[[CMMarbleCollisionCollector alloc] init]autorelease];
@@ -281,7 +291,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 -(void) update:(ccTime) delta
 {
 	// Should use a fixed size step based on the animation interval.
-  if (!self->_simulationRunning) {
+  if (!self->simulationRunning_) {
 		[self.gameDelegate simulationStepDone:delta];
     return;
   }
@@ -348,9 +358,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 - (void) setSimulationRunning:(BOOL)run
 {
   NSLog(@"isRunning In %d (%d)",self.isRunning,run);
-  if (self->_simulationRunning != run) {
+  if (self->simulationRunning_ != run) {
 //    CCScheduler *s =self.scheduler;
-    self->_simulationRunning = run;
+    self->simulationRunning_ = run;
 #if 0
     if (run) {
       [self scheduleUpdate];
@@ -372,8 +382,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 		if (dG) {
 			[self.space addConstraint:dG];
 		}
-		[self->_dollyGroove release];
-		self->_dollyGroove = [dG retain];
+		[self->dollyGroove_ release];
+		self->dollyGroove_ = [dG retain];
 	}
 }
 
@@ -386,23 +396,23 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 		if (dS) {
 			[self.space addConstraint:dS];
 		}
-		[self->_dollyServo release];
-		self->_dollyServo = [dS retain];
+		[self->dollyServo_ release];
+		self->dollyServo_ = [dS retain];
 	}
 }
 
 - (void) setCurrentLevel:(CMMarbleLevel *)cL
 {
-	if (cL != self->_currentLevel) {
-		self->_currentLevel = cL;
-		[self initializeLevel];
+	if (cL != self->currentLevel_) {
+		self->currentLevel_ = cL;
+//		[self initializeLevel];
 	}
 }
 - (void) setStaticShapes:(NSArray *)staticShapes
 {
-	if (staticShapes != self->_staticShapes) {
-		if (self->_staticShapes) {
-			[self.space remove:self->_staticShapes];
+	if (staticShapes != self->staticShapes_) {
+		if (self->staticShapes_) {
+			[self.space remove:self->staticShapes_];
 		}
     if (!self.currentLevel.isRubeLevel) {
       ChipmunkBody * staticBody = self.space.staticBody;
@@ -418,8 +428,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
       cpSpace *aSpace = self.space.space;
       cpSpaceReindexStatic(aSpace);
     }
-		[self->_staticShapes release];
-		self->_staticShapes = [staticShapes retain];
+		[self->staticShapes_ release];
+		self->staticShapes_ = [staticShapes retain];
 	}
 
 }
@@ -438,7 +448,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
   NSString *marbleSet = [self.gameDelegate marbleSetName];
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-	[self.batchNode addChild:ms];
+	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
 
@@ -481,7 +491,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
   }
 	[self.space add:ms];
 	ms.position = pos;
-	[self.batchNode addChild:ms];
+	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
   
 }
@@ -584,14 +594,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
   self.simulationRunning=NO;
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
-  [self.batchNode removeAllChildren];
+  [self.marbleBatchNode removeAllChildren];
 	[self initializeLevel];
   self.simulationRunning = YES;
 }
 - (void) retextureMarbles
 {
   NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
-  for (CMMarbleSprite *marble in self.batchNode.children) {
+  for (CMMarbleSprite *marble in self.marbleBatchNode.children) {
     marble.setName=marbleSet;
   }
 }
@@ -605,9 +615,32 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 //  }else{
 //    self.staticShapes = self.currentLevel.shapeReader.shapes;
 //  }
+
+	//self.staticShapes = nil;
+	
+	[self.space remove: self.space.bodies];
+//	[self.space remove: self.space.shapes];
+	[self.space remove:self.dynamicObjects];
+	[self.dynamicObjects removeAllObjects];
 	self.staticShapes = [self.currentLevel staticObjects];
+	[self.otherSpritesNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
+	
+	{ // request all dynamics, if this is a Rube level
+		if (self.currentLevel.isRubeLevel) {
+			CMRubeSceneReader *reader = self.currentLevel.rubeReader;
+			NSArray *dynBodies = reader.dynamicBodies;
+			for (CMRubeBody *aBody in dynBodies) {
+				CCPhysicsSprite *dynSprite = aBody.physicsSprite;
+				[self.space add:aBody.chipmunkObjects];
+				[self.dynamicObjects addObjectsFromArray:aBody.chipmunkObjects];
+				[self.otherSpritesNode addChild:dynSprite];
+			}
+		}
+
+	}
+	
 	[self fireMarbles:p inTime:10];
 	
 }
@@ -617,7 +650,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime;
 	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
   NSString *marbleSet = [self.gameDelegate marbleSetName];
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-	[self.batchNode addChild:ms];
+	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
 	ChipmunkBody *dB = ms.shape.body;

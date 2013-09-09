@@ -84,28 +84,36 @@
 }
 #pragma mark - Properties
 
-- (NSArray*) staticBodies
+- (NSArray*) bodiesOfType:(CMRubeBodyType) bType
 {
   NSMutableArray *results = [NSMutableArray array];
   for (CMRubeBody* body in self.bodies) {
-    if (body.type == kRubeBody_static) {
+    if (body.type == bType) {
       [results addObject:body];
     }
   }
   return results;
 }
 
+- (NSArray*) staticBodies
+{
+	return [self bodiesOfType:kRubeBody_static];
+}
+
+- (NSArray*) dynamicBodies
+{
+	return [self bodiesOfType:kRubeBody_dynamic];
+}
+
 - (NSArray*) staticShapes
 {
   NSMutableArray *results = [NSMutableArray array];
-  for (CMRubeBody * body in self.bodies) {
-    if (body.type == kRubeBody_static) {
-      // collect fixtures of the body;
-      for (CMRubeFixture *fix in body.fixtures) {
-        for (id k in fix.chipmunkObjects) {
-          [results addObject:k];
-        }
-      }
+  for (CMRubeBody * body in [self bodiesOfType:kRubeBody_static]) {
+		// collect fixtures of the body;
+		for (CMRubeFixture *fix in body.fixtures) {
+			for (id k in fix.chipmunkObjects) {
+				[results addObject:k];
+			}
     }
   }
   return results;

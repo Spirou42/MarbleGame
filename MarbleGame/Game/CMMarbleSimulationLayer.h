@@ -19,45 +19,18 @@
 #define USE_NEW_COLLISION_DETECTOR 1
 @class  CMMarbleCollisionCollector, CMMarbleLevel;
 @interface CMMarbleSimulationLayer : CCLayerColor
-{
-	id <CMMarbleGameDelegate> _gameDelegate;
-	CCTexture2D *_spriteTexture; // weak ref
-	CCPhysicsDebugNode *_debugLayer; // weak ref
-	
-	ChipmunkSpace   *_space;
-	CCNode          *_batchNode;
-	NSString        *_currentMarbleSet;
-	CCLayer         *_marbleSelectMenu;
-	CCLayer         *_debugMenu;
- 	CMMarbleCollisionCollector *_collisionCollector;
-  BOOL 						_simulationRunning;
-	NSMutableArray	*_simulatedMarbles;
-	
-	ChipmunkGrooveJoint *_dollyGroove;
-	ChipmunkPivotJoint		*_dollyServo;
 
-	ChipmunkShape				*_dollyShape;
-	ChipmunkBody				*_dollyBody;
-	CGPoint							_lastMousePosition;
-	CMMarbleLevel				*_currentLevel;
-	NSUInteger					_marblesToFire;
-	NSTimer*						_marbleFireTimer;
-	NSArray*						_bounds;
-	NSArray*						_staticShapes;
-
-
-	NSTimeInterval			_lastMarbleSoundTime;
-
-}
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
 @property (nonatomic, retain) ChipmunkSpace *space;
-@property (nonatomic, assign) CCNode* batchNode;
+@property (nonatomic, assign) CCNode* marbleBatchNode;
+@property (nonatomic, assign) CCNode* otherSpritesNode;
 @property (nonatomic, retain) NSString* currentMarbleSet;
 @property (nonatomic, readonly) CCPhysicsDebugNode *debugLayer;
 @property (nonatomic, assign,getter = isSimulationRunning) BOOL simulationRunning;
 @property (nonatomic, retain) CMMarbleCollisionCollector *collisionCollector;
 @property (nonatomic, retain) NSMutableArray* simulatedMarbles;
 @property (nonatomic, retain) NSArray* staticShapes;
+
 @property (nonatomic, retain) ChipmunkGrooveJoint *dollyGroove;
 @property (nonatomic, retain) ChipmunkShape *dollyShape;
 @property (nonatomic, retain) ChipmunkPivotJoint* dollyServo;

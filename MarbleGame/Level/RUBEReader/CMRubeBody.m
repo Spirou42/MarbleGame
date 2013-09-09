@@ -12,16 +12,18 @@
 #import "ChipmunkObject.h"
 #import "ObjectiveChipmunk.h"
 #import "CMRubeImage.h"
+#import "cocos2d.h"
 
 @interface CMRubeBody ()
 @property (nonatomic, retain) ChipmunkBody* cpBody;
+@property (nonatomic, retain) CCPhysicsSprite* cachedPhysicsSprite;
 @end
 
 @implementation CMRubeBody
 
 @synthesize name = name_, type = type_, angle = angle_, angularVelocity = angularVelocity_,
-linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_,
-angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_;
+linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_, mass = mass_,
+angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_, cachedPhysicsSprite = cachedPhysicsSprite_;
 
 - (void) initDefaults
 {
@@ -34,6 +36,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   self.angularVelocity = 0.0;
   self.linearVelocity = CGPointZero;
   self.linearDamping = 0.0;
+	self.cachedPhysicsSprite = nil;
   self.mass = 0.0;
 }
 
@@ -67,6 +70,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
 	self.name = nil;
 	self.fixtures = nil;
 	self.attachedImages = nil;
+	self.cachedPhysicsSprite = nil;
 	[super dealloc];
 }
 
@@ -82,6 +86,19 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   [result addObjectsFromArray:[self allShapes]];
 
   return result;
+}
+
+//***********************************************************
+#pragma mark - Properties
+//***********************************************************
+
+- (CCPhysicsSprite*) physicsSprite
+{
+	if (!self->cachedPhysicsSprite_) {
+		[self createPhysicsSprite];
+	}
+	self->cachedPhysicsSprite_.position = self.position;
+	return self->cachedPhysicsSprite_;
 }
 
 //***********************************************************
@@ -152,5 +169,19 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
     }
   }
   self.cpBody = body;
+}
+
+- (void) createPhysicsSprite
+{
+	// retrieve the sprite image
+	CMRubeImage *spriteImage = [self imageForType:kRubeImageType_Sprite];
+	NSString *spriteName = spriteImage.filename;
+	CCPhysicsSprite * result = [CCPhysicsSprite spriteWithFile:spriteName];
+	result.chipmunkBody = self.cpBody;
+	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));
+	result.scale = spriteImage.rubeScale / result.contentSize.height;
+	
+	
+	self.cachedPhysicsSprite = result;
 }
 @end

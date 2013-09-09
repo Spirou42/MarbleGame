@@ -28,6 +28,7 @@
 @property (readonly, nonatomic) NSArray* staticBodies;        ///< returns an iteratable of all static bodies in the rube file.
 @property (readonly, nonatomic) NSArray* staticShapes;        ///< returns an iteratable of all static shapes in the rube file. Static shapes are shapes attached to any static body. The shapes are NOT detached from the current body!
 @property (readonly, nonatomic) NSArray* staticChipmunkObjects;
+@property (readonly, nonatomic) NSArray* dynamicBodies;				///< returns an iteratable of all dynamic bodies in the rube-file.
 - (id) initWithContentsOfURL:(NSURL*) fileURL;
 - (id) initWithContentsOfFile:(NSString*) filePath;
 
