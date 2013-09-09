@@ -168,10 +168,10 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 												 separate:@selector(separateMarbleCollision:space:)];
   
   [self.space addCollisionHandler:self
-                            typeA:[CMMarbleSprite class] typeB:borderType
-                            begin:@selector(beginBorderCollision:space:)
+                            typeA:COLLISION_TYPE_MARBLE typeB:COLLISION_TYPE_BORDER
+                            begin:nil
                          preSolve:nil
-                        postSolve:nil
+                        postSolve:@selector(postBorderCollision:space:)
                          separate:nil];
 
 	self.space.collisionBias = pow(1.0-0.1, 400);
@@ -184,6 +184,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	self.collisionCollector.collisionDelay = 0.2;
 }
 
+#pragma mark Collision handlers
 
 - (BOOL) beginMarbleCollision:(cpArbiter*) arbiter space:(ChipmunkSpace*) space
 {
@@ -203,72 +204,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	}
   return YES;
 }
-- (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
-{
-	if (!self.gameDelegate.playEffect) {
-		return;
-	}
-	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
-	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
-	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
-	
-	
-	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
-		return;
-	}
-	CGFloat fSpeed = cpvlength(firstMarble.body.vel);
-	CGFloat sSpeed = cpvlength(secondMarble.body.vel);
-  if (!secondMarbleLayer) {
-    sSpeed = 1.0;
-  }
-	if ((fSpeed < 1.0) || (sSpeed < 1.0) ) {
-		return;
-	}
-	
-	NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/10.0f)) {
-		return;
-	}
-	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
-  if (!secondMarbleLayer) {
-    impulse =1000.0 * fSpeed;
-  }
-	if (impulse<1000.00) {
-		return;
-	}
-	
-	//	CGFloat sVal = fSpeed + sSpeed;
-	//	NSLog(@"%f,%f,(%f)",self.lastMarbleSoundTime,currentTime,currentTime-self.lastMarbleSoundTime);
-	float volume = MIN(impulse/6000.0f , 1.0f);
-	
-	volume *= self.gameDelegate.soundVolume;
-	if(volume > 0.1f){
-//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
-    CGFloat pitch = 1.0;
-    if (!secondMarbleLayer) {
-      pitch = 5.0;
-    }
-		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
-//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
-		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
-		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
-		secondMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
-	}
-	
-}
-
-- (BOOL) beginBorderCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)sp
-{
-  CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstObj, secondObj);
-  [self processSound:arbiter first:firstObj second:secondObj];
-  return YES;
-//  NSLog(@"collision: %@ %@",firstObj,secondObj);
-}
 
 - (void) postMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)sp
 {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
-	[self processSound:arbiter first:firstMarble second:secondMarble];
+	if (cpArbiterIsFirstContact(arbiter)) {
+		[self processSound:arbiter first:firstMarble second:secondMarble];
+	}
+
 }
 
 - (void) separateMarbleCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)space
@@ -285,7 +228,21 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 		firstMarbleLayer.touchesNeighbour=NO;
 		secondMarbleLayer.touchesNeighbour=NO;
 	}
-	
+}
+
+- (BOOL) beginBorderCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)sp
+{
+  return YES;
+//  NSLog(@"collision: %@ %@",firstObj,secondObj);
+}
+
+- (void) postBorderCollision:(cpArbiter*)arbiter space:(ChipmunkSpace*)space
+{
+  CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstObj, secondObj);
+	if (cpArbiterIsFirstContact(arbiter)) {
+	[self processSound:arbiter first:firstObj second:secondObj];
+	}
+
 }
 
 -(void) update:(ccTime) delta
@@ -324,10 +281,67 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 		for (CMMarbleSprite *marbleSprite in self.simulatedMarbles) {
 			[imageSet addObject:[NSNumber numberWithInteger:marbleSprite.ballIndex]];
 		}
-	[self.gameDelegate imagesOnField:imageSet];
+		[self.gameDelegate imagesOnField:imageSet];
 	}
 	
 }
+
+
+#pragma mark - SOUND
+
+
+- (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
+{
+	if (!self.gameDelegate.playEffect) {
+		return;
+	}
+	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
+	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	
+	
+	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
+		return;
+	}
+	CGFloat fSpeed = cpvlength(firstMarble.body.vel);
+	CGFloat sSpeed = cpvlength(secondMarble.body.vel);
+  if (!secondMarbleLayer) {
+    sSpeed = 1.0;
+  }
+	if ((fSpeed < 1.0) || (sSpeed < 1.0) ) {
+		return;
+	}
+	
+	NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/10.0f)) {
+		return;
+	}
+	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+
+	if (impulse<1000.00) {
+		return;
+	}
+	
+	//	CGFloat sVal = fSpeed + sSpeed;
+	//	NSLog(@"%f,%f,(%f)",self.lastMarbleSoundTime,currentTime,currentTime-self.lastMarbleSoundTime);
+	float volume = MIN(impulse/6000.0f , 1.0f);
+	
+	volume *= self.gameDelegate.soundVolume;
+	if(volume > 0.1f){
+		//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
+    CGFloat pitch = 1.0;
+    if (!secondMarbleLayer) {
+      pitch = 5.0;
+    }
+		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
+		//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
+		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
+		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
+		secondMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
+	}
+	
+}
+
 
 #pragma mark -
 #pragma mark Properties
