@@ -42,6 +42,13 @@
   [
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -65,13 +72,6 @@
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -214,7 +214,7 @@
           
           {
             "density" : 1,
-            "friction" : 0.6000000238418579,
+            "friction" : 0.1000000014901161,
             "id" : 7,
             "name" : "Ground",
             "restitution" : 0.8999999761581421,
@@ -694,8 +694,8 @@
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
-          "y" : 0.007920361123979092
+          "x" : 0.01231712941080332,
+          "y" : 0.007920457050204277
         },
         "massData-mass" : 39.99999618530273,
         "name" : "Wheel",

@@ -159,8 +159,8 @@
 		FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
-		FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
-		FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */; };
+		FEFBE1B017C769BA00D86D8D /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */; };
+		FEFBE1C817C76C2100D86D8D /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -614,7 +614,7 @@
 		FED2E8E417A8087B005A16B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FED9366D17C3BEF9007DFA0A /* CMHackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHackScene.h; sourceTree = "<group>"; };
 		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
-		FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Default Levels.bundle"; sourceTree = "<group>"; };
+		FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Default Levels.levelset"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1257,7 +1257,7 @@
 		FEFBE18217C7686000D86D8D /* Levelsets */ = {
 			isa = PBXGroup;
 			children = (
-				FEFBE1AF17C769BA00D86D8D /* Default Levels.bundle */,
+				FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */,
 			);
 			name = Levelsets;
 			sourceTree = "<group>";
@@ -1506,7 +1506,7 @@
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
-				FEFBE1B017C769BA00D86D8D /* Default Levels.bundle in Resources */,
+				FEFBE1B017C769BA00D86D8D /* Default Levels.levelset in Resources */,
 				93CC6CB717C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
@@ -1526,7 +1526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEFBE1C817C76C2100D86D8D /* Default Levels.bundle in Resources */,
+				FEFBE1C817C76C2100D86D8D /* Default Levels.levelset in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
