@@ -137,6 +137,20 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	[super dealloc];
 	
 }
+- (id) retain
+{
+  return [super retain];
+}
+-(oneway void) release
+{
+  [super release];
+}
+
+-( id) autorelease
+{
+  return[super autorelease];
+}
+
 
 #pragma mark -
 #pragma mark Physics
@@ -356,19 +370,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
   [super unscheduleUpdate];
 }
 
-- (id) retain
-{
-  return [super retain];
-}
--(oneway void) release
-{
-  [super release];
-}
-
--( id) autorelease
-{
-  return[super autorelease];
-}
 - (void) setSimulationRunning:(BOOL)run
 {
   NSLog(@"isRunning In %d (%d)",self.isRunning,run);
@@ -418,6 +419,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 - (void) setCurrentLevel:(CMMarbleLevel *)cL
 {
 	if (cL != self->currentLevel_) {
+    [self.space remove:self.dynamicObjects];
+    [self.dynamicObjects removeAllObjects];
 		self->currentLevel_ = cL;
 //		[self initializeLevel];
 	}
@@ -621,21 +624,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 }
 - (void) initializeLevel
 {
-//	[self.space remove:self.bounds];
-//  if (self.currentLevel.isRubeLevel) {
-//    CMRubeSceneReader *levelReader = self.currentLevel.rubeReader;
-//    NSArray *statThings = levelReader.staticChipmunkObjects;
-//    self.staticShapes = statThings;
-//  }else{
-//    self.staticShapes = self.currentLevel.shapeReader.shapes;
-//  }
-
-	//self.staticShapes = nil;
-	
-	[self.space remove: self.space.bodies];
-//	[self.space remove: self.space.shapes];
 	[self.space remove:self.dynamicObjects];
 	[self.dynamicObjects removeAllObjects];
+
+	[self.space remove: self.space.bodies];
+//	[self.space remove: self.space.shapes];
 	self.staticShapes = [self.currentLevel staticObjects];
 	[self.otherSpritesNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
