@@ -17,3 +17,5 @@ profile
 *.moved-aside
 
 *.xcuserstate
+
+*.rs
