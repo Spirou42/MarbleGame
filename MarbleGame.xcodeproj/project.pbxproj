@@ -553,10 +553,6 @@
 		FED2E7E217A7E48B005A16B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FED2E7E417A7E48B005A16B3 /* iOSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSAppDelegate.h; sourceTree = "<group>"; };
 		FED2E7E517A7E48B005A16B3 /* iOSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAppDelegate.m; sourceTree = "<group>"; };
-		FED2E7E717A7E48B005A16B3 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		FED2E7E817A7E48B005A16B3 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		FED2E7EA17A7E48B005A16B3 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		FED2E7EB17A7E48B005A16B3 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		FED2E7F217A7E4F2005A16B3 /* cocos2d-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-ios.xcodeproj"; path = "cocos2d-iphone/cocos2d-ios.xcodeproj"; sourceTree = "<group>"; };
 		FED2E82117A7E85A005A16B3 /* chipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk.h; sourceTree = "<group>"; };
 		FED2E82217A7E85A005A16B3 /* chipmunk_ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chipmunk_ffi.h; sourceTree = "<group>"; };
@@ -1119,10 +1115,6 @@
 			children = (
 				FED2E7E417A7E48B005A16B3 /* iOSAppDelegate.h */,
 				FED2E7E517A7E48B005A16B3 /* iOSAppDelegate.m */,
-				FED2E7E717A7E48B005A16B3 /* HelloWorldLayer.h */,
-				FED2E7E817A7E48B005A16B3 /* HelloWorldLayer.m */,
-				FED2E7EA17A7E48B005A16B3 /* IntroLayer.h */,
-				FED2E7EB17A7E48B005A16B3 /* IntroLayer.m */,
 				FED2E5F817A7E488005A16B3 /* Resources */,
 				FED2E7E017A7E48B005A16B3 /* Supporting Files */,
 			);

@@ -21,7 +21,7 @@ typedef enum {
 	kCMLevelStatus_Master				=	 3,
 }CMMarbleGameLevelStatus;
 
-@class CMMarbleLevel,CMMPLevelStat,CMMarblePlayerOld;
+@class CMMarbleLevel,CMMPLevelStat;
 @protocol CMMarbleGameDelegate;
 
 @protocol CMMarbleGameScoreModeProtocol <NSObject>
