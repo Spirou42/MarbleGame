@@ -624,17 +624,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 }
 - (void) initializeLevel
 {
-//	[self.space remove:self.bounds];
-//  if (self.currentLevel.isRubeLevel) {
-//    CMRubeSceneReader *levelReader = self.currentLevel.rubeReader;
-//    NSArray *statThings = levelReader.staticChipmunkObjects;
-//    self.staticShapes = statThings;
-//  }else{
-//    self.staticShapes = self.currentLevel.shapeReader.shapes;
-//  }
-
-	//self.staticShapes = nil;
-	
 	[self.space remove:self.dynamicObjects];
 	[self.dynamicObjects removeAllObjects];
 
