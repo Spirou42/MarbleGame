@@ -15,12 +15,6 @@
 			<dict>
 				<key>RUBELevel</key>
 				<string>RUBE-Test.json</string>
-				<key>staticBodiesFilename</key>
-				<string>Level1-StaticBodies</string>
-				<key>overlayFilename</key>
-				<string>Level1-Overlay</string>
-				<key>backgroundFilename</key>
-				<string>Level1-Background</string>
 			</dict>
 			<key>audio</key>
 			<dict/>
