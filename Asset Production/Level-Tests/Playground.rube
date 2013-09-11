@@ -235,17 +235,117 @@
         "linearVelocity" : 0,
         "massData-I" : 0.09817477315664291,
         "massData-mass" : 0.7853981852531433,
-        "name" : "body0",
+        "name" : "Ball3",
         "position" : 
         {
-          "x" : 3.217238903045654,
-          "y" : 1.478190422058105
+          "x" : 1.582501411437988,
+          "y" : -2.961156845092773
+        },
+        "type" : "dynamic"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "fixture" : 
+        [
+          
+          {
+            "density" : 1,
+            "friction" : 0.2,
+            "id" : 6,
+            "name" : "fixture4",
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 0.50,
+                "type" : "circle"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
+            }
+          }
+        ],
+        "id" : 5,
+        "linearVelocity" : 0,
+        "massData-I" : 0.09817477315664291,
+        "massData-mass" : 0.7853981852531433,
+        "name" : "Ball4",
+        "position" : 
+        {
+          "x" : 1.652126312255859,
+          "y" : 2.156275749206543
         },
         "type" : "dynamic"
       }
     ],
     "metajoint" : 
     [
+      
+      {
+        "anchorA" : 
+        {
+          "x" : -0.1001304388046265,
+          "y" : 0.3006267547607422
+        },
+        "anchorB" : 
+        {
+          "x" : 0.001269817352294922,
+          "y" : -0.5101618766784668
+        },
+        "bodyA" : 4,
+        "bodyB" : 3,
+        "collideConnected" : true,
+        "enableLimit" : true,
+        "enableMotor" : true,
+        "id" : 1,
+        "localAxisA" : 
+        {
+          "x" : 0,
+          "y" : 1
+        },
+        "lowerLimit" : 0,
+        "maxMotorForce" : 2000.0,
+        "motorSpeed" : -1.0,
+        "name" : "Prismatic",
+        "referenceAngle" : 0,
+        "type" : "prismatic",
+        "upperLimit" : 10.0
+      },
+      
+      {
+        "anchorA" : 
+        {
+          "x" : 0.2234928607940674,
+          "y" : -5.660927772521973
+        },
+        "anchorB" : 
+        {
+          "x" : -0.01740741729736328,
+          "y" : -0.008693099021911621
+        },
+        "bodyA" : 3,
+        "bodyB" : 5,
+        "collideConnected" : false,
+        "enableMotor" : true,
+        "id" : 3,
+        "localAxisA" : 
+        {
+          "x" : 1,
+          "y" : 1
+        },
+        "maxMotorTorque" : 30.0,
+        "motorSpeed" : 0.8726646304130554,
+        "name" : "Wheel",
+        "springDampingRatio" : 1,
+        "springFrequency" : 4.0,
+        "type" : "wheel"
+      },
       
       {
         "anchorA" : 0,
