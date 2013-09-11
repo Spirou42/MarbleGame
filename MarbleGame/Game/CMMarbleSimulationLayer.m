@@ -338,16 +338,18 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	
 	//	CGFloat sVal = fSpeed + sSpeed;
 	//	NSLog(@"%f,%f,(%f)",self.lastMarbleSoundTime,currentTime,currentTime-self.lastMarbleSoundTime);
-	float volume = MIN(impulse/6000.0f , 1.0f);
-	
+	float volume = MIN(impulse/30000.0f , 1.0f);
+	NSLog(@"Impulse: %f %f",log(impulse),volume);
 	volume *= self.gameDelegate.soundVolume;
 	if(volume > 0.1f){
 		//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
     CGFloat pitch = 1.0;
     if (!secondMarbleLayer) {
-      pitch = 5.0;
-    }
+		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_WALL_KLICK pitch:pitch pan:1.0 gain:volume];
+    }else{
 		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
+		}
+
 		//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
 		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
 		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;

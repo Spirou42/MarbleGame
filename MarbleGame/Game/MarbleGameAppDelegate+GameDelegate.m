@@ -116,6 +116,7 @@ NSMutableDictionary *_scoreModeDelegates;
 	// preload music and effects
 	[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:DEFAULT_BACKGROUND_MUSIC];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_KLICK];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_KLICK];
 }
 
 #pragma mark - 

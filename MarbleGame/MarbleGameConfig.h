@@ -104,7 +104,9 @@
 // definition for Sounds
 
 #define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
-#define DEFAULT_MARBLE_KLICK								@"marbleKlick.mp3"
+//#define DEFAULT_MARBLE_KLICK								@"marbleKlick.mp3"
+#define DEFAULT_MARBLE_KLICK								@"Klick.mp3"
+#define DEFAULT_WALL_KLICK									@"Klack.mp3"
 //////////////////////////////////////////////////
 #pragma mark - Fonts
 

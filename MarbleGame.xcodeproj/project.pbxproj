@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93308F8A17E0F1DF0094A362 /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8717E0F1DF0094A362 /* Boing.mp3 */; };
+		93308F8B17E0F1DF0094A362 /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8717E0F1DF0094A362 /* Boing.mp3 */; };
+		93308F8C17E0F1DF0094A362 /* Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8817E0F1DF0094A362 /* Klick.mp3 */; };
+		93308F8D17E0F1DF0094A362 /* Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8817E0F1DF0094A362 /* Klick.mp3 */; };
+		93308F8E17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
+		93308F8F17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
@@ -437,6 +443,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		93308F8717E0F1DF0094A362 /* Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boing.mp3; sourceTree = "<group>"; };
+		93308F8817E0F1DF0094A362 /* Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klick.mp3; sourceTree = "<group>"; };
+		93308F8917E0F1DF0094A362 /* Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klack.mp3; sourceTree = "<group>"; };
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameScoreModeProtocol.h; sourceTree = "<group>"; };
 		93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleScoreModeScore.h; sourceTree = "<group>"; };
@@ -1047,6 +1056,9 @@
 		93CC6CB517C15C0D00F62743 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				93308F8717E0F1DF0094A362 /* Boing.mp3 */,
+				93308F8817E0F1DF0094A362 /* Klick.mp3 */,
+				93308F8917E0F1DF0094A362 /* Klack.mp3 */,
 				93CC6CB917C15C7400F62743 /* marbleKlick.mp3 */,
 				93CC6CB617C15C3F00F62743 /* MarbleGame-Background.mp3 */,
 			);
@@ -1691,6 +1703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */,
+				93308F8C17E0F1DF0094A362 /* Klick.mp3 in Resources */,
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
@@ -1699,6 +1712,8 @@
 				9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
+				93308F8A17E0F1DF0094A362 /* Boing.mp3 in Resources */,
+				93308F8E17E0F1DF0094A362 /* Klack.mp3 in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
@@ -1735,17 +1750,20 @@
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
+				93308F8B17E0F1DF0094A362 /* Boing.mp3 in Resources */,
 				93CC6CB817C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
 				935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				93CC6CBB17C15C7400F62743 /* marbleKlick.mp3 in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
 				93750A7B17B81D560063D613 /* GameUI.plist in Resources */,
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
+				93308F8D17E0F1DF0094A362 /* Klick.mp3 in Resources */,
 				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				93750A8017B827610063D613 /* Menu-Background.png in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
+				93308F8F17E0F1DF0094A362 /* Klack.mp3 in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
@@ -2262,6 +2280,7 @@
 				FEBABB4417E0B64800E85ABD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FED2E7EF17A7E48B005A16B3 /* Build configuration list for PBXNativeTarget "iMarbleGame" */ = {
 			isa = XCConfigurationList;
