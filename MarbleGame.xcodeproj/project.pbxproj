@@ -119,6 +119,24 @@
 		FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
+		FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */; };
+		FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3E17E0B64800E85ABD /* InfoPlist.strings */; };
+		FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */; };
+		FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */; };
+		FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */; };
+		FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */; };
+		FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4817E0B7C300E85ABD /* Level1-Background.png */; };
+		FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */; };
+		FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */; };
+		FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */; };
+		FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */; };
+		FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */; };
+		FEBABB7217E0B93F00E85ABD /* Level3-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */; };
+		FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */; };
+		FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */; };
+		FEBABB7517E0B93F00E85ABD /* LevelSet.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5117E0B7C300E85ABD /* LevelSet.plist */; };
+		FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
+		FEBABB7D17E0C7B800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
@@ -159,8 +177,6 @@
 		FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
-		FEFBE1B017C769BA00D86D8D /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */; };
-		FEFBE1C817C76C2100D86D8D /* Default Levels.levelset in Resources */ = {isa = PBXBuildFile; fileRef = FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -271,6 +287,20 @@
 			remoteGlobalIDString = A06430E613C1414300CC5554;
 			remoteInfo = kazmath;
 		};
+		FEBABB7617E0BA2200E85ABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9353644A177DFB50009F640B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBABB3817E0B64700E85ABD;
+			remoteInfo = DefaulLevelSet;
+		};
+		FEBABB7917E0BA5200E85ABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9353644A177DFB50009F640B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBABB3817E0B64700E85ABD;
+			remoteInfo = DefaulLevelSet;
+		};
 		FED2E80017A7E4F2005A16B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FED2E7F217A7E4F2005A16B3 /* cocos2d-ios.xcodeproj */;
@@ -372,11 +402,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FEFBE1B817C76BFB00D86D8D /* CopyFiles */ = {
+		FEBABB6717E0B8FF00E85ABD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in CopyFiles */,
+				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in CopyFiles */,
+				FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in CopyFiles */,
+				FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in CopyFiles */,
+				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in CopyFiles */,
+				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in CopyFiles */,
+				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in CopyFiles */,
+				FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in CopyFiles */,
+				FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in CopyFiles */,
+				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in CopyFiles */,
+				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in CopyFiles */,
+				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in CopyFiles */,
+				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in CopyFiles */,
+				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEFBE1B817C76BFB00D86D8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
 			dstPath = Documents;
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +589,29 @@
 		FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MarbleGameAppDelegate+GameDelegate.m"; sourceTree = "<group>"; };
 		FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleBatchNode.h; sourceTree = "<group>"; };
 		FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleBatchNode.m; sourceTree = "<group>"; };
+		FEBABAEC17E0B5B200E85ABD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FEBABAEF17E0B5B200E85ABD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEBABAF017E0B5B200E85ABD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FEBABAF117E0B5B200E85ABD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FEBABB0117E0B5B300E85ABD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefaultLevelSet.levels; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBABB3D17E0B64800E85ABD /* DefaulLevelSet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DefaulLevelSet-Info.plist"; sourceTree = "<group>"; };
+		FEBABB3F17E0B64800E85ABD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level0-Overlay.png"; sourceTree = "<group>"; };
+		FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level0-StaticBodies.stb"; sourceTree = "<group>"; };
+		FEBABB4817E0B7C300E85ABD /* Level1-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1-Background.png"; sourceTree = "<group>"; };
+		FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1-Overlay.png"; sourceTree = "<group>"; };
+		FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level1-StaticBodies.stb"; sourceTree = "<group>"; };
+		FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level2-Background.png"; sourceTree = "<group>"; };
+		FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level2-Overlay.png"; sourceTree = "<group>"; };
+		FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level2-StaticBodies.stb"; sourceTree = "<group>"; };
+		FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level3-Background.png"; sourceTree = "<group>"; };
+		FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level3-Overlay.png"; sourceTree = "<group>"; };
+		FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level3-StaticBodies.stb"; sourceTree = "<group>"; };
+		FEBABB5117E0B7C300E85ABD /* LevelSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelSet.plist; sourceTree = "<group>"; };
+		FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "RUBE-Test.json"; sourceTree = "<group>"; };
+		FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WoodGear-T1.png"; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DB17A7E448005A16B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DD17A7E448005A16B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -632,6 +708,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEBABB3617E0B64700E85ABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FED2E5E917A7E488005A16B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -703,6 +787,7 @@
 			children = (
 				93536461177DFB50009F640B /* MarbleGame */,
 				FED2E5F717A7E488005A16B3 /* iMarbleGame */,
+				FEBABB3B17E0B64800E85ABD /* DefaultLevelSet */,
 				93536454177DFB50009F640B /* Frameworks */,
 				93536453177DFB50009F640B /* Products */,
 				93AD6C7517907AA3001DADD9 /* Externals */,
@@ -714,6 +799,7 @@
 			children = (
 				93536452177DFB50009F640B /* MarbleGame.app */,
 				FED2E5EC17A7E488005A16B3 /* MarbleGame.app */,
+				FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -746,6 +832,10 @@
 				FED2E3E017A7E448005A16B3 /* CoreGraphics.framework */,
 				FED2E3E217A7E448005A16B3 /* CoreText.framework */,
 				FED2E3E417A7E448005A16B3 /* GameKit.framework */,
+				FEBABAEC17E0B5B200E85ABD /* Cocoa.framework */,
+				FEBABB0117E0B5B300E85ABD /* XCTest.framework */,
+				FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */,
+				FEBABAEE17E0B5B200E85ABD /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1110,6 +1200,96 @@
 			name = Management;
 			sourceTree = "<group>";
 		};
+		FEBABAEE17E0B5B200E85ABD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABAEF17E0B5B200E85ABD /* Foundation.framework */,
+				FEBABAF017E0B5B200E85ABD /* CoreData.framework */,
+				FEBABAF117E0B5B200E85ABD /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FEBABB3B17E0B64800E85ABD /* DefaultLevelSet */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB4517E0B6B700E85ABD /* Levels */,
+				FEBABB3C17E0B64800E85ABD /* Supporting Files */,
+			);
+			name = DefaultLevelSet;
+			path = DefaulLevelSet;
+			sourceTree = "<group>";
+		};
+		FEBABB3C17E0B64800E85ABD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB3D17E0B64800E85ABD /* DefaulLevelSet-Info.plist */,
+				FEBABB3E17E0B64800E85ABD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEBABB4517E0B6B700E85ABD /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB6617E0B81500E85ABD /* Level -1  RubeTest */,
+				FEBABB6217E0B7CC00E85ABD /* Level 0 Legacy */,
+				FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */,
+				FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */,
+				FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */,
+				FEBABB5117E0B7C300E85ABD /* LevelSet.plist */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		FEBABB6217E0B7CC00E85ABD /* Level 0 Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */,
+				FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */,
+			);
+			name = "Level 0 Legacy";
+			sourceTree = "<group>";
+		};
+		FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB4817E0B7C300E85ABD /* Level1-Background.png */,
+				FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */,
+				FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */,
+			);
+			name = "Level 1 Legacy";
+			sourceTree = "<group>";
+		};
+		FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */,
+				FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */,
+				FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */,
+			);
+			name = "Level 2 Legacy";
+			sourceTree = "<group>";
+		};
+		FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */,
+				FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */,
+				FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */,
+			);
+			name = "Level 3 Legacy";
+			sourceTree = "<group>";
+		};
+		FEBABB6617E0B81500E85ABD /* Level -1  RubeTest */ = {
+			isa = PBXGroup;
+			children = (
+				FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */,
+				FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */,
+			);
+			name = "Level -1  RubeTest";
+			sourceTree = "<group>";
+		};
 		FED2E5F717A7E488005A16B3 /* iMarbleGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,6 +1449,7 @@
 				FE4F6A4A1791BE4C00B54D3A /* PBXBuildRule */,
 			);
 			dependencies = (
+				FEBABB7A17E0BA5200E85ABD /* PBXTargetDependency */,
 				93AD6CB317907B95001DADD9 /* PBXTargetDependency */,
 				93AD6CB517907B95001DADD9 /* PBXTargetDependency */,
 				93AD6CB717907B95001DADD9 /* PBXTargetDependency */,
@@ -1277,6 +1458,24 @@
 			productName = CocosTest1;
 			productReference = 93536452177DFB50009F640B /* MarbleGame.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FEBABB3817E0B64700E85ABD /* DefaultLevelSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBABB4217E0B64800E85ABD /* Build configuration list for PBXNativeTarget "DefaultLevelSet" */;
+			buildPhases = (
+				FEBABB3517E0B64700E85ABD /* Sources */,
+				FEBABB3617E0B64700E85ABD /* Frameworks */,
+				FEBABB3717E0B64700E85ABD /* Resources */,
+				FEBABB6717E0B8FF00E85ABD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DefaultLevelSet;
+			productName = DefaulLevelSet;
+			productReference = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */;
+			productType = "com.apple.product-type.bundle";
 		};
 		FED2E5EB17A7E488005A16B3 /* iMarbleGame */ = {
 			isa = PBXNativeTarget;
@@ -1291,6 +1490,7 @@
 				FE5EC6DA17A83CA400FDE6B0 /* PBXBuildRule */,
 			);
 			dependencies = (
+				FEBABB7717E0BA2200E85ABD /* PBXTargetDependency */,
 				FED2E81717A7E4FB005A16B3 /* PBXTargetDependency */,
 				FED2E81917A7E4FB005A16B3 /* PBXTargetDependency */,
 				FED2E81B17A7E4FB005A16B3 /* PBXTargetDependency */,
@@ -1335,6 +1535,7 @@
 			targets = (
 				93536451177DFB50009F640B /* MarbleGame */,
 				FED2E5EB17A7E488005A16B3 /* iMarbleGame */,
+				FEBABB3817E0B64700E85ABD /* DefaultLevelSet */,
 			);
 		};
 /* End PBXProject section */
@@ -1487,6 +1688,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */,
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
@@ -1498,7 +1700,6 @@
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
-				FEFBE1B017C769BA00D86D8D /* Default Levels.levelset in Resources */,
 				93CC6CB717C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
@@ -1514,11 +1715,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEBABB3717E0B64700E85ABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FED2E5EA17A7E488005A16B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEFBE1C817C76C2100D86D8D /* Default Levels.levelset in Resources */,
+				FEBABB7D17E0C7B800E85ABD /* DefaultLevelSet.levels in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
@@ -1592,6 +1801,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEBABB3517E0B64700E85ABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FED2E5E817A7E488005A16B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1655,6 +1871,16 @@
 			name = kazmath;
 			targetProxy = 93AD6CB617907B95001DADD9 /* PBXContainerItemProxy */;
 		};
+		FEBABB7717E0BA2200E85ABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBABB3817E0B64700E85ABD /* DefaultLevelSet */;
+			targetProxy = FEBABB7617E0BA2200E85ABD /* PBXContainerItemProxy */;
+		};
+		FEBABB7A17E0BA5200E85ABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBABB3817E0B64700E85ABD /* DefaultLevelSet */;
+			targetProxy = FEBABB7917E0BA5200E85ABD /* PBXContainerItemProxy */;
+		};
 		FED2E81717A7E4FB005A16B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = cocos2d_chipmunk;
@@ -1687,6 +1913,14 @@
 				93536468177DFB50009F640B /* English */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FEBABB3E17E0B64800E85ABD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEBABB3F17E0B64800E85ABD /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1728,6 +1962,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = "iphonesimulator macos iphoneos";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -1765,6 +2001,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = "iphonesimulator macos iphoneos";
 			};
 			name = Release;
 		};
@@ -1802,6 +2039,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = MarbleGame;
+				SUPPORTED_PLATFORMS = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1840,7 +2078,74 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = MarbleGame;
+				SUPPORTED_PLATFORMS = macosx;
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FEBABB4317E0B64800E85ABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DefaulLevelSet/DefaulLevelSet-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DefaulLevelSet/DefaulLevelSet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
+				WRAPPER_EXTENSION = levels;
+			};
+			name = Debug;
+		};
+		FEBABB4417E0B64800E85ABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DefaulLevelSet/DefaulLevelSet-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DefaulLevelSet/DefaulLevelSet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
+				WRAPPER_EXTENSION = levels;
 			};
 			name = Release;
 		};
@@ -1878,8 +2183,10 @@
 				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
 				SDKROOT = iphoneos5.1;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1917,6 +2224,7 @@
 				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
 				SDKROOT = iphoneos5.1;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
 				VALIDATE_PRODUCT = YES;
@@ -1944,6 +2252,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FEBABB4217E0B64800E85ABD /* Build configuration list for PBXNativeTarget "DefaultLevelSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBABB4317E0B64800E85ABD /* Debug */,
+				FEBABB4417E0B64800E85ABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		FED2E7EF17A7E48B005A16B3 /* Build configuration list for PBXNativeTarget "iMarbleGame" */ = {
 			isa = XCConfigurationList;
