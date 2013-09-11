@@ -1,6 +1,6 @@
 //
-//  HelloWorldLayer.m
-//  CocosTest1
+//  CMMarbleSimulationLayer.m
+//  MarbleGame
 //
 //  Created by Carsten Müller on 6/28/13.
 //  Copyright Carsten Müller 2013. All rights reserved.

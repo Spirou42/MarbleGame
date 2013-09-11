@@ -97,6 +97,8 @@ NSMutableDictionary *_scoreModeDelegates;
   
   // loading default LevelSet
   NSURL * bla = [NSBundle URLForResource:DEFAULT_LEVELSET_NAME withExtension:DEFAULT_LEVELSET_EXTENSION subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
+  NSBundle *levelBundle  = [NSBundle bundleWithURL:bla];
+  bla = [levelBundle resourceURL];
 	// register LevelSet directory in searchPath
 	NSArray *oldSearchPath = [[CCFileUtils sharedFileUtils] searchPath];
 	NSMutableArray *newSearchPath = [oldSearchPath mutableCopy];
