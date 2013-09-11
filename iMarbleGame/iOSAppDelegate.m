@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 
 #import "iOSAppDelegate.h"
-#import "IntroLayer.h"
+
 #import "CMMarbleMainMenuScene.h"
 
 #import "MarbleGameAppDelegate+GameDelegate.h"
