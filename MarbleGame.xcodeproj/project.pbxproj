@@ -701,7 +701,6 @@
 		FED2E8E417A8087B005A16B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FED9366D17C3BEF9007DFA0A /* CMHackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHackScene.h; sourceTree = "<group>"; };
 		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
-		FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Default Levels.levelset"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -873,7 +872,6 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FEFBE18217C7686000D86D8D /* Levelsets */,
 				93CC6CB517C15C0D00F62743 /* Sounds */,
 				9353D45A17B068F100D0FD25 /* Fonts */,
 				FEF14BAB179041D5007A3AEB /* Shaders */,
@@ -1446,14 +1444,6 @@
 			);
 			name = Shaders;
 			path = Resources/Shaders;
-			sourceTree = "<group>";
-		};
-		FEFBE18217C7686000D86D8D /* Levelsets */ = {
-			isa = PBXGroup;
-			children = (
-				FEFBE1AF17C769BA00D86D8D /* Default Levels.levelset */,
-			);
-			name = Levelsets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
