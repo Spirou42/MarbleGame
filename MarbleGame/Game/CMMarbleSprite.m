@@ -23,6 +23,13 @@
 
 @synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour, lastSoundTime;
 
+@synthesize soundFileName = soundFileName_;
+
+- (void) initializeDefaults
+{
+	self.soundFileName = DEFAULT_MARBLE_KLICK;
+}
+
 + (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
 {
 	NSString* frameName = [NSString stringWithFormat:@"%@_%li",setName,(long)ballIndex];
@@ -32,12 +39,12 @@
 
 -(id) initWithBallSet:(id)sN ballIndex:(NSInteger)bI mass:(CGFloat)mass andRadius:(CGFloat)r
 {
-    if ((self=[super initWithSpriteFrame:[[self class]spriteFrameForBallSet:sN ballIndex:bI]])) {
-    
+	if ((self=[super initWithSpriteFrame:[[self class]spriteFrameForBallSet:sN ballIndex:bI]])) {
+		[self initializeDefaults];
     CCGLProgram *k =[[CCShaderCache sharedShaderCache] programForKey:kCMMarbleGlossMapShader];
-
+		
     self.shaderProgram = k;
-
+		
     self.radius = r;
     self.setName=sN;
     self.ballIndex = bI;
@@ -79,6 +86,7 @@
 	self.shape = nil;
   [self->setName release];
   self->setName = nil;
+	self.soundFileName = nil;
 	[super dealloc];
 }
 

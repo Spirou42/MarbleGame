@@ -9,6 +9,7 @@
 #import "CMRubeFixture.h"
 #import "CMRubeSceneReader.h"
 #import "ObjectiveChipmunk.h"
+#import "CMSoundShape.h"
 //#import "ChipmunkObject.h"
 
 @interface CMRubeFixture ()
@@ -19,7 +20,8 @@
 @implementation CMRubeFixture
 @synthesize name = name_, friction = friction_, restitution = restitution_,
 filterBits = filterBits_, filterMask = filterMask_, filterGroup = filterGroup_, type = type_,
-circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_;
+circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_,
+soundName = soundName_;
 
 @synthesize cachedChipmunkObjects = cachedChipmunkObjects_, vBuffer = vBuffer_;
 
@@ -34,6 +36,17 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   self.density = 1.0;
   self.vBuffer = NULL;
   self.cachedChipmunkObjects = nil;
+}
+
+- (void) initializeCustomProperties:(NSDictionary*) dict
+{
+	if ([dict allKeys].count > 0) {
+		NSLog(@"%@ %@",self,dict);
+		self.soundName = [dict objectForKey:@"collisionSound"];
+		if (![[self.soundName pathExtension] isEqualToString:@"mp3"]) {
+			self.soundName = [self.soundName stringByAppendingPathExtension:@"mp3"];
+		}
+	}
 }
 
 - (void) initializeCircle:(NSDictionary*) dict
@@ -81,7 +94,7 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
     if ([allKeys containsObject:@"filter-groupIndex"]) {
       self.filterGroup = [[dict objectForKey:@"filter-groupIndex"] integerValue];
     }
-    
+    [self initializeCustomProperties:customPropertiesFrom([dict objectForKey:@"customProperties"])];
     if ([allKeys containsObject:@"circle"]) {
       [self initializeCircle:[dict objectForKey:@"circle"]];
     } else if ([allKeys containsObject:@"polygon"]){
@@ -181,13 +194,15 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
   switch (self.type) {
     case kFixtureCircle:
     {
-      ChipmunkCircleShape* circleShape =[ChipmunkCircleShape circleWithBody:nil radius:self.circleRadius offset:self.circleCenter];
+      CMSoundCircleShape* circleShape =[CMSoundCircleShape circleWithBody:nil radius:self.circleRadius offset:self.circleCenter];
+			circleShape.soundFileName = self.soundName;
       [result addObject:circleShape];
     }
       break;
     case kFixturePolygon:
     {
-      ChipmunkPolyShape* polyShape = [ChipmunkPolyShape polyWithBody:nil count:(int)self.vertices.count verts:self.vBuffer offset:CGPointZero];
+      CMSoundPolyShape* polyShape = [CMSoundPolyShape polyWithBody:nil count:(int)self.vertices.count verts:self.vBuffer offset:CGPointZero];
+			polyShape.soundFileName = self.soundName;
       [result addObject:polyShape];
     }
       break;
@@ -201,7 +216,8 @@ circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_
         CGPoint a = [[self.vertices objectAtIndex:i] CGPointValue];
         CGPoint b = [[self.vertices objectAtIndex:i+1] CGPointValue];
 #endif
-        ChipmunkSegmentShape *shape = [ChipmunkSegmentShape segmentWithBody:nil from:a to:b radius:1.0];
+        CMSoundSegmentShape *shape = [CMSoundSegmentShape segmentWithBody:nil from:a to:b radius:1.0];
+				shape.soundFileName = self.soundName;
         [self.cachedChipmunkObjects addObject:shape];
       }
     }

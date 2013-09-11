@@ -9,9 +9,12 @@
 #import "CCPhysicsSprite.h"
 #import "ObjectiveChipmunk.h"
 #import "ChipmunkAutoGeometry.h"
+#import "CMObjectSoundProtocol.h"
 
 
-@interface CMMarbleSprite : CCPhysicsSprite <ChipmunkObject,NSCopying>
+
+
+@interface CMMarbleSprite : CCPhysicsSprite <CMObjectSoundProtocol,ChipmunkObject,NSCopying>
 {
 	@protected	
 	ChipmunkShape 			*shape;

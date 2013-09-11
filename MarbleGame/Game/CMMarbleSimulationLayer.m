@@ -26,6 +26,7 @@
 #import "CMRubeSceneReader.h"
 #import "ObjectiveChipmunk.h"
 #import "CMRubeBody.h"
+#import "CMObjectSoundProtocol.h"
 
 enum {
 	kTagParentNode = 1,
@@ -312,6 +313,42 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
 	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
 	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	NSString *firstShapeSound = nil;
+	NSString *secondShapeSound = nil;
+	if ([firstMarble conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
+		id<CMObjectSoundProtocol> sobj = (id<CMObjectSoundProtocol>)firstMarble;
+		firstShapeSound = sobj.soundFileName;
+	}
+	if ([secondMarble conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
+		id<CMObjectSoundProtocol> sobj = (id<CMObjectSoundProtocol>)secondMarble;
+		secondShapeSound = sobj.soundFileName;
+	}
+	
+	if (!firstShapeSound) {
+		if ([firstMarbleLayer conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
+			id<CMObjectSoundProtocol> sObj = (id<CMObjectSoundProtocol>)firstMarbleLayer;
+			firstShapeSound = sObj.soundFileName;
+		}
+	}
+
+	if (!secondShapeSound) {
+		if ([secondMarbleLayer conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
+			id<CMObjectSoundProtocol> sObj = (id<CMObjectSoundProtocol>)secondMarbleLayer;
+			secondShapeSound = sObj.soundFileName;
+		}
+	}
+
+	NSString *resultSound = DEFAULT_MARBLE_KLICK;
+	
+	if (firstShapeSound && ![firstShapeSound isEqualToString:DEFAULT_MARBLE_KLICK]) {
+		resultSound = firstShapeSound;
+	}
+	if (secondShapeSound && ![secondShapeSound isEqualToString:DEFAULT_MARBLE_KLICK]) {
+		resultSound = secondShapeSound;
+	}
+
+	
+	NSLog(@"Sound1 : %@ Sound2: %@ ==> %@",firstShapeSound,secondShapeSound,resultSound);
 	
 	
 	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
@@ -344,11 +381,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	if(volume > 0.1f){
 		//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
     CGFloat pitch = 1.0;
-    if (!secondMarbleLayer) {
-		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_WALL_KLICK pitch:pitch pan:1.0 gain:volume];
-    }else{
-		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
-		}
+		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:1.0 gain:volume];
+//    if (!secondMarbleLayer) {
+//		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_WALL_KLICK pitch:pitch pan:1.0 gain:volume];
+//    }else{
+//		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
+//		}
 
 		//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
 		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];

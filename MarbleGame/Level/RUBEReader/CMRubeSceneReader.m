@@ -52,7 +52,7 @@
 	// now attach the images to the associated Bodies
 	for (CMRubeImage *rImage in self.images) {
     if (rImage.rubeBodyIndex != NSNotFound) {
-			NSLog(@"Image %@ to %ld",rImage.name,rImage.rubeBodyIndex);
+			NSLog(@"Image %@ to %ld",rImage.name,(long)rImage.rubeBodyIndex);
 			CMRubeBody* aBody = [self.bodies objectAtIndex:rImage.rubeBodyIndex];
 			[aBody attachImage:rImage];
 		}

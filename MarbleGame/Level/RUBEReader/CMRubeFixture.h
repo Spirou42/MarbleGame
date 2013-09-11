@@ -31,7 +31,7 @@ typedef enum {
 @property (nonatomic, assign) CGPoint circleCenter;
 @property (nonatomic, assign) CGFloat circleRadius;
 @property (nonatomic, retain) NSArray *vertices;
-
+@property (nonatomic, retain) NSString *soundName;
 
 
 - (id) initWithDictionary:(NSDictionary*) dict;

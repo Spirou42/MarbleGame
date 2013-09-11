@@ -107,7 +107,7 @@
 - (void) createSprite
 {
 	CCSprite *theSprite = [CCSprite spriteWithFile:self.filename];
-	NSLog(@"created a sprite %@ (%@)",theSprite,NSStringFromSize(theSprite.contentSize));
+//	NSLog(@"created a sprite %@ (%@)",theSprite,NSStringFromSize(theSprite.contentSize));
 	self.cachedSprite = theSprite;
 }
 

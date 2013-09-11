@@ -23,7 +23,8 @@
 
 @synthesize name = name_, type = type_, angle = angle_, angularVelocity = angularVelocity_,
 linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_, mass = mass_,
-angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_, cachedPhysicsSprite = cachedPhysicsSprite_;
+angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_,
+cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 
 - (void) initDefaults
 {
@@ -40,6 +41,13 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
   self.mass = 0.0;
 }
 
+- (void) initializeCustomProperties:(NSDictionary*)dict
+{
+	if ([dict allKeys].count > 0) {
+		NSLog(@"%@ %@",self,dict);
+	}
+}
+
 - (id) initWithDictionary:(NSDictionary *)dict
 {
 	self = [super init];
@@ -53,6 +61,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
     self.linearVelocity = pointFromRUBEPoint([dict objectForKey:@"linearVelocity"]);
     self.mass = [[dict objectForKey:@"massData-mass"]floatValue];
     // now iterate over all our fixtures and create them
+		[self initializeCustomProperties:customPropertiesFrom([dict objectForKey:@"customProperties"])];
     for (NSDictionary *fixtureDict in [dict objectForKey:@"fixture"]) {
       CMRubeFixture *fixture = [[CMRubeFixture alloc] initWithDictionary:fixtureDict];
       [self.fixtures addObject:fixture];
@@ -178,7 +187,7 @@ angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_
 	NSString *spriteName = spriteImage.filename;
 	CCPhysicsSprite * result = [CCPhysicsSprite spriteWithFile:spriteName];
 	result.chipmunkBody = self.cpBody;
-	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));
+//	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));
 	result.scale = spriteImage.rubeScale / result.contentSize.height;
 	
 	

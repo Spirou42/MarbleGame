@@ -30,7 +30,7 @@ typedef enum {
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, retain) NSMutableArray *fixtures;
 @property (nonatomic, retain) NSMutableArray *attachedImages;
-
+@property (nonatomic, retain) NSString* soundName;
 @property (nonatomic,readonly) CCPhysicsSprite* physicsSprite; ///< this returns nil for static bodies
 
 - (id) initWithDictionary:(NSDictionary*)dict;

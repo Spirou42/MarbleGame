@@ -13,6 +13,8 @@
 		93308F8D17E0F1DF0094A362 /* Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8817E0F1DF0094A362 /* Klick.mp3 */; };
 		93308F8E17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
 		93308F8F17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
+		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
+		93308F9417E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
@@ -446,6 +448,9 @@
 		93308F8717E0F1DF0094A362 /* Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boing.mp3; sourceTree = "<group>"; };
 		93308F8817E0F1DF0094A362 /* Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klick.mp3; sourceTree = "<group>"; };
 		93308F8917E0F1DF0094A362 /* Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klack.mp3; sourceTree = "<group>"; };
+		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
+		93308F9117E10A310094A362 /* CMSoundShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSoundShape.h; sourceTree = "<group>"; };
+		93308F9217E10A310094A362 /* CMSoundShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSoundShape.m; sourceTree = "<group>"; };
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameScoreModeProtocol.h; sourceTree = "<group>"; };
 		93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleScoreModeScore.h; sourceTree = "<group>"; };
@@ -1209,6 +1214,9 @@
 				93536642177DFB52009F640B /* MacAppDelegate.m */,
 				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
 				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
+				93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */,
+				93308F9117E10A310094A362 /* CMSoundShape.h */,
+				93308F9217E10A310094A362 /* CMSoundShape.m */,
 			);
 			name = Management;
 			sourceTree = "<group>";
@@ -1780,6 +1788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93308F9317E10A310094A362 /* CMSoundShape.m in Sources */,
 				93536640177DFB52009F640B /* main.m in Sources */,
 				93536643177DFB52009F640B /* MacAppDelegate.m in Sources */,
 				93F35A4B17C2A44A00B9B4E9 /* CMRubeJoint.m in Sources */,
@@ -1832,6 +1841,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93308F9417E10A310094A362 /* CMSoundShape.m in Sources */,
 				FED2E86D17A7FD83005A16B3 /* CMMarbleSettingsScene.m in Sources */,
 				FED2E86417A7EC18005A16B3 /* iOSAppDelegate.m in Sources */,
 				93F35A4C17C2A44A00B9B4E9 /* CMRubeJoint.m in Sources */,
