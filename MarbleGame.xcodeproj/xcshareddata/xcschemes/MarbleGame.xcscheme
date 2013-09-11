@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FEBABAFF17E0B5B300E85ABD"
+               BuildableName = "DefaultLevelsetTests.xctest"
+               BlueprintName = "DefaultLevelsetTests"
+               ReferencedContainer = "container:MarbleGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
