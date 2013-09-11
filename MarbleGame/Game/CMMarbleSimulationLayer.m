@@ -303,16 +303,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 
 
 #pragma mark - SOUND
-
-
-- (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
+- (NSString*) soundForFirstShape:(ChipmunkShape*)firstMarble secondShape:(ChipmunkShape*) secondMarble
 {
-	if (!self.gameDelegate.playEffect) {
-		return;
-	}
 	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
 	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
 	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	
+	// sound to play
 	NSString *firstShapeSound = nil;
 	NSString *secondShapeSound = nil;
 	if ([firstMarble conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
@@ -330,14 +327,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 			firstShapeSound = sObj.soundFileName;
 		}
 	}
-
+	
 	if (!secondShapeSound) {
 		if ([secondMarbleLayer conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
 			id<CMObjectSoundProtocol> sObj = (id<CMObjectSoundProtocol>)secondMarbleLayer;
 			secondShapeSound = sObj.soundFileName;
 		}
 	}
-
+	
 	NSString *resultSound = DEFAULT_MARBLE_KLICK;
 	
 	if (firstShapeSound && ![firstShapeSound isEqualToString:DEFAULT_MARBLE_KLICK]) {
@@ -346,11 +343,41 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	if (secondShapeSound && ![secondShapeSound isEqualToString:DEFAULT_MARBLE_KLICK]) {
 		resultSound = secondShapeSound;
 	}
+	return resultSound;
+}
 
+- (CGFloat) panForShape:(ChipmunkShape*) firstShape secondShape:(ChipmunkShape*)secondShape
+{
+	CGFloat result = 0.0;
+	ChipmunkShape *theShape = nil;
+	if (!firstShape.body.isStatic) {
+		theShape = firstShape;
+	}else if(!secondShape.body.isStatic){
+		theShape = secondShape;
+	}
+	
+	CGFloat panPos = theShape.body.pos.x - (centerOfScreen().x- MARBLE_RADIUS*2.0f);
+	panPos /= centerOfScreen().x;
+	NSLog(@"Pan: %f",panPos);
+	result = panPos;
+	
+	return result;
+}
+
+
+- (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
+{
+	if (!self.gameDelegate.playEffect) {
+		return;
+	}
+	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
+	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
+	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+	NSString *resultSound = [self soundForFirstShape:firstMarble secondShape:secondMarble];
 	
 //	NSLog(@"Sound1 : %@ Sound2: %@ ==> %@",firstShapeSound,secondShapeSound,resultSound);
 	
-	
+	CGFloat pan = [self panForShape:firstMarble secondShape:secondMarble];
 	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
 		return;
 	}
@@ -381,7 +408,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	if(volume > 0.1f){
 		//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
     CGFloat pitch = 1.0;
-		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:1.0 gain:volume];
+		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:pan gain:volume];
 //    if (!secondMarbleLayer) {
 //		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_WALL_KLICK pitch:pitch pan:1.0 gain:volume];
 //    }else{
