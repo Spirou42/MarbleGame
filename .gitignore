@@ -17,5 +17,5 @@ profile
 *.moved-aside
 
 *.xcuserstate
-
+*-backups/
 *.rs
