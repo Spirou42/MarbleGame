@@ -348,7 +348,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	}
 
 	
-	NSLog(@"Sound1 : %@ Sound2: %@ ==> %@",firstShapeSound,secondShapeSound,resultSound);
+//	NSLog(@"Sound1 : %@ Sound2: %@ ==> %@",firstShapeSound,secondShapeSound,resultSound);
 	
 	
 	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
