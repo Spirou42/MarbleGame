@@ -301,8 +301,10 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	
 }
 
-
+////////////////////////////////////////////////////////////////////////
 #pragma mark - SOUND
+
+
 - (NSString*) soundForFirstShape:(ChipmunkShape*)firstMarble secondShape:(ChipmunkShape*) secondMarble
 {
 	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
@@ -363,31 +365,29 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
   }else if (bodyX>682.0f){
     panPos = .00010;
   }
-  //theShape.body.pos.x - (centerOfScreen().x- MARBLE_RADIUS*2.0f);
-//	panPos /= centerOfScreen().x;
-//	NSLog(@"Pan: %f",panPos);
+
 	result = panPos;
 	
 	return result;
 }
-
 
 - (void) processSound:(cpArbiter*)arbiter first:(ChipmunkShape*) firstMarble second:(ChipmunkShape*) secondMarble
 {
 	if (!self.gameDelegate.playEffect) {
 		return;
 	}
+
 	//	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, firstMarble, secondMarble);
 	CMMarbleSprite *firstMarbleLayer = firstMarble.data;
 	CMMarbleSprite *secondMarbleLayer = secondMarble.data;
+
 	NSString *resultSound = [self soundForFirstShape:firstMarble secondShape:secondMarble];
-	
-//	NSLog(@"Sound1 : %@ Sound2: %@ ==> %@",firstShapeSound,secondShapeSound,resultSound);
 	
 	CGFloat pan = [self panForShape:firstMarble secondShape:secondMarble];
 	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
 		return;
 	}
+
 	CGFloat fSpeed = cpvlength(firstMarble.body.vel);
 	CGFloat sSpeed = cpvlength(secondMarble.body.vel);
   if (!secondMarbleLayer) {
@@ -406,30 +406,19 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	if (impulse<1000.00) {
 		return;
 	}
-	
-	//	CGFloat sVal = fSpeed + sSpeed;
-	//	NSLog(@"%f,%f,(%f)",self.lastMarbleSoundTime,currentTime,currentTime-self.lastMarbleSoundTime);
+
 	float volume = MIN(impulse/30000.0f , 1.0f);
-	//NSLog(@"Impulse: %f %f",log(impulse),volume);
+
 	volume *= self.gameDelegate.soundVolume;
 	if(volume > 0.1f){
-		//		NSLog(@"S1(%p) = %f, S2(%p) = %f (%04.3f,%04.3f)",firstMarble,fSpeed,secondMarble,sSpeed,impulse,volume);
     CGFloat pitch = 1.0;
-		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:pan gain:volume];
-//    if (!secondMarbleLayer) {
-//		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_WALL_KLICK pitch:pitch pan:1.0 gain:volume];
-//    }else{
-//		[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_KLICK pitch:pitch pan:1.0 gain:volume];
-//		}
 
-		//		[[OALSimpleAudio sharedInstance] playEffect:MARBLE_SOUND volume:volume pitch:1.0 pan:1.0 loop:NO];
+		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:pan gain:volume];
 		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
 		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
 		secondMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
 	}
-	
 }
-
 
 #pragma mark -
 #pragma mark Properties
@@ -448,18 +437,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 {
   NSLog(@"isRunning In %d (%d)",self.isRunning,run);
   if (self->simulationRunning_ != run) {
-//    CCScheduler *s =self.scheduler;
     self->simulationRunning_ = run;
-#if 0
-    if (run) {
-      [self scheduleUpdate];
-    }else{
-      [self unscheduleUpdate];
-      //[s unscheduleUpdateForTarget:self];
-    }
-#endif
   }
-    NSLog(@"isRunning Out %d (%d)",self.isRunning,run);
+  NSLog(@"isRunning Out %d (%d)",self.isRunning,run);
 }
 
 - (void) setDollyGroove:(ChipmunkGrooveJoint *)dG
@@ -496,9 +476,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
     [self.space remove:self.dynamicObjects];
     [self.dynamicObjects removeAllObjects];
 		self->currentLevel_ = cL;
-//		[self initializeLevel];
 	}
 }
+
 - (void) setStaticShapes:(NSArray *)staticShapes
 {
 	if (staticShapes != self->staticShapes_) {
@@ -522,7 +502,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 		[self->staticShapes_ release];
 		self->staticShapes_ = [staticShapes retain];
 	}
-
 }
 
 - (NSArray*) staticShapes
@@ -552,18 +531,10 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	cpVect anchor = cpv(0,0);
 
 	self.dollyGroove= [ChipmunkGrooveJoint grooveJointWithBodyA:self.space.staticBody bodyB:dB groove_a:start groove_b:end anchr2:anchor];
-//  self.dollyGroove.errorBias = pow(1.0-0.1, 60);
 
 	// create the Servo
 	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos];
-//	self.dollyServo = [ChipmunkPinJoint pinJointWithBodyA:self.space.staticBody bodyB:dB anchr1:dB.pos anchr2:cpv(0.0, 0.0)];
-//  dB.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
-	
-//	self.dollyServo.maxForce=1e6;
-//	self.dollyServo.maxBias = INFINITY;
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
-//	self.dollyServo.dist = 0.001;
-//	self.dollyServo.anchr1 = self.lastMousePosition;
 	self.currentMarbleIndex = marbleIndex;
 }
 
@@ -576,7 +547,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	NSLog(@"MarbleSet: %@",marbleSet);
   
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-//	marbleIndex= ((marbleIndex+1)%9);
+
   if (!marbleIndex) {
     marbleIndex=1;
   }
@@ -599,9 +570,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 
 - (void) moveMarble:(CMEvent*)movedEvent
 {
-  //	NSLog(@"MouseMoved: %@",movedEvent);
-  //	self.marbleThrowerShape.body.pos = cpv(movedEvent.locationInWindow.x,748);
-  //	_dollyServo.anchr1 = cpv(_touchTarget.x, 100);
+
 #ifdef __CC_PLATFORM_MAC
 	self.lastMousePosition = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
 #else
@@ -609,8 +578,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	self.lastMousePosition = cpv( [firstTouch locationInView:firstTouch.view].x , MARBLE_GROOVE_Y);
 #endif
 	self.dollyServo.anchr1 = self.lastMousePosition;
-  //  self.dollyBody.pos = cpv(movedEvent.locationInWindow.x, MARBLE_GROOVE_Y);
-  
 }
 
 #ifdef __CC_PLATFORM_MAC
@@ -636,13 +603,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 - (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
   [self moveMarble:event];
-//  NSLog(@"tMoved %@ %@",touches,event);
 }
 
 - (void) ccTouchesEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
   [self startMarble];
-//  NSLog(@"tEnded %@ %@",touch,event);
 }
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -702,13 +667,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	[self.dynamicObjects removeAllObjects];
 
 	[self.space remove: self.space.bodies];
-//	[self.space remove: self.space.shapes];
+
 	self.staticShapes = [self.currentLevel staticObjects];
 	[self.otherSpritesNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	
-	{ // request all dynamics, if this is a Rube level
+	{
+    // request all dynamics, if this is a Rube level
 		if (self.currentLevel.isRubeLevel) {
 			CMRubeSceneReader *reader = self.currentLevel.rubeReader;
 			NSArray *dynBodies = reader.dynamicBodies;
@@ -719,11 +685,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 				[self.otherSpritesNode addChild:dynSprite];
 			}
 		}
-
 	}
-	
 	[self fireMarbles:p inTime:10];
-	
 }
 
 - (void) fireSingleMarble:(NSTimer*) timer
