@@ -18,13 +18,8 @@
 
 - (void) createSliderIn:(CCNode*) parent
 {
-	CCSprite *backgroundSprite,*valueSprite,*thumbSprite;
-	
-	backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Normal"];
-	valueSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-SelectedGreen"];
-	thumbSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Thumb"];
-	
-	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
+  CCControlSlider* slider = defaultGreenSlider();
+
 	slider.thumbInset = 2;
 	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
 	slider.anchorPoint=CGPointMake(0.5, 0.5);

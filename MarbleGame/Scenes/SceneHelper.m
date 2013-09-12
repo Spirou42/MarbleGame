@@ -75,6 +75,40 @@ inline CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size
 	return button;
 }
 
+inline CCControlSlider* defaultRedSlider()
+{
+  CCSprite *backgroundSprite,*valueSprite,*thumbSprite;
+
+	backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Normal"];
+	valueSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Selected"];
+	thumbSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Thumb"];
+
+	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
+	slider.thumbInset = 2;
+  //	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
+  //	slider.anchorPoint=CGPointMake(0.5, 0.5);
+  //	slider.position = p;
+  slider.mousePriority=-10;
+  return slider;
+}
+
+
+inline CCControlSlider* defaultGreenSlider()
+{
+  CCSprite *backgroundSprite,*valueSprite,*thumbSprite;
+
+	backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Normal"];
+	valueSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-SelectedGreen"];
+	thumbSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Thumb"];
+
+	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
+	slider.thumbInset = 2;
+//	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
+//	slider.anchorPoint=CGPointMake(0.5, 0.5);
+//	slider.position = p;
+  return slider;
+}
+
 inline CCControlButton* defaultMenuButton()
 {
   CCControlButton* result = standardButtonWithTitle(@"M");

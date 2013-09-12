@@ -19,6 +19,7 @@
 #import "CMMarbleGameScoreModeProtocol.h"
 #import "CMMarbleScoreModeScore.h"
 #import "AppDelegate.h"
+#import "MarbleGameConfig.h"
 #import "SimpleAudioEngine.h"
 
 // to be implemented
@@ -117,6 +118,13 @@ NSMutableDictionary *_scoreModeDelegates;
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_KLICK];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_KLICK];
   [[SimpleAudioEngine sharedEngine] preloadEffect:@"Boing.mp3"];
+
+  [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:self.currentPlayer.settings.musicVolume];
+  [[SimpleAudioEngine sharedEngine] setEffectsVolume:self.currentPlayer.settings.musicVolume];
+  [[SimpleAudioEngine sharedEngine] playBackgroundMusic:DEFAULT_BACKGROUND_MUSIC loop:YES];
+  if (self.currentPlayer.settings.musicVolume<DEFAULT_BACKGROUND_MUSIC_VOLUME_LIMIT) {
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+  }
 }
 
 #pragma mark - 

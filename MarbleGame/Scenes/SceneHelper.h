@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "Cocos2d.h"
-@class CCSprite, CCControlButton;
+@class CCSprite, CCControlButton,CCControlSlider;
 
 
 CCSprite* defaultSceneBackground();
 CCControlButton* standardButtonWithTitle(NSString* title);
 CCControlButton* standardButtonWithTitleSize(NSString* title, CGSize size);
 CCControlButton* defaultMenuButton();
+CCControlSlider* defaultGreenSlider();
+CCControlSlider* defaultRedSlider();
 
 CGPoint menuStartPosition();
 CGPoint centerOfScreen();

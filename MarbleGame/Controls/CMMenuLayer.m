@@ -51,8 +51,10 @@ interColumnSpacing = interColumnSpacing_;
 	self.backgroundSprite.position = ccp(self.contentSize.width/2.0, self.contentSize.height/2.0);
 #if __CC_PLATFORM_MAC
 	self.mouseEnabled = YES;
+  self.mousePriority = 1;
 #endif
 	self.touchEnabled = YES;
+  self.touchPriority = 1;
 	self.nextFreeMenuPosition = ccp(self.backgroundSprite.contentSize.width/2.0, self.backgroundSprite.contentSize.height - 40.0 );
 	[self addChild:self.backgroundSprite z:0];
 	[self.backgroundSprite addChild:[self createMenuLabel] z:1];

@@ -105,7 +105,7 @@
 #pragma mark - Sounds
 
 #define USE_MONO_SOUNDS 1
-
+#define DEFAULT_BACKGROUND_MUSIC_VOLUME_LIMIT (0.01f)
 
 #define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
 
