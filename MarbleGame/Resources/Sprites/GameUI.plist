@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:c6faa4a9d17d576bdc19de53a7f896f8:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:294c7ec7b545bdd2171106ea1f4247ec:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -124,6 +124,26 @@
 				
 				  <key>sourceSize</key>
 				  <string>{ 3,3 }</string>
+				</dict>
+		 
+			<key>DDMenu-ItemBackground</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 258,33 }, { 1,1 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 1,1 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 1,1 }</string>
 				</dict>
 		 
 			<key>Slider-Thumb</key>
