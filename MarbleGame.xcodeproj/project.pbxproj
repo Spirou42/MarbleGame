@@ -133,6 +133,7 @@
 		FE9C491217E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */; };
 		FEAE680917E23E0F00231A96 /* CMEventEatingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */; };
 		FEAE680A17E23E0F00231A96 /* CMEventEatingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */; };
+		FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
 		FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */; };
@@ -152,7 +153,6 @@
 		FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */; };
 		FEBABB7517E0B93F00E85ABD /* LevelSet.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5117E0B7C300E85ABD /* LevelSet.plist */; };
 		FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
-		FEBABB7D17E0C7B800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
@@ -1763,7 +1763,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEBABB7D17E0C7B800E85ABD /* DefaultLevelSet.levels in Resources */,
+				FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
@@ -2008,7 +2008,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTED_PLATFORMS = "";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -2047,7 +2047,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTED_PLATFORMS = "";
 			};
 			name = Release;
 		};
@@ -2159,6 +2159,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macos iphoneos";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = levels;
 			};
@@ -2190,6 +2191,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macos iphoneos";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = levels;
 			};

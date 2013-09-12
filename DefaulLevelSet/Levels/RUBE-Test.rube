@@ -56,6 +56,13 @@
     },
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -79,13 +86,6 @@
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -151,6 +151,14 @@
           },
           
           {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
             "density" : 1,
             "friction" : 0.2,
             "id" : 3,
@@ -172,6 +180,14 @@
           },
           
           {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
             "density" : 1,
             "friction" : 0.2,
             "id" : 4,
@@ -193,6 +209,14 @@
           },
           
           {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
             "density" : 1,
             "friction" : 0.2,
             "id" : 5,
@@ -214,6 +238,14 @@
           },
           
           {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
             "density" : 1,
             "friction" : 0.2,
             "id" : 6,
@@ -336,6 +368,14 @@
           },
           
           {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
             "density" : 1,
             "friction" : 1,
             "id" : 10,
@@ -729,10 +769,10 @@
         ],
         "id" : 2,
         "linearVelocity" : 0,
-        "massData-I" : 22420.1933593750,
+        "massData-I" : 22420.19531250,
         "massData-center" : 
         {
-          "x" : 0.01231722533702850,
+          "x" : 0.01231727749109268,
           "y" : 0.007920361123979092
         },
         "massData-mass" : 39.99999618530273,
@@ -1063,14 +1103,14 @@
         "id" : 3,
         "linearVelocity" : 
         {
-          "x" : -0.6979863643646240,
-          "y" : 1.084269285202026
+          "x" : -0.7977218627929688,
+          "y" : 1.239171028137207
         },
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231718156486750,
-          "y" : 0.007920363917946815
+          "x" : 0.01231727749109268,
+          "y" : 0.007920170202851295
         },
         "massData-mass" : 39.99999618530273,
         "name" : "Wheel",
@@ -1400,14 +1440,14 @@
         "id" : 5,
         "linearVelocity" : 
         {
-          "x" : -0.4985494613647461,
-          "y" : 0.7736921310424805
+          "x" : -0.5982513427734375,
+          "y" : 0.9284315109252930
         },
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
-          "y" : 0.007920361123979092
+          "x" : 0.01231718156486750,
+          "y" : 0.007920457050204277
         },
         "massData-mass" : 39.99999618530273,
         "name" : "Wheel",
