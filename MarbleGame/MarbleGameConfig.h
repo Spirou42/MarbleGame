@@ -101,12 +101,25 @@
 #define MENU_BACKGROUND_PLATE						@"Menu-Background.png"
 
 
-// definition for Sounds
+//////////////////////////////////////////////////
+#pragma mark - Sounds
+
+#define USE_MONO_SOUNDS 1
+
 
 #define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
-//#define DEFAULT_MARBLE_KLICK								@"marbleKlick.mp3"
-#define DEFAULT_MARBLE_KLICK								@"Klick.mp3"
-#define DEFAULT_WALL_KLICK									@"Klack.mp3"
+
+#if USE_MONO_SOUNDS
+#define DEFAULT_SOUNDFILE_PREFIX            @"Mono-"
+#define DEFAULT_MARBLE_KLICK								@"Mono-Klick.mp3"
+#define DEFAULT_WALL_KLICK									@"Mono-Klack.mp3"
+#define DEFAULT_WALL_BOING                  @"Mono-Boing.mp3
+#else
+#define DEFAULT_SOUNDFILE_PREFIX            @"Stereo-"
+#define DEFAULT_MARBLE_KLICK								@"Stereo-Klick.mp3"
+#define DEFAULT_WALL_KLICK									@"Stereo-Klack.mp3"
+#define DEFAULT_WALL_BOING                  @"Stereo-Boing.mp3
+#endif
 //////////////////////////////////////////////////
 #pragma mark - Fonts
 

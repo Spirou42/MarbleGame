@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93308F8A17E0F1DF0094A362 /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8717E0F1DF0094A362 /* Boing.mp3 */; };
-		93308F8B17E0F1DF0094A362 /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8717E0F1DF0094A362 /* Boing.mp3 */; };
-		93308F8C17E0F1DF0094A362 /* Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8817E0F1DF0094A362 /* Klick.mp3 */; };
-		93308F8D17E0F1DF0094A362 /* Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8817E0F1DF0094A362 /* Klick.mp3 */; };
-		93308F8E17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
-		93308F8F17E0F1DF0094A362 /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93308F8917E0F1DF0094A362 /* Klack.mp3 */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93308F9417E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
@@ -125,6 +119,18 @@
 		FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
 		FE88AEFD17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
+		FE9C490717E1FB50008CDFF3 /* Mono-Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490117E1FB50008CDFF3 /* Mono-Boing.mp3 */; };
+		FE9C490817E1FB50008CDFF3 /* Mono-Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490117E1FB50008CDFF3 /* Mono-Boing.mp3 */; };
+		FE9C490917E1FB50008CDFF3 /* Mono-Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490217E1FB50008CDFF3 /* Mono-Klack.mp3 */; };
+		FE9C490A17E1FB50008CDFF3 /* Mono-Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490217E1FB50008CDFF3 /* Mono-Klack.mp3 */; };
+		FE9C490B17E1FB50008CDFF3 /* Mono-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490317E1FB50008CDFF3 /* Mono-Klick.mp3 */; };
+		FE9C490C17E1FB50008CDFF3 /* Mono-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490317E1FB50008CDFF3 /* Mono-Klick.mp3 */; };
+		FE9C490D17E1FB50008CDFF3 /* Stereo-Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490417E1FB50008CDFF3 /* Stereo-Boing.mp3 */; };
+		FE9C490E17E1FB50008CDFF3 /* Stereo-Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490417E1FB50008CDFF3 /* Stereo-Boing.mp3 */; };
+		FE9C490F17E1FB50008CDFF3 /* Stereo-Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */; };
+		FE9C491017E1FB50008CDFF3 /* Stereo-Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */; };
+		FE9C491117E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */; };
+		FE9C491217E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */; };
 		FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */; };
@@ -445,9 +451,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		93308F8717E0F1DF0094A362 /* Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boing.mp3; sourceTree = "<group>"; };
-		93308F8817E0F1DF0094A362 /* Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klick.mp3; sourceTree = "<group>"; };
-		93308F8917E0F1DF0094A362 /* Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klack.mp3; sourceTree = "<group>"; };
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
 		93308F9117E10A310094A362 /* CMSoundShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSoundShape.h; sourceTree = "<group>"; };
 		93308F9217E10A310094A362 /* CMSoundShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSoundShape.m; sourceTree = "<group>"; };
@@ -601,6 +604,12 @@
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
 		FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MarbleGameAppDelegate+GameDelegate.m"; sourceTree = "<group>"; };
+		FE9C490117E1FB50008CDFF3 /* Mono-Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mono-Boing.mp3"; sourceTree = "<group>"; };
+		FE9C490217E1FB50008CDFF3 /* Mono-Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mono-Klack.mp3"; sourceTree = "<group>"; };
+		FE9C490317E1FB50008CDFF3 /* Mono-Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mono-Klick.mp3"; sourceTree = "<group>"; };
+		FE9C490417E1FB50008CDFF3 /* Stereo-Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Boing.mp3"; sourceTree = "<group>"; };
+		FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Klack.mp3"; sourceTree = "<group>"; };
+		FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Klick.mp3"; sourceTree = "<group>"; };
 		FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleBatchNode.h; sourceTree = "<group>"; };
 		FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleBatchNode.m; sourceTree = "<group>"; };
 		FEBABAEC17E0B5B200E85ABD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -1059,9 +1068,12 @@
 		93CC6CB517C15C0D00F62743 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				93308F8717E0F1DF0094A362 /* Boing.mp3 */,
-				93308F8817E0F1DF0094A362 /* Klick.mp3 */,
-				93308F8917E0F1DF0094A362 /* Klack.mp3 */,
+				FE9C490117E1FB50008CDFF3 /* Mono-Boing.mp3 */,
+				FE9C490217E1FB50008CDFF3 /* Mono-Klack.mp3 */,
+				FE9C490317E1FB50008CDFF3 /* Mono-Klick.mp3 */,
+				FE9C490417E1FB50008CDFF3 /* Stereo-Boing.mp3 */,
+				FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */,
+				FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */,
 				93CC6CB917C15C7400F62743 /* marbleKlick.mp3 */,
 				93CC6CB617C15C3F00F62743 /* MarbleGame-Background.mp3 */,
 			);
@@ -1700,21 +1712,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9C490D17E1FB50008CDFF3 /* Stereo-Boing.mp3 in Resources */,
 				FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */,
-				93308F8C17E0F1DF0094A362 /* Klick.mp3 in Resources */,
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
+				FE9C490717E1FB50008CDFF3 /* Mono-Boing.mp3 in Resources */,
+				FE9C490B17E1FB50008CDFF3 /* Mono-Klick.mp3 in Resources */,
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
 				9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
-				93308F8A17E0F1DF0094A362 /* Boing.mp3 in Resources */,
-				93308F8E17E0F1DF0094A362 /* Klack.mp3 in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
+				FE9C490917E1FB50008CDFF3 /* Mono-Klack.mp3 in Resources */,
+				FE9C490F17E1FB50008CDFF3 /* Stereo-Klack.mp3 in Resources */,
 				93CC6CB717C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
@@ -1726,6 +1740,7 @@
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
 				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
+				FE9C491117E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1748,22 +1763,25 @@
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
-				93308F8B17E0F1DF0094A362 /* Boing.mp3 in Resources */,
 				93CC6CB817C15C3F00F62743 /* MarbleGame-Background.mp3 in Resources */,
+				FE9C490E17E1FB50008CDFF3 /* Stereo-Boing.mp3 in Resources */,
 				935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				93CC6CBB17C15C7400F62743 /* marbleKlick.mp3 in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
 				93750A7B17B81D560063D613 /* GameUI.plist in Resources */,
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
-				93308F8D17E0F1DF0094A362 /* Klick.mp3 in Resources */,
 				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				93750A8017B827610063D613 /* Menu-Background.png in Resources */,
+				FE9C491017E1FB50008CDFF3 /* Stereo-Klack.mp3 in Resources */,
+				FE9C490C17E1FB50008CDFF3 /* Mono-Klick.mp3 in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
+				FE9C490817E1FB50008CDFF3 /* Mono-Boing.mp3 in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
-				93308F8F17E0F1DF0094A362 /* Klack.mp3 in Resources */,
+				FE9C490A17E1FB50008CDFF3 /* Mono-Klack.mp3 in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
+				FE9C491217E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
@@ -1982,7 +2000,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = "iphonesimulator macos iphoneos";
+				SUPPORTED_PLATFORMS = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -2021,7 +2039,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = "iphonesimulator macos iphoneos";
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;
 		};

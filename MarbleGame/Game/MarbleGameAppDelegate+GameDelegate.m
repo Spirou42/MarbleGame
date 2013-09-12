@@ -94,7 +94,6 @@ NSMutableDictionary *_scoreModeDelegates;
 	// reading ball set names
 	[self getBallSetNamesFromFile:@"Balls.plist"];
 	
-  
   // loading default LevelSet
   NSURL * bla = [NSBundle URLForResource:DEFAULT_LEVELSET_NAME withExtension:DEFAULT_LEVELSET_EXTENSION subdirectory:@"." inBundleWithURL:[[NSBundle mainBundle]bundleURL]];
   NSBundle *levelBundle  = [NSBundle bundleWithURL:bla];
@@ -117,6 +116,7 @@ NSMutableDictionary *_scoreModeDelegates;
 	[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:DEFAULT_BACKGROUND_MUSIC];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_KLICK];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_KLICK];
+  [[SimpleAudioEngine sharedEngine] preloadEffect:@"Boing.mp3"];
 }
 
 #pragma mark - 
