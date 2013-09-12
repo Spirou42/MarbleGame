@@ -106,8 +106,13 @@ interColumnSpacing = interColumnSpacing_;
 	[self.backgroundSprite addChild:aNode z:zLayer];
 	[self.menuButtons addObject:aNode];
 }
-
 - (void) addLeftNode:(CCNode *)lNode right:(CCNode *)rNode
+{
+  [self addLeftNode:lNode z:1 right:rNode z:1];
+}
+
+- (void) addLeftNode:(CCNode *)lNode z:(NSInteger)zl right:(CCNode *)rNode z:(NSInteger)zr
+
 {
 	CCNode *refNode = nil;
 	if (lNode.contentSize.height < rNode.contentSize.height) {
@@ -125,8 +130,8 @@ interColumnSpacing = interColumnSpacing_;
 	lNode.position = lPos;
 	rNode.anchorPoint = CGPointMake(0.0, 0.5);
 	rNode.position = rPos;
-	[self.backgroundSprite addChild:lNode z:1];
-	[self.backgroundSprite addChild:rNode z:1];
+	[self.backgroundSprite addChild:lNode z:zl];
+	[self.backgroundSprite addChild:rNode z:zr];
 }
 - (void) draw
 {

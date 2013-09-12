@@ -32,5 +32,5 @@
 - (void) addNode:(CCNode*) aNode z:(NSInteger) zLayer;
 
 - (void) addLeftNode:(CCNode*) lNode right:(CCNode*)rNode;
-
+- (void) addLeftNode:(CCNode *)lNode z:(NSInteger)zl right:(CCNode *)rNode z:(NSInteger)zr;
 @end

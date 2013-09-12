@@ -42,31 +42,19 @@
 		CMMenuLayer *menuLayer = [[[CMMenuLayer alloc] initWithLabel:@"Settings"]autorelease];
 		// create a Popup Button with label
 		CGSize menuSize = menuLayer.backgroundSprite.contentSize;
-		CCNodeRGBA *popupButtonLayer = [[[CCNodeRGBA alloc] init]autorelease];
-		popupButtonLayer.color = ccc3(255,200,10);
-//		popupButtonLayer.opacity = 128;
-		popupButtonLayer.anchorPoint=ccp(0.5, 0.5);
-		popupButtonLayer.contentSize = CGSizeMake(menuSize.width, 50);
-		CGPoint buttonPosition = ccp(menuSize.width/2.0, popupButtonLayer.contentSize.height/2.0);
+
 		CGSize buttonSize = menuLayer.defaultButtonSize;
 		CCControlPopupButton *popUp = [self createMarbleSetPopUp];
-		popUp.position = buttonPosition;
-//		popUp.contentSize=buttonSize;
-		
-		CGPoint labelPosition = ccp(buttonPosition.x - popUp.contentSize.width/2.0 - menuLayer.interElementSpacing, popupButtonLayer.contentSize.height/2.0);
+
 		CCNode<CCLabelProtocol,CCRGBAProtocol>* label = defaultButtonTitle(@"MarbleSet");
 		label.anchorPoint = ccp(1.0, 0.5);
-		label.position = labelPosition;
-		[popupButtonLayer addChild:popUp];
-		[popupButtonLayer addChild:label];
-		popupButtonLayer.contentSize = CGSizeMake(menuSize.width, 50);
-		popupButtonLayer.cascadeColorEnabled = NO;
-		[popupButtonLayer updateDisplayedColor:ccc3(255, 200, 10)];
-		[popupButtonLayer updateDisplayedOpacity:128];
-		[menuLayer addNode:popupButtonLayer z:10];
+    [menuLayer addLeftNode:label z:1 right:popUp z:10];
+//		[menuLayer addNode:popupButtonLayer z:10];
 		[self addChild:menuLayer];
+
+
     CGPoint l = menuLayer.nextFreeMenuPosition;
-//    menuLayer.nextFreeMenuPosition= CGPointMake(l.x, 60);
+
 		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(exitScene:)];
 		
 	}
@@ -75,9 +63,7 @@
 
 - (void) exitScene:(id) sender
 {
-//	NSLog(@"Sender: %@",sender);
   [[CCDirector sharedDirector]popScene];
-//		[[CCDirector sharedDirector] replaceScene:[CMMarbleMainMenuScene node]];
 }
 - (void)onEnd:(ccTime)dt
 {
