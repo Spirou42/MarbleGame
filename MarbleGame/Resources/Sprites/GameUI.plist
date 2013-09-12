@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:294c7ec7b545bdd2171106ea1f4247ec:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:609795f96e5fadced46714de6b129b1d:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -10,7 +10,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,74 }, { 93,39 } }</string>
+					<string>{ { 163,105 }, { 93,39 } }</string>
 					
 
 					<key>offset</key>
@@ -30,7 +30,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,33 }, { 93,39 } }</string>
+					<string>{ { 163,64 }, { 93,39 } }</string>
 					
 
 					<key>offset</key>
@@ -50,7 +50,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 180,115 }, { 20,21 } }</string>
+					<string>{ { 180,146 }, { 20,21 } }</string>
 					
 
 					<key>offset</key>
@@ -70,7 +70,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,33 }, { 93,39 } }</string>
+					<string>{ { 163,64 }, { 93,39 } }</string>
 					
 
 					<key>offset</key>
@@ -90,7 +90,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 2,33 }, { 159,125 } }</string>
+					<string>{ { 2,64 }, { 159,125 } }</string>
 					
 
 					<key>offset</key>
@@ -110,7 +110,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,150 }, { 3,3 } }</string>
+					<string>{ { 163,181 }, { 3,3 } }</string>
 					
 
 					<key>offset</key>
@@ -130,7 +130,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 258,33 }, { 1,1 } }</string>
+					<string>{ { 258,64 }, { 1,1 } }</string>
 					
 
 					<key>offset</key>
@@ -150,7 +150,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,115 }, { 15,33 } }</string>
+					<string>{ { 163,146 }, { 15,33 } }</string>
 					
 
 					<key>offset</key>
@@ -170,7 +170,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 2,160 }, { 241,11 } }</string>
+					<string>{ { 2,191 }, { 241,11 } }</string>
 					
 
 					<key>offset</key>
@@ -187,6 +187,26 @@
 				</dict>
 		 
 			<key>Slider-Track-Selected</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,33 }, { 257,29 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 257,29 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 257,29 }</string>
+				</dict>
+		 
+			<key>Slider-Track-SelectedGreen</key>
 				<dict>
 					<key>frame</key>
 					
@@ -214,7 +234,7 @@
 			<key>realTextureFileName</key>
 			<string>GameUI.png</string>
 			<key>size</key>
-			<string>{ 261,173 }</string>
+			<string>{ 261,204 }</string>
 			<key>textureFileName</key>
 			<string>GameUI.png</string>
 		</dict>

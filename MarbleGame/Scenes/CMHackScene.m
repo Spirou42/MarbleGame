@@ -21,7 +21,7 @@
 	CCSprite *backgroundSprite,*valueSprite,*thumbSprite;
 	
 	backgroundSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Normal"];
-	valueSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-Selected"];
+	valueSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Track-SelectedGreen"];
 	thumbSprite = [CCSprite spriteWithSpriteFrameName:@"Slider-Thumb"];
 	
 	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
