@@ -51,7 +51,7 @@
 		CGSize buttonSize = menuLayer.defaultButtonSize;
 		CCControlPopupButton *popUp = [self createMarbleSetPopUp];
 		popUp.position = buttonPosition;
-		popUp.contentSize=buttonSize;
+//		popUp.contentSize=buttonSize;
 		
 		CGPoint labelPosition = ccp(buttonPosition.x - popUp.contentSize.width/2.0 - menuLayer.interElementSpacing, popupButtonLayer.contentSize.height/2.0);
 		CCNode<CCLabelProtocol,CCRGBAProtocol>* label = defaultButtonTitle(@"MarbleSet");
@@ -65,6 +65,8 @@
 		[popupButtonLayer updateDisplayedOpacity:128];
 		[menuLayer addNode:popupButtonLayer z:10];
 		[self addChild:menuLayer];
+    CGPoint l = menuLayer.nextFreeMenuPosition;
+//    menuLayer.nextFreeMenuPosition= CGPointMake(l.x, 60);
 		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(exitScene:)];
 		
 	}

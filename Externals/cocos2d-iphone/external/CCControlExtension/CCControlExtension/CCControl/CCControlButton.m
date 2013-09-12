@@ -694,6 +694,7 @@ enum
     if ([self isMouseInside:event])
     {
         [self sendActionsForControlEvents:CCControlEventTouchUpInside];
+      return YES;
     } else
     {
         [self sendActionsForControlEvents:CCControlEventTouchUpOutside];

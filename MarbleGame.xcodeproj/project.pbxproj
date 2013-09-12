@@ -131,6 +131,8 @@
 		FE9C491017E1FB50008CDFF3 /* Stereo-Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */; };
 		FE9C491117E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */; };
 		FE9C491217E1FB50008CDFF3 /* Stereo-Klick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */; };
+		FEAE680917E23E0F00231A96 /* CMEventEatingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */; };
+		FEAE680A17E23E0F00231A96 /* CMEventEatingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */; };
 		FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */; };
@@ -610,6 +612,8 @@
 		FE9C490417E1FB50008CDFF3 /* Stereo-Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Boing.mp3"; sourceTree = "<group>"; };
 		FE9C490517E1FB50008CDFF3 /* Stereo-Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Klack.mp3"; sourceTree = "<group>"; };
 		FE9C490617E1FB50008CDFF3 /* Stereo-Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stereo-Klick.mp3"; sourceTree = "<group>"; };
+		FEAE680717E23E0F00231A96 /* CMEventEatingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMEventEatingLayer.h; sourceTree = "<group>"; };
+		FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMEventEatingLayer.m; sourceTree = "<group>"; };
 		FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleBatchNode.h; sourceTree = "<group>"; };
 		FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleBatchNode.m; sourceTree = "<group>"; };
 		FEBABAEC17E0B5B200E85ABD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -801,6 +805,8 @@
 				935F00DE17B6D06E006E8E10 /* MenuNodes */,
 				934AF9B617838B6C004BAC7E /* CCControlPopupButton.h */,
 				934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */,
+				FEAE680717E23E0F00231A96 /* CMEventEatingLayer.h */,
+				FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1834,6 +1840,7 @@
 				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,
 				FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */,
+				FEAE680917E23E0F00231A96 /* CMEventEatingLayer.m in Sources */,
 				9353D46417B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1887,6 +1894,7 @@
 				FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */,
 				FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
+				FEAE680A17E23E0F00231A96 /* CMEventEatingLayer.m in Sources */,
 				9353D46517B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

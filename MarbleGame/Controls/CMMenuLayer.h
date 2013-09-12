@@ -9,19 +9,10 @@
 
 #import "CCLayer.h"
 #import "cocos2d.h"
+#import "CMEventEatingLayer.h"
 #import "CCControlExtension.h"
 
-@interface CMMenuLayer : CCLayerColor
-{
-	CCSprite 					*_backgroundSprite;								///< our background
-	NSMutableArray 		*_menuButtons;										///< CCControl*
-	CGSize 						_defaultButtonSize;								///< used while adding element with convinience methonds
-	CGPoint						_nextFreeMenuPosition;						///< next free position on which an element will be added
-	CGFloat						_interElementSpacing;							///< vertical spacing between elements
-	NSString					*_menuLabel;											///< name of the Menu
-	CGSize						_currentMaxSize;
-	CGFloat						_interColumnSpacing;							///< spacing between columns if nodes are added with two column
-}
+@interface CMMenuLayer : CMEventEatingLayer
 
 @property (nonatomic, retain) CCSprite* backgroundSprite;
 @property (nonatomic, retain) NSMutableArray* menuButtons;

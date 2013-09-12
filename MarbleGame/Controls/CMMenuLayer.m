@@ -11,9 +11,9 @@
 #import "cocos2d.h"
 @implementation CMMenuLayer
 
-@synthesize  backgroundSprite=_backgroundSprite, menuButtons=_menuButtons, defaultButtonSize=_defaultButtonSize,
-nextFreeMenuPosition = _nextFreeMenuPosition, interElementSpacing = _interElementSpacing, menuLabel = _menuLabel,
-interColumnSpacing = _interColumnSpacing;
+@synthesize  backgroundSprite=backgroundSprite_, menuButtons=menuButtons_, defaultButtonSize=defaultButtonSize_,
+nextFreeMenuPosition = nextFreeMenuPosition_, interElementSpacing = interElementSpacing_, menuLabel = menuLabel_,
+interColumnSpacing = interColumnSpacing_;
 
 + (id) menuLayerWithLabel:(NSString *)menuLabel
 {
@@ -133,34 +133,5 @@ interColumnSpacing = _interColumnSpacing;
 	[super draw];
 }
 
-#pragma mark -
-#pragma mark Event handling
-
-#if __CC_PLATFORM_MAC
--(BOOL) ccMouseDown:(NSEvent *)event
-{
-	if (self.visible) {
-		return YES;
-	}
-	return NO;
-}
-
-- (BOOL) ccMouseMoved:(NSEvent *)event
-{
-	if (self.visible) {
-		return YES;
-	}
-	return NO;
-}
-#else
--(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-	if (self.visible) {
-		return YES;
-	}
-	return NO;
-}
-
-#endif
 
 @end

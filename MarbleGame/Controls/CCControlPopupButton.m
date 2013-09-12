@@ -9,7 +9,8 @@
 #import "CCControlPopupButton.h"
 #import "cocos2d.h"
 #import "CCControlExtension.h"
-#define USE_DEFAULT_BUTTON_FOR_MENU 0
+#import "CMEventEatingLayer.h"
+#define USE_DEFAULT_BUTTON_FOR_MENU 1
 @implementation CCControlPopupButton
 @synthesize labels, popupBackgroundSprite, selectedIndex,selectedLabel;
 
@@ -66,7 +67,7 @@
   menuItemBackgroundNormal = [[CCScale9Sprite new]autorelease];
 	//  menuItemBackgroundHighlighted = [[CCScale9Sprite new]autorelease];
 #else
-//  menuItemBackgroundNormal = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENUITM_BACKGROUND capInsets:DDMENUITM_BACKGROUND_CAPS];
+  menuItemBackgroundNormal = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENUITM_BACKGROUND capInsets:DDMENUITM_BACKGROUND_CAPS];
 	//  menuItemBackgroundHighlighted =[CCScale9Sprite spriteWithSpriteFrameName:backgroundHighlightedName capInsets:backgroundCaps];
 #endif
   
@@ -118,6 +119,7 @@
   self = [super initWithLabel:titleLabel backgroundSprite:popupBackground];
   if (self) {
     CCScale9Sprite * backgroundSprite = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENU_BACKGROUND capInsets:DDMENU_BACKGROUND_CAPS];
+
     CGPoint currentPosition = ccp(0, 0);
     CCNode<CCLabelProtocol,CCRGBAProtocol> *buttonLabel = nil;
     CGSize maxButtonSize = CGSizeMake(00, 00);
@@ -125,7 +127,7 @@
       BOOL isSelected = index == sIndex;
       
       CCControlButton *currentButton = [self popupItemButtonWithTitle:[lbs objectAtIndex:index] selected:isSelected];
-      
+
 			// TODO: refactor for all label types. currently we use CCLabelTTF
       if (isSelected) {
         if ([currentButton.titleLabel isKindOfClass:[CCLabelTTF class]]) {
@@ -160,7 +162,8 @@
         [button needsLayout];
       }
     }
-    CCLayerColor *menuColorBackground = [CCLayerColor layerWithColor:ccc4(189, 173, 117, 255) width:menuSize.width height:menuSize.height];
+    CCLayerColor *menuColorBackground = [CMEventEatingLayer layerWithColor:ccc4(189, 173, 117, 255) width:menuSize.width height:menuSize.height];
+    menuColorBackground.mousePriority = -1;
 		menuColorBackground.tag = 10;
 		menuColorBackground.anchorPoint=cpv(0.0, 1.0);
 		menuColorBackground.position = ccp(0.0, -menuSize.height);
@@ -173,7 +176,7 @@
     [self addTarget:self action:@selector(popupPressed:) forControlEvents:CCControlEventTouchUpInside];
     self.labelAnchorPoint=ccp(.7, .5);
     self.preferredSize=maxButtonSize;
-
+    self.mousePriority=2;
 		[menuColorBackground addChild:backgroundSprite];
 
     [self addChild:menuColorBackground];
@@ -192,6 +195,11 @@
   }
 
 	return self;
+}
+
+-(void) setContentSize:(CGSize)contentSize
+{
+  [super setContentSize:contentSize];
 }
 
 @end
