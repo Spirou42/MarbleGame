@@ -163,7 +163,7 @@
       }
     }
     CCLayerColor *menuColorBackground = [CMEventEatingLayer layerWithColor:ccc4(189, 173, 117, 255) width:menuSize.width height:menuSize.height];
-    menuColorBackground.mousePriority = -1;
+//    menuColorBackground.mousePriority = -1;
 		menuColorBackground.tag = 10;
 		menuColorBackground.anchorPoint=cpv(0.0, 1.0);
 		menuColorBackground.position = ccp(0.0, -menuSize.height);
@@ -176,7 +176,7 @@
     [self addTarget:self action:@selector(popupPressed:) forControlEvents:CCControlEventTouchUpInside];
     self.labelAnchorPoint=ccp(.7, .5);
     self.preferredSize=maxButtonSize;
-    self.mousePriority=2;
+//    self.mousePriority=2;
 		[menuColorBackground addChild:backgroundSprite];
 
     [self addChild:menuColorBackground];
