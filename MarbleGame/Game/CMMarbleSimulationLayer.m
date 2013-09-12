@@ -267,7 +267,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 		[self.gameDelegate simulationStepDone:delta];
     return;
   }
-	int steps = 1;
+	int steps = 3;
 	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
@@ -359,9 +359,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	CGFloat panPos = 0.0;
   CGFloat bodyX = theShape.body.pos.x;
   if (bodyX<342.0f) {
-    panPos = -0.2;
+    panPos = -.10;
   }else if (bodyX>682.0f){
-    panPos = 0.2;
+    panPos = .10;
   }
   //theShape.body.pos.x - (centerOfScreen().x- MARBLE_RADIUS*2.0f);
 //	panPos /= centerOfScreen().x;
