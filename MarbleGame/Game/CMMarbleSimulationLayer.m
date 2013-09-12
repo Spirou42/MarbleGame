@@ -359,13 +359,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	CGFloat panPos = 0.0;
   CGFloat bodyX = theShape.body.pos.x;
   if (bodyX<342.0f) {
-    panPos = -.10;
+    panPos = -.00010;
   }else if (bodyX>682.0f){
-    panPos = .10;
+    panPos = .00010;
   }
   //theShape.body.pos.x - (centerOfScreen().x- MARBLE_RADIUS*2.0f);
 //	panPos /= centerOfScreen().x;
-	NSLog(@"Pan: %f",panPos);
+//	NSLog(@"Pan: %f",panPos);
 	result = panPos;
 	
 	return result;
