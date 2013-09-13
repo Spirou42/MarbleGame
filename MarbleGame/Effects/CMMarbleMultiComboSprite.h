@@ -7,7 +7,9 @@
 //
 
 #import "cocos2d.h"
+#import "CMObjectSoundProtocol.h"
+@interface CMMarbleMultiComboSprite : CCSprite <CMObjectSoundProtocol>
 
-@interface CMMarbleMultiComboSprite : CCSprite
 - (void) animate;
+
 @end

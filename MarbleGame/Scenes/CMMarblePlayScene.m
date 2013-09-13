@@ -25,7 +25,8 @@
 #import "CMMenuLayer.h"
 #import "CMMarbleGameScoreModeProtocol.h"
 #import "CMMPLevelStat+DisplayHelper.h"
-
+#import "SimpleAudioEngine.h"
+#import "CocosDenshion.h"
 
 @implementation CMMarblePlayScene
 
@@ -454,7 +455,7 @@
 		return;
 	}
 	[self.scoreDelegate scoreWithMarbles:removedMarbles inLevel:self.currentStatistics];
-	
+	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_REMOVE];
 	
 	[self.simulationLayer removeCollisionSets:removedMarbles];
 	
@@ -656,6 +657,9 @@
 		[self addChild:k];
 		[k animate];
 		[self.effectQueue removeObject:k];
+		if (k.soundFileName) {
+			[[SimpleAudioEngine sharedEngine]playEffect:k.soundFileName];
+		}
 	}
 }
 
@@ -752,6 +756,7 @@
 		case kCMMarbleEffect_ComboHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
+			sprite.soundFileName=DEFAULT_MARBLE_COMBO;
 			sprite.position = position;
 			[self.effectQueue addObject:sprite];
 		}
@@ -760,6 +765,7 @@
 		case kCMMarbleEffect_MultiHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
+			sprite.soundFileName=DEFAULT_MARBLE_MULTI;
 			sprite.position = position;
 			[self.effectQueue addObject:sprite];
 		}

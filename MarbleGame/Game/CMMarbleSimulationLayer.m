@@ -263,7 +263,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 		[self.gameDelegate simulationStepDone:delta];
     return;
   }
-	int steps = 3;
+	int steps = 1;
 	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
@@ -381,6 +381,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	
 	CGFloat pan = [self panForShape:firstMarble secondShape:secondMarble];
 	if ((self.lastMarbleSoundTime - firstMarbleLayer.lastSoundTime) < 1/2) {
+
 		return;
 	}
 
@@ -394,12 +395,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 //	}
 	
 	NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/10.0f)) {
+	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/25.0f)) {
 		return;
 	}
 	cpFloat impulse = cpvlength(cpArbiterTotalImpulseWithFriction(arbiter));
 
 	if (impulse<100) {
+
 		return;
 	}else if(impulse>10000.0f){
 		impulse = 10000.0f;
@@ -412,7 +414,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
     CGFloat pitch = 1.0;
 
 		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:pan gain:volume];
-		self.lastMarbleSoundTime = [NSDate timeIntervalSinceReferenceDate];
+		self.lastMarbleSoundTime = currentTime;
 		firstMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
 		secondMarbleLayer.lastSoundTime = self.lastMarbleSoundTime;
 	}

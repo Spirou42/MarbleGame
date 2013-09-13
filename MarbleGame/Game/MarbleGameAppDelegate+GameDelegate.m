@@ -120,6 +120,7 @@ NSMutableDictionary *_scoreModeDelegates;
   [[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_BOING];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_COMBO];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_REMOVE];
+	[[SimpleAudioEngine sharedEngine]preloadEffect:DEFAULT_MARBLE_MULTI];
 	
   [[SimpleAudioEngine sharedEngine] playBackgroundMusic:DEFAULT_BACKGROUND_MUSIC loop:YES];	
 

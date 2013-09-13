@@ -10,6 +10,7 @@
 
 @implementation CMMarbleMultiComboSprite
 
+@synthesize soundFileName = soundFileName_;
 
 - (void) removeSelf
 {
@@ -33,5 +34,11 @@
 	id callAction = [CCCallFunc actionWithTarget:self selector:@selector(removeSelf)];
 	[self runAction:[CCSequence actions:allActions,callAction, nil]];
 
+}
+
+- (void) dealloc
+{
+	self.soundFileName=nil;
+	[super dealloc];
 }
 @end

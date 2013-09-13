@@ -126,14 +126,15 @@ NSString *currentCollisionKey = @"currenrCollision";
 		proccessed = [NSMutableSet set];
 	}
 	
-	NSMutableSet *result = [NSMutableSet setWithSet:currentCollisions]; //[currentCollisions mutableCopy];//[NSMutableSet setWithSet:currentCollisions];
+	NSMutableSet *result = [currentCollisions mutableCopy];//[NSMutableSet setWithSet:currentCollisions];
 	[result addObject:obj];
   [proccessed addObject:obj];
 	for (id<NSCopying>  k in currentCollisions) {
     if (![proccessed containsObject:k]) {
 			NSMutableSet *currentK = [NSMutableSet setWithArray:[self currentCollisionsFor:k]];
 			[currentK addObjectsFromArray: [[self formerCollisionsFor:k]allKeys]];
-			[result addObjectsFromArray:[[self collectCollision:currentK forObject:k processed:proccessed]allObjects]];
+
+			[result unionSet:[self collectCollision:currentK forObject:k processed:proccessed]];
 
 		}
 	}

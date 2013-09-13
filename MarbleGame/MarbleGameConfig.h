@@ -118,6 +118,7 @@
 // Effects
 #define DEFAULT_MARBLE_REMOVE								@"Marble-Remove.mp3"
 #define DEFAULT_MARBLE_COMBO								@"Marble-Combo.mp3"
+#define DEFAULT_MARBLE_MULTI								@"Marble-Multi.mp3"
 
 //////////////////////////////////////////////////
 #pragma mark - Fonts
