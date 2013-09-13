@@ -85,10 +85,6 @@ inline CCControlSlider* defaultRedSlider()
 
 	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
 	slider.thumbInset = 2;
-  //	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
-  //	slider.anchorPoint=CGPointMake(0.5, 0.5);
-  //	slider.position = p;
-  slider.mousePriority=-10;
   return slider;
 }
 
@@ -103,9 +99,6 @@ inline CCControlSlider* defaultGreenSlider()
 
 	CCControlSlider *slider  = [CCControlSlider sliderWithBackgroundSprite:backgroundSprite progressSprite:valueSprite thumbSprite:thumbSprite];
 	slider.thumbInset = 2;
-//	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
-//	slider.anchorPoint=CGPointMake(0.5, 0.5);
-//	slider.position = p;
   return slider;
 }
 

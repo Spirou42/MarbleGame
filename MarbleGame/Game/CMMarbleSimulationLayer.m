@@ -361,9 +361,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	CGFloat panPos = 0.0;
   CGFloat bodyX = theShape.body.pos.x;
   if (bodyX<342.0f) {
-    panPos = -.00010;
+    panPos = -DEFAULT_PAN_LIMIT;
   }else if (bodyX>682.0f){
-    panPos = .00010;
+    panPos = DEFAULT_PAN_LIMIT;
   }
 
 	result = panPos;

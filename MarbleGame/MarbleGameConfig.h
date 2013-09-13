@@ -106,7 +106,7 @@
 
 #define USE_MONO_SOUNDS 1
 #define DEFAULT_BACKGROUND_MUSIC_VOLUME_LIMIT (0.01f)
-
+#define DEFAULT_PAN_LIMIT 										(0.01f)
 #define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
 
 #if USE_MONO_SOUNDS
