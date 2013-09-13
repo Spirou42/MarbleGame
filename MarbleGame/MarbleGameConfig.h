@@ -104,22 +104,21 @@
 //////////////////////////////////////////////////
 #pragma mark - Sounds
 
-#define USE_MONO_SOUNDS 1
+
 #define DEFAULT_BACKGROUND_MUSIC_VOLUME_LIMIT (0.01f)
 #define DEFAULT_PAN_LIMIT 										(0.01f)
-#define DEFAULT_BACKGROUND_MUSIC						@"MarbleGame-Background.mp3"
 
-#if USE_MONO_SOUNDS
-#define DEFAULT_SOUNDFILE_PREFIX            @"Mono-"
-#define DEFAULT_MARBLE_KLICK								@"Mono-Klick.mp3"
-#define DEFAULT_WALL_KLICK									@"Mono-Klack.mp3"
-#define DEFAULT_WALL_BOING                  @"Mono-Boing.mp3
-#else
-#define DEFAULT_SOUNDFILE_PREFIX            @"Stereo-"
-#define DEFAULT_MARBLE_KLICK								@"Stereo-Klick.mp3"
-#define DEFAULT_WALL_KLICK									@"Stereo-Klack.mp3"
-#define DEFAULT_WALL_BOING                  @"Stereo-Boing.mp3
-#endif
+#define DEFAULT_BACKGROUND_MUSIC						@"SmoothJazz-1.mp3"
+
+
+#define DEFAULT_MARBLE_KLICK								@"Klick.mp3"
+#define DEFAULT_WALL_KLICK									@"Klack.mp3"
+#define DEFAULT_WALL_BOING                  @"Boing.mp3"
+
+// Effects
+#define DEFAULT_MARBLE_REMOVE								@"Marble-Remove.mp3"
+#define DEFAULT_MARBLE_COMBO								@"Marble-Combo.mp3"
+
 //////////////////////////////////////////////////
 #pragma mark - Fonts
 

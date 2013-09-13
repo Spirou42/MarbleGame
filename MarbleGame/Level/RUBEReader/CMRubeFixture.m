@@ -42,7 +42,7 @@ soundName = soundName_;
 {
 	if ([dict allKeys].count > 0) {
 		NSLog(@"%@ %@",self,dict);
-		self.soundName = [NSString stringWithFormat:@"%@%@",DEFAULT_SOUNDFILE_PREFIX, [dict objectForKey:@"collisionSound"]];
+		self.soundName = [dict objectForKey:@"collisionSound"];
 		if (![[self.soundName pathExtension] isEqualToString:@"mp3"]) {
 			self.soundName = [self.soundName stringByAppendingPathExtension:@"mp3"];
 		}

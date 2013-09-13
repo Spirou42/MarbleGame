@@ -117,11 +117,15 @@ NSMutableDictionary *_scoreModeDelegates;
 	[[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:DEFAULT_BACKGROUND_MUSIC];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_KLICK];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_KLICK];
-  [[SimpleAudioEngine sharedEngine] preloadEffect:@"Boing.mp3"];
+  [[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_WALL_BOING];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_COMBO];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:DEFAULT_MARBLE_REMOVE];
+	
+  [[SimpleAudioEngine sharedEngine] playBackgroundMusic:DEFAULT_BACKGROUND_MUSIC loop:YES];	
 
   [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:self.currentPlayer.settings.musicVolume];
   [[SimpleAudioEngine sharedEngine] setEffectsVolume:self.currentPlayer.settings.musicVolume];
-  [[SimpleAudioEngine sharedEngine] playBackgroundMusic:DEFAULT_BACKGROUND_MUSIC loop:YES];
+
   if (self.currentPlayer.settings.musicVolume<DEFAULT_BACKGROUND_MUSIC_VOLUME_LIMIT) {
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
   }
