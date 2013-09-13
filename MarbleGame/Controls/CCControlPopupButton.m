@@ -52,7 +52,9 @@
 - (void) popupPressed:(CCNode*) sender
 {
   CCNode* c = [self getChildByTag:10];
-	[c performSelector:@selector(setVisible:) withObject:[NSNumber numberWithBool:!c.visible] afterDelay:0.1];
+	BOOL visibility = c.visible;
+	c.visible = !visibility;
+//	[c performSelector:@selector(setVisible:) withObject:[NSNumber numberWithBool:!visibility] afterDelay:0.1];
 //  if ([c isKindOfClass:[CCScale9Sprite class]]) {
 //    c.visible=!c.visible;
 //  }
@@ -163,7 +165,9 @@
       }
     }
     CCLayerColor *menuColorBackground = [CMEventEatingLayer layerWithColor:ccc4(189, 173, 117, 255) width:menuSize.width height:menuSize.height];
-//    menuColorBackground.mousePriority = -1;
+#if __CC_PLATFORM_MAC
+    menuColorBackground.mousePriority = -1;
+#endif
 		menuColorBackground.tag = 10;
 		menuColorBackground.anchorPoint=cpv(0.0, 1.0);
 		menuColorBackground.position = ccp(0.0, -menuSize.height);
