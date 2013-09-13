@@ -27,6 +27,10 @@
 #import "CMMPLevelStat+DisplayHelper.h"
 #import "SimpleAudioEngine.h"
 #import "CocosDenshion.h"
+#import "AppDelegate.h"
+#import "CMMarblePlayer.h"
+#import "CMMPSettings.h"
+
 
 @implementation CMMarblePlayScene
 
@@ -92,6 +96,10 @@
 		[self resetSimulationAction:nil];
 		self.scoreDelegate = [CMAppDelegate currentScoreDelegate];
 		self.levelStartTime = [NSDate date];
+		MarbleGameAppDelegate *appDel  = CMAppDelegate;
+		CMMarblePlayer *player = appDel.currentPlayer;
+		[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:player.settings.musicVolume];
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:player.settings.soundVolume];
 	}
 	return self;
 }

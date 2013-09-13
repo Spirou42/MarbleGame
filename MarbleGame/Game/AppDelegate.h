@@ -14,5 +14,5 @@
 #import "iOSAppDelegate.h"
 #endif
 
-
+#import "MarbleGameAppDelegate+GameDelegate.h"
 

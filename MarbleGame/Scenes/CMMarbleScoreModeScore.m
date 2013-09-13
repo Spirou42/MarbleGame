@@ -47,6 +47,8 @@
 		 [oldestHit addObject:[NSNumber numberWithDouble:k]];
 		 if ([obj count] == 3) {
 			 normalHits ++;
+//			 CGPoint p= [self centerOfMarbles:obj];
+//			 [self.gameDelegate triggerEffect:kCMMarbleEffect_MultiHit atPosition:p];
 		 }else if ([obj count] > 3) { // multi Hit
 			 CGPoint p= [self centerOfMarbles:obj];
 			 [self.gameDelegate triggerEffect:kCMMarbleEffect_MultiHit atPosition:p];
