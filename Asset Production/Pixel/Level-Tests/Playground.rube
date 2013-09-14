@@ -45,13 +45,16 @@
     "continuousPhysics" : true,
     "exportOptions" : 
     {
+      "compactCommonFloats" : true,
       "saveFullPathForImages" : false,
-      "useHumanReadableFloats" : true
+      "saveImagePathsRelativeToRUBEFile" : false,
+      "useHumanReadableFloats" : true,
+      "usePrettyPrint" : true
     },
     "gravity" : 
     {
       "x" : 0,
-      "y" : -10.0
+      "y" : -10
     },
     "metabody" : 
     [
@@ -72,14 +75,14 @@
             [
               
               {
-                "radius" : 0.50,
+                "radius" : 0.5,
                 "type" : "circle"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           }
         ],
@@ -112,14 +115,14 @@
             [
               
               {
-                "radius" : 0.50,
+                "radius" : 0.5,
                 "type" : "circle"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           }
         ],
@@ -157,8 +160,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ -0.50, 0.50, 0.50, -0.50 ],
-              "y" : [ -0.50, -0.50, 0.50, 0.50 ]
+              "x" : [ -0.5, 0.5, 0.5, -0.5 ],
+              "y" : [ -0.5, -0.5, 0.5, 0.5 ]
             }
           },
           
@@ -220,14 +223,14 @@
             [
               
               {
-                "radius" : 0.50,
+                "radius" : 0.5,
                 "type" : "circle"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           }
         ],
@@ -238,8 +241,8 @@
         "name" : "Ball3",
         "position" : 
         {
-          "x" : 1.582501411437988,
-          "y" : -2.961156845092773
+          "x" : 0.9838953018188477,
+          "y" : 4.466445922851562
         },
         "type" : "dynamic"
       },
@@ -260,14 +263,14 @@
             [
               
               {
-                "radius" : 0.50,
+                "radius" : 0.5,
                 "type" : "circle"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           }
         ],
@@ -278,8 +281,8 @@
         "name" : "Ball4",
         "position" : 
         {
-          "x" : 1.652126312255859,
-          "y" : 2.156275749206543
+          "x" : 4.070983886718750,
+          "y" : 2.632717609405518
         },
         "type" : "dynamic"
       }
@@ -290,61 +293,32 @@
       {
         "anchorA" : 
         {
-          "x" : -0.1001304388046265,
-          "y" : 0.3006267547607422
+          "x" : -0.9557838439941406,
+          "y" : -0.05504941940307617
         },
         "anchorB" : 
         {
-          "x" : 0.001269817352294922,
-          "y" : -0.5101618766784668
+          "x" : 2.131303787231445,
+          "y" : 0.06586050987243652
         },
-        "bodyA" : 4,
-        "bodyB" : 3,
-        "collideConnected" : true,
+        "bodyA" : 5,
+        "bodyB" : 4,
+        "collideConnected" : false,
         "enableLimit" : true,
-        "enableMotor" : true,
-        "id" : 1,
+        "enableMotor" : false,
+        "id" : 3,
         "localAxisA" : 
         {
           "x" : 0,
           "y" : 1
         },
-        "lowerLimit" : 0,
-        "maxMotorForce" : 2000.0,
-        "motorSpeed" : -1.0,
-        "name" : "Prismatic",
+        "lowerLimit" : -2.324624061584473,
+        "maxMotorForce" : 0,
+        "motorSpeed" : 0,
+        "name" : "joint0",
         "referenceAngle" : 0,
         "type" : "prismatic",
-        "upperLimit" : 10.0
-      },
-      
-      {
-        "anchorA" : 
-        {
-          "x" : 0.2234928607940674,
-          "y" : -5.660927772521973
-        },
-        "anchorB" : 
-        {
-          "x" : -0.01740741729736328,
-          "y" : -0.008693099021911621
-        },
-        "bodyA" : 3,
-        "bodyB" : 5,
-        "collideConnected" : false,
-        "enableMotor" : true,
-        "id" : 3,
-        "localAxisA" : 
-        {
-          "x" : 1,
-          "y" : 1
-        },
-        "maxMotorTorque" : 30.0,
-        "motorSpeed" : 0.8726646304130554,
-        "name" : "Wheel",
-        "springDampingRatio" : 1,
-        "springFrequency" : 4.0,
-        "type" : "wheel"
+        "upperLimit" : 4
       },
       
       {
@@ -365,7 +339,7 @@
         "bodyA" : 1,
         "bodyB" : 3,
         "collideConnected" : false,
-        "dampingRatio" : 0.1000000014901161,
+        "dampingRatio" : 0.1,
         "frequency" : 100.0,
         "id" : 6,
         "length" : 9.100540161132812,
