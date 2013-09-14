@@ -21,25 +21,40 @@
 @interface CMMarbleSimulationLayer : CCLayerColor
 
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
-@property (nonatomic, retain) ChipmunkSpace *space;
-@property (nonatomic, assign) CCNode* marbleBatchNode;
-@property (nonatomic, assign) CCNode* otherSpritesNode;
-@property (nonatomic, retain) NSString* currentMarbleSet;
-@property (nonatomic, readonly) CCPhysicsDebugNode *debugLayer;
+
+// Physics
+@property (nonatomic, retain) ChipmunkSpace *space;								/// physics world
+@property (nonatomic, readonly) CCPhysicsDebugNode *debugLayer;		/// debug helper
+
+// Sprites
+@property (nonatomic, assign) CCNode* marbleBatchNode;						///< node holding all moving Marbles
+@property (nonatomic, assign) CCNode* otherSpritesNode;						///< node for all other Sprites no matter if they are dynamic or static
+
+@property (nonatomic, retain) NSString* currentMarbleSet;					///< current marble theme
+
+// Simulation
 @property (nonatomic, assign,getter = isSimulationRunning) BOOL simulationRunning;
 @property (nonatomic, retain) CMMarbleCollisionCollector *collisionCollector;
 @property (nonatomic, retain) NSMutableArray* simulatedMarbles;
-@property (nonatomic, retain) NSArray* staticShapes;
 
+
+// Level
+@property (nonatomic, assign) CMMarbleLevel *currentLevel;				///< the current Level
+@property (nonatomic, retain) NSArray* bounds;										///< dynamically created shapes outside of the current level to prevent marbles from falling through.
+@property (nonatomic, retain) NSArray* worldShapes;							///< all static shapes from the current level.
+
+
+/// Marble throwing
 @property (nonatomic, retain) ChipmunkGrooveJoint *dollyGroove;
 @property (nonatomic, retain) ChipmunkShape *dollyShape;
 @property (nonatomic, retain) ChipmunkPivotJoint* dollyServo;
 @property (nonatomic, retain) ChipmunkBody *dollyBody;
-@property (nonatomic, assign) CMMarbleLevel *currentLevel;
+
+
 @property (nonatomic, assign) NSUInteger marblesToFire;
 @property (nonatomic, retain) NSTimer* marbleFireTimer;
 @property (nonatomic, assign) NSUInteger currentMarbleIndex;
-@property (nonatomic, retain) NSArray* bounds;
+
 @property (nonatomic, assign) NSTimeInterval lastMarbleSoundTime;
 
 

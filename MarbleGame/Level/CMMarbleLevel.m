@@ -201,6 +201,47 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 }
 #pragma mark - Level Object Accessors
 
+- (NSArray*) worldShapes
+{
+
+	if (self.isRubeLevel) {
+		CMRubeBody* world = [self.rubeReader bodyWithName:@"World"];
+		return world.chipmunkShapes;
+
+	}else{
+		return self.shapeReader.shapes;
+	}
+}
+
+- (NSArray*) staticSprites
+{
+	NSMutableArray *result = [NSMutableArray array];
+	if(!self.isRubeLevel)
+		return result;
+
+	for (CMRubeBody* rBody in self.rubeReader.bodies) {
+    if ((rBody.type==kRubeBody_static) && ![rBody.name isEqualToString:@"World"]) {
+			[result addObject:rBody.physicsSprite];
+		}
+	}
+	return result;
+}
+
+- (NSArray*) dynamicSprites
+{
+	NSMutableArray *result = [NSMutableArray array];
+	if(!self.isRubeLevel)
+		return result;
+	
+	for (CMRubeBody* rBody in self.rubeReader.bodies) {
+    if ((rBody.type==kRubeBody_dynamic)) {
+			[result addObject:rBody.physicsSprite];
+		}
+	}
+	return result;
+}
+
+
 - (NSArray*) staticObjects
 {
 	if (self.isRubeLevel) {

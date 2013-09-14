@@ -21,9 +21,9 @@
 
 @implementation CMMarbleSprite
 
-@synthesize shape,radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour, lastSoundTime;
+@synthesize radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour, lastSoundTime;
 
-@synthesize soundFileName = soundFileName_;
+
 
 - (void) initializeDefaults
 {
@@ -50,7 +50,7 @@
     self.ballIndex = bI;
     self.chipmunkBody = [self circleBodyWithMass:mass andRadius:r];
 		self.chipmunkBody.data = self;
-		self.shape = [self circleShapeWithBody:self.chipmunkBody andRadius:self.radius];
+		[self addShape:[self circleShapeWithBody:self.chipmunkBody andRadius:self.radius]];
 		CGPoint scale = ccp(1,1);
 		CGFloat t = r*2.0;
 		scale.x = t/self.contentSize.width;
@@ -67,7 +67,7 @@
 	if( (self = [super initWithSpriteFrameName:fn]) ){
 		self.radius =r;
 		self.chipmunkBody =[self circleBodyWithMass:mass andRadius:self.radius];
-		self.shape = [self circleShapeWithBody:self.chipmunkBody andRadius:self.radius];
+		[self addShape:[self circleShapeWithBody:self.chipmunkBody andRadius:self.radius]];
 
 		CGPoint scale = ccp(1,1);
 		CGFloat t = r*2.0;
@@ -82,8 +82,6 @@
 - (void) dealloc
 {
 	//	[self removeAllChildren];
-	self.shape.body = nil;
-	self.shape = nil;
   [self->setName release];
   self->setName = nil;
 	self.soundFileName = nil;
@@ -92,7 +90,7 @@
 
 - (void) cleanup
 {
-  ChipmunkSpace *space = self.shape.body.space;
+  ChipmunkSpace *space = self.chipmunkBody.space;
   [space remove:self];
   [super cleanup];
 }
@@ -287,26 +285,9 @@
 
 - (void) removeFromPhysics
 {
-	ChipmunkBody 	*body = self.shape.body;
+	ChipmunkBody 	*body = self.chipmunkBody;
 	ChipmunkSpace *space = body.space;
 	[space remove:self];
 }
 
-#pragma mark - 
-#pragma mark ChipmunkObject
-
-- (id <NSFastEnumeration>) chipmunkObjects
-{
-	return [NSArray arrayWithObjects:self.chipmunkBody, self.shape, nil];
-}
-
-#pragma mark - 
-#pragma mark NSCopying
-
-- (id) copyWithZone:(NSZone *)zone
-{
-	return [self retain];
-//	id result = [[[self class]alloc]initWithSpriteFrameName:self.frameName mass:self.chipmunkBody.mass andRadius:self.radius];
-//	return result;
-}
 @end

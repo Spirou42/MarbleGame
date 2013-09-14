@@ -13,10 +13,11 @@
 #import "ObjectiveChipmunk.h"
 #import "CMRubeImage.h"
 #import "cocos2d.h"
+#import "CMPhysicsSprite.h"
 
 @interface CMRubeBody ()
 @property (nonatomic, retain) ChipmunkBody* cpBody;
-@property (nonatomic, retain) CCPhysicsSprite* cachedPhysicsSprite;
+@property (nonatomic, retain) CMPhysicsSprite* cachedPhysicsSprite;
 @end
 
 @implementation CMRubeBody
@@ -101,13 +102,22 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 #pragma mark - Properties
 //***********************************************************
 
-- (CCPhysicsSprite*) physicsSprite
+- (CMPhysicsSprite*) physicsSprite
 {
 	if (!self->cachedPhysicsSprite_) {
 		[self createPhysicsSprite];
 	}
 	self->cachedPhysicsSprite_.position = self.position;
 	return self->cachedPhysicsSprite_;
+}
+
+- (NSArray*) chipmunkShapes
+{
+	NSMutableArray *result = [NSMutableArray array];
+	for (CMRubeFixture* a in self.fixtures) {
+    [result addObjectsFromArray:a.chipmunkObjects];
+	}
+	return result;
 }
 
 //***********************************************************
@@ -185,8 +195,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 	// retrieve the sprite image
 	CMRubeImage *spriteImage = [self imageForType:kRubeImageType_Sprite];
 	NSString *spriteName = spriteImage.filename;
-	CCPhysicsSprite * result = [CCPhysicsSprite spriteWithFile:spriteName];
+	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
 	result.chipmunkBody = self.cpBody;
+	[result addShapes:self.chipmunkShapes];
 //	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));
 	result.scale = spriteImage.rubeScale / result.contentSize.height;
 	

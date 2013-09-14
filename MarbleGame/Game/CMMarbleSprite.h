@@ -10,14 +10,13 @@
 #import "ObjectiveChipmunk.h"
 #import "ChipmunkAutoGeometry.h"
 #import "CMObjectSoundProtocol.h"
+#import "CMPhysicsSprite.h"
 
 
-
-
-@interface CMMarbleSprite : CCPhysicsSprite <CMObjectSoundProtocol,ChipmunkObject,NSCopying>
+@interface CMMarbleSprite : CMPhysicsSprite 
 {
 	@protected	
-	ChipmunkShape 			*shape;
+//	ChipmunkShape 			*shape;
 	CGFloat 						radius;
 
 	NSString 						*setName;
@@ -30,7 +29,7 @@
 }
 
 
-@property (nonatomic,retain) ChipmunkShape *shape;
+//@property (nonatomic,retain) ChipmunkShape *shape;
 @property (nonatomic,assign) CGFloat radius;
 @property (nonatomic,readonly) NSString* frameName;
 @property (nonatomic, readonly) NSString* overlayName;

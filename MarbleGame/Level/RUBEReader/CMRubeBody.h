@@ -15,7 +15,7 @@ typedef enum {
 }CMRubeBodyType;
 
 @protocol ChipmunkObject;
-@class CCPhysicsSprite;
+@class CMPhysicsSprite;
 
 @interface CMRubeBody : NSObject <ChipmunkObject>
 
@@ -31,7 +31,8 @@ typedef enum {
 @property (nonatomic, retain) NSMutableArray *fixtures;
 @property (nonatomic, retain) NSMutableArray *attachedImages;
 @property (nonatomic, retain) NSString* soundName;
-@property (nonatomic,readonly) CCPhysicsSprite* physicsSprite; ///< this returns nil for static bodies
+@property (nonatomic,readonly) CMPhysicsSprite* physicsSprite; ///< this returns nil for static bodies
+@property (nonatomic, readonly) NSArray* chipmunkShapes; ///< returns all Attached ChipmunkShapes
 
 - (id) initWithDictionary:(NSDictionary*)dict;
 

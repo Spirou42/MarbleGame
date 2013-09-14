@@ -138,7 +138,7 @@ NSString *currentCollisionKey = @"currenrCollision";
 
 		}
 	}
-	return result;
+	return [result autorelease];
 }
 
 - (NSArray*) collisionSetsWithMinMembers:(NSUInteger)minMembers

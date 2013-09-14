@@ -42,27 +42,6 @@
   [
     
     {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -86,6 +65,27 @@
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -103,8 +103,11 @@
     ],
     "exportOptions" : 
     {
+      "compactCommonFloats" : true,
       "saveFullPathForImages" : false,
-      "useHumanReadableFloats" : true
+      "saveImagePathsRelativeToRUBEFile" : false,
+      "useHumanReadableFloats" : true,
+      "usePrettyPrint" : true
     },
     "gravity" : 
     {
@@ -134,7 +137,7 @@
             "friction" : 0.2,
             "id" : 2,
             "name" : "fixture0",
-            "restitution" : 6.0,
+            "restitution" : 6,
             "shapes" : 
             [
               
@@ -276,7 +279,7 @@
               }
             ],
             "density" : 1,
-            "friction" : 0.05000000074505806,
+            "friction" : 0.05,
             "id" : 7,
             "name" : "Ground",
             "restitution" : 0.2,
@@ -284,7 +287,7 @@
             [
               
               {
-                "radius" : 4.0,
+                "radius" : 4,
                 "type" : "line"
               }
             ],
@@ -338,7 +341,7 @@
             "friction" : 1,
             "id" : 9,
             "name" : "RightPentagon",
-            "restitution" : 3.0,
+            "restitution" : 3,
             "shapes" : 
             [
               
@@ -380,7 +383,7 @@
             "friction" : 1,
             "id" : 10,
             "name" : "CenterPentagon",
-            "restitution" : 0.1000000014901161,
+            "restitution" : 0.1,
             "shapes" : 
             [
               
@@ -414,7 +417,7 @@
             "friction" : 1,
             "id" : 11,
             "name" : "LeftPentagon",
-            "restitution" : 0.1000000014901161,
+            "restitution" : 0.1,
             "shapes" : 
             [
               
@@ -474,8 +477,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           },
           
@@ -772,21 +775,21 @@
         "massData-I" : 22420.19531250,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
+          "x" : 0.01231708656996489,
           "y" : 0.007920361123979092
         },
         "massData-mass" : 39.99999618530273,
-        "name" : "Wheel",
+        "name" : "FixedWheel",
         "position" : 
         {
-          "x" : 367.2642517089844,
-          "y" : 618.4133300781250
+          "x" : 392.2655334472656,
+          "y" : 400.9780578613281
         },
         "type" : "dynamic"
       },
       
       {
-        "angle" : 0,
+        "angle" : 0.3105995059013367,
         "angularVelocity" : 12.56637096405029,
         "awake" : true,
         "fixture" : 
@@ -807,8 +810,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           },
           
@@ -1103,28 +1106,28 @@
         "id" : 3,
         "linearVelocity" : 
         {
-          "x" : -0.7977218627929688,
-          "y" : 1.239171028137207
+          "x" : -0.8974323272705078,
+          "y" : 1.394109725952148
         },
-        "massData-I" : 22420.1933593750,
+        "massData-I" : 22420.19531250,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
-          "y" : 0.007920170202851295
+          "x" : 0.01231718156486750,
+          "y" : 0.007920552045106888
         },
         "massData-mass" : 39.99999618530273,
-        "name" : "Wheel",
+        "name" : "FreeWheel",
         "position" : 
         {
-          "x" : 778.9544677734375,
-          "y" : 475.1636657714844
+          "x" : 772.1358642578125,
+          "y" : 476.6788635253906
         },
         "type" : "dynamic"
       },
       
       {
         "angle" : 0,
-        "angularVelocity" : 12.56637096405029,
+        "angularVelocity" : 0,
         "awake" : true,
         "fixture" : 
         [
@@ -1144,8 +1147,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0.0 ],
-              "y" : [ 0.0 ]
+              "x" : [ 0 ],
+              "y" : [ 0 ]
             }
           },
           
@@ -1438,31 +1441,21 @@
           }
         ],
         "id" : 5,
-        "linearVelocity" : 
-        {
-          "x" : -0.5982513427734375,
-          "y" : 0.9284315109252930
-        },
-        "massData-I" : 22420.1933593750,
-        "massData-center" : 
-        {
-          "x" : 0.01231718156486750,
-          "y" : 0.007920457050204277
-        },
-        "massData-mass" : 39.99999618530273,
-        "name" : "Wheel",
+        "linearVelocity" : 0,
+        "name" : "StaticWheel",
         "position" : 
         {
-          "x" : 229.6841735839844,
-          "y" : 730.4796752929688
+          "x" : 137.2552490234375,
+          "y" : 612.2918090820312
         },
-        "type" : "dynamic"
+        "type" : "static"
       }
     ],
     "metaimage" : 
     [
       
       {
+        "aspectScale" : 1,
         "body" : 1,
         "center" : 0,
         "customProperties" : 
@@ -1478,11 +1471,12 @@
         "flip" : false,
         "id" : 1,
         "name" : "Background",
-        "opacity" : 0.50,
+        "opacity" : 0.5,
         "scale" : 768.0
       },
       
       {
+        "aspectScale" : 1,
         "body" : 1,
         "center" : 0,
         "customProperties" : 
@@ -1498,12 +1492,13 @@
         "flip" : false,
         "id" : 2,
         "name" : "Overlay",
-        "opacity" : 0.50,
+        "opacity" : 0.5,
         "renderOrder" : 1,
         "scale" : 768.0
       },
       
       {
+        "aspectScale" : 1,
         "body" : 2,
         "center" : 
         {
@@ -1524,11 +1519,12 @@
         "id" : 3,
         "name" : "WheelImage",
         "opacity" : 1,
-        "renderOrder" : 3.0,
+        "renderOrder" : 3,
         "scale" : 73.18642425537109
       },
       
       {
+        "aspectScale" : 1,
         "body" : 3,
         "center" : 
         {
@@ -1549,11 +1545,12 @@
         "id" : 4,
         "name" : "WheelImage",
         "opacity" : 1,
-        "renderOrder" : 3.0,
+        "renderOrder" : 3,
         "scale" : 73.18642425537109
       },
       
       {
+        "aspectScale" : 1,
         "body" : 5,
         "center" : 
         {
@@ -1574,8 +1571,33 @@
         "id" : 6,
         "name" : "WheelImage",
         "opacity" : 1,
-        "renderOrder" : 3.0,
+        "renderOrder" : 3,
         "scale" : 73.18642425537109
+      }
+    ],
+    "metajoint" : 
+    [
+      
+      {
+        "anchorA" : 0,
+        "anchorB" : 
+        {
+          "x" : -119.7340087890625,
+          "y" : 16.97799682617188
+        },
+        "bodyA" : 2,
+        "bodyB" : 1,
+        "collideConnected" : true,
+        "enableLimit" : false,
+        "enableMotor" : true,
+        "id" : 1,
+        "lowerLimit" : -3.141592741012573,
+        "maxMotorTorque" : 500.0,
+        "motorSpeed" : 0.1745329201221466,
+        "name" : "Wheel-Joint",
+        "referenceAngle" : 0,
+        "type" : "revolute",
+        "upperLimit" : 0
       }
     ],
     "positionIterations" : 3,

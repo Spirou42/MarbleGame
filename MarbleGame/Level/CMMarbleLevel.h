@@ -64,6 +64,8 @@
 - (void) releaseLevelData;
 
 // accessors for level data
-- (NSArray*) staticObjects;
-
+- (NSArray*) staticObjects __deprecated;
+- (NSArray*) worldShapes;										///< all static shapes of the World Object
+- (NSArray*) staticSprites;									///< creates and returns a List of all Static Sprites (CMPhysicsSprite) not named "World"
+- (NSArray*) dynamicSprites;								///< a list of all dynamic Sprites.
 @end

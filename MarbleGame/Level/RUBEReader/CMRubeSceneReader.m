@@ -203,6 +203,7 @@ NSDictionary* propertyToDict(NSDictionary* cProperty)
 	[mutable removeObjectForKey:@"name"];
 	NSString *valueKey = [[mutable allKeys]objectAtIndex:0];
 	id value = [mutable objectForKey:valueKey];
+	[mutable release];
 	return [NSDictionary dictionaryWithObjectsAndKeys:value,key, nil];
 }
 

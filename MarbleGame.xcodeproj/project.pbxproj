@@ -115,6 +115,8 @@
 		93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F4177F70A0001B7FBB /* CMMarbleSettingsScene.m */; };
 		93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */; };
 		93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */; };
+		93EFB6FD17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EFB6FC17E4BCD100B3B186 /* CMPhysicsSprite.m */; };
+		93EFB6FE17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EFB6FC17E4BCD100B3B186 /* CMPhysicsSprite.m */; };
 		93F35A3B17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */; };
 		93F35A3C17C29F5A00B9B4E9 /* CMRubeSceneReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */; };
 		93F35A3F17C2A1A900B9B4E9 /* CMRubeBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */; };
@@ -582,6 +584,8 @@
 		93EB27F7177F70B9001B7FBB /* CMMarbleHelpScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleHelpScene.m; sourceTree = "<group>"; };
 		93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePlayScene.h; sourceTree = "<group>"; };
 		93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePlayScene.m; sourceTree = "<group>"; };
+		93EFB6FB17E4BCD100B3B186 /* CMPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPhysicsSprite.h; sourceTree = "<group>"; };
+		93EFB6FC17E4BCD100B3B186 /* CMPhysicsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPhysicsSprite.m; sourceTree = "<group>"; };
 		93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubeSceneReader.h; sourceTree = "<group>"; };
 		93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRubeSceneReader.m; sourceTree = "<group>"; };
 		93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubeBody.h; sourceTree = "<group>"; };
@@ -943,6 +947,8 @@
 			children = (
 				9353D46217B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.h */,
 				9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */,
+				93EFB6FB17E4BCD100B3B186 /* CMPhysicsSprite.h */,
+				93EFB6FC17E4BCD100B3B186 /* CMPhysicsSprite.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -950,9 +956,8 @@
 		9356F75E1793296B008D584E /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				93EFB6E217E4B0BC00B3B186 /* Legacy */,
 				93F35A2917C29F1E00B9B4E9 /* RUBEReader */,
-				9356F76817932AF0008D584E /* CMSimpleShapeReader.h */,
-				9356F76917932AF1008D584E /* CMSimpleShapeReader.m */,
 				9356F75F1793296B008D584E /* CMMarbleLevel.h */,
 				9356F7601793296B008D584E /* CMMarbleLevel.m */,
 				9356F7611793296B008D584E /* CMMarbleLevelSet.h */,
@@ -1108,6 +1113,7 @@
 		93EAB2DE17A19C6A009894C5 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				FEB4EF5B17BBC1580023D063 /* Management */,
 				FEB4EF4B17BBC13F0023D063 /* Visuals */,
 			);
 			path = Game;
@@ -1128,6 +1134,15 @@
 				934AF9B317837E22004BAC7E /* SceneHelper.m */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		93EFB6E217E4B0BC00B3B186 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				9356F76817932AF0008D584E /* CMSimpleShapeReader.h */,
+				9356F76917932AF1008D584E /* CMSimpleShapeReader.m */,
+			);
+			name = Legacy;
 			sourceTree = "<group>";
 		};
 		93F35A2917C29F1E00B9B4E9 /* RUBEReader */ = {
@@ -1199,7 +1214,6 @@
 		FEB4EF4B17BBC13F0023D063 /* Visuals */ = {
 			isa = PBXGroup;
 			children = (
-				FEB4EF5B17BBC1580023D063 /* Management */,
 				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
 				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
 				93566EEF17B592ED0017176A /* CMMarbleSlot.h */,
@@ -1820,6 +1834,7 @@
 				93536640177DFB52009F640B /* main.m in Sources */,
 				93536643177DFB52009F640B /* MacAppDelegate.m in Sources */,
 				93F35A4B17C2A44A00B9B4E9 /* CMRubeJoint.m in Sources */,
+				93EFB6FD17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */,
 				93536646177DFB52009F640B /* CMMarbleSimulationLayer.m in Sources */,
 				93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */,
 				93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */,
@@ -1875,6 +1890,7 @@
 				FED2E86D17A7FD83005A16B3 /* CMMarbleSettingsScene.m in Sources */,
 				FED2E86417A7EC18005A16B3 /* iOSAppDelegate.m in Sources */,
 				93F35A4C17C2A44A00B9B4E9 /* CMRubeJoint.m in Sources */,
+				93EFB6FE17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */,
 				FED2E7E317A7E48B005A16B3 /* main.m in Sources */,
 				FE28CD3A17D904F400C2F880 /* GlossMapShader.vsh in Sources */,
 				FED2E87117A7FD83005A16B3 /* CMMarbleLevelSetScene.m in Sources */,

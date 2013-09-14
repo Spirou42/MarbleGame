@@ -42,8 +42,9 @@ static NSString *borderType = @"borderType";
 -(void) addNewSpriteAtPosition:(CGPoint)pos;
 -(void) initPhysics;
 
-@property (nonatomic,assign) CGPoint lastMousePosition;
-@property (nonatomic,retain) NSMutableArray *dynamicObjects;
+@property (nonatomic, assign) CGPoint lastMousePosition;
+@property (nonatomic, retain) NSMutableArray *dynamicSprites;
+@property (nonatomic, retain) NSMutableArray *staticSprites;
 
 - (void) initializeLevel;
 @end
@@ -55,8 +56,8 @@ static NSString *borderType = @"borderType";
 simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,simulatedMarbles=simulatedMarbles_,
 dollyGroove = dollyGroove_, dollyShape = dollyShape_, dollyServo = dollyServo_, dollyBody = dollyBody_,
 gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
-marbleFireTimer=marbleFireTimer_,marblesToFire=marblesToFire_, currentMarbleIndex = currentMarbleIndex_,staticShapes=staticShapes_,
-lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
+marbleFireTimer=marbleFireTimer_,marblesToFire=marblesToFire_, currentMarbleIndex = currentMarbleIndex_,worldShapes=staticShapes_,
+lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, staticSprites = staticSprites_;
 
 +(CCScene *) scene
 {
@@ -87,7 +88,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 #endif
 //		self->_simulationRunning=YES;
 		self.simulatedMarbles = [NSMutableArray array];
-		self.dynamicObjects = [NSMutableArray array];
+		self.dynamicSprites = [NSMutableArray array];
+		self.staticSprites = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
@@ -116,12 +118,19 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 
 - (void)dealloc
 {
-// 	[self.space removeBody:self.space.staticBody];
-	[self.space remove:self.dynamicObjects];
-	self.dynamicObjects = nil;
+	// invalidate timer
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
-	self.staticShapes = nil;
+
+	// remove dynamic sprites
+	[self.space remove:self.dynamicSprites];
+	self.dynamicSprites = nil;
+
+	// remove static Sprites;
+	[self.space remove:self.staticSprites];
+	self.staticSprites = nil;
+
+	self.worldShapes = nil;
 //	[self.space remove:self.bounds];
 
 	self.space = nil;
@@ -473,13 +482,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 - (void) setCurrentLevel:(CMMarbleLevel *)cL
 {
 	if (cL != self->currentLevel_) {
-    [self.space remove:self.dynamicObjects];
-    [self.dynamicObjects removeAllObjects];
+    [self.space remove:self.dynamicSprites];
+    [self.dynamicSprites removeAllObjects];
 		self->currentLevel_ = cL;
 	}
 }
 
-- (void) setStaticShapes:(NSArray *)staticShapes
+- (void) setWorldShapes:(NSArray *)staticShapes
 {
 	if (staticShapes != self->staticShapes_) {
 		if (self->staticShapes_) {
@@ -504,7 +513,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	}
 }
 
-- (NSArray*) staticShapes
+- (NSArray*) worldShapes
 {
 	return self.space.staticBody.shapes;
 }
@@ -522,7 +531,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
 
-	ChipmunkBody *dB = ms.shape.body;
+	ChipmunkBody *dB = ms.chipmunkBody;
   self.dollyBody = dB;
 	dB.pos = cpv(self.lastMousePosition.x, MARBLE_GROOVE_Y);
 	// create the Groove
@@ -663,28 +672,35 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 }
 - (void) initializeLevel
 {
-	[self.space remove:self.dynamicObjects];
-	[self.dynamicObjects removeAllObjects];
+	[self.space remove:self.dynamicSprites];
+	[self.dynamicSprites removeAllObjects];
+	
+	[self.space remove:self.staticSprites];
+	[self.staticSprites removeAllObjects];
 
 	[self.space remove: self.space.bodies];
 
-	self.staticShapes = [self.currentLevel staticObjects];
+	self.worldShapes = [self.currentLevel worldShapes];
 	[self.otherSpritesNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	
 	{
     // request all dynamics, if this is a Rube level
-		if (self.currentLevel.isRubeLevel) {
-			CMRubeSceneReader *reader = self.currentLevel.rubeReader;
-			NSArray *dynBodies = reader.dynamicBodies;
-			for (CMRubeBody *aBody in dynBodies) {
-				CCPhysicsSprite *dynSprite = aBody.physicsSprite;
-				[self.space add:aBody.chipmunkObjects];
-				[self.dynamicObjects addObjectsFromArray:aBody.chipmunkObjects];
-				[self.otherSpritesNode addChild:dynSprite];
-			}
+		for (id a in self.currentLevel.dynamicSprites) {
+			[self.dynamicSprites addObject:a];
+			[self.space add:a];
+			[self.otherSpritesNode addChild:a];
 		}
+		
+		// request all static Sprites
+		for (id a in self.currentLevel.staticSprites) {
+			[self.staticSprites addObject:a];
+			[self.space add:a];
+			[self.otherSpritesNode addChild:a];
+		}
+		
+		
 	}
 	[self fireMarbles:p inTime:10];
 }
@@ -697,7 +713,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicObjects = dynamicObjects_;
 	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
-	ChipmunkBody *dB = ms.shape.body;
+	ChipmunkBody *dB = ms.chipmunkBody;
 
 	CGFloat velX = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0;
 	CGFloat velY = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0 ;
