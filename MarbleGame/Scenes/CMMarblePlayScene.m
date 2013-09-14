@@ -85,7 +85,7 @@
 		self.removedMarbleQueue = [NSMutableArray array];
     self.overlaySprite = defaultLevelOverlay();
     self.overlaySprite.anchorPoint=ccp(0.0, 0.0);
-    self.overlaySprite.position=ccp(0, -4);
+    self.overlaySprite.position=ccp(0,0);
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
