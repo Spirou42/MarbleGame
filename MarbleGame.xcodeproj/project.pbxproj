@@ -77,7 +77,6 @@
 		938150F917E3AA72009A5ABB /* stars-grayscale.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150F717E3AA72009A5ABB /* stars-grayscale.png */; };
 		9381510017E3B5EA009A5ABB /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150FF17E3B5EA009A5ABB /* fire.png */; };
 		9381510117E3B5EA009A5ABB /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150FF17E3B5EA009A5ABB /* fire.png */; };
-		9381510717E3C8B8009A5ABB /* Level0-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9381510317E3C887009A5ABB /* Level0-Background.png */; };
 		9381510917E3C9E2009A5ABB /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9381510817E3C9E2009A5ABB /* crate.png */; };
 		9381510B17E3D349009A5ABB /* Level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 9381510A17E3D349009A5ABB /* Level0.json */; };
 		938CE0B917BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CE0B817BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m */; };
@@ -149,8 +148,6 @@
 		FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3E17E0B64800E85ABD /* InfoPlist.strings */; };
 		FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */; };
 		FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */; };
-		FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */; };
-		FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */; };
 		FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4817E0B7C300E85ABD /* Level1-Background.png */; };
 		FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */; };
 		FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */; };
@@ -547,7 +544,6 @@
 		938150ED17E39C4B009A5ABB /* CMLiquidAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLiquidAction.m; sourceTree = "<group>"; };
 		938150F717E3AA72009A5ABB /* stars-grayscale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stars-grayscale.png"; sourceTree = "<group>"; };
 		938150FF17E3B5EA009A5ABB /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
-		9381510317E3C887009A5ABB /* Level0-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level0-Background.png"; sourceTree = "<group>"; };
 		9381510817E3C9E2009A5ABB /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
 		9381510A17E3D349009A5ABB /* Level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level0.json; sourceTree = "<group>"; };
 		938CE0B717BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMPLevelStat+DisplayHelper.h"; sourceTree = "<group>"; };
@@ -619,8 +615,6 @@
 		FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefaultLevelSet.levels; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBABB3D17E0B64800E85ABD /* DefaulLevelSet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DefaulLevelSet-Info.plist"; sourceTree = "<group>"; };
 		FEBABB3F17E0B64800E85ABD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level0-Overlay.png"; sourceTree = "<group>"; };
-		FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level0-StaticBodies.stb"; sourceTree = "<group>"; };
 		FEBABB4817E0B7C300E85ABD /* Level1-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1-Background.png"; sourceTree = "<group>"; };
 		FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1-Overlay.png"; sourceTree = "<group>"; };
 		FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Level1-StaticBodies.stb"; sourceTree = "<group>"; };
@@ -1184,9 +1178,9 @@
 			isa = PBXGroup;
 			children = (
 				93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */,
+				93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */,
 				93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */,
 				93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */,
-				93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */,
 				93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */,
 				93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */,
 			);
@@ -1291,9 +1285,6 @@
 			children = (
 				9381510A17E3D349009A5ABB /* Level0.json */,
 				9381510817E3C9E2009A5ABB /* crate.png */,
-				9381510317E3C887009A5ABB /* Level0-Background.png */,
-				FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */,
-				FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */,
 			);
 			name = "Level 0 Rube";
 			sourceTree = "<group>";
@@ -1770,9 +1761,6 @@
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				9381510B17E3D349009A5ABB /* Level0.json in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
-				9381510717E3C8B8009A5ABB /* Level0-Background.png in Resources */,
-				FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in Resources */,
-				FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in Resources */,
 				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
 				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */,
 				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */,
