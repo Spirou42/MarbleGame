@@ -45,6 +45,7 @@ static NSString *borderType = @"borderType";
 @property (nonatomic, assign) CGPoint lastMousePosition;
 @property (nonatomic, retain) NSMutableArray *dynamicSprites;
 @property (nonatomic, retain) NSMutableArray *staticSprites;
+@property (nonatomic, retain) NSMutableArray *constraints;
 
 - (void) initializeLevel;
 @end
@@ -57,7 +58,7 @@ simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,sim
 dollyGroove = dollyGroove_, dollyShape = dollyShape_, dollyServo = dollyServo_, dollyBody = dollyBody_,
 gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
 marbleFireTimer=marbleFireTimer_,marblesToFire=marblesToFire_, currentMarbleIndex = currentMarbleIndex_,worldShapes=staticShapes_,
-lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, staticSprites = staticSprites_;
+lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, staticSprites = staticSprites_,constraints = constraints_;
 
 +(CCScene *) scene
 {
@@ -90,6 +91,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		self.simulatedMarbles = [NSMutableArray array];
 		self.dynamicSprites = [NSMutableArray array];
 		self.staticSprites = [NSMutableArray array];
+		self.constraints = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
@@ -130,6 +132,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.space remove:self.staticSprites];
 	self.staticSprites = nil;
 
+	[self.space remove:self.constraints];
+	self.constraints = nil;
+	
 	self.worldShapes = nil;
 //	[self.space remove:self.bounds];
 
@@ -678,6 +683,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.space remove:self.staticSprites];
 	[self.staticSprites removeAllObjects];
 
+	[self.space remove:self.constraints];
+	[self.constraints removeAllObjects];
+
 	[self.space remove: self.space.bodies];
 
 	self.worldShapes = [self.currentLevel worldShapes];
@@ -699,8 +707,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.space add:a];
 			[self.otherSpritesNode addChild:a];
 		}
-		
-		
+		// Constraints
+		for (id a in self.currentLevel.constrains) {
+			[self.space add:a];
+			[self.constraints addObject:a];
+		}
 	}
 	[self fireMarbles:p inTime:10];
 }

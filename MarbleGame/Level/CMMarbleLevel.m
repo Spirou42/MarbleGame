@@ -250,6 +250,14 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 		return self.shapeReader.shapes;
 	}
 }
+- (NSArray*) constrains
+{
+	if (self.isRubeLevel) {
+		return self.rubeReader.joints;
+	}
+	return  nil;
+}
+
 
 
 #pragma mark - Helpers

@@ -31,7 +31,8 @@ typedef enum {
 @property (nonatomic, retain) NSMutableArray *fixtures;
 @property (nonatomic, retain) NSMutableArray *attachedImages;
 @property (nonatomic, retain) NSString* soundName;
-@property (nonatomic,readonly) CMPhysicsSprite* physicsSprite; ///< this returns nil for static bodies
+@property (nonatomic, readonly) CMPhysicsSprite* physicsSprite; ///< this returns nil for static bodies
+@property (nonatomic, readonly) ChipmunkBody* body;
 @property (nonatomic, readonly) NSArray* chipmunkShapes; ///< returns all Attached ChipmunkShapes
 
 - (id) initWithDictionary:(NSDictionary*)dict;

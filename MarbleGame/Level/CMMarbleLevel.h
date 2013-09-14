@@ -68,4 +68,5 @@
 - (NSArray*) worldShapes;										///< all static shapes of the World Object
 - (NSArray*) staticSprites;									///< creates and returns a List of all Static Sprites (CMPhysicsSprite) not named "World"
 - (NSArray*) dynamicSprites;								///< a list of all dynamic Sprites.
+- (NSArray*) constrains;
 @end

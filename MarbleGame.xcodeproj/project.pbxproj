@@ -1223,6 +1223,7 @@
 		FEB4EF5B17BBC1580023D063 /* Management */ = {
 			isa = PBXGroup;
 			children = (
+				93D5707817BEB99000167030 /* PlayerStatistics */,
 				FED2E8E417A8087B005A16B3 /* AppDelegate.h */,
 				93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */,
 				93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */,
@@ -1233,7 +1234,6 @@
 				93536642177DFB52009F640B /* MacAppDelegate.m */,
 				FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */,
 				FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */,
-				93D5707817BEB99000167030 /* PlayerStatistics */,
 			);
 			name = Management;
 			sourceTree = "<group>";

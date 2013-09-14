@@ -9,6 +9,7 @@
 #import "CMRubeSceneReader.h"
 #import "CMRubeBody.h"
 #import "CMRubeFixture.h"
+#import "CMRubeJoint.h"
 #import "cocos2d.h"
 #import "ChipmunkObject.h"
 
@@ -49,6 +50,12 @@
 		[aImage release];
 	}
 	
+	for (NSDictionary *jointDict in [dict objectForKey:@"joint"]) {
+    CMRubeJoint *aJoint = [[CMRubeJoint alloc] initWithDictionary:jointDict andBodies:self.bodies];
+		[self.joints addObject:aJoint];
+		[aJoint release];
+	}
+	
 	// now attach the images to the associated Bodies
 	for (CMRubeImage *rImage in self.images) {
     if (rImage.rubeBodyIndex != NSNotFound) {
@@ -57,6 +64,8 @@
 			[aBody attachImage:rImage];
 		}
 	}
+	
+
 }
 
 - (id) initWithContentsOfURL:(NSURL *)fileURL

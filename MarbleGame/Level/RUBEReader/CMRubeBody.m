@@ -119,6 +119,10 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 	}
 	return result;
 }
+- (ChipmunkBody*) body
+{
+	return self->cpBody_;
+}
 
 //***********************************************************
 #pragma mark - Image Accessors
