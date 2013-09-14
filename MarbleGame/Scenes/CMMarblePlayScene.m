@@ -70,7 +70,7 @@
 - (id) init
 {
 	if( (self = [super init]) ){
-		self.backgroundSprite = defaultSceneBackground();
+		self.backgroundSprite = defaultLevelBackground();
 
     [self createMenu];
 //		[self scheduleUpdate];
@@ -733,9 +733,11 @@
 	CCSprite *bkg = level.backgroundImage;
 	if (bkg) {
 		self.backgroundSprite=bkg;
-	}else{
-		self.backgroundSprite = defaultLevelBackground();
 	}
+	[self addChild:defaultLevelBackground() z:BACKGROUND_LAYER-1];
+//	else{
+//		self.backgroundSprite = defaultLevelBackground();
+//	}
 	
 	CCSprite *fgs = level.overlayImage;
 	self.foregroundSprite = fgs;
