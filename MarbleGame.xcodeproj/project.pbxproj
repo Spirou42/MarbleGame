@@ -77,6 +77,9 @@
 		938150F917E3AA72009A5ABB /* stars-grayscale.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150F717E3AA72009A5ABB /* stars-grayscale.png */; };
 		9381510017E3B5EA009A5ABB /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150FF17E3B5EA009A5ABB /* fire.png */; };
 		9381510117E3B5EA009A5ABB /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 938150FF17E3B5EA009A5ABB /* fire.png */; };
+		9381510717E3C8B8009A5ABB /* Level0-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9381510317E3C887009A5ABB /* Level0-Background.png */; };
+		9381510917E3C9E2009A5ABB /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9381510817E3C9E2009A5ABB /* crate.png */; };
+		9381510B17E3D349009A5ABB /* Level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 9381510A17E3D349009A5ABB /* Level0.json */; };
 		938CE0B917BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CE0B817BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m */; };
 		938CE0BA17BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CE0B817BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m */; };
 		938CE0BD17BFE2BB0086B6D9 /* CMMPLevelStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 938CE0BC17BFE2BB0086B6D9 /* CMMPLevelStat.m */; };
@@ -142,20 +145,20 @@
 		FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */; };
 		FEBABB3A17E0B64700E85ABD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBABB2917E0B5FB00E85ABD /* CoreFoundation.framework */; };
 		FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3E17E0B64800E85ABD /* InfoPlist.strings */; };
-		FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */; };
-		FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */; };
-		FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */; };
-		FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */; };
-		FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4817E0B7C300E85ABD /* Level1-Background.png */; };
-		FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */; };
-		FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */; };
-		FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */; };
-		FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */; };
-		FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */; };
-		FEBABB7217E0B93F00E85ABD /* Level3-Background.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */; };
-		FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */; };
-		FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */; };
-		FEBABB7517E0B93F00E85ABD /* LevelSet.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = FEBABB5117E0B7C300E85ABD /* LevelSet.plist */; };
+		FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */; };
+		FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */; };
+		FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */; };
+		FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */; };
+		FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4817E0B7C300E85ABD /* Level1-Background.png */; };
+		FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */; };
+		FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */; };
+		FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */; };
+		FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */; };
+		FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */; };
+		FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */; };
+		FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */; };
+		FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */; };
+		FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5117E0B7C300E85ABD /* LevelSet.plist */; };
 		FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
@@ -422,29 +425,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FEBABB6717E0B8FF00E85ABD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in CopyFiles */,
-				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in CopyFiles */,
-				FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in CopyFiles */,
-				FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in CopyFiles */,
-				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in CopyFiles */,
-				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in CopyFiles */,
-				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in CopyFiles */,
-				FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in CopyFiles */,
-				FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in CopyFiles */,
-				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in CopyFiles */,
-				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in CopyFiles */,
-				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in CopyFiles */,
-				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in CopyFiles */,
-				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEFBE1B817C76BFB00D86D8D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -565,6 +545,9 @@
 		938150ED17E39C4B009A5ABB /* CMLiquidAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLiquidAction.m; sourceTree = "<group>"; };
 		938150F717E3AA72009A5ABB /* stars-grayscale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stars-grayscale.png"; sourceTree = "<group>"; };
 		938150FF17E3B5EA009A5ABB /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		9381510317E3C887009A5ABB /* Level0-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level0-Background.png"; sourceTree = "<group>"; };
+		9381510817E3C9E2009A5ABB /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
+		9381510A17E3D349009A5ABB /* Level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level0.json; sourceTree = "<group>"; };
 		938CE0B717BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMPLevelStat+DisplayHelper.h"; sourceTree = "<group>"; };
 		938CE0B817BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMPLevelStat+DisplayHelper.m"; sourceTree = "<group>"; };
 		938CE0BB17BFE2BB0086B6D9 /* CMMPLevelStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMPLevelStat.h; sourceTree = "<group>"; };
@@ -1280,7 +1263,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBABB6617E0B81500E85ABD /* Level -1  RubeTest */,
-				FEBABB6217E0B7CC00E85ABD /* Level 0 Legacy */,
+				FEBABB6217E0B7CC00E85ABD /* Level 0 Rube */,
 				FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */,
 				FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */,
 				FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */,
@@ -1289,13 +1272,16 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
-		FEBABB6217E0B7CC00E85ABD /* Level 0 Legacy */ = {
+		FEBABB6217E0B7CC00E85ABD /* Level 0 Rube */ = {
 			isa = PBXGroup;
 			children = (
+				9381510A17E3D349009A5ABB /* Level0.json */,
+				9381510817E3C9E2009A5ABB /* crate.png */,
+				9381510317E3C887009A5ABB /* Level0-Background.png */,
 				FEBABB4617E0B7C300E85ABD /* Level0-Overlay.png */,
 				FEBABB4717E0B7C300E85ABD /* Level0-StaticBodies.stb */,
 			);
-			name = "Level 0 Legacy";
+			name = "Level 0 Rube";
 			sourceTree = "<group>";
 		};
 		FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */ = {
@@ -1506,7 +1492,6 @@
 				FEBABB3517E0B64700E85ABD /* Sources */,
 				FEBABB3617E0B64700E85ABD /* Frameworks */,
 				FEBABB3717E0B64700E85ABD /* Resources */,
-				FEBABB6717E0B8FF00E85ABD /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1766,7 +1751,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
+				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
+				9381510B17E3D349009A5ABB /* Level0.json in Resources */,
+				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
+				9381510717E3C8B8009A5ABB /* Level0-Background.png in Resources */,
+				FEBABB6A17E0B93F00E85ABD /* Level0-Overlay.png in Resources */,
+				FEBABB6B17E0B93F00E85ABD /* Level0-StaticBodies.stb in Resources */,
+				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
+				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */,
+				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */,
+				FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in Resources */,
+				FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in Resources */,
+				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
+				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */,
+				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */,
+				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */,
+				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

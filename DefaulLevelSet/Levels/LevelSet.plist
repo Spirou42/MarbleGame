@@ -49,12 +49,14 @@
 			<dict/>
 			<key>graphics</key>
 			<dict>
-				<key>staticBodiesFilename</key>
+				<key>RUBELevel</key>
+				<string>Level0.json</string>
+				<key>old-staticBodiesFilename</key>
 				<string>Level0-StaticBodies</string>
 				<key>overlayFilename</key>
 				<string>Level0-Overlay</string>
 				<key>backgroundFilename</key>
-				<string></string>
+				<string>Level0-Background</string>
 			</dict>
 			<key>audio</key>
 			<dict/>

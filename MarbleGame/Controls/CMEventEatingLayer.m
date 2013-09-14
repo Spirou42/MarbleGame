@@ -7,6 +7,7 @@
 //
 
 #import "CMEventEatingLayer.h"
+#import "cocos2d.h"
 
 @implementation CMEventEatingLayer
 #pragma mark -

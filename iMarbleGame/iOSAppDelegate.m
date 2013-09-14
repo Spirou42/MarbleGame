@@ -91,8 +91,8 @@
 								   depthFormat:GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
 									sharegroup:nil
-								 multiSampling:NO
-							   numberOfSamples:0];
+								 multiSampling:YES
+							   numberOfSamples:4];
 
 	// Multiple Touches enabled
 //  [[CCDirector sharedDirector] setDepthBufferFormat:GL_DEPTH_COMPONENT24_OES];
