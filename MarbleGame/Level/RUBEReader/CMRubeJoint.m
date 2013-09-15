@@ -106,24 +106,26 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 		return nil;
 	}
 	if (!self.cachedChipmunkObjects) {
-		if (self.enableLimit) {
-			//			ChipmunkRotaryLimitJoint *k = [ChipmunkRotaryLimitJoint rotaryLimitJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body min:self.lowerLimit max:self.upperLimit];
-		}else{
-			ChipmunkPivotJoint *k = [ChipmunkPivotJoint pivotJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
-			//			ChipmunkPinJoint *k = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
-			//			k.dist = 0.0;
-			k.errorBias = pow(1.0-0.5, 800);
-			//			k.errorBias = INFINITY;
-			//			k.maxBias = INFINITY;
-
-			if (self.enableMotor) {
-				ChipmunkSimpleMotor *m = [ChipmunkSimpleMotor simpleMotorWithBodyA:self.bodyA.body bodyB:self.bodyB.body rate:-self.motorSpeed];
-//				m.maxForce = self.maxMotorTorque;
-				self.cachedChipmunkObjects = [NSMutableArray arrayWithObjects:k,m, nil];
+		NSMutableArray * result = [NSMutableArray array];
+		ChipmunkPivotJoint *pivJ = [ChipmunkPivotJoint pivotJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
+		pivJ.errorBias = pow(1.0-0.5, 800);
+		[result addObject:pivJ];
+		// add a motor on demand
+		if (self.enableMotor) {
+			ChipmunkSimpleMotor *motJ = [ChipmunkSimpleMotor simpleMotorWithBodyA:self.bodyA.body bodyB:self.bodyB.body rate:-self.motorSpeed];
+			if (self.maxMotorTorque == 0) {
+				motJ.maxForce = INFINITY;
 			}else{
-				self.cachedChipmunkObjects = [NSMutableArray arrayWithObject:k];
+				motJ.maxForce = self.maxMotorTorque;
 			}
+			[result addObject:motJ];
 		}
+		// add limits
+		if (self.enableLimit) {
+			ChipmunkRotaryLimitJoint *rlimJ =[ChipmunkRotaryLimitJoint rotaryLimitJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body min:self.lowerLimit max:self.upperLimit];
+			[result addObject:rlimJ];
+		}
+		self.cachedChipmunkObjects = result;
 	}
 	return self.cachedChipmunkObjects;
 }
