@@ -734,14 +734,10 @@
 	if (bkg) {
 		self.backgroundSprite=bkg;
 	}
-	[self addChild:defaultLevelBackground() z:BACKGROUND_LAYER-1];
-//	else{
-//		self.backgroundSprite = defaultLevelBackground();
-//	}
 	
 	CCSprite *fgs = level.overlayImage;
 	self.foregroundSprite = fgs;
-  self.foregroundSprite.opacity = 128;
+//  self.foregroundSprite.opacity = 128;
 	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
 }
 

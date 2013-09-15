@@ -1,0 +1,1126 @@
+
+{
+	"allowSleep" : true,
+	"autoClearForces" : true,
+	"body" : 
+	[
+		
+		{
+			"angle" : 0,
+			"angularVelocity" : 0,
+			"awake" : true,
+			"fixture" : 
+			[
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								-491.3483276367188,
+								-498.0040588378906,
+								-511.7493896484375,
+								-511.1061401367188
+							],
+							"y" : 
+							[
+								-187.8900756835938,
+								-166.6314239501953,
+								-138.0799102783203,
+								-384.46777343750
+							]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -498.0040588378906, -500.8808288574219, -511.7493896484375 ],
+							"y" : [ -166.6314239501953, -138.3370361328125, -138.0799102783203 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -483.298339843750, -491.3483276367188, -511.1061401367188 ],
+							"y" : [ -202.2150421142578, -187.8900756835938, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -464.5500488281250, -483.298339843750, -511.1061401367188 ],
+							"y" : [ -224.5429229736328, -202.2150421142578, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -448.5889892578125, -464.5500488281250, -511.1061401367188 ],
+							"y" : [ -239.0653991699219, -224.5429229736328, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -432.0694580078125, -448.5889892578125, -511.1061401367188 ],
+							"y" : [ -250.2364807128906, -239.0653991699219, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -404.7127685546875, -432.0694580078125, -511.1061401367188 ],
+							"y" : [ -265.7438964843750, -250.2364807128906, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -379.590332031250, -404.7127685546875, -511.1061401367188 ],
+							"y" : [ -275.1071166992188, -265.7438964843750, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -357.9690551757812, -379.590332031250, -511.1061401367188 ],
+							"y" : [ -282.2236022949219, -275.1071166992188, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -313.7277526855469, -357.9690551757812, -511.1061401367188 ],
+							"y" : [ -293.4684448242188, -282.2236022949219, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -286.17480468750, -313.7277526855469, -511.1061401367188 ],
+							"y" : [ -298.5610961914062, -293.4684448242188, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -235.5158386230469, -286.17480468750, -511.1061401367188 ],
+							"y" : [ -305.93457031250, -298.5610961914062, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -186.9403381347656, -235.5158386230469, -511.1061401367188 ],
+							"y" : [ -312.0750732421875, -305.93457031250, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -129.7139587402344, -186.9403381347656, -511.1061401367188 ],
+							"y" : [ -315.6669006347656, -312.0750732421875, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ -50.427246093750, -129.7139587402344, -511.1061401367188 ],
+							"y" : [ -317.5665283203125, -315.6669006347656, -384.46777343750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								512.7991943359375,
+								116.9822998046875,
+								8.793457031250,
+								-50.427246093750,
+								-511.1061401367188
+							],
+							"y" : 
+							[
+								-382.4915771484375,
+								-316.4265136718750,
+								-317.13769531250,
+								-317.5665283203125,
+								-384.46777343750
+							]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 179.4117126464844, 116.9822998046875 ],
+							"y" : [ -382.4915771484375, -313.7169189453125, -316.4265136718750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 211.1849517822266, 179.4117126464844 ],
+							"y" : [ -382.4915771484375, -311.5242919921875, -313.7169189453125 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 256.6430053710938, 211.1849517822266 ],
+							"y" : [ -382.4915771484375, -305.9802856445312, -311.5242919921875 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 305.6250610351562, 256.6430053710938 ],
+							"y" : [ -382.4915771484375, -297.5477905273438, -305.9802856445312 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 356.8453979492188, 305.6250610351562 ],
+							"y" : [ -382.4915771484375, -284.65917968750, -297.5477905273438 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 386.2404174804688, 356.8453979492188 ],
+							"y" : [ -382.4915771484375, -275.0379638671875, -284.65917968750 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 410.0498657226562, 386.2404174804688 ],
+							"y" : [ -382.4915771484375, -264.2996215820312, -275.0379638671875 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 445.0933227539062, 410.0498657226562 ],
+							"y" : [ -382.4915771484375, -244.0803680419922, -264.2996215820312 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 468.1033935546875, 445.0933227539062 ],
+							"y" : [ -382.4915771484375, -222.1531982421875, -244.0803680419922 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.7991943359375, 487.0343627929688, 468.1033935546875 ],
+							"y" : [ -382.4915771484375, -196.0398712158203, -222.1531982421875 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								512.7991943359375,
+								512.1906127929688,
+								496.8171997070312,
+								487.0343627929688
+							],
+							"y" : 
+							[
+								-382.4915771484375,
+								-137.8224792480469,
+								-167.4360656738281,
+								-196.0398712158203
+							]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klick"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.7,
+					"name" : "Halfpipe",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : [ 512.1906127929688, 500.5438232421875, 496.8171997070312 ],
+							"y" : [ -137.8224792480469, -137.9591827392578, -167.4360656738281 ]
+						}
+					},
+					"restitution" : 0.5
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								520.0578002929688,
+								-520.3137207031250,
+								-520.3138427734375,
+								520.0576782226562
+							],
+							"y" : 
+							[
+								414.00292968750,
+								414.0054626464844,
+								384.0054626464844,
+								384.00292968750
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 520.0577392578125,
+							"y" : 399.00292968750
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -520.3137817382812,
+							"y" : 399.0054626464844
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								530.4761962890625,
+								530.4583740234375,
+								-509.7227172851562,
+								-509.7048950195312
+							],
+							"y" : 
+							[
+								-363.4319458007812,
+								-333.4319458007812,
+								-334.0499572753906,
+								-364.0499572753906
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 530.467285156250,
+							"y" : -348.4319458007812
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -509.7138061523438,
+							"y" : -349.0499572753906
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								-511.9836425781250,
+								-512.0164794921875,
+								-542.0164794921875,
+								-541.9836425781250
+							],
+							"y" : 
+							[
+								-392.5643005371094,
+								391.4781188964844,
+								391.4768371582031,
+								-392.5655822753906
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -526.9836425781250,
+							"y" : -392.564941406250
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -527.0164794921875,
+							"y" : 391.4774780273438
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								542.063964843750,
+								542.0310668945312,
+								512.0310668945312,
+								512.063964843750
+							],
+							"y" : 
+							[
+								-392.1547241210938,
+								391.741699218750,
+								391.7404174804688,
+								-392.1560058593750
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 527.063964843750,
+							"y" : -392.1553649902344
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 527.0310668945312,
+							"y" : 391.7410583496094
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"restitution" : 0.2
+				}
+			],
+			"linearVelocity" : 0,
+			"name" : "World",
+			"position" : 
+			{
+				"x" : 512.0,
+				"y" : 384.0
+			},
+			"type" : 0
+		}
+	],
+	"collisionbitplanes" : 
+	{
+		"names" : 
+		[
+			"bitplane1",
+			"bitplane2",
+			"bitplane3",
+			"bitplane4",
+			"bitplane5",
+			"bitplane6",
+			"bitplane7",
+			"bitplane8",
+			"bitplane9",
+			"bitplane10",
+			"bitplane11",
+			"bitplane12",
+			"bitplane13",
+			"bitplane14",
+			"bitplane15",
+			"bitplane16",
+			"bitplane17",
+			"bitplane18",
+			"bitplane19",
+			"bitplane20",
+			"bitplane21",
+			"bitplane22",
+			"bitplane23",
+			"bitplane24",
+			"bitplane25",
+			"bitplane26",
+			"bitplane27",
+			"bitplane28",
+			"bitplane29",
+			"bitplane30",
+			"bitplane31",
+			"bitplane32"
+		]
+	},
+	"continuousPhysics" : true,
+	"customProperties" : 
+	[
+		
+		{
+			"int" : 30,
+			"name" : "marbleCount"
+		}
+	],
+	"gravity" : 
+	{
+		"x" : 0,
+		"y" : -98.09999847412109
+	},
+	"image" : 
+	[
+		
+		{
+			"aspectScale" : 1,
+			"body" : 0,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Overlay"
+				}
+			],
+			"file" : "HalfPipe-Foreground.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Halfpipe-Overlay",
+			"opacity" : 1,
+			"scale" : 768.0
+		}
+	],
+	"positionIterations" : 3,
+	"stepsPerSecond" : 120.0,
+	"subStepping" : false,
+	"velocityIterations" : 8,
+	"warmStarting" : true
+}
