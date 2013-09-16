@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 typedef enum{
+	kCMMarbleEffect_Remove,
+	kCMMarbleEffect_Explode,
 	kCMMarbleEffect_MultiHit,
 	kCMMarbleEffect_ComboHit,
 	kCMMarbleEffect_NICE,

@@ -662,10 +662,10 @@
 {
 	if (self.effectQueue.count) {
 		CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-		[self addChild:k];
-		[k animate];
+		[self addChild:k z:20];
 		[self.effectQueue removeObject:k];
-		if (k.soundFileName) {
+
+		if ([k conformsToProtocol:@protocol(CMObjectSoundProtocol)] &&   k.soundFileName) {
 			[[SimpleAudioEngine sharedEngine]playEffect:k.soundFileName];
 		}
 	}
@@ -759,6 +759,14 @@
 - (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position
 {
 	switch (effect) {
+		case kCMMarbleEffect_Remove:
+		case kCMMarbleEffect_Explode:
+		{
+			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_EXPLODE_EFFECT];
+			particle.position = position;
+			[self.effectQueue addObject:particle];
+		}
+			break;
 		case kCMMarbleEffect_ComboHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];

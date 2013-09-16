@@ -21,7 +21,9 @@
 	[self removeFromParent];
 }
 
-- (void) animate
+-(void) onEnterTransitionDidFinish
+
+//- (void) onEnter
 {
 	// create some action to
 	CGSize l = self.contentSize;
@@ -47,7 +49,7 @@
 
 	[self runAction:[CCSequence actions:allActions,callAction, nil]];
 	
-	CCParticleSystem *emitter = [CCParticleSystemQuad particleWithFile:@"Firewall.plist"];
+	CCParticleSystem *emitter = [CCParticleSystemQuad particleWithFile:MARBLE_SPEZIAL_EFFECT];
 //  emitter = 	[CCParticleSun node];
 	emitter.posVar=CGPointMake(l.width/2.0,0);
 	emitter.position = CGPointMake(l.width/2.0,38);

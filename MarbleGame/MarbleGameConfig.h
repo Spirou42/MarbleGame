@@ -64,6 +64,10 @@
 #define DEFAULT_COMBO_EFFECT_FILE @"combo.png"
 #define DEFAULT_MULTI_EFFECT_FILE @"multi.png"
 
+#define MARBLE_SPEZIAL_EFFECT @"MarbleSpecial.plist"
+#define MARBLE_REMOVE_EFFECT @"MarbleRemove.plist"
+#define MARBLE_EXPLODE_EFFECT @"MarbleExplode.plist"
+
 /// transition / Action parameters
 
 #define DEFAULT_COMBO_MOVE_DURATION (1.5f)

@@ -10,6 +10,5 @@
 #import "CMObjectSoundProtocol.h"
 @interface CMMarbleMultiComboSprite : CCSprite <CMObjectSoundProtocol>
 
-- (void) animate;
 
 @end
