@@ -95,11 +95,13 @@
 #define DEFAULT_DDMENU_BACKGROUND 			@"DDMenu-Background"
 #define DDMENU_BACKGROUND_CAPS 					CGRectMake(9,9,142,103)
 #define DEFAULT_DDBUTTON_GLYPH 					@"DDButton-Glyph"
-#define DEFAULT_DDMENUITM_BACKGROUND 		@"DDMenu-ItemBackground"
+#define DEFAULT_DDMENUITM_BACKGROUND 		@"Button-Transparent"
 #define DDMENUITM_BACKGROUND_CAPS 			CGRectMake(1,1,96,29)
 
-#define MENU_BACKGROUND_PLATE						@"Menu-Background.png"
+#define BUTTON_TRANSPARENT_BACKGROUND   @"Button-Transparent"
 
+#define MENU_BACKGROUND_PLATE						@"Menu-Background.png"
+#define SETTINGS_ICON                   @"SettingsIcon"
 
 //////////////////////////////////////////////////
 #pragma mark - Sounds

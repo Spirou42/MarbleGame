@@ -137,6 +137,10 @@
 		FE00BAFD17A17296002D8B06 /* CMMarbleLevelSetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */; };
 		FE28CD3A17D904F400C2F880 /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
+		FE31852217E758F90090223B /* Firewall.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE31852117E758F90090223B /* Firewall.plist */; };
+		FE31852317E758F90090223B /* Firewall.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE31852117E758F90090223B /* Firewall.plist */; };
+		FE31853417E75AFC0090223B /* Firewall.png in Resources */ = {isa = PBXBuildFile; fileRef = FE31853317E75AFC0090223B /* Firewall.png */; };
+		FE31853517E75AFC0090223B /* Firewall.png in Resources */ = {isa = PBXBuildFile; fileRef = FE31853317E75AFC0090223B /* Firewall.png */; };
 		FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
@@ -602,6 +606,8 @@
 		93FD6D3717B14C87001CC41E /* multi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multi.png; sourceTree = "<group>"; };
 		FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSetScene.h; sourceTree = "<group>"; };
 		FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSetScene.m; sourceTree = "<group>"; };
+		FE31852117E758F90090223B /* Firewall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Firewall.plist; path = Resources/Firewall.plist; sourceTree = "<group>"; };
+		FE31853317E75AFC0090223B /* Firewall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Firewall.png; sourceTree = "<group>"; };
 		FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.fsh; sourceTree = "<group>"; };
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
@@ -789,6 +795,7 @@
 		933FEB0E17836A8800786883 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FE31853317E75AFC0090223B /* Firewall.png */,
 				938150FF17E3B5EA009A5ABB /* fire.png */,
 				938150F717E3AA72009A5ABB /* stars-grayscale.png */,
 				93750A7E17B827610063D613 /* Menu-Background.png */,
@@ -892,6 +899,7 @@
 		93536462177DFB50009F640B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE31852117E758F90090223B /* Firewall.plist */,
 				93CC6CB517C15C0D00F62743 /* Sounds */,
 				9353D45A17B068F100D0FD25 /* Fonts */,
 				FEF14BAB179041D5007A3AEB /* Shaders */,
@@ -1760,8 +1768,10 @@
 				93B5605817E376C5008E023E /* Boing.mp3 in Resources */,
 				935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
+				FE31853417E75AFC0090223B /* Firewall.png in Resources */,
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
 				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
+				FE31852217E758F90090223B /* Firewall.plist in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1797,6 +1807,7 @@
 				FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
+				FE31852317E758F90090223B /* Firewall.plist in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93B5605D17E376C5008E023E /* Klick.mp3 in Resources */,
@@ -1814,6 +1825,7 @@
 				93B5605F17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
 				93B5605917E376C5008E023E /* Boing.mp3 in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
+				FE31853517E75AFC0090223B /* Firewall.png in Resources */,
 				938150F917E3AA72009A5ABB /* stars-grayscale.png in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,

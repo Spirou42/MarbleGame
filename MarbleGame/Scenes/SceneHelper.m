@@ -104,7 +104,16 @@ inline CCControlSlider* defaultGreenSlider()
 
 inline CCControlButton* defaultMenuButton()
 {
-  CCControlButton* result = standardButtonWithTitle(@"M");
+	NSString* buttonOffName = BUTTON_TRANSPARENT_BACKGROUND;
+//  buttonOffName = NORMAL_BUTTON_BACKGROUND;
+
+	CCScale9Sprite *backgroundButton =  [CCScale9Sprite spriteWithSpriteFrameName:buttonOffName ];
+  CCNode<CCLabelProtocol,CCRGBAProtocol> *titleLabel = defaultButtonTitle(@"");
+  CCControlButton* result = [CCControlButton buttonWithLabel:titleLabel backgroundSprite:backgroundButton];
+  CCSprite *sIcon = [CCSprite spriteWithSpriteFrameName:SETTINGS_ICON];
+  sIcon.anchorPoint=CGPointMake(0.5, 0.5);
+  [result addChild:sIcon];
+  sIcon.position=CGPointMake(20, 20);
 	result.preferredSize=CGSizeMake(40, 40);
   result.anchorPoint=ccp(1.0, 1.0);
   result.position=ccp(990, 762);

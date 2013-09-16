@@ -47,14 +47,15 @@
 
 	[self runAction:[CCSequence actions:allActions,callAction, nil]];
 	
-	CCParticleSystem *emitter = [CCParticleSun node];
+	CCParticleSystem *emitter = [CCParticleSystemQuad particleWithFile:@"Firewall.plist"];
+//  emitter = 	[CCParticleSun node];
 	emitter.posVar=CGPointMake(l.width/2.0,0);
 	emitter.position = CGPointMake(l.width/2.0,38);
-	ccBlendFunc p = emitter.blendFunc;
+//	ccBlendFunc p = emitter.blendFunc;
 //	p.src = GL_SRC_ALPHA;
-	emitter.blendFunc = p;
+//	emitter.blendFunc = p;
 	//	NSLog(@"%d %d",emitter.blendFunc.src,emitter.blendFunc.dst);
-	[self addChild:emitter z:10];
+	[self addChild:emitter z:1];
 //	emitter.texture = [[CCTextureCache sharedTextureCache] addImage: @"stars-grayscale.png"];
 
 }

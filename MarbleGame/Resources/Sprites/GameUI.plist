@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- $TexturePacker:SmartUpdate:609795f96e5fadced46714de6b129b1d:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:59715f22176d2456c8df24d5f737865b:1/1$ -->
 <plist version="1.0">
 	<dict>
 		<key>frames</key>
@@ -46,11 +46,11 @@
 				  <string>{ 93,39 }</string>
 				</dict>
 		 
-			<key>DDButton-Glyph</key>
+			<key>Button-Transparent</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 180,146 }, { 20,21 } }</string>
+					<string>{ { 258,64 }, { 1,1 } }</string>
 					
 
 					<key>offset</key>
@@ -58,6 +58,26 @@
 				  
 				  <key>rotated</key>
 					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 1,1 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 1,1 }</string>
+				</dict>
+		 
+			<key>DDButton-Glyph</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 222,146 }, { 20,21 } }</string>
+ 					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <true/> 
 				  
 				  <key>sourceColorRect</key>
 				  <string>{ { 0,0 },{ 20,21 } }</string>
@@ -110,7 +130,7 @@
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,181 }, { 3,3 } }</string>
+					<string>{ { 205,181 }, { 3,3 } }</string>
 					
 
 					<key>offset</key>
@@ -126,11 +146,11 @@
 				  <string>{ 3,3 }</string>
 				</dict>
 		 
-			<key>DDMenu-ItemBackground</key>
+			<key>SettingsIcon</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 258,64 }, { 1,1 } }</string>
+					<string>{ { 163,146 }, { 40,40 } }</string>
 					
 
 					<key>offset</key>
@@ -140,17 +160,17 @@
 					 <false/> 
 				  
 				  <key>sourceColorRect</key>
-				  <string>{ { 0,0 },{ 1,1 } }</string>
+				  <string>{ { 0,0 },{ 40,40 } }</string>
 				
 				  <key>sourceSize</key>
-				  <string>{ 1,1 }</string>
+				  <string>{ 40,40 }</string>
 				</dict>
 		 
 			<key>Slider-Thumb</key>
 				<dict>
 					<key>frame</key>
 					
-					<string>{ { 163,146 }, { 15,33 } }</string>
+					<string>{ { 205,146 }, { 15,33 } }</string>
 					
 
 					<key>offset</key>
