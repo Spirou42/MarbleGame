@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>MarbleGame Exporter</string>
         <key>textureFileName</key>
-        <filename>../../MarbleGame/Resources/Sprites/GameUI.png</filename>
+        <filename>../../../MarbleGame/Resources/Sprites/GameUI.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../../MarbleGame/Resources/Sprites/GameUI.plist</filename>
+        <filename>../../../MarbleGame/Resources/Sprites/GameUI.plist</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>

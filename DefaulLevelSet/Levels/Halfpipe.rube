@@ -75,17 +75,17 @@
     },
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -103,11 +103,8 @@
     ],
     "exportOptions" : 
     {
-      "compactCommonFloats" : true,
       "saveFullPathForImages" : false,
-      "saveImagePathsRelativeToRUBEFile" : false,
-      "useHumanReadableFloats" : true,
-      "usePrettyPrint" : true
+      "useHumanReadableFloats" : true
     },
     "gravity" : 
     {
@@ -130,14 +127,14 @@
               
               {
                 "name" : "collisionSound",
-                "string" : "Klick"
+                "string" : "Klack"
               }
             ],
             "density" : 1,
-            "friction" : 0.7,
+            "friction" : 0.6000000238418579,
             "id" : 1,
             "name" : "Halfpipe",
-            "restitution" : 0.5,
+            "restitution" : 0.50,
             "shapes" : 
             [
               
@@ -355,7 +352,6 @@
     [
       
       {
-        "aspectScale" : 1,
         "body" : 1,
         "center" : 0,
         "customProperties" : 
