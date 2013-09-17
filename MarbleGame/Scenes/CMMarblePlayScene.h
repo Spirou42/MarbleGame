@@ -37,8 +37,8 @@
   CMMenuLayer                             *_menuLayer;
 	CMMenuLayer															*_resultMenu;
 	
-	NSMutableArray			*_effectQueue;
-	NSMutableArray			*_removedMarbleQueue;
+	NSMutableArray													*_effectQueue;
+	NSMutableArray													*_removedMarbleQueue;
 	NSObject<CMMarbleGameScoreModeProtocol>	* _scoreDelegate;
 	NSTimer																	*_effectTimer;
 	NSInteger																_lastUpdateSecond;

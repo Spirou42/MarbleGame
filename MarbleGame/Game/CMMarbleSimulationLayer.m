@@ -181,7 +181,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	p.size = s;
   p.size.height = 768;// - 54;
   p.origin.y = 0;//54;
-	CGRect newBounds = CGRectInset(p,0,0);
+	CGRect newBounds = CGRectInset(p,-400,-400);
 	self.bounds = [[self.space addBounds:newBounds
 														thickness:60.0
 													 elasticity:BORDER_ELASTICITY
@@ -726,8 +726,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.space add:ms];
 	ChipmunkBody *dB = ms.chipmunkBody;
 
-	CGFloat velX = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0;
-	CGFloat velY = (2500.0 * (CGFloat)arc4random_uniform(100)/100.0) -1250.0 ;
+	CGFloat velX = (MARBLE_FIRE_SPEED * (CGFloat)arc4random_uniform(100)/100.0) - (MARBLE_FIRE_SPEED/2.0);
+	CGFloat velY = (MARBLE_FIRE_SPEED * (CGFloat)arc4random_uniform(100)/100.0) - (MARBLE_FIRE_SPEED/2.0);
 //	NSLog(@"VelX: %f, VelY: %f",velX,velY);
 	dB.vel = cpv(velX,velY);
 	CGSize s = [[CCDirector sharedDirector] winSize];

@@ -86,7 +86,9 @@
     self.overlaySprite = defaultLevelOverlay();
     self.overlaySprite.anchorPoint=ccp(0.0, 0.0);
     self.overlaySprite.position=ccp(0,0);
-
+#if DEBUG_ALPHA_ON
+		self.overlaySprite.opacity = 128;
+#endif
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
 #else
@@ -682,7 +684,7 @@
 		for (CMMarbleSprite *marble in self.simulationLayer.simulatedMarbles) {
 			if (!CGRectContainsPoint(CGRectMake(0, 0, 1024, 768), marble.position)) {
 				NSLog(@"Marble Outside");
-				marble.position = CGPointMake(512, 512);
+				marble.position = MARBLE_RESPAWN_POINT;
 				marble.chipmunkBody.vel = CGPointMake(0, 0);
 			}
 		}
@@ -726,7 +728,9 @@
 	
 	CCSprite *fgs = level.overlayImage;
 	self.foregroundSprite = fgs;
-//  self.foregroundSprite.opacity = 128;
+#if DEBUG_ALPHA_ON
+  self.foregroundSprite.opacity = 128;
+#endif
 	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
 }
 
@@ -766,6 +770,7 @@
 		{
 			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_REMOVE_EFFECT];
 			particle.position = position;
+			particle.autoRemoveOnFinish = YES;
 			[self.effectQueue addObject:particle];
 		}
 			break;
@@ -773,6 +778,7 @@
     {
 			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_EXPLODE_EFFECT];
 			particle.position = position;
+			particle.autoRemoveOnFinish = YES;
 			[self.effectQueue addObject:particle];
 		}
       break;

@@ -41,6 +41,9 @@
 #define MARBLE_CREATE_TIME 			.1
 #define MARBLE_GROOVE_Y 			740
 
+#define MARBLE_FIRE_SPEED			(1500.0f)
+#define MARBLE_RESPAWN_POINT	CGPointMake(512,MARBLE_GROOVE_Y+2.0*MARBLE_RADIUS+10)
+
 //////////////////////////////////////////////////
 #pragma mark  - COLLISION TYPES
 #define COLLISION_TYPE_BORDER @"borderType"
@@ -79,6 +82,8 @@
 //////////////////////////////////////////////////
 #pragma mark -
 #pragma mark UI Definitions
+
+#define DEBUG_ALPHA_ON 0
 
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"
 
