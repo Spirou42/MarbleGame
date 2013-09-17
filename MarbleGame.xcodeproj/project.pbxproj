@@ -1210,8 +1210,6 @@
 				93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */,
 				93EB27F9177F7233001B7FBB /* CMMarblePlayScene.h */,
 				93EB27FA177F7233001B7FBB /* CMMarblePlayScene.m */,
-				93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */,
-				93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */,
 			);
 			name = "3. Play";
 			sourceTree = "<group>";
@@ -1256,6 +1254,8 @@
 				FED2E8E417A8087B005A16B3 /* AppDelegate.h */,
 				93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */,
 				93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */,
+				93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */,
+				93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */,
 				93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */,
 				93308F9117E10A310094A362 /* CMSoundShape.h */,
 				93308F9217E10A310094A362 /* CMSoundShape.m */,
