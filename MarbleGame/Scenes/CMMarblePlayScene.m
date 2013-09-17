@@ -658,18 +658,7 @@
 	}
 }
 
-- (void) processEffectQueue
-{
-	if (self.effectQueue.count) {
-		CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-		[self addChild:k z:20];
-		[self.effectQueue removeObject:k];
 
-		if ([k conformsToProtocol:@protocol(CMObjectSoundProtocol)] &&   k.soundFileName) {
-			[[SimpleAudioEngine sharedEngine]playEffect:k.soundFileName];
-		}
-	}
-}
 
 - (void) simulationStepDone:(NSTimeInterval)dt
 {
@@ -756,17 +745,37 @@
 																										userInfo:self.remarkLabel
 																										 repeats:NO];
 }
-- (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position
+
+- (void) processEffectQueue
+{
+	if (self.effectQueue.count) {
+		CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+		[self addChild:k z:20];
+		[self.effectQueue removeObject:k];
+
+		if ([k conformsToProtocol:@protocol(CMObjectSoundProtocol)] &&   k.soundFileName) {
+			[[SimpleAudioEngine sharedEngine]playEffect:k.soundFileName];
+		}
+	}
+}
+
+- (void)triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString *)soundName
 {
 	switch (effect) {
 		case kCMMarbleEffect_Remove:
-		case kCMMarbleEffect_Explode:
 		{
-			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_EXPLODE_EFFECT];
+			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_REMOVE_EFFECT];
 			particle.position = position;
 			[self.effectQueue addObject:particle];
 		}
 			break;
+    case kCMMarbleEffect_Explode:
+    {
+			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_EXPLODE_EFFECT];
+			particle.position = position;
+			[self.effectQueue addObject:particle];
+		}
+      break;
 		case kCMMarbleEffect_ComboHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
@@ -821,6 +830,13 @@
 		default:
 			break;
 	}
+}
+
+
+
+- (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position
+{
+  [self triggerEffect:effect atPosition:position overrideSound:nil];
 }
 
 @end

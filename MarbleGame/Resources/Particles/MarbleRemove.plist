@@ -11,9 +11,9 @@
 	<key>blendFuncSource</key>
 	<integer>1</integer>
 	<key>configName</key>
-	<string>MarbleExplode</string>
+	<string>MarbleRemove</string>
 	<key>duration</key>
-	<real>0.040000000000000001</real>
+	<real>0.029999999999999999</real>
 	<key>emitterType</key>
 	<integer>0</integer>
 	<key>finishColorAlpha</key>
@@ -51,7 +51,7 @@
 	<key>minRadiusVariance</key>
 	<real>0.0</real>
 	<key>particleLifespan</key>
-	<real>0.5</real>
+	<real>0.45000000000000001</real>
 	<key>particleLifespanVariance</key>
 	<real>0.33000000000000002</real>
 	<key>radialAccelVariance</key>
@@ -85,11 +85,11 @@
 	<key>startColorAlpha</key>
 	<real>1</real>
 	<key>startColorBlue</key>
-	<real>0.23871305584907532</real>
+	<real>0.93494194746017456</real>
 	<key>startColorGreen</key>
-	<real>0.18677717447280884</real>
+	<real>0.91791337728500366</real>
 	<key>startColorRed</key>
-	<real>0.94455534219741821</real>
+	<real>0.42606973648071289</real>
 	<key>startColorVarianceAlpha</key>
 	<real>0.5</real>
 	<key>startColorVarianceBlue</key>
@@ -107,7 +107,7 @@
 	<key>tangentialAcceleration</key>
 	<real>0.0</real>
 	<key>textureFileName</key>
-	<string>MarbleExplode.png</string>
+	<string>MarbleRemove.png</string>
 	<key>textureImageData</key>
 	<string></string>
 	<key>yCoordFlipped</key>

@@ -78,6 +78,11 @@ typedef enum{
  */
 - (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position;
 
+
+/** trigges an effect, overriding the sound if soundName is not equal to nil
+ */
+-(void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString*)soundName;
+
 - (BOOL) playEffect;
 - (CGFloat) soundVolume;
 

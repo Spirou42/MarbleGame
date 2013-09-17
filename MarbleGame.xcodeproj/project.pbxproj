@@ -207,6 +207,10 @@
 		FED9367017C3C0C3007DFA0A /* CMHackScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9366E17C3BEF9007DFA0A /* CMHackScene.m */; };
 		FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 935366EE177E1254009F640B /* Balls.plist */; };
 		FED9FD3517A8156A00ACC97F /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
+		FEDBAFF017E8D486008FB500 /* MarbleRemove.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */; };
+		FEDBAFF117E8D486008FB500 /* MarbleRemove.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */; };
+		FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */; };
+		FEDBAFF317E8D486008FB500 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -715,6 +719,8 @@
 		FED2E8E417A8087B005A16B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FED9366D17C3BEF9007DFA0A /* CMHackScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHackScene.h; sourceTree = "<group>"; };
 		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
+		FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarbleRemove.plist; sourceTree = "<group>"; };
+		FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleRemove.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1177,6 +1183,8 @@
 		FE31853617E7650D0090223B /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */,
+				FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */,
 				93980B2917E78F6F00EFD627 /* MarbleExplode.plist */,
 				93980B2A17E78F6F00EFD627 /* MarbleExplode.png */,
 				93980B2B17E78F6F00EFD627 /* MarbleSpecial.plist */,
@@ -1759,6 +1767,7 @@
 				93980B2F17E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				938150F817E3AA72009A5ABB /* stars-grayscale.png in Resources */,
+				FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */,
 				93B5605E17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
 				9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
@@ -1776,6 +1785,7 @@
 				93B5606217E376C5008E023E /* SmoothJazz-1.mp3 in Resources */,
 				93B5605817E376C5008E023E /* Boing.mp3 in Resources */,
 				935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
+				FEDBAFF017E8D486008FB500 /* MarbleRemove.plist in Resources */,
 				93980B3117E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
@@ -1823,6 +1833,8 @@
 				93B5606117E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
+				FEDBAFF117E8D486008FB500 /* MarbleRemove.plist in Resources */,
+				FEDBAFF317E8D486008FB500 /* MarbleRemove.png in Resources */,
 				93750A7B17B81D560063D613 /* GameUI.plist in Resources */,
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
 				93B5605B17E376C5008E023E /* Klack.mp3 in Resources */,
