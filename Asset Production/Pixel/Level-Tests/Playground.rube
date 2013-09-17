@@ -93,8 +93,8 @@
         "name" : "Bal1",
         "position" : 
         {
-          "x" : -4.156661033630371,
-          "y" : 0.7304000854492188
+          "x" : -4.492483615875244,
+          "y" : 0.3759207725524902
         },
         "type" : "dynamic"
       },
@@ -241,8 +241,8 @@
         "name" : "Ball3",
         "position" : 
         {
-          "x" : 0.9838953018188477,
-          "y" : 4.466445922851562
+          "x" : 4.024950981140137,
+          "y" : -1.839544296264648
         },
         "type" : "dynamic"
       },
@@ -276,15 +276,13 @@
         ],
         "id" : 5,
         "linearVelocity" : 0,
-        "massData-I" : 0.09817477315664291,
-        "massData-mass" : 0.7853981852531433,
         "name" : "Ball4",
         "position" : 
         {
-          "x" : 4.070983886718750,
-          "y" : 2.632717609405518
+          "x" : 5.675466537475586,
+          "y" : 0.5245018005371094
         },
-        "type" : "dynamic"
+        "type" : "static"
       }
     ],
     "metajoint" : 
@@ -293,19 +291,19 @@
       {
         "anchorA" : 
         {
-          "x" : -0.9557838439941406,
-          "y" : -0.05504941940307617
+          "x" : 2.066613197326660,
+          "y" : 0.01957654953002930
         },
         "anchorB" : 
         {
-          "x" : 2.131303787231445,
-          "y" : 0.06586050987243652
+          "x" : 3.754442214965820,
+          "y" : 0.04720401763916016
         },
         "bodyA" : 5,
         "bodyB" : 4,
-        "collideConnected" : false,
+        "collideConnected" : true,
         "enableLimit" : true,
-        "enableMotor" : false,
+        "enableMotor" : true,
         "id" : 3,
         "localAxisA" : 
         {
@@ -313,8 +311,8 @@
           "y" : 1
         },
         "lowerLimit" : -2.324624061584473,
-        "maxMotorForce" : 0,
-        "motorSpeed" : 0,
+        "maxMotorForce" : 500.0,
+        "motorSpeed" : 0.5,
         "name" : "joint0",
         "referenceAngle" : 0,
         "type" : "prismatic",
@@ -328,13 +326,17 @@
         "bodyB" : 3,
         "collideConnected" : false,
         "id" : 5,
-        "maxLength" : 5.788640022277832,
+        "maxLength" : 7,
         "name" : "Rope",
         "type" : "rope"
       },
       
       {
-        "anchorA" : 0,
+        "anchorA" : 
+        {
+          "x" : 0.01865625381469727,
+          "y" : -0.01865673065185547
+        },
         "anchorB" : 0,
         "bodyA" : 1,
         "bodyB" : 3,
@@ -342,7 +344,7 @@
         "dampingRatio" : 0.1,
         "frequency" : 100.0,
         "id" : 6,
-        "length" : 9.100540161132812,
+        "length" : 10,
         "name" : "Distance",
         "type" : "distance"
       }
