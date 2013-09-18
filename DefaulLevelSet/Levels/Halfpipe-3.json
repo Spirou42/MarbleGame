@@ -1415,33 +1415,6 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 2,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -69.0, 69.0, 69.0, -69.0 ],
-				"y" : [ -65.50, -65.50, 65.50, 65.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Sprite"
-				}
-			],
-			"file" : "Star-Wood1.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -69.0, -65.50, 69.0, -65.50, 69.0, 65.50, -69.0, 65.50 ],
-			"name" : "StarL",
-			"opacity" : 0.5,
-			"scale" : 131.0
-		},
-		
-		{
-			"aspectScale" : 1,
 			"body" : 3,
 			"center" : 0,
 			"corners" : 
@@ -1535,6 +1508,33 @@
 			"name" : "PentaOrange",
 			"opacity" : 0.5,
 			"scale" : 93.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 2,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -69.0, 69.0, 69.0, -69.0 ],
+				"y" : [ -65.50, -65.50, 65.50, 65.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Sprite"
+				}
+			],
+			"file" : "Star-Wood1.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -69.0, -65.50, 69.0, -65.50, 69.0, 65.50, -69.0, 65.50 ],
+			"name" : "StarL",
+			"opacity" : 0.5,
+			"scale" : 131.0
 		}
 	],
 	"joint" : 
@@ -1550,12 +1550,12 @@
 			"bodyA" : 2,
 			"bodyB" : 3,
 			"enableLimit" : false,
-			"enableMotor" : false,
+			"enableMotor" : true,
 			"jointSpeed" : 0,
 			"lowerLimit" : 0,
-			"maxMotorTorque" : 0,
-			"motorSpeed" : 0,
-			"name" : "joint1",
+			"maxMotorTorque" : 15000000.0,
+			"motorSpeed" : -0.1745329201221466,
+			"name" : "joint L",
 			"refAngle" : 0,
 			"type" : "revolute",
 			"upperLimit" : 0
@@ -1571,12 +1571,12 @@
 			"bodyA" : 0,
 			"bodyB" : 3,
 			"enableLimit" : false,
-			"enableMotor" : false,
+			"enableMotor" : true,
 			"jointSpeed" : 0,
 			"lowerLimit" : 0,
-			"maxMotorTorque" : 0,
-			"motorSpeed" : 0,
-			"name" : "joint0",
+			"maxMotorTorque" : 15000000.0,
+			"motorSpeed" : 0.1745329201221466,
+			"name" : "joint R",
 			"refAngle" : 0,
 			"type" : "revolute",
 			"upperLimit" : 0
