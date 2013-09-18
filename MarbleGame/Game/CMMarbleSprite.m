@@ -27,7 +27,7 @@
 
 - (void) initializeDefaults
 {
-	self.soundFileName = DEFAULT_MARBLE_KLICK;
+	self.soundName = DEFAULT_MARBLE_KLICK;
 }
 
 + (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
@@ -84,7 +84,7 @@
 	//	[self removeAllChildren];
   [self->setName release];
   self->setName = nil;
-	self.soundFileName = nil;
+	self.soundName = nil;
 	[super dealloc];
 }
 

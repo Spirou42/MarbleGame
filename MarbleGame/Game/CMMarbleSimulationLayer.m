@@ -326,24 +326,24 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	NSString *secondShapeSound = nil;
 	if ([firstMarble conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
 		id<CMObjectSoundProtocol> sobj = (id<CMObjectSoundProtocol>)firstMarble;
-		firstShapeSound = sobj.soundFileName;
+		firstShapeSound = sobj.soundName;
 	}
 	if ([secondMarble conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
 		id<CMObjectSoundProtocol> sobj = (id<CMObjectSoundProtocol>)secondMarble;
-		secondShapeSound = sobj.soundFileName;
+		secondShapeSound = sobj.soundName;
 	}
 	
 	if (!firstShapeSound) {
 		if ([firstMarbleLayer conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
 			id<CMObjectSoundProtocol> sObj = (id<CMObjectSoundProtocol>)firstMarbleLayer;
-			firstShapeSound = sObj.soundFileName;
+			firstShapeSound = sObj.soundName;
 		}
 	}
 	
 	if (!secondShapeSound) {
 		if ([secondMarbleLayer conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
 			id<CMObjectSoundProtocol> sObj = (id<CMObjectSoundProtocol>)secondMarbleLayer;
-			secondShapeSound = sObj.soundFileName;
+			secondShapeSound = sObj.soundName;
 		}
 	}
 	

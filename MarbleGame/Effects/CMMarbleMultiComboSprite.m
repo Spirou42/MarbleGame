@@ -14,7 +14,7 @@
 
 @implementation CMMarbleMultiComboSprite
 
-@synthesize soundFileName = soundFileName_;
+@synthesize soundName = soundName_;
 
 - (void) removeSelf
 {
@@ -64,7 +64,7 @@
 
 - (void) dealloc
 {
-	self.soundFileName=nil;
+	self.soundName=nil;
 	[super dealloc];
 }
 @end

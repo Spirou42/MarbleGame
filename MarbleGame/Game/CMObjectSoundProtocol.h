@@ -11,6 +11,6 @@
 
 @protocol CMObjectSoundProtocol <NSObject>
 
-@property (nonatomic,retain) NSString* soundFileName;
+@property (nonatomic,retain) NSString* soundName;
 
 @end

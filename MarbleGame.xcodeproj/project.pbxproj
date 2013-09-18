@@ -211,6 +211,10 @@
 		FEDBAFF117E8D486008FB500 /* MarbleRemove.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */; };
 		FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */; };
 		FEDBAFF317E8D486008FB500 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */; };
+		FEFC0E8817E9F3A00065D078 /* CMParticleSystemQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFC0E8717E9F3A00065D078 /* CMParticleSystemQuad.m */; };
+		FEFC0E8917E9F3A00065D078 /* CMParticleSystemQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFC0E8717E9F3A00065D078 /* CMParticleSystemQuad.m */; };
+		FEFC0E9A17E9FBA60065D078 /* Gun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFC0E9917E9FBA60065D078 /* Gun.mp3 */; };
+		FEFC0E9B17E9FBA60065D078 /* Gun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEFC0E9917E9FBA60065D078 /* Gun.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -721,6 +725,9 @@
 		FED9366E17C3BEF9007DFA0A /* CMHackScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHackScene.m; sourceTree = "<group>"; };
 		FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarbleRemove.plist; sourceTree = "<group>"; };
 		FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleRemove.png; sourceTree = "<group>"; };
+		FEFC0E8617E9F3A00065D078 /* CMParticleSystemQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMParticleSystemQuad.h; sourceTree = "<group>"; };
+		FEFC0E8717E9F3A00065D078 /* CMParticleSystemQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMParticleSystemQuad.m; sourceTree = "<group>"; };
+		FEFC0E9917E9FBA60065D078 /* Gun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gun.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -964,6 +971,8 @@
 		9353D46117B079CC00D0FD25 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FEFC0E8617E9F3A00065D078 /* CMParticleSystemQuad.h */,
+				FEFC0E8717E9F3A00065D078 /* CMParticleSystemQuad.m */,
 				9353D46217B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.h */,
 				9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */,
 				93EFB6FB17E4BCD100B3B186 /* CMPhysicsSprite.h */,
@@ -1092,6 +1101,7 @@
 		93CC6CB517C15C0D00F62743 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				FEFC0E9917E9FBA60065D078 /* Gun.mp3 */,
 				938150E917E382BB009A5ABB /* Marble-Multi.mp3 */,
 				93B5605217E376C5008E023E /* Boing.mp3 */,
 				93B5605317E376C5008E023E /* Klack.mp3 */,
@@ -1760,6 +1770,7 @@
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
+				FEFC0E9A17E9FBA60065D078 /* Gun.mp3 in Resources */,
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				93B5605A17E376C5008E023E /* Klack.mp3 in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
@@ -1849,6 +1860,7 @@
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
+				FEFC0E9B17E9FBA60065D078 /* Gun.mp3 in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
@@ -1874,6 +1886,7 @@
 				93EFB6FD17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */,
 				93536646177DFB52009F640B /* CMMarbleSimulationLayer.m in Sources */,
 				93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */,
+				FEFC0E8817E9F3A00065D078 /* CMParticleSystemQuad.m in Sources */,
 				93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */,
 				93EB27F5177F70A0001B7FBB /* CMMarbleSettingsScene.m in Sources */,
 				93F35A4317C2A1C500B9B4E9 /* CMRubeFixture.m in Sources */,
@@ -1930,6 +1943,7 @@
 				93EFB6FE17E4BCD100B3B186 /* CMPhysicsSprite.m in Sources */,
 				FED2E7E317A7E48B005A16B3 /* main.m in Sources */,
 				FE28CD3A17D904F400C2F880 /* GlossMapShader.vsh in Sources */,
+				FEFC0E8917E9F3A00065D078 /* CMParticleSystemQuad.m in Sources */,
 				FED2E87117A7FD83005A16B3 /* CMMarbleLevelSetScene.m in Sources */,
 				FED2E8E317A8071E005A16B3 /* CCControlPopupButton.m in Sources */,
 				FED2E87617A7FD92005A16B3 /* CMMarbleCollisionCollector.m in Sources */,

@@ -30,11 +30,13 @@
 #import "AppDelegate.h"
 #import "CMMarblePlayer.h"
 #import "CMMPSettings.h"
+#import "CMParticleSystemQuad.h"
 
 
 @implementation CMMarblePlayScene
 
 @synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits;
+@synthesize effectsNode = _effectsNode;
 @synthesize  currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay;
 @synthesize  comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer;
 @synthesize  marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite;
@@ -81,7 +83,7 @@
 		self.scoreLabel = defaultGameLabel(@"0");
 		self.timeLabel = defaultGameLabel(@"00:00");
 		self.effectQueue = [NSMutableArray array];
-		self.marbleSlot = [[[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28)]autorelease];
+		self.marbleSlot = [[[CMMarbleSlot alloc] initWithSize:CGSizeMake(284, 28) andDelegate:self]autorelease];
 		self.removedMarbleQueue = [NSMutableArray array];
     self.overlaySprite = defaultLevelOverlay();
     self.overlaySprite.anchorPoint=ccp(0.0, 0.0);
@@ -465,7 +467,7 @@
 		return;
 	}
 	[self.scoreDelegate scoreWithMarbles:removedMarbles inLevel:self.currentStatistics];
-	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_REMOVE];
+//	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_REMOVE];
 	
 	[self.simulationLayer removeCollisionSets:removedMarbles];
 	
@@ -668,15 +670,17 @@
 	static NSTimeInterval lastRougeMarbleCheck;
 	lastLabelUpdate+= dt;
 	lastRougeMarbleCheck += dt;
+  if (lastLabelUpdate>.1) {
+    	[self processEffectQueue];
+  }
 	if (lastLabelUpdate>.25) {
 		lastLabelUpdate=0.0;
 		[self updateScoreLabel];
 		[self updateTimeLabel];
-		[self processEffectQueue];
+
 		if (self.removedMarbleQueue.count) {
 			NSInteger ballIndex = [[self.removedMarbleQueue objectAtIndex:0]integerValue];
 			[self.marbleSlot addMarbleWithID:ballIndex];
-			
 			[self.removedMarbleQueue removeObjectAtIndex:0];
 		}
 	}
@@ -750,16 +754,60 @@
 																										 repeats:NO];
 }
 
+- (void) fireEffect:(CCNode*) someEffectNode
+{
+  [self.effectsNode addChild:someEffectNode z:20];
+
+  if ([someEffectNode conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
+    CCNode<CMObjectSoundProtocol>*p = (CCNode<CMObjectSoundProtocol>*)someEffectNode;
+    if (p.soundName) {
+          [[SimpleAudioEngine sharedEngine]playEffect:p.soundName];
+    }
+  }
+
+}
+
+
 - (void) processEffectQueue
 {
 	if (self.effectQueue.count) {
-		CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-		[self addChild:k z:20];
-		[self.effectQueue removeObject:k];
-
-		if ([k conformsToProtocol:@protocol(CMObjectSoundProtocol)] &&   k.soundFileName) {
-			[[SimpleAudioEngine sharedEngine]playEffect:k.soundFileName];
-		}
+    NSMutableArray *effectsToFire = [NSMutableArray array];
+    if (self.effectQueue.count==1) {
+      CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+      [self fireEffect:k];
+      [self.effectQueue removeObject:k];
+    }else{
+      for (CCNode* currentEffect in self.effectQueue) {
+        // check if the position does not match as close to other triggered effects
+        if (!effectsToFire.count) {
+          [effectsToFire addObject:currentEffect];
+        }else{
+          BOOL canFire = YES;
+          for (CCNode* otherEffect in self.effectsNode.children) {
+            if (![otherEffect isKindOfClass:[CCParticleSystem class]]) {
+              CGPoint cPos = currentEffect.position;
+              CGPoint oPos = otherEffect.position;
+              CGPoint dPos=cpvsub(cPos, oPos);
+              CGFloat d = cpvdot(dPos,dPos); // square of the distance
+              if (d<EFFECT_CLIP_DISTANCE_SQUARE) {
+                canFire = NO;
+                break;
+              }
+            }else{
+              canFire = YES;
+            }
+          }
+          if (canFire) {
+            [effectsToFire addObject:currentEffect];
+          }
+        }
+      }
+      // here we have filtered all of our effects by the distance to each other
+      for (CCNode* effect in effectsToFire) {
+        [self fireEffect:effect];
+      }
+      [self.effectQueue removeObjectsInArray:effectsToFire];
+    }
 	}
 }
 
@@ -768,7 +816,8 @@
 	switch (effect) {
 		case kCMMarbleEffect_Remove:
 		{
-			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_REMOVE_EFFECT];
+			CMParticleSystemQuad *particle = [CMParticleSystemQuad particleWithFile:MARBLE_REMOVE_EFFECT];
+      particle.soundName = DEFAULT_MARBLE_REMOVE;
 			particle.position = position;
 			particle.autoRemoveOnFinish = YES;
 			[self.effectQueue addObject:particle];
@@ -785,7 +834,7 @@
 		case kCMMarbleEffect_ComboHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
-			sprite.soundFileName=DEFAULT_MARBLE_COMBO;
+			sprite.soundName=DEFAULT_MARBLE_COMBO;
 			sprite.position = position;
 			[self.effectQueue addObject:sprite];
 		}
@@ -794,7 +843,7 @@
 		case kCMMarbleEffect_MultiHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
-			sprite.soundFileName=DEFAULT_MARBLE_MULTI;
+			sprite.soundName=DEFAULT_MARBLE_MULTI;
 			sprite.position = position;
 			[self.effectQueue addObject:sprite];
 		}
@@ -833,6 +882,11 @@
 			self.remarkLabel = defaultGameLabel(@"Lucky One");
 			[self effectRemoveTimer];
 		}
+    case kCMMarbleEffect_ColorRemove:
+    {
+      [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_COLOR_REMOVE];
+    }
+    break;
 		default:
 			break;
 	}

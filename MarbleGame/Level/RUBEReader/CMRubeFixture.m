@@ -195,14 +195,14 @@ soundName = soundName_;
     case kFixtureCircle:
     {
       CMSoundCircleShape* circleShape =[CMSoundCircleShape circleWithBody:nil radius:self.circleRadius offset:self.circleCenter];
-			circleShape.soundFileName = self.soundName;
+			circleShape.soundName = self.soundName;
       [result addObject:circleShape];
     }
       break;
     case kFixturePolygon:
     {
       CMSoundPolyShape* polyShape = [CMSoundPolyShape polyWithBody:nil count:(int)self.vertices.count verts:self.vBuffer offset:CGPointZero];
-			polyShape.soundFileName = self.soundName;
+			polyShape.soundName = self.soundName;
       [result addObject:polyShape];
     }
       break;
@@ -217,7 +217,7 @@ soundName = soundName_;
         CGPoint b = [[self.vertices objectAtIndex:i+1] CGPointValue];
 #endif
         CMSoundSegmentShape *shape = [CMSoundSegmentShape segmentWithBody:nil from:a to:b radius:1.0];
-				shape.soundFileName = self.soundName;
+				shape.soundName = self.soundName;
         [self.cachedChipmunkObjects addObject:shape];
       }
     }
