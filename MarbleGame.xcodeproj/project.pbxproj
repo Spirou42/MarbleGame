@@ -95,6 +95,16 @@
 		93980B3417E78F6F00EFD627 /* MarbleSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = 93980B2C17E78F6F00EFD627 /* MarbleSpecial.png */; };
 		93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */; };
 		93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */; };
+		93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */; };
+		93A5C6AC17EA4DEA0030D22E /* Pentagon-ConcreteBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */; };
+		93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A417EA4DEA0030D22E /* Pentagon-ConcreteBrown.png */; };
+		93A5C6AE17EA4DEA0030D22E /* Pentagon-Orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A517EA4DEA0030D22E /* Pentagon-Orange.png */; };
+		93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A617EA4DEA0030D22E /* Pentagon-Wood1.png */; };
+		93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A717EA4DEA0030D22E /* Pentagon-Wood2.png */; };
+		93A5C6B117EA4DEA0030D22E /* Pentagon-Wood3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A817EA4DEA0030D22E /* Pentagon-Wood3.png */; };
+		93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */; };
+		93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */; };
+		93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
 		93B5605817E376C5008E023E /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605217E376C5008E023E /* Boing.mp3 */; };
 		93B5605917E376C5008E023E /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605217E376C5008E023E /* Boing.mp3 */; };
@@ -577,6 +587,16 @@
 		93980B2C17E78F6F00EFD627 /* MarbleSpecial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleSpecial.png; sourceTree = "<group>"; };
 		93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DoubleHalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DoubleHalfpipe.json; sourceTree = "<group>"; };
+		93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Blue.png"; sourceTree = "<group>"; };
+		93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-ConcreteBlue.png"; sourceTree = "<group>"; };
+		93A5C6A417EA4DEA0030D22E /* Pentagon-ConcreteBrown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-ConcreteBrown.png"; sourceTree = "<group>"; };
+		93A5C6A517EA4DEA0030D22E /* Pentagon-Orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Orange.png"; sourceTree = "<group>"; };
+		93A5C6A617EA4DEA0030D22E /* Pentagon-Wood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Wood1.png"; sourceTree = "<group>"; };
+		93A5C6A717EA4DEA0030D22E /* Pentagon-Wood2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Wood2.png"; sourceTree = "<group>"; };
+		93A5C6A817EA4DEA0030D22E /* Pentagon-Wood3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Wood3.png"; sourceTree = "<group>"; };
+		93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-Wood1.png"; sourceTree = "<group>"; };
+		93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-2.json"; sourceTree = "<group>"; };
+		93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-3.json"; sourceTree = "<group>"; };
 		93B5605217E376C5008E023E /* Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boing.mp3; sourceTree = "<group>"; };
 		93B5605317E376C5008E023E /* Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klack.mp3; sourceTree = "<group>"; };
 		93B5605417E376C5008E023E /* Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klick.mp3; sourceTree = "<group>"; };
@@ -1084,6 +1104,37 @@
 			name = "2. Double Halfpipe";
 			sourceTree = "<group>";
 		};
+		93A5C69F17EA4D980030D22E /* 4. Halfpipe 2 */ = {
+			isa = PBXGroup;
+			children = (
+				93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */,
+			);
+			name = "4. Halfpipe 2";
+			sourceTree = "<group>";
+		};
+		93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */ = {
+			isa = PBXGroup;
+			children = (
+				93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */,
+			);
+			name = "5. Halfpipe 3";
+			sourceTree = "<group>";
+		};
+		93A5C6A117EA4DC90030D22E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */,
+				93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */,
+				93A5C6A417EA4DEA0030D22E /* Pentagon-ConcreteBrown.png */,
+				93A5C6A517EA4DEA0030D22E /* Pentagon-Orange.png */,
+				93A5C6A617EA4DEA0030D22E /* Pentagon-Wood1.png */,
+				93A5C6A717EA4DEA0030D22E /* Pentagon-Wood2.png */,
+				93A5C6A817EA4DEA0030D22E /* Pentagon-Wood3.png */,
+				93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		93AD6C7517907AA3001DADD9 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -1330,10 +1381,13 @@
 		FEBABB4517E0B6B700E85ABD /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				93A5C6A117EA4DC90030D22E /* Shared */,
 				FEBABB6617E0B81500E85ABD /* -1  RubeTest */,
 				9325651F17E665FB0012C68F /* 1. Halfpipe */,
 				93A5C68B17EA37980030D22E /* 2. Double Halfpipe */,
 				FEBABB6217E0B7CC00E85ABD /* 3. Boxes */,
+				93A5C69F17EA4D980030D22E /* 4. Halfpipe 2 */,
+				93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */,
 				FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */,
 				FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */,
 				FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */,
@@ -1823,9 +1877,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
+				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
@@ -1834,14 +1890,22 @@
 				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */,
 				FEBABB6F17E0B93F00E85ABD /* Level2-Background.png in Resources */,
 				FEBABB7017E0B93F00E85ABD /* Level2-Overlay.png in Resources */,
+				93A5C6B117EA4DEA0030D22E /* Pentagon-Wood3.png in Resources */,
+				93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */,
+				93A5C6AC17EA4DEA0030D22E /* Pentagon-ConcreteBlue.png in Resources */,
 				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
 				9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */,
+				93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */,
+				93A5C6AE17EA4DEA0030D22E /* Pentagon-Orange.png in Resources */,
 				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */,
 				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */,
 				9325653217E6662C0012C68F /* Halfpipe.json in Resources */,
 				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */,
+				93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */,
+				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
 				93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */,
 				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */,
+				93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
