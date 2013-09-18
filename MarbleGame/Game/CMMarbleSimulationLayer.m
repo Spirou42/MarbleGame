@@ -532,6 +532,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
   NSString *marbleSet = [self.gameDelegate marbleSetName];
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
+	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
 	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
 	[self.space add:ms];
@@ -561,7 +562,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	NSLog(@"MarbleSet: %@",marbleSet);
   
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-
+	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
   if (!marbleIndex) {
     marbleIndex=1;
   }
@@ -721,6 +722,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
   NSString *marbleSet = [self.gameDelegate marbleSetName];
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
+	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
 	[self.marbleBatchNode addChild:ms];
 	[ms createOverlayTextureRect];
 	[self.space add:ms];

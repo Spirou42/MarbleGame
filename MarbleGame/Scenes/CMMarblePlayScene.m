@@ -91,6 +91,11 @@
 #if DEBUG_ALPHA_ON
 		self.overlaySprite.opacity = 128;
 #endif
+
+    self.effectsNode = [CCNode node];
+    [self addChild:self.effectsNode];
+
+
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
 #else
@@ -686,7 +691,7 @@
 	}
 	if (lastRougeMarbleCheck>1.0) {
 		for (CMMarbleSprite *marble in self.simulationLayer.simulatedMarbles) {
-			if (!CGRectContainsPoint(CGRectMake(0, 0, 1024, 768), marble.position)) {
+			if (!CGRectContainsPoint(CGRectMake(0, 0, 1024, 800), marble.position)) {
 				NSLog(@"Marble Outside");
 				marble.position = MARBLE_RESPAWN_POINT;
 				marble.chipmunkBody.vel = CGPointMake(0, 0);
