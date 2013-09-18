@@ -42,20 +42,6 @@
   [
     
     {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "world",
       "displayName" : "marbleCount",
       "name" : "marbleCount",
@@ -85,6 +71,20 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     }
   ],
@@ -135,6 +135,35 @@
             ],
             "density" : 1,
             "friction" : 0.2,
+            "id" : 1,
+            "name" : "BorderBottom",
+            "restitution" : 0.2,
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 15.0,
+                "type" : "line"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ -682.4851074218750, 762.867675781250 ],
+              "y" : [ -694.2868652343750, -693.6688232421875 ]
+            }
+          },
+          
+          {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
+            "density" : 1,
+            "friction" : 0.2,
             "id" : 3,
             "name" : "BorderTop",
             "restitution" : 0.2,
@@ -148,8 +177,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ -520.3137817382812, 520.0577392578125 ],
-              "y" : [ 399.0054626464844, 399.00292968750 ]
+              "x" : [ -755.7720336914062, 757.0450439453125 ],
+              "y" : [ 510.6186218261719, 510.6160888671875 ]
             }
           },
           
@@ -200,14 +229,14 @@
             [
               
               {
-                "radius" : 15.0,
+                "radius" : 60.0,
                 "type" : "line"
               }
             ],
             "vertices" : 
             {
-              "x" : [ -527.0164794921875, -526.9836425781250 ],
-              "y" : [ 391.4774780273438, -392.564941406250 ]
+              "x" : [ -572.7020874023438, -572.6692504882812 ],
+              "y" : [ 599.4146118164062, -802.3234252929688 ]
             }
           },
           
@@ -229,14 +258,14 @@
             [
               
               {
-                "radius" : 15.0,
+                "radius" : 60.0,
                 "type" : "line"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 527.0310668945312, 527.063964843750 ],
-              "y" : [ 391.7410583496094, -392.1553649902344 ]
+              "x" : [ 572.159667968750, 572.1925659179688 ],
+              "y" : [ 611.9097900390625, -760.6322021484375 ]
             }
           }
         ],
@@ -1155,8 +1184,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 286.0813598632812,
-          "y" : 239.2645263671875
+          "x" : 287.5271911621094,
+          "y" : 238.4473114013672
         },
         "type" : "dynamic"
       }
