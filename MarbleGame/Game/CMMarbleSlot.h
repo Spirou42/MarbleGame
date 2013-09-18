@@ -9,10 +9,14 @@
 
 #import "CCNode.h"
 
+@protocol CMMarbleGameDelegate;
+
 @interface CMMarbleSlot : CCNode
 
-- (id) initWithSize:(CGSize) size;
+@property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
 
+- (id) initWithSize:(CGSize) size;
+- (id) initWithSize:(CGSize)size andDelegate:(id<CMMarbleGameDelegate>)delegate;
 - (void) addMarbleWithID:(NSUInteger) marbleID;
 - (void) clearMarbles;
 @end

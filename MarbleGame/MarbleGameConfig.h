@@ -58,8 +58,8 @@
 #define MARBLE_SPEZIAL_TRICK			(5.0f)
 #define MARBLE_SPEZIAL_LUCKY			(6.0f)
 
-
-
+//////////////////////////////////////////////////
+#pragma mark  - EFFECTS
 
 #define DEFAULT_COMBO_EFFECT_FILE @"combo.png"
 #define DEFAULT_MULTI_EFFECT_FILE @"multi.png"
@@ -75,6 +75,9 @@
 #define DEFAULT_COMBO_SCALE_TARGET (.1f)
 
 #define DEFAULT_MARBLE_SLOT_MOVE_TIME (1.0f)
+
+#define EFFECT_CLIP_DISTANCE (50.0)
+#define EFFECT_CLIP_DISTANCE_SQUARE (EFFECT_CLIP_DISTANCE * EFFECT_CLIP_DISTANCE)
 
 //////////////////////////////////////////////////
 #pragma mark -
@@ -125,7 +128,7 @@
 #define DEFAULT_MARBLE_REMOVE								@"Marble-Remove.mp3"
 #define DEFAULT_MARBLE_COMBO								@"Marble-Combo.mp3"
 #define DEFAULT_MARBLE_MULTI								@"Marble-Multi.mp3"
-
+#define DEFAULT_MARBLE_COLOR_REMOVE         @"Gun.mp3"
 //////////////////////////////////////////////////
 #pragma mark - Fonts
 

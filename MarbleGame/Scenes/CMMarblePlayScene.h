@@ -21,6 +21,8 @@
   CCControlButton*												_menuButton;
   CCControlButton*												_toggleSimulationButton;
 	NSInteger																_normalHits,_comboHits,_multiHits;
+  CCNode*                                 _effectsNode;                         // nodes holding current effects
+
 	CMMPLevelStat*													_currentStatistics;
   CCNode*																	_statisticsOverlay;
 	NSTimeInterval													_lastDisplayTime;
@@ -46,6 +48,7 @@
 }
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
 @property (nonatomic, assign) NSInteger normalHits, comboHits, multiHits;
+@property (nonatomic, retain) CCNode* effectsNode;
 @property (nonatomic, retain) CMMPLevelStat *currentStatistics;
 @property (nonatomic, retain) CCNode* statisticsOverlay;
 @property (nonatomic, retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;

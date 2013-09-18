@@ -14,7 +14,7 @@
 
 @implementation CMPhysicsSprite
 @synthesize assignedShapes = assignedShapes_;
-@synthesize soundFileName = soundFileName_;
+@synthesize soundName = soundName_;
 @dynamic shapes;
 
 - (void) initializeDefaults

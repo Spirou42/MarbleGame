@@ -9,11 +9,11 @@
 #import "CMSoundShape.h"
 
 @implementation CMSoundCircleShape
-@synthesize soundFileName=soundFileName_;
+@synthesize soundName=soundName_;
 
 - (void) initializeDefaults
 {
-	self.soundFileName = DEFAULT_WALL_KLICK;
+	self.soundName = DEFAULT_WALL_KLICK;
 }
 
 - (id)initWithBody:(ChipmunkBody *)body radius:(cpFloat)radius offset:(cpVect)offset;
@@ -27,7 +27,7 @@
 
 - (void) dealloc
 {
-	self.soundFileName = nil;
+	self.soundName = nil;
 	[super dealloc];
 }
 @end
@@ -35,11 +35,11 @@
 
 
 @implementation CMSoundSegmentShape
-@synthesize soundFileName=soundFileName_;
+@synthesize soundName=soundName_;
 
 - (void) initializeDefaults
 {
-	self.soundFileName = DEFAULT_WALL_KLICK;
+	self.soundName = DEFAULT_WALL_KLICK;
 }
 
 - (id)initWithBody:(ChipmunkBody *)body from:(cpVect)a to:(cpVect)b radius:(cpFloat)radius;
@@ -53,18 +53,18 @@
 
 - (void) dealloc
 {
-	self.soundFileName = nil;
+	self.soundName = nil;
 	[super dealloc];
 }
 @end
 
 
 @implementation CMSoundPolyShape
-@synthesize soundFileName=soundFileName_;
+@synthesize soundName=soundName_;
 
 - (void) initializeDefaults
 {
-	self.soundFileName = DEFAULT_WALL_KLICK;
+	self.soundName = DEFAULT_WALL_KLICK;
 }
 
 - (id)initWithBody:(ChipmunkBody *)body count:(int)count verts:(cpVect *)verts offset:(cpVect)offset;
@@ -78,7 +78,7 @@
 
 - (void) dealloc
 {
-	self.soundFileName = nil;
+	self.soundName = nil;
 	[super dealloc];
 }
 @end

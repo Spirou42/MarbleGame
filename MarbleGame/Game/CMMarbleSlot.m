@@ -9,16 +9,24 @@
 #import "CMMarbleSlot.h"
 #import "CMMarbleSprite.h"
 #import "cocos2d.h"
+#import "CMMarbleGameDelegate.h"
 
 @implementation CMMarbleSlot
+@synthesize gameDelegate = gameDelegate_;
 
-- (id) initWithSize:(CGSize)size
+- (id) initWithSize:(CGSize)size andDelegate:(id<CMMarbleGameDelegate>)delegate
 {
 	self = [super init];
 	if (self) {
 		self.contentSize = size;
+    self.gameDelegate = delegate;
 	}
 	return self;
+}
+
+- (id) initWithSize:(CGSize)size
+{
+  return [self initWithSize:size andDelegate:nil];
 }
 
 - (void) addMarbleWithID:(NSUInteger)marbleID
@@ -46,6 +54,7 @@
 	}
 	id moveAction = [CCMoveTo actionWithDuration:DEFAULT_MARBLE_SLOT_MOVE_TIME-(difTime) position:endPos];
 	[marbleSprite runAction:moveAction];
+  [self.gameDelegate triggerEffect:kCMMarbleEffect_ColorRemove atPosition:CGPointMake(0, 0)];
 }
 
 - (void) clearMarbles
