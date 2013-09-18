@@ -49,6 +49,13 @@
     },
     
     {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -75,13 +82,6 @@
     },
     
     {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "world",
       "displayName" : "marbleCount",
       "name" : "marbleCount",
@@ -103,8 +103,11 @@
     ],
     "exportOptions" : 
     {
+      "compactCommonFloats" : true,
       "saveFullPathForImages" : false,
-      "useHumanReadableFloats" : true
+      "saveImagePathsRelativeToRUBEFile" : false,
+      "useHumanReadableFloats" : true,
+      "usePrettyPrint" : true
     },
     "gravity" : 
     {
@@ -131,10 +134,10 @@
               }
             ],
             "density" : 1,
-            "friction" : 0.6000000238418579,
+            "friction" : 0.6,
             "id" : 1,
             "name" : "Halfpipe",
-            "restitution" : 0.50,
+            "restitution" : 0.5,
             "shapes" : 
             [
               
@@ -245,8 +248,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ -520.3137817382812, 520.0577392578125 ],
-              "y" : [ 399.0054626464844, 399.00292968750 ]
+              "x" : [ -682.4713134765625, 670.2910156250 ],
+              "y" : [ 566.7296142578125, 566.727050781250 ]
             }
           },
           
@@ -274,8 +277,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ -509.7138061523438, 530.467285156250 ],
-              "y" : [ -349.0499572753906, -348.4319458007812 ]
+              "x" : [ -685.3401489257812, 702.5866699218750 ],
+              "y" : [ -549.2366943359375, -548.6187133789062 ]
             }
           },
           
@@ -297,14 +300,14 @@
             [
               
               {
-                "radius" : 15.0,
+                "radius" : 120.0,
                 "type" : "line"
               }
             ],
             "vertices" : 
             {
-              "x" : [ -527.0164794921875, -526.9836425781250 ],
-              "y" : [ 391.4774780273438, -392.564941406250 ]
+              "x" : [ -632.1019897460938, -632.0691528320312 ],
+              "y" : [ 631.3408813476562, -630.6248168945312 ]
             }
           },
           
@@ -326,14 +329,14 @@
             [
               
               {
-                "radius" : 15.0,
+                "radius" : 120.0,
                 "type" : "line"
               }
             ],
             "vertices" : 
             {
-              "x" : [ 527.0310668945312, 527.063964843750 ],
-              "y" : [ 391.7410583496094, -392.1553649902344 ]
+              "x" : [ 632.5593872070312, 632.592285156250 ],
+              "y" : [ 626.1939697265625, -595.9490966796875 ]
             }
           }
         ],
@@ -352,6 +355,7 @@
     [
       
       {
+        "aspectScale" : 1,
         "body" : 1,
         "center" : 0,
         "customProperties" : 
