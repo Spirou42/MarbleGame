@@ -68,7 +68,7 @@
     },
     
     {
-      "class" : "body",
+      "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -82,7 +82,7 @@
     },
     
     {
-      "class" : "fixture",
+      "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -405,7 +405,7 @@
         "position" : 
         {
           "x" : 257.4147338867188,
-          "y" : 389.8529968261719
+          "y" : 529.9754028320312
         },
         "type" : "static"
       },
@@ -524,7 +524,7 @@
         "position" : 
         {
           "x" : 768.4042968750,
-          "y" : 389.8183593750
+          "y" : 529.9407958984375
         },
         "type" : "static"
       }
