@@ -8,16 +8,25 @@
 
 #import "CMMarbleMultiComboSprite.h"
 #import "CMLiquidAction.h"
+#import "CMParticleSystemQuad.h"
 
 #define TIME_DIF(swings,fullTime) (fullTime/(swings*2.0))
 #define MOVES 2
 
+@interface CMMarbleMultiComboSprite ()
+@property (nonatomic,assign) CMParticleSystemQuad* particleSystem;
+@property (nonatomic, assign) CGPoint originalPosVar;
+@end
+
+
+
 @implementation CMMarbleMultiComboSprite
 
-@synthesize soundName = soundName_;
+@synthesize soundName = soundName_, gameDelegate=gameDelegate_,originalPosVar=originalPosVar_, offset=offset_;
 
 - (void) removeSelf
 {
+	[self.gameDelegate removeEffect:self.particleSystem];
 	[self removeFromParent];
 }
 
@@ -33,6 +42,7 @@
 	targetPosition.y +=300;
 	id actionMove = [CCMoveTo actionWithDuration:DEFAULT_COMBO_MOVE_DURATION position:targetPosition];
 	id actionScale = [CCScaleTo actionWithDuration:DEFAULT_COMBO_SCALE_DURATION scale:DEFAULT_COMBO_SCALE_TARGET];
+	id actionRotate = [CCRotateBy actionWithDuration:DEFAULT_COMBO_SCALE_DURATION angle:360*1];
 	
 	id actionSkewStart = [CCEaseSineOut actionWithAction:[CCSkewBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 skewX:+20 skewY:0]];
 	id actionSkewMiddle = [CCEaseSineInOut actionWithAction:[CCSkewBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION) skewX:-40 skewY:0]];
@@ -44,24 +54,60 @@
 	id actionDriftEnd = [CCEaseSineIn actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 position:CGPointMake(l.width/6, 0)]];
 	id driftAction = [CCRepeat actionWithAction:[CCSequence actions:actionDriftStart, actionDriftMiddle,actionDriftEnd, nil] times:MOVES];
 	
-	id allActions = [CCSpawn actions:actionMove, actionScale, driftAction,skewAction,nil];
+	id allActions = [CCSpawn actions:actionMove, actionScale,driftAction,skewAction/*,actionRotate*/,nil];
 	id callAction = [CCCallFunc actionWithTarget:self selector:@selector(removeSelf)];
 
 	[self runAction:[CCSequence actions:allActions,callAction, nil]];
 	
-	CCParticleSystem *emitter = [CCParticleSystemQuad particleWithFile:MARBLE_SPEZIAL_EFFECT];
-//  emitter = 	[CCParticleSun node];
+	CMParticleSystemQuad *emitter = [CMParticleSystemQuad particleWithFile:MARBLE_SPEZIAL_EFFECT];
 	emitter.posVar=CGPointMake(l.width/2.0,0);
-	emitter.position = CGPointMake(l.width/2.0,38);
-//	ccBlendFunc p = emitter.blendFunc;
-//	p.src = GL_SRC_ALPHA;
-//	emitter.blendFunc = p;
-	//	NSLog(@"%d %d",emitter.blendFunc.src,emitter.blendFunc.dst);
-	[self addChild:emitter z:1];
-//	emitter.texture = [[CCTextureCache sharedTextureCache] addImage: @"stars-grayscale.png"];
+	self.originalPosVar = emitter.posVar;
+	self.particleSystem = emitter;
+	self.offset = CGPointMake(0, -20);
+	CGPoint k = cpvadd(self.position, self.offset);
 
+	emitter.position =k ;
+	
+	[self.gameDelegate addEffect:emitter];
+	
+//	[self addChild:emitter z:1];
 }
 
+- (void) setPosition:(CGPoint)position
+{
+	[super setPosition:position];
+	CGPoint v = self.offset;
+	v.x *= self.scaleX;
+	v.y *= self.scaleY;
+	CGPoint k = cpvadd(self.position, v);
+
+	self.particleSystem.position = k;
+}
+
+//- (void) setRotation:(float)rotation
+//{
+//	[super setRotation:rotation];
+//	self.particleSystem.rotation = rotation;
+//}
+//-(void) setScale:(float)scale
+//{
+//	[super setScale:scale];
+//	self.particleSystem.scale = scale;
+//}
+- (void) setScaleX:(float)scaleX
+{
+	[super setScaleX:scaleX];
+	CGPoint pv = self.particleSystem.posVar;
+	pv.x = self.originalPosVar.x * scaleX;
+	self.particleSystem.posVar = pv;
+}
+//
+//- (void) setScaleY:(float)scaleY
+//{
+//	[super setScaleY:scaleY];
+//	self.particleSystem.scaleY = scaleY;
+//}
+//
 - (void) dealloc
 {
 	self.soundName=nil;

@@ -65,7 +65,7 @@
 }
 - (NSString*) currentScoreString
 {
-	NSString *result = [NSString stringWithFormat:@"%010ld",(long)self.currentStatistics.score];
+	NSString *result = [NSString stringWithFormat:@"%ld",(long)self.currentStatistics.score];
 	return result;
 }
 
@@ -777,11 +777,11 @@
 {
 	if (self.effectQueue.count) {
     NSMutableArray *effectsToFire = [NSMutableArray array];
-    if (self.effectQueue.count==1) {
-      CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
-      [self fireEffect:k];
-      [self.effectQueue removeObject:k];
-    }else{
+//    if (self.effectQueue.count==1) {
+//      CMMarbleMultiComboSprite *k = [self.effectQueue objectAtIndex:0];
+//      [self fireEffect:k];
+//      [self.effectQueue removeObject:k];
+//    }else{
       for (CCNode* currentEffect in self.effectQueue) {
         // check if the position does not match as close to other triggered effects
         if (!effectsToFire.count) {
@@ -812,7 +812,7 @@
         [self fireEffect:effect];
       }
       [self.effectQueue removeObjectsInArray:effectsToFire];
-    }
+//    }
 	}
 }
 
@@ -854,6 +854,7 @@
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_COMBO_EFFECT_FILE];
 			sprite.soundName=DEFAULT_MARBLE_COMBO;
 			sprite.position = position;
+			sprite.gameDelegate = self;
 			[self.effectQueue addObject:sprite];
 		}
 			break;
@@ -861,6 +862,7 @@
 		case kCMMarbleEffect_MultiHit:
 		{
 			CMMarbleMultiComboSprite * sprite = [CMMarbleMultiComboSprite spriteWithFile:DEFAULT_MULTI_EFFECT_FILE];
+			sprite.gameDelegate = self;
 			sprite.soundName=DEFAULT_MARBLE_MULTI;
 			sprite.position = position;
 			[self.effectQueue addObject:sprite];

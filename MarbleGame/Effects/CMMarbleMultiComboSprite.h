@@ -8,7 +8,10 @@
 
 #import "cocos2d.h"
 #import "CMObjectSoundProtocol.h"
+#import "CMMarbleGameDelegate.h"
+
 @interface CMMarbleMultiComboSprite : CCSprite <CMObjectSoundProtocol>
 
-
+@property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
+@property (nonatomic, assign) CGPoint offset;
 @end

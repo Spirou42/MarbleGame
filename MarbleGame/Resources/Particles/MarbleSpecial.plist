@@ -9,13 +9,13 @@
 	<key>blendFuncDestination</key>
 	<integer>1</integer>
 	<key>blendFuncSource</key>
-	<integer>771</integer>
+	<integer>770</integer>
 	<key>configName</key>
 	<string>MarbleSpecial</string>
 	<key>duration</key>
 	<integer>-1</integer>
 	<key>emitterType</key>
-	<real>0.0</real>
+	<integer>0</integer>
 	<key>finishColorAlpha</key>
 	<real>0.0</real>
 	<key>finishColorBlue</key>
@@ -39,7 +39,7 @@
 	<key>gravityx</key>
 	<real>0.0</real>
 	<key>gravityy</key>
-	<real>-10</real>
+	<real>-20</real>
 	<key>maxParticles</key>
 	<real>2000</real>
 	<key>maxRadius</key>
@@ -83,13 +83,13 @@
 	<key>speedVariance</key>
 	<real>30</real>
 	<key>startColorAlpha</key>
-	<real>0.62000000476837158</real>
+	<real>0.5</real>
 	<key>startColorBlue</key>
-	<real>0.083055667579174042</real>
+	<real>0.98580867052078247</real>
 	<key>startColorGreen</key>
-	<real>0.60699880123138428</real>
+	<real>0.99333697557449341</real>
 	<key>startColorRed</key>
-	<real>1</real>
+	<real>0.54447203874588013</real>
 	<key>startColorVarianceAlpha</key>
 	<real>0.0</real>
 	<key>startColorVarianceBlue</key>
