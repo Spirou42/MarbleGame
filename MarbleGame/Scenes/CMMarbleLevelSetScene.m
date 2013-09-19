@@ -27,6 +27,11 @@
 	if (self) {
 		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
+		menuLayer.defaultButtonSize=CGSizeMake(300, 30);
+		CGPoint kk = menuLayer.nextFreeMenuPosition;
+		
+		kk.y+=40;
+		menuLayer.nextFreeMenuPosition=kk;
 		NSInteger levelNumber = 0;
 		BOOL levelSelectable = YES;
 		for (CMMarbleLevel *level in set.levelList) {
@@ -65,4 +70,6 @@
 {
 	[[CCDirector sharedDirector] replaceScene:[CMMarbleMainMenuScene node]];
 }
+
+
 @end

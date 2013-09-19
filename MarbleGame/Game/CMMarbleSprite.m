@@ -179,6 +179,9 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 {
 	self->shouldDestroy_ = sD;
 	if (self->shouldDestroy_) {
+		if (self.particleSystem) {
+			[self.particleSystem removeFromParentAndCleanup:YES];
+		}
 		// create an scale action and trigger the calling of selfDestruct.
 		[self removeFromPhysics];
 		id actionScale = [CCScaleTo actionWithDuration:MARBLE_DESTROY_TIME scale:.01f];
@@ -204,26 +207,27 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
     [self.gameDelegate removeEffect:self.particleSystem];
   }
   self.particleSystem = [CMParticleSystemQuad particleWithFile:MARBLE_TOUCH_EFFECT];
-  self.particleSystem.autoRemoveOnFinish = YES;
+  self.particleSystem.autoRemoveOnFinish = NO;
   self.particleSystem.anchorPoint = CGPointMake(0.5, 0.5);
   self.particleSystem.position = self.position;
 //  [self addChild:particleSystem_];
   [self.gameDelegate addEffect:self.particleSystem];
-
 }
 - (void) setTouchesNeighbour:(BOOL)tN
 {
   if (self->touchesNeighbour_ != tN) {
+		NSLog(@"Marble %@ %@ (%d)",self,self.frameName,tN);
     self->touchesNeighbour_ = tN;
-    if (tN) {
-      [self triggerParticles];
-    }else{
-      if (self.particleSystem) {
-        [self.gameDelegate removeEffect:self.particleSystem];
-        self.particleSystem = nil;
-      }
-    }
-  }
+		if (tN) {
+			if(!self.particleSystem)
+				[self triggerParticles];
+		}else{
+			if (self.particleSystem) {
+				[self.gameDelegate removeEffect:self.particleSystem];
+				self.particleSystem = nil;
+			}
+		}
+	}
 }
 
 #pragma mark -
@@ -284,6 +288,10 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 		CGFloat r = self.contentSize.width / 2.0;
 		ccDrawCircle(ccp(r,r), r, 0, 36, NO);
 
+		
+	}
+	if (self.particleSystem) {
+		self.particleSystem.position = [super position];
 	}
 }
 
@@ -329,7 +337,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 {
 	ChipmunkBody 	*body = self.chipmunkBody;
 	ChipmunkSpace *space = body.space;
-	[space remove:self];
+	[space smartRemove:self];
 }
 
 @end

@@ -94,8 +94,12 @@
 
 // definitions for the default UI elements
 
-#define DEFAULT_BACKGROUND_IMAGE 				@"MainMenu-Background.png"
+#define DEFAULT_BACKGROUND_IMAGE 				@"LevelBackground-Default.png"
+#define LEVEL_BACKGROUD_IMAGE						@"LevelBackground-Default.png"
+#define LEVEL_OVERLAY_IMAGE							@"Level-Overlay.png"
 #define MAIN_MENU_OVERLAY 							@"MainMenu-Overlay.png"
+
+#define DEFAULT_MENU_PLATE							@"Menu-Background.png"
 
 // normal Buttons
 #define DEFAULT_UI_PLIST 								@"GameUI.plist"

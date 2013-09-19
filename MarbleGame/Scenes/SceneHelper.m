@@ -27,28 +27,22 @@ inline CCSprite* mainMenuOverlay()
 {
 	return spriteWithName(MAIN_MENU_OVERLAY);
 }
-inline CCSprite* mainMenuMenuPlate()
-{
-	CCSprite *s =spriteWithName(@"MainMenu-Menu.png");
-	s.anchorPoint = cpv(0.5, 0.5);
-	return s;
-}
 
 inline CCSprite* defaultMenuPlate()
 {
-	CCSprite *s =spriteWithName(@"Menu-Background.png");
+	CCSprite *s =spriteWithName(DEFAULT_MENU_PLATE);
 	s.anchorPoint = cpv(0.5, 0.5);
 	return s;
 }
 
 inline CCSprite* defaultLevelBackground()
 {
-	return spriteWithName(@"LevelBackground-Default.png");
+	return spriteWithName(LEVEL_BACKGROUD_IMAGE);
 }
 
 inline CCSprite *defaultLevelOverlay()
 {
-  CCSprite *result =spriteWithName(@"Level-Overlay.png");
+  CCSprite *result =spriteWithName(LEVEL_OVERLAY_IMAGE);
 	return result;
 }
 

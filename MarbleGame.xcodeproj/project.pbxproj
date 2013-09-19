@@ -31,8 +31,6 @@
 		935366F1177E1254009F640B /* Balls.png in Resources */ = {isa = PBXBuildFile; fileRef = 935366EF177E1254009F640B /* Balls.png */; };
 		9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43C17B0492D00D0FD25 /* MainMenu-Background.png */; };
 		9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43C17B0492D00D0FD25 /* MainMenu-Background.png */; };
-		9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43D17B0492D00D0FD25 /* MainMenu-Menu.png */; };
-		9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43D17B0492D00D0FD25 /* MainMenu-Menu.png */; };
 		9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43E17B0492D00D0FD25 /* MainMenu-Overlay.png */; };
 		9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D43E17B0492D00D0FD25 /* MainMenu-Overlay.png */; };
 		9353D45517B0552700D0FD25 /* LevelBackground-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D45417B0552400D0FD25 /* LevelBackground-Default.png */; };
@@ -502,7 +500,6 @@
 		935366EE177E1254009F640B /* Balls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Balls.plist; sourceTree = "<group>"; };
 		935366EF177E1254009F640B /* Balls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balls.png; sourceTree = "<group>"; };
 		9353D43C17B0492D00D0FD25 /* MainMenu-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenu-Background.png"; sourceTree = "<group>"; };
-		9353D43D17B0492D00D0FD25 /* MainMenu-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenu-Menu.png"; sourceTree = "<group>"; };
 		9353D43E17B0492D00D0FD25 /* MainMenu-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenu-Overlay.png"; sourceTree = "<group>"; };
 		9353D45417B0552400D0FD25 /* LevelBackground-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelBackground-Default.png"; sourceTree = "<group>"; };
 		9353D45717B0567400D0FD25 /* Level-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Overlay.png"; sourceTree = "<group>"; };
@@ -848,7 +845,6 @@
 				9353D45717B0567400D0FD25 /* Level-Overlay.png */,
 				9353D45417B0552400D0FD25 /* LevelBackground-Default.png */,
 				9353D43C17B0492D00D0FD25 /* MainMenu-Background.png */,
-				9353D43D17B0492D00D0FD25 /* MainMenu-Menu.png */,
 				9353D43E17B0492D00D0FD25 /* MainMenu-Overlay.png */,
 			);
 			path = Images;
@@ -1850,7 +1846,6 @@
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				93B5605A17E376C5008E023E /* Klack.mp3 in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
-				9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93980B2F17E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
@@ -1950,7 +1945,6 @@
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				938150F917E3AA72009A5ABB /* stars-grayscale.png in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
-				9353D44217B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
 				FEFC0E9B17E9FBA60065D078 /* Gun.mp3 in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,

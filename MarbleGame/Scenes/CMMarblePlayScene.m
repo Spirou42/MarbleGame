@@ -824,9 +824,9 @@
 - (void) removeEffect:(CCNode*) effectsNode
 {
   [self.effectQueue removeObject:effectsNode];
-  if (effectsNode.parent) {
+//  if (effectsNode.parent) {
     [effectsNode removeFromParentAndCleanup:YES];
-  }
+//  }
 }
 
 - (void)triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString *)soundName

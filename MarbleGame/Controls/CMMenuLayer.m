@@ -40,7 +40,7 @@ interColumnSpacing = interColumnSpacing_;
 - (void) defaults
 {
 	self.menuButtons = [NSMutableArray array];
-	self.defaultButtonSize = CGSizeMake(150, 40);
+	self.defaultButtonSize = CGSizeMake(250, 40);
 	self.interElementSpacing = 10;
 	self.interColumnSpacing = 20;
 	self.color = ccc3(0, 0, 0);
@@ -93,7 +93,7 @@ interColumnSpacing = interColumnSpacing_;
 	CCControlButton *button = standardButtonWithTitleSize(buttonTitle, self.defaultButtonSize);
 	[button addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
 	button.marginLR = 20.0f;
-	button.preferredSize=CGSizeMake(400, 50);
+	button.preferredSize=self.defaultButtonSize;
 	[self addNode:button z:1];
 	return button;
 	
