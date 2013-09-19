@@ -216,7 +216,6 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 - (void) setTouchesNeighbour:(BOOL)tN
 {
   if (self->touchesNeighbour_ != tN) {
-		NSLog(@"Marble %@ %@ (%d)",self,self.frameName,tN);
     self->touchesNeighbour_ = tN;
 		if (tN) {
 			if(!self.particleSystem)
