@@ -93,7 +93,7 @@
 #endif
 
     self.effectsNode = [CCNode node];
-    [self addChild:self.effectsNode];
+    [self addChild:self.effectsNode z:EFFECTS_LAYER];
 
 
 #ifdef __CC_PLATFORM_MAC
@@ -814,6 +814,19 @@
       [self.effectQueue removeObjectsInArray:effectsToFire];
     }
 	}
+}
+
+- (void) addEffect:(CCNode*) effectsNode
+{
+  [self.effectQueue addObject:effectsNode];
+}
+
+- (void) removeEffect:(CCNode*) effectsNode
+{
+  [self.effectQueue removeObject:effectsNode];
+  if (effectsNode.parent) {
+    [effectsNode removeFromParentAndCleanup:YES];
+  }
 }
 
 - (void)triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString *)soundName

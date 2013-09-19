@@ -22,7 +22,7 @@ typedef enum{
 	kCMMarbleEffect_LUCKY
 } CMMarbleEffectType;
 
-@class CMMarbleLevel,CMMarbleCollisionCollector;
+@class CMMarbleLevel,CMMarbleCollisionCollector,CCNode;
 @protocol CMMarbleGameDelegate <NSObject>
 
 @required
@@ -85,6 +85,14 @@ typedef enum{
 /** trigges an effect, overriding the sound if soundName is not equal to nil
  */
 -(void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString*)soundName;
+
+
+/** adds an effect to the current effects layer
+ */
+- (void) addEffect:(CCNode*) effectsLayer;
+/** removes an effect from the current effects layer
+ */
+- (void) removeEffect:(CCNode*) effectsLayer;
 
 - (BOOL) playEffect;
 - (CGFloat) soundVolume;

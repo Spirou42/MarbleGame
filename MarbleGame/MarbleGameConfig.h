@@ -71,6 +71,7 @@
 #define MARBLE_SPEZIAL_EFFECT @"MarbleSpecial.plist"
 #define MARBLE_REMOVE_EFFECT @"MarbleRemove.plist"
 #define MARBLE_EXPLODE_EFFECT @"MarbleExplode.plist"
+#define MARBLE_TOUCH_EFFECT @"MarbleTouchGlow.plist"
 
 /// transition / Action parameters
 
@@ -161,7 +162,7 @@
 
 #define OVERLAY_LAYER 				(5)
 #define OVERLAY_LABEL_LAYER		(6)
-
+#define EFFECTS_LAYER         (7)
 // legacy, will die
 #define BUTTON_LAYER 					(9)
 #define MENU_LAYER 						(10)

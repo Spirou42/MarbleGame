@@ -179,6 +179,10 @@
 		FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */; };
 		FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB5117E0B7C300E85ABD /* LevelSet.plist */; };
 		FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */ = {isa = PBXBuildFile; fileRef = FEBABB3917E0B64700E85ABD /* DefaultLevelSet.levels */; };
+		FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */; };
+		FEC8CC9117EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */; };
+		FEC8CC9217EB46DD003DB416 /* MarbleTouchGlow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEC8CC8F17EB46DD003DB416 /* MarbleTouchGlow.png */; };
+		FEC8CC9317EB46DD003DB416 /* MarbleTouchGlow.png in Resources */ = {isa = PBXBuildFile; fileRef = FEC8CC8F17EB46DD003DB416 /* MarbleTouchGlow.png */; };
 		FED2E5ED17A7E488005A16B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
 		FED2E5EF17A7E488005A16B3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536459177DFB50009F640B /* OpenAL.framework */; };
 		FED2E5F017A7E488005A16B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9353645B177DFB50009F640B /* AudioToolbox.framework */; };
@@ -673,6 +677,8 @@
 		FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "RUBE-Test.json"; sourceTree = "<group>"; };
 		FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WoodGear-T1.png"; sourceTree = "<group>"; };
 		FEBABB7E17E0D1D100E85ABD /* RUBE-Test.rube */ = {isa = PBXFileReference; lastKnownFileType = text; path = "RUBE-Test.rube"; sourceTree = "<group>"; };
+		FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarbleTouchGlow.plist; sourceTree = "<group>"; };
+		FEC8CC8F17EB46DD003DB416 /* MarbleTouchGlow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleTouchGlow.png; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DB17A7E448005A16B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DD17A7E448005A16B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -1257,6 +1263,8 @@
 		FE31853617E7650D0090223B /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */,
+				FEC8CC8F17EB46DD003DB416 /* MarbleTouchGlow.png */,
 				FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */,
 				FEDBAFEF17E8D486008FB500 /* MarbleRemove.png */,
 				93980B2917E78F6F00EFD627 /* MarbleExplode.plist */,
@@ -1845,9 +1853,11 @@
 				9353D44117B0492D00D0FD25 /* MainMenu-Menu.png in Resources */,
 				93980B2F17E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
+				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				938150F817E3AA72009A5ABB /* stars-grayscale.png in Resources */,
 				FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */,
 				93B5605E17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
+				FEC8CC9217EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
 				9353D45D17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
@@ -1918,6 +1928,7 @@
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
+				FEC8CC9317EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
 				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93B5605D17E376C5008E023E /* Klick.mp3 in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
@@ -1930,6 +1941,7 @@
 				FED9FD3417A8156A00ACC97F /* Balls.plist in Resources */,
 				93B5605B17E376C5008E023E /* Klack.mp3 in Resources */,
 				938150EB17E382BB009A5ABB /* Marble-Multi.mp3 in Resources */,
+				FEC8CC9117EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				93750A8017B827610063D613 /* Menu-Background.png in Resources */,
 				93980B3417E78F6F00EFD627 /* MarbleSpecial.png in Resources */,

@@ -7,7 +7,8 @@
 //
 #import "cocos2d.h"
 #import "CMMarbleSprite.h"
-
+#import "CMParticleSystemQuad.h"
+#import "CMMarbleGameDelegate.h"
 
 
 @interface CMMarbleSprite ()
@@ -17,17 +18,24 @@
 - (void) createOverlayTextureRect;
 - (void) removeFromPhysics;
 - (void) removeMarble;
+@property (nonatomic, assign) CGPoint mapTextureCenter;
+@property (nonatomic, retain) CMParticleSystemQuad *particleSystem;
 @end
 
 @implementation CMMarbleSprite
 
-@synthesize radius,setName,ballIndex, mapBottom, mapLeft,mapRight,mapTop,shouldDestroy,touchesNeighbour, lastSoundTime;
+@synthesize radius = radius_ ,setName = setName_,ballIndex=ballIndex_,
+mapBottom=mapBottom_, mapLeft=mapLeft_,mapRight = mapRight_,mapTop=mapTop_,
+shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime = lastSoundTime_;
+@synthesize mapTextureCenter=mapTextureCenter_;
 
-
+@synthesize particleSystem = particleSystem_;
+@synthesize gameDelegate = gameDelegate_;
 
 - (void) initializeDefaults
 {
 	self.soundName = DEFAULT_MARBLE_KLICK;
+  self.particleSystem = nil;
 }
 
 + (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
@@ -82,8 +90,8 @@
 - (void) dealloc
 {
 	//	[self removeAllChildren];
-  [self->setName release];
-  self->setName = nil;
+  [self->setName_ release];
+  self->setName_ = nil;
 	self.soundName = nil;
 	[super dealloc];
 }
@@ -121,9 +129,9 @@
 
 -(void) setSetName:(NSString *)setN
 {
-  if (![self->setName isEqualToString:setN]) {
-    [self->setName autorelease];
-    self->setName = [setN retain];
+  if (![self->setName_ isEqualToString:setN]) {
+    [self->setName_ autorelease];
+    self->setName_ = [setN retain];
     
     if (self.frameName) {
       CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.frameName];
@@ -163,14 +171,14 @@
 
   CGFloat tx = self.mapLeft + ((self.mapRight-self.mapLeft)/2.0);
   CGFloat ty = self.mapBottom + ((self.mapTop-self.mapBottom)/2.0);
-  self->mapTextureCenter=CGPointMake( tx , ty);
+  self->mapTextureCenter_=CGPointMake( tx , ty);
  
 }
 
 - (void) setShouldDestroy:(BOOL)sD
 {
-	self->shouldDestroy = sD;
-	if (self->shouldDestroy) {
+	self->shouldDestroy_ = sD;
+	if (self->shouldDestroy_) {
 		// create an scale action and trigger the calling of selfDestruct.
 		[self removeFromPhysics];
 		id actionScale = [CCScaleTo actionWithDuration:MARBLE_DESTROY_TIME scale:.01f];
@@ -182,14 +190,41 @@
 
 - (void) setBallIndex:(NSInteger)bI
 {
-	if (self->ballIndex != bI) {
-		self->ballIndex = bI;
+	if (self->ballIndex_ != bI) {
+		self->ballIndex_ = bI;
 		CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.frameName];
 		[self setTextureRect:frame.rect rotated:frame.rotated untrimmedSize:frame.rect.size];
 	}
-
 }
 
+
+- (void) triggerParticles
+{
+  if (self.particleSystem) {
+    [self.gameDelegate removeEffect:self.particleSystem];
+  }
+  self.particleSystem = [CMParticleSystemQuad particleWithFile:MARBLE_TOUCH_EFFECT];
+  self.particleSystem.autoRemoveOnFinish = YES;
+  self.particleSystem.anchorPoint = CGPointMake(0.5, 0.5);
+  self.particleSystem.position = self.position;
+//  [self addChild:particleSystem_];
+  [self.gameDelegate addEffect:self.particleSystem];
+
+}
+- (void) setTouchesNeighbour:(BOOL)tN
+{
+  if (self->touchesNeighbour_ != tN) {
+    self->touchesNeighbour_ = tN;
+    if (tN) {
+      [self triggerParticles];
+    }else{
+      if (self.particleSystem) {
+        [self.gameDelegate removeEffect:self.particleSystem];
+        self.particleSystem = nil;
+      }
+    }
+  }
+}
 
 #pragma mark -
 #pragma mark Rendering
@@ -216,7 +251,7 @@
   float rad = CC_DEGREES_TO_RADIANS(self.rotation);
 
 
-  CGPoint tk = ccpRotateByAngle(coord,self->mapTextureCenter,rad);
+  CGPoint tk = ccpRotateByAngle(coord,self->mapTextureCenter_,rad);
 
   
 // tk   = ccpRotate(k,rPoint);
@@ -260,7 +295,14 @@
 //	}
 
 	[super updateTransform];
-  [self rotateMapCoords];  
+  [self rotateMapCoords];
+
+  {
+    CGPoint t =[super position];
+    if (self.particleSystem) {
+      self.particleSystem.position = t;
+    }
+  }
 }
 
 

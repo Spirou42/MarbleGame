@@ -97,7 +97,7 @@
 
 	// Multiple Touches enabled
 //  [[CCDirector sharedDirector] setDepthBufferFormat:GL_DEPTH_COMPONENT24_OES];
-	[[CCDirector sharedDirector] setDepthTest:YES];
+	[[CCDirector sharedDirector] setDepthTest:NO];
 	[glView setMultipleTouchEnabled:YES];
 
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
