@@ -671,6 +671,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self initializeLevel];
   self.simulationRunning = YES;
 }
+
 - (void) retextureMarbles
 {
   NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
@@ -678,6 +679,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
     marble.setName=marbleSet;
   }
 }
+
 - (void) initializeLevel
 {
 	[self.space remove:self.dynamicSprites];
@@ -694,6 +696,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	self.worldShapes = [self.currentLevel worldShapes];
 	[self.otherSpritesNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
+  
 	NSUInteger p = self.currentLevel.numberOfMarbles;
 	
 	{

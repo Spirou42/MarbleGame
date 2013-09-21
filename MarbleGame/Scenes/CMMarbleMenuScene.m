@@ -63,7 +63,7 @@
 
 - (CGPoint) playerLabelPosition
 {
-	return CGPointMake(258, 747);
+	return CGPointMake(228, 29);
 }
 
 - (CCSprite*) backgroundSprite
