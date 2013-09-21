@@ -111,6 +111,7 @@
 - (void) dealloc
 {
 	self.soundName=nil;
+
 	[super dealloc];
 }
 @end

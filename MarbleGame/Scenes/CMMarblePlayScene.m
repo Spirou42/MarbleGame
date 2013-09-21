@@ -435,6 +435,7 @@
 - (void) onExit
 {
 	[self.simulationLayer onExit];
+  [self.effectsNode removeAllChildrenWithCleanup:YES];
   [super onExit];
 }
 

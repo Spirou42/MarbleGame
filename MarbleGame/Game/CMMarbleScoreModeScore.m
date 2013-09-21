@@ -49,7 +49,7 @@
 			 normalHits ++;
 			 CGPoint p= [self centerOfMarbles:obj];
 			 [self.gameDelegate triggerEffect:kCMMarbleEffect_Remove atPosition:p];
-//       [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:p];
+       [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:p];
 		 }else if ([obj count] > 3) { // multi Hit
 			 CGPoint p= [self centerOfMarbles:obj];
        [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:p];
