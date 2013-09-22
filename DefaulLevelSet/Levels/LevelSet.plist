@@ -256,6 +256,42 @@
 				</dict>
 			</dict>
 			<key>levelName</key>
+			<string>Hurpzel Purpzel</string>
+			<key>numOfMarbles</key>
+			<integer>80</integer>
+			<key>graphics</key>
+			<dict>
+				<key>staticBodiesFilename</key>
+				<string>Level2-StaticBodies</string>
+				<key>overlayFilename</key>
+				<string>Level2-Overlay</string>
+				<key>backgroundFilename</key>
+				<string>Level2-Background</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scoreLimits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
+			<key>levelName</key>
 			<string>Halfpipe</string>
 			<key>numOfMarbles</key>
 			<integer>60</integer>
@@ -393,42 +429,6 @@
 			<dict>
 				<key>RUBELevel</key>
 				<string>Halfpipe-3.json</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>levelName</key>
-			<string>Hurpzel Purpzel</string>
-			<key>numOfMarbles</key>
-			<integer>80</integer>
-			<key>graphics</key>
-			<dict>
-				<key>staticBodiesFilename</key>
-				<string>Level2-StaticBodies</string>
-				<key>overlayFilename</key>
-				<string>Level2-Overlay</string>
-				<key>backgroundFilename</key>
-				<string>Level2-Background</string>
 			</dict>
 		</dict>
 		<dict>
