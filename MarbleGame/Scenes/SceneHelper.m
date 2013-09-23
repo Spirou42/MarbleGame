@@ -132,7 +132,7 @@ inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultButtonTitle(NSString* titl
 
 inline CCNode<CCLabelProtocol,CCRGBAProtocol>* defaultGameLabel(NSString* labelText)
 {
-	CCLabelBMFont *result = [CCLabelBMFont labelWithString:labelText fntFile:@"Simpleton17Glow.fnt" width:0.0 alignment:kCCTextAlignmentLeft imageOffset:cpv(0.0,0.0)];
+	CCLabelBMFont *result = [CCLabelBMFont labelWithString:labelText fntFile:DEFAULT_SCORE_FONT  width:0.0 alignment:kCCTextAlignmentLeft imageOffset:cpv(0.0,0.0)];
 	return result;
 }
 

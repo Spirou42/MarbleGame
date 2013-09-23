@@ -31,6 +31,7 @@
 #import "CMMarblePlayer.h"
 #import "CMMPSettings.h"
 #import "CMParticleSystemQuad.h"
+#import "CMScoreSprite.h"
 
 
 @implementation CMMarblePlayScene
@@ -869,6 +870,16 @@
 			[self.effectQueue addObject:sprite];
 		}
 			break;
+		
+		case kCMMarbleEffect_Score:
+		{
+			CGFloat score = self.scoreDelegate.lastScore;
+			NSLog(@"HitScore = %f (%@)",score,NSStringFromPoint(position));
+			CMScoreSprite *scoreSprite = [[[CMScoreSprite alloc] initWithScore:score]autorelease];
+			scoreSprite.position = position;
+			[self.effectQueue addObject:scoreSprite];
+		}
+		break;
 
 		case kCMMarbleEffect_NICE:
 		{

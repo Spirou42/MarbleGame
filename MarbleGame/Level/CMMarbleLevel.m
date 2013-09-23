@@ -210,7 +210,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
     CGFloat borderRadius = 50;
     NSMutableArray *result = self.shapeReader.shapes;
     ChipmunkStaticSegmentShape *leftBorder = [ChipmunkStaticSegmentShape segmentWithBody:nil from:CGPointMake(-borderRadius, 0) to:CGPointMake(-borderRadius, 768) radius:borderRadius];
-    ChipmunkStaticSegmentShape * rightBorder = [ChipmunkStaticSegmentShape segmentWithBody:nil from:CGPointMake(1024+borderRadius, 0) to:CGPointMake(1024+borderRadius, 768) radius:20];
+    ChipmunkStaticSegmentShape * rightBorder = [ChipmunkStaticSegmentShape segmentWithBody:nil from:CGPointMake(1024+borderRadius, 0) to:CGPointMake(1024+borderRadius, 768) radius:borderRadius];
     [result addObject:leftBorder];
     [result addObject:rightBorder];
 		return result;

@@ -11,9 +11,16 @@
 #import "CMMarbleCollisionCollector.h"
 #import "CMMPLevelStat.h"
 #import "CMMarbleLevel.h"
+@interface CMMarbleScoreModeScore ()
+
+@property (nonatomic, assign) CGFloat lastMarbleScore;
+
+@end
+
 
 @implementation CMMarbleScoreModeScore
-@synthesize gameDelegate, comboHits;
+
+@synthesize gameDelegate = gameDelegate_, comboHits = comboHits_,lastMarbleScore = lastMarbleScore_;
 
 - (CGPoint) centerOfMarbles:(id<NSFastEnumeration>) marbleSet
 {
@@ -36,7 +43,7 @@
 	__block NSUInteger normalHits = 0;
 	__block NSUInteger multiHits = 0;
 	__block NSMutableArray *oldestHit = [NSMutableArray array];
-  
+  __block CGPoint hitPosition;
   // collect info
 	[removedMarbles enumerateObjectsUsingBlock:
 	 ^(NSSet* obj, NSUInteger idx, BOOL* stop){
@@ -47,13 +54,13 @@
 		 [oldestHit addObject:[NSNumber numberWithDouble:k]];
 		 if ([obj count] == 3) {
 			 normalHits ++;
-			 CGPoint p= [self centerOfMarbles:obj];
-			 [self.gameDelegate triggerEffect:kCMMarbleEffect_Remove atPosition:p];
-       [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:p];
+			 hitPosition= [self centerOfMarbles:obj];
+			 [self.gameDelegate triggerEffect:kCMMarbleEffect_Remove atPosition:hitPosition];
+//       [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:hitPosition];
 		 }else if ([obj count] > 3) { // multi Hit
-			 CGPoint p= [self centerOfMarbles:obj];
-       [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:p];
-			 [self.gameDelegate triggerEffect:kCMMarbleEffect_MultiHit atPosition:p];
+			 hitPosition= [self centerOfMarbles:obj];
+       [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:hitPosition];
+			 [self.gameDelegate triggerEffect:kCMMarbleEffect_MultiHit atPosition:hitPosition];
 			 multiHits ++;
 		 }
 	 }];
@@ -66,10 +73,10 @@
     for (NSSet*t in removedMarbles) {
       [allMarbles addObjectsFromArray:[t allObjects]];
     }
-		CGPoint p= [self centerOfMarbles:allMarbles];
+		hitPosition= [self centerOfMarbles:allMarbles];
 
-    [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:p];
-    [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:p];
+    [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:hitPosition];
+    [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:hitPosition];
 		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
 		self.comboHits -= [removedMarbles count];
 	}
@@ -108,6 +115,9 @@
 	CGFloat normalScore = (normalHits*MARBLE_HIT_SCORE);
 	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
 	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
+	self.lastMarbleScore = totalScore;
+	[self.gameDelegate triggerEffect:kCMMarbleEffect_Score atPosition:hitPosition];
+	self.lastMarbleScore = totalScore;
 //	NSLog(@"normal: %lu (%f), multi: %lu (%f) combo: %f special: %@ (%f) Total: %f",(unsigned long)normalHits, normalScore, (unsigned long)multiHits,multiScore ,comboMultiplier, specialString,specialMultiplier,totalScore);
 	
 	statistics.score += totalScore;
@@ -159,5 +169,10 @@
 		return kCMLevelStatus_Amateure;
 	}
 	return kCMLevelStatus_Failed;
+}
+
+- (CGFloat)lastScore
+{
+	return self.lastMarbleScore;
 }
 @end

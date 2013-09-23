@@ -156,6 +156,9 @@
 #define SELECTED_MENU_TITLE_COLOR ccc3(255,200, 0)
 #define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
 
+#define DEFAULT_SCORE_FONT @"Simpleton17Glow.fnt"
+#define DEFAULT_SCORE_EFFECT_FONT @"Simpleton68Glow.fnt"
+
 //////////////////////////////////////////////////
 #pragma mark - Layers
 
@@ -164,9 +167,11 @@
 #define MARBLE_LAYER 					(1)
 #define FOREGROUND_LAYER 			(2)
 
-#define OVERLAY_LAYER 				(5)
-#define OVERLAY_LABEL_LAYER		(6)
-#define EFFECTS_LAYER         (7)
+#define EFFECTS_LAYER         (5)
+
+#define OVERLAY_LAYER 				(6)
+#define OVERLAY_LABEL_LAYER		(7)
+
 // legacy, will die
 #define BUTTON_LAYER 					(9)
 #define MENU_LAYER 						(10)

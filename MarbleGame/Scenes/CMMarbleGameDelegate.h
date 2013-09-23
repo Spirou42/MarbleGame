@@ -14,6 +14,7 @@ typedef enum{
 	kCMMarbleEffect_MultiHit,
 	kCMMarbleEffect_ComboHit,
   kCMMarbleEffect_ColorRemove,
+	kCMMarbleEffect_Score,
 
   kCMMarbleEffect_NICE,
 	kCMMarbleEffect_RESPECT,

@@ -28,8 +28,9 @@ typedef enum {
 
 @required
 @property (nonatomic, assign) NSObject<CMMarbleGameDelegate>* gameDelegate;
-
+@property (nonatomic, readonly) CGFloat lastScore;
 - (void) scoreWithMarbles:(NSArray*)removedMarbles inLevel:(CMMPLevelStat*)statistics;
+
 - (void) marbleDropped:(CMMPLevelStat*)statistics;
 - (void) marbleFired;
 - (CMMPLevelStat*) betterStatOfOld:(CMMPLevelStat*) oldStat new:(CMMPLevelStat*)newStat;
