@@ -7,13 +7,13 @@
 //
 
 #import "CMScoreSprite.h"
-
+#import "cocos2d.h"
 @implementation CMScoreSprite
 
 - (id) initWithScore:(CGFloat)score
 {
 	self = [super init];
-	NSString* scoreString = [NSString stringWithFormat:@"%ld",(NSInteger)score];
+	NSString* scoreString = [NSString stringWithFormat:@"%ld",(long)score];
 	CCLabelBMFont* scoreLabel = [CCLabelBMFont labelWithString:scoreString fntFile:DEFAULT_SCORE_EFFECT_FONT];
 
 	self.contentSize = scoreLabel.contentSize;
@@ -32,8 +32,8 @@
 
 -(void) onEnterTransitionDidFinish
 {
-	id actionScale = [CCScaleTo actionWithDuration:DEFAULT_COMBO_MOVE_DURATION/3.0 scale:1];
-	id actionFade = [CCFadeOut actionWithDuration:DEFAULT_COMBO_MOVE_DURATION/3.0];
+	id actionScale = [CCScaleTo actionWithDuration:DEFAULT_COMBO_MOVE_DURATION scale:1];
+	id actionFade = [CCFadeOut actionWithDuration:DEFAULT_COMBO_MOVE_DURATION];
 	// all
 	id allActions = [CCSpawn actions:actionScale,actionFade,nil];
 	id callAction = [CCCallFunc actionWithTarget:self selector:@selector(removeSelf)];

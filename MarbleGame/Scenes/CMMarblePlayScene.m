@@ -874,7 +874,7 @@
 		case kCMMarbleEffect_Score:
 		{
 			CGFloat score = self.scoreDelegate.lastScore;
-			NSLog(@"HitScore = %f (%@)",score,NSStringFromPoint(position));
+//			NSLog(@"HitScore = %f (%@)",score,NSStringFromPoint(position));
 			CMScoreSprite *scoreSprite = [[[CMScoreSprite alloc] initWithScore:score]autorelease];
 			scoreSprite.position = position;
 			[self.effectQueue addObject:scoreSprite];
