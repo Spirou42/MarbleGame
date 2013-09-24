@@ -227,7 +227,7 @@
 		}
 
 		self->_scoreLabel.opacity=0.75 * 255;
-		self->_scoreLabel.position=cpv(238, realBounds.size.height/4.0);
+		self->_scoreLabel.position=cpv(238, realBounds.size.height/4.0-2);
 	}
 }
 - (void) setTimeLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)tL
@@ -250,7 +250,7 @@
 		}
 
 		self->_timeLabel.opacity=0.75 * 255;
-		self->_timeLabel.position=cpv(815, realBounds.size.height/4.0);
+		self->_timeLabel.position=cpv(815, realBounds.size.height/4.0-2);
 	}
 }
 
@@ -771,9 +771,25 @@
           [[SimpleAudioEngine sharedEngine]playEffect:p.soundName];
     }
   }
-
 }
 
+- (BOOL) canFire:(CCNode*)currentEffect togetherWith:(CCNode*)otherEffect
+{
+  BOOL canFire = YES;
+  if (![otherEffect isKindOfClass:[CCParticleSystem class]]) {
+    CGPoint cPos = currentEffect.position;
+    CGPoint oPos = otherEffect.position;
+    CGPoint dPos=cpvsub(cPos, oPos);
+    CGFloat d = cpvdot(dPos,dPos); // square of the distance
+    if (d<EFFECT_CLIP_DISTANCE_SQUARE) {
+      canFire = NO;
+    }
+  }else{
+    canFire = YES;
+  }
+
+  return canFire;
+}
 
 - (void) processEffectQueue
 {
@@ -791,19 +807,16 @@
         }else{
           BOOL canFire = YES;
           for (CCNode* otherEffect in self.effectsNode.children) {
-            if (![otherEffect isKindOfClass:[CCParticleSystem class]]) {
-              CGPoint cPos = currentEffect.position;
-              CGPoint oPos = otherEffect.position;
-              CGPoint dPos=cpvsub(cPos, oPos);
-              CGFloat d = cpvdot(dPos,dPos); // square of the distance
-              if (d<EFFECT_CLIP_DISTANCE_SQUARE) {
-                canFire = NO;
-                break;
-              }
-            }else{
-              canFire = YES;
+            canFire = [self canFire:currentEffect togetherWith:otherEffect];
+            if (!canFire) {
+              break;
             }
           }
+          if(canFire)
+            for (CCNode *otherEffect in effectsToFire) {
+              canFire = [self canFire:currentEffect togetherWith:otherEffect];
+            }
+
           if (canFire) {
             [effectsToFire addObject:currentEffect];
           }
