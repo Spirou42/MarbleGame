@@ -17,12 +17,12 @@
 	CCLabelBMFont* scoreLabel = [CCLabelBMFont labelWithString:scoreString fntFile:DEFAULT_SCORE_EFFECT_FONT];
 
 	self.contentSize = scoreLabel.contentSize;
-	scoreLabel.anchorPoint = CGPointMake(0.5, .50);
+	scoreLabel.anchorPoint = CGPointMake(0.5, 00);
 	scoreLabel.position = CGPointMake(self.contentSize.width/2.0,0);
 	[self addChild:scoreLabel];
 	self.anchorPoint = CGPointMake(0.5, 0.5);
 	self.cascadeOpacityEnabled = YES;
-	self.scale = 0.25;
+	self.scale = 0.1;
 	return self;
 }
 - (void) removeSelf
@@ -32,8 +32,8 @@
 
 -(void) onEnterTransitionDidFinish
 {
-	id actionScale = [CCScaleTo actionWithDuration:DEFAULT_COMBO_MOVE_DURATION scale:1];
-	id actionFade = [CCFadeOut actionWithDuration:DEFAULT_COMBO_MOVE_DURATION];
+	id actionScale = [CCScaleTo actionWithDuration:DEFAULT_COMBO_MOVE_DURATION/4.0 scale:.5];
+	id actionFade = [CCFadeOut actionWithDuration:DEFAULT_COMBO_MOVE_DURATION/2.0];
 	// all
 	id allActions = [CCSpawn actions:actionScale,actionFade,nil];
 	id callAction = [CCCallFunc actionWithTarget:self selector:@selector(removeSelf)];

@@ -54,9 +54,9 @@
 	id skewAction = [CCRepeat actionWithAction:[CCSequence actions:actionSkewStart, actionSkewMiddle, actionSkewEnd, nil] times:MOVES];
 
 	// drift
-	id actionDriftStart = [CCEaseSineOut actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 position:CGPointMake(l.width/6, 0)]];
-	id actionDriftMiddle = [CCEaseSineInOut actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION) position:CGPointMake(-l.width/3, 0)]];
-	id actionDriftEnd = [CCEaseSineIn actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 position:CGPointMake(l.width/6, 0)]];
+	id actionDriftStart = [CCEaseSineOut actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 position:CGPointMake(l.width/12, 0)]];
+	id actionDriftMiddle = [CCEaseSineInOut actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION) position:CGPointMake(-l.width/6, 0)]];
+	id actionDriftEnd = [CCEaseSineIn actionWithAction:[CCMoveBy actionWithDuration:TIME_DIF(MOVES, DEFAULT_COMBO_SCALE_DURATION)/2.0 position:CGPointMake(l.width/12, 0)]];
 	id driftAction = [CCRepeat actionWithAction:[CCSequence actions:actionDriftStart, actionDriftMiddle,actionDriftEnd, nil] times:MOVES];
 	
 	// all

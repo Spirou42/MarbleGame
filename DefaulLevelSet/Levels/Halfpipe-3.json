@@ -344,89 +344,6 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								702.5933227539062,
-								702.5800170898438,
-								-685.3468017578125,
-								-685.333496093750
-							],
-							"y" : 
-							[
-								-563.6187133789062,
-								-533.6187133789062,
-								-534.2366943359375,
-								-564.2366943359375
-							]
-						}
-					},
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 702.5866699218750,
-							"y" : -548.6187133789062
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : -685.3401489257812,
-							"y" : -549.2366943359375
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
 					"friction" : 0.3,
 					"name" : "Halfpipe",
 					"polygon" : 
@@ -1110,24 +1027,24 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderRight",
+					"name" : "BorderBottom",
 					"polygon" : 
 					{
 						"vertices" : 
 						{
 							"x" : 
 							[
-								752.592285156250,
-								752.5593872070312,
-								512.5593872070312,
-								512.592285156250
+								702.5933227539062,
+								702.5800170898438,
+								-685.3468017578125,
+								-685.333496093750
 							],
 							"y" : 
 							[
-								-595.9458618164062,
-								626.1972045898438,
-								626.1907348632812,
-								-595.9523315429688
+								-563.6187133789062,
+								-533.6187133789062,
+								-534.2366943359375,
+								-564.2366943359375
 							]
 						}
 					},
@@ -1139,10 +1056,10 @@
 					{
 						"center" : 
 						{
-							"x" : 632.592285156250,
-							"y" : -595.9490966796875
+							"x" : 702.5866699218750,
+							"y" : -548.6187133789062
 						},
-						"radius" : 120.0
+						"radius" : 15.0
 					},
 					"customProperties" : 
 					[
@@ -1154,7 +1071,7 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderRight",
+					"name" : "BorderBottom",
 					"restitution" : 0.2
 				},
 				
@@ -1163,10 +1080,10 @@
 					{
 						"center" : 
 						{
-							"x" : 632.5593872070312,
-							"y" : 626.1939697265625
+							"x" : -685.3401489257812,
+							"y" : -549.2366943359375
 						},
-						"radius" : 120.0
+						"radius" : 15.0
 					},
 					"customProperties" : 
 					[
@@ -1178,7 +1095,7 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderRight",
+					"name" : "BorderBottom",
 					"restitution" : 0.2
 				},
 				
@@ -1346,6 +1263,89 @@
 					"friction" : 0.2,
 					"name" : "BorderTop",
 					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								752.592285156250,
+								752.5593872070312,
+								512.5593872070312,
+								512.592285156250
+							],
+							"y" : 
+							[
+								-595.9458618164062,
+								626.1972045898438,
+								626.1907348632812,
+								-595.9523315429688
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 632.592285156250,
+							"y" : -595.9490966796875
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 632.5593872070312,
+							"y" : 626.1939697265625
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"restitution" : 0.2
 				}
 			],
 			"linearVelocity" : 0,
@@ -1415,59 +1415,6 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 2,
-			"center" : 
-			{
-				"x" : -3.051757812500000e-05,
-				"y" : 0
-			},
-			"corners" : 
-			{
-				"x" : 
-				[
-					-49.09624099731445,
-					49.09617996215820,
-					49.09617996215820,
-					-49.09624099731445
-				],
-				"y" : 
-				[
-					-46.60582351684570,
-					-46.60582351684570,
-					46.60582351684570,
-					46.60582351684570
-				]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Sprite"
-				}
-			],
-			"file" : "Star-Wood1.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-49.09624099731445,
-				-46.60582351684570,
-				49.09617996215820,
-				-46.60582351684570,
-				49.09617996215820,
-				46.60582351684570,
-				-49.09624099731445,
-				46.60582351684570
-			],
-			"name" : "StarL",
-			"opacity" : 0.5,
-			"scale" : 93.21164703369141
-		},
-		
-		{
-			"aspectScale" : 1,
 			"body" : 3,
 			"center" : 0,
 			"corners" : 
@@ -1491,49 +1438,6 @@
 			"name" : "Halfpipe-Overlay",
 			"opacity" : 1,
 			"scale" : 768.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 1,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : 
-				[
-					-48.99999618530273,
-					48.99999618530273,
-					48.99999618530273,
-					-48.99999618530273
-				],
-				"y" : [ -46.50, -46.50, 46.50, 46.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Sprite"
-				}
-			],
-			"file" : "Pentagon-Orange.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-48.99999618530273,
-				-46.50,
-				48.99999618530273,
-				-46.50,
-				48.99999618530273,
-				46.50,
-				-48.99999618530273,
-				46.50
-			],
-			"name" : "PentaOrange",
-			"opacity" : 0.5,
-			"scale" : 93.0
 		},
 		
 		{
@@ -1583,6 +1487,102 @@
 			"name" : "StarR",
 			"opacity" : 0.5,
 			"scale" : 93.21164703369141
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 1,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : 
+				[
+					-48.99999618530273,
+					48.99999618530273,
+					48.99999618530273,
+					-48.99999618530273
+				],
+				"y" : [ -46.50, -46.50, 46.50, 46.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Sprite"
+				}
+			],
+			"file" : "Pentagon-Orange.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-48.99999618530273,
+				-46.50,
+				48.99999618530273,
+				-46.50,
+				48.99999618530273,
+				46.50,
+				-48.99999618530273,
+				46.50
+			],
+			"name" : "PentaOrange",
+			"opacity" : 0.5,
+			"scale" : 93.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 2,
+			"center" : 
+			{
+				"x" : -3.051757812500000e-05,
+				"y" : 0
+			},
+			"corners" : 
+			{
+				"x" : 
+				[
+					-49.09624099731445,
+					49.09617996215820,
+					49.09617996215820,
+					-49.09624099731445
+				],
+				"y" : 
+				[
+					-46.60582351684570,
+					-46.60582351684570,
+					46.60582351684570,
+					46.60582351684570
+				]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Sprite"
+				}
+			],
+			"file" : "Star-Wood1.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-49.09624099731445,
+				-46.60582351684570,
+				49.09617996215820,
+				-46.60582351684570,
+				49.09617996215820,
+				46.60582351684570,
+				-49.09624099731445,
+				46.60582351684570
+			],
+			"name" : "StarL",
+			"opacity" : 0.5,
+			"scale" : 93.21164703369141
 		}
 	],
 	"joint" : 
@@ -1591,8 +1591,33 @@
 		{
 			"anchorA" : 
 			{
-				"x" : -3.051757812500000e-05,
-				"y" : 0
+				"x" : -0.038024902343750,
+				"y" : -3.308654785156250
+			},
+			"anchorB" : 
+			{
+				"x" : 256.4039916992188,
+				"y" : 161.2020263671875
+			},
+			"bodyA" : 0,
+			"bodyB" : 3,
+			"enableLimit" : false,
+			"enableMotor" : true,
+			"jointSpeed" : 0,
+			"lowerLimit" : 0,
+			"maxMotorTorque" : 15000000.0,
+			"motorSpeed" : 6.283185482025146,
+			"name" : "joint R",
+			"refAngle" : 0,
+			"type" : "revolute",
+			"upperLimit" : 0
+		},
+		
+		{
+			"anchorA" : 
+			{
+				"x" : -0.0292663574218750,
+				"y" : -3.2438964843750
 			},
 			"anchorB" : 
 			{
@@ -1606,29 +1631,8 @@
 			"jointSpeed" : 0,
 			"lowerLimit" : 0,
 			"maxMotorTorque" : 15000000.0,
-			"motorSpeed" : -0.1745329201221466,
+			"motorSpeed" : -12.56637096405029,
 			"name" : "joint L",
-			"refAngle" : 0,
-			"type" : "revolute",
-			"upperLimit" : 0
-		},
-		
-		{
-			"anchorA" : 0,
-			"anchorB" : 
-			{
-				"x" : 256.4039916992188,
-				"y" : 161.2020263671875
-			},
-			"bodyA" : 0,
-			"bodyB" : 3,
-			"enableLimit" : false,
-			"enableMotor" : true,
-			"jointSpeed" : 0,
-			"lowerLimit" : 0,
-			"maxMotorTorque" : 15000000.0,
-			"motorSpeed" : 0.1745329201221466,
-			"name" : "joint R",
 			"refAngle" : 0,
 			"type" : "revolute",
 			"upperLimit" : 0

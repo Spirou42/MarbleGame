@@ -159,6 +159,10 @@
 		93FD6D3A17B14C87001CC41E /* multi.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FD6D3717B14C87001CC41E /* multi.png */; };
 		93FD6D3B17B14C87001CC41E /* multi.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FD6D3717B14C87001CC41E /* multi.png */; };
 		FE00BAFD17A17296002D8B06 /* CMMarbleLevelSetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */; };
+		FE2818CA17F211540079BAF1 /* RockWell68-Score.fnt in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */; };
+		FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */; };
+		FE2818CC17F211540079BAF1 /* RockWell68-Score.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C917F211540079BAF1 /* RockWell68-Score.png */; };
+		FE2818CD17F211540079BAF1 /* RockWell68-Score.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C917F211540079BAF1 /* RockWell68-Score.png */; };
 		FE28CD3A17D904F400C2F880 /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
@@ -660,6 +664,8 @@
 		93FD6D3717B14C87001CC41E /* multi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multi.png; sourceTree = "<group>"; };
 		FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSetScene.h; sourceTree = "<group>"; };
 		FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSetScene.m; sourceTree = "<group>"; };
+		FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell68-Score.fnt"; sourceTree = "<group>"; };
+		FE2818C917F211540079BAF1 /* RockWell68-Score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell68-Score.png"; sourceTree = "<group>"; };
 		FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.fsh; sourceTree = "<group>"; };
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
@@ -1004,6 +1010,8 @@
 		9353D45A17B068F100D0FD25 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */,
+				FE2818C917F211540079BAF1 /* RockWell68-Score.png */,
 				93F4C5CC17F0C893001B76D0 /* Simpleton68Glow.fnt */,
 				93F4C5CD17F0C893001B76D0 /* Simpleton68Glow.png */,
 				935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */,
@@ -1873,6 +1881,7 @@
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
 				93980B2F17E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				93F4C5CE17F0C893001B76D0 /* Simpleton68Glow.fnt in Resources */,
+				FE2818CC17F211540079BAF1 /* RockWell68-Score.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				938150F817E3AA72009A5ABB /* stars-grayscale.png in Resources */,
@@ -1901,6 +1910,7 @@
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
 				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
+				FE2818CA17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
 				93F4C5D017F0C893001B76D0 /* Simpleton68Glow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1948,9 +1958,11 @@
 				FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */,
 				93980B3217E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
+				FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				FEC8CC9317EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
+				FE2818CD17F211540079BAF1 /* RockWell68-Score.png in Resources */,
 				935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93B5605D17E376C5008E023E /* Klick.mp3 in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,

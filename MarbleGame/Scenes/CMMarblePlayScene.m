@@ -776,18 +776,20 @@
 - (BOOL) canFire:(CCNode*)currentEffect togetherWith:(CCNode*)otherEffect
 {
   BOOL canFire = YES;
-  if (![otherEffect isKindOfClass:[CCParticleSystem class]]) {
-    CGPoint cPos = currentEffect.position;
-    CGPoint oPos = otherEffect.position;
-    CGPoint dPos=cpvsub(cPos, oPos);
-    CGFloat d = cpvdot(dPos,dPos); // square of the distance
-    if (d<EFFECT_CLIP_DISTANCE_SQUARE) {
-      canFire = NO;
-    }
-  }else{
-    canFire = YES;
+  if ([currentEffect isKindOfClass:[CCParticleSystem class]]) {
+    return canFire;
+  }
+  if ([otherEffect isKindOfClass:[CCParticleSystem class]]) {
+    return canFire;
   }
 
+  CGPoint cPos = currentEffect.position;
+  CGPoint oPos = otherEffect.position;
+  CGPoint dPos=cpvsub(cPos, oPos);
+  CGFloat d = sqrt(cpvdot(dPos,dPos)); // square of the distance
+  if (d<EFFECT_CLIP_DISTANCE_SQUARE) {
+    canFire = NO;
+  }
   return canFire;
 }
 
@@ -802,9 +804,9 @@
 //    }else{
       for (CCNode* currentEffect in self.effectQueue) {
         // check if the position does not match as close to other triggered effects
-        if (!effectsToFire.count) {
-          [effectsToFire addObject:currentEffect];
-        }else{
+//        if (!effectsToFire.count) {
+//          [effectsToFire addObject:currentEffect];
+//        }else{
           BOOL canFire = YES;
           for (CCNode* otherEffect in self.effectsNode.children) {
             canFire = [self canFire:currentEffect togetherWith:otherEffect];
@@ -812,15 +814,18 @@
               break;
             }
           }
-          if(canFire)
+          if(canFire){
             for (CCNode *otherEffect in effectsToFire) {
               canFire = [self canFire:currentEffect togetherWith:otherEffect];
+              if (!canFire) {
+                break;
+              }
             }
-
+          }
           if (canFire) {
             [effectsToFire addObject:currentEffect];
           }
-        }
+//        }
       }
       // here we have filtered all of our effects by the distance to each other
       for (CCNode* effect in effectsToFire) {

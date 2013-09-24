@@ -56,7 +56,7 @@
 			 normalHits ++;
 			 hitPosition= [self centerOfMarbles:obj];
 			 [self.gameDelegate triggerEffect:kCMMarbleEffect_Remove atPosition:hitPosition];
-//       [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:hitPosition];
+//      [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:hitPosition];
 		 }else if ([obj count] > 3) { // multi Hit
 			 hitPosition= [self centerOfMarbles:obj];
        [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:hitPosition];

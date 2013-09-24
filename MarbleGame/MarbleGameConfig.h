@@ -81,8 +81,8 @@
 
 #define DEFAULT_MARBLE_SLOT_MOVE_TIME (1.0f)
 
-#define EFFECT_CLIP_DISTANCE (50.0)
-#define EFFECT_CLIP_DISTANCE_SQUARE (EFFECT_CLIP_DISTANCE * EFFECT_CLIP_DISTANCE)
+#define EFFECT_CLIP_DISTANCE (15.0)
+#define EFFECT_CLIP_DISTANCE_SQUARE (EFFECT_CLIP_DISTANCE)
 
 //////////////////////////////////////////////////
 #pragma mark -
@@ -157,7 +157,7 @@
 #define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
 
 #define DEFAULT_SCORE_FONT @"Simpleton17Glow.fnt"
-#define DEFAULT_SCORE_EFFECT_FONT @"Simpleton68Glow.fnt"
+#define DEFAULT_SCORE_EFFECT_FONT @"RockWell68-Score.fnt"
 
 //////////////////////////////////////////////////
 #pragma mark - Layers
