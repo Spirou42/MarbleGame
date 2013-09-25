@@ -42,13 +42,6 @@
   [
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -72,6 +65,13 @@
       "displayName" : "imageType",
       "name" : "imageType",
       "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     },
     
     {
