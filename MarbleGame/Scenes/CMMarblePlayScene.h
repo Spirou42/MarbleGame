@@ -49,6 +49,7 @@
 @property (nonatomic, retain) CMMarbleSimulationLayer* simulationLayer;
 @property (nonatomic, assign) NSInteger normalHits, comboHits, multiHits;
 @property (nonatomic, retain) CCNode* effectsNode;
+@property (nonatomic, retain) CCNode* marbleEffectsNode;
 @property (nonatomic, retain) CMMPLevelStat *currentStatistics;
 @property (nonatomic, retain) CCNode* statisticsOverlay;
 @property (nonatomic, retain) CCNode<CCLabelProtocol,CCRGBAProtocol> *comboMarkerLabel;

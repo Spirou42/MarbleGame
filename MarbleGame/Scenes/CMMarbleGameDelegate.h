@@ -95,6 +95,10 @@ typedef enum{
  */
 - (void) removeEffect:(CCNode*) effectsLayer;
 
+- (void) addMarbleEffect:(CCNode*) marbleEffect;
+- (void) removeMarbleEffect:(CCNode*)marbleEffect;
+
+
 - (BOOL) playEffect;
 - (CGFloat) soundVolume;
 

@@ -72,6 +72,7 @@
 #define MARBLE_REMOVE_EFFECT @"MarbleRemove.plist"
 #define MARBLE_EXPLODE_EFFECT @"MarbleExplode.plist"
 #define MARBLE_TOUCH_EFFECT @"MarbleTouchGlow.plist"
+#define MARBLE_POWERUP_EXPLODE @"MarblePowerUp-Explode.plist"
 
 /// transition / Action parameters
 
@@ -134,6 +135,7 @@
 #define DEFAULT_MARBLE_KLICK								@"Klick.mp3"
 #define DEFAULT_WALL_KLICK									@"Klack.mp3"
 #define DEFAULT_WALL_BOING                  @"Boing.mp3"
+#define DEFAULT_MARBLE_BOOM									@"Boom.mp3"
 
 // Effects
 #define DEFAULT_MARBLE_REMOVE								@"Marble-Remove.mp3"
@@ -161,20 +163,34 @@
 
 //////////////////////////////////////////////////
 #pragma mark - Layers
+// The layers of the PlayScene.
 
-#define BACKGROUND_LAYER 			(-1)
+// Level Background
+#define BACKGROUND_LAYER 				(-1)
 
-#define MARBLE_LAYER 					(1)
-#define FOREGROUND_LAYER 			(2)
+// marble Effects (mostly Particles)
+#define MARBLE_EFFECTS_LAYER	(1)
 
-#define EFFECTS_LAYER         (5)
+// the physics layer containing Marbles and other Physics elements
+#define MARBLE_LAYER 					(2)
 
-#define OVERLAY_LAYER 				(6)
-#define OVERLAY_LABEL_LAYER		(7)
+// the Overlay layer for special marble effects. currently unused
+#define MARBLE_OVERLAY_LAYER	(3)
+
+// level Foreground
+#define FOREGROUND_LAYER 			(5)
+
+// game effects (explosions, score, combo etc)
+#define EFFECTS_LAYER         (10)
+
+// Global overlay (menu decoration)
+#define OVERLAY_LAYER 				(11)
+// Strings (score, time,
+#define OVERLAY_LABEL_LAYER		(12)
 
 // legacy, will die
-#define BUTTON_LAYER 					(9)
-#define MENU_LAYER 						(10)
+#define BUTTON_LAYER 					(20)
+#define MENU_LAYER 						(21)
 
 #pragma mark - SYSTEM replacement Types
 

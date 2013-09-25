@@ -91,6 +91,10 @@
 		93980B3217E78F6F00EFD627 /* MarbleSpecial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93980B2B17E78F6F00EFD627 /* MarbleSpecial.plist */; };
 		93980B3317E78F6F00EFD627 /* MarbleSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = 93980B2C17E78F6F00EFD627 /* MarbleSpecial.png */; };
 		93980B3417E78F6F00EFD627 /* MarbleSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = 93980B2C17E78F6F00EFD627 /* MarbleSpecial.png */; };
+		939C936317F365EA008CF635 /* CMMarblePowerUpBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C936217F365EA008CF635 /* CMMarblePowerUpBomb.m */; };
+		939C936417F365EA008CF635 /* CMMarblePowerUpBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C936217F365EA008CF635 /* CMMarblePowerUpBomb.m */; };
+		939C936617F37B6B008CF635 /* Boom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939C936517F37B6B008CF635 /* Boom.mp3 */; };
+		939C936717F37B6B008CF635 /* Boom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939C936517F37B6B008CF635 /* Boom.mp3 */; };
 		93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */; };
 		93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */; };
 		93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */; };
@@ -116,6 +120,10 @@
 		93B5606117E376C5008E023E /* Marble-Remove.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605617E376C5008E023E /* Marble-Remove.mp3 */; };
 		93B5606217E376C5008E023E /* SmoothJazz-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605717E376C5008E023E /* SmoothJazz-1.mp3 */; };
 		93B5606317E376C5008E023E /* SmoothJazz-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605717E376C5008E023E /* SmoothJazz-1.mp3 */; };
+		93CE6C4017F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */; };
+		93CE6C4117F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */; };
+		93CE6C5217F25778009C1926 /* MarblePowerUp-Explode.png in Resources */ = {isa = PBXBuildFile; fileRef = 93CE6C5117F25778009C1926 /* MarblePowerUp-Explode.png */; };
+		93CE6C5317F25778009C1926 /* MarblePowerUp-Explode.png in Resources */ = {isa = PBXBuildFile; fileRef = 93CE6C5117F25778009C1926 /* MarblePowerUp-Explode.png */; };
 		93D5708A17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93D5708817BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld */; };
 		93D5708B17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93D5708817BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld */; };
 		93D5713A17BEC3AC00167030 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D5713917BEC3AC00167030 /* CoreData.framework */; };
@@ -584,6 +592,7 @@
 		93750A7817B81CD60063D613 /* GameUI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameUI.plist; sourceTree = "<group>"; };
 		93750A7917B81CD60063D613 /* GameUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameUI.png; sourceTree = "<group>"; };
 		93750A7E17B827610063D613 /* Menu-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Background.png"; sourceTree = "<group>"; };
+		937F246B17F35DDE0086C2F3 /* CMMarblePowerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePowerProtocol.h; sourceTree = "<group>"; };
 		938150E917E382BB009A5ABB /* Marble-Multi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Marble-Multi.mp3"; sourceTree = "<group>"; };
 		938150EC17E39C4B009A5ABB /* CMLiquidAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLiquidAction.h; sourceTree = "<group>"; };
 		938150ED17E39C4B009A5ABB /* CMLiquidAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLiquidAction.m; sourceTree = "<group>"; };
@@ -600,6 +609,9 @@
 		93980B2A17E78F6F00EFD627 /* MarbleExplode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleExplode.png; sourceTree = "<group>"; };
 		93980B2B17E78F6F00EFD627 /* MarbleSpecial.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarbleSpecial.plist; sourceTree = "<group>"; };
 		93980B2C17E78F6F00EFD627 /* MarbleSpecial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleSpecial.png; sourceTree = "<group>"; };
+		939C936117F365EA008CF635 /* CMMarblePowerUpBomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePowerUpBomb.h; sourceTree = "<group>"; };
+		939C936217F365EA008CF635 /* CMMarblePowerUpBomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePowerUpBomb.m; sourceTree = "<group>"; };
+		939C936517F37B6B008CF635 /* Boom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boom.mp3; sourceTree = "<group>"; };
 		93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DoubleHalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DoubleHalfpipe.json; sourceTree = "<group>"; };
 		93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pentagon-Blue.png"; sourceTree = "<group>"; };
@@ -619,6 +631,8 @@
 		93B5605617E376C5008E023E /* Marble-Remove.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Marble-Remove.mp3"; sourceTree = "<group>"; };
 		93B5605717E376C5008E023E /* SmoothJazz-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SmoothJazz-1.mp3"; sourceTree = "<group>"; };
 		93C817C317A572EA007C348F /* CMMarbleGameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameDelegate.h; sourceTree = "<group>"; };
+		93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MarblePowerUp-Explode.plist"; sourceTree = "<group>"; };
+		93CE6C5117F25778009C1926 /* MarblePowerUp-Explode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MarblePowerUp-Explode.png"; sourceTree = "<group>"; };
 		93D5708917BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CMMarbleGameStatistics.xcdatamodel; sourceTree = "<group>"; };
 		93D5713917BEC3AC00167030 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		93D5713B17BEC3B700167030 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -1129,6 +1143,15 @@
 			name = MenuNodes;
 			sourceTree = "<group>";
 		};
+		939C935117F365B6008CF635 /* PowerUps */ = {
+			isa = PBXGroup;
+			children = (
+				939C936117F365EA008CF635 /* CMMarblePowerUpBomb.h */,
+				939C936217F365EA008CF635 /* CMMarblePowerUpBomb.m */,
+			);
+			name = PowerUps;
+			sourceTree = "<group>";
+		};
 		93A5C68B17EA37980030D22E /* 2. Double Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1199,6 +1222,7 @@
 		93CC6CB517C15C0D00F62743 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				939C936517F37B6B008CF635 /* Boom.mp3 */,
 				FEFC0E9917E9FBA60065D078 /* Gun.mp3 */,
 				938150E917E382BB009A5ABB /* Marble-Multi.mp3 */,
 				93B5605217E376C5008E023E /* Boing.mp3 */,
@@ -1239,6 +1263,7 @@
 		93EAB2DE17A19C6A009894C5 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				939C935117F365B6008CF635 /* PowerUps */,
 				FEB4EF5B17BBC1580023D063 /* Management */,
 				FEB4EF4B17BBC13F0023D063 /* Visuals */,
 			);
@@ -1291,6 +1316,8 @@
 		FE31853617E7650D0090223B /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				93CE6C5117F25778009C1926 /* MarblePowerUp-Explode.png */,
+				93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */,
 				FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */,
 				FEC8CC8F17EB46DD003DB416 /* MarbleTouchGlow.png */,
 				FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */,
@@ -1361,6 +1388,7 @@
 				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
 				FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */,
 				FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */,
+				937F246B17F35DDE0086C2F3 /* CMMarblePowerProtocol.h */,
 			);
 			name = Visuals;
 			sourceTree = "<group>";
@@ -1875,6 +1903,7 @@
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
 				FEFC0E9A17E9FBA60065D078 /* Gun.mp3 in Resources */,
+				939C936617F37B6B008CF635 /* Boom.mp3 in Resources */,
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				FEE3415E17EE2D7200F658FA /* MainMenu-Overlay2.png in Resources */,
 				93B5605A17E376C5008E023E /* Klack.mp3 in Resources */,
@@ -1885,6 +1914,7 @@
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				938150F817E3AA72009A5ABB /* stars-grayscale.png in Resources */,
+				93CE6C4017F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
 				FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */,
 				93B5605E17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
 				FEC8CC9217EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
@@ -1895,6 +1925,7 @@
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
 				938150EA17E382BB009A5ABB /* Marble-Multi.mp3 in Resources */,
 				93B5605C17E376C5008E023E /* Klick.mp3 in Resources */,
+				93CE6C5217F25778009C1926 /* MarblePowerUp-Explode.png in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
 				93750A7F17B827610063D613 /* Menu-Background.png in Resources */,
@@ -1959,6 +1990,7 @@
 				93980B3217E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
 				FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
+				939C936717F37B6B008CF635 /* Boom.mp3 in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				FEC8CC9317EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
@@ -1984,6 +2016,7 @@
 				93F4C5D117F0C893001B76D0 /* Simpleton68Glow.png in Resources */,
 				93B5605917E376C5008E023E /* Boing.mp3 in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
+				93CE6C4117F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
 				938150F917E3AA72009A5ABB /* stars-grayscale.png in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
@@ -1993,6 +2026,7 @@
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
 				93B5606317E376C5008E023E /* SmoothJazz-1.mp3 in Resources */,
+				93CE6C5317F25778009C1926 /* MarblePowerUp-Explode.png in Resources */,
 				93980B2E17E78F6F00EFD627 /* MarbleExplode.plist in Resources */,
 				93980B3017E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
@@ -2050,6 +2084,7 @@
 				9356F7671793296B008D584E /* CMMarbleLevelStatistics.m in Sources */,
 				FEB4EF5E17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				9356F76A17932AF1008D584E /* CMSimpleShapeReader.m in Sources */,
+				939C936317F365EA008CF635 /* CMMarblePowerUpBomb.m in Sources */,
 				FEAE680917E23E0F00231A96 /* CMEventEatingLayer.m in Sources */,
 				9353D46417B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);
@@ -2109,6 +2144,7 @@
 				FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */,
 				FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
+				939C936417F365EA008CF635 /* CMMarblePowerUpBomb.m in Sources */,
 				FEAE680A17E23E0F00231A96 /* CMEventEatingLayer.m in Sources */,
 				9353D46517B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m in Sources */,
 			);

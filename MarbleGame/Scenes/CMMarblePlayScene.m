@@ -32,12 +32,13 @@
 #import "CMMPSettings.h"
 #import "CMParticleSystemQuad.h"
 #import "CMScoreSprite.h"
+#import "CMMarblePowerProtocol.h"
 
 
 @implementation CMMarblePlayScene
 
 @synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits;
-@synthesize effectsNode = _effectsNode;
+@synthesize effectsNode = _effectsNode,marbleEffectsNode = marbleEffectsNode_;
 @synthesize  currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay;
 @synthesize  comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer;
 @synthesize  marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite;
@@ -96,6 +97,8 @@
     self.effectsNode = [CCNode node];
     [self addChild:self.effectsNode z:EFFECTS_LAYER];
 
+		self.marbleEffectsNode = [CCNode node];
+		[self addChild:self.marbleEffectsNode z:MARBLE_EFFECTS_LAYER];
 
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
@@ -437,6 +440,7 @@
 {
 	[self.simulationLayer onExit];
   [self.effectsNode removeAllChildrenWithCleanup:YES];
+	[self.marbleEffectsNode removeAllChildrenWithCleanup:YES];
   [super onExit];
 }
 
@@ -472,6 +476,12 @@
 	
 	if (![removedMarbles count]) {
 		return;
+	}
+	for (NSSet *currentCollisin in removedMarbles) {
+		for (CMMarbleSprite *currentMarble in currentCollisin) {
+			[currentMarble.marbleAction performActionFor:currentMarble];
+		}
+
 	}
 	[self.scoreDelegate scoreWithMarbles:removedMarbles inLevel:self.currentStatistics];
 //	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_REMOVE];
@@ -849,6 +859,16 @@
 //  }
 }
 
+- (void) addMarbleEffect:(CCNode *)marbleEffect
+{
+	[self.marbleEffectsNode addChild:marbleEffect];
+}
+
+- (void) removeMarbleEffect:(CCNode *)marbleEffect
+{
+	[self.marbleEffectsNode removeChild:marbleEffect cleanup:YES];
+}
+
 - (void)triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString *)soundName
 {
 	switch (effect) {
@@ -948,5 +968,6 @@
 {
   [self triggerEffect:effect atPosition:position overrideSound:nil];
 }
+
 
 @end

@@ -9,7 +9,7 @@
 #import "CMMarbleSprite.h"
 #import "CMParticleSystemQuad.h"
 #import "CMMarbleGameDelegate.h"
-
+#import "CMMarblePowerProtocol.h"
 
 @interface CMMarbleSprite ()
 - (void) setGlossMapRect:(CGRect) glossRect;
@@ -19,23 +19,26 @@
 - (void) removeFromPhysics;
 - (void) removeMarble;
 @property (nonatomic, assign) CGPoint mapTextureCenter;
-@property (nonatomic, retain) CMParticleSystemQuad *particleSystem;
+@property (nonatomic, retain) CMParticleSystemQuad *touchParticles;
+@property (nonatomic, retain) CMParticleSystemQuad *powerUpParticles;
 @end
 
 @implementation CMMarbleSprite
 
-@synthesize radius = radius_ ,setName = setName_,ballIndex=ballIndex_,
+@synthesize radius = radius_ ,marbleSetName = setName_,ballIndex=ballIndex_,
 mapBottom=mapBottom_, mapLeft=mapLeft_,mapRight = mapRight_,mapTop=mapTop_,
 shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime = lastSoundTime_;
 @synthesize mapTextureCenter=mapTextureCenter_;
 
-@synthesize particleSystem = particleSystem_;
+@synthesize touchParticles = particleSystem_, powerUpParticles=powerUpParticles_;
 @synthesize gameDelegate = gameDelegate_;
+@synthesize marbleAction = marbleAction_;
 
 - (void) initializeDefaults
 {
 	self.soundName = DEFAULT_MARBLE_KLICK;
-  self.particleSystem = nil;
+  self.touchParticles = nil;
+	self.powerUpParticles = nil;
 }
 
 + (CCSpriteFrame*) spriteFrameForBallSet:(NSString *)setName ballIndex:(NSInteger)ballIndex
@@ -54,7 +57,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
     self.shaderProgram = k;
 		
     self.radius = r;
-    self.setName=sN;
+    self.marbleSetName=sN;
     self.ballIndex = bI;
     self.chipmunkBody = [self circleBodyWithMass:mass andRadius:r];
 		self.chipmunkBody.data = self;
@@ -93,6 +96,9 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
   [self->setName_ release];
   self->setName_ = nil;
 	self.soundName = nil;
+	self.powerUpParticles = nil;
+	self.touchParticles = nil;
+	self.marbleAction = nil;
 	[super dealloc];
 }
 
@@ -109,15 +115,15 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 
 - (NSString*) frameName
 {
-  if (self.setName && self.ballIndex) {
-    return [NSString stringWithFormat:@"%@_%li",self.setName,(long)self.ballIndex];
+  if (self.marbleSetName && self.ballIndex) {
+    return [NSString stringWithFormat:@"%@_%li",self.marbleSetName,(long)self.ballIndex];
   }
   return nil;
 }
 
 - (NSString*) overlayName
 {
-  NSString *sn = self.setName;
+  NSString *sn = self.marbleSetName;
 	//  if ([sn isEqualToString:@"Billard"]) {
 	//    sn=@"DDR";
 	//  }
@@ -127,7 +133,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
   return nil;
 }
 
--(void) setSetName:(NSString *)setN
+-(void) setMarbleSetName:(NSString *)setN
 {
   if (![self->setName_ isEqualToString:setN]) {
     [self->setName_ autorelease];
@@ -179,8 +185,11 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 {
 	self->shouldDestroy_ = sD;
 	if (self->shouldDestroy_) {
-		if (self.particleSystem) {
-			[self.particleSystem removeFromParentAndCleanup:YES];
+		if (self.touchParticles) {
+			[self.touchParticles removeFromParentAndCleanup:YES];
+		}
+		if (self.powerUpParticles) {
+			[self.powerUpParticles removeFromParentAndCleanup:YES];
 		}
 		// create an scale action and trigger the calling of selfDestruct.
 		[self removeFromPhysics];
@@ -203,28 +212,44 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 
 - (void) triggerParticles
 {
-  if (self.particleSystem) {
-    [self.gameDelegate removeEffect:self.particleSystem];
+  if (self.touchParticles) {
+    [self.gameDelegate removeEffect:self.touchParticles];
   }
-  self.particleSystem = [CMParticleSystemQuad particleWithFile:MARBLE_TOUCH_EFFECT];
-  self.particleSystem.autoRemoveOnFinish = NO;
-  self.particleSystem.anchorPoint = CGPointMake(0.5, 0.5);
-  self.particleSystem.position = self.position;
+  self.touchParticles = [CMParticleSystemQuad particleWithFile:MARBLE_TOUCH_EFFECT];
+  self.touchParticles.autoRemoveOnFinish = NO;
+  self.touchParticles.anchorPoint = CGPointMake(0.5, 0.5);
+  self.touchParticles.position = self.position;
 //  [self addChild:particleSystem_];
-  [self.gameDelegate addEffect:self.particleSystem];
+  [self.gameDelegate addEffect:self.touchParticles];
 }
 - (void) setTouchesNeighbour:(BOOL)tN
 {
   if (self->touchesNeighbour_ != tN) {
     self->touchesNeighbour_ = tN;
 		if (tN) {
-			if(!self.particleSystem)
+			if(!self.touchParticles)
 				[self triggerParticles];
 		}else{
-			if (self.particleSystem) {
-				[self.gameDelegate removeEffect:self.particleSystem];
-				self.particleSystem = nil;
+			if (self.touchParticles) {
+				[self.gameDelegate removeEffect:self.touchParticles];
+				self.touchParticles = nil;
 			}
+		}
+	}
+}
+
+- (void) setMarbleAction:(NSObject<CMMarblePowerProtocol>*)marbleA
+{
+	if (marbleA != self->marbleAction_) {
+		if (self->marbleAction_) {
+			[self->marbleAction_.particleEffect removeFromParentAndCleanup:YES];
+		}
+		[self->marbleAction_ autorelease];
+		self->marbleAction_ = [marbleA retain];
+		if (marbleA) {
+			self.powerUpParticles = marbleA.particleEffect;
+			[self.gameDelegate addMarbleEffect:self.powerUpParticles];
+			self.powerUpParticles.position = self.position;
 		}
 	}
 }
@@ -241,6 +266,10 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 {
   CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
   [self setGlossMapRect:overlayFrame.rect];
+	// debug stuff
+//	CMParticleSystemQuad* p = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
+//	self.powerUpParticles = p;
+//	[self.gameDelegate addMarbleEffect:p];
 }
 
 
@@ -289,8 +318,11 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 
 		
 	}
-	if (self.particleSystem) {
-		self.particleSystem.position = [super position];
+	if (self.touchParticles) {
+		self.touchParticles.position = [super position];
+	}
+	if (self.powerUpParticles) {
+		self.powerUpParticles.position = [super position];
 	}
 }
 
@@ -306,9 +338,12 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 
   {
     CGPoint t =[super position];
-    if (self.particleSystem) {
-      self.particleSystem.position = t;
+    if (self.touchParticles) {
+      self.touchParticles.position = t;
     }
+		if (self.powerUpParticles) {
+			self.powerUpParticles.position = t;
+		}
   }
 }
 

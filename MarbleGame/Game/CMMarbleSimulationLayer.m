@@ -27,6 +27,7 @@
 #import "ObjectiveChipmunk.h"
 #import "CMRubeBody.h"
 #import "CMObjectSoundProtocol.h"
+#import "CMMarblePowerUpBomb.h"
 
 enum {
 	kTagParentNode = 1,
@@ -529,6 +530,10 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 
 - (void) prepareMarble
 {
+	static int marbleCounter = 0;
+	
+	marbleCounter ++;
+	
 	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
   NSString *marbleSet = [self.gameDelegate marbleSetName];
 	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
@@ -552,6 +557,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	self.dollyServo = [ChipmunkPivotJoint pivotJointWithBodyA:self.space.staticBody bodyB:self.dollyBody pivot:self.dollyBody.pos];
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.currentMarbleIndex = marbleIndex;
+	
+	if ((marbleCounter % 5) == 0) {
+		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
+		ms.marbleAction = bombEffect;
+	}
+
 }
 
 
@@ -676,7 +687,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 {
   NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
   for (CMMarbleSprite *marble in self.marbleBatchNode.children) {
-    marble.setName=marbleSet;
+    marble.marbleSetName=marbleSet;
   }
 }
 
