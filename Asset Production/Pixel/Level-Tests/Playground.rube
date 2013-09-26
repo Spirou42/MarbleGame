@@ -283,6 +283,46 @@
           "y" : 0.5245018005371094
         },
         "type" : "static"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "fixture" : 
+        [
+          
+          {
+            "density" : 1,
+            "friction" : 0.2,
+            "id" : 7,
+            "name" : "fixture5",
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 0.5,
+                "type" : "circle"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ 0 ],
+              "y" : [ 0 ]
+            }
+          }
+        ],
+        "id" : 6,
+        "linearVelocity" : 0,
+        "massData-I" : 0.09817477315664291,
+        "massData-mass" : 0.7853981852531433,
+        "name" : "body0",
+        "position" : 
+        {
+          "x" : -5.228383541107178,
+          "y" : 6.886575222015381
+        },
+        "type" : "dynamic"
       }
     ],
     "metajoint" : 
@@ -291,13 +331,34 @@
       {
         "anchorA" : 
         {
-          "x" : 2.066613197326660,
+          "x" : 2.861022949218750e-06,
+          "y" : 0.02221298217773438
+        },
+        "anchorB" : 
+        {
+          "x" : -2.994429826736450,
+          "y" : -2.462597131729126
+        },
+        "bodyA" : 6,
+        "bodyB" : 3,
+        "collideConnected" : false,
+        "id" : 1,
+        "maxForce" : 200.0,
+        "maxTorque" : 1,
+        "name" : "joint1",
+        "type" : "friction"
+      },
+      
+      {
+        "anchorA" : 
+        {
+          "x" : 4.043799400329590,
           "y" : 0.01957654953002930
         },
         "anchorB" : 
         {
-          "x" : 3.754442214965820,
-          "y" : 0.04720401763916016
+          "x" : 5.731630325317383,
+          "y" : 0.06941986083984375
         },
         "bodyA" : 5,
         "bodyB" : 4,
@@ -324,7 +385,7 @@
         "anchorB" : 0,
         "bodyA" : 2,
         "bodyB" : 3,
-        "collideConnected" : false,
+        "collideConnected" : true,
         "id" : 5,
         "maxLength" : 7,
         "name" : "Rope",
@@ -340,11 +401,11 @@
         "anchorB" : 0,
         "bodyA" : 1,
         "bodyB" : 3,
-        "collideConnected" : false,
-        "dampingRatio" : 0.1,
-        "frequency" : 100.0,
+        "collideConnected" : true,
+        "dampingRatio" : 0.4,
+        "frequency" : 2,
         "id" : 6,
-        "length" : 10,
+        "length" : 3.5,
         "name" : "Distance",
         "type" : "distance"
       }
