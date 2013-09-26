@@ -11,6 +11,9 @@
 #import "CMMarbleCollisionCollector.h"
 #import "CMMPLevelStat.h"
 #import "CMMarbleLevel.h"
+#import "CMMarbleSprite.h"
+#import "CMMarblePowerProtocol.h"
+
 @interface CMMarbleScoreModeScore ()
 
 @property (nonatomic, assign) CGFloat lastMarbleScore;
@@ -36,6 +39,16 @@
   return result;
 }
 
+- (CGFloat) scoreModifiersFor:(id<NSFastEnumeration>) marbleSet
+{
+  CGFloat k = 0.0;
+  for (CMMarbleSprite  * marble in marbleSet) {
+    if (marble.marbleAction) {
+      k+=marble.marbleAction.scoreValue;
+    }
+  }
+  return k;
+}
 
 - (void) scoreWithMarbles:(NSArray *)removedMarbles inLevel:(CMMPLevelStat *)statistics
 {
@@ -44,6 +57,7 @@
 	__block NSUInteger multiHits = 0;
 	__block NSMutableArray *oldestHit = [NSMutableArray array];
   __block CGPoint hitPosition;
+  __block CGFloat powerUpModifier = 0.0;
   // collect info
 	[removedMarbles enumerateObjectsUsingBlock:
 	 ^(NSSet* obj, NSUInteger idx, BOOL* stop){
@@ -63,6 +77,7 @@
 			 [self.gameDelegate triggerEffect:kCMMarbleEffect_MultiHit atPosition:hitPosition];
 			 multiHits ++;
 		 }
+     powerUpModifier+=[self scoreModifiersFor:obj];
 	 }];
   
   // Combo Hits
@@ -112,9 +127,12 @@
 //      self.remarkLabel.visible = YES;
     }
   }
+  if (powerUpModifier == 0.0) {
+    powerUpModifier = 1.0;
+  }
 	CGFloat normalScore = (normalHits*MARBLE_HIT_SCORE);
 	CGFloat multiScore = (multiHits*MARBLE_HIT_SCORE*MARBLE_MULTY_MUTLIPLYER);
-	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier;
+	CGFloat totalScore = (normalScore + multiScore) * specialMultiplier * comboMultiplier * powerUpModifier;
 	self.lastMarbleScore = totalScore;
 	[self.gameDelegate triggerEffect:kCMMarbleEffect_Score atPosition:hitPosition];
 	self.lastMarbleScore = totalScore;

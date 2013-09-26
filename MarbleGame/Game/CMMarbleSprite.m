@@ -247,6 +247,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 		[self->marbleAction_ autorelease];
 		self->marbleAction_ = [marbleA retain];
 		if (marbleA) {
+      marbleA.parentMarble = self;
 			self.powerUpParticles = marbleA.particleEffect;
 			[self.gameDelegate addMarbleEffect:self.powerUpParticles];
 			self.powerUpParticles.position = self.position;
@@ -324,6 +325,9 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 	if (self.powerUpParticles) {
 		self.powerUpParticles.position = [super position];
 	}
+  if (self.marbleAction) {
+    [self.marbleAction update];
+  }
 }
 
 - (void) updateTransform
@@ -341,9 +345,12 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
     if (self.touchParticles) {
       self.touchParticles.position = t;
     }
-		if (self.powerUpParticles) {
-			self.powerUpParticles.position = t;
-		}
+//		if (self.powerUpParticles) {
+//			self.powerUpParticles.position = t;
+//		}
+    if (self.marbleAction) {
+      [self.marbleAction update];
+    }
   }
 }
 

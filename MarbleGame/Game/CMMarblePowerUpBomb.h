@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CMMarblePowerProtocol.h"
+#import "CMMarblePowerUpBase.h"
 
-@interface CMMarblePowerUpBomb : NSObject <CMMarblePowerProtocol>
+@interface CMMarblePowerUpBomb : CMMarblePowerUpBase
 
 
 @end

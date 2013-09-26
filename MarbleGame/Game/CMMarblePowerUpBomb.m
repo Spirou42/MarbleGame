@@ -10,35 +10,50 @@
 #import "CMParticleSystemQuad.h"
 #import "CocosDenshion.h"
 #import "SimpleAudioEngine.h"
-@interface CMMarblePowerUpBomb ()
+#import "CMSimpleGradient.h"
+
+@interface CMMarblePowerUpBase ()
 @property (nonatomic,retain) CMParticleSystemQuad* particles;
+@property (nonatomic,retain) CMSimpleGradient *startColorGradient;
+@property (nonatomic,retain) CMSimpleGradient *endColorGradient;
 @end
 
 @implementation CMMarblePowerUpBomb
+@synthesize startColorGradient = startColorGradient_, endColorGradient=endColorGradient_ ;
 
 - (id) init
 {
 	self = [super init];
 	if (self) {
 		self.particles = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
-	
+    self.startColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.startColor
+                                                                  endColor:ccc4f(1.0, 0.0, 0.0, 1.0)]autorelease];
+
+    self.endColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.endColor
+                                                                endColor:ccc4f(0.0, 0.0, 0.0, 1.0)]autorelease];
 	}
 	return self;
 }
 
 - (void) dealloc
 {
-	self.particles = nil;
-	[super dealloc];
+  self.startColorGradient = nil;
+  self.endColorGradient = nil;
+  [super dealloc];
 }
 
-- (CMParticleSystemQuad*) particleEffect
+- (CGFloat)scoreValue
 {
-	return self.particles;
+  CGFloat value = 10;
+  if (self.activeTime>0.0) {
+    value= ((10 - 2) * (1-[self percentTime]))+2;
+  }
+  return value;
 }
 
 - (void) performActionFor:(CMMarbleSprite *)marble
 {
+  [super performActionFor:marble];
 //	NSLog(@"A C T I O N");
 	ChipmunkSpace *currentSpace = marble.chipmunkBody.space;
 	ChipmunkBody* currentBody = marble.chipmunkBody;
@@ -50,10 +65,33 @@
     ChipmunkBody *body = info.shape.body;
 		if (!body.isStatic) {
 			CGPoint direction = cpvnormalize( cpvsub(info.point, pos));
-			CGPoint impulse = cpvmult(direction, 20000);
+      CGFloat maxPulse = 20000.0 * (1-[self percentTime]);
+			CGPoint impulse = cpvmult(direction, maxPulse);
 			[body applyImpulse:impulse offset:CGPointMake(0, 0)];
 		}
 	}
 	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
+  [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:1-[self percentTime]];
+}
+
+- (CGFloat) percentTime
+{
+  CGFloat value = 1.0;
+  if (self.activeTime>0.0) {
+    value = 1-(self.remainingTime / self.activeTime);
+  }
+  return value;
+}
+
+- (void) update
+{
+  if ( (self.activeTime >0.0)){
+  CGFloat percentTime = [self percentTime];
+
+  self.particles.startColor = [self.startColorGradient colorForNormalizedPosition:percentTime];
+  self.particles.endColor = [self.endColorGradient colorForNormalizedPosition:percentTime];
+
+  }
+  [super update];
 }
 @end
