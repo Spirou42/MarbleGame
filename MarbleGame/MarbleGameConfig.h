@@ -86,15 +86,15 @@
 #define EFFECT_CLIP_DISTANCE_SQUARE (EFFECT_CLIP_DISTANCE)
 
 //////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UI Definitions
+#pragma mark - UI Definitions
 
+// Alpha setting for Overlay Layers
 #define DEBUG_ALPHA_ON 0
 
+// Glossmap shader used to render Marbles
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"
 
 // definitions for the default UI elements
-
 #define DEFAULT_BACKGROUND_IMAGE 				@"LevelBackground-Default.png"
 #define LEVEL_BACKGROUD_IMAGE						@"LevelBackground-Default.png"
 #define LEVEL_OVERLAY_IMAGE							@"Level-Overlay.png"
@@ -145,52 +145,52 @@
 //////////////////////////////////////////////////
 #pragma mark - Fonts
 
-#define DEFAULT_FONT @"RockWell24-OutlineButton.fnt"
-#define DEFAULT_BUTTON_FONT DEFAULT_FONT
-#define DEFAULT_BUTTON_TITLE_COLOR ccc3(250, 250, 250)
-#define SELECTED_BUTTON_TITLE_COLOR ccc3(255,200, 0)
-#define DEFAULT_BUTTON_SIZE CGSizeMake(150,50)
-#define DEFAULT_BUTTON_TITLESIZE CGSizeMake(0,0)
+#define DEFAULT_FONT                        @"RockWell24-OutlineButton.fnt"
+#define DEFAULT_BUTTON_FONT                 DEFAULT_FONT
+#define DEFAULT_BUTTON_TITLE_COLOR          ccc3(250, 250, 250)
+#define SELECTED_BUTTON_TITLE_COLOR         ccc3(255,200, 0)
+#define DEFAULT_BUTTON_SIZE                 CGSizeMake(150,50)
+#define DEFAULT_BUTTON_TITLESIZE            CGSizeMake(0,0)
 
-#define DEFAULT_MENU_FONT @"RockWell30-OutlineMenuTitle.fnt"
+#define DEFAULT_MENU_FONT                   @"RockWell30-OutlineMenuTitle.fnt"
 
-#define DEFAULT_MENU_TITLE_COLOR ccc3(250, 250, 250)
-#define SELECTED_MENU_TITLE_COLOR ccc3(255,200, 0)
-#define DEFAULT_MENU_TITLESIZE DEFAULT_BUTTON_TITLESIZE
+#define DEFAULT_MENU_TITLE_COLOR            ccc3(250, 250, 250)
+#define SELECTED_MENU_TITLE_COLOR           ccc3(255,200, 0)
+#define DEFAULT_MENU_TITLESIZE              DEFAULT_BUTTON_TITLESIZE
 
-#define DEFAULT_SCORE_FONT @"Simpleton17Glow.fnt"
-#define DEFAULT_SCORE_EFFECT_FONT @"RockWell68-Score.fnt"
+#define DEFAULT_SCORE_FONT                  @"Simpleton17Glow.fnt"
+#define DEFAULT_SCORE_EFFECT_FONT           @"RockWell68-Score.fnt"
 
 //////////////////////////////////////////////////
 #pragma mark - Layers
 // The layers of the PlayScene.
 
 // Level Background
-#define BACKGROUND_LAYER 				(-1)
+#define BACKGROUND_LAYER                    (-1)
 
 // marble Effects (mostly Particles)
-#define MARBLE_EFFECTS_LAYER	(1)
+#define MARBLE_EFFECTS_LAYER                (1)
 
 // the physics layer containing Marbles and other Physics elements
-#define MARBLE_LAYER 					(2)
+#define MARBLE_LAYER                        (2)
 
 // the Overlay layer for special marble effects. currently unused
-#define MARBLE_OVERLAY_LAYER	(3)
+#define MARBLE_OVERLAY_LAYER                (3)
 
 // level Foreground
-#define FOREGROUND_LAYER 			(5)
+#define FOREGROUND_LAYER                    (5)
 
 // game effects (explosions, score, combo etc)
-#define EFFECTS_LAYER         (10)
+#define EFFECTS_LAYER                       (10)
 
 // Global overlay (menu decoration)
-#define OVERLAY_LAYER 				(11)
+#define OVERLAY_LAYER                       (11)
 // Strings (score, time,
-#define OVERLAY_LABEL_LAYER		(12)
+#define OVERLAY_LABEL_LAYER                 (12)
 
 // legacy, will die
-#define BUTTON_LAYER 					(20)
-#define MENU_LAYER 						(21)
+#define BUTTON_LAYER                        (20)
+#define MENU_LAYER                          (21)
 
 #pragma mark - SYSTEM replacement Types
 

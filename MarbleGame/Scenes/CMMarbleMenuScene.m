@@ -53,7 +53,7 @@
 		}
 		self->_playerName = [pN retain];
 		if (self->_playerName) {
-			[self addChild:self->_playerName z:11];
+			[self addChild:self->_playerName z:OVERLAY_LABEL_LAYER];
 		}
 		self->_playerName.opacity=0.75 * 255;
 		CGPoint position = self.playerLabelPosition;
