@@ -70,8 +70,15 @@
 			[body applyImpulse:impulse offset:CGPointMake(0, 0)];
 		}
 	}
+  CGFloat gain = 1.0-[self percentTime];
+  if (gain >1.0) {
+    gain = 1.0f;
+  }
+  if (gain < 0.0) {
+    gain = 0.0;
+  }
 	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
-  [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:1-[self percentTime]];
+  [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:gain];
 }
 
 - (CGFloat) percentTime
