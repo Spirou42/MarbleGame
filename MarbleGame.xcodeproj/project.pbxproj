@@ -545,7 +545,7 @@
 		93566EEF17B592ED0017176A /* CMMarbleSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSlot.h; sourceTree = "<group>"; };
 		93566EF017B592ED0017176A /* CMMarbleSlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleSlot.m; sourceTree = "<group>"; };
 		9356F75F1793296B008D584E /* CMMarbleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevel.h; sourceTree = "<group>"; };
-		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevel.m; sourceTree = "<group>"; };
+		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMMarbleLevel.m; path = ../CMMarbleLevel.m; sourceTree = "<group>"; };
 		9356F7611793296B008D584E /* CMMarbleLevelSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSet.h; sourceTree = "<group>"; };
 		9356F7621793296B008D584E /* CMMarbleLevelSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSet.m; sourceTree = "<group>"; };
 		9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelStatistics.h; sourceTree = "<group>"; };
@@ -1080,7 +1080,6 @@
 				93EFB6E217E4B0BC00B3B186 /* Legacy */,
 				93F35A2917C29F1E00B9B4E9 /* RUBEReader */,
 				9356F75F1793296B008D584E /* CMMarbleLevel.h */,
-				9356F7601793296B008D584E /* CMMarbleLevel.m */,
 				9356F7611793296B008D584E /* CMMarbleLevelSet.h */,
 				9356F7621793296B008D584E /* CMMarbleLevelSet.m */,
 				9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */,
@@ -1330,6 +1329,7 @@
 				93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */,
 				93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */,
 				93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */,
+				9356F7601793296B008D584E /* CMMarbleLevel.m */,
 				93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */,
 				93F35A4117C2A1C500B9B4E9 /* CMRubeFixture.h */,
 				93F35A4217C2A1C500B9B4E9 /* CMRubeFixture.m */,
