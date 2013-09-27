@@ -59,7 +59,7 @@ static NSString *borderType = @"borderType";
 simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,simulatedMarbles=simulatedMarbles_,
 dollyGroove = dollyGroove_, dollyShape = dollyShape_, dollyServo = dollyServo_, dollyBody = dollyBody_,
 gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
-marbleFireTimer=marbleFireTimer_,marblesToFire=marblesToFire_, currentMarbleIndex = currentMarbleIndex_,worldShapes=staticShapes_,
+currentMarbleIndex = currentMarbleIndex_,worldShapes=staticShapes_,
 lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, staticSprites = staticSprites_,constraints = constraints_;
 
 +(CCScene *) scene
@@ -123,8 +123,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 - (void)dealloc
 {
 	// invalidate timer
-	[self.marbleFireTimer invalidate];
-	self.marbleFireTimer = nil;
+	[self.currentLevel.marbleEmitter stopEmitter];
 
 	// remove dynamic sprites
 	[self.space remove:self.dynamicSprites];
@@ -564,7 +563,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
     bombEffect.activeTime = 20.0;
 		ms.marbleAction = bombEffect;
 	}
-
 }
 
 
@@ -653,8 +651,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 {
   self.simulationRunning = NO;
   /// todo:  the marble timer has to be restarted in onEnter
-	[self.marbleFireTimer invalidate];
-	self.marbleFireTimer = nil;
+	[self.currentLevel.marbleEmitter stopEmitter];
   [super onExit];
 }
 
@@ -681,8 +678,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 - (void) resetSimulation
 {
   self.simulationRunning=NO;
-	[self.marbleFireTimer invalidate];
-	self.marbleFireTimer = nil;
+	[self.currentLevel.marbleEmitter stopEmitter];
   [self.marbleBatchNode removeAllChildren];
   [self.simulatedMarbles removeAllObjects];
 	[self initializeLevel];
@@ -727,6 +723,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.dynamicSprites addObject:a];
 			[self.space add:a];
 			[self.otherSpritesNode addChild:a];
+			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
+				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
+				if (p.overlayNode) {
+					[self.otherSpritesNode addChild:p.overlayNode z:10];
+				}
+			}
 		}
 		
 		// request all static Sprites
@@ -734,6 +736,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.staticSprites addObject:a];
 			[self.space add:a];
 			[self.otherSpritesNode addChild:a];
+			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
+				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
+				if (p.overlayNode) {
+					[self.otherSpritesNode addChild:p.overlayNode z:10];
+				}
+			}
+
 		}
 		// Constraints
 		for (id a in self.currentLevel.constrains) {

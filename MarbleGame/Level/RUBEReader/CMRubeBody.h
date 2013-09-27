@@ -14,6 +14,13 @@ typedef enum {
 	kRubeBody_dynamic,
 }CMRubeBodyType;
 
+typedef enum{
+	kGameBody_Undefined = -1,
+	kGameBody_World,
+	kGameBody_Emitter,
+	kGameBody_Respawn,
+}CMGameBodyType;
+
 @protocol ChipmunkObject;
 @class CMPhysicsSprite;
 
@@ -21,6 +28,7 @@ typedef enum {
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, assign) CMRubeBodyType type;
+@property (nonatomic, assign) CMGameBodyType gameType;
 @property (nonatomic, assign) CGFloat angle;
 @property (nonatomic, assign) CGFloat angularVelocity;
 @property (nonatomic, assign) CGPoint linearVelocity;

@@ -51,8 +51,6 @@
 @property (nonatomic, retain) ChipmunkBody *dollyBody;
 
 
-@property (nonatomic, assign) NSUInteger marblesToFire;
-@property (nonatomic, retain) NSTimer* marbleFireTimer;
 @property (nonatomic, assign) NSUInteger currentMarbleIndex;
 
 @property (nonatomic, assign) NSTimeInterval lastMarbleSoundTime;

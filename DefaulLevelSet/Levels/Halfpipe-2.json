@@ -183,24 +183,24 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderLeft",
+					"name" : "BorderBottom",
 					"polygon" : 
 					{
 						"vertices" : 
 						{
 							"x" : 
 							[
-								-512.0691528320312,
-								-512.1019897460938,
-								-752.1019897460938,
-								-752.0691528320312
+								702.5933227539062,
+								702.5800170898438,
+								-685.3468017578125,
+								-685.333496093750
 							],
 							"y" : 
 							[
-								-630.6217041015625,
-								631.3439941406250,
-								631.3377685546875,
-								-630.62792968750
+								-563.6187133789062,
+								-533.6187133789062,
+								-534.2366943359375,
+								-564.2366943359375
 							]
 						}
 					},
@@ -212,10 +212,10 @@
 					{
 						"center" : 
 						{
-							"x" : -632.0691528320312,
-							"y" : -630.6248168945312
+							"x" : 702.5866699218750,
+							"y" : -548.6187133789062
 						},
-						"radius" : 120.0
+						"radius" : 15.0
 					},
 					"customProperties" : 
 					[
@@ -227,7 +227,7 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderLeft",
+					"name" : "BorderBottom",
 					"restitution" : 0.2
 				},
 				
@@ -236,10 +236,10 @@
 					{
 						"center" : 
 						{
-							"x" : -632.1019897460938,
-							"y" : 631.3408813476562
+							"x" : -685.3401489257812,
+							"y" : -549.2366943359375
 						},
-						"radius" : 120.0
+						"radius" : 15.0
 					},
 					"customProperties" : 
 					[
@@ -251,7 +251,7 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderLeft",
+					"name" : "BorderBottom",
 					"restitution" : 0.2
 				},
 				
@@ -1031,6 +1031,89 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								-512.0691528320312,
+								-512.1019897460938,
+								-752.1019897460938,
+								-752.0691528320312
+							],
+							"y" : 
+							[
+								-630.6217041015625,
+								631.3439941406250,
+								631.3377685546875,
+								-630.62792968750
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -632.0691528320312,
+							"y" : -630.6248168945312
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -632.1019897460938,
+							"y" : 631.3408813476562
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
 					"name" : "BorderTop",
 					"polygon" : 
 					{
@@ -1101,89 +1184,6 @@
 					"friction" : 0.2,
 					"name" : "BorderTop",
 					"restitution" : 0.2
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								702.5933227539062,
-								702.5800170898438,
-								-685.3468017578125,
-								-685.333496093750
-							],
-							"y" : 
-							[
-								-563.6187133789062,
-								-533.6187133789062,
-								-534.2366943359375,
-								-564.2366943359375
-							]
-						}
-					},
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 702.5866699218750,
-							"y" : -548.6187133789062
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : -685.3401489257812,
-							"y" : -549.2366943359375
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
 				}
 			],
 			"linearVelocity" : 0,
@@ -1253,49 +1253,6 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 0,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : 
-				[
-					-50.99999618530273,
-					50.99999618530273,
-					50.99999618530273,
-					-50.99999618530273
-				],
-				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Sprite"
-				}
-			],
-			"file" : "Pentagon-ConcreteBrown.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-50.99999618530273,
-				-48.50,
-				50.99999618530273,
-				-48.50,
-				50.99999618530273,
-				48.50,
-				-50.99999618530273,
-				48.50
-			],
-			"name" : "Concrete R",
-			"opacity" : 1,
-			"scale" : 97.0
-		},
-		
-		{
-			"aspectScale" : 1,
 			"body" : 2,
 			"center" : 0,
 			"corners" : 
@@ -1314,7 +1271,7 @@
 				
 				{
 					"name" : "imageType",
-					"string" : "Sprite"
+					"string" : "Background"
 				}
 			],
 			"file" : "Pentagon-ConcreteBrown.png",
@@ -1335,49 +1292,6 @@
 			"name" : "Concrete 1",
 			"opacity" : 1,
 			"scale" : 97.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 1,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : 
-				[
-					-48.99999618530273,
-					48.99999618530273,
-					48.99999618530273,
-					-48.99999618530273
-				],
-				"y" : [ -46.50, -46.50, 46.50, 46.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Sprite"
-				}
-			],
-			"file" : "Pentagon-Orange.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-48.99999618530273,
-				-46.50,
-				48.99999618530273,
-				-46.50,
-				48.99999618530273,
-				46.50,
-				-48.99999618530273,
-				46.50
-			],
-			"name" : "PentaOrange",
-			"opacity" : 0.5,
-			"scale" : 93.0
 		},
 		
 		{
@@ -1405,6 +1319,92 @@
 			"name" : "Halfpipe-Overlay",
 			"opacity" : 1,
 			"scale" : 768.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 1,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : 
+				[
+					-48.99999618530273,
+					48.99999618530273,
+					48.99999618530273,
+					-48.99999618530273
+				],
+				"y" : [ -46.50, -46.50, 46.50, 46.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Pentagon-Orange.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-48.99999618530273,
+				-46.50,
+				48.99999618530273,
+				-46.50,
+				48.99999618530273,
+				46.50,
+				-48.99999618530273,
+				46.50
+			],
+			"name" : "PentaOrange",
+			"opacity" : 0.5,
+			"scale" : 93.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 0,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : 
+				[
+					-50.99999618530273,
+					50.99999618530273,
+					50.99999618530273,
+					-50.99999618530273
+				],
+				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Pentagon-ConcreteBrown.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-50.99999618530273,
+				-48.50,
+				50.99999618530273,
+				-48.50,
+				50.99999618530273,
+				48.50,
+				-50.99999618530273,
+				48.50
+			],
+			"name" : "Concrete R",
+			"opacity" : 1,
+			"scale" : 97.0
 		}
 	],
 	"positionIterations" : 3,

@@ -132,6 +132,10 @@
 		93D5715417BEE2E700167030 /* CMMPLevelSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5715217BEE2E700167030 /* CMMPLevelSet.m */; };
 		93D5715717BEE2E700167030 /* CMMPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5715617BEE2E700167030 /* CMMPSettings.m */; };
 		93D5715817BEE2E700167030 /* CMMPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5715617BEE2E700167030 /* CMMPSettings.m */; };
+		93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E0462017F6176400069A79 /* FiveBladeWheel.png */; };
+		93E0462517F6176400069A79 /* ScrewCross.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E0462117F6176400069A79 /* ScrewCross.png */; };
+		93E0462617F6176400069A79 /* ScrewSlit.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E0462217F6176400069A79 /* ScrewSlit.png */; };
+		93E0462717F6176400069A79 /* SixStarWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E0462317F6176400069A79 /* SixStarWheel.png */; };
 		93EAB2E817A19CBB009894C5 /* CMMarbleCollisionCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */; };
 		93EB27EB177F2E89001B7FBB /* CMMarbleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */; };
 		93EB27F2177F6F41001B7FBB /* CMMarbleMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EB27F1177F6F41001B7FBB /* CMMarbleMainMenuScene.m */; };
@@ -647,6 +651,10 @@
 		93D5715217BEE2E700167030 /* CMMPLevelSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMPLevelSet.m; sourceTree = "<group>"; };
 		93D5715517BEE2E700167030 /* CMMPSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMPSettings.h; sourceTree = "<group>"; };
 		93D5715617BEE2E700167030 /* CMMPSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMPSettings.m; sourceTree = "<group>"; };
+		93E0462017F6176400069A79 /* FiveBladeWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FiveBladeWheel.png; sourceTree = "<group>"; };
+		93E0462117F6176400069A79 /* ScrewCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrewCross.png; sourceTree = "<group>"; };
+		93E0462217F6176400069A79 /* ScrewSlit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrewSlit.png; sourceTree = "<group>"; };
+		93E0462317F6176400069A79 /* SixStarWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SixStarWheel.png; sourceTree = "<group>"; };
 		93EAB2E617A19CBB009894C5 /* CMMarbleCollisionCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleCollisionCollector.h; sourceTree = "<group>"; };
 		93EAB2E717A19CBB009894C5 /* CMMarbleCollisionCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleCollisionCollector.m; sourceTree = "<group>"; };
 		93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSprite.h; sourceTree = "<group>"; };
@@ -1196,6 +1204,10 @@
 		93A5C6A117EA4DC90030D22E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				93E0462017F6176400069A79 /* FiveBladeWheel.png */,
+				93E0462117F6176400069A79 /* ScrewCross.png */,
+				93E0462217F6176400069A79 /* ScrewSlit.png */,
+				93E0462317F6176400069A79 /* SixStarWheel.png */,
 				93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */,
 				93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */,
 				93A5C6A417EA4DEA0030D22E /* Pentagon-ConcreteBrown.png */,
@@ -1968,12 +1980,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
+				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
+				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
 				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
@@ -1995,6 +2010,7 @@
 				93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */,
 				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
 				93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */,
+				93E0462517F6176400069A79 /* ScrewCross.png in Resources */,
 				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */,
 				93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */,
 			);

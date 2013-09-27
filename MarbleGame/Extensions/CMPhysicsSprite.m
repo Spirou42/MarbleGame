@@ -13,7 +13,7 @@
 
 
 @implementation CMPhysicsSprite
-@synthesize assignedShapes = assignedShapes_;
+@synthesize assignedShapes = assignedShapes_, overlayNode = overlayNode_;
 @synthesize soundName = soundName_;
 @dynamic shapes;
 
@@ -69,6 +69,18 @@
 		[result addObjectsFromArray:self.shapes];
 	}
 	return result;
+}
+
+- (void) updateTransform
+{
+	[super updateTransform];
+	self.overlayNode.position = self.position;
+}
+
+- (void) draw
+{
+	self.overlayNode.position = self.position;
+	[super draw];
 }
 
 #pragma mark -

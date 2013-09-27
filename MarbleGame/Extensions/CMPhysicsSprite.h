@@ -12,6 +12,7 @@
 @interface CMPhysicsSprite : CCPhysicsSprite <ChipmunkObject,CMObjectSoundProtocol,NSCopying>
 
 @property (nonatomic,readonly) NSArray *shapes;
+@property (nonatomic,retain) CCNode* overlayNode;			// node that is not affected by rotation and is
 
 - (void) addShape:(ChipmunkShape*)someShape;
 - (void) addShapes:(id<NSFastEnumeration>)shapes;

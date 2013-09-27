@@ -229,7 +229,10 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 
 	for (CMRubeBody* rBody in self.rubeReader.bodies) {
     if ((rBody.type==kRubeBody_static) && ![rBody.name isEqualToString:@"World"]) {
-			[result addObject:rBody.physicsSprite];
+			if (rBody.physicsSprite) {
+				[result addObject:rBody.physicsSprite];
+			}
+
 		}
 	}
 	return result;
@@ -243,7 +246,10 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	
 	for (CMRubeBody* rBody in self.rubeReader.bodies) {
     if ((rBody.type==kRubeBody_dynamic)) {
-			[result addObject:rBody.physicsSprite];
+			if (rBody.physicsSprite) {
+				[result addObject:rBody.physicsSprite];
+			}
+
 		}
 	}
 	return result;

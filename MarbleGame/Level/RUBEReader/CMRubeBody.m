@@ -42,9 +42,48 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
   self.mass = 0.0;
 }
 
+- (NSString*) stringFromBodyType:(CMGameBodyType)bodyType
+{
+	NSString *result = nil;
+	switch (bodyType) {
+		case kGameBody_Emitter:
+			result =@"Emitter";
+			break;
+		case kGameBody_Respawn:
+			result = @"Respawn";
+			break;
+		case kGameBody_Undefined:
+			result = @"Undefined";
+			break;
+		case kGameBody_World:
+			result = @"World";
+			break;
+	}
+	return result;
+}
+
+- (CMGameBodyType) bodyTypeFromString:(NSString*)string
+{
+	CMGameBodyType result = kGameBody_Undefined;
+	NSString *typeString = [string uppercaseString];
+	if ([typeString isEqualToString:@"UNDEFINED"]) {
+		result = kGameBody_Undefined;
+	}else if([typeString isEqualToString:@"WORLD"]){
+		result = kGameBody_World;
+	}else if ([typeString isEqualToString:@"MARBLEEMITTER"]){
+		result = kGameBody_Emitter;
+	}else if ([typeString isEqualToString:@"MARBLERESPAWN"]){
+		result = kGameBody_Respawn;
+	}
+	return result;
+}
+
+
 - (void) initializeCustomProperties:(NSDictionary*)dict
 {
 	if ([dict allKeys].count > 0) {
+		NSString *p = [dict objectForKey:@"bodyType"];
+		self.gameType = [self bodyTypeFromString:p];
 		NSLog(@"%@ %@",self,dict);
 	}
 }
@@ -104,6 +143,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 
 - (CMPhysicsSprite*) physicsSprite
 {
+	if ((self.gameType == kGameBody_Respawn) || (self.gameType == kGameBody_Emitter)) {
+		return nil;
+	}
 	if (!self->cachedPhysicsSprite_) {
 		[self createPhysicsSprite];
 	}
@@ -197,7 +239,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 - (void) createPhysicsSprite
 {
 	// retrieve the sprite image
-	CMRubeImage *spriteImage = [self imageForType:kRubeImageType_Sprite];
+	CMRubeImage *spriteImage = [self imageForType:kRubeImageType_Background];
 	NSString *spriteName = spriteImage.filename;
 	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
 	result.chipmunkBody = self.cpBody;

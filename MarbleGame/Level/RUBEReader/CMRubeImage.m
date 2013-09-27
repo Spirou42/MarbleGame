@@ -43,9 +43,9 @@
 		case kRubeImageType_Overlay:
 		result = @"Overlay";
 		break;
-		case kRubeImageType_Sprite:
-		result = @"Sprite";
-		break;
+//		case kRubeImageType_Sprite:
+//		result = @"Sprite";
+//		break;
 		case kRubeImageType_Unknown:
 		default:
     result = @"Unkown";
@@ -64,9 +64,11 @@
 		result = kRubeImageType_Background;
 	}else if ([typeString isEqualToString:@"OVERLAY"]){
 		result = kRubeImageType_Overlay;
-	}else if ([typeString isEqualToString:@"SPRITE"]){
-		result = kRubeImageType_Sprite;
 	}
+//  else
+//		if ([typeString isEqualToString:@"SPRITE"]){
+//		result = kRubeImageType_Sprite;
+//	}
 	return result;
 }
 

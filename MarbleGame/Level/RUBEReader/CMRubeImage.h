@@ -12,7 +12,6 @@ typedef enum {
 	kRubeImageType_Unknown = -1,
 	kRubeImageType_Background = 0,
 	kRubeImageType_Overlay = 1,
-	kRubeImageType_Sprite = 2,
 } CMRubeImageType;
 
 

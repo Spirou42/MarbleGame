@@ -42,16 +42,35 @@
   [
     
     {
-      "class" : "body",
+      "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
     },
     
     {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
+      "class" : "body",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "World"
+        },
+        
+        {
+          "entry" : "MarbleEmitter"
+        },
+        
+        {
+          "entry" : "MarbleRespawn"
+        }
+      ],
+      "displayName" : "bodyType",
+      "name" : "bodyType",
       "type" : "string"
     },
     
@@ -85,6 +104,13 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     }
   ],
@@ -121,6 +147,14 @@
         "angle" : 0,
         "angularVelocity" : 0,
         "awake" : true,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "bodyType",
+            "string" : "World"
+          }
+        ],
         "fixture" : 
         [
           
@@ -839,11 +873,11 @@
         "massData-I" : 1405.381103515625,
         "massData-center" : 
         {
-          "x" : 0.007386429701000452,
+          "x" : 0.007386383600533009,
           "y" : 0.004715343005955219
         },
         "massData-mass" : 7.081452369689941,
-        "name" : "RightWheel",
+        "name" : "RightSpinning",
         "position" : 
         {
           "x" : 871.8281250,
@@ -1170,17 +1204,17 @@
         "id" : 3,
         "linearVelocity" : 
         {
-          "x" : -1.813970565795898,
-          "y" : 2.005387306213379
+          "x" : -2.278757095336914,
+          "y" : 2.302269935607910
         },
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231730077415705,
+          "x" : 0.01231718156486750,
           "y" : 0.007920361123979092
         },
         "massData-mass" : 39.99999618530273,
-        "name" : "FreeWheel",
+        "name" : "FreeWheel Right",
         "position" : 
         {
           "x" : 771.5230712890625,
@@ -1573,10 +1607,10 @@
         "massData-I" : 1405.380737304688,
         "massData-center" : 
         {
-          "x" : 0.007340169977396727,
-          "y" : 0.004706252366304398
+          "x" : 0.007340058218687773,
+          "y" : 0.004706252831965685
         },
-        "massData-mass" : 7.081452369689941,
+        "massData-mass" : 7.081451892852783,
         "name" : "LeftSpinning",
         "position" : 
         {
@@ -1590,6 +1624,14 @@
         "angle" : 0,
         "angularVelocity" : 0,
         "awake" : true,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "bodyType",
+            "string" : "(clear)"
+          }
+        ],
         "fixture" : 
         [
           
@@ -1906,11 +1948,11 @@
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231708656996489,
-          "y" : 0.007920332252979279
+          "x" : 0.01231727749109268,
+          "y" : 0.007920363917946815
         },
         "massData-mass" : 39.99999618530273,
-        "name" : "StaticWheel",
+        "name" : "FreeWheel Left",
         "position" : 
         {
           "x" : 260.7463378906250,
@@ -2303,11 +2345,11 @@
         "massData-I" : 1405.380615234375,
         "massData-center" : 
         {
-          "x" : 0.007340036332607269,
-          "y" : 0.004706252831965685
+          "x" : 0.007340192794799805,
+          "y" : 0.004706185776740313
         },
         "massData-mass" : 7.081451892852783,
-        "name" : "LeftSpinning",
+        "name" : "LeftSpinning-Blocked",
         "position" : 
         {
           "x" : 65.24965667724609,
@@ -2697,18 +2739,65 @@
         ],
         "id" : 7,
         "linearVelocity" : 0,
-        "massData-I" : 1405.380981445312,
+        "massData-I" : 1405.381103515625,
         "massData-center" : 
         {
           "x" : 0.007386362645775080,
-          "y" : 0.004715312272310257
+          "y" : 0.004715477582067251
         },
         "massData-mass" : 7.081452369689941,
-        "name" : "RightWheel",
+        "name" : "RightSpinning-Blocked",
         "position" : 
         {
           "x" : 959.8471069335938,
           "y" : 452.5910949707031
+        },
+        "type" : "dynamic"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "bodyType",
+            "string" : "MarbleEmitter"
+          }
+        ],
+        "id" : 8,
+        "linearVelocity" : 0,
+        "name" : "MarbleEmitter",
+        "position" : 
+        {
+          "x" : 511.6380615234375,
+          "y" : 569.167968750
+        },
+        "type" : "static"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "bodyType",
+            "string" : "MarbleRespawn"
+          }
+        ],
+        "id" : 9,
+        "linearVelocity" : 0,
+        "massData-mass" : 1,
+        "name" : "Respaw",
+        "position" : 
+        {
+          "x" : 42.0,
+          "y" : 820.0
         },
         "type" : "dynamic"
       }
@@ -2772,7 +2861,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",
@@ -2798,7 +2887,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",
@@ -2824,7 +2913,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",
@@ -2850,7 +2939,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",
@@ -2876,7 +2965,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",
@@ -2902,7 +2991,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "WoodGear-T1.png",

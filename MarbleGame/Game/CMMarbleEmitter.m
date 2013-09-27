@@ -8,7 +8,7 @@
 
 #import "CMMarbleEmitter.h"
 #import "CMMarbleGameDelegate.h"
-#import "CMMarbleSimulationLayer.h"#
+#import "CMMarbleSimulationLayer.h"
 #import "CMMarbleSprite.h"
 
 @interface CMMarbleEmitter ()
