@@ -201,7 +201,7 @@
 			<key>levelName</key>
 			<string>RUBE-Test</string>
 			<key>numOfMarbles</key>
-			<integer>3</integer>
+			<integer>60</integer>
 			<key>physics</key>
 			<dict/>
 			<key>graphics</key>

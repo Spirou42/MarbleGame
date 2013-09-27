@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class CCSprite;
-@class CMSimpleShapeReader, CMMarbleLevelSet, CMRubeSceneReader,ChipmunkObject;
+@class CMSimpleShapeReader, CMMarbleLevelSet, CMRubeSceneReader,ChipmunkObject,CMMarbleEmitter;
 
 @interface CMMarbleLevel : NSObject
 
@@ -50,5 +50,5 @@
 - (NSArray*) staticSprites;									///< creates and returns a List of all Static Sprites (CMPhysicsSprite) not named "World"
 - (NSArray*) dynamicSprites;								///< a list of all dynamic Sprites.
 - (NSArray*) constrains;                    ///< a list of all imported constraints
-
+- (CMMarbleEmitter*) marbleEmitter;
 @end

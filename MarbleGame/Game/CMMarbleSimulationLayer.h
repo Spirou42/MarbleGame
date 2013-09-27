@@ -17,7 +17,7 @@
 
 
 #define USE_NEW_COLLISION_DETECTOR 1
-@class  CMMarbleCollisionCollector, CMMarbleLevel;
+@class  CMMarbleCollisionCollector, CMMarbleLevel, CMMarbleEmitter,CMMarbleSprite;
 @interface CMMarbleSimulationLayer : CCLayerColor
 
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;
@@ -72,4 +72,5 @@
 - (void) removeCollisionSets:(NSArray*) layers;
 - (void) removedMarbles:(NSSet*) removedOnes;
 - (void) cleanupMarbles;
+- (void) marbleFired:(CMMarbleSprite*)marble;
 @end

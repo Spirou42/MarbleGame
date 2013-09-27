@@ -171,6 +171,8 @@
 		FE2818CD17F211540079BAF1 /* RockWell68-Score.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C917F211540079BAF1 /* RockWell68-Score.png */; };
 		FE28CD3A17D904F400C2F880 /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
+		FE3F850017F5D29700C3505E /* CMMarbleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F84FF17F5D29700C3505E /* CMMarbleEmitter.m */; };
+		FE3F850117F5D29700C3505E /* CMMarbleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F84FF17F5D29700C3505E /* CMMarbleEmitter.m */; };
 		FE4F6A431791A4E400B54D3A /* GlossMapShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */; };
 		FE4F6A441791A4E400B54D3A /* GlossMapShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */; };
 		FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88AEFB17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m */; };
@@ -683,6 +685,8 @@
 		FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSetScene.m; sourceTree = "<group>"; };
 		FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell68-Score.fnt"; sourceTree = "<group>"; };
 		FE2818C917F211540079BAF1 /* RockWell68-Score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell68-Score.png"; sourceTree = "<group>"; };
+		FE3F84FE17F5D29700C3505E /* CMMarbleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleEmitter.h; sourceTree = "<group>"; };
+		FE3F84FF17F5D29700C3505E /* CMMarbleEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleEmitter.m; sourceTree = "<group>"; };
 		FE4F6A411791A4E400B54D3A /* GlossMapShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.fsh; sourceTree = "<group>"; };
 		FE4F6A421791A4E400B54D3A /* GlossMapShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlossMapShader.vsh; sourceTree = "<group>"; };
 		FE88AEFA17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MarbleGameAppDelegate+GameDelegate.h"; sourceTree = "<group>"; };
@@ -1277,7 +1281,7 @@
 			children = (
 				939C935117F365B6008CF635 /* PowerUps */,
 				FEB4EF5B17BBC1580023D063 /* Management */,
-				FEB4EF4B17BBC13F0023D063 /* Visuals */,
+				FEB4EF4B17BBC13F0023D063 /* Play */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1390,19 +1394,21 @@
 			name = "5. Help";
 			sourceTree = "<group>";
 		};
-		FEB4EF4B17BBC13F0023D063 /* Visuals */ = {
+		FEB4EF4B17BBC13F0023D063 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */,
+				FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */,
+				FE3F84FE17F5D29700C3505E /* CMMarbleEmitter.h */,
+				FE3F84FF17F5D29700C3505E /* CMMarbleEmitter.m */,
 				93536644177DFB52009F640B /* CMMarbleSimulationLayer.h */,
 				93536645177DFB52009F640B /* CMMarbleSimulationLayer.m */,
 				93566EEF17B592ED0017176A /* CMMarbleSlot.h */,
 				93566EF017B592ED0017176A /* CMMarbleSlot.m */,
 				93EB27E9177F2E89001B7FBB /* CMMarbleSprite.h */,
 				93EB27EA177F2E89001B7FBB /* CMMarbleSprite.m */,
-				FEB4EF5C17BBC1F60023D063 /* CMMarbleBatchNode.h */,
-				FEB4EF5D17BBC1F60023D063 /* CMMarbleBatchNode.m */,
 			);
-			name = Visuals;
+			name = Play;
 			sourceTree = "<group>";
 		};
 		FEB4EF5B17BBC1580023D063 /* Management */ = {
@@ -2089,6 +2095,7 @@
 				93D5708A17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */,
 				FE9454CF17F472C9000B13B2 /* CMMarblePowerUpBase.m in Sources */,
 				938CE0B917BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */,
+				FE3F850017F5D29700C3505E /* CMMarbleEmitter.m in Sources */,
 				9356F7661793296B008D584E /* CMMarbleLevelSet.m in Sources */,
 				93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */,
 				938150EE17E39C4B009A5ABB /* CMLiquidAction.m in Sources */,
@@ -2151,6 +2158,7 @@
 				93D5708B17BEB9BC00167030 /* CMMarbleGameStatistics.xcdatamodeld in Sources */,
 				FE9454D017F472C9000B13B2 /* CMMarblePowerUpBase.m in Sources */,
 				938CE0BA17BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */,
+				FE3F850117F5D29700C3505E /* CMMarbleEmitter.m in Sources */,
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,
 				93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */,
 				938150EF17E39C4B009A5ABB /* CMLiquidAction.m in Sources */,

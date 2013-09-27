@@ -42,8 +42,9 @@
 #define MARBLE_GROOVE_Y 			740
 #define MARBLE_MAX_VELOCITY	8000.0f
 
-#define MARBLE_FIRE_SPEED			(1500.0f)
+#define MARBLE_FIRE_SPEED			(700.0f)
 #define MARBLE_RESPAWN_POINT	CGPointMake(512,MARBLE_GROOVE_Y+2.0*MARBLE_RADIUS+10)
+#define MARBLE_FIRE_POINT     CGPointMake(512,568)
 
 //////////////////////////////////////////////////
 #pragma mark  - COLLISION TYPES
@@ -89,7 +90,7 @@
 #pragma mark - UI Definitions
 
 // Alpha setting for Overlay Layers
-#define DEBUG_ALPHA_ON 0
+#define DEBUG_ALPHA_ON 1
 
 // Glossmap shader used to render Marbles
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"

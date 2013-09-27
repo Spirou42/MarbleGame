@@ -28,6 +28,7 @@
 #import "CMRubeBody.h"
 #import "CMObjectSoundProtocol.h"
 #import "CMMarblePowerUpBomb.h"
+#import "CMMarbleEmitter.h"
 
 enum {
 	kTagParentNode = 1,
@@ -558,7 +559,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.currentMarbleIndex = marbleIndex;
 	
-	if ((marbleCounter % 1) == 0) {
+	if ((marbleCounter % 6) == 0) {
 		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
     bombEffect.activeTime = 20.0;
 		ms.marbleAction = bombEffect;
@@ -740,45 +741,23 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.constraints addObject:a];
 		}
 	}
-	[self fireMarbles:p inTime:10];
+  self.currentLevel.marbleEmitter.simulationLayer = self;
+  [self.currentLevel.marbleEmitter startEmitter];
+
 }
 
-- (void) fireSingleMarble:(NSTimer*) timer
+- (void) marbleFired:(CMMarbleSprite*)marble
 {
-	NSUInteger marbleIndex = [self.gameDelegate marbleIndex];
-  NSString *marbleSet = [self.gameDelegate marbleSetName];
-	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-  ms.gameDelegate = self.gameDelegate;
-	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
-	[self.marbleBatchNode addChild:ms];
-//	[ms createOverlayTextureRect];
-	[self.space add:ms];
-	ChipmunkBody *dB = ms.chipmunkBody;
 
-	CGFloat velX = (MARBLE_FIRE_SPEED * (CGFloat)arc4random_uniform(100)/100.0) - (MARBLE_FIRE_SPEED/2.0);
-	CGFloat velY = (MARBLE_FIRE_SPEED * (CGFloat)arc4random_uniform(100)/100.0) - (MARBLE_FIRE_SPEED/2.0);
-//	NSLog(@"VelX: %f, VelY: %f",velX,velY);
-	dB.vel = cpv(velX,velY);
-	CGSize s = [[CCDirector sharedDirector] winSize];
-	dB.pos = CGPointMake(s.width/2.0, s.height - 200);
-	self.marblesToFire--;
-	if (self.marblesToFire == 0) {
-		[self.marbleFireTimer invalidate];
-		self.marbleFireTimer = nil;
-	}
-	[self.gameDelegate marbleFiredWithID:marbleIndex];
-	[self.simulatedMarbles addObject:ms];
+  [self.marbleBatchNode addChild:marble];
+  //	[ms createOverlayTextureRect];
+	[self.space add:marble];
+
+
+	[self.gameDelegate marbleFiredWithID:marble.ballIndex];
+	[self.simulatedMarbles addObject:marble];
 }
 
-- (void) fireMarbles:(NSUInteger)numOfMarbles inTime:(CGFloat)seconds
-{
-	if(!self.marbleFireTimer){
-		CGFloat marbleCadenz = seconds/numOfMarbles;
-		self.marblesToFire = numOfMarbles;
-		NSTimer *marbleTimer = [NSTimer scheduledTimerWithTimeInterval:marbleCadenz target:self selector:@selector(fireSingleMarble:) userInfo:nil repeats:YES];
-		self.marbleFireTimer = marbleTimer;
-	}
-}
 
 - (void) removedMarbles:(NSSet *)removedOnes
 {

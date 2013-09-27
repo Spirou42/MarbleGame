@@ -13,9 +13,11 @@
 #import "CMRubeBody.h"
 #import "CMRubeImage.h"
 #import "ChipmunkObject.h"
+#import "CMMarbleEmitter.h"
 
 @interface CMMarbleLevel ()
 @property(retain, nonatomic) CMSimpleShapeReader *shapeReader ;						///< shapeReader is depricated now. will be replaced by the RubeReader
+@property(retain, nonatomic) CMMarbleEmitter *cachedMarbleEmitter;
 @end
 
 @implementation CMMarbleLevel
@@ -37,6 +39,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	self.shapeReader          = nil;
 	self.rubeFileName					= nil;
   self.rubeReader           = nil;
+  self.cachedMarbleEmitter  = nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
@@ -100,6 +103,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	self.rubeFileName 					= nil;
   self.rubeReader             = nil;
   self.shapeReader            = nil;
+  self.cachedMarbleEmitter    = nil;
 	[super dealloc];
 }
 
@@ -262,6 +266,21 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	return  nil;
 }
 
+- (CMMarbleEmitter*) createMarbleEmitter
+{
+  CMMarbleEmitter* emitter =[CMMarbleEmitter new];
+  emitter.marbleFrequency = 8.0;
+  emitter.marblesToEmit = self.numberOfMarbles;
+  return emitter;
+}
+
+- (CMMarbleEmitter*) marbleEmitter
+{
+  if (!self.cachedMarbleEmitter) {
+    self.cachedMarbleEmitter = [self createMarbleEmitter];
+  }
+  return self.cachedMarbleEmitter;
+}
 
 
 #pragma mark - Helpers
