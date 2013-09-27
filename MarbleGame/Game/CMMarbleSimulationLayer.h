@@ -71,4 +71,5 @@
 -(void) retextureMarbles;
 - (void) removeCollisionSets:(NSArray*) layers;
 - (void) removedMarbles:(NSSet*) removedOnes;
+- (void) cleanupMarbles;
 @end

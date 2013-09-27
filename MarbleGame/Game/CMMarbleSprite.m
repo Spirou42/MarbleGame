@@ -98,6 +98,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 	self.soundName = nil;
 	self.powerUpParticles = nil;
 	self.touchParticles = nil;
+  self.marbleAction.parentMarble=nil;
 	self.marbleAction = nil;
 	[super dealloc];
 }
@@ -107,6 +108,11 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
   ChipmunkSpace *space = self.chipmunkBody.space;
   [space remove:self];
   [super cleanup];
+}
+
+-(void) onEnterTransitionDidFinish
+{
+  [self createOverlayTextureRect];
 }
 
 
@@ -202,7 +208,7 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 
 - (void) setBallIndex:(NSInteger)bI
 {
-	if (self->ballIndex_ != bI) {
+	if ((self->ballIndex_ != bI) && (bI >0)) {
 		self->ballIndex_ = bI;
 		CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.frameName];
 		[self setTextureRect:frame.rect rotated:frame.rotated untrimmedSize:frame.rect.size];

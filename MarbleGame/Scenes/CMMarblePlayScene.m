@@ -402,6 +402,7 @@
 
 //	[CMAppDelegate setCurrentPlayer:cP];
   [self.simulationLayer resetSimulation];
+
 	[self.marbleSlot clearMarbles];
 	self.levelStartTime = [NSDate date];
 	self.marblesInGame = [NSMutableSet set];
@@ -734,6 +735,7 @@
 	if (!self.marblesInGame.count) {
 		self.currentStatistics.time = -[self.levelStartTime  timeIntervalSinceNow];
 		[self.simulationLayer stopSimulation];
+    [self.simulationLayer cleanupMarbles];
 		[self finishLevel];
 	}
 

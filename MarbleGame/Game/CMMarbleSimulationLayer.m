@@ -540,7 +540,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   ms.gameDelegate = self.gameDelegate;
 	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
 	[self.marbleBatchNode addChild:ms];
-	[ms createOverlayTextureRect];
+//	[ms createOverlayTextureRect];
 	[self.space add:ms];
 
 	ChipmunkBody *dB = ms.chipmunkBody;
@@ -558,7 +558,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.currentMarbleIndex = marbleIndex;
 	
-	if ((marbleCounter % 5) == 0) {
+	if ((marbleCounter % 1) == 0) {
 		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
     bombEffect.activeTime = 20.0;
 		ms.marbleAction = bombEffect;
@@ -583,18 +583,21 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.space add:ms];
 	ms.position = pos;
 	[self.marbleBatchNode addChild:ms];
-	[ms createOverlayTextureRect];
+//	[ms createOverlayTextureRect];
   
 }
 - (void) startMarble
 {
-	self.dollyGroove = nil;
-	self.dollyServo = nil;
-  cpVect velocity =  self.dollyBody.vel;
-  cpVect velocityNew =cpvmult(velocity, .66);
-  self.dollyBody.vel = velocityNew;
-	[self.gameDelegate marbleDroppedWithID:self.currentMarbleIndex];
-	[self.simulatedMarbles addObject:self.dollyBody.data];
+  if (self.dollyBody) {
+    self.dollyGroove = nil;
+    self.dollyServo = nil;
+    cpVect velocity =  self.dollyBody.vel;
+    cpVect velocityNew =cpvmult(velocity, .66);
+    self.dollyBody.vel = velocityNew;
+    [self.gameDelegate marbleDroppedWithID:self.currentMarbleIndex];
+    [self.simulatedMarbles addObject:self.dollyBody.data];
+    self.dollyBody = nil;
+  }
 }
 
 - (void) moveMarble:(CMEvent*)movedEvent
@@ -680,8 +683,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.marbleFireTimer invalidate];
 	self.marbleFireTimer = nil;
   [self.marbleBatchNode removeAllChildren];
+  [self.simulatedMarbles removeAllObjects];
 	[self initializeLevel];
   self.simulationRunning = YES;
+}
+
+- (void) cleanupMarbles
+{
+
 }
 
 - (void) retextureMarbles
@@ -742,7 +751,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   ms.gameDelegate = self.gameDelegate;
 	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
 	[self.marbleBatchNode addChild:ms];
-	[ms createOverlayTextureRect];
+//	[ms createOverlayTextureRect];
 	[self.space add:ms];
 	ChipmunkBody *dB = ms.chipmunkBody;
 

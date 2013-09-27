@@ -32,6 +32,7 @@
 
 - (void) dealloc
 {
+  [self.particles removeFromParentAndCleanup:YES];
 	self.particles = nil;
   if (self.actionRemoveTimer) {
     [self.actionRemoveTimer invalidate];

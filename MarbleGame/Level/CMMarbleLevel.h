@@ -11,25 +11,6 @@
 @class CMSimpleShapeReader, CMMarbleLevelSet, CMRubeSceneReader,ChipmunkObject;
 
 @interface CMMarbleLevel : NSObject
-{
-//	@protected
-//	CCSprite 	*backgroundImage;
-//	CCSprite 	*overlayImage;
-//	NSString	*name;
-//	CMSimpleShapeReader * shapeReader;
-//	NSUInteger numberOfMarbles;
-//
-//	NSString *backgroundFilename;
-//	NSString *overlayFilename;
-//	NSString *staticBodiesFilename;
-//	NSDictionary *scoreLimits;
-//	NSDictionary *timeLimits;
-//	
-//	NSURL		*baseURL;
-//	
-//	NSString * rubeFileName;
-
-}
 
 @property (retain, nonatomic) NSString *name;															///< levelname
 @property (retain, nonatomic) NSString* backgroundFilename;								///< filename of the background image
@@ -45,14 +26,14 @@
 
 
 @property (assign, nonatomic) NSUInteger numberOfMarbles;									///< initial number of marbles
-@property (retain, nonatomic) NSDictionary *scoreLimits, *timeLimits;
-@property (readonly, nonatomic) NSInteger amateurScore,professionalScore,masterScore;
-@property (readonly, nonatomic) NSTimeInterval amateurTime,professionalTime,masterTime;
+@property (retain, nonatomic) NSDictionary *scoreLimits, *timeLimits;     ///< limits dict for score and time play mode
+@property (readonly, nonatomic) NSInteger amateurScore,professionalScore,masterScore; ///< decoded level scores
+@property (readonly, nonatomic) NSTimeInterval amateurTime,professionalTime,masterTime; ///< decoded time limits
 
 
-@property (nonatomic, retain) NSString *rubeFileName;
-@property (nonatomic, retain) CMRubeSceneReader* rubeReader;
-@property (nonatomic, readonly) BOOL isRubeLevel;
+@property (nonatomic, retain) NSString *rubeFileName;                     ///< name of the associated R.U.B.E. files
+@property (nonatomic, retain) CMRubeSceneReader* rubeReader;              ///< instance of the R.U.B.E. reader
+@property (nonatomic, readonly) BOOL isRubeLevel;                         ///< marker if this level is a R.U.B.E. level
 
 
 ///< baseURL for all file operation
@@ -68,5 +49,6 @@
 - (NSArray*) worldShapes;										///< all static shapes of the World Object
 - (NSArray*) staticSprites;									///< creates and returns a List of all Static Sprites (CMPhysicsSprite) not named "World"
 - (NSArray*) dynamicSprites;								///< a list of all dynamic Sprites.
-- (NSArray*) constrains;
+- (NSArray*) constrains;                    ///< a list of all imported constraints
+
 @end
