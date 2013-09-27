@@ -42,6 +42,20 @@
   [
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -68,21 +82,7 @@
     },
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -1202,7 +1202,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1227,7 +1227,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1252,7 +1252,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1277,7 +1277,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1298,7 +1298,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1323,7 +1323,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1348,7 +1348,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1369,7 +1369,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1394,7 +1394,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1415,7 +1415,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1440,7 +1440,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1461,7 +1461,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1486,7 +1486,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",
@@ -1511,7 +1511,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "crate.png",

@@ -42,6 +42,13 @@
   [
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
       "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
@@ -79,13 +86,6 @@
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -598,7 +598,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "Pentagon-Orange.png",
@@ -623,7 +623,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "Star-Wood1.png",
@@ -644,7 +644,7 @@
           
           {
             "name" : "imageType",
-            "string" : "Sprite"
+            "string" : "Background"
           }
         ],
         "file" : "Star-Wood1.png",
