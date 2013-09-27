@@ -274,7 +274,21 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 
 - (CMMarbleEmitter*) createMarbleEmitter
 {
+	BOOL hasPosition = NO;
+	CGPoint importedPosition;
+	if (self.isRubeLevel) {
+		NSArray * emiters = [self.rubeReader bodiesOfGameType:kGameBody_Emitter];
+		if (emiters.count) {
+			hasPosition=YES;
+			CMRubeBody *someBody = [emiters objectAtIndex:0];
+			importedPosition = someBody.position;
+		}
+		
+	}
   CMMarbleEmitter* emitter =[CMMarbleEmitter new];
+	if (hasPosition) {
+		emitter.position = importedPosition;
+	}
   emitter.marbleFrequency = 8.0;
   emitter.marblesToEmit = self.numberOfMarbles;
   return emitter;

@@ -104,6 +104,18 @@
   return results;
 }
 
+- (NSArray*) bodiesOfGameType:(CMGameBodyType)bType
+{
+  NSMutableArray *results = [NSMutableArray array];
+  for (CMRubeBody* body in self.bodies) {
+    if (body.gameType == bType) {
+      [results addObject:body];
+    }
+  }
+  return results;
+
+}
+
 - (NSArray*) staticBodies
 {
 	return [self bodiesOfType:kRubeBody_static];

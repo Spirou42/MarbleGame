@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CMRubeBody.h"
 @protocol ChipmunkObject;
 @class CMRubeBody, CMRubeImage;
 @interface CMRubeSceneReader : NSObject <ChipmunkObject>
@@ -33,6 +33,8 @@
 - (id) initWithContentsOfFile:(NSString*) filePath;
 
 - (CMRubeBody*) bodyWithName:(NSString*) name;
+- (NSArray*) bodiesOfType:(CMRubeBodyType) bType;
+- (NSArray*) bodiesOfGameType:(CMGameBodyType)bType;
 - (CMRubeImage*) imageWithName:(NSString*) name;
 
 @end
