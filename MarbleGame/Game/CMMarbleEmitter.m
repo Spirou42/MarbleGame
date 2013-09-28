@@ -98,7 +98,7 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   while (result > 360.0) {
     result -=360.0;
   }
-  NSLog(@"Angle: %f",result);
+//  NSLog(@"Angle: %f",result);
   return result;
 }
 

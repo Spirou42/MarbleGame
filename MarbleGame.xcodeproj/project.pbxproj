@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */; };
 		9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */; };
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
@@ -498,6 +499,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RUBETest-Overlay.png"; sourceTree = "<group>"; };
 		9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		9325653017E6662C0012C68F /* Halfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halfpipe.json; sourceTree = "<group>"; };
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
@@ -1204,9 +1206,6 @@
 			isa = PBXGroup;
 			children = (
 				93E0462017F6176400069A79 /* FiveBladeWheel.png */,
-				93E0462117F6176400069A79 /* ScrewCross.png */,
-				93E0462217F6176400069A79 /* ScrewSlit.png */,
-				93E0462317F6176400069A79 /* SixStarWheel.png */,
 				93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */,
 				93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */,
 				93A5C6A417EA4DEA0030D22E /* Pentagon-ConcreteBrown.png */,
@@ -1214,6 +1213,9 @@
 				93A5C6A617EA4DEA0030D22E /* Pentagon-Wood1.png */,
 				93A5C6A717EA4DEA0030D22E /* Pentagon-Wood2.png */,
 				93A5C6A817EA4DEA0030D22E /* Pentagon-Wood3.png */,
+				93E0462117F6176400069A79 /* ScrewCross.png */,
+				93E0462217F6176400069A79 /* ScrewSlit.png */,
+				93E0462317F6176400069A79 /* SixStarWheel.png */,
 				93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */,
 			);
 			name = Shared;
@@ -1326,10 +1328,8 @@
 		93F35A2917C29F1E00B9B4E9 /* RUBEReader */ = {
 			isa = PBXGroup;
 			children = (
-				93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */,
-				93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */,
-				93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */,
 				9356F7601793296B008D584E /* CMMarbleLevel.m */,
+				93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */,
 				93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */,
 				93F35A4117C2A1C500B9B4E9 /* CMRubeFixture.h */,
 				93F35A4217C2A1C500B9B4E9 /* CMRubeFixture.m */,
@@ -1337,6 +1337,8 @@
 				93F35A4617C2A1D400B9B4E9 /* CMRubeImage.m */,
 				93F35A4917C2A44A00B9B4E9 /* CMRubeJoint.h */,
 				93F35A4A17C2A44A00B9B4E9 /* CMRubeJoint.m */,
+				93F35A3917C29F5A00B9B4E9 /* CMRubeSceneReader.h */,
+				93F35A3A17C29F5A00B9B4E9 /* CMRubeSceneReader.m */,
 			);
 			path = RUBEReader;
 			sourceTree = "<group>";
@@ -1532,6 +1534,7 @@
 		FEBABB6617E0B81500E85ABD /* -1  RubeTest */ = {
 			isa = PBXGroup;
 			children = (
+				931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */,
 				FEBABB7E17E0D1D100E85ABD /* RUBE-Test.rube */,
 				FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */,
 				FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */,
@@ -1990,6 +1993,7 @@
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
+				931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
 				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
 				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */,

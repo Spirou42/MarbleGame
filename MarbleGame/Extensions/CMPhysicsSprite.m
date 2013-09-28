@@ -74,12 +74,12 @@
 - (void) updateTransform
 {
 	[super updateTransform];
-	self.overlayNode.position = self.position;
+//	self.overlayNode.position = self.position;
 }
 
 - (void) draw
 {
-	self.overlayNode.position = self.position;
+//	self.overlayNode.position = self.position;
 	[super draw];
 }
 
