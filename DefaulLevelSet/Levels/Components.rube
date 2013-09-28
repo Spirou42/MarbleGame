@@ -42,17 +42,17 @@
   [
     
     {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "world",
       "displayName" : "marbleCount",
       "name" : "marbleCount",
       "type" : "int"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
     },
     
     {
@@ -433,7 +433,7 @@
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231727749109268,
+          "x" : 0.01231708656996489,
           "y" : 0.007920170202851295
         },
         "massData-mass" : 39.99999618530273,
@@ -1443,6 +1443,71 @@
           "y" : 689.9855957031250
         },
         "type" : "dynamic"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "fixture" : 
+        [
+          
+          {
+            "customProperties" : 
+            [
+              
+              {
+                "name" : "collisionSound",
+                "string" : "Klack"
+              }
+            ],
+            "density" : 0.01335035264492035,
+            "friction" : 0.5,
+            "id" : 13,
+            "name" : "Box12",
+            "restitution" : 0.2,
+            "shapes" : 
+            [
+              
+              {
+                "type" : "polygon"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : 
+              [
+                -20.75335693359375,
+                20.75329589843750,
+                20.75329589843750,
+                -20.75335693359375
+              ],
+              "y" : 
+              [
+                -20.75369262695312,
+                -20.75369262695312,
+                20.75292968750,
+                20.75292968750
+              ]
+            }
+          }
+        ],
+        "id" : 9,
+        "linearVelocity" : 0,
+        "massData-I" : 6604.07031250,
+        "massData-center" : 
+        {
+          "x" : -3.051757812500000e-05,
+          "y" : -0.00038146972656250
+        },
+        "massData-mass" : 23.0,
+        "name" : "Box 12",
+        "position" : 
+        {
+          "x" : 735.3692626953125,
+          "y" : 820.9169311523438
+        },
+        "type" : "dynamic"
       }
     ],
     "metaimage" : 
@@ -1450,11 +1515,16 @@
       
       {
         "aspectScale" : 1,
-        "center" : 
-        {
-          "x" : 247.7985229492188,
-          "y" : 505.2478942871094
-        },
+        "body" : 4,
+        "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
         "file" : "SixStarWheel.png",
         "filter" : 1,
         "flip" : false,
@@ -1538,11 +1608,41 @@
       
       {
         "aspectScale" : 1,
+        "body" : 9,
         "center" : 
         {
-          "x" : 551.6647949218750,
-          "y" : 685.9373779296875
+          "x" : 6.103515625000000e-05,
+          "y" : 0
         },
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
+        "file" : "crate.png",
+        "filter" : 1,
+        "flip" : false,
+        "id" : 5,
+        "name" : "Crate",
+        "opacity" : 0.5,
+        "scale" : 41.58278656005859
+      },
+      
+      {
+        "aspectScale" : 1,
+        "body" : 6,
+        "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
         "file" : "FiveBladeWheel.png",
         "filter" : 1,
         "flip" : false,
@@ -1554,11 +1654,16 @@
       
       {
         "aspectScale" : 1,
-        "center" : 
-        {
-          "x" : 714.389160156250,
-          "y" : 687.2203979492188
-        },
+        "body" : 7,
+        "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
         "file" : "ScrewCross.png",
         "filter" : 1,
         "flip" : false,
@@ -1570,11 +1675,16 @@
       
       {
         "aspectScale" : 1,
-        "center" : 
-        {
-          "x" : 769.9269409179688,
-          "y" : 689.9855957031250
-        },
+        "body" : 8,
+        "center" : 0,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "imageType",
+            "string" : "Background"
+          }
+        ],
         "file" : "ScrewSlit.png",
         "filter" : 1,
         "flip" : false,
