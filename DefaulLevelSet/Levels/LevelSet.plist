@@ -201,7 +201,7 @@
 			<key>levelName</key>
 			<string>Testlevel - 1</string>
 			<key>numOfMarbles</key>
-			<integer>10</integer>
+			<integer>60</integer>
 			<key>graphics</key>
 			<dict>
 				<key>RUBELevel</key>
