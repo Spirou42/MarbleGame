@@ -245,6 +245,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 		return;
 	}
 	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
+	result.opacity = 255*spriteImage.rubeOpacity;
 	result.chipmunkBody = self.cpBody;
 	[result addShapes:self.chipmunkShapes];
 //	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));

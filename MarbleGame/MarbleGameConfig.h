@@ -90,7 +90,7 @@
 #pragma mark - UI Definitions
 
 // Alpha setting for Overlay Layers
-#define DEBUG_ALPHA_ON 1
+#define DEBUG_ALPHA_ON 0
 
 // Glossmap shader used to render Marbles
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"
