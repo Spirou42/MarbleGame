@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93030ACA17F797AB00AF3665 /* TestLevel-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 93030AC817F797AB00AF3665 /* TestLevel-1.json */; };
+		93030ACB17F797AB00AF3665 /* Testlevel-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93030AC917F797AB00AF3665 /* Testlevel-1.png */; };
 		931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */; };
 		9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */; };
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
@@ -107,6 +109,7 @@
 		93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */; };
 		93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
+		93B09BC917F8D8F900F75D0F /* BlackBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B09BC817F8D8F900F75D0F /* BlackBack.png */; };
 		93B5605817E376C5008E023E /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605217E376C5008E023E /* Boing.mp3 */; };
 		93B5605917E376C5008E023E /* Boing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605217E376C5008E023E /* Boing.mp3 */; };
 		93B5605A17E376C5008E023E /* Klack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93B5605317E376C5008E023E /* Klack.mp3 */; };
@@ -499,6 +502,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		93030AC817F797AB00AF3665 /* TestLevel-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "TestLevel-1.json"; sourceTree = "<group>"; };
+		93030AC917F797AB00AF3665 /* Testlevel-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Testlevel-1.png"; sourceTree = "<group>"; };
 		931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RUBETest-Overlay.png"; sourceTree = "<group>"; };
 		9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		9325653017E6662C0012C68F /* Halfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halfpipe.json; sourceTree = "<group>"; };
@@ -547,7 +552,7 @@
 		93566EEF17B592ED0017176A /* CMMarbleSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleSlot.h; sourceTree = "<group>"; };
 		93566EF017B592ED0017176A /* CMMarbleSlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleSlot.m; sourceTree = "<group>"; };
 		9356F75F1793296B008D584E /* CMMarbleLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevel.h; sourceTree = "<group>"; };
-		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMMarbleLevel.m; path = ../CMMarbleLevel.m; sourceTree = "<group>"; };
+		9356F7601793296B008D584E /* CMMarbleLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevel.m; sourceTree = "<group>"; };
 		9356F7611793296B008D584E /* CMMarbleLevelSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSet.h; sourceTree = "<group>"; };
 		9356F7621793296B008D584E /* CMMarbleLevelSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSet.m; sourceTree = "<group>"; };
 		9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelStatistics.h; sourceTree = "<group>"; };
@@ -635,6 +640,7 @@
 		93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-Wood1.png"; sourceTree = "<group>"; };
 		93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-2.json"; sourceTree = "<group>"; };
 		93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-3.json"; sourceTree = "<group>"; };
+		93B09BC817F8D8F900F75D0F /* BlackBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBack.png; sourceTree = "<group>"; };
 		93B5605217E376C5008E023E /* Boing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Boing.mp3; sourceTree = "<group>"; };
 		93B5605317E376C5008E023E /* Klack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klack.mp3; sourceTree = "<group>"; };
 		93B5605417E376C5008E023E /* Klick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Klick.mp3; sourceTree = "<group>"; };
@@ -873,6 +879,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93030AB817F7977500AF3665 /* -2 Testlevel */ = {
+			isa = PBXGroup;
+			children = (
+				93030AC817F797AB00AF3665 /* TestLevel-1.json */,
+				93030AC917F797AB00AF3665 /* Testlevel-1.png */,
+			);
+			name = "-2 Testlevel";
+			sourceTree = "<group>";
+		};
 		9325651F17E665FB0012C68F /* 1. Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1097,7 @@
 				93EFB6E217E4B0BC00B3B186 /* Legacy */,
 				93F35A2917C29F1E00B9B4E9 /* RUBEReader */,
 				9356F75F1793296B008D584E /* CMMarbleLevel.h */,
+				9356F7601793296B008D584E /* CMMarbleLevel.m */,
 				9356F7611793296B008D584E /* CMMarbleLevelSet.h */,
 				9356F7621793296B008D584E /* CMMarbleLevelSet.m */,
 				9356F7631793296B008D584E /* CMMarbleLevelStatistics.h */,
@@ -1205,6 +1221,7 @@
 		93A5C6A117EA4DC90030D22E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				93B09BC817F8D8F900F75D0F /* BlackBack.png */,
 				93E0462017F6176400069A79 /* FiveBladeWheel.png */,
 				93A5C6A217EA4DEA0030D22E /* Pentagon-Blue.png */,
 				93A5C6A317EA4DEA0030D22E /* Pentagon-ConcreteBlue.png */,
@@ -1328,7 +1345,6 @@
 		93F35A2917C29F1E00B9B4E9 /* RUBEReader */ = {
 			isa = PBXGroup;
 			children = (
-				9356F7601793296B008D584E /* CMMarbleLevel.m */,
 				93F35A3D17C2A1A900B9B4E9 /* CMRubeBody.h */,
 				93F35A3E17C2A1A900B9B4E9 /* CMRubeBody.m */,
 				93F35A4117C2A1C500B9B4E9 /* CMRubeFixture.h */,
@@ -1477,6 +1493,7 @@
 		FEBABB4517E0B6B700E85ABD /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				93030AB817F7977500AF3665 /* -2 Testlevel */,
 				93A5C6A117EA4DC90030D22E /* Shared */,
 				FEBABB6617E0B81500E85ABD /* -1  RubeTest */,
 				9325651F17E665FB0012C68F /* 1. Halfpipe */,
@@ -1983,6 +2000,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93030ACA17F797AB00AF3665 /* TestLevel-1.json in Resources */,
 				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
@@ -1990,6 +2008,7 @@
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
 				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
+				93030ACB17F797AB00AF3665 /* Testlevel-1.png in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
@@ -2006,6 +2025,7 @@
 				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
 				9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */,
 				93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */,
+				93B09BC917F8D8F900F75D0F /* BlackBack.png in Resources */,
 				93A5C6AE17EA4DEA0030D22E /* Pentagon-Orange.png in Resources */,
 				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */,
 				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */,

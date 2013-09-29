@@ -130,21 +130,47 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	return self.cachedChipmunkObjects;
 }
 
-- (NSArray*) distanceChipmunk
-{
-	if (!self.bodyA && !self.bodyB) {
-		return nil;
-	}
-
-	return self.cachedChipmunkObjects;
-}
-
 - (NSArray*) prismaticChipmunk
 {
 	if (!self.bodyA && !self.bodyB) {
 		return nil;
 	}
+	if (!self.cachedChipmunkObjects) {
+		NSMutableArray *result = [NSMutableArray array];
+		CGPoint groovStart = cpvmult(self.localAxisA, self.lowerLimit);
+		CGPoint grooveEnd = cpvmult(self.localAxisA, self.upperLimit);
+		CGPoint anchorBB  = cpvsub(self.anchorB, grooveEnd);
+		
+		ChipmunkRotaryLimitJoint *rotLimit = [ChipmunkRotaryLimitJoint rotaryLimitJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body min:self.refAngle max:self.refAngle];
+		[result addObject:rotLimit];
+		ChipmunkGrooveJoint* grooveJ = [ChipmunkGrooveJoint grooveJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body groove_a:groovStart groove_b:grooveEnd anchr2:self.anchorB];
+		[result addObject:grooveJ];
+		
+//		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.lowerLimit max:self.upperLimit];
+//		[result addObject:slideJ];
+		
+		self.cachedChipmunkObjects = result;
+	}
+	return self.cachedChipmunkObjects;
+}
 
+- (NSArray*) distanceChipmunk
+{
+	if (!self.bodyA && !self.bodyB) {
+		return nil;
+	}
+	if (!self.cachedChipmunkObjects) {
+		NSMutableArray *result = [NSMutableArray array];
+		
+//		ChipmunkPinJoint *pinJ = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
+//		[result addObject:pinJ];
+//		pinJ.dist = self.length;
+		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.length-(self.length/100.0) max:self.length+(self.length/100.0)];
+		[result addObject:slideJ];
+
+		self.cachedChipmunkObjects = result;
+	}
+	
 	return self.cachedChipmunkObjects;
 }
 

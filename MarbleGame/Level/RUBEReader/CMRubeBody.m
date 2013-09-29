@@ -241,6 +241,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 	// retrieve the sprite image
 	CMRubeImage *spriteImage = [self imageForType:kRubeImageType_Background];
 	NSString *spriteName = spriteImage.filename;
+	if (!spriteName) {
+		return;
+	}
 	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
 	result.chipmunkBody = self.cpBody;
 	[result addShapes:self.chipmunkShapes];
@@ -249,14 +252,16 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 	CMRubeImage *overlayImage = [self imageForType:kRubeImageType_Overlay];
 	if (overlayImage) {
 		CCSprite *overlaySprite = [CCSprite spriteWithFile:overlayImage.filename];
-		CGPoint p = cpvadd(overlayImage.rubeCenter, result.chipmunkBody.pos);
+		
+//		CGPoint p = cpvadd(overlayImage.rubeCenter, result.chipmunkBody.pos);
 		
 
 		overlaySprite.rotation=overlayImage.rubeAngle*180.0/M_PI;
 		NSLog(@"Rotation: %f",overlaySprite.rotation);
 //		p.x = 100;
-		overlaySprite.position= p;
+//		overlaySprite.position= p;
 		result.overlayNode = overlaySprite;
+		result.overlayOffset = overlayImage.rubeCenter;
 
 	}
 	

@@ -17,13 +17,21 @@
 @property (nonatomic, assign) cpVect *vBuffer;
 @end
 
+
+static NSDictionary* groupNames = nil;
 @implementation CMRubeFixture
 @synthesize name = name_, friction = friction_, restitution = restitution_,
 filterBits = filterBits_, filterMask = filterMask_, filterGroup = filterGroup_, type = type_,
 circleCenter = circleCenter_, circleRadius = circleRadius_, vertices = vertices_,
-soundName = soundName_;
+soundName = soundName_,groupName=groupName_;
 
 @synthesize cachedChipmunkObjects = cachedChipmunkObjects_, vBuffer = vBuffer_;
+
++ (void) initialize
+{
+	groupNames = @{@"mechanic": @"mechanic"};
+}
+
 
 - (void) initDefaults
 {
@@ -46,6 +54,7 @@ soundName = soundName_;
 		if (![[self.soundName pathExtension] isEqualToString:@"mp3"]) {
 			self.soundName = [self.soundName stringByAppendingPathExtension:@"mp3"];
 		}
+		self.groupName =[groupNames objectForKey:[dict objectForKey:@"groupName"]];
 	}
 }
 
@@ -228,6 +237,7 @@ soundName = soundName_;
   for (ChipmunkShape* shape in result) {
     shape.friction = self.friction;
     shape.elasticity = self.restitution;
+		shape.group = self.groupName;
   }
   return result;
 }

@@ -206,7 +206,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	 
 	self.space.collisionBias = pow(1.0-0.1, 400);
 	debugLayer_ = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
-	debugLayer_.visible = NO;
+	debugLayer_.visible = YES;
 	[self addChild:debugLayer_ z:100];
 	self.space.damping = 0.8;
 	

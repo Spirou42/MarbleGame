@@ -8,7 +8,7 @@
 			<key>levelName</key>
 			<string>RUBE-Test</string>
 			<key>numOfMarbles</key>
-			<integer>30</integer>
+			<integer>60</integer>
 			<key>physics</key>
 			<dict/>
 			<key>graphics</key>
@@ -199,15 +199,13 @@
 	<array>
 		<dict>
 			<key>levelName</key>
-			<string>RUBE-Test</string>
+			<string>Testlevel - 1</string>
 			<key>numOfMarbles</key>
 			<integer>60</integer>
-			<key>physics</key>
-			<dict/>
 			<key>graphics</key>
 			<dict>
 				<key>RUBELevel</key>
-				<string>RUBE-Test.json</string>
+				<string>TestLevel-1.json</string>
 			</dict>
 			<key>audio</key>
 			<dict/>
@@ -234,6 +232,8 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>levelName</key>
+			<string>Hurpzel Purpzel</string>
 			<key>scoreLimits</key>
 			<dict>
 				<key>time</key>
@@ -255,8 +255,6 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>levelName</key>
-			<string>Hurpzel Purpzel</string>
 			<key>numOfMarbles</key>
 			<integer>80</integer>
 			<key>graphics</key>
@@ -270,6 +268,8 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>levelName</key>
+			<string>Halfpipe</string>
 			<key>scoreLimits</key>
 			<dict>
 				<key>time</key>
@@ -291,8 +291,6 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>levelName</key>
-			<string>Halfpipe</string>
 			<key>numOfMarbles</key>
 			<integer>60</integer>
 			<key>graphics</key>
@@ -304,6 +302,8 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>levelName</key>
+			<string>Double Halfpipe</string>
 			<key>scoreLimits</key>
 			<dict>
 				<key>time</key>
@@ -325,8 +325,6 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>levelName</key>
-			<string>Double Halfpipe</string>
 			<key>numOfMarbles</key>
 			<integer>60</integer>
 			<key>graphics</key>
