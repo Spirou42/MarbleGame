@@ -179,6 +179,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 		CMRubeBody *world = [self.rubeReader bodyWithName:@"World"];
 		CMRubeImage *background = [world imageForType:kRubeImageType_Background];
 		self.backgroundImage = background.sprite;
+
 	}else
 	if (!self->backgroundImage_) {
 		self.backgroundImage = [self loadImageFrom:self.backgroundFilename];
@@ -191,6 +192,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	if (self.isRubeLevel) {
 		CMRubeBody *world = [self.rubeReader bodyWithName:@"World"];
 		CMRubeImage *overlay = [world imageForType:kRubeImageType_Overlay];
+
 		self.overlayImage = overlay.sprite;
 	}else	if(!self->overlayImage_){
 		self.overlayImage = [self loadImageFrom:self.overlayFilename];

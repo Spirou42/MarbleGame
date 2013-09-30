@@ -110,6 +110,7 @@
 {
 	CCSprite *theSprite = [CCSprite spriteWithFile:self.filename];
 //	NSLog(@"created a sprite %@ (%@)",theSprite,NSStringFromSize(theSprite.contentSize));
+  theSprite.opacity = 255.0*self.rubeOpacity;
 	self.cachedSprite = theSprite;
 }
 

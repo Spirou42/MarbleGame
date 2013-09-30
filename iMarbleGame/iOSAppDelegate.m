@@ -13,6 +13,7 @@
 #import "CMMarbleMainMenuScene.h"
 
 #import "MarbleGameAppDelegate+GameDelegate.h"
+#import "UIDevice_Hardware.h"
 #import <CoreData/CoreData.h>
 
 @implementation MyNavigationController
@@ -108,7 +109,11 @@
 	[director_ setDisplayStats:YES];
 	
 	// set FPS at 60
-	[director_ setAnimationInterval:1.0/40];
+  CGFloat framerate = 1.0/60.0f;
+  if ([[UIDevice currentDevice] platformType]==UIDevice1GiPad) {
+    framerate=10.0f/40.0f;
+  }
+	[director_ setAnimationInterval:framerate];
 	
 	// attach the openglView to the director
 	[director_ setView:glView];

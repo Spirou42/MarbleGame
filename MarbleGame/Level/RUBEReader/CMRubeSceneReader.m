@@ -60,8 +60,11 @@
 	for (CMRubeImage *rImage in self.images) {
     if (rImage.rubeBodyIndex != NSNotFound) {
 			NSLog(@"Image %@ to %ld",rImage.name,(long)rImage.rubeBodyIndex);
-			CMRubeBody* aBody = [self.bodies objectAtIndex:rImage.rubeBodyIndex];
-			[aBody attachImage:rImage];
+      if ((rImage.rubeBodyIndex >=0) && (rImage.rubeBodyIndex<self.bodies.count)) {
+        CMRubeBody* aBody = [self.bodies objectAtIndex:rImage.rubeBodyIndex];
+        [aBody attachImage:rImage];
+
+      }
 		}
 	}
 	

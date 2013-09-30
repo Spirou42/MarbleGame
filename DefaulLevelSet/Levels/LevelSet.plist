@@ -199,13 +199,13 @@
 	<array>
 		<dict>
 			<key>levelName</key>
-			<string>Testlevel - 1</string>
+			<string>Mechanic</string>
 			<key>numOfMarbles</key>
-			<integer>60</integer>
+			<integer>70</integer>
 			<key>graphics</key>
 			<dict>
 				<key>RUBELevel</key>
-				<string>TestLevel-1.json</string>
+				<string>Mechanic-1.json</string>
 			</dict>
 			<key>audio</key>
 			<dict/>

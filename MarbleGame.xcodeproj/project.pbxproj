@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93030ACA17F797AB00AF3665 /* TestLevel-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 93030AC817F797AB00AF3665 /* TestLevel-1.json */; };
-		93030ACB17F797AB00AF3665 /* Testlevel-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93030AC917F797AB00AF3665 /* Testlevel-1.png */; };
 		931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */; };
 		9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */; };
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
@@ -176,6 +174,8 @@
 		93FD6D3A17B14C87001CC41E /* multi.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FD6D3717B14C87001CC41E /* multi.png */; };
 		93FD6D3B17B14C87001CC41E /* multi.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FD6D3717B14C87001CC41E /* multi.png */; };
 		FE00BAFD17A17296002D8B06 /* CMMarbleLevelSetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */; };
+		FE02106217F9809500C0F374 /* UIDevice_Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = FE02106117F9809400C0F374 /* UIDevice_Hardware.m */; };
+		FE02107317F9C81C00C0F374 /* Mechanic-1.json in Resources */ = {isa = PBXBuildFile; fileRef = FE02107217F9C81C00C0F374 /* Mechanic-1.json */; };
 		FE2818CA17F211540079BAF1 /* RockWell68-Score.fnt in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */; };
 		FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */; };
 		FE2818CC17F211540079BAF1 /* RockWell68-Score.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2818C917F211540079BAF1 /* RockWell68-Score.png */; };
@@ -505,8 +505,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		93030AC817F797AB00AF3665 /* TestLevel-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "TestLevel-1.json"; sourceTree = "<group>"; };
-		93030AC917F797AB00AF3665 /* Testlevel-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Testlevel-1.png"; sourceTree = "<group>"; };
 		931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RUBETest-Overlay.png"; sourceTree = "<group>"; };
 		9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		9325653017E6662C0012C68F /* Halfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halfpipe.json; sourceTree = "<group>"; };
@@ -705,6 +703,9 @@
 		93FD6D3717B14C87001CC41E /* multi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multi.png; sourceTree = "<group>"; };
 		FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSetScene.h; sourceTree = "<group>"; };
 		FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSetScene.m; sourceTree = "<group>"; };
+		FE02106017F9809400C0F374 /* UIDevice_Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDevice_Hardware.h; sourceTree = "<group>"; };
+		FE02106117F9809400C0F374 /* UIDevice_Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDevice_Hardware.m; sourceTree = "<group>"; };
+		FE02107217F9C81C00C0F374 /* Mechanic-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Mechanic-1.json"; sourceTree = "<group>"; };
 		FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell68-Score.fnt"; sourceTree = "<group>"; };
 		FE2818C917F211540079BAF1 /* RockWell68-Score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell68-Score.png"; sourceTree = "<group>"; };
 		FE3F84FE17F5D29700C3505E /* CMMarbleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleEmitter.h; sourceTree = "<group>"; };
@@ -888,11 +889,10 @@
 		93030AB817F7977500AF3665 /* -2 Testlevel */ = {
 			isa = PBXGroup;
 			children = (
+				FE02107217F9C81C00C0F374 /* Mechanic-1.json */,
 				93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */,
 				93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */,
 				93B09BDB17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png */,
-				93030AC817F797AB00AF3665 /* TestLevel-1.json */,
-				93030AC917F797AB00AF3665 /* Testlevel-1.png */,
 			);
 			name = "-2 Testlevel";
 			sourceTree = "<group>";
@@ -1571,6 +1571,8 @@
 		FED2E5F717A7E488005A16B3 /* iMarbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				FE02106017F9809400C0F374 /* UIDevice_Hardware.h */,
+				FE02106117F9809400C0F374 /* UIDevice_Hardware.m */,
 				FED2E7E417A7E48B005A16B3 /* iOSAppDelegate.h */,
 				FED2E7E517A7E48B005A16B3 /* iOSAppDelegate.m */,
 				FED2E5F817A7E488005A16B3 /* Resources */,
@@ -2009,7 +2011,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93030ACA17F797AB00AF3665 /* TestLevel-1.json in Resources */,
 				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
@@ -2018,7 +2019,6 @@
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
 				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
-				93030ACB17F797AB00AF3665 /* Testlevel-1.png in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
 				93B09BDC17F8E87400F75D0F /* Mechanic-1 Overlay.png in Resources */,
@@ -2045,6 +2045,7 @@
 				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */,
 				93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */,
 				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
+				FE02107317F9C81C00C0F374 /* Mechanic-1.json in Resources */,
 				93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */,
 				93E0462517F6176400069A79 /* ScrewCross.png in Resources */,
 				FEBABB7517E0B93F00E85ABD /* LevelSet.plist in Resources */,
@@ -2211,6 +2212,7 @@
 				FE9454D017F472C9000B13B2 /* CMMarblePowerUpBase.m in Sources */,
 				938CE0BA17BFDC1F0086B6D9 /* CMMPLevelStat+DisplayHelper.m in Sources */,
 				FE3F850117F5D29700C3505E /* CMMarbleEmitter.m in Sources */,
+				FE02106217F9809500C0F374 /* UIDevice_Hardware.m in Sources */,
 				FED2E87817A7FD92005A16B3 /* CMMarbleSimulationLayer.m in Sources */,
 				93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */,
 				938150EF17E39C4B009A5ABB /* CMLiquidAction.m in Sources */,
