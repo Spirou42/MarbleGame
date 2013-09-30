@@ -111,7 +111,7 @@
 	// set FPS at 60
   CGFloat framerate = 1.0/60.0f;
   if ([[UIDevice currentDevice] platformType]==UIDevice1GiPad) {
-    framerate=10.0f/40.0f;
+    framerate=1.0f/40.0f;
   }
 	[director_ setAnimationInterval:framerate];
 	
