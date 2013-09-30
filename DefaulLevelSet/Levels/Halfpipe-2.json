@@ -182,89 +182,6 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								702.5933227539062,
-								702.5800170898438,
-								-685.3468017578125,
-								-685.333496093750
-							],
-							"y" : 
-							[
-								-563.6187133789062,
-								-533.6187133789062,
-								-534.2366943359375,
-								-564.2366943359375
-							]
-						}
-					},
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 702.5866699218750,
-							"y" : -548.6187133789062
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : -685.3401489257812,
-							"y" : -549.2366943359375
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderBottom",
-					"restitution" : 0.2
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
 					"friction" : 0.3,
 					"name" : "Halfpipe",
 					"polygon" : 
@@ -948,89 +865,6 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderRight",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								752.592285156250,
-								752.5593872070312,
-								512.5593872070312,
-								512.592285156250
-							],
-							"y" : 
-							[
-								-595.9458618164062,
-								626.1972045898438,
-								626.1907348632812,
-								-595.9523315429688
-							]
-						}
-					},
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 632.592285156250,
-							"y" : -595.9490966796875
-						},
-						"radius" : 120.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderRight",
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 632.5593872070312,
-							"y" : 626.1939697265625
-						},
-						"radius" : 120.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderRight",
-					"restitution" : 0.2
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
 					"name" : "BorderLeft",
 					"polygon" : 
 					{
@@ -1100,6 +934,172 @@
 					"density" : 1,
 					"friction" : 0.2,
 					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								702.5933227539062,
+								702.5800170898438,
+								-685.3468017578125,
+								-685.333496093750
+							],
+							"y" : 
+							[
+								-563.6187133789062,
+								-533.6187133789062,
+								-534.2366943359375,
+								-564.2366943359375
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 702.5866699218750,
+							"y" : -548.6187133789062
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -685.3401489257812,
+							"y" : -549.2366943359375
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderBottom",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								752.592285156250,
+								752.5593872070312,
+								512.5593872070312,
+								512.592285156250
+							],
+							"y" : 
+							[
+								-595.9458618164062,
+								626.1972045898438,
+								626.1907348632812,
+								-595.9523315429688
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 632.592285156250,
+							"y" : -595.9490966796875
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 632.5593872070312,
+							"y" : 626.1939697265625
+						},
+						"radius" : 120.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderRight",
 					"restitution" : 0.2
 				},
 				
@@ -1296,29 +1296,45 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 3,
+			"body" : 0,
 			"center" : 0,
 			"corners" : 
 			{
-				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
-				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+				"x" : 
+				[
+					-50.99999618530273,
+					50.99999618530273,
+					50.99999618530273,
+					-50.99999618530273
+				],
+				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
 			},
 			"customProperties" : 
 			[
 				
 				{
 					"name" : "imageType",
-					"string" : "Overlay"
+					"string" : "Background"
 				}
 			],
-			"file" : "HalfPipe-Foreground.png",
+			"file" : "Pentagon-ConcreteBrown.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-			"name" : "Halfpipe-Overlay",
+			"glVertexPointer" : 
+			[
+				-50.99999618530273,
+				-48.50,
+				50.99999618530273,
+				-48.50,
+				50.99999618530273,
+				48.50,
+				-50.99999618530273,
+				48.50
+			],
+			"name" : "Concrete R",
 			"opacity" : 1,
-			"scale" : 768.0
+			"scale" : 97.0
 		},
 		
 		{
@@ -1360,51 +1376,35 @@
 				46.50
 			],
 			"name" : "PentaOrange",
-			"opacity" : 0.5,
+			"opacity" : 1,
 			"scale" : 93.0
 		},
 		
 		{
 			"aspectScale" : 1,
-			"body" : 0,
+			"body" : 3,
 			"center" : 0,
 			"corners" : 
 			{
-				"x" : 
-				[
-					-50.99999618530273,
-					50.99999618530273,
-					50.99999618530273,
-					-50.99999618530273
-				],
-				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
 			},
 			"customProperties" : 
 			[
 				
 				{
 					"name" : "imageType",
-					"string" : "Background"
+					"string" : "Overlay"
 				}
 			],
-			"file" : "Pentagon-ConcreteBrown.png",
+			"file" : "HalfPipe-Foreground.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-50.99999618530273,
-				-48.50,
-				50.99999618530273,
-				-48.50,
-				50.99999618530273,
-				48.50,
-				-50.99999618530273,
-				48.50
-			],
-			"name" : "Concrete R",
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Halfpipe-Overlay",
 			"opacity" : 1,
-			"scale" : 97.0
+			"scale" : 768.0
 		}
 	],
 	"positionIterations" : 3,

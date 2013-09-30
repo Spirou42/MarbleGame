@@ -560,7 +560,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	
 	if ((marbleCounter % 6) == 0) {
 		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
-    bombEffect.activeTime = 40.0;
+    bombEffect.activeTime = 60.0;
 		ms.marbleAction = bombEffect;
 	}
 }
