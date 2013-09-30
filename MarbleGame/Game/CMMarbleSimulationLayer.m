@@ -279,7 +279,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
     return;
   }
 	int steps = 1;
-	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
+	// [[CCDirector sharedDirector] animationInterval]
+	CGFloat dt =[[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
 		[self.space step:dt];
