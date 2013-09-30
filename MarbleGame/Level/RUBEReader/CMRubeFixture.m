@@ -29,7 +29,7 @@ soundName = soundName_,groupName=groupName_;
 
 + (void) initialize
 {
-	groupNames = @{@"mechanic": @"mechanic"};
+	groupNames = [@{@"mechanic": @"mechanic"} retain];
 }
 
 

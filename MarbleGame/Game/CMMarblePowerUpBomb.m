@@ -65,7 +65,13 @@
     ChipmunkBody *body = info.shape.body;
 		if (!body.isStatic) {
 			CGPoint direction = cpvnormalize( cpvsub(info.point, pos));
-      CGFloat maxPulse = 20000.0 * (1-[self percentTime]);
+			CGFloat ratio = (1- [self percentTime]);
+			ratio = (ratio / 2.0)+0.5;
+			if (ratio < 0.5) {
+				ratio = 0.5;
+			}
+			
+      CGFloat maxPulse = 20000.0 * ratio;
 			CGPoint impulse = cpvmult(direction, maxPulse);
 			[body applyImpulse:impulse offset:CGPointMake(0, 0)];
 		}
