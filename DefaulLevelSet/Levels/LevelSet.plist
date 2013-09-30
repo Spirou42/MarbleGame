@@ -256,7 +256,7 @@
 				</dict>
 			</dict>
 			<key>numOfMarbles</key>
-			<integer>10</integer>
+			<integer>80</integer>
 			<key>graphics</key>
 			<dict>
 				<key>staticBodiesFilename</key>
