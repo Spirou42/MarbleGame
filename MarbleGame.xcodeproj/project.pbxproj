@@ -106,6 +106,7 @@
 		93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */; };
 		93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */; };
 		93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */; };
+		93A8661E17F9F817000263B2 /* Mechanic-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A8661D17F9F817000263B2 /* Mechanic-2.json */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
 		93B09BC917F8D8F900F75D0F /* BlackBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B09BC817F8D8F900F75D0F /* BlackBack.png */; };
 		93B09BDC17F8E87400F75D0F /* Mechanic-1 Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */; };
@@ -641,6 +642,7 @@
 		93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-Wood1.png"; sourceTree = "<group>"; };
 		93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-2.json"; sourceTree = "<group>"; };
 		93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-3.json"; sourceTree = "<group>"; };
+		93A8661D17F9F817000263B2 /* Mechanic-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Mechanic-2.json"; sourceTree = "<group>"; };
 		93B09BC817F8D8F900F75D0F /* BlackBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBack.png; sourceTree = "<group>"; };
 		93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mechanic-1 Overlay.png"; sourceTree = "<group>"; };
 		93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mechanic-1 TreppeLinks.png"; sourceTree = "<group>"; };
@@ -886,7 +888,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		93030AB817F7977500AF3665 /* -2 Testlevel */ = {
+		93030AB817F7977500AF3665 /* 6. Mechanic 1 */ = {
 			isa = PBXGroup;
 			children = (
 				FE02107217F9C81C00C0F374 /* Mechanic-1.json */,
@@ -894,7 +896,7 @@
 				93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */,
 				93B09BDB17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png */,
 			);
-			name = "-2 Testlevel";
+			name = "6. Mechanic 1";
 			sourceTree = "<group>";
 		};
 		9325651F17E665FB0012C68F /* 1. Halfpipe */ = {
@@ -1202,21 +1204,21 @@
 			name = PowerUps;
 			sourceTree = "<group>";
 		};
-		93A5C68B17EA37980030D22E /* 2. Double Halfpipe */ = {
+		93A5C68B17EA37980030D22E /* 3. Double Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
 				93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */,
 				93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */,
 			);
-			name = "2. Double Halfpipe";
+			name = "3. Double Halfpipe";
 			sourceTree = "<group>";
 		};
-		93A5C69F17EA4D980030D22E /* 4. Halfpipe 2 */ = {
+		93A5C69F17EA4D980030D22E /* 2. Halfpipe 2 */ = {
 			isa = PBXGroup;
 			children = (
 				93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */,
 			);
-			name = "4. Halfpipe 2";
+			name = "2. Halfpipe 2";
 			sourceTree = "<group>";
 		};
 		93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */ = {
@@ -1245,6 +1247,14 @@
 				93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		93A8661C17F9F746000263B2 /* 7. Mechanic 2 */ = {
+			isa = PBXGroup;
+			children = (
+				93A8661D17F9F817000263B2 /* Mechanic-2.json */,
+			);
+			name = "7. Mechanic 2";
 			sourceTree = "<group>";
 		};
 		93AD6C7517907AA3001DADD9 /* Externals */ = {
@@ -1502,29 +1512,30 @@
 		FEBABB4517E0B6B700E85ABD /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				93030AB817F7977500AF3665 /* -2 Testlevel */,
-				93A5C6A117EA4DC90030D22E /* Shared */,
 				FEBABB6617E0B81500E85ABD /* -1  RubeTest */,
 				9325651F17E665FB0012C68F /* 1. Halfpipe */,
-				93A5C68B17EA37980030D22E /* 2. Double Halfpipe */,
-				FEBABB6217E0B7CC00E85ABD /* 3. Boxes */,
-				93A5C69F17EA4D980030D22E /* 4. Halfpipe 2 */,
+				93A5C69F17EA4D980030D22E /* 2. Halfpipe 2 */,
+				93A5C68B17EA37980030D22E /* 3. Double Halfpipe */,
+				FEBABB6217E0B7CC00E85ABD /* 4. Boxes */,
 				93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */,
+				93030AB817F7977500AF3665 /* 6. Mechanic 1 */,
+				93A8661C17F9F746000263B2 /* 7. Mechanic 2 */,
 				FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */,
 				FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */,
 				FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */,
 				FEBABB5117E0B7C300E85ABD /* LevelSet.plist */,
+				93A5C6A117EA4DC90030D22E /* Shared */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
 		};
-		FEBABB6217E0B7CC00E85ABD /* 3. Boxes */ = {
+		FEBABB6217E0B7CC00E85ABD /* 4. Boxes */ = {
 			isa = PBXGroup;
 			children = (
 				9381510A17E3D349009A5ABB /* Boxes.json */,
 				9381510817E3C9E2009A5ABB /* crate.png */,
 			);
-			name = "3. Boxes";
+			name = "4. Boxes";
 			sourceTree = "<group>";
 		};
 		FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */ = {
@@ -2017,6 +2028,7 @@
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				93B09BDE17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png in Resources */,
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
+				93A8661E17F9F817000263B2 /* Mechanic-2.json in Resources */,
 				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,

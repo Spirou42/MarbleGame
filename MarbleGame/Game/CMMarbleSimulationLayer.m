@@ -411,22 +411,28 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 //	}
 	
 	NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-	if ((currentTime -self.lastMarbleSoundTime)<(1.0f/25.0f)) {
+	if ([resultSound isEqualToString:@"Klick.mp3"] &&  (currentTime -self.lastMarbleSoundTime)<(1.0f/15.0f) ) {
 		return;
 	}
 	cpFloat impulse = cpvlength(cpArbiterTotalImpulseWithFriction(arbiter));
-
+	if ([resultSound isEqualToString:@"Boing.mp3"]) {
+		NSLog(@"Sound: %@ I(%f)",resultSound,impulse);
+	}
 	if (impulse<100) {
-
 		return;
-	}else if(impulse>10000.0f){
+	}else
+		if(impulse>10000.0f){
 		impulse = 10000.0f;
 	}
 
 	float volume = MIN(impulse/10000.0f , 1.0f);
 
 	volume *= self.gameDelegate.soundVolume;
-	if(volume > 0.01f){
+	if ([resultSound isEqualToString:@"Boing.mp3"]) {
+			NSLog(@"Sound: %@ (%f)",resultSound,volume);
+	}
+
+	if(volume > 0.1f){
     CGFloat pitch = 1.0;
 
 		[[SimpleAudioEngine sharedEngine] playEffect:resultSound pitch:1.0 pan:pan gain:volume];
