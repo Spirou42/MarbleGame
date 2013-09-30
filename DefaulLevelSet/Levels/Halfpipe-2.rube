@@ -42,6 +42,20 @@
   [
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -69,20 +83,6 @@
     
     {
       "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
-      "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -612,7 +612,7 @@
         "flip" : false,
         "id" : 7,
         "name" : "PentaOrange",
-        "opacity" : 0.5,
+        "opacity" : 1,
         "scale" : 93.0
       }
     ],
