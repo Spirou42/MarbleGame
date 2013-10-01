@@ -24,7 +24,7 @@
 #pragma mark Physics
 
 #define MARBLE_FRICTION   .9
-#define MARBLE_ELASTICITY .2
+#define MARBLE_ELASTICITY .3
 #define BORDER_FRICTION   1.0f
 #define BORDER_ELASTICITY 0.1f
 

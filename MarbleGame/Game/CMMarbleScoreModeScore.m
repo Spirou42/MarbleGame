@@ -92,8 +92,9 @@
 
     [self.gameDelegate triggerEffect:kCMMarbleEffect_Explode atPosition:hitPosition];
     [self.gameDelegate triggerEffect:kCMMarbleEffect_ComboHit atPosition:hitPosition];
-		comboMultiplier += MARBLE_COMBO_MULTIPLYER;
-		self.comboHits -= [removedMarbles count];
+		comboMultiplier = MARBLE_COMBO_MULTIPLYER * (self.comboHits -1);
+    NSLog(@"ComboHits: %ld" ,self.comboHits);
+//		self.comboHits -= [removedMarbles count];
 	}
 	
   if (comboMultiplier <MARBLE_COMBO_MULTIPLYER) {
