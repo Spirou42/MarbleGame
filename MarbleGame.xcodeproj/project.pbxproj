@@ -107,6 +107,7 @@
 		93A5C6B517EA4E8F0030D22E /* Halfpipe-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */; };
 		93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */; };
 		93A8661E17F9F817000263B2 /* Mechanic-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A8661D17F9F817000263B2 /* Mechanic-2.json */; };
+		93A8662017FA331E000263B2 /* Mechanic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A8661F17FA331E000263B2 /* Mechanic-2.png */; };
 		93AD6CB817907BA9001DADD9 /* libcocos2d_chipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD6CA517907B19001DADD9 /* libcocos2d_chipmunk.a */; };
 		93B09BC917F8D8F900F75D0F /* BlackBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B09BC817F8D8F900F75D0F /* BlackBack.png */; };
 		93B09BDC17F8E87400F75D0F /* Mechanic-1 Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */; };
@@ -643,6 +644,7 @@
 		93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-2.json"; sourceTree = "<group>"; };
 		93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Halfpipe-3.json"; sourceTree = "<group>"; };
 		93A8661D17F9F817000263B2 /* Mechanic-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Mechanic-2.json"; sourceTree = "<group>"; };
+		93A8661F17FA331E000263B2 /* Mechanic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mechanic-2.png"; sourceTree = "<group>"; };
 		93B09BC817F8D8F900F75D0F /* BlackBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBack.png; sourceTree = "<group>"; };
 		93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mechanic-1 Overlay.png"; sourceTree = "<group>"; };
 		93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mechanic-1 TreppeLinks.png"; sourceTree = "<group>"; };
@@ -1252,6 +1254,7 @@
 		93A8661C17F9F746000263B2 /* 7. Mechanic 2 */ = {
 			isa = PBXGroup;
 			children = (
+				93A8661F17FA331E000263B2 /* Mechanic-2.png */,
 				93A8661D17F9F817000263B2 /* Mechanic-2.json */,
 			);
 			name = "7. Mechanic 2";
@@ -2057,6 +2060,7 @@
 				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */,
 				93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */,
 				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
+				93A8662017FA331E000263B2 /* Mechanic-2.png in Resources */,
 				FE02107317F9C81C00C0F374 /* Mechanic-1.json in Resources */,
 				93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */,
 				93E0462517F6176400069A79 /* ScrewCross.png in Resources */,

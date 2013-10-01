@@ -2856,7 +2856,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.1,
+					"friction" : 1,
 					"name" : "fixture7",
 					"polygon" : 
 					{
@@ -2864,17 +2864,17 @@
 						{
 							"x" : 
 							[
-								523.1378173828125,
-								503.1384277343750,
-								502.5831909179688,
-								522.5825805664062
+								167.1664733886719,
+								165.4934387207031,
+								51.24208831787109,
+								52.91513824462891
 							],
 							"y" : 
 							[
-								-168.6296691894531,
-								-168.47167968750,
-								-238.7623596191406,
-								-238.9203491210938
+								-277.4872436523438,
+								-257.5573120117188,
+								-267.1483154296875,
+								-287.0782470703125
 							]
 						}
 					},
@@ -2891,7 +2891,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.1,
+					"friction" : 1,
 					"name" : "fixture7",
 					"polygon" : 
 					{
@@ -2899,115 +2899,10 @@
 						{
 							"x" : 
 							[
-								514.2535400390625,
-								510.9122009277344,
-								351.425781250,
-								354.7671508789062
-							],
-							"y" : 
-							[
-								-248.7008056640625,
-								-228.9819030761719,
-								-256.0066833496094,
-								-275.7256164550781
-							]
-						}
-					},
-					"restitution" : 0.3
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								353.1259155273438,
-								168.0969543457031,
-								168.0380554199219,
-								353.0670166015625
-							],
-							"y" : 
-							[
-								-255.8661956787109,
-								-255.3213653564453,
-								-275.32128906250,
-								-275.8661193847656
-							]
-						}
-					},
-					"restitution" : 0.3
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								169.0890350341797,
-								167.0459747314453,
-								52.21546936035156,
-								54.25852966308594
-							],
-							"y" : 
-							[
-								-275.2690124511719,
-								-255.3736267089844,
-								-267.1655883789062,
-								-287.0609741210938
-							]
-						}
-					},
-					"restitution" : 0.3
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								53.45248031616211,
-								53.02151870727539,
-								-64.12569427490234,
-								-63.69473648071289
+								52.29409408569336,
+								51.86313247680664,
+								-65.28408050537109,
+								-64.85312652587891
 							],
 							"y" : 
 							[
@@ -3026,8 +2921,8 @@
 					{
 						"center" : 
 						{
-							"x" : 513.1381225585938,
-							"y" : -168.5506744384766
+							"x" : 166.3299560546875,
+							"y" : -267.5222778320312
 						},
 						"radius" : 10
 					},
@@ -3040,7 +2935,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.1,
+					"friction" : 1,
 					"name" : "fixture7",
 					"restitution" : 0.3
 				},
@@ -3050,79 +2945,7 @@
 					{
 						"center" : 
 						{
-							"x" : 512.5828857421875,
-							"y" : -238.8413543701172
-						},
-						"radius" : 10
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"restitution" : 0.3
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 353.0964660644531,
-							"y" : -265.8661499023438
-						},
-						"radius" : 10
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"restitution" : 0.3
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 168.0675048828125,
-							"y" : -265.3213195800781
-						},
-						"radius" : 10
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.1,
-					"name" : "fixture7",
-					"restitution" : 0.3
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 53.23699951171875,
+							"x" : 52.078613281250,
 							"y" : -277.113281250
 						},
 						"radius" : 10
@@ -3136,7 +2959,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.1,
+					"friction" : 1,
 					"name" : "fixture7",
 					"restitution" : 0.3
 				},
@@ -3146,7 +2969,7 @@
 					{
 						"center" : 
 						{
-							"x" : -63.91021728515625,
+							"x" : -65.0686035156250,
 							"y" : -279.6381530761719
 						},
 						"radius" : 10
@@ -3160,7 +2983,208 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.1,
+					"friction" : 1,
+					"name" : "fixture7",
+					"restitution" : 0.3
+				},
+				
+				{
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture8",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								351.9649353027344,
+								351.9112854003906,
+								166.3031463623047,
+								166.3567657470703
+							],
+							"y" : 
+							[
+								-277.0245056152344,
+								-257.0245666503906,
+								-257.5223083496094,
+								-277.5222473144531
+							]
+						}
+					},
+					"restitution" : 1
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 351.9381103515625,
+							"y" : -267.0245361328125
+						},
+						"radius" : 10
+					},
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture8",
+					"restitution" : 1
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 166.3299560546875,
+							"y" : -267.5222778320312
+						},
+						"radius" : 10
+					},
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture8",
+					"restitution" : 1
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture7",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								521.9794311523438,
+								501.9800415039062,
+								501.42480468750,
+								521.4241943359375
+							],
+							"y" : 
+							[
+								-169.7880401611328,
+								-169.6300506591797,
+								-239.9207305908203,
+								-240.0787200927734
+							]
+						}
+					},
+					"restitution" : 0.3
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture7",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								513.0951538085938,
+								509.7538146972656,
+								350.2673950195312,
+								353.6087646484375
+							],
+							"y" : 
+							[
+								-249.8591766357422,
+								-230.1402740478516,
+								-257.1650695800781,
+								-276.8840026855469
+							]
+						}
+					},
+					"restitution" : 0.3
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 511.9797363281250,
+							"y" : -169.7090454101562
+						},
+						"radius" : 10
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture7",
+					"restitution" : 0.3
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 511.4244995117188,
+							"y" : -239.9997253417969
+						},
+						"radius" : 10
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 1,
+					"name" : "fixture7",
+					"restitution" : 0.3
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 351.9380798339844,
+							"y" : -267.0245361328125
+						},
+						"radius" : 10
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 1,
 					"name" : "fixture7",
 					"restitution" : 0.3
 				},
@@ -3175,7 +3199,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3209,7 +3233,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3243,7 +3267,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3277,7 +3301,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3311,7 +3335,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3345,7 +3369,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3379,7 +3403,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3413,7 +3437,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3447,7 +3471,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3481,7 +3505,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3515,7 +3539,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3549,7 +3573,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3583,7 +3607,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3617,7 +3641,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3651,7 +3675,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3685,7 +3709,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3719,7 +3743,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3753,7 +3777,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3787,7 +3811,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0",
 					"polygon" : 
 					{
@@ -3830,7 +3854,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3853,7 +3877,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3876,7 +3900,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3899,7 +3923,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3922,7 +3946,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3945,7 +3969,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3968,7 +3992,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -3991,7 +4015,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4014,7 +4038,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4037,7 +4061,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4060,7 +4084,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4083,7 +4107,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4106,7 +4130,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4129,7 +4153,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4152,7 +4176,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4175,7 +4199,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4198,7 +4222,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4221,7 +4245,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4244,7 +4268,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4267,7 +4291,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.6,
+					"friction" : 0.9,
 					"name" : "fixture0"
 				},
 				
@@ -4440,7 +4464,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
+					"friction" : 0.9,
 					"name" : "fixture1",
 					"polygon" : 
 					{
@@ -4474,7 +4498,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
+					"friction" : 0.9,
 					"name" : "fixture1",
 					"polygon" : 
 					{
@@ -4517,7 +4541,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
+					"friction" : 0.9,
 					"name" : "fixture1"
 				},
 				
@@ -4540,7 +4564,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
+					"friction" : 0.9,
 					"name" : "fixture1"
 				},
 				
@@ -4563,7 +4587,7 @@
 						}
 					],
 					"density" : 1,
-					"friction" : 0.2,
+					"friction" : 0.9,
 					"name" : "fixture1"
 				},
 				
@@ -5946,60 +5970,6 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 3,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
-				"y" : [ -277.0, -277.0, 277.0, 277.0 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "Mechanic-1 TreppeLinks.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -20.50, -277.0, 20.50, -277.0, 20.50, 277.0, -20.50, 277.0 ],
-			"name" : "TreppeLinks",
-			"opacity" : 1,
-			"scale" : 554.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 23,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
-				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Overlay"
-				}
-			],
-			"file" : "Mechanic-1 Overlay.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-			"name" : "Overlay",
-			"opacity" : 1,
-			"scale" : 768.0
-		},
-		
-		{
-			"aspectScale" : 1,
 			"body" : 4,
 			"center" : 0,
 			"corners" : 
@@ -6027,71 +5997,12 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 1,
+			"body" : 23,
 			"center" : 0,
 			"corners" : 
 			{
-				"x" : 
-				[
-					-51.10752487182617,
-					51.10752487182617,
-					51.10752487182617,
-					-51.10752487182617
-				],
-				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "Pentagon-Blue.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-51.10752487182617,
-				-48.50,
-				51.10752487182617,
-				-48.50,
-				51.10752487182617,
-				48.50,
-				-51.10752487182617,
-				48.50
-			],
-			"name" : "BlockPentaConcrete",
-			"opacity" : 1,
-			"scale" : 97.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 17,
-			"center" : 
-			{
-				"x" : -0.037780761718750,
-				"y" : -3.8493652343750
-			},
-			"corners" : 
-			{
-				"x" : 
-				[
-					-14.03778076171875,
-					13.96221923828125,
-					13.96221923828125,
-					-14.03778076171875
-				],
-				"y" : 
-				[
-					-17.8493652343750,
-					-17.8493652343750,
-					10.1506347656250,
-					10.1506347656250
-				]
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
 			},
 			"customProperties" : 
 			[
@@ -6101,56 +6012,19 @@
 					"string" : "Overlay"
 				}
 			],
-			"file" : "ScrewCross.png",
+			"file" : "Mechanic-2.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-14.03778076171875,
-				-17.8493652343750,
-				13.96221923828125,
-				-17.8493652343750,
-				13.96221923828125,
-				10.1506347656250,
-				-14.03778076171875,
-				10.1506347656250
-			],
-			"name" : "ScrewCross",
-			"opacity" : 0,
-			"scale" : 28.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 17,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
-				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "FiveBladeWheel.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
-			"name" : "FiveBlade",
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Overlay",
 			"opacity" : 1,
-			"scale" : 157.0
+			"scale" : 768.0
 		},
 		
 		{
 			"aspectScale" : 1,
-			"body" : 0,
+			"body" : 1,
 			"center" : 0,
 			"corners" : 
 			{
@@ -6238,6 +6112,156 @@
 			"name" : "ScrewCross",
 			"opacity" : 0,
 			"scale" : 11.24796199798584
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 17,
+			"center" : 
+			{
+				"x" : -0.037780761718750,
+				"y" : -3.8493652343750
+			},
+			"corners" : 
+			{
+				"x" : 
+				[
+					-14.03778076171875,
+					13.96221923828125,
+					13.96221923828125,
+					-14.03778076171875
+				],
+				"y" : 
+				[
+					-17.8493652343750,
+					-17.8493652343750,
+					10.1506347656250,
+					10.1506347656250
+				]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Overlay"
+				}
+			],
+			"file" : "ScrewCross.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-14.03778076171875,
+				-17.8493652343750,
+				13.96221923828125,
+				-17.8493652343750,
+				13.96221923828125,
+				10.1506347656250,
+				-14.03778076171875,
+				10.1506347656250
+			],
+			"name" : "ScrewCross",
+			"opacity" : 0,
+			"scale" : 28.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 17,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
+				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "FiveBladeWheel.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
+			"name" : "FiveBlade",
+			"opacity" : 1,
+			"scale" : 157.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 3,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
+				"y" : [ -277.0, -277.0, 277.0, 277.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Mechanic-1 TreppeLinks.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -20.50, -277.0, 20.50, -277.0, 20.50, 277.0, -20.50, 277.0 ],
+			"name" : "TreppeLinks",
+			"opacity" : 1,
+			"scale" : 554.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 0,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : 
+				[
+					-51.10752487182617,
+					51.10752487182617,
+					51.10752487182617,
+					-51.10752487182617
+				],
+				"y" : [ -48.50, -48.50, 48.50, 48.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Pentagon-Blue.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : 
+			[
+				-51.10752487182617,
+				-48.50,
+				51.10752487182617,
+				-48.50,
+				51.10752487182617,
+				48.50,
+				-51.10752487182617,
+				48.50
+			],
+			"name" : "BlockPentaConcrete",
+			"opacity" : 1,
+			"scale" : 97.0
 		}
 	],
 	"joint" : 
