@@ -49,20 +49,6 @@
     },
     
     {
-      "class" : "fixture",
-      "displayName" : "groupName",
-      "name" : "groupName",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "body",
       "comboboxEntries" : 
       [
@@ -85,6 +71,20 @@
       ],
       "displayName" : "bodyType",
       "name" : "bodyType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "groupName",
+      "name" : "groupName",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     },
     
@@ -1218,11 +1218,11 @@
                 "string" : "Boing"
               }
             ],
-            "density" : 0.04531797021627426,
+            "density" : 0.01510599162429571,
             "friction" : 1,
             "id" : 7,
             "name" : "BlockPenta",
-            "restitution" : 5,
+            "restitution" : 2,
             "shapes" : 
             [
               
@@ -1253,13 +1253,13 @@
         ],
         "id" : 4,
         "linearVelocity" : 0,
-        "massData-I" : 328695.06250,
+        "massData-I" : 109565.031250,
         "massData-center" : 
         {
           "x" : 0.0006477050483226776,
           "y" : -4.908926010131836
         },
-        "massData-mass" : 299.9999694824219,
+        "massData-mass" : 100.0000076293945,
         "name" : "BlockPenta",
         "position" : 
         {
@@ -1293,11 +1293,11 @@
                 "string" : "Boing"
               }
             ],
-            "density" : 0.04531797021627426,
+            "density" : 0.02265898697078228,
             "friction" : 1,
             "id" : 8,
             "name" : "BlockPenta",
-            "restitution" : 5,
+            "restitution" : 3,
             "shapes" : 
             [
               
@@ -1328,13 +1328,13 @@
         ],
         "id" : 5,
         "linearVelocity" : 0,
-        "massData-I" : 328695.06250,
+        "massData-I" : 164347.5468750,
         "massData-center" : 
         {
           "x" : 0.0006477050483226776,
-          "y" : -4.908926010131836
+          "y" : -4.908926486968994
         },
-        "massData-mass" : 299.9999694824219,
+        "massData-mass" : 150.0,
         "name" : "BlockPenta",
         "position" : 
         {
@@ -2517,8 +2517,8 @@
         "massData-I" : 44477728.0,
         "massData-center" : 
         {
-          "x" : -0.4433502554893494,
-          "y" : -0.4058774709701538
+          "x" : -0.4433502852916718,
+          "y" : -0.4058706164360046
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2777,10 +2777,10 @@
         "massData-I" : 149821392.0,
         "massData-center" : 
         {
-          "x" : -0.1884758621454239,
-          "y" : -122.0257415771484
+          "x" : -0.1884759366512299,
+          "y" : -122.0257644653320
         },
-        "massData-mass" : 3427.7597656250,
+        "massData-mass" : 3427.759521484375,
         "name" : "StepsL",
         "position" : 
         {
