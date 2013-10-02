@@ -6026,6 +6026,60 @@
 		
 		{
 			"aspectScale" : 1,
+			"body" : 23,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Overlay"
+				}
+			],
+			"file" : "Mechanic-2.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Overlay",
+			"opacity" : 1,
+			"scale" : 768.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 2,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
+				"y" : [ -231.0, -231.0, 231.0, 231.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Mechanic-1 TreppeRechts.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -20.50, -231.0, 20.50, -231.0, 20.50, 231.0, -20.50, 231.0 ],
+			"name" : "Treppe Rechts",
+			"opacity" : 1,
+			"scale" : 462.0
+		},
+		
+		{
+			"aspectScale" : 1,
 			"body" : 1,
 			"center" : 0,
 			"corners" : 
@@ -6102,29 +6156,29 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 23,
+			"body" : 15,
 			"center" : 0,
 			"corners" : 
 			{
-				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
-				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
+				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
 			},
 			"customProperties" : 
 			[
 				
 				{
 					"name" : "imageType",
-					"string" : "Overlay"
+					"string" : "Background"
 				}
 			],
-			"file" : "Mechanic-2.png",
+			"file" : "FiveBladeWheel.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-			"name" : "Overlay",
+			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
+			"name" : "FiveBlade",
 			"opacity" : 1,
-			"scale" : 768.0
+			"scale" : 157.0
 		},
 		
 		{
@@ -6221,60 +6275,6 @@
 			"name" : "BlockPentaConcrete",
 			"opacity" : 1,
 			"scale" : 97.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 15,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
-				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "FiveBladeWheel.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
-			"name" : "FiveBlade",
-			"opacity" : 1,
-			"scale" : 157.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 2,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
-				"y" : [ -231.0, -231.0, 231.0, 231.0 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "Mechanic-1 TreppeRechts.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -20.50, -231.0, 20.50, -231.0, 20.50, 231.0, -20.50, 231.0 ],
-			"name" : "Treppe Rechts",
-			"opacity" : 1,
-			"scale" : 462.0
 		},
 		
 		{
