@@ -106,8 +106,10 @@
 	director_.wantsFullScreenLayout = YES;
 	
 	// Display FSP and SPF
+#if !ICON_PRODUCTION
+
 	[director_ setDisplayStats:YES];
-	
+#endif
 	// set FPS at 60
   CGFloat framerate = 1.0/60.0f;
   if ([[UIDevice currentDevice] platformType]==UIDevice1GiPad) {

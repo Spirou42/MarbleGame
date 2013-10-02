@@ -6026,12 +6026,28 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 23,
-			"center" : 0,
+			"body" : 15,
+			"center" : 
+			{
+				"x" : -0.037780761718750,
+				"y" : -3.8493652343750
+			},
 			"corners" : 
 			{
-				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
-				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+				"x" : 
+				[
+					-14.03778076171875,
+					13.96221923828125,
+					13.96221923828125,
+					-14.03778076171875
+				],
+				"y" : 
+				[
+					-17.8493652343750,
+					-17.8493652343750,
+					10.1506347656250,
+					10.1506347656250
+				]
 			},
 			"customProperties" : 
 			[
@@ -6041,41 +6057,24 @@
 					"string" : "Overlay"
 				}
 			],
-			"file" : "Mechanic-2.png",
+			"file" : "ScrewCross.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-			"name" : "Overlay",
-			"opacity" : 1,
-			"scale" : 768.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 2,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
-				"y" : [ -231.0, -231.0, 231.0, 231.0 ]
-			},
-			"customProperties" : 
+			"glVertexPointer" : 
 			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
+				-14.03778076171875,
+				-17.8493652343750,
+				13.96221923828125,
+				-17.8493652343750,
+				13.96221923828125,
+				10.1506347656250,
+				-14.03778076171875,
+				10.1506347656250
 			],
-			"file" : "Mechanic-1 TreppeRechts.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -20.50, -231.0, 20.50, -231.0, 20.50, 231.0, -20.50, 231.0 ],
-			"name" : "Treppe Rechts",
-			"opacity" : 1,
-			"scale" : 462.0
+			"name" : "ScrewCross",
+			"opacity" : 0,
+			"scale" : 28.0
 		},
 		
 		{
@@ -6156,55 +6155,12 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 15,
+			"body" : 23,
 			"center" : 0,
 			"corners" : 
 			{
-				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
-				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Background"
-				}
-			],
-			"file" : "FiveBladeWheel.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
-			"name" : "FiveBlade",
-			"opacity" : 1,
-			"scale" : 157.0
-		},
-		
-		{
-			"aspectScale" : 1,
-			"body" : 15,
-			"center" : 
-			{
-				"x" : -0.037780761718750,
-				"y" : -3.8493652343750
-			},
-			"corners" : 
-			{
-				"x" : 
-				[
-					-14.03778076171875,
-					13.96221923828125,
-					13.96221923828125,
-					-14.03778076171875
-				],
-				"y" : 
-				[
-					-17.8493652343750,
-					-17.8493652343750,
-					10.1506347656250,
-					10.1506347656250
-				]
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
 			},
 			"customProperties" : 
 			[
@@ -6214,24 +6170,14 @@
 					"string" : "Overlay"
 				}
 			],
-			"file" : "ScrewCross.png",
+			"file" : "Mechanic-2.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : 
-			[
-				-14.03778076171875,
-				-17.8493652343750,
-				13.96221923828125,
-				-17.8493652343750,
-				13.96221923828125,
-				10.1506347656250,
-				-14.03778076171875,
-				10.1506347656250
-			],
-			"name" : "ScrewCross",
-			"opacity" : 0,
-			"scale" : 28.0
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Overlay",
+			"opacity" : 1,
+			"scale" : 768.0
 		},
 		
 		{
@@ -6279,6 +6225,60 @@
 		
 		{
 			"aspectScale" : 1,
+			"body" : 15,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -81.50, 81.50, 81.50, -81.50 ],
+				"y" : [ -78.50, -78.50, 78.50, 78.50 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "FiveBladeWheel.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -81.50, -78.50, 81.50, -78.50, 81.50, 78.50, -81.50, 78.50 ],
+			"name" : "FiveBlade",
+			"opacity" : 1,
+			"scale" : 157.0
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 2,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -20.50, 20.50, 20.50, -20.50 ],
+				"y" : [ -231.0, -231.0, 231.0, 231.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Background"
+				}
+			],
+			"file" : "Mechanic-1 TreppeRechts.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -20.50, -231.0, 20.50, -231.0, 20.50, 231.0, -20.50, 231.0 ],
+			"name" : "Treppe Rechts",
+			"opacity" : 1,
+			"scale" : 462.0
+		},
+		
+		{
+			"aspectScale" : 1,
 			"body" : 21,
 			"center" : 0,
 			"corners" : 
@@ -6322,6 +6322,31 @@
 	],
 	"joint" : 
 	[
+		
+		{
+			"anchorA" : 
+			{
+				"x" : -0.03773939609527588,
+				"y" : -3.849364995956421
+			},
+			"anchorB" : 
+			{
+				"x" : -251.229980468750,
+				"y" : -231.3480072021484
+			},
+			"bodyA" : 15,
+			"bodyB" : 23,
+			"enableLimit" : false,
+			"enableMotor" : true,
+			"jointSpeed" : 0,
+			"lowerLimit" : 0,
+			"maxMotorTorque" : 15000000512.0,
+			"motorSpeed" : 1.396263360977173,
+			"name" : "joint0",
+			"refAngle" : 0,
+			"type" : "revolute",
+			"upperLimit" : 0
+		},
 		
 		{
 			"anchorA" : 0,
@@ -6404,31 +6429,6 @@
 			"length" : 195.0,
 			"name" : "joint5",
 			"type" : "distance"
-		},
-		
-		{
-			"anchorA" : 
-			{
-				"x" : -0.03773939609527588,
-				"y" : -3.849364995956421
-			},
-			"anchorB" : 
-			{
-				"x" : -251.229980468750,
-				"y" : -231.3480072021484
-			},
-			"bodyA" : 15,
-			"bodyB" : 23,
-			"enableLimit" : false,
-			"enableMotor" : true,
-			"jointSpeed" : 0,
-			"lowerLimit" : 0,
-			"maxMotorTorque" : 15000000512.0,
-			"motorSpeed" : 0.6981316804885864,
-			"name" : "joint0",
-			"refAngle" : 0,
-			"type" : "revolute",
-			"upperLimit" : 0
 		},
 		
 		{

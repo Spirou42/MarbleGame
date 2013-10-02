@@ -10,7 +10,7 @@
 #define MarbleGame_MarbleGameConfig_h
 //////////////////////////////////////////////////
 #define PHYSICS_PRODUCTION 0
-
+#define ICON_PRODUCTION 0
 
 
 

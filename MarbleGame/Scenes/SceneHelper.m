@@ -110,7 +110,7 @@ inline CCControlButton* defaultMenuButton()
   sIcon.position=CGPointMake(20, 20);
 	result.preferredSize=CGSizeMake(40, 40);
   result.anchorPoint=ccp(1.0, 1.0);
-  result.position=ccp(990, 762);
+  result.position=ccp(1000, 754);
   return result;
 }
 
