@@ -42,6 +42,20 @@
   [
     
     {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "body",
       "comboboxEntries" : 
       [
@@ -64,13 +78,6 @@
       ],
       "displayName" : "bodyType",
       "name" : "bodyType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
       "type" : "string"
     },
     
@@ -108,13 +115,6 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
       "type" : "string"
     }
   ],
@@ -459,8 +459,8 @@
         "massData-I" : 22420.1933593750,
         "massData-center" : 
         {
-          "x" : 0.01231718156486750,
-          "y" : 0.007920363917946815
+          "x" : 0.01231727749109268,
+          "y" : 0.007920170202851295
         },
         "massData-mass" : 39.99999618530273,
         "name" : "WheelGear",

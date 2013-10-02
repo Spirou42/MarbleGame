@@ -63,29 +63,10 @@
     },
     
     {
-      "class" : "body",
-      "comboboxEntries" : 
-      [
-        
-        {
-          "entry" : "Undefined"
-        },
-        
-        {
-          "entry" : "World"
-        },
-        
-        {
-          "entry" : "MarbleEmitter"
-        },
-        
-        {
-          "entry" : "MarbleRespawn"
-        }
-      ],
-      "displayName" : "bodyType",
-      "name" : "bodyType",
-      "type" : "string"
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     },
     
     {
@@ -119,10 +100,29 @@
     },
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
+      "class" : "body",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "World"
+        },
+        
+        {
+          "entry" : "MarbleEmitter"
+        },
+        
+        {
+          "entry" : "MarbleRespawn"
+        }
+      ],
+      "displayName" : "bodyType",
+      "name" : "bodyType",
+      "type" : "string"
     }
   ],
   "metaworld" : 
@@ -287,7 +287,7 @@
               }
             ],
             "density" : 1,
-            "friction" : 0.9,
+            "friction" : 0.6,
             "id" : 5,
             "name" : "fixture0",
             "shapes" : 
@@ -329,7 +329,7 @@
                 282.5794372558594,
                 -188.3199005126953,
                 -283.3869934082031,
-                -281.3392028808594,
+                -282.9540405273438,
                 -275.6954040527344,
                 -248.0154571533203,
                 -271.1872863769531,
@@ -346,6 +346,26 @@
                 -275.510253906250,
                 -279.6381530761719
               ]
+            }
+          },
+          
+          {
+            "density" : 1,
+            "friction" : 0.2,
+            "id" : 6,
+            "name" : "fixture9",
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 5,
+                "type" : "line"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ -421.6052246093750, -354.7078247070312 ],
+              "y" : [ -22.26646423339844, -51.26496887207031 ]
             }
           },
           
@@ -380,9 +400,10 @@
           
           {
             "density" : 1,
-            "friction" : -0.01,
+            "friction" : 1,
             "id" : 12,
             "name" : "fixture8",
+            "restitution" : 1,
             "shapes" : 
             [
               
@@ -1251,11 +1272,11 @@
                 "string" : "Boing"
               }
             ],
-            "density" : 0.04531797021627426,
+            "density" : 0.01510599069297314,
             "friction" : 1,
             "id" : 7,
             "name" : "BlockPenta",
-            "restitution" : 5,
+            "restitution" : 2,
             "shapes" : 
             [
               
@@ -1286,13 +1307,13 @@
         ],
         "id" : 4,
         "linearVelocity" : 0,
-        "massData-I" : 328695.06250,
+        "massData-I" : 109565.02343750,
         "massData-center" : 
         {
           "x" : 0.0006477050483226776,
           "y" : -4.908926010131836
         },
-        "massData-mass" : 299.9999694824219,
+        "massData-mass" : 100.0,
         "name" : "BlockPenta",
         "position" : 
         {
@@ -1326,11 +1347,11 @@
                 "string" : "Boing"
               }
             ],
-            "density" : 0.04531797021627426,
+            "density" : 0.02265898697078228,
             "friction" : 1,
             "id" : 8,
             "name" : "BlockPenta",
-            "restitution" : 5,
+            "restitution" : 3,
             "shapes" : 
             [
               
@@ -1361,13 +1382,13 @@
         ],
         "id" : 5,
         "linearVelocity" : 0,
-        "massData-I" : 328695.06250,
+        "massData-I" : 164347.5468750,
         "massData-center" : 
         {
           "x" : 0.0006477050483226776,
-          "y" : -4.908926010131836
+          "y" : -4.908926486968994
         },
-        "massData-mass" : 299.9999694824219,
+        "massData-mass" : 150.0,
         "name" : "BlockPenta",
         "position" : 
         {
@@ -2547,11 +2568,11 @@
         ],
         "id" : 53,
         "linearVelocity" : 0,
-        "massData-I" : 44477728.0,
+        "massData-I" : 44477724.0,
         "massData-center" : 
         {
-          "x" : -0.4433502554893494,
-          "y" : -0.4058774709701538
+          "x" : -0.4433503448963165,
+          "y" : -0.4058685600757599
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2738,7 +2759,7 @@
                 -19.65979003906250,
                 19.65979003906250,
                 19.65979003906250,
-                13.10652637481689,
+                17.27820968627930,
                 6.553262710571289,
                 -6.553264617919922,
                 -13.10652923583984,
@@ -2749,7 +2770,7 @@
                 -270.0617065429688,
                 -270.0617065429688,
                 -219.1085205078125,
-                -216.1512145996094,
+                -217.9678955078125,
                 -218.6229858398438,
                 -218.6229858398438,
                 -216.1512145996094,
@@ -2807,13 +2828,13 @@
         ],
         "id" : 69,
         "linearVelocity" : 0,
-        "massData-I" : 149821392.0,
+        "massData-I" : 149304064.0,
         "massData-center" : 
         {
-          "x" : -0.1884758621454239,
-          "y" : -122.0257415771484
+          "x" : -0.2280515432357788,
+          "y" : -121.7211608886719
         },
-        "massData-mass" : 3427.7597656250,
+        "massData-mass" : 3416.86718750,
         "name" : "StepsL",
         "position" : 
         {
@@ -3172,7 +3193,7 @@
         "id" : 7,
         "lowerLimit" : 0,
         "maxMotorTorque" : 15000000512.0,
-        "motorSpeed" : 2.094395160675049,
+        "motorSpeed" : 2.792526721954346,
         "name" : "joint3",
         "referenceAngle" : 0,
         "type" : "revolute",

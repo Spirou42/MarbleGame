@@ -24,7 +24,7 @@
 #pragma mark Physics
 
 #define MARBLE_FRICTION   .9
-#define MARBLE_ELASTICITY .2
+#define MARBLE_ELASTICITY .3
 #define BORDER_FRICTION   1.0f
 #define BORDER_ELASTICITY 0.1f
 
@@ -37,7 +37,7 @@
 #define MARBLE_MASS       		20.0f
 #define MARBLE_RADIUS 				20.0f
 #define MARBLE_DESTROY_TIME 		.1
-#define MARBLE_CREATE_DELAY 		.5
+#define MARBLE_CREATE_DELAY 		.2
 #define MARBLE_CREATE_TIME 			.1
 #define MARBLE_GROOVE_Y 			740
 #define MARBLE_MAX_VELOCITY	8000.0f

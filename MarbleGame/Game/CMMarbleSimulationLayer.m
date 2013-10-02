@@ -415,9 +415,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		return;
 	}
 	cpFloat impulse = cpvlength(cpArbiterTotalImpulseWithFriction(arbiter));
-	if ([resultSound isEqualToString:@"Boing.mp3"]) {
-		NSLog(@"Sound: %@ I(%f)",resultSound,impulse);
-	}
+//	if ([resultSound isEqualToString:@"Boing.mp3"]) {
+//		NSLog(@"Sound: %@ I(%f)",resultSound,impulse);
+//	}
 	if (impulse<100) {
 		return;
 	}else
@@ -428,9 +428,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	float volume = MIN(impulse/10000.0f , 1.0f);
 
 	volume *= self.gameDelegate.soundVolume;
-	if ([resultSound isEqualToString:@"Boing.mp3"]) {
-			NSLog(@"Sound: %@ (%f)",resultSound,volume);
-	}
+//	if ([resultSound isEqualToString:@"Boing.mp3"]) {
+//			NSLog(@"Sound: %@ (%f)",resultSound,volume);
+//	}
 
 	if(volume > 0.1f){
     CGFloat pitch = 1.0;
