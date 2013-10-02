@@ -292,7 +292,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 		emitter.position = importedPosition;
 	}
   emitter.marbleFrequency = 8.0;
-#if !PHYSICS_PRODUCTION
+#if !PHYSICS_PRODUCTION && !ICON_PRODUCTION
   emitter.marblesToEmit = self.numberOfMarbles;
 #else
 	emitter.marblesToEmit = 0;
