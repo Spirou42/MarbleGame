@@ -42,13 +42,6 @@
   [
     
     {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "world",
       "displayName" : "marbleCount",
       "name" : "marbleCount",
@@ -57,15 +50,15 @@
     
     {
       "class" : "fixture",
-      "displayName" : "groupName",
-      "name" : "groupName",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     },
     
     {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
+      "class" : "fixture",
+      "displayName" : "groupName",
+      "name" : "groupName",
       "type" : "string"
     },
     
@@ -92,6 +85,13 @@
       ],
       "displayName" : "bodyType",
       "name" : "bodyType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     },
     
@@ -1276,7 +1276,7 @@
             "friction" : 1,
             "id" : 7,
             "name" : "BlockPenta",
-            "restitution" : 2,
+            "restitution" : 3,
             "shapes" : 
             [
               
@@ -1351,7 +1351,7 @@
             "friction" : 1,
             "id" : 8,
             "name" : "BlockPenta",
-            "restitution" : 3,
+            "restitution" : 3.5,
             "shapes" : 
             [
               
@@ -2571,8 +2571,8 @@
         "massData-I" : 44477724.0,
         "massData-center" : 
         {
-          "x" : -0.4433503448963165,
-          "y" : -0.4058685600757599
+          "x" : -0.4433502852916718,
+          "y" : -0.4058706164360046
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2828,11 +2828,11 @@
         ],
         "id" : 69,
         "linearVelocity" : 0,
-        "massData-I" : 149304048.0,
+        "massData-I" : 149304032.0,
         "massData-center" : 
         {
-          "x" : -0.2280516028404236,
-          "y" : -121.7211685180664
+          "x" : -0.228051558136940,
+          "y" : -121.7211532592773
         },
         "massData-mass" : 3416.86718750,
         "name" : "StepsL",
@@ -3171,7 +3171,7 @@
         "id" : 5,
         "lowerLimit" : 0,
         "maxMotorTorque" : 15000000512.0,
-        "motorSpeed" : 0.6981316804885864,
+        "motorSpeed" : 1.396263360977173,
         "name" : "joint0",
         "referenceAngle" : 0,
         "type" : "revolute",

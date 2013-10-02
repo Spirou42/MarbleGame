@@ -42,13 +42,6 @@
   [
     
     {
-      "class" : "fixture",
-      "displayName" : "groupName",
-      "name" : "groupName",
-      "type" : "string"
-    },
-    
-    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -80,9 +73,30 @@
     
     {
       "class" : "fixture",
+      "displayName" : "groupName",
+      "name" : "groupName",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     },
     
     {
@@ -109,20 +123,6 @@
       "displayName" : "bodyType",
       "name" : "bodyType",
       "type" : "string"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
     }
   ],
   "metaworld" : 
@@ -2319,11 +2319,11 @@
         ],
         "id" : 53,
         "linearVelocity" : 0,
-        "massData-I" : 44477728.0,
+        "massData-I" : 44477724.0,
         "massData-center" : 
         {
           "x" : -0.4433503448963165,
-          "y" : -0.4058752357959747
+          "y" : -0.4058685600757599
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2582,10 +2582,10 @@
         "massData-I" : 149821392.0,
         "massData-center" : 
         {
-          "x" : -0.1884759068489075,
+          "x" : -0.1884759515523911,
           "y" : -122.0257492065430
         },
-        "massData-mass" : 3427.7597656250,
+        "massData-mass" : 3427.759521484375,
         "name" : "StepsL",
         "position" : 
         {
