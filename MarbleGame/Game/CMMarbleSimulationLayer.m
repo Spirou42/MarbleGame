@@ -204,12 +204,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 															 postSolve:@selector(postBorderCollision:space:)
 																separate:nil];
 	 
-	self.space.collisionBias = pow(1.0-0.1, 400);
+//	self.space.collisionBias = pow(1.0-0.1, 400);
 	debugLayer_ = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	debugLayer_.visible = NO;
 #if PHYSICS_PRODUCTION
 	debugLayer_.visible = YES;
-	debugLayer_.staticBodyColor = ccc4f(0.0, 0.3, 1.0, 0.5);
+	debugLayer_.staticBodyColor = ccc4f(0.0, 1.0, 0.0, 0.5);
 	debugLayer_.bodysToDraw = kChipmunkType_Dynamic|kChipmunkType_Static;
 #endif
 	[self addChild:debugLayer_ z:100];
@@ -283,7 +283,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		[self.gameDelegate simulationStepDone:delta];
     return;
   }
-	int steps = 1;
+	MarbleGameAppDelegate *appDel = CMAppDelegate;
+	
+	int steps = appDel.simulationSteps;
 	// [[CCDirector sharedDirector] animationInterval]
 	CGFloat dt =[[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	

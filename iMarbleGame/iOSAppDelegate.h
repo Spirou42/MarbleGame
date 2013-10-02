@@ -32,7 +32,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (readonly) MyNavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
-
+@property (readonly) BOOL isPad1;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

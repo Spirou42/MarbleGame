@@ -30,6 +30,7 @@ NSMutableDictionary *_scoreModeDelegates;
 @implementation MarbleGameAppDelegate (GameDelegate)
 
 //@dynamic levelSet,marbleSets;
+@dynamic simulationSteps;
 
 -(void) registerUserDefaults
 {

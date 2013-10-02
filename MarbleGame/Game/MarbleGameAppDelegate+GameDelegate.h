@@ -24,5 +24,5 @@
 
 @property (nonatomic, readonly) CMMarblePlayer *currentPlayer;
 @property (readonly, strong, nonatomic) NSURL *defaultStoreURL;
-
+@property (nonatomic, readonly) NSInteger simulationSteps;
 @end

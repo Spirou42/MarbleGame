@@ -49,14 +49,14 @@
   
 	[director runWithScene:[CMMarbleMainMenuScene node]];
 	
-#if __CC_PLATFORM_MAC
+//#if __CC_PLATFORM_MAC
 	if (self.currentPlayer.settings.wasFullScreen) {
     [self.window toggleFullScreen:nil];
 //		CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
 //		[director setFullScreen: YES ];
 
 	}
-#endif
+//#endif
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication
@@ -96,6 +96,13 @@
   self.currentPlayer.settings.wasFullScreen = NO;
   NSError *error;
   [self.managedObjectContext save:&error];
+}
+
+#pragma mark - Properties
+
+- (NSInteger) simulationSteps
+{
+	return 1;
 }
 
 #pragma mark -

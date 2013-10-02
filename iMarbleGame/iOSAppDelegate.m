@@ -111,7 +111,7 @@
 	// set FPS at 60
   CGFloat framerate = 1.0/60.0f;
   if ([[UIDevice currentDevice] platformType]==UIDevice1GiPad) {
-    framerate=1.0f/40.0f;
+    framerate=1.0f/30.0f;
   }
 	[director_ setAnimationInterval:framerate];
 	
@@ -163,6 +163,10 @@
 	
 	return YES;
 }
+- (BOOL) isPad1
+{
+	return [[UIDevice currentDevice] platformType]==UIDevice1GiPad;
+}
 
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application
@@ -208,6 +212,18 @@
 {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
+
+
+#pragma mark - Properties
+
+- (NSInteger) simulationSteps
+{
+	if ([[UIDevice currentDevice] platformType]==UIDevice1GiPad) {
+		return 2;
+	}
+	return 1;
+}
+
 
 - (void) dealloc
 {
