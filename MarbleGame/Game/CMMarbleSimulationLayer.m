@@ -207,6 +207,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	self.space.collisionBias = pow(1.0-0.1, 400);
 	debugLayer_ = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	debugLayer_.visible = NO;
+#if PHYSICS_PRODUCTION
+	debugLayer_.visible = YES;
+	debugLayer_.staticBodyColor = ccc4f(0.0, 0.3, 1.0, 0.5);
+	debugLayer_.bodysToDraw = kChipmunkType_Dynamic|kChipmunkType_Static;
+#endif
 	[self addChild:debugLayer_ z:100];
 	self.space.damping = 0.8;
 	
@@ -729,6 +734,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		for (id a in self.currentLevel.dynamicSprites) {
 			[self.dynamicSprites addObject:a];
 			[self.space add:a];
+#if !PHYSICS_PRODUCTION
 			[self.otherSpritesNode addChild:a];
 			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
 				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
@@ -736,12 +742,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 					[self.otherSpritesNode addChild:p.overlayNode z:10];
 				}
 			}
+#endif
 		}
 		
 		// request all static Sprites
 		for (id a in self.currentLevel.staticSprites) {
 			[self.staticSprites addObject:a];
 			[self.space add:a];
+#if !PHYSICS_PRODUCTION
 			[self.otherSpritesNode addChild:a];
 			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
 				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
@@ -749,7 +757,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 					[self.otherSpritesNode addChild:p.overlayNode z:10];
 				}
 			}
-
+#endif
 		}
 		// Constraints
 		for (id a in self.currentLevel.constrains) {

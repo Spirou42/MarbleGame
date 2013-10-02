@@ -745,12 +745,18 @@
 {
 		[self.removedMarbleQueue removeAllObjects];
 	CCSprite *bkg = level.backgroundImage;
-	if (bkg) {
+	if (bkg && !PHYSICS_PRODUCTION) {
 		self.backgroundSprite=bkg;
 	}
+#if PHYSICS_PRODUCTION
+	self.backgroundSprite = nil;
+#endif
 	
 	CCSprite *fgs = level.overlayImage;
-	self.foregroundSprite = fgs;
+	if (fgs && !PHYSICS_PRODUCTION) {
+		self.foregroundSprite = fgs;
+	}
+
 #if DEBUG_ALPHA_ON
   self.foregroundSprite.opacity = 128;
 #endif

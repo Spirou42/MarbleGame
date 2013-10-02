@@ -132,6 +132,8 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
 
 - (void) startEmitter
 {
+	if(!self.marblesToEmit)
+		return;
   if (!self.simulationLayer) {
     return;
   }
@@ -141,6 +143,7 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   if (self.marbleFrequency == 0) { // all at once not implemented yet
     return;
   }
+
   self.firedMarbles = 0;
   NSTimeInterval timeBetweenMarbles = (1.0/self.marbleFrequency);
   NSTimer * fireTimer = [NSTimer scheduledTimerWithTimeInterval:timeBetweenMarbles target:self selector:@selector(fireMarble:) userInfo:nil repeats:YES];

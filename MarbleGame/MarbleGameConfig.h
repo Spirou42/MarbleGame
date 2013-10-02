@@ -8,6 +8,11 @@
 
 #ifndef MarbleGame_MarbleGameConfig_h
 #define MarbleGame_MarbleGameConfig_h
+//////////////////////////////////////////////////
+#define PHYSICS_PRODUCTION 0
+
+
+
 
 //////////////////////////////////////////////////
 #pragma mark - 
