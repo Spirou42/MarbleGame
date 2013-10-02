@@ -27,6 +27,12 @@
 
 #import "CCDrawNode.h"
 
+typedef enum{
+	kChipmunkType_Static 		= 1,
+	kChipmunkType_Dynamic 	= 2,
+	kChipmunkType_Constraint = 4
+} ChipmunkDebugType;
+
 @class ChipmunkSpace;
 
 /**
@@ -46,6 +52,13 @@
 
 // property for the cpSpace
 @property (nonatomic, readwrite, assign) cpSpace *space;
+
+// aditional Color and Drawing Properties
+@property (nonatomic,assign) NSInteger bodysToDraw;
+@property (nonatomic,assign) ccColor4F staticBodyColor;
+@property (nonatomic,assign) ccColor4F dynamicBodyColor;
+@property (nonatomic,assign) ccColor4F sleepingBodyColor;
+@property (nonatomic,assign) ccColor4F constraintColor;
 
 /** Create a debug node for an Objective-Chipmunk space. */
 + (id) debugNodeForChipmunkSpace:(ChipmunkSpace *)space;

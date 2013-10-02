@@ -44,15 +44,23 @@
 	as the private API may change with little or no warning.
 */
 
+static ccColor4F staticColor__, dynamicColor__, sleepingColor__, constraintColor__;
+static NSInteger bodiesToDraw__;
 static ccColor4F ColorForBody(cpBody *body)
 {
-	if(cpBodyIsRogue(body) || cpBodyIsSleeping(body)){
-		return ccc4f(0.5, 0.5, 0.5 ,0.5);
-	} else if(body->CP_PRIVATE(node).idleTime > body->CP_PRIVATE(space)->sleepTimeThreshold) {
-		return ccc4f(0.33, 0.33, 0.33, 0.5);
-	} else {
-		return ccc4f(1, 0, 0, 0.5);
+	if (cpBodyIsRogue(body)) {
+		return staticColor__;
 	}
+	if (cpBodyIsSleeping(body)) {
+		return sleepingColor__;
+	}
+	if(body->CP_PRIVATE(node).idleTime > body->CP_PRIVATE(space)->sleepTimeThreshold){
+		ccColor4F k = dynamicColor__;
+		k.a = cpflerp(k.a, 1.0, 0.5);
+		return k;
+	}
+	return dynamicColor__;
+
 }
 
 static void
@@ -60,6 +68,14 @@ DrawShape(cpShape *shape, CCDrawNode *renderer)
 {
 	cpBody *body = shape->body;
 	ccColor4F color = ColorForBody(body);
+	BOOL shouldDrawStatic = (bodiesToDraw__ & kChipmunkType_Static);
+	BOOL shouldDrawDynamic = (bodiesToDraw__ & kChipmunkType_Dynamic);
+	if (cpBodyIsRogue(body) && !shouldDrawStatic) {
+		return;
+	}
+	if (!cpBodyIsRogue(body) && !shouldDrawDynamic){
+		return;
+	}
 
 	switch(shape->CP_PRIVATE(klass)->type){
 		case CP_CIRCLE_SHAPE: {
@@ -78,14 +94,14 @@ DrawShape(cpShape *shape, CCDrawNode *renderer)
 				ccColor4F line = color;
 				line.a = cpflerp(color.a, 1.0, 0.5);
 				
-				[renderer drawPolyWithVerts:poly->tVerts count:poly->numVerts fillColor:color borderWidth:1.0 borderColor:line];
+				[renderer drawPolyWithVerts:poly->tVerts count:poly->numVerts fillColor:color borderWidth:.2 borderColor:line];
 			}break;
 		default:
 			cpAssertHard(FALSE, "Bad assertion in DrawShape()");
 	}
 }
 
-ccColor4F CONSTRAINT_COLOR = {0, 1, 0, 0.5};
+
 
 static void
 DrawConstraint(cpConstraint *constraint, CCDrawNode *renderer)
@@ -100,26 +116,26 @@ DrawConstraint(cpConstraint *constraint, CCDrawNode *renderer)
 		cpVect a = cpBodyLocal2World(body_a, joint->anchr1);
 		cpVect b = cpBodyLocal2World(body_b, joint->anchr2);
 		
-		[renderer drawDot:a radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawDot:b radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawSegmentFrom:a to:b radius:1.0 color:CONSTRAINT_COLOR];
+		[renderer drawDot:a radius:3.0 color:constraintColor__];
+		[renderer drawDot:b radius:3.0 color:constraintColor__];
+		[renderer drawSegmentFrom:a to:b radius:1.0 color:constraintColor__];
 	} else if(klass == cpSlideJointGetClass()){
 		cpSlideJoint *joint = (cpSlideJoint *)constraint;
 
 		cpVect a = cpBodyLocal2World(body_a, joint->anchr1);
 		cpVect b = cpBodyLocal2World(body_b, joint->anchr2);
 
-		[renderer drawDot:a radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawDot:b radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawSegmentFrom:a to:b radius:1.0 color:CONSTRAINT_COLOR];
+		[renderer drawDot:a radius:3.0 color:constraintColor__];
+		[renderer drawDot:b radius:3.0 color:constraintColor__];
+		[renderer drawSegmentFrom:a to:b radius:1.0 color:constraintColor__];
 	} else if(klass == cpPivotJointGetClass()){
 		cpPivotJoint *joint = (cpPivotJoint *)constraint;
 
 		cpVect a = cpBodyLocal2World(body_a, joint->anchr1);
 		cpVect b = cpBodyLocal2World(body_b, joint->anchr2);
 
-		[renderer drawDot:a radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawDot:b radius:3.0 color:CONSTRAINT_COLOR];
+		[renderer drawDot:a radius:3.0 color:constraintColor__];
+		[renderer drawDot:b radius:3.0 color:constraintColor__];
 	} else if(klass == cpGrooveJointGetClass()){
 		cpGrooveJoint *joint = (cpGrooveJoint *)constraint;
 
@@ -127,8 +143,8 @@ DrawConstraint(cpConstraint *constraint, CCDrawNode *renderer)
 		cpVect b = cpBodyLocal2World(body_a, joint->grv_b);
 		cpVect c = cpBodyLocal2World(body_b, joint->anchr2);
 
-		[renderer drawDot:c radius:3.0 color:CONSTRAINT_COLOR];
-		[renderer drawSegmentFrom:a to:b radius:1.0 color:CONSTRAINT_COLOR];
+		[renderer drawDot:c radius:3.0 color:constraintColor__];
+		[renderer drawSegmentFrom:a to:b radius:1.0 color:constraintColor__];
 	} else if(klass == cpDampedSpringGetClass()){
 		// TODO
 	} else {
@@ -144,14 +160,38 @@ DrawConstraint(cpConstraint *constraint, CCDrawNode *renderer)
 
 @implementation CCPhysicsDebugNode
 
-@synthesize space = _spacePtr;
+@synthesize space = _spacePtr, bodysToDraw = bodysToDraw_, staticBodyColor=staticBodyColor_, dynamicBodyColor=dynamicBodyColor_, sleepingBodyColor=sleepingBodyColor_;
+
+- (id) init
+{
+	self = [super init];
+	if(self){
+
+		self.staticBodyColor =  ccc4f(0.5, 0.5, 0.5 ,0.5);
+		self.dynamicBodyColor = ccc4f(1.0, 0.0, 0.0, 0.5);
+		self.constraintColor = ccc4f(0.0, 1.0, 0.0, 0.5);
+		self.sleepingBodyColor = ccc4f(.2, 0.2, 0.2, 0.5);
+		self.bodysToDraw = kChipmunkType_Constraint | kChipmunkType_Dynamic | kChipmunkType_Static;
+	}
+	return self;
+}
+
 -(void) draw;
 {
 	if( ! _spacePtr )
 		return;
-
+	/////// this is really BAD!
+	staticColor__ = self.staticBodyColor;
+	dynamicColor__ = self.dynamicBodyColor;
+	sleepingColor__ = self.sleepingBodyColor;
+	constraintColor__ = self.constraintColor;
+	bodiesToDraw__ = self.bodysToDraw;
 	cpSpaceEachShape(_spacePtr, (cpSpaceShapeIteratorFunc)DrawShape, self);
-	cpSpaceEachConstraint(_spacePtr, (cpSpaceConstraintIteratorFunc)DrawConstraint, self);
+
+	if (self.bodysToDraw & kChipmunkType_Constraint) {
+		cpSpaceEachConstraint(_spacePtr, (cpSpaceConstraintIteratorFunc)DrawConstraint, self);
+	}
+
 	
 	[super draw];
 	[super clear];
