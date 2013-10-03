@@ -24,13 +24,28 @@
 
 - (NSArray*) loadLevelsFromDictionary:(NSDictionary*) dict
 {
-	NSMutableArray * mylevelList = [NSMutableArray array];
-	NSArray * levelDataList = [dict objectForKey:@"levels"];
-	for (NSDictionary *levelDict in levelDataList) {
-    CMMarbleLevel *level =[[[CMMarbleLevel alloc]initWithDictionary:levelDict]autorelease];	
-		level.baseURL = self.baseURL;
-		[mylevelList addObject:level];
-	}
+  NSMutableArray * mylevelList = [NSMutableArray array];
+  NSDictionary* levels = [dict objectForKey:@"Levels"];
+  NSArray *lList = [dict objectForKey:@"LevelOrder"];
+  for (NSString *levelId in lList) {
+    NSDictionary* levelDict= [levels objectForKey:levelId];
+    if (levelDict) {
+      CMMarbleLevel *level = [[[CMMarbleLevel alloc]initWithDictionary:levelDict]autorelease];
+      level.baseURL = self.baseURL;
+      [mylevelList addObject:level];
+    }else{
+      NSLog(@"Level with ID %@ not found",levelId);
+    }
+
+  }
+
+
+//	NSArray * levelDataList = [dict objectForKey:@"levels"];
+//	for (NSDictionary *levelDict in levelDataList) {
+//    CMMarbleLevel *level =[[[CMMarbleLevel alloc]initWithDictionary:levelDict]autorelease];	
+//		level.baseURL = self.baseURL;
+//		[mylevelList addObject:level];
+//	}
 	return mylevelList;
 }
 

@@ -47,18 +47,10 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	self.backgroundFilename     = [dict objectForKey:@"backgroundFilename"];
 	self.overlayFilename        = [dict objectForKey:@"overlayFilename"];
 	self.staticBodiesFilename   = [dict objectForKey:@"staticBodiesFilename"];
-	self.rubeFileName						= [dict objectForKey:@"RUBELevel"];
+//	self.rubeFileName						= [dict objectForKey:@"RUBELevel"];
 }
 
-- (void) initPhysicsFromDict:(NSDictionary*) dict
-{
-	
-}
 
-- (void) initAudioFromDict:(NSDictionary*) dict
-{
-	
-}
 
 - (id) init
 {
@@ -73,16 +65,17 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	if((self = [super init])){
 		[self initDefaults];
 
-		self.name               = [dict objectForKey:@"levelName"];
-		self.numberOfMarbles    = [[dict objectForKey:@"numOfMarbles"] unsignedIntValue];
+		self.name               = [dict objectForKey:@"Name"];
+		self.numberOfMarbles    = [[dict objectForKey:@"Marbles"] unsignedIntValue];
+    self.rubeFileName       = [dict objectForKey:@"Level"];
 		NSDictionary *graphics  = [dict objectForKey:@"graphics"];
-		NSDictionary *audio     = [dict objectForKey:@"audio"];
-		NSDictionary *physics   = [dict objectForKey:@"physics"];
-		self.scoreLimits				= [dict valueForKeyPath:@"scoreLimits.score"];
-		self.timeLimits					= [dict valueForKeyPath:@"scoreLimits.time"];
-    [self initGraphicsFromDict:graphics];
-		[self initPhysicsFromDict:physics];
-		[self initAudioFromDict:audio];
+
+		self.scoreLimits				= [dict valueForKeyPath:@"Limits.score"];
+		self.timeLimits					= [dict valueForKeyPath:@"Limits.time"];
+    if (graphics) {
+      [self initGraphicsFromDict:graphics];
+    }
+
 //		if (self.rubeFileName) {
 //			// get a rube reader and try to read the file
 //			CMMarbleRubeReader *reader = [[[CMMarbleRubeReader alloc]initWithContentsOfFile:self.rubeFileName]autorelease];

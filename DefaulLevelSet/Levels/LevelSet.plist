@@ -2,23 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>levels Old</key>
+	<key>LevelOrder</key>
 	<array>
+		<string>HP</string>
+		<string>HP2</string>
+		<string>DHP</string>
+		<string>Box</string>
+		<string>HP3</string>
+		<string>Mech</string>
+		<string>Mech2</string>
+		<string>STB</string>
+		<string>HUPU</string>
+	</array>
+	<key>Levels</key>
+	<dict>
+		<key>RUBET</key>
 		<dict>
-			<key>levelName</key>
+			<key>Level</key>
+			<string>RUBE-Test.json</string>
+			<key>Name</key>
 			<string>RUBE-Test</string>
-			<key>numOfMarbles</key>
+			<key>Marbles</key>
 			<integer>60</integer>
-			<key>physics</key>
-			<dict/>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>RUBE-Test.json</string>
-			</dict>
-			<key>audio</key>
-			<dict/>
-			<key>scoreLimits</key>
+			<key>Limits</key>
 			<dict>
 				<key>time</key>
 				<dict>
@@ -40,167 +46,15 @@
 				</dict>
 			</dict>
 		</dict>
+		<key>HP</key>
 		<dict>
-			<key>levelName</key>
-			<string>Empty Space</string>
-			<key>numOfMarbles</key>
-			<integer>30</integer>
-			<key>physics</key>
-			<dict/>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Level0.json</string>
-				<key>overlayFilename</key>
-				<string>Level0-Overlay</string>
-			</dict>
-			<key>audio</key>
-			<dict/>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>30</integer>
-					<key>Professional</key>
-					<integer>100</integer>
-					<key>Master</key>
-					<integer>200</integer>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>levelName</key>
-			<string>Bouncy Bounce</string>
-			<key>numOfMarbles</key>
-			<integer>60</integer>
-			<key>graphics</key>
-			<dict>
-				<key>staticBodiesFilename</key>
-				<string>Level1-StaticBodies</string>
-				<key>overlayFilename</key>
-				<string>Level1-Overlay</string>
-				<key>backgroundFilename</key>
-				<string>Level1-Background</string>
-			</dict>
-			<key>physics</key>
-			<dict/>
-			<key>audio</key>
-			<dict/>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>levelName</key>
-			<string>Hurpzel Purpzel</string>
-			<key>numOfMarbles</key>
-			<integer>80</integer>
-			<key>graphics</key>
-			<dict>
-				<key>staticBodiesFilename</key>
-				<string>Level2-StaticBodies</string>
-				<key>overlayFilename</key>
-				<string>Level2-Overlay</string>
-				<key>backgroundFilename</key>
-				<string>Level2-Background</string>
-			</dict>
-			<key>physics</key>
-			<dict/>
-			<key>audio</key>
-			<dict/>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>numOfMarbles</key>
-			<integer>50</integer>
-			<key>levelName</key>
-			<string>Star Bounce</string>
-			<key>graphics</key>
-			<dict>
-				<key>staticBodiesFilename</key>
-				<string>Level3-StaticBodies</string>
-				<key>overlayFilename</key>
-				<string>Level3-Overlay</string>
-				<key>backgroundFilename</key>
-				<string>Level3-Background</string>
-			</dict>
-		</dict>
-	</array>
-	<key>levels</key>
-	<array>
-		<dict>
-			<key>levelName</key>
+			<key>Name</key>
 			<string>Halfpipe</string>
-			<key>scoreLimits</key>
+			<key>Level</key>
+			<string>Halfpipe.json</string>
+			<key>Marbles</key>
+			<integer>60</integer>
+			<key>Limits</key>
 			<dict>
 				<key>time</key>
 				<dict>
@@ -220,53 +74,17 @@
 					<key>Master</key>
 					<integer>800</integer>
 				</dict>
-			</dict>
-			<key>numOfMarbles</key>
-			<integer>60</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Halfpipe.json</string>
-				<key>overlayFilename</key>
-				<string>HalfPipe-Foreground</string>
 			</dict>
 		</dict>
+		<key>HP2</key>
 		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>levelName</key>
+			<key>Name</key>
 			<string>Halfpipe 2</string>
-			<key>numOfMarbles</key>
+			<key>Level</key>
+			<string>Halfpipe-2.json</string>
+			<key>Marbles</key>
 			<integer>60</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Halfpipe-2.json</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>levelName</key>
-			<string>Double Halfpipe</string>
-			<key>scoreLimits</key>
+			<key>Limits</key>
 			<dict>
 				<key>time</key>
 				<dict>
@@ -287,148 +105,16 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>numOfMarbles</key>
-			<integer>60</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>DoubleHalfpipe.json</string>
-			</dict>
 		</dict>
+		<key>HP3</key>
 		<dict>
-			<key>levelName</key>
-			<string>Boxes</string>
-			<key>numOfMarbles</key>
-			<integer>30</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Boxes.json</string>
-			</dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>30</integer>
-					<key>Professional</key>
-					<integer>100</integer>
-					<key>Master</key>
-					<integer>200</integer>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>100</integer>
-					<key>Professional</key>
-					<integer>400</integer>
-					<key>Master</key>
-					<integer>800</integer>
-				</dict>
-			</dict>
-			<key>levelName</key>
+			<key>Level</key>
+			<string>Halfpipe-3.json</string>
+			<key>Name</key>
 			<string>Halfpipe 3</string>
-			<key>numOfMarbles</key>
+			<key>Marbles</key>
 			<integer>60</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Halfpipe-3.json</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>levelName</key>
-			<string>Mechanic</string>
-			<key>numOfMarbles</key>
-			<integer>70</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Mechanic-1.json</string>
-			</dict>
-			<key>audio</key>
-			<dict/>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>30</integer>
-					<key>Professional</key>
-					<integer>100</integer>
-					<key>Master</key>
-					<integer>200</integer>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>levelName</key>
-			<string>Mechanic 2 </string>
-			<key>numOfMarbles</key>
-			<integer>340</integer>
-			<key>graphics</key>
-			<dict>
-				<key>RUBELevel</key>
-				<string>Mechanic-2.json</string>
-			</dict>
-			<key>audio</key>
-			<dict/>
-			<key>scoreLimits</key>
-			<dict>
-				<key>time</key>
-				<dict>
-					<key>Amateur</key>
-					<string>5:00</string>
-					<key>Professional</key>
-					<string>2:30</string>
-					<key>Master</key>
-					<string>1:30</string>
-				</dict>
-				<key>score</key>
-				<dict>
-					<key>Amateur</key>
-					<integer>30</integer>
-					<key>Professional</key>
-					<integer>100</integer>
-					<key>Master</key>
-					<integer>200</integer>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>scoreLimits</key>
+			<key>Limits</key>
 			<dict>
 				<key>time</key>
 				<dict>
@@ -449,9 +135,153 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>numOfMarbles</key>
+		</dict>
+		<key>DHP</key>
+		<dict>
+			<key>Name</key>
+			<string>Double Halfpipe</string>
+			<key>Level</key>
+			<string>DoubleHalfpipe.json</string>
+			<key>Marbles</key>
+			<integer>60</integer>
+			<key>Limits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
+		</dict>
+		<key>Mech</key>
+		<dict>
+			<key>Level</key>
+			<string>Mechanic-1.json</string>
+			<key>Name</key>
+			<string>Mechanic</string>
+			<key>Marbles</key>
+			<integer>70</integer>
+			<key>Limits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>30</integer>
+					<key>Professional</key>
+					<integer>100</integer>
+					<key>Master</key>
+					<integer>200</integer>
+				</dict>
+			</dict>
+		</dict>
+		<key>Mech2</key>
+		<dict>
+			<key>Level</key>
+			<string>Mechanic-2.json</string>
+			<key>Name</key>
+			<string>Mechanic 2 </string>
+			<key>Marbles</key>
+			<integer>100</integer>
+			<key>Limits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>30</integer>
+					<key>Professional</key>
+					<integer>100</integer>
+					<key>Master</key>
+					<integer>200</integer>
+				</dict>
+			</dict>
+		</dict>
+		<key>Box</key>
+		<dict>
+			<key>Level</key>
+			<string>Boxes.json</string>
+			<key>Name</key>
+			<string>Boxes</string>
+			<key>Marbles</key>
+			<integer>30</integer>
+			<key>Limits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>30</integer>
+					<key>Professional</key>
+					<integer>100</integer>
+					<key>Master</key>
+					<integer>200</integer>
+				</dict>
+			</dict>
+		</dict>
+		<key>STB</key>
+		<dict>
+			<key>Limits</key>
+			<dict>
+				<key>time</key>
+				<dict>
+					<key>Amateur</key>
+					<string>5:00</string>
+					<key>Professional</key>
+					<string>2:30</string>
+					<key>Master</key>
+					<string>1:30</string>
+				</dict>
+				<key>score</key>
+				<dict>
+					<key>Amateur</key>
+					<integer>100</integer>
+					<key>Professional</key>
+					<integer>400</integer>
+					<key>Master</key>
+					<integer>800</integer>
+				</dict>
+			</dict>
+			<key>Marbles</key>
 			<integer>50</integer>
-			<key>levelName</key>
+			<key>Name</key>
 			<string>Star Bounce</string>
 			<key>graphics</key>
 			<dict>
@@ -463,6 +293,7 @@
 				<string>Level3-Background</string>
 			</dict>
 		</dict>
+		<key>HUPU</key>
 		<dict>
 			<key>levelName</key>
 			<string>Hurpzel Purpzel</string>
@@ -499,10 +330,6 @@
 				<string>Level2-Background</string>
 			</dict>
 		</dict>
-	</array>
-	<key>physics</key>
-	<dict/>
-	<key>audio</key>
-	<dict/>
+	</dict>
 </dict>
 </plist>
