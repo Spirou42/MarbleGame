@@ -1110,89 +1110,6 @@
 					],
 					"density" : 1,
 					"friction" : 0.2,
-					"name" : "BorderTop",
-					"polygon" : 
-					{
-						"vertices" : 
-						{
-							"x" : 
-							[
-								670.2910156250,
-								670.2910156250,
-								-682.4713134765625,
-								-682.4713134765625
-							],
-							"y" : 
-							[
-								551.727050781250,
-								581.727050781250,
-								581.7296142578125,
-								551.7296142578125
-							]
-						}
-					},
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : 670.2910156250,
-							"y" : 566.727050781250
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderTop",
-					"restitution" : 0.2
-				},
-				
-				{
-					"circle" : 
-					{
-						"center" : 
-						{
-							"x" : -682.4713134765625,
-							"y" : 566.7296142578125
-						},
-						"radius" : 15.0
-					},
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
-					"name" : "BorderTop",
-					"restitution" : 0.2
-				},
-				
-				{
-					"customProperties" : 
-					[
-						
-						{
-							"name" : "collisionSound",
-							"string" : "Klack"
-						}
-					],
-					"density" : 1,
-					"friction" : 0.2,
 					"name" : "BorderRight",
 					"polygon" : 
 					{
@@ -1345,6 +1262,89 @@
 					"density" : 1,
 					"friction" : 0.2,
 					"name" : "BorderLeft",
+					"restitution" : 0.2
+				},
+				
+				{
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
+					"polygon" : 
+					{
+						"vertices" : 
+						{
+							"x" : 
+							[
+								670.2910156250,
+								670.2910156250,
+								-682.4713134765625,
+								-682.4713134765625
+							],
+							"y" : 
+							[
+								551.727050781250,
+								581.727050781250,
+								581.7296142578125,
+								551.7296142578125
+							]
+						}
+					},
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : 670.2910156250,
+							"y" : 566.727050781250
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
+					"restitution" : 0.2
+				},
+				
+				{
+					"circle" : 
+					{
+						"center" : 
+						{
+							"x" : -682.4713134765625,
+							"y" : 566.7296142578125
+						},
+						"radius" : 15.0
+					},
+					"customProperties" : 
+					[
+						
+						{
+							"name" : "collisionSound",
+							"string" : "Klack"
+						}
+					],
+					"density" : 1,
+					"friction" : 0.2,
+					"name" : "BorderTop",
 					"restitution" : 0.2
 				}
 			],
@@ -1507,33 +1507,6 @@
 		
 		{
 			"aspectScale" : 1,
-			"body" : 3,
-			"center" : 0,
-			"corners" : 
-			{
-				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
-				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
-			},
-			"customProperties" : 
-			[
-				
-				{
-					"name" : "imageType",
-					"string" : "Overlay"
-				}
-			],
-			"file" : "HalfPipe-Foreground.png",
-			"filter" : 1,
-			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
-			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
-			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
-			"name" : "Halfpipe-Overlay",
-			"opacity" : 1,
-			"scale" : 768.0
-		},
-		
-		{
-			"aspectScale" : 1,
 			"body" : 2,
 			"center" : 
 			{
@@ -1583,6 +1556,33 @@
 			"name" : "StarL",
 			"opacity" : 1,
 			"scale" : 93.21164703369141
+		},
+		
+		{
+			"aspectScale" : 1,
+			"body" : 3,
+			"center" : 0,
+			"corners" : 
+			{
+				"x" : [ -512.0, 512.0, 512.0, -512.0 ],
+				"y" : [ -384.0, -384.0, 384.0, 384.0 ]
+			},
+			"customProperties" : 
+			[
+				
+				{
+					"name" : "imageType",
+					"string" : "Overlay"
+				}
+			],
+			"file" : "HalfPipe-Foreground.png",
+			"filter" : 1,
+			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
+			"glTexCoordPointer" : [ 0, 0, 1, 0, 1, 1, 0, 1 ],
+			"glVertexPointer" : [ -512.0, -384.0, 512.0, -384.0, 512.0, 384.0, -512.0, 384.0 ],
+			"name" : "Halfpipe-Overlay",
+			"opacity" : 1,
+			"scale" : 768.0
 		}
 	],
 	"joint" : 
@@ -1596,8 +1596,8 @@
 			},
 			"anchorB" : 
 			{
-				"x" : -254.5850219726562,
-				"y" : 161.2020263671875
+				"x" : -180.5693969726562,
+				"y" : 158.3552246093750
 			},
 			"bodyA" : 2,
 			"bodyB" : 3,
@@ -1605,7 +1605,7 @@
 			"enableMotor" : true,
 			"jointSpeed" : 0,
 			"lowerLimit" : 0,
-			"maxMotorTorque" : 15000000.0,
+			"maxMotorTorque" : 15000000512.0,
 			"motorSpeed" : -12.56637096405029,
 			"name" : "joint L",
 			"refAngle" : 0,
@@ -1621,8 +1621,8 @@
 			},
 			"anchorB" : 
 			{
-				"x" : 256.4039916992188,
-				"y" : 161.2020263671875
+				"x" : 181.6119384765625,
+				"y" : 158.8728027343750
 			},
 			"bodyA" : 0,
 			"bodyB" : 3,
@@ -1630,7 +1630,7 @@
 			"enableMotor" : true,
 			"jointSpeed" : 0,
 			"lowerLimit" : 0,
-			"maxMotorTorque" : 15000000.0,
+			"maxMotorTorque" : 15000000512.0,
 			"motorSpeed" : 6.283185482025146,
 			"name" : "joint R",
 			"refAngle" : 0,

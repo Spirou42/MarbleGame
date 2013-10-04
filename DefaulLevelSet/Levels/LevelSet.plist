@@ -295,7 +295,7 @@
 		</dict>
 		<key>HUPU</key>
 		<dict>
-			<key>levelName</key>
+			<key>Name</key>
 			<string>Hurpzel Purpzel</string>
 			<key>scoreLimits</key>
 			<dict>
@@ -318,7 +318,7 @@
 					<integer>800</integer>
 				</dict>
 			</dict>
-			<key>numOfMarbles</key>
+			<key>Marbles</key>
 			<integer>80</integer>
 			<key>graphics</key>
 			<dict>
