@@ -46,7 +46,6 @@
     }
   }
   p.visible=NO;
-
 }
 
 - (void) popupPressed:(CCNode*) sender
@@ -58,7 +57,6 @@
 //  if ([c isKindOfClass:[CCScale9Sprite class]]) {
 //    c.visible=!c.visible;
 //  }
-
 }
 
 /// returns a button with a skin for the popupButtonLabel optionaly it is selected (image is set to checkmark)
@@ -72,9 +70,7 @@
   menuItemBackgroundNormal = [CCScale9Sprite spriteWithSpriteFrameName:DEFAULT_DDMENUITM_BACKGROUND capInsets:DDMENUITM_BACKGROUND_CAPS];
 	//  menuItemBackgroundHighlighted =[CCScale9Sprite spriteWithSpriteFrameName:backgroundHighlightedName capInsets:backgroundCaps];
 #endif
-  
-	
-  
+
   CCControlButton *result = [CCControlButton buttonWithBackgroundSprite:menuItemBackgroundNormal];
 	//  [result setBackgroundSprite:menuItemBackgroundHighlighted forState:CCControlStateHighlighted];
   result.zoomOnTouchDown=NO;
@@ -82,16 +78,9 @@
 //  result.marginLR=20;
   result.anchorPoint=ccp(0.0, 0.0);
   result.selected = selected;
-  
-  // CCLabelTTF      *ttfLabel = [CCLabelTTF labelWithString:label fontName:DEFAULT_BUTTON_FONT fontSize:DEFAULT_BUTTON_FONT_SIZE];
+
 	CCLabelBMFont * titleLabel = [CCLabelBMFont labelWithString:label fntFile:DEFAULT_BUTTON_FONT];
-//  CCLabelTTF *ttfLabel = [CCLabelTTF labelWithString:label
-//                                            fontName:DEFAULT_BUTTON_FONT
-//                                            fontSize:DEFAULT_BUTTON_FONT_SIZE
-//                                          dimensions:CGSizeMake(120,40)
-//                                          hAlignment:kCCTextAlignmentLeft
-//                                          vAlignment:kCCVerticalTextAlignmentCenter];
-	
+
   [result setTitleLabel:titleLabel forState:CCControlStateNormal];
 //	result.preferredSize=CGSizeMake(200, 40);
   if (result.selected) {
@@ -101,11 +90,9 @@
   }
 	
   [result addTarget:self action:@selector(menuItemSelected:) forControlEvents:CCControlEventTouchUpInside];
-	
   [result needsLayout ];
   return result;
 }
-
 
 - (id) initWithLabels:(NSArray*)lbs selected:(NSUInteger) sIndex
 {

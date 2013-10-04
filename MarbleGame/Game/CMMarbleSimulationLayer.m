@@ -285,7 +285,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   }
 	MarbleGameAppDelegate *appDel = CMAppDelegate;
 	
-	int steps = appDel.simulationSteps;
+	NSInteger steps = appDel.simulationSteps;
 	// [[CCDirector sharedDirector] animationInterval]
 	CGFloat dt =[[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
