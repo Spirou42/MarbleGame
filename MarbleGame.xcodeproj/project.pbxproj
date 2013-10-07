@@ -12,6 +12,14 @@
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93308F9417E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
+		9337177418034881007A2339 /* Icon-HalfPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177318034881007A2339 /* Icon-HalfPipe.png */; };
+		9337177618034890007A2339 /* Icon-HalfPipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177518034890007A2339 /* Icon-HalfPipe2.png */; };
+		933717781803489E007A2339 /* Icon-DoubleHalfPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */; };
+		9337177A180348AF007A2339 /* Icon-Boxes.png in Resources */ = {isa = PBXBuildFile; fileRef = 93371779180348AF007A2339 /* Icon-Boxes.png */; };
+		9337177C180348BD007A2339 /* Icon-HalfPipe3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177B180348BD007A2339 /* Icon-HalfPipe3.png */; };
+		9337177E180348CB007A2339 /* Icon-Mechanic.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177D180348CB007A2339 /* Icon-Mechanic.png */; };
+		93371780180348DD007A2339 /* Icon-Mechanic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177F180348DD007A2339 /* Icon-Mechanic2.png */; };
+		93371782180348FA007A2339 /* Icon-StarBounce.png in Resources */ = {isa = PBXBuildFile; fileRef = 93371781180348FA007A2339 /* Icon-StarBounce.png */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
@@ -513,6 +521,14 @@
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
 		93308F9117E10A310094A362 /* CMSoundShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSoundShape.h; sourceTree = "<group>"; };
 		93308F9217E10A310094A362 /* CMSoundShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSoundShape.m; sourceTree = "<group>"; };
+		9337177318034881007A2339 /* Icon-HalfPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe.png"; sourceTree = "<group>"; };
+		9337177518034890007A2339 /* Icon-HalfPipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe2.png"; sourceTree = "<group>"; };
+		933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-DoubleHalfPipe.png"; sourceTree = "<group>"; };
+		93371779180348AF007A2339 /* Icon-Boxes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Boxes.png"; sourceTree = "<group>"; };
+		9337177B180348BD007A2339 /* Icon-HalfPipe3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe3.png"; sourceTree = "<group>"; };
+		9337177D180348CB007A2339 /* Icon-Mechanic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Mechanic.png"; sourceTree = "<group>"; };
+		9337177F180348DD007A2339 /* Icon-Mechanic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Mechanic2.png"; sourceTree = "<group>"; };
+		93371781180348FA007A2339 /* Icon-StarBounce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-StarBounce.png"; sourceTree = "<group>"; };
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameScoreModeProtocol.h; sourceTree = "<group>"; };
 		93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleScoreModeScore.h; sourceTree = "<group>"; };
@@ -893,6 +909,7 @@
 		93030AB817F7977500AF3665 /* 6. Mechanic 1 */ = {
 			isa = PBXGroup;
 			children = (
+				9337177D180348CB007A2339 /* Icon-Mechanic.png */,
 				FE02107217F9C81C00C0F374 /* Mechanic-1.json */,
 				93B09BD917F8E87400F75D0F /* Mechanic-1 Overlay.png */,
 				93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */,
@@ -904,6 +921,7 @@
 		9325651F17E665FB0012C68F /* 1. Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
+				9337177318034881007A2339 /* Icon-HalfPipe.png */,
 				9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */,
 				9325653017E6662C0012C68F /* Halfpipe.json */,
 			);
@@ -1209,6 +1227,7 @@
 		93A5C68B17EA37980030D22E /* 3. Double Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
+				933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */,
 				93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */,
 				93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */,
 			);
@@ -1218,6 +1237,7 @@
 		93A5C69F17EA4D980030D22E /* 2. Halfpipe 2 */ = {
 			isa = PBXGroup;
 			children = (
+				9337177518034890007A2339 /* Icon-HalfPipe2.png */,
 				93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */,
 			);
 			name = "2. Halfpipe 2";
@@ -1226,6 +1246,7 @@
 		93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */ = {
 			isa = PBXGroup;
 			children = (
+				9337177B180348BD007A2339 /* Icon-HalfPipe3.png */,
 				93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */,
 			);
 			name = "5. Halfpipe 3";
@@ -1254,6 +1275,7 @@
 		93A8661C17F9F746000263B2 /* 7. Mechanic 2 */ = {
 			isa = PBXGroup;
 			children = (
+				9337177F180348DD007A2339 /* Icon-Mechanic2.png */,
 				93A8661F17FA331E000263B2 /* Mechanic-2.png */,
 				93A8661D17F9F817000263B2 /* Mechanic-2.json */,
 			);
@@ -1535,6 +1557,7 @@
 		FEBABB6217E0B7CC00E85ABD /* 4. Boxes */ = {
 			isa = PBXGroup;
 			children = (
+				93371779180348AF007A2339 /* Icon-Boxes.png */,
 				9381510A17E3D349009A5ABB /* Boxes.json */,
 				9381510817E3C9E2009A5ABB /* crate.png */,
 			);
@@ -1564,6 +1587,7 @@
 		FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				93371781180348FA007A2339 /* Icon-StarBounce.png */,
 				FEBABB4E17E0B7C300E85ABD /* Level3-Background.png */,
 				FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */,
 				FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */,
@@ -2026,13 +2050,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
+				9337177C180348BD007A2339 /* Icon-HalfPipe3.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				93B09BDE17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png in Resources */,
 				FEBABB4017E0B64800E85ABD /* InfoPlist.strings in Resources */,
 				93A8661E17F9F817000263B2 /* Mechanic-2.json in Resources */,
+				93371782180348FA007A2339 /* Icon-StarBounce.png in Resources */,
 				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
+				933717781803489E007A2339 /* Icon-DoubleHalfPipe.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
@@ -2040,6 +2067,7 @@
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
 				931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
+				9337177418034881007A2339 /* Icon-HalfPipe.png in Resources */,
 				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
 				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */,
 				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */,
@@ -2048,17 +2076,21 @@
 				93A5C6B117EA4DEA0030D22E /* Pentagon-Wood3.png in Resources */,
 				93B09BDD17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png in Resources */,
 				93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */,
+				9337177618034890007A2339 /* Icon-HalfPipe2.png in Resources */,
 				93A5C6AC17EA4DEA0030D22E /* Pentagon-ConcreteBlue.png in Resources */,
 				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
 				9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */,
 				93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */,
 				93B09BC917F8D8F900F75D0F /* BlackBack.png in Resources */,
+				9337177E180348CB007A2339 /* Icon-Mechanic.png in Resources */,
 				93A5C6AE17EA4DEA0030D22E /* Pentagon-Orange.png in Resources */,
 				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */,
 				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */,
 				9325653217E6662C0012C68F /* Halfpipe.json in Resources */,
+				93371780180348DD007A2339 /* Icon-Mechanic2.png in Resources */,
 				FEBABB7417E0B93F00E85ABD /* Level3-StaticBodies.stb in Resources */,
 				93A5C6B017EA4DEA0030D22E /* Pentagon-Wood2.png in Resources */,
+				9337177A180348AF007A2339 /* Icon-Boxes.png in Resources */,
 				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
 				93A8662017FA331E000263B2 /* Mechanic-2.png in Resources */,
 				FE02107317F9C81C00C0F374 /* Mechanic-1.json in Resources */,
