@@ -48,6 +48,8 @@
 		</dict>
 		<key>HP</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Halfpipe</string>
 			<key>Name</key>
 			<string>Halfpipe</string>
 			<key>Level</key>
@@ -78,6 +80,8 @@
 		</dict>
 		<key>HP2</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Halfpipe2</string>
 			<key>Name</key>
 			<string>Halfpipe 2</string>
 			<key>Level</key>
@@ -108,6 +112,8 @@
 		</dict>
 		<key>HP3</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Halfpipe3</string>
 			<key>Level</key>
 			<string>Halfpipe-3.json</string>
 			<key>Name</key>
@@ -138,6 +144,8 @@
 		</dict>
 		<key>DHP</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-DoubleHalfpipe</string>
 			<key>Name</key>
 			<string>Double Halfpipe</string>
 			<key>Level</key>
@@ -168,6 +176,8 @@
 		</dict>
 		<key>Mech</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Mechanic</string>
 			<key>Level</key>
 			<string>Mechanic-1.json</string>
 			<key>Name</key>
@@ -198,6 +208,8 @@
 		</dict>
 		<key>Mech2</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Mechanic2</string>
 			<key>Level</key>
 			<string>Mechanic-2.json</string>
 			<key>Name</key>
@@ -228,6 +240,8 @@
 		</dict>
 		<key>Box</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-Boxes</string>
 			<key>Level</key>
 			<string>Boxes.json</string>
 			<key>Name</key>
@@ -258,6 +272,8 @@
 		</dict>
 		<key>STB</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-StarBounce</string>
 			<key>Limits</key>
 			<dict>
 				<key>time</key>

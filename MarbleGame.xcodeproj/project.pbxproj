@@ -12,14 +12,24 @@
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93308F9417E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
-		9337177418034881007A2339 /* Icon-HalfPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177318034881007A2339 /* Icon-HalfPipe.png */; };
-		9337177618034890007A2339 /* Icon-HalfPipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177518034890007A2339 /* Icon-HalfPipe2.png */; };
-		933717781803489E007A2339 /* Icon-DoubleHalfPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */; };
+		9337177418034881007A2339 /* Icon-Halfpipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177318034881007A2339 /* Icon-Halfpipe.png */; };
+		9337177618034890007A2339 /* Icon-Halfpipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177518034890007A2339 /* Icon-Halfpipe2.png */; };
+		933717781803489E007A2339 /* Icon-DoubleHalfpipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 933717771803489E007A2339 /* Icon-DoubleHalfpipe.png */; };
 		9337177A180348AF007A2339 /* Icon-Boxes.png in Resources */ = {isa = PBXBuildFile; fileRef = 93371779180348AF007A2339 /* Icon-Boxes.png */; };
-		9337177C180348BD007A2339 /* Icon-HalfPipe3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177B180348BD007A2339 /* Icon-HalfPipe3.png */; };
+		9337177C180348BD007A2339 /* Icon-Halfpipe3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177B180348BD007A2339 /* Icon-Halfpipe3.png */; };
 		9337177E180348CB007A2339 /* Icon-Mechanic.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177D180348CB007A2339 /* Icon-Mechanic.png */; };
 		93371780180348DD007A2339 /* Icon-Mechanic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177F180348DD007A2339 /* Icon-Mechanic2.png */; };
 		93371782180348FA007A2339 /* Icon-StarBounce.png in Resources */ = {isa = PBXBuildFile; fileRef = 93371781180348FA007A2339 /* Icon-StarBounce.png */; };
+		9337178518034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9337178418034D9F007A2339 /* CMMarbleLevelSelectMenu.m */; };
+		9337178618034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9337178418034D9F007A2339 /* CMMarbleLevelSelectMenu.m */; };
+		9337178818034F9D007A2339 /* LevelSelectPlate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337178718034F9D007A2339 /* LevelSelectPlate.png */; };
+		9337178918034F9D007A2339 /* LevelSelectPlate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337178718034F9D007A2339 /* LevelSelectPlate.png */; };
+		9337178C180350A5007A2339 /* CMLevelSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9337178B180350A5007A2339 /* CMLevelSelectItem.m */; };
+		9337178D180350A5007A2339 /* CMLevelSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9337178B180350A5007A2339 /* CMLevelSelectItem.m */; };
+		93371790180357C2007A2339 /* LevelSelect.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9337178E180357C2007A2339 /* LevelSelect.fnt */; };
+		93371791180357C2007A2339 /* LevelSelect.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 9337178E180357C2007A2339 /* LevelSelect.fnt */; };
+		93371792180357C2007A2339 /* LevelSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337178F180357C2007A2339 /* LevelSelect.png */; };
+		93371793180357C2007A2339 /* LevelSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337178F180357C2007A2339 /* LevelSelect.png */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
@@ -521,14 +531,21 @@
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
 		93308F9117E10A310094A362 /* CMSoundShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSoundShape.h; sourceTree = "<group>"; };
 		93308F9217E10A310094A362 /* CMSoundShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSoundShape.m; sourceTree = "<group>"; };
-		9337177318034881007A2339 /* Icon-HalfPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe.png"; sourceTree = "<group>"; };
-		9337177518034890007A2339 /* Icon-HalfPipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe2.png"; sourceTree = "<group>"; };
-		933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-DoubleHalfPipe.png"; sourceTree = "<group>"; };
+		9337177318034881007A2339 /* Icon-Halfpipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Halfpipe.png"; sourceTree = "<group>"; };
+		9337177518034890007A2339 /* Icon-Halfpipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Halfpipe2.png"; sourceTree = "<group>"; };
+		933717771803489E007A2339 /* Icon-DoubleHalfpipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-DoubleHalfpipe.png"; sourceTree = "<group>"; };
 		93371779180348AF007A2339 /* Icon-Boxes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Boxes.png"; sourceTree = "<group>"; };
-		9337177B180348BD007A2339 /* Icon-HalfPipe3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HalfPipe3.png"; sourceTree = "<group>"; };
+		9337177B180348BD007A2339 /* Icon-Halfpipe3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Halfpipe3.png"; sourceTree = "<group>"; };
 		9337177D180348CB007A2339 /* Icon-Mechanic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Mechanic.png"; sourceTree = "<group>"; };
 		9337177F180348DD007A2339 /* Icon-Mechanic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Mechanic2.png"; sourceTree = "<group>"; };
 		93371781180348FA007A2339 /* Icon-StarBounce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-StarBounce.png"; sourceTree = "<group>"; };
+		9337178318034D9F007A2339 /* CMMarbleLevelSelectMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleLevelSelectMenu.h; sourceTree = "<group>"; };
+		9337178418034D9F007A2339 /* CMMarbleLevelSelectMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleLevelSelectMenu.m; sourceTree = "<group>"; };
+		9337178718034F9D007A2339 /* LevelSelectPlate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectPlate.png; sourceTree = "<group>"; };
+		9337178A180350A5007A2339 /* CMLevelSelectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMLevelSelectItem.h; sourceTree = "<group>"; };
+		9337178B180350A5007A2339 /* CMLevelSelectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLevelSelectItem.m; sourceTree = "<group>"; };
+		9337178E180357C2007A2339 /* LevelSelect.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LevelSelect.fnt; sourceTree = "<group>"; };
+		9337178F180357C2007A2339 /* LevelSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelect.png; sourceTree = "<group>"; };
 		933FEB1C1783738900786883 /* MarbleGameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarbleGameConfig.h; sourceTree = "<group>"; };
 		93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameScoreModeProtocol.h; sourceTree = "<group>"; };
 		93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleScoreModeScore.h; sourceTree = "<group>"; };
@@ -921,7 +938,7 @@
 		9325651F17E665FB0012C68F /* 1. Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
-				9337177318034881007A2339 /* Icon-HalfPipe.png */,
+				9337177318034881007A2339 /* Icon-Halfpipe.png */,
 				9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */,
 				9325653017E6662C0012C68F /* Halfpipe.json */,
 			);
@@ -947,6 +964,7 @@
 		933FEB0E17836A8800786883 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9337178718034F9D007A2339 /* LevelSelectPlate.png */,
 				FEE3415D17EE2D7200F658FA /* MainMenu-Overlay2.png */,
 				93750A7E17B827610063D613 /* Menu-Background.png */,
 				93FD6D3617B14C87001CC41E /* combo.png */,
@@ -1093,6 +1111,8 @@
 		9353D45A17B068F100D0FD25 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				9337178E180357C2007A2339 /* LevelSelect.fnt */,
+				9337178F180357C2007A2339 /* LevelSelect.png */,
 				FE2818C817F211540079BAF1 /* RockWell68-Score.fnt */,
 				FE2818C917F211540079BAF1 /* RockWell68-Score.png */,
 				93F4C5CC17F0C893001B76D0 /* Simpleton68Glow.fnt */,
@@ -1206,8 +1226,8 @@
 		935F00DE17B6D06E006E8E10 /* MenuNodes */ = {
 			isa = PBXGroup;
 			children = (
-				935F00EE17B6D089006E8E10 /* CMMenuLayer.h */,
 				935F00EF17B6D089006E8E10 /* CMMenuLayer.m */,
+				935F00EE17B6D089006E8E10 /* CMMenuLayer.h */,
 			);
 			name = MenuNodes;
 			sourceTree = "<group>";
@@ -1227,7 +1247,7 @@
 		93A5C68B17EA37980030D22E /* 3. Double Halfpipe */ = {
 			isa = PBXGroup;
 			children = (
-				933717771803489E007A2339 /* Icon-DoubleHalfPipe.png */,
+				933717771803489E007A2339 /* Icon-DoubleHalfpipe.png */,
 				93A5C69B17EA382A0030D22E /* DoubleHalfPipe-Foreground.png */,
 				93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */,
 			);
@@ -1237,7 +1257,7 @@
 		93A5C69F17EA4D980030D22E /* 2. Halfpipe 2 */ = {
 			isa = PBXGroup;
 			children = (
-				9337177518034890007A2339 /* Icon-HalfPipe2.png */,
+				9337177518034890007A2339 /* Icon-Halfpipe2.png */,
 				93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */,
 			);
 			name = "2. Halfpipe 2";
@@ -1246,7 +1266,7 @@
 		93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */ = {
 			isa = PBXGroup;
 			children = (
-				9337177B180348BD007A2339 /* Icon-HalfPipe3.png */,
+				9337177B180348BD007A2339 /* Icon-Halfpipe3.png */,
 				93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */,
 			);
 			name = "5. Halfpipe 3";
@@ -1435,6 +1455,10 @@
 			children = (
 				FE00BAFB17A17296002D8B06 /* CMMarbleLevelSetScene.h */,
 				FE00BAFC17A17296002D8B06 /* CMMarbleLevelSetScene.m */,
+				9337178318034D9F007A2339 /* CMMarbleLevelSelectMenu.h */,
+				9337178418034D9F007A2339 /* CMMarbleLevelSelectMenu.m */,
+				9337178A180350A5007A2339 /* CMLevelSelectItem.h */,
+				9337178B180350A5007A2339 /* CMLevelSelectItem.m */,
 			);
 			name = "2. Select Level";
 			sourceTree = "<group>";
@@ -1997,6 +2021,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93980B3317E78F6F00EFD627 /* MarbleSpecial.png in Resources */,
+				93371792180357C2007A2339 /* LevelSelect.png in Resources */,
 				FEBABB7C17E0BF1800E85ABD /* DefaultLevelSet.levels in Resources */,
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
@@ -2025,6 +2050,7 @@
 				938150EA17E382BB009A5ABB /* Marble-Multi.mp3 in Resources */,
 				93B5605C17E376C5008E023E /* Klick.mp3 in Resources */,
 				93CE6C5217F25778009C1926 /* MarblePowerUp-Explode.png in Resources */,
+				93371790180357C2007A2339 /* LevelSelect.fnt in Resources */,
 				935366F1177E1254009F640B /* Balls.png in Resources */,
 				93FD6D3817B14C87001CC41E /* combo.png in Resources */,
 				93750A7F17B827610063D613 /* Menu-Background.png in Resources */,
@@ -2037,6 +2063,7 @@
 				FEDBAFF017E8D486008FB500 /* MarbleRemove.plist in Resources */,
 				93980B3117E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
+				9337178818034F9D007A2339 /* LevelSelectPlate.png in Resources */,
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
 				9353D45F17B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
 				9353D45817B0575800D0FD25 /* Level-Overlay.png in Resources */,
@@ -2050,7 +2077,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
-				9337177C180348BD007A2339 /* Icon-HalfPipe3.png in Resources */,
+				9337177C180348BD007A2339 /* Icon-Halfpipe3.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
@@ -2059,7 +2086,7 @@
 				93A8661E17F9F817000263B2 /* Mechanic-2.json in Resources */,
 				93371782180348FA007A2339 /* Icon-StarBounce.png in Resources */,
 				93E0462717F6176400069A79 /* SixStarWheel.png in Resources */,
-				933717781803489E007A2339 /* Icon-DoubleHalfPipe.png in Resources */,
+				933717781803489E007A2339 /* Icon-DoubleHalfpipe.png in Resources */,
 				93A5C6B717EA4E9E0030D22E /* Halfpipe-3.json in Resources */,
 				FEBABB6817E0B93F00E85ABD /* RUBE-Test.json in Resources */,
 				93E0462417F6176400069A79 /* FiveBladeWheel.png in Resources */,
@@ -2067,7 +2094,7 @@
 				9381510B17E3D349009A5ABB /* Boxes.json in Resources */,
 				931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */,
 				FEBABB6917E0B93F00E85ABD /* WoodGear-T1.png in Resources */,
-				9337177418034881007A2339 /* Icon-HalfPipe.png in Resources */,
+				9337177418034881007A2339 /* Icon-Halfpipe.png in Resources */,
 				FEBABB6C17E0B93F00E85ABD /* Level1-Background.png in Resources */,
 				FEBABB6D17E0B93F00E85ABD /* Level1-Overlay.png in Resources */,
 				FEBABB6E17E0B93F00E85ABD /* Level1-StaticBodies.stb in Resources */,
@@ -2076,7 +2103,7 @@
 				93A5C6B117EA4DEA0030D22E /* Pentagon-Wood3.png in Resources */,
 				93B09BDD17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png in Resources */,
 				93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */,
-				9337177618034890007A2339 /* Icon-HalfPipe2.png in Resources */,
+				9337177618034890007A2339 /* Icon-Halfpipe2.png in Resources */,
 				93A5C6AC17EA4DEA0030D22E /* Pentagon-ConcreteBlue.png in Resources */,
 				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
 				9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */,
@@ -2107,7 +2134,9 @@
 			files = (
 				FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */,
 				93980B3217E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
+				93371791180357C2007A2339 /* LevelSelect.fnt in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
+				9337178918034F9D007A2339 /* LevelSelectPlate.png in Resources */,
 				FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
 				939C936717F37B6B008CF635 /* Boom.mp3 in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
@@ -2129,6 +2158,7 @@
 				FEC8CC9117EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				FEE3415F17EE2D7200F658FA /* MainMenu-Overlay2.png in Resources */,
 				9353D46017B0691100D0FD25 /* Simpleton17Glow.png in Resources */,
+				93371793180357C2007A2339 /* LevelSelect.png in Resources */,
 				93750A8017B827610063D613 /* Menu-Background.png in Resources */,
 				93980B3417E78F6F00EFD627 /* MarbleSpecial.png in Resources */,
 				93B5605F17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
@@ -2160,6 +2190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9337178C180350A5007A2339 /* CMLevelSelectItem.m in Sources */,
 				93308F9317E10A310094A362 /* CMSoundShape.m in Sources */,
 				93536640177DFB52009F640B /* main.m in Sources */,
 				93536643177DFB52009F640B /* MacAppDelegate.m in Sources */,
@@ -2177,6 +2208,7 @@
 				FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */,
 				93F35A3F17C2A1A900B9B4E9 /* CMRubeBody.m in Sources */,
 				93F4C5CA17F0A53B001B76D0 /* CMScoreSprite.m in Sources */,
+				9337178518034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
 				935F00F017B6D089006E8E10 /* CMMenuLayer.m in Sources */,
 				938CE0BD17BFE2BB0086B6D9 /* CMMPLevelStat.m in Sources */,
@@ -2244,6 +2276,7 @@
 				93F35A4017C2A1A900B9B4E9 /* CMRubeBody.m in Sources */,
 				FED2E87017A7FD83005A16B3 /* SceneHelper.m in Sources */,
 				935F00F117B6D089006E8E10 /* CMMenuLayer.m in Sources */,
+				9337178D180350A5007A2339 /* CMLevelSelectItem.m in Sources */,
 				938CE0BE17BFE2BB0086B6D9 /* CMMPLevelStat.m in Sources */,
 				FED2E87317A7FD8B005A16B3 /* CMMarbleLevel.m in Sources */,
 				FED2E86C17A7FD83005A16B3 /* CMMarbleMainMenuScene.m in Sources */,
@@ -2265,6 +2298,7 @@
 				93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */,
 				938150EF17E39C4B009A5ABB /* CMLiquidAction.m in Sources */,
 				93D5715417BEE2E700167030 /* CMMPLevelSet.m in Sources */,
+				9337178618034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */,
 				93D5714C17BEE2E700167030 /* CMMarblePlayer.m in Sources */,
 				93F4C5B817F0A10F001B76D0 /* CMSoundSprite.m in Sources */,
 				FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */,

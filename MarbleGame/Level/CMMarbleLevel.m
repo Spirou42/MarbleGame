@@ -25,7 +25,7 @@
 @synthesize backgroundFilename = backgroundFilename_, overlayFilename = overlayFilename_, staticBodiesFilename = staticBodiesFilename_ ,
 backgroundImage = backgroundImage_, overlayImage = overlayImage_, shapeReader = shapeReader_, name = name_,
 baseURL = baseURL_,numberOfMarbles = numberOfMarbles_,scoreLimits = scoreLimits_,timeLimits = timeLimits_,
-rubeFileName = rubeFileName_, rubeReader = rubeReader_;
+rubeFileName = rubeFileName_, rubeReader = rubeReader_, icon = icon_, iconFileName = iconFileName_;
 
 - (void) initDefaults
 {
@@ -40,6 +40,8 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 	self.rubeFileName					= nil;
   self.rubeReader           = nil;
   self.cachedMarbleEmitter  = nil;
+	self.icon									= nil;
+	self.iconFileName					= nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
@@ -68,6 +70,7 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 		self.name               = [dict objectForKey:@"Name"];
 		self.numberOfMarbles    = [[dict objectForKey:@"Marbles"] unsignedIntValue];
     self.rubeFileName       = [dict objectForKey:@"Level"];
+		self.iconFileName				= [dict objectForKey:@"Icon"];
 		NSDictionary *graphics  = [dict objectForKey:@"graphics"];
 
 		self.scoreLimits				= [dict valueForKeyPath:@"Limits.score"];
@@ -97,6 +100,8 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
   self.rubeReader             = nil;
   self.shapeReader            = nil;
   self.cachedMarbleEmitter    = nil;
+	self.icon										= nil;
+	self.iconFileName						= nil;
 	[super dealloc];
 }
 
@@ -191,6 +196,14 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_;
 		self.overlayImage = [self loadImageFrom:self.overlayFilename];
 	}
 	return self->overlayImage_;
+}
+
+- (CCSprite*) icon
+{
+	if (!self->icon_ && self->iconFileName_) {
+		self.icon = [self loadImageFrom:self.iconFileName];
+	}
+	return self->icon_;
 }
 
 - (BOOL) isRubeLevel

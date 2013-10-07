@@ -23,6 +23,9 @@
 
 @property (retain, nonatomic) CCSprite* overlayImage;											///< overlayimage
 
+@property (retain, nonatomic) NSString *iconFileName;											///< filename of the level icon
+@property (retain, nonatomic) CCSprite* icon;															///< level icon
+
 
 
 @property (assign, nonatomic) NSUInteger numberOfMarbles;									///< initial number of marbles
