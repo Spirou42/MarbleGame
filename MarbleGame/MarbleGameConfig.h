@@ -91,6 +91,16 @@
 #define EFFECT_CLIP_DISTANCE (15.0)
 #define EFFECT_CLIP_DISTANCE_SQUARE (EFFECT_CLIP_DISTANCE)
 
+
+//////////////////////////////////////////////////
+#pragma mark - Power UPs
+
+#define POWER_UP_EXPLOSION_DISTANCE 			 		180.0
+#define POWER_UP_EXPLOSION_IMPULSE					20000.0
+#define POWER_UP_EXPLOSION_USE_TIMEDECAY  		YES
+#define POWER_UP_EXPLOSION_USE_DISTANCEDECAY 	YES
+
+
 //////////////////////////////////////////////////
 #pragma mark - UI Definitions
 

@@ -51,6 +51,7 @@
   return value;
 }
 
+
 - (void) performActionFor:(CMMarbleSprite *)marble
 {
   [super performActionFor:marble];
@@ -60,18 +61,36 @@
 	
 	CGPoint pos = marble.position;
 	
-	NSArray *results = [currentSpace nearestPointQueryAll:pos maxDistance:100 layers:CP_ALL_LAYERS group:CP_NO_GROUP];
+	NSArray *results = [currentSpace nearestPointQueryAll:pos maxDistance:POWER_UP_EXPLOSION_DISTANCE layers:CP_ALL_LAYERS group:CP_NO_GROUP];
 	for (ChipmunkNearestPointQueryInfo* info in results) {
+		if (isnan(info.point.x)) {
+			continue;
+		}
     ChipmunkBody *body = info.shape.body;
+
 		if (!body.isStatic) {
-			CGPoint direction = cpvnormalize( cpvsub(info.point, pos));
-			CGFloat ratio = (1- [self percentTime]);
-			ratio = (ratio / 2.0)+0.5;
-			if (ratio < 0.5) {
-				ratio = 0.5;
-			}
+			CGPoint dV = cpvsub(info.point, pos);
+			CGPoint direction = cpvnormalize( dV);
+			CGFloat distance = 1.0 - cpvlength(dV)/POWER_UP_EXPLOSION_DISTANCE;
+
 			
-      CGFloat maxPulse = 20000.0 * ratio;
+			CGFloat ratio;
+			if (POWER_UP_EXPLOSION_USE_TIMEDECAY) {
+				ratio = (1- [self percentTime]);
+				ratio = (ratio / 2.0)+0.5;
+				if (ratio < 0.5) {
+					ratio = 0.5;
+				}
+			}else{
+				ratio = 1.0;
+			}
+
+			
+      CGFloat maxPulse = 40000.0 * ratio;
+			if (POWER_UP_EXPLOSION_USE_DISTANCEDECAY) {
+				maxPulse *= distance;
+			}
+//			NSLog(@"maxPulse: %f (%f)",maxPulse,distance);
 			CGPoint impulse = cpvmult(direction, maxPulse);
 			[body applyImpulse:impulse offset:CGPointMake(0, 0)];
 		}
