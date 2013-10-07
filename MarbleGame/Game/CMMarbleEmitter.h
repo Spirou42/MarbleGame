@@ -5,7 +5,7 @@
 //  Created by Carsten Müller on 9/27/13.
 //  Copyright (c) 2013 Carsten Müller. All rights reserved.
 //
-// simple emitter for Marbles. This class creates single marbles with a determinde frequency
+// simple emitter for Marbles. This class creates single marbles with a specific frequency
 
 #import <Foundation/Foundation.h>
 
@@ -19,6 +19,7 @@
 @property (nonatomic, assign) CGFloat marbleFrequency;        ///< marbles per second
 
 @property (nonatomic, assign) CGPoint position;               ///< position of the emitter
+@property (nonatomic, assign) CGPoint positionVariance;				///<, variance of the position
 
 @property (nonatomic, assign) CGFloat velocity;               ///< start velocity of the marbles (positive)
 @property (nonatomic, assign) CGFloat velocityVariance;       ///< velocity variance of the marbles

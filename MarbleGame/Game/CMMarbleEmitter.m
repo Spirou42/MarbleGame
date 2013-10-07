@@ -20,7 +20,7 @@
 @implementation CMMarbleEmitter
 
 @synthesize  simulationLayer = simulationLayer_, marblesToEmit = marblesToEmit_, marbleFrequency = marbleFrequency_,
-position = position_, velocity=velocity_,velocityVariance=velocityVariance_, angle=angle_, angleVariance=angleVariance_,
+position = position_,positionVariance = positionVariance_, velocity=velocity_,velocityVariance=velocityVariance_, angle=angle_, angleVariance=angleVariance_,
 angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVariance_;
 
 @synthesize marbleTimer=marbleTimer_, firedMarbles =firedMarbles_;
@@ -31,6 +31,7 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   self.marblesToEmit = 10;
   self.marbleFrequency = 1.0;
   self.position = MARBLE_FIRE_POINT;
+	self.positionVariance = CGPointZero;
   self.velocity = MARBLE_FIRE_SPEED;
   self.velocityVariance = MARBLE_FIRE_SPEED/2.0;
   self.angle = 0.0;
@@ -98,8 +99,24 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   while (result > 360.0) {
     result -=360.0;
   }
-//  NSLog(@"Angle: %f",result);
   return result;
+}
+
+- (CGPoint) positionForMarble
+{
+	CGPoint result = self.position;
+
+	if (self.positionVariance.x != 0.0) {
+		CGFloat xv = self.positionVariance.x / 2.0;
+		result.x = result.x + (arc4random_uniform(xv)-self.positionVariance.x);
+	}
+	
+	if (self.positionVariance.y != 0.0) {
+		CGFloat yv = self.positionVariance.y / 2.0;
+				result.y = result.y + (arc4random_uniform(yv)-self.positionVariance.y);
+	}
+	
+	return result;
 }
 
 - (void) fireMarble:(NSTimer*) currentTimer
@@ -113,7 +130,7 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   dB.velLimit = MARBLE_MAX_VELOCITY;
 
   // emit position
-  CGPoint emitPos = self.position;
+  CGPoint emitPos = [self positionForMarble];;
 
   CGFloat emitAngle = [self angleForMarble];
 
