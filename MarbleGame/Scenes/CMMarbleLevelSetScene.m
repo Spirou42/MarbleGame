@@ -44,6 +44,7 @@
 			item.anchorPoint = CGPointMake(0.50, 0.50);
 			item.position =CGPointMake(levelNumber* item.contentSize.width+(item.contentSize.width/2.0), item.contentSize.height/2.0);
 			[self addChild:item z:100];
+      [item release];
 			
 			if (levelNumber > 0) {
 				CMMarbleLevel *lastLevel = [set.levelList objectAtIndex:levelNumber-1];
@@ -73,6 +74,13 @@
 	}
   return self;
 }
+
+- (void) dealloc
+{
+  [self removeAllChildren];
+  [super dealloc];
+}
+
 
 - (void) onLevelSelect:(CCControlButton*) sender
 {

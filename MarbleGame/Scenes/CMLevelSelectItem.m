@@ -35,9 +35,16 @@
 
 - (void) dealloc
 {
+  [self.icon removeFromParent];
 	self.icon = nil;
+
+  [self.label removeFromParent];
 	self.label = nil;
+
+  [self.overlay removeFromParent];
 	self.overlay = nil;
+
+  
 	self.name = nil;
 	[super dealloc];
 }
@@ -90,7 +97,12 @@
 	if (self->name_ != name) {
 		[self->name_ release];
 		self->name_ = [name retain];
-		self.label = [self labelForName:self->name_];
+    if (self->name_) {
+      self.label = [self labelForName:self->name_];
+    }else{
+      self.label = nil;
+    }
+
 	}
 }
 
