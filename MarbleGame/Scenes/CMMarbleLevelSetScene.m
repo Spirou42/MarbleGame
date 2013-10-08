@@ -88,6 +88,7 @@
     if (self->levelMenu_) {
       [self->levelMenu_ removeFromParent];
     }
+    [self->levelMenu_ release];
     self->levelMenu_ = [levelMenu retain];
     if (self->levelMenu_) {
       self->levelMenu_.anchorPoint = CGPointMake(0.5, 0.5);

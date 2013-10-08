@@ -48,4 +48,9 @@
 	[super addChild:node z:z tag:tag];
 }
 
+- (void) dealloc
+{
+  [super dealloc];
+}
+
 @end
