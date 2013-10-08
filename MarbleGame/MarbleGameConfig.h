@@ -111,7 +111,7 @@
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"
 
 // definitions for the default UI elements
-#define DEFAULT_BACKGROUND_IMAGE 				@"LevelBackground-Default.png"
+#define DEFAULT_BACKGROUND_IMAGE 				@"MainMenu-Background.png"
 #define LEVEL_BACKGROUD_IMAGE						@"LevelBackground-Default.png"
 #define LEVEL_OVERLAY_IMAGE							@"Level-Overlay.png"
 #define MAIN_MENU_OVERLAY 							@"MainMenu-Overlay2.png"

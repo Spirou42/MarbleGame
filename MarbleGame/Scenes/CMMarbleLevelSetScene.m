@@ -21,13 +21,20 @@
 #import "CMLevelSelectItem.h"
 #import "CMMarbleLevelSelectMenu.h"
 
+@interface CMMarbleLevelSetScene ()
+@property (nonatomic, retain) CMMarbleLevelSelectMenu* levelMenu;
+@end
+
 @implementation CMMarbleLevelSetScene
 
+@synthesize levelMenu=levelMenu_;
 
 - (id) init
 {
   self = [super init];
 	if (self) {
+    self.levelMenu = [[CMMarbleLevelSelectMenu new] autorelease];
+
 		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
 		menuLayer.defaultButtonSize=CGSizeMake(300, 30);
@@ -43,7 +50,7 @@
 			item.name = level.name;
 			item.anchorPoint = CGPointMake(0.50, 0.50);
 			item.position =CGPointMake(levelNumber* item.contentSize.width+(item.contentSize.width/2.0), item.contentSize.height/2.0);
-			[self addChild:item z:100];
+			[self.levelMenu addChild:item ];
       [item release];
 			
 			if (levelNumber > 0) {
@@ -75,9 +82,25 @@
   return self;
 }
 
+- (void) setLevelMenu:(CMMarbleLevelSelectMenu *)levelMenu
+{
+  if (self->levelMenu_ != levelMenu) {
+    if (self->levelMenu_) {
+      [self->levelMenu_ removeFromParent];
+    }
+    self->levelMenu_ = [levelMenu retain];
+    if (self->levelMenu_) {
+      self->levelMenu_.anchorPoint = CGPointMake(0.5, 0.5);
+      self->levelMenu_.ignoreAnchorPointForPosition = NO;
+      self->levelMenu_.position = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0);
+      [self addChild:self->levelMenu_ z:1];
+    }
+  }
+}
+
 - (void) dealloc
 {
-  [self removeAllChildren];
+  self.levelMenu = nil;
   [super dealloc];
 }
 

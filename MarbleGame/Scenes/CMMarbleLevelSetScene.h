@@ -9,6 +9,7 @@
 
 
 #import "CMMarbleMenuScene.h"
+@class CMMarbleLevelSelectMenu;
 
 @interface CMMarbleLevelSetScene : CMMarbleMenuScene
 
