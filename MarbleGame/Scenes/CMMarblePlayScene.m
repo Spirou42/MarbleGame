@@ -966,6 +966,7 @@
     {
       [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_COLOR_REMOVE];
     }
+			break;
 		case kCMMarblePowerUp_MarbleSource:
 		{
 			CMMarbleEmitter *emitter = [[CMMarbleEmitter alloc]init];
