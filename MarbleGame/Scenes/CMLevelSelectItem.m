@@ -7,6 +7,7 @@
 //
 
 #import "CMLevelSelectItem.h"
+#import "cocos2d.h"
 
 @interface CMLevelSelectItem ()
 @property (nonatomic,retain) CCSprite *overlay;

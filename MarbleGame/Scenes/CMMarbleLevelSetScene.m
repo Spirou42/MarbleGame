@@ -33,7 +33,7 @@
 {
   self = [super init];
 	if (self) {
-    self.levelMenu = [[CMMarbleLevelSelectMenu new] autorelease];
+//    self.levelMenu = [[CMMarbleLevelSelectMenu new] autorelease];
 
 		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
 		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
@@ -62,15 +62,6 @@
 			}
 			CCControlButton* aButton = [menuLayer addButtonWithTitle:level.name target:self action:@selector(onLevelSelect:)];
 			aButton.tag = levelNumber++;
-//			CCSprite *icon = level.icon;
-//			if (icon) {
-//				icon.anchorPoint = CGPointMake(0.5, 0.5);
-//				CGPoint p = aButton.position;
-//				p.x += 80;
-//				icon.position = p;
-//				[menuLayer addChild:icon];
-//
-//			}
 		
 		}
 		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(onEnd:)];
@@ -94,7 +85,11 @@
       self->levelMenu_.anchorPoint = CGPointMake(0.5, 0.5);
       self->levelMenu_.ignoreAnchorPointForPosition = NO;
       self->levelMenu_.position = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0);
-      [self addChild:self->levelMenu_ z:1];
+			self->levelMenu_.touchPriority=0;
+#if __CC_PLATFORM_MAC
+			self->levelMenu_.mousePriority=0;
+#endif
+      [self addChild:self->levelMenu_ z:10];
     }
   }
 }

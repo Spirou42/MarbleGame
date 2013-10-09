@@ -8,6 +8,7 @@
 
 #import "CCLayer.h"
 
+@class CCSprite;
 @interface CMLevelSelectItem : CCLayer
 
 @property (nonatomic,retain) CCSprite *icon;

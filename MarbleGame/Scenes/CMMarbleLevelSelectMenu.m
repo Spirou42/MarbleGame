@@ -7,6 +7,7 @@
 //
 
 #import "CMMarbleLevelSelectMenu.h"
+#import "cocos2d.h"
 
 @implementation CMMarbleLevelSelectMenu
 @synthesize contentRect = contentRect_, gridSize=gridSize_;
@@ -16,6 +17,12 @@
 	self.contentSize = [[CCDirector sharedDirector]winSize];
 	self.gridSize = CGSizeMake(4, 3);
 	self.contentRect = CGRectMake(120, 49,800 /*self.contentSize.width*/, 650/*self.contentSize.height*/);
+#if __CC_PLATFORM_MAC
+	self.mouseEnabled = YES;
+  self.mousePriority = 1;
+#endif
+	self.touchEnabled = YES;
+  self.touchPriority = 1;
 }
 
 - (id) init
@@ -24,7 +31,7 @@
 	if (self) {
 		[self defaults];
     self.color = ccc3(255,0,0);
-//    self.opacity = 255;
+    self.opacity = 0;
 	}
 	return self;
 }

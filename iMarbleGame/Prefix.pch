@@ -13,5 +13,6 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "ObjectiveChipmunk.h"
+#import "cocos2d.h"
 #import "MarbleGameConfig.h"
 #endif

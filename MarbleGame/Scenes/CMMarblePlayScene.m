@@ -339,9 +339,9 @@
   [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
 	[self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(toggleMenu:)];
   [self addChild:self.menuLayer z:MENU_LAYER];
-#if __CC_PLATFORM_MAC
-	self.menuLayer.mousePriority = -1;
-#endif
+//#if __CC_PLATFORM_MAC
+//	self.menuLayer.mousePriority = -1;
+//#endif
   self.menuLayer.visible = NO;
 }
 

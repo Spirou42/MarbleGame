@@ -42,6 +42,14 @@
 	}
 	return NO;
 }
+
+- (BOOL) ccMouseUp:(NSEvent *)event
+{
+	if (self.visible && [self isMouseInside:event]) {
+		return YES;
+	}
+	return NO;
+}
 #else
 - (BOOL)isTouchInside:(UITouch *)touch
 {
@@ -53,11 +61,12 @@
 }
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	if (self.visible && [self isTouchInside:event]) {
+	if (self.visible && [self isTouchInside:touch]) {
 		return YES;
 	}
 	return NO;
 }
+
 
 #endif
 
