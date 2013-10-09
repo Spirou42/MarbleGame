@@ -21,7 +21,7 @@
 
 @synthesize  simulationLayer = simulationLayer_, marblesToEmit = marblesToEmit_, marbleFrequency = marbleFrequency_,
 position = position_,positionVariance = positionVariance_, velocity=velocity_,velocityVariance=velocityVariance_, angle=angle_, angleVariance=angleVariance_,
-angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVariance_;
+angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVariance_, releaseOnFinish = releaseOnFinish_;
 
 @synthesize marbleTimer=marbleTimer_, firedMarbles =firedMarbles_;
 
@@ -39,6 +39,7 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
   self.angularVelocity = 0.0;
   self.angularVelocityVariance = 0.0;
   self.firedMarbles = 0;
+	self.releaseOnFinish = NO;
 }
 
 - (id) init
@@ -142,6 +143,9 @@ angularVelocity =angularVelocity_, angularVelocityVariance = angularVelocityVari
 	self.firedMarbles++;
 	if (self.firedMarbles > (self.marblesToEmit-1)) {
 		self.marbleTimer = nil;
+		if (self.releaseOnFinish) {
+			[self autorelease];
+		}
 	}
   [self.simulationLayer marbleFired:ms];
 

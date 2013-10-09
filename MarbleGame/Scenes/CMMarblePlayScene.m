@@ -33,6 +33,7 @@
 #import "CMParticleSystemQuad.h"
 #import "CMScoreSprite.h"
 #import "CMMarblePowerProtocol.h"
+#import "CMMarbleEmitter.h"
 
 
 @implementation CMMarblePlayScene
@@ -960,10 +961,23 @@
 			self.remarkLabel = defaultGameLabel(@"Lucky One");
 			[self effectRemoveTimer];
 		}
+			break;
     case kCMMarbleEffect_ColorRemove:
     {
       [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_COLOR_REMOVE];
     }
+		case kCMMarblePowerUp_MarbleSource:
+		{
+			CMMarbleEmitter *emitter = [[CMMarbleEmitter alloc]init];
+			emitter.position = position;
+			emitter.simulationLayer = self.simulationLayer;
+			emitter.marblesToEmit = 10;
+			emitter.marbleFrequency=30;
+			emitter.velocity=10.0;
+			emitter.velocityVariance=0.0;
+			emitter.releaseOnFinish = YES;
+			[emitter startEmitter];
+		}
     break;
 		default:
 			break;

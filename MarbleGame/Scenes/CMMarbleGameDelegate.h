@@ -20,7 +20,9 @@ typedef enum{
 	kCMMarbleEffect_RESPECT,
 	kCMMarbleEffect_PERFECT,
 	kCMMarbleEffect_TRICK,
-	kCMMarbleEffect_LUCKY
+	kCMMarbleEffect_LUCKY,
+	
+	kCMMarblePowerUp_MarbleSource,
 } CMMarbleEffectType;
 
 @class CMMarbleLevel,CMMarbleCollisionCollector,CCNode;

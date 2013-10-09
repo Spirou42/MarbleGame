@@ -572,7 +572,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
   self.dollyServo.errorBias = pow(1.0-0.1, 400);
 	self.currentMarbleIndex = marbleIndex;
 	
-	if ((marbleCounter % 60) == 0) {
+	if ((marbleCounter % POWER_UP_EXPLOSION_FREQUENCY) == 0) {
 		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
     bombEffect.activeTime = 60.0;
 		ms.marbleAction = bombEffect;

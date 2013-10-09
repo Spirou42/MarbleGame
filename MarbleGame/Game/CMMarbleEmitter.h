@@ -29,7 +29,7 @@
 
 @property (nonatomic, assign) CGFloat angularVelocity;        ///< angular Velocity in degrees per second
 @property (nonatomic, assign) CGFloat angularVelocityVariance;///< variance in degrees per second
-
+@property (nonatomic, assign) BOOL releaseOnFinish;
 
 - (void) startEmitter;
 - (void) stopEmitter;

@@ -17,7 +17,7 @@
 
 
 #define USE_NEW_COLLISION_DETECTOR 1
-@class  CMMarbleCollisionCollector, CMMarbleLevel, CMMarbleEmitter,CMMarbleSprite;
+@class  CMMarbleCollisionCollector, CMMarbleLevel, CMMarbleSprite;
 @interface CMMarbleSimulationLayer : CCLayerColor
 
 @property (nonatomic, assign) id<CMMarbleGameDelegate> gameDelegate;

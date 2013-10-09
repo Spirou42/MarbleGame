@@ -99,6 +99,8 @@
 #define POWER_UP_EXPLOSION_IMPULSE					20000.0
 #define POWER_UP_EXPLOSION_USE_TIMEDECAY  		YES
 #define POWER_UP_EXPLOSION_USE_DISTANCEDECAY 	YES
+#define POWER_UP_EXPLOSION_FREQUENCY					20
+#define POWER_UP_EXPLOSION_BEARING						YES
 
 
 //////////////////////////////////////////////////

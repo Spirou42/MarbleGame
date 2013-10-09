@@ -104,6 +104,10 @@
   }
 	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
   [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:gain];
+	if (POWER_UP_EXPLOSION_BEARING) {
+		[marble.gameDelegate triggerEffect:kCMMarblePowerUp_MarbleSource atPosition:pos];
+	}
+
 }
 
 - (CGFloat) percentTime
