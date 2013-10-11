@@ -974,7 +974,7 @@
 			emitter.simulationLayer = self.simulationLayer;
 			emitter.marblesToEmit = 10;
 			emitter.marbleFrequency=30;
-			emitter.velocity=10.0;
+			emitter.velocity=80.0;
 			emitter.velocityVariance=0.0;
 			emitter.releaseOnFinish = YES;
 			[emitter startEmitter];

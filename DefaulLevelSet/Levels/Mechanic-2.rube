@@ -42,6 +42,43 @@
   [
     
     {
+      "class" : "image",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "Background"
+        },
+        
+        {
+          "entry" : "Overlay"
+        },
+        
+        {
+          "entry" : "Sprite"
+        },
+        
+        {
+          "entry" : "SpriteOverlay"
+        }
+      ],
+      "displayName" : "imageType",
+      "name" : "imageType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "world",
       "displayName" : "marbleCount",
       "name" : "marbleCount",
@@ -49,7 +86,7 @@
     },
     
     {
-      "class" : "fixture",
+      "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -85,43 +122,6 @@
       ],
       "displayName" : "bodyType",
       "name" : "bodyType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "image",
-      "comboboxEntries" : 
-      [
-        
-        {
-          "entry" : "Undefined"
-        },
-        
-        {
-          "entry" : "Background"
-        },
-        
-        {
-          "entry" : "Overlay"
-        },
-        
-        {
-          "entry" : "Sprite"
-        },
-        
-        {
-          "entry" : "SpriteOverlay"
-        }
-      ],
-      "displayName" : "imageType",
-      "name" : "imageType",
       "type" : "string"
     }
   ],
@@ -2571,8 +2571,8 @@
         "massData-I" : 44477724.0,
         "massData-center" : 
         {
-          "x" : -0.4433502852916718,
-          "y" : -0.4058706164360046
+          "x" : -0.4433503448963165,
+          "y" : -0.4058685600757599
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2831,7 +2831,7 @@
         "massData-I" : 149304032.0,
         "massData-center" : 
         {
-          "x" : -0.228051558136940,
+          "x" : -0.2280516326427460,
           "y" : -121.7211532592773
         },
         "massData-mass" : 3416.86718750,
@@ -3004,8 +3004,8 @@
         "body" : 15,
         "center" : 
         {
-          "x" : -0.037780761718750,
-          "y" : -3.8493652343750
+          "x" : -0.03808355331420898,
+          "y" : -3.849327564239502
         },
         "customProperties" : 
         [
@@ -3020,6 +3020,7 @@
         "flip" : false,
         "id" : 6,
         "name" : "ScrewCross",
+        "opacity" : 1,
         "scale" : 28.0
       },
       
