@@ -311,6 +311,8 @@
 		</dict>
 		<key>HUPU</key>
 		<dict>
+			<key>Icon</key>
+			<string>Icon-HurpzelPurpzel</string>
 			<key>Name</key>
 			<string>Hurpzel Purpzel</string>
 			<key>scoreLimits</key>
