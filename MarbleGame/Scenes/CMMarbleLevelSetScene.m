@@ -20,6 +20,8 @@
 #import "MarbleGameAppDelegate+GameDelegate.h"
 #import "CMLevelSelectItem.h"
 #import "CMMarbleLevelSelectMenu.h"
+#import "CMMPLevelStat.h"
+#import "CMMarblePlayScene.h"
 
 @interface CMMarbleLevelSetScene ()
 @property (nonatomic, retain) CMMarbleLevelSelectMenu* levelMenu;
@@ -33,44 +35,40 @@
 {
   self = [super init];
 	if (self) {
-//    self.levelMenu = [[CMMarbleLevelSelectMenu new] autorelease];
+	self.levelMenu = [[CMMarbleLevelSelectMenu new] autorelease];
 
 		CMMarbleLevelSet *set=[CMAppDelegate levelSet];
-		CMMenuLayer *menuLayer = [[CMMenuLayer alloc] initWithLabel:@"Level Select"];
-		menuLayer.defaultButtonSize=CGSizeMake(300, 30);
-		CGPoint kk = menuLayer.nextFreeMenuPosition;
-		
-		kk.y+=40;
-		menuLayer.nextFreeMenuPosition=kk;
 		NSInteger levelNumber = 0;
 		BOOL levelSelectable = YES;
 		for (CMMarbleLevel *level in set.levelList) {
+
+			if (levelNumber > 0 && levelSelectable) { // first level is always Playable
+				CMMarbleLevel *lastLevel = [set.levelList objectAtIndex:levelNumber-1];
+				levelSelectable = [CMAppDelegate player:[CMAppDelegate currentPlayer] hasPlayedLevel:lastLevel.name];
+			}
+
 			CMLevelSelectItem *item = [CMLevelSelectItem new];
 			item.icon = level.icon;
 			item.name = level.name;
 			item.anchorPoint = CGPointMake(0.50, 0.50);
 			item.position =CGPointMake(levelNumber* item.contentSize.width+(item.contentSize.width/2.0), item.contentSize.height/2.0);
+
+			[item addTarget:self action:@selector(onLevelSelect:) forControlEvents:CCControlEventTouchUpInside];
+			item.tag = levelNumber++;
+			if (!levelSelectable){
+				item.levelState = kLevelState_Locked;
+			}else{
+				CMMPLevelStat * levelStatistics = [CMAppDelegate statisticsForPlayer:[CMAppDelegate currentPlayer] andLevel:level];
+				item.levelState = levelStatistics.status;
+				if (levelStatistics == nil || levelStatistics.status == -1) {
+					levelSelectable = NO;
+				}
+			}
 			[self.levelMenu addChild:item ];
       [item release];
 			
-			if (levelNumber > 0) {
-				CMMarbleLevel *lastLevel = [set.levelList objectAtIndex:levelNumber-1];
-				levelSelectable = [CMAppDelegate player:[CMAppDelegate currentPlayer] hasPlayedLevel:lastLevel.name];
-			}
-#if !DEBUG
-			if (!levelSelectable) {
-				break;
-			}
-#endif
-			CCControlButton* aButton = [menuLayer addButtonWithTitle:level.name target:self action:@selector(onLevelSelect:)];
-			aButton.tag = levelNumber++;
 		
 		}
-		[menuLayer addButtonWithTitle:@"Back" target:self action:@selector(onEnd:)];
-		[self addChild:menuLayer z:1];
-
-		
-//		[self schedule:@selector(onEnd:) interval:5];
 	}
   return self;
 }
@@ -87,9 +85,9 @@
       self->levelMenu_.anchorPoint = CGPointMake(0.5, 0.5);
       self->levelMenu_.ignoreAnchorPointForPosition = NO;
       self->levelMenu_.position = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0);
-			self->levelMenu_.touchPriority=0;
+			self->levelMenu_.touchPriority=10;
 #if __CC_PLATFORM_MAC
-			self->levelMenu_.mousePriority=0;
+			self->levelMenu_.mousePriority=10;
 #endif
       [self addChild:self->levelMenu_ z:10];
     }
@@ -103,7 +101,7 @@
 }
 
 
-- (void) onLevelSelect:(CCControlButton*) sender
+- (void) onLevelSelect:(CCControl*) sender
 {
 	NSInteger level = sender.tag;
 	MarbleGameAppDelegate * appDel = CMAppDelegate;
@@ -119,7 +117,7 @@
 
 - (void)onEnd:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CMMarbleMainMenuScene node]];
+	[[CCDirector sharedDirector] replaceScene:[CMMarblePlayScene node]];
 }
 
 

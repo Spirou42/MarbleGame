@@ -10,6 +10,8 @@
 		931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */; };
 		9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */; };
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
+		932EC19F18097DD600B6A34C /* CMActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EC19E18097DD600B6A34C /* CMActionLayer.m */; };
+		932EC1A018097DD600B6A34C /* CMActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EC19E18097DD600B6A34C /* CMActionLayer.m */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		93308F9417E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
 		9337177418034881007A2339 /* Icon-Halfpipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337177318034881007A2339 /* Icon-Halfpipe.png */; };
@@ -32,6 +34,18 @@
 		93371793180357C2007A2339 /* LevelSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = 9337178F180357C2007A2339 /* LevelSelect.png */; };
 		93414CBC17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
 		93414CBD17BC2627003676EF /* CMMarbleScoreModeScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */; };
+		93461144180ADF0D00431E48 /* LevelIcon-PlayOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461141180ADF0D00431E48 /* LevelIcon-PlayOverlay.png */; };
+		93461145180ADF0D00431E48 /* LevelIcon-PlayOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461141180ADF0D00431E48 /* LevelIcon-PlayOverlay.png */; };
+		93461146180ADF0D00431E48 /* LevelIcon-Locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461142180ADF0D00431E48 /* LevelIcon-Locked.png */; };
+		93461147180ADF0D00431E48 /* LevelIcon-Locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461142180ADF0D00431E48 /* LevelIcon-Locked.png */; };
+		93461148180ADF0D00431E48 /* LevelIcon-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461143180ADF0D00431E48 /* LevelIcon-Default.png */; };
+		93461149180ADF0D00431E48 /* LevelIcon-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461143180ADF0D00431E48 /* LevelIcon-Default.png */; };
+		9346115C180AE43D00431E48 /* Level-Sterne1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461159180AE43D00431E48 /* Level-Sterne1.png */; };
+		9346115D180AE43D00431E48 /* Level-Sterne1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461159180AE43D00431E48 /* Level-Sterne1.png */; };
+		9346115E180AE43D00431E48 /* Level-Sterne2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346115A180AE43D00431E48 /* Level-Sterne2.png */; };
+		9346115F180AE43D00431E48 /* Level-Sterne2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346115A180AE43D00431E48 /* Level-Sterne2.png */; };
+		93461160180AE43D00431E48 /* Level-Sterne3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346115B180AE43D00431E48 /* Level-Sterne3.png */; };
+		93461161180AE43D00431E48 /* Level-Sterne3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346115B180AE43D00431E48 /* Level-Sterne3.png */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
 		934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
 		93536456177DFB50009F640B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
@@ -82,6 +96,7 @@
 		935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */; };
 		935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
 		935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
+		93634DEA180893C000126EEC /* Icon-HurpzelPurpzel.png in Resources */ = {isa = PBXBuildFile; fileRef = 93634DE9180893C000126EEC /* Icon-HurpzelPurpzel.png */; };
 		93750A7A17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
 		93750A7B17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
 		93750A7C17B81D590063D613 /* GameUI.png in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7917B81CD60063D613 /* GameUI.png */; };
@@ -528,6 +543,8 @@
 		931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RUBETest-Overlay.png"; sourceTree = "<group>"; };
 		9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		9325653017E6662C0012C68F /* Halfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halfpipe.json; sourceTree = "<group>"; };
+		932EC19D18097DD600B6A34C /* CMActionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMActionLayer.h; sourceTree = "<group>"; };
+		932EC19E18097DD600B6A34C /* CMActionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMActionLayer.m; sourceTree = "<group>"; };
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
 		93308F9117E10A310094A362 /* CMSoundShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSoundShape.h; sourceTree = "<group>"; };
 		93308F9217E10A310094A362 /* CMSoundShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSoundShape.m; sourceTree = "<group>"; };
@@ -550,6 +567,12 @@
 		93414CAA17BC2340003676EF /* CMMarbleGameScoreModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleGameScoreModeProtocol.h; sourceTree = "<group>"; };
 		93414CBA17BC2627003676EF /* CMMarbleScoreModeScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarbleScoreModeScore.h; sourceTree = "<group>"; };
 		93414CBB17BC2627003676EF /* CMMarbleScoreModeScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarbleScoreModeScore.m; sourceTree = "<group>"; };
+		93461141180ADF0D00431E48 /* LevelIcon-PlayOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelIcon-PlayOverlay.png"; sourceTree = "<group>"; };
+		93461142180ADF0D00431E48 /* LevelIcon-Locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelIcon-Locked.png"; sourceTree = "<group>"; };
+		93461143180ADF0D00431E48 /* LevelIcon-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelIcon-Default.png"; sourceTree = "<group>"; };
+		93461159180AE43D00431E48 /* Level-Sterne1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Sterne1.png"; sourceTree = "<group>"; };
+		9346115A180AE43D00431E48 /* Level-Sterne2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Sterne2.png"; sourceTree = "<group>"; };
+		9346115B180AE43D00431E48 /* Level-Sterne3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Sterne3.png"; sourceTree = "<group>"; };
 		934AF9B217837E22004BAC7E /* SceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneHelper.h; sourceTree = "<group>"; };
 		934AF9B317837E22004BAC7E /* SceneHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneHelper.m; sourceTree = "<group>"; };
 		934AF9B617838B6C004BAC7E /* CCControlPopupButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPopupButton.h; sourceTree = "<group>"; };
@@ -642,6 +665,7 @@
 		935F00EF17B6D089006E8E10 /* CMMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMenuLayer.m; sourceTree = "<group>"; };
 		935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell30-OutlineMenuTitle.fnt"; sourceTree = "<group>"; };
 		935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell30-OutlineMenuTitle.png"; sourceTree = "<group>"; };
+		93634DE9180893C000126EEC /* Icon-HurpzelPurpzel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HurpzelPurpzel.png"; sourceTree = "<group>"; };
 		93750A7817B81CD60063D613 /* GameUI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameUI.plist; sourceTree = "<group>"; };
 		93750A7917B81CD60063D613 /* GameUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameUI.png; sourceTree = "<group>"; };
 		93750A7E17B827610063D613 /* Menu-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Background.png"; sourceTree = "<group>"; };
@@ -964,6 +988,12 @@
 		933FEB0E17836A8800786883 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93461159180AE43D00431E48 /* Level-Sterne1.png */,
+				9346115A180AE43D00431E48 /* Level-Sterne2.png */,
+				9346115B180AE43D00431E48 /* Level-Sterne3.png */,
+				93461141180ADF0D00431E48 /* LevelIcon-PlayOverlay.png */,
+				93461142180ADF0D00431E48 /* LevelIcon-Locked.png */,
+				93461143180ADF0D00431E48 /* LevelIcon-Default.png */,
 				9337178718034F9D007A2339 /* LevelSelectPlate.png */,
 				FEE3415D17EE2D7200F658FA /* MainMenu-Overlay2.png */,
 				93750A7E17B827610063D613 /* Menu-Background.png */,
@@ -985,6 +1015,8 @@
 				934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */,
 				FEAE680717E23E0F00231A96 /* CMEventEatingLayer.h */,
 				FEAE680817E23E0F00231A96 /* CMEventEatingLayer.m */,
+				932EC19D18097DD600B6A34C /* CMActionLayer.h */,
+				932EC19E18097DD600B6A34C /* CMActionLayer.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1601,6 +1633,7 @@
 		FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				93634DE9180893C000126EEC /* Icon-HurpzelPurpzel.png */,
 				FEBABB4B17E0B7C300E85ABD /* Level2-Background.png */,
 				FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */,
 				FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */,
@@ -2026,6 +2059,7 @@
 				9353D43F17B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */,
 				93536466177DFB50009F640B /* InfoPlist.strings in Resources */,
+				93461146180ADF0D00431E48 /* LevelIcon-Locked.png in Resources */,
 				FEFC0E9A17E9FBA60065D078 /* Gun.mp3 in Resources */,
 				939C936617F37B6B008CF635 /* Boom.mp3 in Resources */,
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
@@ -2034,10 +2068,12 @@
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
 				93980B2F17E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				93F4C5CE17F0C893001B76D0 /* Simpleton68Glow.fnt in Resources */,
+				93461144180ADF0D00431E48 /* LevelIcon-PlayOverlay.png in Resources */,
 				FE2818CC17F211540079BAF1 /* RockWell68-Score.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				93CE6C4017F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
+				93461160180AE43D00431E48 /* Level-Sterne3.png in Resources */,
 				FEDBAFF217E8D486008FB500 /* MarbleRemove.png in Resources */,
 				93B5605E17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
 				FEC8CC9217EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
@@ -2045,6 +2081,8 @@
 				FE9454C417F45139000B13B2 /* stars-grayscale.png in Resources */,
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
+				9346115C180AE43D00431E48 /* Level-Sterne1.png in Resources */,
+				9346115E180AE43D00431E48 /* Level-Sterne2.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
 				938150EA17E382BB009A5ABB /* Marble-Multi.mp3 in Resources */,
@@ -2061,6 +2099,7 @@
 				93B5605817E376C5008E023E /* Boing.mp3 in Resources */,
 				935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
 				FEDBAFF017E8D486008FB500 /* MarbleRemove.plist in Resources */,
+				93461148180ADF0D00431E48 /* LevelIcon-Default.png in Resources */,
 				93980B3117E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				9337178818034F9D007A2339 /* LevelSelectPlate.png in Resources */,
@@ -2112,6 +2151,7 @@
 				9337177E180348CB007A2339 /* Icon-Mechanic.png in Resources */,
 				93A5C6AE17EA4DEA0030D22E /* Pentagon-Orange.png in Resources */,
 				FEBABB7217E0B93F00E85ABD /* Level3-Background.png in Resources */,
+				93634DEA180893C000126EEC /* Icon-HurpzelPurpzel.png in Resources */,
 				FEBABB7317E0B93F00E85ABD /* Level3-Overlay.png in Resources */,
 				9325653217E6662C0012C68F /* Halfpipe.json in Resources */,
 				93371780180348DD007A2339 /* Icon-Mechanic2.png in Resources */,
@@ -2139,6 +2179,8 @@
 				9337178918034F9D007A2339 /* LevelSelectPlate.png in Resources */,
 				FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
 				939C936717F37B6B008CF635 /* Boom.mp3 in Resources */,
+				93461161180AE43D00431E48 /* Level-Sterne3.png in Resources */,
+				9346115D180AE43D00431E48 /* Level-Sterne1.png in Resources */,
 				93750A7D17B81D5A0063D613 /* GameUI.png in Resources */,
 				9353D46917B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				FEC8CC9317EB46DD003DB416 /* MarbleTouchGlow.png in Resources */,
@@ -2147,7 +2189,9 @@
 				93B5605D17E376C5008E023E /* Klick.mp3 in Resources */,
 				9353D44017B0492D00D0FD25 /* MainMenu-Background.png in Resources */,
 				93B5606117E376C5008E023E /* Marble-Remove.mp3 in Resources */,
+				93461147180ADF0D00431E48 /* LevelIcon-Locked.png in Resources */,
 				935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
+				93461145180ADF0D00431E48 /* LevelIcon-PlayOverlay.png in Resources */,
 				9353D45617B0552800D0FD25 /* LevelBackground-Default.png in Resources */,
 				FEDBAFF117E8D486008FB500 /* MarbleRemove.plist in Resources */,
 				FEDBAFF317E8D486008FB500 /* MarbleRemove.png in Resources */,
@@ -2163,6 +2207,7 @@
 				93980B3417E78F6F00EFD627 /* MarbleSpecial.png in Resources */,
 				93B5605F17E376C5008E023E /* Marble-Combo.mp3 in Resources */,
 				93F4C5D117F0C893001B76D0 /* Simpleton68Glow.png in Resources */,
+				9346115F180AE43D00431E48 /* Level-Sterne2.png in Resources */,
 				93B5605917E376C5008E023E /* Boing.mp3 in Resources */,
 				9353D45E17B0691100D0FD25 /* Simpleton17Glow.fnt in Resources */,
 				93CE6C4117F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
@@ -2180,6 +2225,7 @@
 				93980B3017E78F6F00EFD627 /* MarbleExplode.png in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
 				9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
+				93461149180ADF0D00431E48 /* LevelIcon-Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2207,6 +2253,7 @@
 				93EB27F8177F70B9001B7FBB /* CMMarbleHelpScene.m in Sources */,
 				FE88AEFC17A8312A00DCEB0C /* MarbleGameAppDelegate+GameDelegate.m in Sources */,
 				93F35A3F17C2A1A900B9B4E9 /* CMRubeBody.m in Sources */,
+				932EC19F18097DD600B6A34C /* CMActionLayer.m in Sources */,
 				93F4C5CA17F0A53B001B76D0 /* CMScoreSprite.m in Sources */,
 				9337178518034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
@@ -2280,6 +2327,7 @@
 				938CE0BE17BFE2BB0086B6D9 /* CMMPLevelStat.m in Sources */,
 				FED2E87317A7FD8B005A16B3 /* CMMarbleLevel.m in Sources */,
 				FED2E86C17A7FD83005A16B3 /* CMMarbleMainMenuScene.m in Sources */,
+				932EC1A018097DD600B6A34C /* CMActionLayer.m in Sources */,
 				93F782FF17B2F89800893DDC /* CMMarbleMultiComboSprite.m in Sources */,
 				FED2E86F17A7FD83005A16B3 /* CMMarblePlayScene.m in Sources */,
 				FED2E86E17A7FD83005A16B3 /* CMMarbleHelpScene.m in Sources */,

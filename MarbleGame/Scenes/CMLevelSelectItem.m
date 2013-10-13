@@ -12,15 +12,18 @@
 @interface CMLevelSelectItem ()
 @property (nonatomic,retain) CCSprite *overlay;
 @property (nonatomic,retain) CCLabelBMFont *label;
+@property (nonatomic,retain) CCSprite *starOverlay;
+@property (nonatomic,retain) CCSprite *playOverlay;
 @end
 
 @implementation CMLevelSelectItem
-@synthesize icon=icon_, overlay=overlay_, name=name_, label=label_;
+@synthesize icon=icon_, overlay=overlay_, name=name_, label=label_, levelState = levelState_, starOverlay = starOverlay_, playOverlay=playOverlay_;
 
 
 - (void) defaults
 {
 	self.overlay = [CCSprite spriteWithFile:@"LevelSelectPlate.png"];
+	self.icon = [CCSprite spriteWithFile:@"LevelIcon-Default.png"];
 	self.ignoreAnchorPointForPosition = NO;
 	
 }
@@ -44,6 +47,12 @@
 
   [self.overlay removeFromParent];
 	self.overlay = nil;
+	
+	[self.starOverlay removeFromParent];
+	self.starOverlay = nil;
+	
+	[self.playOverlay removeFromParent];
+	self.playOverlay = nil;
 
   
 	self.name = nil;
@@ -80,12 +89,86 @@
 		self->icon_ = [icon retain];
 		if (self->icon_) {
 			self->icon_.anchorPoint = CGPointMake(0.5, 0.5);
-			CGPoint p = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0+13);
+			CGPoint p = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0+14);
 			self->icon_.position = p;
 			[self addChild:self->icon_ z:1];
 		}
 	}
 }
+- (void) setStarOverlay:(CCSprite *)starOverlay
+{
+	if (self->starOverlay_ != starOverlay) {
+		if (self->starOverlay_) {
+			[self->starOverlay_ removeFromParent];
+		}
+		[self->starOverlay_ release];
+		self->starOverlay_ = [starOverlay retain];
+		if (self->starOverlay_) {
+			self->starOverlay_.anchorPoint = CGPointMake(0.0, 1.0);
+			CGPoint p = CGPointMake(16, self.contentSize.height-16);
+			self->starOverlay_.position = p;
+			[self addChild:self->starOverlay_ z:2];
+		}
+	}
+}
+- (void) setPlayOverlay:(CCSprite *)playOverlay
+{
+	if (self->playOverlay_ != playOverlay) {
+		if (self->playOverlay_) {
+			[self->playOverlay_ removeFromParent];
+		}
+		[self->playOverlay_ release];
+		self->playOverlay_ = [playOverlay retain];
+		if (self->playOverlay_) {
+			self->playOverlay_.anchorPoint = CGPointMake(0.5, 0.5);
+			CGPoint p = CGPointMake(self.contentSize.width/2.0, self.contentSize.height/2.0+14);
+			self->playOverlay_.position = p;
+			[self addChild:self->playOverlay_ z:2];
+		}
+	}
+}
+
+
+- (void) configureState
+{
+	if (self.icon == nil) {
+		self.icon = [CCSprite spriteWithFile:@"LevelIcon-Default.png"];
+	}
+	self.playOverlay = [CCSprite spriteWithFile:@"LevelIcon-PlayOverlay.png"];
+	switch (self.levelState) {
+		case kLevelState_Locked:
+			self.icon = [CCSprite spriteWithFile:@"LevelIcon-Locked.png"];
+			self.playOverlay = nil;
+			break;
+
+		case kLevelState_Unfinished:
+			break;
+
+		case kLevelState_Star1:
+			self.starOverlay = [CCSprite spriteWithFile:@"Level-Sterne1.png"];
+			break;
+
+		case kLevelState_Star2:
+			self.starOverlay = [CCSprite spriteWithFile:@"Level-Sterne2.png"];
+			break;
+
+		case kLevelState_Star3:
+			self.starOverlay = [CCSprite spriteWithFile:@"Level-Sterne3.png"];
+			break;
+
+		default:
+			break;
+	}
+}
+
+- (void) onEnter
+{
+	[self configureState];
+	[super onEnter];
+}
+
+
+
 
 - (CCLabelBMFont*) labelForName:(NSString*)name
 {
