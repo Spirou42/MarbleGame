@@ -52,6 +52,18 @@
 		93461167180B2E0800431E48 /* ParticlesMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461163180B2E0800431E48 /* ParticlesMap.png */; };
 		9346116A180B381A00431E48 /* CMMarblePowerUpBallBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 93461169180B381A00431E48 /* CMMarblePowerUpBallBomb.m */; };
 		9346116B180B381A00431E48 /* CMMarblePowerUpBallBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 93461169180B381A00431E48 /* CMMarblePowerUpBallBomb.m */; };
+		93461172180B5BC200431E48 /* stars-grayscale.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116C180B5BC200431E48 /* stars-grayscale.png */; };
+		93461173180B5BC200431E48 /* stars-grayscale.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116C180B5BC200431E48 /* stars-grayscale.png */; };
+		93461174180B5BC200431E48 /* MarblePowerUp-Explode.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116D180B5BC200431E48 /* MarblePowerUp-Explode.png */; };
+		93461175180B5BC200431E48 /* MarblePowerUp-Explode.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116D180B5BC200431E48 /* MarblePowerUp-Explode.png */; };
+		93461176180B5BC200431E48 /* MarbleExplode.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116E180B5BC200431E48 /* MarbleExplode.png */; };
+		93461177180B5BC200431E48 /* MarbleExplode.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116E180B5BC200431E48 /* MarbleExplode.png */; };
+		93461178180B5BC200431E48 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116F180B5BC200431E48 /* MarbleRemove.png */; };
+		93461179180B5BC200431E48 /* MarbleRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = 9346116F180B5BC200431E48 /* MarbleRemove.png */; };
+		9346117A180B5BC200431E48 /* MarbleSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461170180B5BC200431E48 /* MarbleSpecial.png */; };
+		9346117B180B5BC200431E48 /* MarbleSpecial.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461170180B5BC200431E48 /* MarbleSpecial.png */; };
+		9346117C180B5BC200431E48 /* MarbleTouchGlow.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461171180B5BC200431E48 /* MarbleTouchGlow.png */; };
+		9346117D180B5BC200431E48 /* MarbleTouchGlow.png in Resources */ = {isa = PBXBuildFile; fileRef = 93461171180B5BC200431E48 /* MarbleTouchGlow.png */; };
 		934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B317837E22004BAC7E /* SceneHelper.m */; };
 		934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AF9B717838B6C004BAC7E /* CCControlPopupButton.m */; };
 		93536456177DFB50009F640B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93536455177DFB50009F640B /* QuartzCore.framework */; };
@@ -571,6 +583,12 @@
 		93461163180B2E0800431E48 /* ParticlesMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ParticlesMap.png; sourceTree = "<group>"; };
 		93461168180B381A00431E48 /* CMMarblePowerUpBallBomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMarblePowerUpBallBomb.h; sourceTree = "<group>"; };
 		93461169180B381A00431E48 /* CMMarblePowerUpBallBomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMarblePowerUpBallBomb.m; sourceTree = "<group>"; };
+		9346116C180B5BC200431E48 /* stars-grayscale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stars-grayscale.png"; sourceTree = "<group>"; };
+		9346116D180B5BC200431E48 /* MarblePowerUp-Explode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MarblePowerUp-Explode.png"; sourceTree = "<group>"; };
+		9346116E180B5BC200431E48 /* MarbleExplode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleExplode.png; sourceTree = "<group>"; };
+		9346116F180B5BC200431E48 /* MarbleRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleRemove.png; sourceTree = "<group>"; };
+		93461170180B5BC200431E48 /* MarbleSpecial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleSpecial.png; sourceTree = "<group>"; };
+		93461171180B5BC200431E48 /* MarbleTouchGlow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleTouchGlow.png; sourceTree = "<group>"; };
 		934AF9B217837E22004BAC7E /* SceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneHelper.h; sourceTree = "<group>"; };
 		934AF9B317837E22004BAC7E /* SceneHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneHelper.m; sourceTree = "<group>"; };
 		934AF9B617838B6C004BAC7E /* CCControlPopupButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPopupButton.h; sourceTree = "<group>"; };
@@ -1452,13 +1470,19 @@
 		FE31853617E7650D0090223B /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				93980B2917E78F6F00EFD627 /* MarbleExplode.plist */,
+				9346116E180B5BC200431E48 /* MarbleExplode.png */,
+				93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */,
+				9346116D180B5BC200431E48 /* MarblePowerUp-Explode.png */,
+				FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */,
+				9346116F180B5BC200431E48 /* MarbleRemove.png */,
+				93980B2B17E78F6F00EFD627 /* MarbleSpecial.plist */,
+				93461170180B5BC200431E48 /* MarbleSpecial.png */,
+				FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */,
+				93461171180B5BC200431E48 /* MarbleTouchGlow.png */,
 				93461162180B2E0800431E48 /* ParticlesMap.plist */,
 				93461163180B2E0800431E48 /* ParticlesMap.png */,
-				93CE6C3F17F25767009C1926 /* MarblePowerUp-Explode.plist */,
-				FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */,
-				FEDBAFEE17E8D486008FB500 /* MarbleRemove.plist */,
-				93980B2917E78F6F00EFD627 /* MarbleExplode.plist */,
-				93980B2B17E78F6F00EFD627 /* MarbleSpecial.plist */,
+				9346116C180B5BC200431E48 /* stars-grayscale.png */,
 			);
 			path = Particles;
 			sourceTree = "<group>";
@@ -2054,10 +2078,13 @@
 				93536469177DFB50009F640B /* MainMenu.xib in Resources */,
 				FEE3415E17EE2D7200F658FA /* MainMenu-Overlay2.png in Resources */,
 				93B5605A17E376C5008E023E /* Klack.mp3 in Resources */,
+				93461172180B5BC200431E48 /* stars-grayscale.png in Resources */,
 				9353646B177DFB50009F640B /* icon.icns in Resources */,
+				93461174180B5BC200431E48 /* MarblePowerUp-Explode.png in Resources */,
 				93F4C5CE17F0C893001B76D0 /* Simpleton68Glow.fnt in Resources */,
 				93461144180ADF0D00431E48 /* LevelIcon-PlayOverlay.png in Resources */,
 				FE2818CC17F211540079BAF1 /* RockWell68-Score.png in Resources */,
+				93461178180B5BC200431E48 /* MarbleRemove.png in Resources */,
 				93B5606017E376C5008E023E /* Marble-Remove.mp3 in Resources */,
 				FEC8CC9017EB46DD003DB416 /* MarbleTouchGlow.plist in Resources */,
 				93CE6C4017F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
@@ -2067,6 +2094,7 @@
 				9353D46A17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				9353D44317B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
 				9346115C180AE43D00431E48 /* Level-Sterne1.png in Resources */,
+				93461176180B5BC200431E48 /* MarbleExplode.png in Resources */,
 				9346115E180AE43D00431E48 /* Level-Sterne2.png in Resources */,
 				93FD6D3A17B14C87001CC41E /* multi.png in Resources */,
 				935366F0177E1254009F640B /* Balls.plist in Resources */,
@@ -2082,11 +2110,13 @@
 				93B5606217E376C5008E023E /* SmoothJazz-1.mp3 in Resources */,
 				93B5605817E376C5008E023E /* Boing.mp3 in Resources */,
 				935F00F417B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */,
+				9346117C180B5BC200431E48 /* MarbleTouchGlow.png in Resources */,
 				FEDBAFF017E8D486008FB500 /* MarbleRemove.plist in Resources */,
 				93461148180ADF0D00431E48 /* LevelIcon-Default.png in Resources */,
 				93980B3117E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				9353D46817B0835600D0FD25 /* RockWell24-OutlineButton.fnt in Resources */,
 				93461164180B2E0800431E48 /* ParticlesMap.plist in Resources */,
+				9346117A180B5BC200431E48 /* MarbleSpecial.png in Resources */,
 				9337178818034F9D007A2339 /* LevelSelectPlate.png in Resources */,
 				93461166180B2E0800431E48 /* ParticlesMap.png in Resources */,
 				93750A7A17B81D560063D613 /* GameUI.plist in Resources */,
@@ -2158,10 +2188,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93461177180B5BC200431E48 /* MarbleExplode.png in Resources */,
 				FEAE681A17E24B3700231A96 /* DefaultLevelSet.levels in Resources */,
 				93980B3217E78F6F00EFD627 /* MarbleSpecial.plist in Resources */,
 				93371791180357C2007A2339 /* LevelSelect.fnt in Resources */,
 				9353D46D17B0983E00D0FD25 /* Icon.png in Resources */,
+				9346117D180B5BC200431E48 /* MarbleTouchGlow.png in Resources */,
 				9337178918034F9D007A2339 /* LevelSelectPlate.png in Resources */,
 				FE2818CB17F211540079BAF1 /* RockWell68-Score.fnt in Resources */,
 				939C936717F37B6B008CF635 /* Boom.mp3 in Resources */,
@@ -2197,13 +2229,17 @@
 				93CE6C4117F25767009C1926 /* MarblePowerUp-Explode.plist in Resources */,
 				FED2E60F17A7E489005A16B3 /* iTunesArtwork in Resources */,
 				93FD6D3B17B14C87001CC41E /* multi.png in Resources */,
+				93461175180B5BC200431E48 /* MarblePowerUp-Explode.png in Resources */,
+				93461173180B5BC200431E48 /* stars-grayscale.png in Resources */,
 				93F4C5CF17F0C893001B76D0 /* Simpleton68Glow.fnt in Resources */,
 				FEFC0E9B17E9FBA60065D078 /* Gun.mp3 in Resources */,
 				9353D46B17B0835600D0FD25 /* RockWell24-OutlineButton.png in Resources */,
 				FED9FD3517A8156A00ACC97F /* Balls.png in Resources */,
 				93FD6D3917B14C87001CC41E /* combo.png in Resources */,
 				93B5606317E376C5008E023E /* SmoothJazz-1.mp3 in Resources */,
+				93461179180B5BC200431E48 /* MarbleRemove.png in Resources */,
 				93461167180B2E0800431E48 /* ParticlesMap.png in Resources */,
+				9346117B180B5BC200431E48 /* MarbleSpecial.png in Resources */,
 				93980B2E17E78F6F00EFD627 /* MarbleExplode.plist in Resources */,
 				9353D45917B0575900D0FD25 /* Level-Overlay.png in Resources */,
 				9353D44417B0492D00D0FD25 /* MainMenu-Overlay.png in Resources */,
