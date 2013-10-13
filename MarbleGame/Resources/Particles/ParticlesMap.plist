@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- $TexturePacker:SmartUpdate:f47d7f3d653397ed200b5311ac4d892a:1/1$ -->
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+		 
+			<key>MarbleExplode</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,2 }, { 64,64 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>MarblePowerUp-Explode</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 68,2 }, { 32,32 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 32,32 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 32,32 }</string>
+				</dict>
+		 
+			<key>MarbleRemove</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,2 }, { 64,64 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>MarbleSpecial</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 34,68 }, { 30,30 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 30,30 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 30,30 }</string>
+				</dict>
+		 
+			<key>MarbleTouchGlow</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,2 }, { 64,64 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 64,64 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 64,64 }</string>
+				</dict>
+		 
+			<key>stars-grayscale</key>
+				<dict>
+					<key>frame</key>
+					
+					<string>{ { 2,68 }, { 30,30 } }</string>
+					
+
+					<key>offset</key>
+				  <string>{ , }</string>
+				  
+				  <key>rotated</key>
+					 <false/> 
+				  
+				  <key>sourceColorRect</key>
+				  <string>{ { 0,0 },{ 30,30 } }</string>
+				
+				  <key>sourceSize</key>
+				  <string>{ 30,30 }</string>
+				</dict>
+		
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>realTextureFileName</key>
+			<string>ParticlesMap.png</string>
+			<key>size</key>
+			<string>{ 102,100 }</string>
+			<key>textureFileName</key>
+			<string>ParticlesMap.png</string>
+		</dict>
+	</dict>
+</plist>

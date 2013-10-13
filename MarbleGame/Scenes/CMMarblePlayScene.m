@@ -38,15 +38,16 @@
 
 @implementation CMMarblePlayScene
 
-@synthesize  normalHits = _normalHits,comboHits=_comboHits,multiHits=_multiHits;
-@synthesize effectsNode = _effectsNode,marbleEffectsNode = marbleEffectsNode_;
-@synthesize  currentStatistics = _currentStatistics, statisticsOverlay=_statisticsOverlay;
-@synthesize  comboMarkerLabel = _comboMarkerLabel, lastDisplayTime = _lastDisplayTime, marbleDelayTimer;
-@synthesize  marblesInGame=_marblesInGame,levelStartTime = _levelStartTime, backgroundSprite=_backgroundSprite;
-@synthesize  foregroundSprite=_foregroundSprite, overlaySprite=_overlaySprite;
-@synthesize  scoreLabel=_scoreLabel, timeLabel = _timeLabel, remarkLabel= _remarkLabel;
-@synthesize  effectQueue = _effectQueue,marbleSlot=_marbleSlot, removedMarbleQueue = _removedMarbleQueue;
-@synthesize  menuLayer = _menuLayer,scoreDelegate = _scoreDelegate, effectTimer = _effectTimer, resultMenu = _resultMenu;
+@synthesize  simulationLayer=simulationLayer_, normalHits = normalHits_,comboHits=comboHits_,multiHits=multiHits_;
+@synthesize effectsNode = effectsNode_,marbleEffectsNode = marbleEffectsNode_,spriteEffectsNode=spriteEffectsNode_;
+@synthesize  currentStatistics = currentStatistics_, statisticsOverlay=statisticsOverlay_;
+@synthesize  comboMarkerLabel = comboMarkerLabel_, lastDisplayTime = lastDisplayTime_, marbleDelayTimer = marbleDelayTimer_;
+@synthesize  marblesInGame=marblesInGame_,levelStartTime = levelStartTime_, backgroundSprite=backgroundSprite_;
+@synthesize  foregroundSprite=foregroundSprite_, overlaySprite=overlaySprite_;
+@synthesize  scoreLabel=scoreLabel_, timeLabel = timeLabel_, remarkLabel= remarkLabel_;
+@synthesize  effectQueue = effectQueue_,marbleSlot=marbleSlot_, removedMarbleQueue = removedMarbleQueue_;
+@synthesize  menuButton=menuButton_, menuLayer = menuLayer_,toggleSimulationButton=toggleSimulationButton_;
+@synthesize  scoreDelegate = scoreDelegate_, effectTimer = effectTimer_, resultMenu = resultMenu_, lastUpdateScore=lastUpdateScore_, lastUpdateSecond=lastUpdateSecond_;
 
 @dynamic playEffect, soundVolume;
 
@@ -63,8 +64,9 @@
 - (NSString*) currentTimeString
 {
 	NSTimeInterval dt = -[self.levelStartTime timeIntervalSinceNow];
-
-	return [self stringForSeconds:dt];
+	NSString *result = [NSString stringWithFormat:@"%lu", (unsigned long)self.simulationLayer.marbleBatchNode.children.count ];
+//[self stringForSeconds:dt];
+	return result;
 }
 - (NSString*) currentScoreString
 {
@@ -95,12 +97,17 @@
 		self.overlaySprite.opacity = 128;
 #endif
 
-    self.effectsNode = [CCNode node];
+    self.effectsNode = [CCNode node ];
     [self addChild:self.effectsNode z:EFFECTS_LAYER];
 
+		self.spriteEffectsNode = [CCNode node];
+		[self addChild:self.spriteEffectsNode z:EFFECTS_LAYER];
+
+		
 		self.marbleEffectsNode = [CCNode node];
 		[self addChild:self.marbleEffectsNode z:MARBLE_EFFECTS_LAYER];
 
+		
 #ifdef __CC_PLATFORM_MAC
     self.simulationLayer.mousePriority=1;
 #else
@@ -138,6 +145,10 @@
 	self.timeLabel = nil;
 	self.remarkLabel = nil;
 	self.scoreDelegate = nil;
+	self.menuButton = nil;
+	self.spriteEffectsNode = nil;
+	self.effectsNode = nil;
+	self.marbleEffectsNode = nil;
 	
 	[super dealloc];
 }
@@ -147,12 +158,12 @@
 
 - (void) setSimulationLayer:(CMMarbleSimulationLayer *)simLay
 {
-  if( self->_simulationLayer != simLay){
-    self->_simulationLayer.simulationRunning=NO;
-    [self removeChild:self->_simulationLayer cleanup:YES];
+  if( self->simulationLayer_ != simLay){
+    self->simulationLayer_.simulationRunning=NO;
+    [self removeChild:self->simulationLayer_ cleanup:YES];
 
-    [self->_simulationLayer release];
-    self->_simulationLayer = [simLay retain];
+    [self->simulationLayer_ release];
+    self->simulationLayer_ = [simLay retain];
 		if (simLay) {
 			[self addChild:simLay z:MARBLE_LAYER];
 		}
@@ -165,17 +176,17 @@
 
 - (CMMarbleSimulationLayer*) simulationLayer
 {
-  return self->_simulationLayer;
+  return self->simulationLayer_;
 }
 
 - (void) setBackgroundSprite:(CCSprite *)bS
 {
-	if (self->_backgroundSprite != bS) {
-		[self removeChild:self->_backgroundSprite cleanup:YES];
-		[self->_backgroundSprite release];
-		self->_backgroundSprite = [bS retain];
-		self->_backgroundSprite.anchorPoint = cpv(0.5, 0.5);
-		self->_backgroundSprite.position = centerOfScreen()
+	if (self->backgroundSprite_ != bS) {
+		[self removeChild:self->backgroundSprite_ cleanup:YES];
+		[self->backgroundSprite_ release];
+		self->backgroundSprite_ = [bS retain];
+		self->backgroundSprite_.anchorPoint = cpv(0.5, 0.5);
+		self->backgroundSprite_.position = centerOfScreen()
 		;		if (bS) {
 			[self addChild:bS z:BACKGROUND_LAYER];
 		}
@@ -184,12 +195,12 @@
 
 - (void) setForegroundSprite:(CCSprite *)fS
 {
-	if (self->_foregroundSprite != fS) {
-		[self removeChild:self->_foregroundSprite cleanup:YES];
-		[self->_foregroundSprite release];
-		self->_foregroundSprite = [fS retain];
-		self->_foregroundSprite.anchorPoint = cpv(0.5, 0.5);
-		self->_foregroundSprite.position = centerOfScreen();
+	if (self->foregroundSprite_ != fS) {
+		[self removeChild:self->foregroundSprite_ cleanup:YES];
+		[self->foregroundSprite_ release];
+		self->foregroundSprite_ = [fS retain];
+		self->foregroundSprite_.anchorPoint = cpv(0.5, 0.5);
+		self->foregroundSprite_.position = centerOfScreen();
 		if (fS) {
 			[self addChild:fS z:FOREGROUND_LAYER];
 		}
@@ -198,12 +209,12 @@
 
 - (void) setOverlaySprite:(CCSprite *)oS
 {
-	if (self->_overlaySprite != oS) {
-		[self removeChild:self->_overlaySprite cleanup:YES];
-		[self->_overlaySprite release];
-		self->_overlaySprite = [oS retain];
-		self->_overlaySprite.anchorPoint=cpv(0.0, 1.0);
-		self->_overlaySprite.position=cpv(0.0, 768);
+	if (self->overlaySprite_ != oS) {
+		[self removeChild:self->overlaySprite_ cleanup:YES];
+		[self->overlaySprite_ release];
+		self->overlaySprite_ = [oS retain];
+		self->overlaySprite_.anchorPoint=cpv(0.0, 1.0);
+		self->overlaySprite_.position=cpv(0.0, 768);
 		if (oS) {
 			[self addChild:oS z:OVERLAY_LAYER];
 		}
@@ -212,7 +223,7 @@
 
 - (void) setScoreLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)sL
 {
-	if (self->_scoreLabel != sL) {
+	if (self->scoreLabel_ != sL) {
 		CGRect realBounds = CGRectZero;
 		if ([sL isKindOfClass:[CCLabelBMFont class]]) {
 			CCLabelBMFont*p = (CCLabelBMFont*)sL;
@@ -220,23 +231,23 @@
 		}else
 			realBounds = sL.boundingBox;
 		
-		if (self->_scoreLabel) {
-			[self removeChild:self->_scoreLabel];
-			[self->_scoreLabel release];
+		if (self->scoreLabel_) {
+			[self removeChild:self->scoreLabel_];
+			[self->scoreLabel_ release];
 		}
-		self->_scoreLabel = [sL retain];
-		self->_scoreLabel.anchorPoint = cpv(1.0, 0.5);
-		if (self->_scoreLabel) {
-			[self addChild:self->_scoreLabel z:OVERLAY_LABEL_LAYER];
+		self->scoreLabel_ = [sL retain];
+		self->scoreLabel_.anchorPoint = cpv(1.0, 0.5);
+		if (self->scoreLabel_) {
+			[self addChild:self->scoreLabel_ z:OVERLAY_LABEL_LAYER];
 		}
 
-		self->_scoreLabel.opacity=0.75 * 255;
-		self->_scoreLabel.position=cpv(238, realBounds.size.height/4.0-2);
+		self->scoreLabel_.opacity=0.75 * 255;
+		self->scoreLabel_.position=cpv(238, realBounds.size.height/4.0-2);
 	}
 }
 - (void) setTimeLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)tL
 {
-	if (self->_timeLabel != tL) {
+	if (self->timeLabel_ != tL) {
 		CGRect realBounds = CGRectZero;
 		if ([tL isKindOfClass:[CCLabelBMFont class]]) {
 			CCLabelBMFont*p = (CCLabelBMFont*)tL;
@@ -244,67 +255,67 @@
 		}else
 			realBounds = tL.boundingBox;
 		
-		if (self->_timeLabel) {
-			[self removeChild:self->_timeLabel];
-			[self->_timeLabel release];
+		if (self->timeLabel_) {
+			[self removeChild:self->timeLabel_];
+			[self->timeLabel_ release];
 		}
-		self->_timeLabel = [tL retain];
-		if (self->_timeLabel) {
-			[self addChild:self->_timeLabel z:OVERLAY_LABEL_LAYER];
+		self->timeLabel_ = [tL retain];
+		if (self->timeLabel_) {
+			[self addChild:self->timeLabel_ z:OVERLAY_LABEL_LAYER];
 		}
 
-		self->_timeLabel.opacity=0.75 * 255;
-		self->_timeLabel.position=cpv(815, realBounds.size.height/4.0-2);
+		self->timeLabel_.opacity=0.75 * 255;
+		self->timeLabel_.position=cpv(815, realBounds.size.height/4.0-2);
 	}
 }
 
 - (void) setRemarkLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)rL
 {
-	if (self->_remarkLabel != rL) {
+	if (self->remarkLabel_ != rL) {
 		CGRect realBounds = CGRectZero;
 		if ([rL isKindOfClass:[CCLabelBMFont class]]) {
 			CCLabelBMFont*p = (CCLabelBMFont*)rL;
 			realBounds = [p outerBounds];
 		}else
 			realBounds = rL.boundingBox;
-		if (self->_remarkLabel) {
-			[self removeChild:self->_remarkLabel];
-			[self->_remarkLabel release];
+		if (self->remarkLabel_) {
+			[self removeChild:self->remarkLabel_];
+			[self->remarkLabel_ release];
 		}
 		
-		self->_remarkLabel = [rL retain];
-		self->_remarkLabel.anchorPoint=cpv(0.5, 0.5);
-		if (self->_remarkLabel) {
-			[self addChild:self->_remarkLabel z:OVERLAY_LABEL_LAYER];
+		self->remarkLabel_ = [rL retain];
+		self->remarkLabel_.anchorPoint=cpv(0.5, 0.5);
+		if (self->remarkLabel_) {
+			[self addChild:self->remarkLabel_ z:OVERLAY_LABEL_LAYER];
 		}
 
-		self->_remarkLabel.opacity=0.75 * 255;
-		self->_remarkLabel.position=cpv(375, realBounds.size.height/4.0 +1);
+		self->remarkLabel_.opacity=0.75 * 255;
+		self->remarkLabel_.position=cpv(375, realBounds.size.height/4.0 +1);
 	}
 }
 
 - (void) setMarbleSlot:(CMMarbleSlot *)mSlot
 {
-	if (self->_marbleSlot != mSlot) {
-		[self->_marbleSlot removeFromParent];
-		[self->_marbleSlot release];
+	if (self->marbleSlot_ != mSlot) {
+		[self->marbleSlot_ removeFromParent];
+		[self->marbleSlot_ release];
 		mSlot.anchorPoint=ccp(0, 0);
 		mSlot.position = ccp(482, 11);
 		if (mSlot) {
 			[self addChild:mSlot z:OVERLAY_LABEL_LAYER];
 		}
 
-		self->_marbleSlot = [mSlot retain];
+		self->marbleSlot_ = [mSlot retain];
 	}
 }
 
 - (void) setScoreDelegate:(NSObject<CMMarbleGameScoreModeProtocol> *)scoreDelegate
 {
-	if (self->_scoreDelegate != scoreDelegate) {
-		self->_scoreDelegate.gameDelegate = nil;
-		[self->_scoreDelegate release];
-		self->_scoreDelegate = [scoreDelegate retain];
-		self->_scoreDelegate.gameDelegate = self;
+	if (self->scoreDelegate_ != scoreDelegate) {
+		self->scoreDelegate_.gameDelegate = nil;
+		[self->scoreDelegate_ release];
+		self->scoreDelegate_ = [scoreDelegate retain];
+		self->scoreDelegate_.gameDelegate = self;
 	}
 }
 
@@ -329,13 +340,13 @@
   //	[CCMenuItemFont setFontName:@"Arial"];
 
   CCControlButton *menuButton = defaultMenuButton();
-  self->_menuButton = menuButton;
+  self->menuButton_ = menuButton;
   [self addChild:menuButton z:BUTTON_LAYER];
   [menuButton addTarget:self action:@selector(toggleMenu:) forControlEvents:CCControlEventTouchUpInside];
   self.menuLayer = [CMMenuLayer menuLayerWithLabel:@"Game Menu"];
   [self.menuLayer addButtonWithTitle:@"Main Menu" target:self action:@selector(backAction:)];
   [self.menuLayer addButtonWithTitle:@"Debug" target:self action:@selector(debugAction:)];
-  self->_toggleSimulationButton =  [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
+  self->toggleSimulationButton_ =  [self.menuLayer addButtonWithTitle:@"Stop" target:self action:@selector(toggleSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Reset" target:self action:@selector(resetSimulationAction:)];
   [self.menuLayer addButtonWithTitle:@"Settings" target:self action:@selector(settingsAction:)];
 	[self.menuLayer addButtonWithTitle:@"Back" target:self action:@selector(toggleMenu:)];
@@ -418,10 +429,10 @@
 {
   if(self.simulationLayer.isSimulationRunning){
     [self.simulationLayer stopSimulation];
-    [self->_toggleSimulationButton setTitle:@"Start" forState:CCControlStateNormal];
+    [self->toggleSimulationButton_ setTitle:@"Start" forState:CCControlStateNormal];
   }else{
     [self.simulationLayer startSimulation];
-    [self->_toggleSimulationButton setTitle:@"Stop" forState:CCControlStateNormal];
+    [self->toggleSimulationButton_ setTitle:@"Stop" forState:CCControlStateNormal];
   }
 }
 
@@ -663,10 +674,11 @@
 - (void) updateTimeLabel
 {
 	if (self.simulationLayer.simulationRunning) {
+		NSUInteger cc = self.simulationLayer.marbleBatchNode.children.count;
 		NSInteger updateSecond = (NSInteger) -[self.levelStartTime timeIntervalSinceNow];
-		if (self->_lastUpdateSecond != updateSecond) {
+		if (self->lastUpdateSecond_ != cc) {
 			self.timeLabel = defaultGameLabel([self currentTimeString]);
-			self->_lastUpdateSecond = updateSecond;
+			self->lastUpdateSecond_ = cc;
 		}
 	}
 }
@@ -674,9 +686,9 @@
 - (void) updateScoreLabel
 {
 	if (self.simulationLayer.simulationRunning) {
-		if (self->_lastUpdateScore != self.currentStatistics.score) {
+		if (self->lastUpdateScore_ != self.currentStatistics.score) {
 			self.scoreLabel = defaultGameLabel([self currentScoreString]);
-			self->_lastUpdateScore = (NSInteger)self.currentStatistics.score;
+			self->lastUpdateScore_ = (NSInteger)self.currentStatistics.score;
 		}
 	}
 }
@@ -782,8 +794,13 @@
 
 - (void) fireEffect:(CCNode*) someEffectNode
 {
-  [self.effectsNode addChild:someEffectNode z:20];
-
+	
+	// dispatchEffect
+	if ([someEffectNode isKindOfClass:[CCParticleSystem class]]) {
+		[self.effectsNode addChild:someEffectNode z:20];
+	}else{
+	  [self.spriteEffectsNode addChild:someEffectNode z:20];
+	}
   if ([someEffectNode conformsToProtocol:@protocol(CMObjectSoundProtocol)]) {
     CCNode<CMObjectSoundProtocol>*p = (CCNode<CMObjectSoundProtocol>*)someEffectNode;
     if (p.soundName) {
@@ -974,7 +991,7 @@
 			emitter.simulationLayer = self.simulationLayer;
 			emitter.marblesToEmit = 10;
 			emitter.marbleFrequency=30;
-			emitter.velocity=80.0;
+			emitter.velocity=120.0;
 			emitter.velocityVariance=0.0;
 			emitter.releaseOnFinish = YES;
 			[emitter startEmitter];

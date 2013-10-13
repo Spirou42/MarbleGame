@@ -28,6 +28,7 @@
 #import "CMRubeBody.h"
 #import "CMObjectSoundProtocol.h"
 #import "CMMarblePowerUpBomb.h"
+#import "CMMarblePowerUpBallBomb.h"
 #import "CMMarbleEmitter.h"
 
 enum {
@@ -576,6 +577,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
     bombEffect.activeTime = 60.0;
 		ms.marbleAction = bombEffect;
+	}else if ((marbleCounter % (int)(POWER_UP_EXPLOSION_FREQUENCY * 1.6))==0 ){
+		CMMarblePowerUpBallBomb *bombEffect = [[CMMarblePowerUpBallBomb new]autorelease];
+    bombEffect.activeTime = 3*60.0;
+		ms.marbleAction = bombEffect;
+		
 	}
 }
 

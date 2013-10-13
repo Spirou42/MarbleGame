@@ -9,7 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "CMMarblePowerUpBase.h"
 
-@interface CMMarblePowerUpBomb : CMMarblePowerUpBase
+@class CMSimpleGradient;
 
+@interface CMMarblePowerUpBomb : CMMarblePowerUpBase
+@property (nonatomic,retain) CMParticleSystemQuad* particles;
+@property (nonatomic,retain) CMSimpleGradient *startColorGradient;
+@property (nonatomic,retain) CMSimpleGradient *endColorGradient;
+
+- (void) initDefaults;
 
 @end

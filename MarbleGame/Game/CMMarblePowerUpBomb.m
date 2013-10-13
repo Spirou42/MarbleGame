@@ -12,25 +12,29 @@
 #import "SimpleAudioEngine.h"
 #import "CMSimpleGradient.h"
 
-@interface CMMarblePowerUpBase ()
-@property (nonatomic,retain) CMParticleSystemQuad* particles;
-@property (nonatomic,retain) CMSimpleGradient *startColorGradient;
-@property (nonatomic,retain) CMSimpleGradient *endColorGradient;
+@interface CMMarblePowerUpBomb ()
+
 @end
 
 @implementation CMMarblePowerUpBomb
 @synthesize startColorGradient = startColorGradient_, endColorGradient=endColorGradient_ ;
 
+
+- (void) initDefaults
+{
+	self.particles = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
+	self.startColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.startColor
+																																endColor:ccc4f(1.0, 0.0, 0.0, 1.0)]autorelease];
+	
+	self.endColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.endColor
+																															endColor:ccc4f(0.0, 0.0, 0.0, 1.0)]autorelease];
+	
+}
 - (id) init
 {
 	self = [super init];
 	if (self) {
-		self.particles = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
-    self.startColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.startColor
-                                                                  endColor:ccc4f(1.0, 0.0, 0.0, 1.0)]autorelease];
-
-    self.endColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.endColor
-                                                                endColor:ccc4f(0.0, 0.0, 0.0, 1.0)]autorelease];
+		[self initDefaults];
 	}
 	return self;
 }
@@ -104,9 +108,7 @@
   }
 	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
   [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:gain];
-	if (POWER_UP_EXPLOSION_BEARING) {
-		[marble.gameDelegate triggerEffect:kCMMarblePowerUp_MarbleSource atPosition:pos];
-	}
+
 
 }
 
