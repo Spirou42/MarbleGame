@@ -42,27 +42,6 @@
   [
     
     {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -85,6 +64,27 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     }
   ],
@@ -422,7 +422,7 @@
         "name" : "Star-L",
         "position" : 
         {
-          "x" : 331.1151428222656,
+          "x" : 292.5994567871094,
           "y" : 545.2020263671875
         },
         "type" : "dynamic"
@@ -460,19 +460,19 @@
             {
               "x" : 
               [
-                50.68770980834961,
-                0.1682403534650803,
-                -50.46947097778320,
-                -31.23740005493164,
-                30.59649276733398
+                50.68704223632812,
+                0.1675682067871094,
+                -50.47014236450195,
+                -31.23807144165039,
+                30.59582138061523
               ],
               "y" : 
               [
-                13.03835868835449,
-                49.54900741577148,
-                12.83813190460205,
-                -45.49518203735352,
-                -45.64535903930664
+                11.75740432739258,
+                48.26805496215820,
+                11.55717658996582,
+                -46.77613449096680,
+                -46.92631149291992
               ]
             }
           }
@@ -482,8 +482,8 @@
         "name" : "Block-M",
         "position" : 
         {
-          "x" : 513.3522338867188,
-          "y" : 388.4059143066406
+          "x" : 541.25488281250,
+          "y" : 397.4718017578125
         },
         "type" : "static"
       },
@@ -559,7 +559,7 @@
         "name" : "Star-R",
         "position" : 
         {
-          "x" : 694.7038574218750,
+          "x" : 773.245605468750,
           "y" : 545.2020263671875
         },
         "type" : "dynamic"
@@ -662,13 +662,13 @@
       {
         "anchorA" : 
         {
-          "x" : -0.038024902343750,
-          "y" : -3.308654785156250
+          "x" : 0.001770019531250,
+          "y" : -3.29748535156250
         },
         "anchorB" : 
         {
-          "x" : 181.6119384765625,
-          "y" : 158.8728332519531
+          "x" : 261.2451782226562,
+          "y" : 157.9070129394531
         },
         "bodyA" : 5,
         "bodyB" : 1,
@@ -693,8 +693,8 @@
         },
         "anchorB" : 
         {
-          "x" : -180.5694122314453,
-          "y" : 158.3551940917969
+          "x" : -219.4414825439453,
+          "y" : 157.9350280761719
         },
         "bodyA" : 2,
         "bodyB" : 1,
@@ -704,7 +704,7 @@
         "id" : 6,
         "lowerLimit" : 0,
         "maxMotorTorque" : 15000000512.0,
-        "motorSpeed" : -12.56637096405029,
+        "motorSpeed" : -6.283185482025146,
         "name" : "joint L",
         "referenceAngle" : 0,
         "type" : "revolute",
