@@ -53,12 +53,14 @@
 			item.anchorPoint = CGPointMake(0.50, 0.50);
 			item.position =CGPointMake(levelNumber* item.contentSize.width+(item.contentSize.width/2.0), item.contentSize.height/2.0);
 
-			[item addTarget:self action:@selector(onLevelSelect:) forControlEvents:CCControlEventTouchUpInside];
+
+
 			item.tag = levelNumber++;
 			if (!levelSelectable){
 				item.levelState = kLevelState_Locked;
 			}else{
 				CMMPLevelStat * levelStatistics = [CMAppDelegate statisticsForPlayer:[CMAppDelegate currentPlayer] andLevel:level];
+   			[item addTarget:self action:@selector(onLevelSelect:) forControlEvents:CCControlEventTouchUpInside];
 				item.levelState = levelStatistics.status;
 				if (levelStatistics == nil || levelStatistics.status == -1) {
 					levelSelectable = NO;
