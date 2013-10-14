@@ -42,6 +42,27 @@
   [
     
     {
+      "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -64,13 +85,6 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
       "type" : "string"
     },
     
@@ -98,20 +112,6 @@
       "displayName" : "bodyType",
       "name" : "bodyType",
       "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
     }
   ],
   "metaworld" : 
@@ -138,7 +138,7 @@
     "gravity" : 
     {
       "x" : 0,
-      "y" : -98.09999847412109
+      "y" : -3855.0
     },
     "metabody" : 
     [
@@ -411,8 +411,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 75.40051269531250,
-          "y" : 870.2384643554688
+          "x" : 459.43847656250,
+          "y" : 862.2614135742188
         },
         "type" : "dynamic"
       },
@@ -484,8 +484,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 153.2580261230469,
-          "y" : 866.3630981445312
+          "x" : 537.2960205078125,
+          "y" : 858.3860473632812
         },
         "type" : "dynamic"
       },
@@ -557,8 +557,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 106.4026794433594,
-          "y" : 818.8030395507812
+          "x" : 490.4406433105469,
+          "y" : 810.8259887695312
         },
         "type" : "dynamic"
       },
@@ -630,8 +630,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 42.284667968750,
-          "y" : 825.0269165039062
+          "x" : 426.3226318359375,
+          "y" : 817.0498657226562
         },
         "type" : "dynamic"
       },
@@ -703,8 +703,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 957.7858276367188,
-          "y" : 814.6928100585938
+          "x" : 682.0078735351562,
+          "y" : 781.6449584960938
         },
         "type" : "dynamic"
       },
@@ -776,8 +776,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 899.1871948242188,
-          "y" : 888.6751098632812
+          "x" : 623.4092407226562,
+          "y" : 855.6272583007812
         },
         "type" : "dynamic"
       },
@@ -819,14 +819,13 @@
         ],
         "id" : 9,
         "linearVelocity" : 0,
-        "massData-mass" : 1,
         "name" : "Respaw",
         "position" : 
         {
-          "x" : 42.0,
-          "y" : 820.0
+          "x" : 426.0379638671875,
+          "y" : 812.022949218750
         },
-        "type" : "dynamic"
+        "type" : "static"
       },
       
       {
@@ -896,8 +895,8 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 810.2909545898438,
-          "y" : 860.4912719726562
+          "x" : 534.5130004882812,
+          "y" : 827.4434204101562
         },
         "type" : "dynamic"
       },
@@ -969,8 +968,49 @@
         "name" : "Box 12",
         "position" : 
         {
-          "x" : 953.0885620117188,
-          "y" : 865.1886596679688
+          "x" : 677.3106079101562,
+          "y" : 832.1408081054688
+        },
+        "type" : "dynamic"
+      },
+      
+      {
+        "angle" : 0,
+        "angularVelocity" : 0,
+        "awake" : true,
+        "fixture" : 
+        [
+          
+          {
+            "density" : 0.01591549441218376,
+            "friction" : 0.6,
+            "id" : 14,
+            "name" : "fixture2",
+            "restitution" : 0.8,
+            "shapes" : 
+            [
+              
+              {
+                "radius" : 20.0,
+                "type" : "circle"
+              }
+            ],
+            "vertices" : 
+            {
+              "x" : [ 0 ],
+              "y" : [ 0 ]
+            }
+          }
+        ],
+        "id" : 12,
+        "linearVelocity" : 0,
+        "massData-I" : 4000.0,
+        "massData-mass" : 20.0,
+        "name" : "body0",
+        "position" : 
+        {
+          "x" : 466.4221191406250,
+          "y" : 692.1965942382812
         },
         "type" : "dynamic"
       },
@@ -1721,8 +1761,8 @@
         "name" : "BladeSix",
         "position" : 
         {
-          "x" : 225.3806152343750,
-          "y" : 515.5987548828125
+          "x" : 286.9178466796875,
+          "y" : 427.8511962890625
         },
         "type" : "dynamic"
       },
@@ -2017,7 +2057,7 @@
         "flip" : false,
         "id" : 1,
         "name" : "Background",
-        "opacity" : 0.5,
+        "opacity" : 1,
         "scale" : 768.0
       },
       
@@ -2038,7 +2078,7 @@
         "flip" : false,
         "id" : 2,
         "name" : "Overlay",
-        "opacity" : 0.5,
+        "opacity" : 1,
         "renderOrder" : 1,
         "scale" : 768.0
       },
@@ -2064,7 +2104,7 @@
         "flip" : false,
         "id" : 3,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2089,7 +2129,7 @@
         "flip" : false,
         "id" : 4,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2114,7 +2154,7 @@
         "flip" : false,
         "id" : 5,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2139,7 +2179,7 @@
         "flip" : false,
         "id" : 6,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2164,7 +2204,7 @@
         "flip" : false,
         "id" : 7,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2189,7 +2229,7 @@
         "flip" : false,
         "id" : 8,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2214,7 +2254,7 @@
         "flip" : false,
         "id" : 9,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2239,7 +2279,7 @@
         "flip" : false,
         "id" : 10,
         "name" : "Crate",
-        "opacity" : 0.5,
+        "opacity" : 0.8,
         "scale" : 41.58278656005859
       },
       
@@ -2353,29 +2393,39 @@
     [
       
       {
-        "anchorA" : 
-        {
-          "x" : 0.1290740072727203,
-          "y" : 2.130620002746582
-        },
+        "anchorA" : 0,
         "anchorB" : 
         {
-          "x" : -286.4899902343750,
-          "y" : 133.729003906250
+          "x" : -326.2487182617188,
+          "y" : 160.7184448242188
+        },
+        "bodyA" : 15,
+        "bodyB" : 1,
+        "collideConnected" : true,
+        "dampingRatio" : 0.1,
+        "frequency" : 3,
+        "id" : 1,
+        "length" : 150.0,
+        "name" : "joint0",
+        "type" : "distance"
+      },
+      
+      {
+        "anchorA" : 0,
+        "anchorB" : 
+        {
+          "x" : -129.3573913574219,
+          "y" : 176.0422973632812
         },
         "bodyA" : 15,
         "bodyB" : 1,
         "collideConnected" : false,
-        "enableLimit" : false,
-        "enableMotor" : false,
-        "id" : 3,
-        "lowerLimit" : 0,
-        "maxMotorTorque" : 0,
-        "motorSpeed" : 0,
-        "name" : "joint0",
-        "referenceAngle" : 0,
-        "type" : "revolute",
-        "upperLimit" : 0
+        "dampingRatio" : 0.1,
+        "frequency" : 3,
+        "id" : 2,
+        "length" : 150.0,
+        "name" : "joint3",
+        "type" : "distance"
       },
       
       {
@@ -2430,10 +2480,10 @@
         "upperLimit" : 0
       }
     ],
-    "positionIterations" : 3,
+    "positionIterations" : 6,
     "stepsPerSecond" : 120.0,
     "subStepping" : false,
-    "velocityIterations" : 8,
+    "velocityIterations" : 16,
     "warmStarting" : true
   }
 }

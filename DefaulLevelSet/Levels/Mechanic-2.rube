@@ -42,6 +42,32 @@
   [
     
     {
+      "class" : "body",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "World"
+        },
+        
+        {
+          "entry" : "MarbleEmitter"
+        },
+        
+        {
+          "entry" : "MarbleRespawn"
+        }
+      ],
+      "displayName" : "bodyType",
+      "name" : "bodyType",
+      "type" : "string"
+    },
+    
+    {
       "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
@@ -53,6 +79,20 @@
       "displayName" : "groupName",
       "name" : "groupName",
       "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
     },
     
     {
@@ -82,46 +122,6 @@
       ],
       "displayName" : "imageType",
       "name" : "imageType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
-      "class" : "body",
-      "comboboxEntries" : 
-      [
-        
-        {
-          "entry" : "Undefined"
-        },
-        
-        {
-          "entry" : "World"
-        },
-        
-        {
-          "entry" : "MarbleEmitter"
-        },
-        
-        {
-          "entry" : "MarbleRespawn"
-        }
-      ],
-      "displayName" : "bodyType",
-      "name" : "bodyType",
       "type" : "string"
     }
   ],
@@ -287,7 +287,7 @@
               }
             ],
             "density" : 1,
-            "friction" : 0.6,
+            "friction" : 0.4,
             "id" : 5,
             "name" : "fixture0",
             "shapes" : 
@@ -2568,11 +2568,11 @@
         ],
         "id" : 53,
         "linearVelocity" : 0,
-        "massData-I" : 44477728.0,
+        "massData-I" : 44477724.0,
         "massData-center" : 
         {
-          "x" : -0.4433502852916718,
-          "y" : -0.4058706164360046
+          "x" : -0.4433503746986389,
+          "y" : -0.4058825969696045
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2831,7 +2831,7 @@
         "massData-I" : 149304064.0,
         "massData-center" : 
         {
-          "x" : -0.2280515432357788,
+          "x" : -0.228051558136940,
           "y" : -121.7211532592773
         },
         "massData-mass" : 3416.86718750,
@@ -3146,7 +3146,7 @@
         "bodyA" : 69,
         "bodyB" : 70,
         "collideConnected" : false,
-        "dampingRatio" : 1,
+        "dampingRatio" : 0,
         "frequency" : 0,
         "id" : 3,
         "length" : 133.0,
