@@ -106,7 +106,7 @@
   if (gain < 0.0) {
     gain = 0.0;
   }
-	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
+//	[[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM];
   [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BOOM pitch:1.0 pan:0.0 gain:gain];
 
 

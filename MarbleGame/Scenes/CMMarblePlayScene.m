@@ -140,12 +140,13 @@
 	self.effectQueue = nil;
 	self.marbleSlot = nil;
 	self.removedMarbleQueue = nil;
+
   self.menuLayer = nil;
 	self.scoreLabel = nil;
 	self.timeLabel = nil;
 	self.remarkLabel = nil;
 	self.scoreDelegate = nil;
-	self.menuButton = nil;
+//	self.menuButton = nil;
 	self.spriteEffectsNode = nil;
 	self.effectsNode = nil;
 	self.marbleEffectsNode = nil;
@@ -995,6 +996,7 @@
 			emitter.velocityVariance=0.0;
 			emitter.releaseOnFinish = YES;
 			[emitter startEmitter];
+         [[SimpleAudioEngine sharedEngine] playEffect:DEFAULT_MARBLE_BUBBLE];
 		}
     break;
 		default:

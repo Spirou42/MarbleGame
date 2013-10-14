@@ -79,6 +79,7 @@
 #define MARBLE_EXPLODE_EFFECT @"MarbleExplode.plist"
 #define MARBLE_TOUCH_EFFECT @"MarbleTouchGlow.plist"
 #define MARBLE_POWERUP_EXPLODE @"MarblePowerUp-Explode.plist"
+#define MARBLE_POWERUP_BUBBLE @"MarblePowerUp-Bubble.plist"
 
 /// transition / Action parameters
 
@@ -154,6 +155,7 @@
 #define DEFAULT_WALL_KLICK									@"Klack.mp3"
 #define DEFAULT_WALL_BOING                  @"Boing.mp3"
 #define DEFAULT_MARBLE_BOOM									@"Boom.mp3"
+#define DEFAULT_MARBLE_BUBBLE               @"Bubbles.mp3"
 
 // Effects
 #define DEFAULT_MARBLE_REMOVE								@"Marble-Remove.mp3"

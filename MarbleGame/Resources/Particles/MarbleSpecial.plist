@@ -108,6 +108,8 @@
 	<real>0.0</real>
 	<key>textureFileName</key>
 	<string>MarbleSpecial.png</string>
+	<key>textureImageData</key>
+	<string>H4sIAAAAAAAAA92XP2hTURSH72slJm2EmKi1EIklkLRZmkVKQCGFDkVSGprNLoHazXTokEIHlxJ0ylKyJODQJSBIwS2LhI4dBaFzh6wu7vF37Kc8gq0W/7xqy5fzODnnd9695977XlZWXM65WHg4HLp/jOsiIibEJDaC/0/WjIqYuCWmxF0xjZ3CHyPud91LCL0EtVIiLbJiTuSwWfwp4hLkhX6hdpjx2PhmxKyYFw9EQTwUj7AF/PPEzZAXQ+eyta2fcZEUGZGnxqJYFiWxKsrYEv5F4vLkJdGJXHLclnOPubVxFcVjURFPRFVsiKfYKv4KcUXy5tCJ/+Q8hJizJLkLYolxrotNURPboi52sNv4N4krk7eAThLdH62HKH3LcP+mscb4nlHrudgTL8RL7B7+OnFV8pbQyaAbvaC27RlbtzP0r8g4TGtL7IqGaIqWaIsOtoW/QdwWeWV08ugmhufvTbs32zu2fgv0cZ3x7DLOffFKdMUbcYjt4t8nbpe8dXQK6E5fMAfWn9TwbA/ZOq7QzzrjMu0DavZEXxxhe/gPiGuQt4nOIrop6nxv7u38StMv20u2nmv0tcn4rMY7cSzeiw/YY/yHxDXJq6GzjG6aOqM9sP1pZ2iWuSrRP1vXe/S3yzit1ok4FQPsCf4ecS3yttEpoZulzuh5YM8QW5+2V+w8szNlgzm0frbpc5/xWs2P4hP2FH+fuDZ5dXRW0Z2jzsRIfXuO2dqw89zOVFu3drbY/rY91mFuj5jzAbWH2AH+I+I65O2gU0Y3R53JKzb+oPsf9PoPev9fhfMv6PM/6OffVXj+B/3+4z8Pgnr/889DUO+//vUQ1Pv/6N4M4vfPeffyt3///be4G55z4845z93Xh+e7Hvtyfc252GtvHL+CvRDXY/q4ad+b14W9uC/mNtf61rvj05z6Gh9zXtIXv+bTrHyr+9bZX5h/7+z/M47fHKa6EAAA</string>
 	<key>yCoordFlipped</key>
 	<integer>1</integer>
 </dict>
