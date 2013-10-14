@@ -162,11 +162,11 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	if (!self.cachedChipmunkObjects) {
 		NSMutableArray *result = [NSMutableArray array];
 		
-//		ChipmunkPinJoint *pinJ = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
-//		[result addObject:pinJ];
-//		pinJ.dist = self.length;
-		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.length-(self.length/100.0) max:self.length+(self.length/100.0)];
-		[result addObject:slideJ];
+		ChipmunkPinJoint *pinJ = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
+		[result addObject:pinJ];
+		pinJ.dist = self.length;
+//		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.length-(self.length/100.0) max:self.length+(self.length/100.0)];
+//		[result addObject:slideJ];
 
 		self.cachedChipmunkObjects = result;
 	}
