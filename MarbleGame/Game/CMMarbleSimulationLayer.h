@@ -46,7 +46,6 @@
 
 /// Marble throwing
 @property (nonatomic, retain) ChipmunkGrooveJoint *dollyGroove;
-@property (nonatomic, retain) ChipmunkShape *dollyShape;
 @property (nonatomic, retain) ChipmunkPivotJoint* dollyServo;
 @property (nonatomic, retain) ChipmunkBody *dollyBody;
 

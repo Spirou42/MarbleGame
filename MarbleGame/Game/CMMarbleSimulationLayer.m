@@ -42,7 +42,7 @@ static NSString *borderType = @"borderType";
 #pragma mark - HelloWorldLayer
 
 @interface CMMarbleSimulationLayer ()
--(void) addNewSpriteAtPosition:(CGPoint)pos;
+
 -(void) initPhysics;
 
 @property (nonatomic, assign) CGPoint lastMousePosition;
@@ -58,7 +58,7 @@ static NSString *borderType = @"borderType";
 
 @synthesize space = space_, marbleBatchNode=marbleBatchNode_,otherSpritesNode = otherSpritesNode_, currentMarbleSet=currentMarbleSet_, debugLayer=debugLayer_,
 simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,simulatedMarbles=simulatedMarbles_,
-dollyGroove = dollyGroove_, dollyShape = dollyShape_, dollyServo = dollyServo_, dollyBody = dollyBody_,
+dollyGroove = dollyGroove_, dollyServo = dollyServo_, dollyBody = dollyBody_,
 gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
 currentMarbleIndex = currentMarbleIndex_,worldShapes=staticShapes_,
 lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, staticSprites = staticSprites_,constraints = constraints_;
@@ -109,9 +109,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		
 		self.otherSpritesNode = [CCNode node];
 		[self addChild:self.otherSpritesNode];
-		
-//		[self addNewSpriteAtPosition:ccp(200,200)];
-//		[self prepareMarble];
 
 		// this starts the update process automatically
     [self scheduleUpdate];
@@ -145,8 +142,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	self.currentMarbleSet = nil;
 	self.simulatedMarbles = nil;
 	self.dollyGroove = nil;
-	self.dollyShape.body = nil;
-	self.dollyShape = nil;
 	self.dollyServo = nil;
 
 	self.bounds = nil;
@@ -586,25 +581,6 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 }
 
 
--(void) addNewSpriteAtPosition:(CGPoint)pos
-{
-	// physics body
-  static int marbleIndex = 1;
-  NSString *marbleSet =[[NSUserDefaults standardUserDefaults]stringForKey:@"MarbleSet"];
-	NSLog(@"MarbleSet: %@",marbleSet);
-  
-	CMMarbleSprite *ms = [[[CMMarbleSprite alloc]initWithBallSet:marbleSet ballIndex:marbleIndex mass:MARBLE_MASS andRadius:MARBLE_RADIUS]autorelease];
-  ms.gameDelegate = self.gameDelegate;
-	ms.chipmunkBody.velLimit = MARBLE_MAX_VELOCITY;
-  if (!marbleIndex) {
-    marbleIndex=1;
-  }
-	[self.space add:ms];
-	ms.position = pos;
-	[self.marbleBatchNode addChild:ms];
-//	[ms createOverlayTextureRect];
-  
-}
 - (void) startMarble
 {
   if (self.dollyBody) {
