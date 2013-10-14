@@ -800,7 +800,6 @@
 		FEBABB5117E0B7C300E85ABD /* LevelSet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelSet.plist; sourceTree = "<group>"; };
 		FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "RUBE-Test.json"; sourceTree = "<group>"; };
 		FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WoodGear-T1.png"; sourceTree = "<group>"; };
-		FEBABB7E17E0D1D100E85ABD /* RUBE-Test.rube */ = {isa = PBXFileReference; lastKnownFileType = text; path = "RUBE-Test.rube"; sourceTree = "<group>"; };
 		FEC8CC8E17EB46DD003DB416 /* MarbleTouchGlow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MarbleTouchGlow.plist; sourceTree = "<group>"; };
 		FED2E3D717A7E448005A16B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		FED2E3DB17A7E448005A16B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1650,7 +1649,6 @@
 			isa = PBXGroup;
 			children = (
 				931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */,
-				FEBABB7E17E0D1D100E85ABD /* RUBE-Test.rube */,
 				FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */,
 				FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */,
 			);

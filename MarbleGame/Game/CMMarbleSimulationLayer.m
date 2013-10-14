@@ -206,7 +206,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 #if PHYSICS_PRODUCTION
 	debugLayer_.visible = YES;
 	debugLayer_.staticBodyColor = ccc4f(0.0, 1.0, 0.0, 0.5);
-	debugLayer_.bodysToDraw = kChipmunkType_Dynamic|kChipmunkType_Static;
+	debugLayer_.bodysToDraw = kChipmunkType_Dynamic|kChipmunkType_Static|kChipmunkType_Constraint;
+	debugLayer_.constraintColor = ccc4f(0.8, 0.8, 0.1, .5);
 #endif
 	[self addChild:debugLayer_ z:100];
 	self.space.damping = 0.8;

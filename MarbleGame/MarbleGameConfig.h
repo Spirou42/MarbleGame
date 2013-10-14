@@ -11,7 +11,8 @@
 //////////////////////////////////////////////////
 #define PHYSICS_PRODUCTION 0
 #define ICON_PRODUCTION 0
-
+// Alpha setting for Overlay Layers
+#define DEBUG_ALPHA_ON 0
 
 
 //////////////////////////////////////////////////
@@ -107,8 +108,7 @@
 //////////////////////////////////////////////////
 #pragma mark - UI Definitions
 
-// Alpha setting for Overlay Layers
-#define DEBUG_ALPHA_ON 0
+
 
 // Glossmap shader used to render Marbles
 #define kCMMarbleGlossMapShader @"marble_glossmap_shader"

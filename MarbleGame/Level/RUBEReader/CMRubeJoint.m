@@ -161,12 +161,20 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	}
 	if (!self.cachedChipmunkObjects) {
 		NSMutableArray *result = [NSMutableArray array];
+		if ((self.dampingRatio!= 0.0) || (self.frequency != 0.0)) {
+			CGFloat stiffness = self.frequency*768;
+			CGFloat damping = self.dampingRatio*768;
+			ChipmunkDampedSpring *springJ = [ChipmunkDampedSpring dampedSpringWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB restLength:self.length stiffness:stiffness damping:damping];
+			[result addObject:springJ];
+		}else{
+					ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.length-(self.length/100.0) max:self.length+(self.length/100.0)];
+					[result addObject:slideJ];
+//			ChipmunkPinJoint *pinJ = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
+//			[result addObject:pinJ];
+//			pinJ.dist = self.length;
+		}
 		
-		ChipmunkPinJoint *pinJ = [ChipmunkPinJoint pinJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
-		[result addObject:pinJ];
-		pinJ.dist = self.length;
-//		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:self.length-(self.length/100.0) max:self.length+(self.length/100.0)];
-//		[result addObject:slideJ];
+
 
 		self.cachedChipmunkObjects = result;
 	}
