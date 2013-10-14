@@ -74,13 +74,15 @@
 - (void) updateTransform
 {
 	[super updateTransform];
-	CGPoint p = cpvadd(self.position, self.overlayOffset);
+  CGPoint rotatedOffset = cpvrotate(self.overlayOffset, cpvforangle(-CC_DEGREES_TO_RADIANS(self.rotation)));
+	CGPoint p = cpvadd(self.position, rotatedOffset);
 	self.overlayNode.position =p;
 }
 
 - (void) draw
 {
-	CGPoint p = cpvadd(self.position, self.overlayOffset);
+  CGPoint rotatedOffset = cpvrotate(self.overlayOffset, cpvforangle(-CC_DEGREES_TO_RADIANS(self.rotation)));
+	CGPoint p = cpvadd(self.position, rotatedOffset);
 	self.overlayNode.position =p;
 
 	[super draw];
