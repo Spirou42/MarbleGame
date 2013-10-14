@@ -42,7 +42,33 @@
   [
     
     {
-      "class" : "body",
+      "class" : "image",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "Background"
+        },
+        
+        {
+          "entry" : "Overlay"
+        },
+        
+        {
+          "entry" : "Sprite"
+        }
+      ],
+      "displayName" : "imageType",
+      "name" : "imageType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
@@ -82,33 +108,7 @@
     },
     
     {
-      "class" : "image",
-      "comboboxEntries" : 
-      [
-        
-        {
-          "entry" : "Undefined"
-        },
-        
-        {
-          "entry" : "Background"
-        },
-        
-        {
-          "entry" : "Overlay"
-        },
-        
-        {
-          "entry" : "Sprite"
-        }
-      ],
-      "displayName" : "imageType",
-      "name" : "imageType",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
+      "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
