@@ -22,7 +22,7 @@
 
 - (void) initDefaults
 {
-	self.particles = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
+	self.particles = [self.parentMarble.gameDelegate particleSystemForName:MARBLE_POWERUP_EXPLODE];
 	self.startColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.startColor
 																																endColor:ccc4f(1.0, 0.0, 0.0, 1.0)]autorelease];
 	
@@ -30,10 +30,11 @@
 																															endColor:ccc4f(0.0, 0.0, 0.0, 1.0)]autorelease];
 	
 }
-- (id) init
+- (id) initWithMarble:(CMMarbleSprite*)marble
 {
 	self = [super init];
 	if (self) {
+    self.parentMarble = marble;
 		[self initDefaults];
 	}
 	return self;

@@ -34,4 +34,8 @@
 
 /// cald by the marble to trigger position update etc. for the attached particles
 - (void) update;
+
+- (id) initWithMarble:(CMMarbleSprite*) marble;
+
++ (id) powerupWithMarble:(CMMarbleSprite*)marble;
 @end

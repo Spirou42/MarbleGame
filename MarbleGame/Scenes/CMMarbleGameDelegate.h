@@ -25,7 +25,7 @@ typedef enum{
 	kCMMarblePowerUp_MarbleSource,
 } CMMarbleEffectType;
 
-@class CMMarbleLevel,CMMarbleCollisionCollector,CCNode;
+@class CMMarbleLevel,CMMarbleCollisionCollector,CCNode,CMParticleSystemQuad;
 @protocol CMMarbleGameDelegate <NSObject>
 
 @required
@@ -103,7 +103,8 @@ typedef enum{
 
 - (BOOL) playEffect;
 - (CGFloat) soundVolume;
-
+- (NSDictionary*) particleDefinitionForName:(NSString*) file;
+- (CMParticleSystemQuad*) particleSystemForName:(NSString*)fileName;
 @property (nonatomic, readonly) CGFloat soundVolume;
 @property (nonatomic, readonly) BOOL playEffect;
 

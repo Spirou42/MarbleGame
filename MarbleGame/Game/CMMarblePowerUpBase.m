@@ -19,13 +19,19 @@
 @synthesize parentMarble = parentMarble_, activeTime = activeTime_;
 @synthesize particles=particles_, actionRemoveTimer = actionRemoveTimer_, startTime = startTime_;
 
++ (id) powerupWithMarble:(CMMarbleSprite *)marble
+{
+  id result = [[self alloc]initWithMarble:marble];
+  return [result autorelease];
+}
 
-- (id) init
+- (id) initWithMarble:(CMMarbleSprite*)marble;
 {
   self = [super init];
   if(self){
     self.activeTime = -1.0;
     self.actionRemoveTimer = nil;
+    self.parentMarble = marble;
   }
   return self;
 }
@@ -37,6 +43,7 @@
   if (self.actionRemoveTimer) {
     [self.actionRemoveTimer invalidate];
   }
+  self.parentMarble = nil;
   self.actionRemoveTimer = nil;
 	[super dealloc];
 }

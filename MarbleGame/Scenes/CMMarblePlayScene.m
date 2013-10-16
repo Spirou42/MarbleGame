@@ -35,6 +35,9 @@
 #import "CMMarblePowerProtocol.h"
 #import "CMMarbleEmitter.h"
 
+@interface CMMarblePlayScene ()
+@property (nonatomic,retain) NSMutableDictionary *particleCache;
+@end
 
 @implementation CMMarblePlayScene
 
@@ -48,6 +51,7 @@
 @synthesize  effectQueue = effectQueue_,marbleSlot=marbleSlot_, removedMarbleQueue = removedMarbleQueue_;
 @synthesize  menuButton=menuButton_, menuLayer = menuLayer_,toggleSimulationButton=toggleSimulationButton_;
 @synthesize  scoreDelegate = scoreDelegate_, effectTimer = effectTimer_, resultMenu = resultMenu_, lastUpdateScore=lastUpdateScore_, lastUpdateSecond=lastUpdateSecond_;
+@synthesize particleCache=particleCache_;
 
 @dynamic playEffect, soundVolume;
 
@@ -93,6 +97,7 @@
     self.overlaySprite = defaultLevelOverlay();
     self.overlaySprite.anchorPoint=ccp(0.0, 0.0);
     self.overlaySprite.position=ccp(0,0);
+    self.particleCache = [NSMutableDictionary dictionary];
 #if DEBUG_ALPHA_ON
 		self.overlaySprite.opacity = 128;
 #endif
@@ -150,6 +155,7 @@
 	self.spriteEffectsNode = nil;
 	self.effectsNode = nil;
 	self.marbleEffectsNode = nil;
+  self.particleCache = nil;
 	
 	[super dealloc];
 }
@@ -896,12 +902,15 @@
 	[self.marbleEffectsNode removeChild:marbleEffect cleanup:YES];
 }
 
+
+
+
 - (void)triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint)position overrideSound:(NSString *)soundName
 {
 	switch (effect) {
 		case kCMMarbleEffect_Remove:
 		{
-			CMParticleSystemQuad *particle = [CMParticleSystemQuad particleWithFile:MARBLE_REMOVE_EFFECT];
+			CMParticleSystemQuad *particle = [self particleSystemForName:MARBLE_REMOVE_EFFECT];
       particle.soundName = DEFAULT_MARBLE_REMOVE;
 			particle.position = position;
 			particle.autoRemoveOnFinish = YES;
@@ -910,7 +919,7 @@
 			break;
     case kCMMarbleEffect_Explode:
     {
-			CCParticleSystemQuad *particle = [CCParticleSystemQuad particleWithFile:MARBLE_EXPLODE_EFFECT];
+			CCParticleSystemQuad *particle = [self particleSystemForName:MARBLE_EXPLODE_EFFECT];
 			particle.position = position;
 			particle.autoRemoveOnFinish = YES;
 			[self.effectQueue addObject:particle];
@@ -1004,12 +1013,43 @@
 	}
 }
 
-
-
 - (void) triggerEffect:(CMMarbleEffectType)effect atPosition:(CGPoint) position
 {
   [self triggerEffect:effect atPosition:position overrideSound:nil];
 }
 
+- (NSDictionary*) loadParticleDefinition:(NSString*)fileName
+{
+  NSString *path = [[CCFileUtils sharedFileUtils] fullPathForFilename:fileName];
+	NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+	NSAssert( dict != nil, @"Particles: file not found");
+  return dict;
+}
 
+- (NSDictionary*)particleDefinitionForName:(NSString *)file
+{
+  NSDictionary* result = [self.particleCache objectForKey:file];
+  if (!result) {
+    result = [self loadParticleDefinition:file];
+    if (result) {
+      [self.particleCache setObject:result forKey:file];
+    }else{
+      [self.particleCache setObject:[NSNull null] forKey:file];
+    }
+  }
+  if ([result isKindOfClass:[NSNull class]]) {
+    result = nil;
+  }
+  return result;
+}
+
+- (CMParticleSystemQuad*) particleSystemForName:(NSString*)fileName
+{
+  CMParticleSystemQuad *result = nil;
+  NSDictionary *particleDef = [self particleDefinitionForName:fileName];
+  if (particleDef) {
+    result = [[[CMParticleSystemQuad alloc] initWithDictionary:particleDef]autorelease];
+  }
+  return result;
+}
 @end

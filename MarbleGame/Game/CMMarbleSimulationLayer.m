@@ -199,7 +199,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 																preSolve:nil
 															 postSolve:@selector(postBorderCollision:space:)
 																separate:nil];
-	 
+  self.space.iterations = 10;
 //	self.space.collisionBias = pow(1.0-0.1, 400);
 	debugLayer_ = [CCPhysicsDebugNode debugNodeForCPSpace:self.space.space];
 	debugLayer_.visible = NO;
@@ -284,8 +284,8 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	
 	NSInteger steps = appDel.simulationSteps;
 	// [[CCDirector sharedDirector] animationInterval]
-	CGFloat dt =[[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
-	
+	CGFloat dt =delta/(CGFloat)steps;
+//	NSLog(@"delta:%2.1f",1/delta);
 	for(int i=0; i<steps; i++){
 		[self.space step:dt];
 	}
@@ -570,14 +570,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	self.currentMarbleIndex = marbleIndex;
 	
 	if ((marbleCounter % POWER_UP_EXPLOSION_FREQUENCY) == 0) {
-		CMMarblePowerUpBomb *bombEffect = [[CMMarblePowerUpBomb new]autorelease];
+		CMMarblePowerUpBomb *bombEffect = [CMMarblePowerUpBomb powerupWithMarble:ms];
     bombEffect.activeTime = 60.0;
-		ms.marbleAction = bombEffect;
+    ms.marbleAction = bombEffect;
 	}else if ((marbleCounter % (int)(POWER_UP_EXPLOSION_FREQUENCY * 1.6))==0 ){
-		CMMarblePowerUpBallBomb *bombEffect = [[CMMarblePowerUpBallBomb new]autorelease];
+		CMMarblePowerUpBallBomb *bombEffect = [CMMarblePowerUpBallBomb powerupWithMarble:ms];
     bombEffect.activeTime = 3*60.0;
 		ms.marbleAction = bombEffect;
-		
 	}
 }
 

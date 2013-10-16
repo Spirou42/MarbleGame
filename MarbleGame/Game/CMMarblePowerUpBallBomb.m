@@ -15,7 +15,7 @@
 - (void) initDefaults
 {
 	[super initDefaults];
-	self.particles = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_BUBBLE];
+	self.particles = [self.parentMarble.gameDelegate particleSystemForName:MARBLE_POWERUP_BUBBLE];
 	self.startColorGradient = [[[CMSimpleGradient alloc]initWithStartColor:self.particles.startColor
 																																endColor:self.particles.endColor]autorelease];
 
@@ -23,10 +23,12 @@
 																															endColor:self.particles.endColor]autorelease];
 }
 
-- (id) init
+- (id) initWithMarble:(CMMarbleSprite *)marble
 {
-	self = [super init];
+	self = [super initWithMarble:marble];
+
 	if (self) {
+
 	}
 	return self;
 }

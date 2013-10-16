@@ -22,6 +22,7 @@
 - (void) addStatistics:(CMMPLevelStat*) stat toPlayer:(CMMarblePlayer*)player;
 - (BOOL) player:(CMMarblePlayer*)player hasPlayedLevel:(NSString*)name;
 
+
 @property (nonatomic, readonly) CMMarblePlayer *currentPlayer;
 @property (readonly, strong, nonatomic) NSURL *defaultStoreURL;
 @property (nonatomic, readonly) NSInteger simulationSteps;

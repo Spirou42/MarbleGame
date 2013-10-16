@@ -66,7 +66,7 @@
 	[self runAction:[CCSequence actions:allActions,callAction, nil]];
 	
 
-	CMParticleSystemQuad *emitter = [CMParticleSystemQuad particleWithFile:MARBLE_SPEZIAL_EFFECT];
+	CMParticleSystemQuad *emitter = [self.gameDelegate particleSystemForName:MARBLE_SPEZIAL_EFFECT];
 	emitter.posVar=CGPointMake(l.width/2.0,0);
 	self.originalPosVar = emitter.posVar;
 	self.particleSystem = emitter;

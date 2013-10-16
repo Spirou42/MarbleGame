@@ -221,12 +221,19 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
   if (self.touchParticles) {
     [self.gameDelegate removeEffect:self.touchParticles];
   }
-  self.touchParticles = [CMParticleSystemQuad particleWithFile:MARBLE_TOUCH_EFFECT];
+  /// @todo: refactor the following line is stupid.
+
+  CMParticleSystemQuad *parts = [self.gameDelegate particleSystemForName:MARBLE_TOUCH_EFFECT];
+
+  self.touchParticles = parts;
   self.touchParticles.autoRemoveOnFinish = NO;
   self.touchParticles.anchorPoint = CGPointMake(0.5, 0.5);
   self.touchParticles.position = self.position;
-//  [self addChild:particleSystem_];
+  //  [self addChild:particleSystem_];
   [self.gameDelegate addEffect:self.touchParticles];
+
+
+
 }
 - (void) setTouchesNeighbour:(BOOL)tN
 {
@@ -273,10 +280,6 @@ shouldDestroy=shouldDestroy_,touchesNeighbour = touchesNeighbour_, lastSoundTime
 {
   CCSpriteFrame *overlayFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:self.overlayName];
   [self setGlossMapRect:overlayFrame.rect];
-	// debug stuff
-//	CMParticleSystemQuad* p = [CMParticleSystemQuad particleWithFile:MARBLE_POWERUP_EXPLODE];
-//	self.powerUpParticles = p;
-//	[self.gameDelegate addMarbleEffect:p];
 }
 
 
