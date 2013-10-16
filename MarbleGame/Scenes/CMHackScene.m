@@ -16,10 +16,15 @@
 
 @implementation CMHackScene
 
+
+- (void) sliderValue:(CCControlSlider*)sender
+{
+  NSLog(@"Value: %f",sender.value);
+}
 - (void) createSliderIn:(CCNode*) parent
 {
   CCControlSlider* slider = defaultGreenSlider();
-
+  [slider addTarget:self action:@selector(sliderValue:) forControlEvents: CCControlEventValueChanged];
 	slider.thumbInset = 2;
 	CGPoint p = CGPointMake(parent.contentSize.width/2.0, parent.contentSize.height/2.0);
 	slider.anchorPoint=CGPointMake(0.5, 0.5);
