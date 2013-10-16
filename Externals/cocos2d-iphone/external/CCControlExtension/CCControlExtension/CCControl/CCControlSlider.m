@@ -388,7 +388,7 @@
 	[_progressSprite setTextureRect:textureRect rotated:_progressSprite.textureRectRotated untrimmedSize:textureRect.size];
 }
 
-#if 0
+#if 1
 - (void) draw
 {
 	ccDrawRect(CGPointMake(0, 0),  CGPointMake(self.contentSize.width,self.contentSize.height));
