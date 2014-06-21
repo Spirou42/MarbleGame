@@ -42,6 +42,39 @@
   [
     
     {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
+      "class" : "body",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "World"
+        },
+        
+        {
+          "entry" : "MarbleEmitter"
+        },
+        
+        {
+          "entry" : "MarbleRespawn"
+        }
+      ],
+      "displayName" : "bodyType",
+      "name" : "bodyType",
+      "type" : "string"
+    },
+    
+    {
       "class" : "image",
       "comboboxEntries" : 
       [
@@ -73,6 +106,13 @@
     
     {
       "class" : "fixture",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "fixture",
       "displayName" : "groupName",
       "name" : "groupName",
       "type" : "string"
@@ -82,46 +122,6 @@
       "class" : "body",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
-    },
-    
-    {
-      "class" : "body",
-      "comboboxEntries" : 
-      [
-        
-        {
-          "entry" : "Undefined"
-        },
-        
-        {
-          "entry" : "World"
-        },
-        
-        {
-          "entry" : "MarbleEmitter"
-        },
-        
-        {
-          "entry" : "MarbleRespawn"
-        }
-      ],
-      "displayName" : "bodyType",
-      "name" : "bodyType",
       "type" : "string"
     }
   ],
@@ -2323,7 +2323,7 @@
         "massData-center" : 
         {
           "x" : -0.4433503448963165,
-          "y" : -0.4058685600757599
+          "y" : -0.4058750569820404
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2582,10 +2582,10 @@
         "massData-I" : 149821392.0,
         "massData-center" : 
         {
-          "x" : -0.1884759515523911,
-          "y" : -122.0257492065430
+          "x" : -0.1884759068489075,
+          "y" : -122.0257415771484
         },
-        "massData-mass" : 3427.759521484375,
+        "massData-mass" : 3427.7597656250,
         "name" : "StepsL",
         "position" : 
         {
@@ -2853,7 +2853,7 @@
         "bodyA" : 69,
         "bodyB" : 70,
         "collideConnected" : false,
-        "dampingRatio" : 1,
+        "dampingRatio" : 0,
         "frequency" : 0,
         "id" : 3,
         "length" : 133.0,
