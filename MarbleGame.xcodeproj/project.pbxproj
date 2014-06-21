@@ -1864,7 +1864,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CM;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Carsten Müller";
 			};
 			buildConfigurationList = 9353644D177DFB50009F640B /* Build configuration list for PBXProject "MarbleGame" */;
@@ -2424,7 +2424,6 @@
 		93536649177DFB53009F640B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2456,7 +2455,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "";
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -2465,7 +2464,6 @@
 		9353664A177DFB53009F640B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2495,7 +2493,7 @@
 					"./Externals/cocos2d-iphone/external/",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "";
 			};
 			name = Release;
@@ -2650,7 +2648,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Carsten Muller (AJXTTM3FBS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carsten Muller (AJXTTM3FBS)";
 				COPY_PHASE_STRIP = NO;
@@ -2679,7 +2676,7 @@
 				);
 				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
@@ -2692,7 +2689,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Carsten Muller (AJXTTM3FBS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carsten Muller (AJXTTM3FBS)";
 				COPY_PHASE_STRIP = YES;
@@ -2720,7 +2716,7 @@
 				);
 				PRODUCT_NAME = MarbleGame;
 				PROVISIONING_PROFILE = "344334B0-42B8-422C-8A32-AAF8FBCFEDB8";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"iMarbleGame/libs/Chipmunk/include/chipmunk\"";
