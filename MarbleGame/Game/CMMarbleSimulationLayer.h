@@ -29,6 +29,9 @@
 // Sprites
 @property (nonatomic, assign) CCNode* marbleBatchNode;						///< node holding all moving Marbles
 @property (nonatomic, assign) CCNode* otherSpritesNode;						///< node for all other Sprites no matter if they are dynamic or static
+@property (nonatomic, retain) NSMutableArray *dynamicSprites;
+@property (nonatomic, retain) NSMutableArray *staticSprites;
+@property (nonatomic, retain) NSMutableArray *constraints;
 
 @property (nonatomic, retain) NSString* currentMarbleSet;					///< current marble theme
 

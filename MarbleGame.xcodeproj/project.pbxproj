@@ -10,6 +10,10 @@
 		931A2CB517F6FC7500721927 /* RUBETest-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */; };
 		9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */; };
 		9325653217E6662C0012C68F /* Halfpipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 9325653017E6662C0012C68F /* Halfpipe.json */; };
+		9326A786196886F700EF9A2A /* DistantAussen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9326A784196886F700EF9A2A /* DistantAussen.png */; };
+		9326A787196886F700EF9A2A /* DistantInnen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9326A785196886F700EF9A2A /* DistantInnen.png */; };
+		9326A79919688E9100EF9A2A /* CMPhysicsJointSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9326A79819688E9100EF9A2A /* CMPhysicsJointSprite.m */; };
+		9326A79A19688E9100EF9A2A /* CMPhysicsJointSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9326A79819688E9100EF9A2A /* CMPhysicsJointSprite.m */; };
 		932EC19F18097DD600B6A34C /* CMActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EC19E18097DD600B6A34C /* CMActionLayer.m */; };
 		932EC1A018097DD600B6A34C /* CMActionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 932EC19E18097DD600B6A34C /* CMActionLayer.m */; };
 		93308F9317E10A310094A362 /* CMSoundShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 93308F9217E10A310094A362 /* CMSoundShape.m */; };
@@ -539,6 +543,10 @@
 		931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RUBETest-Overlay.png"; sourceTree = "<group>"; };
 		9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HalfPipe-Foreground.png"; sourceTree = "<group>"; };
 		9325653017E6662C0012C68F /* Halfpipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halfpipe.json; sourceTree = "<group>"; };
+		9326A784196886F700EF9A2A /* DistantAussen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DistantAussen.png; sourceTree = "<group>"; };
+		9326A785196886F700EF9A2A /* DistantInnen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DistantInnen.png; sourceTree = "<group>"; };
+		9326A79719688E9100EF9A2A /* CMPhysicsJointSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPhysicsJointSprite.h; sourceTree = "<group>"; };
+		9326A79819688E9100EF9A2A /* CMPhysicsJointSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPhysicsJointSprite.m; sourceTree = "<group>"; };
 		932EC19D18097DD600B6A34C /* CMActionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMActionLayer.h; sourceTree = "<group>"; };
 		932EC19E18097DD600B6A34C /* CMActionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMActionLayer.m; sourceTree = "<group>"; };
 		93308F9017E107B40094A362 /* CMObjectSoundProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMObjectSoundProtocol.h; sourceTree = "<group>"; };
@@ -1162,6 +1170,8 @@
 				9353D46317B079FC00D0FD25 /* CCLabelBMFont+CMMarbleRealBounds.m */,
 				93EFB6FB17E4BCD100B3B186 /* CMPhysicsSprite.h */,
 				93EFB6FC17E4BCD100B3B186 /* CMPhysicsSprite.m */,
+				9326A79719688E9100EF9A2A /* CMPhysicsJointSprite.h */,
+				9326A79819688E9100EF9A2A /* CMPhysicsJointSprite.m */,
 				93F4C5B517F0A10F001B76D0 /* CMSoundSprite.h */,
 				93F4C5B617F0A10F001B76D0 /* CMSoundSprite.m */,
 			);
@@ -1648,6 +1658,8 @@
 		FEBABB6617E0B81500E85ABD /* -1  RubeTest */ = {
 			isa = PBXGroup;
 			children = (
+				9326A784196886F700EF9A2A /* DistantAussen.png */,
+				9326A785196886F700EF9A2A /* DistantInnen.png */,
 				931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */,
 				FEBABB5217E0B7C300E85ABD /* RUBE-Test.json */,
 				FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */,
@@ -2107,6 +2119,7 @@
 				93E0462617F6176400069A79 /* ScrewSlit.png in Resources */,
 				9337177C180348BD007A2339 /* Icon-Halfpipe3.png in Resources */,
 				93A5C6AF17EA4DEA0030D22E /* Pentagon-Wood1.png in Resources */,
+				9326A786196886F700EF9A2A /* DistantAussen.png in Resources */,
 				93A5C69E17EA382A0030D22E /* DoubleHalfpipe.json in Resources */,
 				9381510917E3C9E2009A5ABB /* crate.png in Resources */,
 				93B09BDE17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png in Resources */,
@@ -2133,6 +2146,7 @@
 				93A5C6B317EA4DEA0030D22E /* Star-Wood1.png in Resources */,
 				9337177618034890007A2339 /* Icon-Halfpipe2.png in Resources */,
 				93A5C6AC17EA4DEA0030D22E /* Pentagon-ConcreteBlue.png in Resources */,
+				9326A787196886F700EF9A2A /* DistantInnen.png in Resources */,
 				FEBABB7117E0B93F00E85ABD /* Level2-StaticBodies.stb in Resources */,
 				9325653117E6662C0012C68F /* HalfPipe-Foreground.png in Resources */,
 				93A5C6AB17EA4DEA0030D22E /* Pentagon-Blue.png in Resources */,
@@ -2245,6 +2259,7 @@
 				9337178518034D9F007A2339 /* CMMarbleLevelSelectMenu.m in Sources */,
 				93EB27FB177F7233001B7FBB /* CMMarblePlayScene.m in Sources */,
 				935F00F017B6D089006E8E10 /* CMMenuLayer.m in Sources */,
+				9326A79919688E9100EF9A2A /* CMPhysicsJointSprite.m in Sources */,
 				938CE0BD17BFE2BB0086B6D9 /* CMMPLevelStat.m in Sources */,
 				934AF9B417837E22004BAC7E /* SceneHelper.m in Sources */,
 				934AF9B817838B6C004BAC7E /* CCControlPopupButton.m in Sources */,
@@ -2338,6 +2353,7 @@
 				93D5714C17BEE2E700167030 /* CMMarblePlayer.m in Sources */,
 				93F4C5B817F0A10F001B76D0 /* CMSoundSprite.m in Sources */,
 				FE2A03CA17D90286000CE041 /* GlossMapShader.fsh in Sources */,
+				9326A79A19688E9100EF9A2A /* CMPhysicsJointSprite.m in Sources */,
 				FEB4EF5F17BBC1F60023D063 /* CMMarbleBatchNode.m in Sources */,
 				FED2E87217A7FD8B005A16B3 /* CMSimpleShapeReader.m in Sources */,
 				939C936417F365EA008CF635 /* CMMarblePowerUpBomb.m in Sources */,

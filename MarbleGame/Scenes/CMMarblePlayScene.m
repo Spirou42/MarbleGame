@@ -34,6 +34,7 @@
 #import "CMScoreSprite.h"
 #import "CMMarblePowerProtocol.h"
 #import "CMMarbleEmitter.h"
+#import "CMRubeBody.h"
 
 @interface CMMarblePlayScene ()
 @property (nonatomic,retain) NSMutableDictionary *particleCache;
@@ -706,8 +707,10 @@
 {
 	static NSTimeInterval lastLabelUpdate;
 	static NSTimeInterval lastRougeMarbleCheck;
+	static NSTimeInterval lastRougeSpriteCheck;
 	lastLabelUpdate+= dt;
 	lastRougeMarbleCheck += dt;
+	lastRougeSpriteCheck += dt;
   if (lastLabelUpdate>.1) {
     	[self processEffectQueue];
   }
@@ -731,6 +734,17 @@
 			}
 		}
 		lastRougeMarbleCheck = 0.0;
+	}
+	if (lastRougeSpriteCheck >1.0) {
+		NSArray * allSprites = self.simulationLayer.dynamicSprites;
+		for (CMPhysicsSprite *sprite in allSprites) {
+			if ((sprite.type != kGameBody_Mechanic) && !CGRectContainsPoint(CGRectMake(0,0, 1024, 718), sprite.position)) {
+				sprite.position = sprite.originalPosition;
+				sprite.chipmunkBody.vel = CGPointMake(0, 0);
+				NSLog(@"Object outside %@",sprite);
+			}
+		}
+    lastRougeSpriteCheck = 0.0;
 	}
 	
 	[self checkMarbleCollisionsAt:dt];

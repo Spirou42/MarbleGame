@@ -9,10 +9,12 @@
 #import "CMRubeJoint.h"
 #import "CMRubeSceneReader.h"
 #import "CMRubeBody.h"
+#import "CMPhysicsJointSprite.h"
 
 @interface CMRubeJoint ()
 @property (nonatomic, retain) NSMutableArray *cachedChipmunkObjects;
-@property (nonatomic, assign) CMRubeBody* bodyA, *bodyB;
+@property (nonatomic, retain) CMPhysicsJointSprite * cachedPhysicsSprite;
+
 @end
 
 @implementation CMRubeJoint
@@ -33,7 +35,21 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 
 - (void) initializeCustomProperties:(NSDictionary*)dict
 {
+	self.imageA = [dict objectForKey:@"ImageA"];
+	self.imageB = [dict objectForKey:@"ImageB"];
+	CGRect capsA = self.imageCapsA = CGRectMake(0, 0, 0, 0);
+	CGRect capsB = self.imageCapsB = CGRectMake(0, 0, 0, 0);
 	
+
+	self.imageAnchorA =  pointFromRUBEPoint([dict objectForKey:@"AnchorA"]);
+	self.imageAnchorB = pointFromRUBEPoint([dict objectForKey:@"AnchorB"]);
+	capsA.origin =  pointFromRUBEPoint([dict objectForKey:@"LeftCapA"]);
+	capsB.origin = pointFromRUBEPoint([dict objectForKey:@"LeftCapB"]);
+	capsA.size = sizeFromRUBESize([dict objectForKey:@"RightCapA"]);
+	capsB.size = sizeFromRUBESize([dict objectForKey:@"RightCapB"]);
+	
+	self.imageCapsA = capsA;
+	self.imageCapsB = capsB;
 }
 
 - (CMRubeJointType) typeForName:(NSString*) name
@@ -99,6 +115,8 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	}
 	return self;
 }
+#pragma mark -
+#pragma mark Creators
 
 - (NSArray*) revoluteChipmunk
 {
@@ -225,6 +243,30 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 
 	return self.cachedChipmunkObjects;
 }
+
+- (CMPhysicsJointSprite*) physicsSprite
+{
+	if (!self.cachedPhysicsSprite) {
+		if( ![CMPhysicsJointSprite canInitialiseWithJoint:self]){
+			self.cachedPhysicsSprite = (CMPhysicsJointSprite*)[NSNull null];
+		}else{
+			CMPhysicsJointSprite *someSprite = [[CMPhysicsJointSprite alloc]initWithJoint:self];
+			if (someSprite) {
+				self.cachedPhysicsSprite = someSprite;
+			}else{
+				self.cachedPhysicsSprite = (CMPhysicsJointSprite*)[NSNull null];
+			}
+		}
+    
+	}
+	if([self.cachedPhysicsSprite isKindOfClass:[NSNull class]] ){
+		return nil;
+	}
+	return self.cachedPhysicsSprite;
+}
+
+
+
 
 - (NSArray*) chipmunkObjects
 {

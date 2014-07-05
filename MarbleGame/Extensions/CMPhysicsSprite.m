@@ -13,7 +13,7 @@
 
 
 @implementation CMPhysicsSprite
-@synthesize assignedShapes = assignedShapes_, overlayNode = overlayNode_, overlayOffset=overlayOffset_;
+@synthesize assignedShapes = assignedShapes_, overlayNode = overlayNode_, overlayOffset=overlayOffset_,type=type_;
 @synthesize soundName = soundName_;
 @dynamic shapes;
 

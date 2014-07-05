@@ -25,7 +25,7 @@
 @synthesize name = name_, type = type_, angle = angle_, angularVelocity = angularVelocity_,
 linearVelocity = linearVelocity_, position = position_, fixtures = fixtures_, mass = mass_,
 angularDamping=angularDamping_, linearDamping = linearDamping_, cpBody = cpBody_, attachedImages= attachedImages_,
-cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
+cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation=fixedRotation_;
 
 - (void) initDefaults
 {
@@ -58,6 +58,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 		case kGameBody_World:
 			result = @"World";
 			break;
+		case kGameBody_Mechanic:
+			result = @"Mechanic";
+			break;
 	}
 	return result;
 }
@@ -74,6 +77,8 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 		result = kGameBody_Emitter;
 	}else if ([typeString isEqualToString:@"MARBLERESPAWN"]){
 		result = kGameBody_Respawn;
+	}else if ([typeString isEqualToString:@"MECHANIC"]){
+		result = kGameBody_Mechanic;
 	}
 	return result;
 }
@@ -100,6 +105,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
     self.angularVelocity = [[dict objectForKey:@"angularVelocity"]floatValue];
     self.linearVelocity = pointFromRUBEPoint([dict objectForKey:@"linearVelocity"]);
     self.mass = [[dict objectForKey:@"massData-mass"]floatValue];
+		self.fixedRotation = [[dict objectForKey:@"fixedRotation"]boolValue];
     // now iterate over all our fixtures and create them
 		[self initializeCustomProperties:customPropertiesFrom([dict objectForKey:@"customProperties"])];
     for (NSDictionary *fixtureDict in [dict objectForKey:@"fixture"]) {
@@ -149,7 +155,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 	if (!self->cachedPhysicsSprite_) {
 		[self createPhysicsSprite];
 	}
-	self->cachedPhysicsSprite_.position = self.position;
+	CGPoint pos = self.position;
+	self->cachedPhysicsSprite_.position = pos;
+	self->cachedPhysicsSprite_.originalPosition = pos;
 	return self->cachedPhysicsSprite_;
 }
 
@@ -225,6 +233,10 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
     CGFloat moment = [self moment];
     body = [ChipmunkBody bodyWithMass:self.mass andMoment:moment];
     body.pos = self.position;
+		if (self.fixedRotation) {
+			body.angVelLimit=0.0;
+			body.velLimit = 0.0;
+		}
   }
   id<NSFastEnumeration> myShapes = [self allShapes];
   for (ChipmunkShape* cs in myShapes) {
@@ -245,6 +257,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_;
 		return;
 	}
 	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
+	result.type = self.gameType;
 	result.opacity = 255*spriteImage.rubeOpacity;
 	result.chipmunkBody = self.cpBody;
 	[result addShapes:self.chipmunkShapes];

@@ -18,7 +18,7 @@
 @end
 
 
-static NSDictionary* groupNames = nil;
+static NSMutableDictionary* groupNames = nil;
 @implementation CMRubeFixture
 @synthesize name = name_, friction = friction_, restitution = restitution_,
 filterBits = filterBits_, filterMask = filterMask_, filterGroup = filterGroup_, type = type_,
@@ -29,7 +29,7 @@ soundName = soundName_,groupName=groupName_;
 
 + (void) initialize
 {
-	groupNames = [@{@"mechanic": @"mechanic"} retain];
+	groupNames = [@{@"mechanic": @"mechanic"} mutableCopy];
 }
 
 
@@ -54,7 +54,15 @@ soundName = soundName_,groupName=groupName_;
 		if (![[self.soundName pathExtension] isEqualToString:@"mp3"]) {
 			self.soundName = [self.soundName stringByAppendingPathExtension:@"mp3"];
 		}
-		self.groupName =[groupNames objectForKey:[dict objectForKey:@"groupName"]];
+		NSString *gName = [dict objectForKey:@"groupName"];
+		if (gName != nil) {
+			NSString *cachedGName = [groupNames objectForKey:gName];
+			if (cachedGName == nil) {
+				[groupNames setObject:gName forKey:gName];
+				cachedGName = gName;
+			}
+			self.groupName = cachedGName;
+		}
 	}
 }
 

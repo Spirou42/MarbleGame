@@ -38,7 +38,7 @@
 - (CMRubeImage*) imageWithName:(NSString*) name;
 
 @end
-
+CGSize sizeFromRUBESize(NSDictionary* input);
 CGPoint pointFromRUBEPoint(NSDictionary* dict);
 NSArray* pointsFromRUBEPointArray(NSDictionary* dict);
 NSDictionary* customPropertiesFrom(NSArray* customArray);

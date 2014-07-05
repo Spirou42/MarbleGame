@@ -20,10 +20,13 @@ typedef enum {
 	kRubeJoint_Friction
 }CMRubeJointType;
 
+@class CMPhysicsJointSprite,CMRubeBody;
+
 @interface CMRubeJoint : NSObject <ChipmunkObject>
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, assign) CMRubeJointType type;
+@property (nonatomic, assign) CMRubeBody* bodyA, *bodyB;
 
 //revolute
 @property (nonatomic, assign) CGPoint anchorA,anchorB;
@@ -57,9 +60,19 @@ typedef enum {
 
 // Friction
 
+// customProperties
+@property (nonatomic, retain) NSString *imageA;
+@property (nonatomic, retain) NSString *imageB;
+@property (nonatomic, assign) CGPoint imageAnchorA;
+@property (nonatomic, assign) CGPoint imageAnchorB;
+@property (nonatomic, assign) CGRect  imageCapsA;
+@property (nonatomic, assign) CGRect imageCapsB;
+@property (nonatomic, readonly) CMPhysicsJointSprite* physicsSprite;
+
 
 - (id) initWithDictionary:(NSDictionary*) dict;
 - (id) initWithDictionary:(NSDictionary *)dict andBodies:(NSArray*) bodies;
 
 - (NSArray*) chipmunkObjects;
+
 @end

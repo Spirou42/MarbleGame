@@ -188,7 +188,14 @@
 
 @end
 
-
+CGSize sizeFromRUBESize(id input)
+{
+	CGSize result =CGSizeMake(0, 0);
+	CGPoint p = pointFromRUBEPoint(input);
+	result.width = p.x;
+	result.height = p.y;
+	return result;
+}
 CGPoint pointFromRUBEPoint(id input)
 {
 	if ([input isKindOfClass:[NSString class]] || [input isKindOfClass:[NSNumber class]]) {

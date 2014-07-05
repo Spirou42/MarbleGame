@@ -19,6 +19,7 @@ typedef enum{
 	kGameBody_World,
 	kGameBody_Emitter,
 	kGameBody_Respawn,
+	kGameBody_Mechanic,
 }CMGameBodyType;
 
 @protocol ChipmunkObject;
@@ -36,6 +37,7 @@ typedef enum{
 @property (nonatomic, assign) CGFloat linearDamping;
 @property (nonatomic, assign) CGFloat mass;
 @property (nonatomic, assign) CGPoint position;
+@property (nonatomic, assign) BOOL		fixedRotation;
 @property (nonatomic, retain) NSMutableArray *fixtures;
 @property (nonatomic, retain) NSMutableArray *attachedImages;
 @property (nonatomic, retain) NSString* soundName;

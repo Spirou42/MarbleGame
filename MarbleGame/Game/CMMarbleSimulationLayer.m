@@ -30,6 +30,7 @@
 #import "CMMarblePowerUpBomb.h"
 #import "CMMarblePowerUpBallBomb.h"
 #import "CMMarbleEmitter.h"
+#import "CMPhysicsJointSprite.h"
 
 enum {
 	kTagParentNode = 1,
@@ -46,9 +47,6 @@ static NSString *borderType = @"borderType";
 -(void) initPhysics;
 
 @property (nonatomic, assign) CGPoint lastMousePosition;
-@property (nonatomic, retain) NSMutableArray *dynamicSprites;
-@property (nonatomic, retain) NSMutableArray *staticSprites;
-@property (nonatomic, retain) NSMutableArray *constraints;
 
 - (void) initializeLevel;
 @end
@@ -747,6 +745,12 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		for (id a in self.currentLevel.constrains) {
 			[self.space add:a];
 			[self.constraints addObject:a];
+			CMPhysicsJointSprite* jointSprite = (CMPhysicsJointSprite*)[a physicsSprite];
+			if (jointSprite) {
+				NSLog(@"SpriteJoint: %@",jointSprite);
+				[self.otherSpritesNode addChild:jointSprite];
+			}
+			
 		}
 	}
   self.currentLevel.marbleEmitter.simulationLayer = self;
