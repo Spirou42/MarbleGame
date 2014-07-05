@@ -1,5 +1,6 @@
 
 {
+  "activeScript" : "\n",
   "collisionbitplanes" : 
   {
     "names" : 
@@ -42,13 +43,6 @@
   [
     
     {
-      "class" : "fixture",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
-      "type" : "string"
-    },
-    
-    {
       "class" : "body",
       "comboboxEntries" : 
       [
@@ -59,6 +53,10 @@
         
         {
           "entry" : "World"
+        },
+        
+        {
+          "entry" : "Mechanic"
         },
         
         {
@@ -75,16 +73,16 @@
     },
     
     {
-      "class" : "body",
+      "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
       "type" : "string"
     },
     
     {
-      "class" : "fixture",
-      "displayName" : "groupName",
-      "name" : "groupName",
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
       "type" : "string"
     },
     
@@ -93,6 +91,13 @@
       "displayName" : "marbleCount",
       "name" : "marbleCount",
       "type" : "int"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "groupName",
+      "name" : "groupName",
+      "type" : "string"
     },
     
     {
@@ -133,8 +138,11 @@
     "exportOptions" : 
     {
       "compactCommonFloats" : true,
+      "compactZeroVecs" : true,
       "saveFullPathForImages" : false,
+      "saveFullPathForSamplerOutput" : false,
       "saveImagePathsRelativeToRUBEFile" : false,
+      "saveSamplerOutputPathsRelativeToRUBEFile" : false,
       "useHumanReadableFloats" : true,
       "usePrettyPrint" : true
     },
@@ -1421,8 +1429,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1462,8 +1470,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1503,8 +1511,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1544,8 +1552,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1855,8 +1863,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1896,8 +1904,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1937,8 +1945,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -1978,8 +1986,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2019,8 +2027,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2060,8 +2068,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2101,8 +2109,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2142,8 +2150,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2183,8 +2191,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2224,8 +2232,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2265,8 +2273,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2306,8 +2314,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
@@ -2568,11 +2576,11 @@
         ],
         "id" : 53,
         "linearVelocity" : 0,
-        "massData-I" : 44477728.0,
+        "massData-I" : 44477724.0,
         "massData-center" : 
         {
-          "x" : -0.4433503448963165,
-          "y" : -0.4058774709701538
+          "x" : -0.4433502554893494,
+          "y" : -0.4058741331100464
         },
         "massData-mass" : 1750.172973632812,
         "name" : "StepsR",
@@ -2828,11 +2836,11 @@
         ],
         "id" : 69,
         "linearVelocity" : 0,
-        "massData-I" : 149304064.0,
+        "massData-I" : 149304048.0,
         "massData-center" : 
         {
-          "x" : -0.228051558136940,
-          "y" : -121.7211456298828
+          "x" : -0.2280515730381012,
+          "y" : -121.7211532592773
         },
         "massData-mass" : 3416.86718750,
         "name" : "StepsL",
@@ -2848,6 +2856,14 @@
         "angle" : 3.015588283538818,
         "angularVelocity" : 0,
         "awake" : true,
+        "customProperties" : 
+        [
+          
+          {
+            "name" : "bodyType",
+            "string" : "Mechanic"
+          }
+        ],
         "fixture" : 
         [
           
@@ -2874,8 +2890,8 @@
             ],
             "vertices" : 
             {
-              "x" : [ 0 ],
-              "y" : [ 0 ]
+              "x" : [ 0.0 ],
+              "y" : [ 0.0 ]
             }
           }
         ],
