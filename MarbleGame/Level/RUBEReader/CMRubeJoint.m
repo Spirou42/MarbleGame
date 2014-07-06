@@ -50,6 +50,8 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	
 	self.imageCapsA = capsA;
 	self.imageCapsB = capsB;
+	
+	self.layerName = [dict objectForKey:@"Layer"];
 }
 
 - (CMRubeJointType) typeForName:(NSString*) name

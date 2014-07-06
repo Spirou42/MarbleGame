@@ -14,6 +14,7 @@
 
 @interface CMPhysicsJointSprite : CCNode <ChipmunkObject,NSCopying>
 
+@property (nonatomic, retain) NSString* layerName;
 @property (nonatomic, assign) ChipmunkDampedSpring* constraint;
 
 @property (nonatomic, retain) CCScale9Sprite* spriteA;

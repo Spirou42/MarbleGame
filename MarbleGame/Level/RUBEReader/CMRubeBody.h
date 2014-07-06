@@ -28,6 +28,7 @@ typedef enum{
 @interface CMRubeBody : NSObject <ChipmunkObject>
 
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSString* layerName;
 @property (nonatomic, assign) CMRubeBodyType type;
 @property (nonatomic, assign) CMGameBodyType gameType;
 @property (nonatomic, assign) CGFloat angle;

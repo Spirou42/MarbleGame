@@ -89,7 +89,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation
 	if ([dict allKeys].count > 0) {
 		NSString *p = [dict objectForKey:@"bodyType"];
 		self.gameType = [self bodyTypeFromString:p];
-		NSLog(@"%@ %@",self,dict);
+		self.layerName = [dict objectForKey:@"Layer"];
 	}
 }
 
@@ -100,7 +100,7 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation
     [self initDefaults];
 		self.name = [dict objectForKey:@"name"];
 		self.position = pointFromRUBEPoint([dict objectForKey:@"position"]);
-		self.type = [[dict objectForKey:@"type"] integerValue];
+		self.type = (CMRubeBodyType)[[dict objectForKey:@"type"] integerValue];
     self.angle =  [[dict objectForKey:@"angle"]floatValue];
     self.angularVelocity = [[dict objectForKey:@"angularVelocity"]floatValue];
     self.linearVelocity = pointFromRUBEPoint([dict objectForKey:@"linearVelocity"]);
@@ -257,12 +257,18 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation
 		return;
 	}
 	CMPhysicsSprite * result = [CMPhysicsSprite spriteWithFile:spriteName];
+	result.layerName = self.layerName;
 	result.type = self.gameType;
 	result.opacity = 255*spriteImage.rubeOpacity;
+
 	result.chipmunkBody = self.cpBody;
 	[result addShapes:self.chipmunkShapes];
 //	NSLog(@"created: %@ (%@)",result, NSStringFromSize(result.contentSize));
 	result.scale = spriteImage.rubeScale / result.contentSize.height;
+	if (spriteImage.rubeAspectScale != 1.0) {
+    	result.scaleX *= spriteImage.rubeAspectScale;
+	}
+
 	CMRubeImage *overlayImage = [self imageForType:kRubeImageType_Overlay];
 	if (overlayImage) {
 		CCSprite *overlaySprite = [CCSprite spriteWithFile:overlayImage.filename];

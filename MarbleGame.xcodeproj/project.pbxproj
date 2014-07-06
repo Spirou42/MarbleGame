@@ -104,6 +104,7 @@
 		935F00F517B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */; };
 		935F00F617B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
 		935F00F717B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */; };
+		9360667919699AA500B0B635 /* Platte.png in Resources */ = {isa = PBXBuildFile; fileRef = 9360667819699AA500B0B635 /* Platte.png */; };
 		93634DEA180893C000126EEC /* Icon-HurpzelPurpzel.png in Resources */ = {isa = PBXBuildFile; fileRef = 93634DE9180893C000126EEC /* Icon-HurpzelPurpzel.png */; };
 		93750A7A17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
 		93750A7B17B81D560063D613 /* GameUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93750A7817B81CD60063D613 /* GameUI.plist */; };
@@ -672,6 +673,7 @@
 		935F00EF17B6D089006E8E10 /* CMMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMenuLayer.m; sourceTree = "<group>"; };
 		935F00F217B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RockWell30-OutlineMenuTitle.fnt"; sourceTree = "<group>"; };
 		935F00F317B6DB85006E8E10 /* RockWell30-OutlineMenuTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RockWell30-OutlineMenuTitle.png"; sourceTree = "<group>"; };
+		9360667819699AA500B0B635 /* Platte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Platte.png; sourceTree = "<group>"; };
 		93634DE9180893C000126EEC /* Icon-HurpzelPurpzel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-HurpzelPurpzel.png"; sourceTree = "<group>"; };
 		93750A7817B81CD60063D613 /* GameUI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GameUI.plist; sourceTree = "<group>"; };
 		93750A7917B81CD60063D613 /* GameUI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameUI.png; sourceTree = "<group>"; };
@@ -1658,6 +1660,7 @@
 		FEBABB6617E0B81500E85ABD /* -1  RubeTest */ = {
 			isa = PBXGroup;
 			children = (
+				9360667819699AA500B0B635 /* Platte.png */,
 				9326A784196886F700EF9A2A /* DistantAussen.png */,
 				9326A785196886F700EF9A2A /* DistantInnen.png */,
 				931A2CB417F6FC7500721927 /* RUBETest-Overlay.png */,
@@ -2163,6 +2166,7 @@
 				9337177A180348AF007A2339 /* Icon-Boxes.png in Resources */,
 				93A5C6AD17EA4DEA0030D22E /* Pentagon-ConcreteBrown.png in Resources */,
 				93A8662017FA331E000263B2 /* Mechanic-2.png in Resources */,
+				9360667919699AA500B0B635 /* Platte.png in Resources */,
 				FE02107317F9C81C00C0F374 /* Mechanic-1.json in Resources */,
 				93A5C69D17EA382A0030D22E /* DoubleHalfPipe-Foreground.png in Resources */,
 				93E0462517F6176400069A79 /* ScrewCross.png in Resources */,

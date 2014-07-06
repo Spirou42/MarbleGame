@@ -55,6 +55,10 @@
 		[director runWithScene: [CMMarbleMainMenuScene node]];
 	}
 }
+- (BOOL) prefersStatusBarHidden
+{
+	return YES;
+}
 @end
 
 @implementation MarbleGameAppDelegate

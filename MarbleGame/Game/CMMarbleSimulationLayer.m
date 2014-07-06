@@ -54,7 +54,7 @@ static NSString *borderType = @"borderType";
 
 @implementation CMMarbleSimulationLayer
 
-@synthesize space = space_, marbleBatchNode=marbleBatchNode_,otherSpritesNode = otherSpritesNode_, currentMarbleSet=currentMarbleSet_, debugLayer=debugLayer_,
+@synthesize space = space_, marbleBatchNode=marbleBatchNode_,objectsSpritesNode = objectsSpritesNode_, currentMarbleSet=currentMarbleSet_, debugLayer=debugLayer_,
 simulationRunning=simulationRunning_, collisionCollector=collisionCollector_,simulatedMarbles=simulatedMarbles_,
 dollyGroove = dollyGroove_, dollyServo = dollyServo_, dollyBody = dollyBody_,
 gameDelegate = gameDelegate_, lastMousePosition = lastMousePosition_,currentLevel=currentLevel_,
@@ -95,6 +95,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		self.constraints = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
+		
+		self.othersSpriteNode = [CCNode node];
+		[self addChild:self.othersSpriteNode z:0];
+		
+		self.physicsSpritesNode = [CCNode node];
+		[self addChild:self.physicsSpritesNode z:1];
+		
 		// Use batch node. Faster currently the batch node is not supported cause i use a custome shader. This will change in the future.
 
 #if 1
@@ -102,11 +109,11 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 #else
     self.marbleBatchNode = [CCNode node];
 #endif
-		[self addChild:self.marbleBatchNode z:0 tag:kTagParentNode];
+		[self addChild:self.marbleBatchNode z:2 tag:kTagParentNode];
 
 		
-		self.otherSpritesNode = [CCNode node];
-		[self addChild:self.otherSpritesNode];
+		self.objectsSpritesNode = [CCNode node];
+		[self addChild:self.objectsSpritesNode z:3];
 
 		// this starts the update process automatically
     [self scheduleUpdate];
@@ -691,6 +698,27 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
     marble.marbleSetName=marbleSet;
   }
 }
+#pragma mark -
+#pragma mark Level Initialisation
+#pragma mark -
+
+- (CCNode*) nodeForLayerName:(NSString*)layerName
+{
+	CCNode *result = nil;
+	if ([layerName isEqualToString:@"Objects"]) {
+    result = self.objectsSpritesNode;
+	}else if ([layerName isEqualToString:@"Marbles"]){
+		result = self.marbleBatchNode;
+	}else if ([layerName isEqualToString:@"Physics"]){
+		result = self.physicsSpritesNode;
+	}else if ([layerName isEqualToString:@"Other"]){
+		result = self.othersSpriteNode;
+	}
+	if (result == nil) {
+    result = self.objectsSpritesNode;
+	}
+	return result;
+}
 
 - (void) initializeLevel
 {
@@ -706,7 +734,10 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 	[self.space remove: self.space.bodies];
 
 	self.worldShapes = [self.currentLevel worldShapes];
-	[self.otherSpritesNode removeAllChildren];
+	[self.objectsSpritesNode removeAllChildren];
+	[self.marbleBatchNode removeAllChildren];
+	[self.physicsSpritesNode removeAllChildren];
+	[self.othersSpriteNode removeAllChildren];
 	[self.gameDelegate initializeLevel:self.currentLevel];
   
 	NSUInteger p = self.currentLevel.numberOfMarbles;
@@ -717,11 +748,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.dynamicSprites addObject:a];
 			[self.space add:a];
 #if !PHYSICS_PRODUCTION
-			[self.otherSpritesNode addChild:a];
+
 			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
 				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
+				CCNode *targetNode = [self nodeForLayerName:p.layerName];
+				[targetNode addChild:p];
 				if (p.overlayNode) {
-					[self.otherSpritesNode addChild:p.overlayNode z:10];
+					[targetNode addChild:p.overlayNode z:10];
 				}
 			}
 #endif
@@ -732,11 +765,13 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.staticSprites addObject:a];
 			[self.space add:a];
 #if !PHYSICS_PRODUCTION
-			[self.otherSpritesNode addChild:a];
+
 			if ([a isKindOfClass:[CMPhysicsSprite class]]) {
 				CMPhysicsSprite *p = (CMPhysicsSprite*)a;
+				CCNode *targetNode = [self nodeForLayerName:p.layerName];
+				[targetNode addChild:a];
 				if (p.overlayNode) {
-					[self.otherSpritesNode addChild:p.overlayNode z:10];
+					[targetNode addChild:p.overlayNode z:10];
 				}
 			}
 #endif
@@ -747,8 +782,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			[self.constraints addObject:a];
 			CMPhysicsJointSprite* jointSprite = (CMPhysicsJointSprite*)[a physicsSprite];
 			if (jointSprite) {
+				CCNode *targetNode = [self nodeForLayerName:jointSprite.layerName];
 				NSLog(@"SpriteJoint: %@",jointSprite);
-				[self.otherSpritesNode addChild:jointSprite];
+				[targetNode addChild:jointSprite];
 			}
 			
 		}

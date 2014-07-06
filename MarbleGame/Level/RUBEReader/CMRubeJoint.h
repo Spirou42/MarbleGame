@@ -25,6 +25,7 @@ typedef enum {
 @interface CMRubeJoint : NSObject <ChipmunkObject>
 
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSString* layerName;
 @property (nonatomic, assign) CMRubeJointType type;
 @property (nonatomic, assign) CMRubeBody* bodyA, *bodyB;
 

@@ -12,6 +12,7 @@
 
 @interface CMPhysicsSprite : CCPhysicsSprite <ChipmunkObject,CMObjectSoundProtocol,NSCopying>
 
+@property (nonatomic, retain) NSString* layerName;			///< name of the layer
 @property (nonatomic,readonly) NSArray *shapes;
 @property (nonatomic,retain) CCNode* overlayNode;			// node that is not affected by rotation and is
 @property (nonatomic,assign) CGPoint overlayOffset;		///< Offset to the own position

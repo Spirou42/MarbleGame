@@ -35,6 +35,9 @@
 - (void) dealloc
 {
 	self.assignedShapes = nil;
+	[self.overlayNode removeFromParent];
+	self.overlayNode = nil;
+	self.layerName = nil;
 	[super dealloc];
 }
 
