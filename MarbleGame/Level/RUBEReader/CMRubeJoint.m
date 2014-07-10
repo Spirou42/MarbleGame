@@ -207,7 +207,25 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 	if (!self.bodyA && !self.bodyB) {
 		return nil;
 	}
+	if (!self.cachedChipmunkObjects) {
+    NSMutableArray *result = [NSMutableArray array];
+		ChipmunkPivotJoint *p = [ChipmunkPivotJoint pivotJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB];
+		//p.dist = 0.0;
+		[result addObject:p];
+		
+		if (self.enableMotor) {
+			ChipmunkSimpleMotor *motJ = [ChipmunkSimpleMotor simpleMotorWithBodyA:self.bodyA.body bodyB:self.bodyB.body rate:-self.motorSpeed];
+			if (self.maxMotorTorque == 0) {
+				motJ.maxForce = INFINITY;
+			}else{
+				motJ.maxForce = self.maxMotorTorque;
+			}
+			[result addObject:motJ];
+		}
 
+		
+		self.cachedChipmunkObjects = result;
+	}
 	return self.cachedChipmunkObjects;
 }
 
@@ -215,6 +233,12 @@ bodyA = bodyA_, bodyB = bodyB_, enableLimit = enableLimit_,motorSpeed = motorSpe
 {
 	if (!self.bodyA && !self.bodyB) {
 		return nil;
+	}
+	if (!self.cachedChipmunkObjects) {
+		NSMutableArray *result = [NSMutableArray array];
+		ChipmunkSlideJoint *slideJ = [ChipmunkSlideJoint slideJointWithBodyA:self.bodyA.body bodyB:self.bodyB.body anchr1:self.anchorA anchr2:self.anchorB min:0 max:self.maxLength];
+		[result addObject:slideJ];
+		self.cachedChipmunkObjects = result;
 	}
 
 	return self.cachedChipmunkObjects;

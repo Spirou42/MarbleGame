@@ -203,9 +203,13 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation
 - (CGFloat) moment
 {
   CGFloat moment = 0.0f;
-  for (CMRubeFixture *f in self.fixtures) {
-    moment += [f momentForMass:self.mass];
-  }
+	if (self.fixtures.count) {
+		for (CMRubeFixture *f in self.fixtures) {
+			moment += [f momentForMass:self.mass];
+		}
+	}else{
+		moment = cpMomentForCircle(100, 1, 1, ccp(0, 0));
+	}
   return moment;
 }
 - (NSArray*) allShapes
@@ -222,9 +226,9 @@ cachedPhysicsSprite = cachedPhysicsSprite_, soundName = soundName_,fixedRotation
 
 - (void) createChipmunkBody
 {
-  if (!self.fixtures.count) {
+/*  if (!self.fixtures.count) {
     return;
-  }
+  }*/
   ChipmunkBody *body = nil;
   if (self.type ==kRubeBody_static) {
     body = [ChipmunkBody staticBody];

@@ -777,7 +777,10 @@
 
 - (void) initializeLevel:(CMMarbleLevel *)level
 {
-		[self.removedMarbleQueue removeAllObjects];
+	[self.effectsNode removeAllChildren];
+	[self.spriteEffectsNode removeAllChildren];
+	[self.marbleEffectsNode removeAllChildren];
+	[self.removedMarbleQueue removeAllObjects];
 	CCSprite *bkg = level.backgroundImage;
 	if (bkg && !PHYSICS_PRODUCTION) {
 		self.backgroundSprite=bkg;
@@ -790,9 +793,9 @@
 	if (fgs && !PHYSICS_PRODUCTION) {
 		self.foregroundSprite = fgs;
 	}
-
+	
 #if DEBUG_ALPHA_ON
-  self.foregroundSprite.opacity = 128;
+	self.foregroundSprite.opacity = 128;
 #endif
 	self.currentStatistics = [CMAppDelegate temporaryStatisticFor:[CMAppDelegate currentPlayer] andLevel:level];
 }

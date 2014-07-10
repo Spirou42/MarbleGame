@@ -18,30 +18,41 @@
 @interface CMMarbleLevel ()
 @property(retain, nonatomic) CMSimpleShapeReader *shapeReader ;						///< shapeReader is depricated now. will be replaced by the RubeReader
 @property(retain, nonatomic) CMMarbleEmitter *cachedMarbleEmitter;
+@property(retain, nonatomic) NSArray* cachedDynamicSprites;
+@property(retain, nonatomic) NSArray* cachedStaticSprites;
+@property(retain, nonatomic) NSArray* cachedWorldObjects;
+@property(retain, nonatomic) NSArray* cachedNonSpriteObjects;
 @end
 
 @implementation CMMarbleLevel
 
-@synthesize backgroundFilename = backgroundFilename_, overlayFilename = overlayFilename_, staticBodiesFilename = staticBodiesFilename_ ,
-backgroundImage = backgroundImage_, overlayImage = overlayImage_, shapeReader = shapeReader_, name = name_,
-baseURL = baseURL_,numberOfMarbles = numberOfMarbles_,scoreLimits = scoreLimits_,timeLimits = timeLimits_,
-rubeFileName = rubeFileName_, rubeReader = rubeReader_, icon = icon_, iconFileName = iconFileName_;
+@synthesize backgroundFilename = backgroundFilename_, overlayFilename = overlayFilename_,
+staticBodiesFilename = staticBodiesFilename_ ,backgroundImage = backgroundImage_,
+overlayImage = overlayImage_, shapeReader = shapeReader_, name = name_, baseURL = baseURL_,
+numberOfMarbles = numberOfMarbles_,scoreLimits = scoreLimits_,timeLimits = timeLimits_,
+rubeFileName = rubeFileName_, rubeReader = rubeReader_, icon = icon_, iconFileName = iconFileName_,
+cachedDynamicSprites = cachedDynamicSprites_, cachedStaticSprites = cachedStaticSprites_,
+cachedWorldObjects = cachedWorldObjects_, cachedNonSpriteObjects = cachedNonSpriteObjects_;
 
 - (void) initDefaults
 {
-	self.baseURL              = nil;
-	self.backgroundImage      = nil;
-	self.overlayImage         = nil;
-	self.name                 = nil;
-	self.backgroundFilename   = nil;
-	self.overlayFilename      = nil;
-	self.staticBodiesFilename = nil;
-	self.shapeReader          = nil;
-	self.rubeFileName					= nil;
-  self.rubeReader           = nil;
-  self.cachedMarbleEmitter  = nil;
-	self.icon									= nil;
-	self.iconFileName					= nil;
+	self.baseURL             		= nil;
+	self.backgroundImage      	= nil;
+	self.overlayImage         	= nil;
+	self.name                 	= nil;
+	self.backgroundFilename   	= nil;
+	self.overlayFilename      	= nil;
+	self.staticBodiesFilename 	= nil;
+	self.shapeReader          	= nil;
+	self.rubeFileName						= nil;
+  self.rubeReader           	= nil;
+  self.cachedMarbleEmitter  	= nil;
+	self.icon										= nil;
+	self.iconFileName						= nil;
+	self.cachedDynamicSprites 	= nil;
+	self.cachedStaticSprites 		= nil;
+	self.cachedWorldObjects			= nil;
+	self.cachedNonSpriteObjects	= nil;
 }
 
 - (void) initGraphicsFromDict:(NSDictionary*) dict
@@ -246,6 +257,18 @@ rubeFileName = rubeFileName_, rubeReader = rubeReader_, icon = icon_, iconFileNa
 	return result;
 }
 
+- (NSArray*) nonSpriteObjects
+{
+	NSMutableArray *result = [NSMutableArray array];
+	for (CMRubeBody* rBody in self.rubeReader.bodies) {
+    if (rBody.type == kRubeBody_dynamic) {
+			if (!rBody.physicsSprite) {
+				[result addObjectsFromArray:rBody.chipmunkObjects];
+			}
+		}
+	}
+	return result;
+}
 - (NSArray*) dynamicSprites
 {
 	NSMutableArray *result = [NSMutableArray array];
