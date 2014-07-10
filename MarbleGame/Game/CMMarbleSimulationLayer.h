@@ -33,6 +33,7 @@
 @property (nonatomic, assign) CCNode* othersSpriteNode;						///< other sprites here
 @property (nonatomic, retain) NSMutableArray *dynamicSprites;
 @property (nonatomic, retain) NSMutableArray *staticSprites;
+@property (nonatomic, retain) NSMutableArray * otherObjects;
 @property (nonatomic, retain) NSMutableArray *constraints;
 
 @property (nonatomic, retain) NSString* currentMarbleSet;					///< current marble theme

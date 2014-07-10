@@ -93,6 +93,7 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 		self.dynamicSprites = [NSMutableArray array];
 		self.staticSprites = [NSMutableArray array];
 		self.constraints = [NSMutableArray array];
+		self.otherObjects = [NSMutableArray array];
 		// init physics
 		[self initPhysics];
 		
@@ -730,6 +731,9 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 
 	[self.space remove:self.constraints];
 	[self.constraints removeAllObjects];
+	
+	[self.space remove:self.otherObjects];
+	[self.otherObjects removeAllObjects];
 
 	[self.space remove: self.space.bodies];
 
@@ -776,6 +780,14 @@ lastMarbleSoundTime = _lastMarbleSoundTime,dynamicSprites = dynamicSprites_, sta
 			}
 #endif
 		}
+		
+		// all other dynamic objects
+		for (id somObject in self.currentLevel.nonSpriteObjects) {
+			[self.space add:somObject];
+			[self.otherObjects addObject:somObject];
+		}
+		
+		
 		// Constraints
 		for (id a in self.currentLevel.constrains) {
 			[self.space add:a];
