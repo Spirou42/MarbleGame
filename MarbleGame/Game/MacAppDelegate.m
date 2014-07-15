@@ -103,7 +103,7 @@
 
 - (NSInteger) simulationSteps
 {
-	return 1;
+	return 4;
 }
 
 #pragma mark -

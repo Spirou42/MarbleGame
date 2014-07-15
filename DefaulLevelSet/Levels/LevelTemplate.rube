@@ -43,16 +43,42 @@
     
     {
       "class" : "body",
-      "displayName" : "collisionSound",
-      "name" : "collisionSound",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Objects"
+        },
+        
+        {
+          "entry" : "Marbles"
+        },
+        
+        {
+          "entry" : "Physics"
+        },
+        
+        {
+          "entry" : "Other"
+        }
+      ],
+      "displayName" : "Layer",
+      "name" : "Layer",
       "type" : "string"
     },
     
     {
-      "class" : "world",
-      "displayName" : "marbleCount",
-      "name" : "marbleCount",
-      "type" : "int"
+      "class" : "joint",
+      "displayName" : "AnchorB",
+      "name" : "AnchorB",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "fixture",
+      "displayName" : "groupName",
+      "name" : "groupName",
+      "type" : "string"
     },
     
     {
@@ -82,9 +108,128 @@
     },
     
     {
+      "class" : "body",
+      "displayName" : "collisionSound",
+      "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "body",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Undefined"
+        },
+        
+        {
+          "entry" : "World"
+        },
+        
+        {
+          "entry" : "Mechanic"
+        },
+        
+        {
+          "entry" : "MarbleEmitter"
+        },
+        
+        {
+          "entry" : "MarbleRespawn"
+        }
+      ],
+      "displayName" : "bodyType",
+      "name" : "bodyType",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "ImageB",
+      "name" : "ImageB",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "AnchorA",
+      "name" : "AnchorA",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "LeftCapA",
+      "name" : "LeftCapA",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "joint",
+      "comboboxEntries" : 
+      [
+        
+        {
+          "entry" : "Objects"
+        },
+        
+        {
+          "entry" : "Marbles"
+        },
+        
+        {
+          "entry" : "Physics"
+        },
+        
+        {
+          "entry" : "Other"
+        }
+      ],
+      "displayName" : "Layer",
+      "name" : "Layer",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "world",
+      "displayName" : "marbleCount",
+      "name" : "marbleCount",
+      "type" : "int"
+    },
+    
+    {
       "class" : "fixture",
       "displayName" : "collisionSound",
       "name" : "collisionSound",
+      "type" : "string"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "RightCapB",
+      "name" : "RightCapB",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "LeftCapB",
+      "name" : "LeftCapB",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "RightCapA",
+      "name" : "RightCapA",
+      "type" : "vec2"
+    },
+    
+    {
+      "class" : "joint",
+      "displayName" : "ImageA",
+      "name" : "ImageA",
       "type" : "string"
     }
   ],
@@ -104,8 +249,11 @@
     "exportOptions" : 
     {
       "compactCommonFloats" : true,
+      "compactZeroVecs" : true,
       "saveFullPathForImages" : false,
+      "saveFullPathForSamplerOutput" : false,
       "saveImagePathsRelativeToRUBEFile" : false,
+      "saveSamplerOutputPathsRelativeToRUBEFile" : false,
       "useHumanReadableFloats" : true,
       "usePrettyPrint" : true
     },

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0EFA6D3169CDF9C006D1B22"
-               BuildableName = "libcocos2d_box2d.a"
-               BlueprintName = "cocos2d_box2d"
-               ReferencedContainer = "container:cocos2d-ios.xcodeproj">
+               BlueprintIdentifier = "FEBABB3817E0B64700E85ABD"
+               BuildableName = "DefaultLevelSet.levels"
+               BlueprintName = "DefaultLevelSet"
+               ReferencedContainer = "container:MarbleGame.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,10 +42,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0EFA6D3169CDF9C006D1B22"
-            BuildableName = "libcocos2d_box2d.a"
-            BlueprintName = "cocos2d_box2d"
-            ReferencedContainer = "container:cocos2d-ios.xcodeproj">
+            BlueprintIdentifier = "FEBABB3817E0B64700E85ABD"
+            BuildableName = "DefaultLevelSet.levels"
+            BlueprintName = "DefaultLevelSet"
+            ReferencedContainer = "container:MarbleGame.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
