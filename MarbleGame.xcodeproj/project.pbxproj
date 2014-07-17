@@ -960,7 +960,7 @@
 				93B09BDA17F8E87400F75D0F /* Mechanic-1 TreppeLinks.png */,
 				93B09BDB17F8E87400F75D0F /* Mechanic-1 TreppeRechts.png */,
 			);
-			name = "6. Mechanic 1";
+			path = "6. Mechanic 1";
 			sourceTree = "<group>";
 		};
 		9325651F17E665FB0012C68F /* 1. Halfpipe */ = {
@@ -970,7 +970,7 @@
 				9325652F17E6662C0012C68F /* HalfPipe-Foreground.png */,
 				9325653017E6662C0012C68F /* Halfpipe.json */,
 			);
-			name = "1. Halfpipe";
+			path = "1. Halfpipe";
 			sourceTree = "<group>";
 		};
 		933A14B217B2F4B700F3420C /* Effects */ = {
@@ -1292,6 +1292,7 @@
 				93A5C69C17EA382A0030D22E /* DoubleHalfpipe.json */,
 			);
 			name = "3. Double Halfpipe";
+			path = "3. DoubleHalfPipe";
 			sourceTree = "<group>";
 		};
 		93A5C69F17EA4D980030D22E /* 2. Halfpipe 2 */ = {
@@ -1300,7 +1301,7 @@
 				9337177518034890007A2339 /* Icon-Halfpipe2.png */,
 				93A5C6B417EA4E8F0030D22E /* Halfpipe-2.json */,
 			);
-			name = "2. Halfpipe 2";
+			path = "2. Halfpipe 2";
 			sourceTree = "<group>";
 		};
 		93A5C6A017EA4DAC0030D22E /* 5. Halfpipe 3 */ = {
@@ -1309,7 +1310,7 @@
 				9337177B180348BD007A2339 /* Icon-Halfpipe3.png */,
 				93A5C6B617EA4E9E0030D22E /* Halfpipe-3.json */,
 			);
-			name = "5. Halfpipe 3";
+			path = "5. Halfpipe 3";
 			sourceTree = "<group>";
 		};
 		93A5C6A117EA4DC90030D22E /* Shared */ = {
@@ -1329,7 +1330,7 @@
 				93E0462317F6176400069A79 /* SixStarWheel.png */,
 				93A5C6AA17EA4DEA0030D22E /* Star-Wood1.png */,
 			);
-			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		93A8661C17F9F746000263B2 /* 7. Mechanic 2 */ = {
@@ -1339,7 +1340,7 @@
 				93A8661F17FA331E000263B2 /* Mechanic-2.png */,
 				93A8661D17F9F817000263B2 /* Mechanic-2.json */,
 			);
-			name = "7. Mechanic 2";
+			path = "7. Mechanic 2";
 			sourceTree = "<group>";
 		};
 		93AD6C7517907AA3001DADD9 /* Externals */ = {
@@ -1622,7 +1623,7 @@
 				9381510A17E3D349009A5ABB /* Boxes.json */,
 				9381510817E3C9E2009A5ABB /* crate.png */,
 			);
-			name = "4. Boxes";
+			path = "4. Boxes";
 			sourceTree = "<group>";
 		};
 		FEBABB6317E0B7DE00E85ABD /* Level 1 Legacy */ = {
@@ -1632,7 +1633,7 @@
 				FEBABB4917E0B7C300E85ABD /* Level1-Overlay.png */,
 				FEBABB4A17E0B7C300E85ABD /* Level1-StaticBodies.stb */,
 			);
-			name = "Level 1 Legacy";
+			path = "Level 1 Legacy";
 			sourceTree = "<group>";
 		};
 		FEBABB6417E0B7E500E85ABD /* Level 2 Legacy */ = {
@@ -1643,7 +1644,7 @@
 				FEBABB4C17E0B7C300E85ABD /* Level2-Overlay.png */,
 				FEBABB4D17E0B7C300E85ABD /* Level2-StaticBodies.stb */,
 			);
-			name = "Level 2 Legacy";
+			path = "Level 2 Legacy";
 			sourceTree = "<group>";
 		};
 		FEBABB6517E0B7F100E85ABD /* Level 3 Legacy */ = {
@@ -1654,7 +1655,7 @@
 				FEBABB4F17E0B7C300E85ABD /* Level3-Overlay.png */,
 				FEBABB5017E0B7C300E85ABD /* Level3-StaticBodies.stb */,
 			);
-			name = "Level 3 Legacy";
+			path = "Level 3 Legacy";
 			sourceTree = "<group>";
 		};
 		FEBABB6617E0B81500E85ABD /* -1  RubeTest */ = {
@@ -1668,6 +1669,7 @@
 				FEBABB5317E0B7C300E85ABD /* WoodGear-T1.png */,
 			);
 			name = "-1  RubeTest";
+			path = "-1 RubeTest";
 			sourceTree = "<group>";
 		};
 		FED2E5F717A7E488005A16B3 /* iMarbleGame */ = {
